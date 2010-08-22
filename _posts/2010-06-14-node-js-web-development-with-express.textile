@@ -16,9 +16,9 @@ summary:  	 	    I have been researching node.js and the ecosystem around it. Ye
  <h3 class="western">Running the application and debugging.</h3> Once you have all your handlers done starting the app is as easy as type:
  <p style="background: none repeat scroll 0% 0% rgb(192, 192, 192);"><font face="Courier 10 Pitch">node app.js</font>
  If you have any mistakes in your code you will see an error in the command line:
- <img style="max-width: 800px;" /images/posts/console_error.png" /><br /><br />
+ <img style="max-width: 800px;" src="/images/posts/console_error.png" /><br /><br />
  <p style="margin-bottom: 0cm;">If the error is found during run time, by default, Express provides a friendly 500 error page.
-<p style="margin-bottom: 0cm;"><img style="max-width: 800px;" /images/posts/500_error.png" /><br />
+<p style="margin-bottom: 0cm;"><img style="max-width: 800px;" src="/images/posts/500_error.png" /><br />
  <p style="margin-bottom: 0cm;">In this case the error is a view file missing.
   <h3 class="western">Views</h3> Out of the box Express knows about Haml and Saas templates and will look for view files in the views folder. It also support layouts and partial views to compose complex ui.
  By default will try to get a layout by the name of "layout" for the same view engine you are using for the view, for example in our case that we are using haml, it will try to load a file by the name of layout.html.haml. <br />You can disable layouts, setting layout: false in the hash passed to the render method of the request object.

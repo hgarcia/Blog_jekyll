@@ -28,11 +28,11 @@ What I did was to create a new folder \lib under the solution root (of the BlogE
 
 You should have something like this right now.
 
-<a href="http://blog.dynamicprogrammer.com/images/posts/WindowsLiveWriter/CreatingaMongoDBproviderforBlogengin.Net_14694/initial_solution_set_up.png"><img style="border-right-width: 0px; display: inline; border-top-width: 0px; border-bottom-width: 0px; border-left-width: 0px" title="initial_solution_set_up" border="0" alt="initial_solution_set_up" /images/posts/WindowsLiveWriter/CreatingaMongoDBproviderforBlogengin.Net_14694/initial_solution_set_up_thumb.png" width="244" height="168"></a> 
+<a href="http://blog.dynamicprogrammer.com/images/posts/WindowsLiveWriter/CreatingaMongoDBproviderforBlogengin.Net_14694/initial_solution_set_up.png"><img style="border-right-width: 0px; display: inline; border-top-width: 0px; border-bottom-width: 0px; border-left-width: 0px" title="initial_solution_set_up" border="0" alt="initial_solution_set_up" src="/images/posts/WindowsLiveWriter/CreatingaMongoDBproviderforBlogengin.Net_14694/initial_solution_set_up_thumb.png" width="244" height="168"></a> 
 
 And the following directory structure.
 
-<a href="http://blog.dynamicprogrammer.com/images/posts/WindowsLiveWriter/CreatingaMongoDBproviderforBlogengin.Net_14694/initial_dir_structure.png"><img style="border-right-width: 0px; display: inline; border-top-width: 0px; border-bottom-width: 0px; border-left-width: 0px" title="initial_dir_structure" border="0" alt="initial_dir_structure" /images/posts/WindowsLiveWriter/CreatingaMongoDBproviderforBlogengin.Net_14694/initial_dir_structure_thumb.png" width="288" height="275"></a> 
+<a href="http://blog.dynamicprogrammer.com/images/posts/WindowsLiveWriter/CreatingaMongoDBproviderforBlogengin.Net_14694/initial_dir_structure.png"><img style="border-right-width: 0px; display: inline; border-top-width: 0px; border-bottom-width: 0px; border-left-width: 0px" title="initial_dir_structure" border="0" alt="initial_dir_structure" src="/images/posts/WindowsLiveWriter/CreatingaMongoDBproviderforBlogengin.Net_14694/initial_dir_structure_thumb.png" width="288" height="275"></a> 
 
 You may not have the Resharper files and folders, that depends if you have Resharper installed or not.
 
