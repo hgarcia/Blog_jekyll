@@ -2,15 +2,26 @@
 layout: post
 title: Pickle cucumber steps not recognized before creating the model.
 summary: The title kind of tell it all. I started to use pickle now for filling up and managing my test with cucumber. Fill up data, etc.  Pickle creates some step definitions for you to make things easy, what it's much appreciated. There is a great RailC...
----
-The title kind of tell it all. I started to use pickle now for filling up and managing my test with cucumber. Fill up data, etc.
- Pickle creates some step definitions for you to make things easy, what it's much appreciated. There is a great RailCast on setting things up, you can <a href="http://railscasts.com/episodes/186-pickle-with-cucumber">watch</a> it or <a href="http://asciicasts.com/episodes/186-pickle-with-cucumber">read</a> about it.
- The problem I got was that I wrote the following Cucumber scenario:
- <p style="margin-bottom: 0cm; background: none repeat scroll 0% 0% rgb(192, 192, 192);" align="LEFT">  <font face="Courier 10 Pitch">@wip<br />Scenario: Assign roles<br /> Given the following roles exist<br /> | name      |<br /> | admin     |<br /> | reader    |<br /> | publisher |<br /> When I am on the roles page<br /> Then I should see "admin"<br /> And I should see "reader"<br /> And I should see "publisher"</font>
-  <br />And when running cucumber I got a message that indicates that I have an undefined step for the Given step and this bit of code:
- <img style="max-width: 800px;" src="/images/posts/missing_step.png" /><br />
- Now that was a bit disconcerting since the Given step match this pickle steps:
-    <p style="margin-bottom: 0cm; background: none repeat scroll 0% 0% rgb(0, 0, 0);" align="LEFT"><font face="Courier 10 Pitch"><font color="#00ffff"># create models from a table<br />Given</font><font color="#f8f8f2">(</font><font color="#ffff66">/^the following #{</font><font color="#f8f8f2">capture_plural_factory</font><font color="#ffff66">} exists?:?$/</font><font color="#f8f8f2">)</font><font color="#40a187"> do</font><font color="#f8f8f2"> |</font><font color="#00ffff">plural_factory</font><font color="#f8f8f2">,</font><font color="#00ffff"> table</font><br /><font color="#ffffff"> create_models_from_table(plural_factory, table) </font><br /><font color="#40a187">|end</font></font>
-  Or so I though. The problem was that I didn't have the model or the db table yet. That was a bit disconcerting, I could expect the error message to tell me something more in the line of: Ups, we couldn't find a model for the User or something like.  
- Once you think about it make sense, since capture_plural_factory will be evaluate on runtime and won't much any existing model.<br />
+---
+
+The title kind of tell it all. I started to use pickle now for filling up and managing my test with cucumber. Fill up data, etc.
+
+ Pickle creates some step definitions for you to make things easy, what it's much appreciated. There is a great RailCast on setting things up, you can <a href="http://railscasts.com/episodes/186-pickle-with-cucumber">watch</a> it or <a href="http://asciicasts.com/episodes/186-pickle-with-cucumber">read</a> about it.
+
+ The problem I got was that I wrote the following Cucumber scenario:
+
+ <p style="margin-bottom: 0cm; background: none repeat scroll 0% 0% rgb(192, 192, 192);" align="LEFT">  <font face="Courier 10 Pitch">@wip<br />Scenario: Assign roles<br /> Given the following roles exist<br /> | name      |<br /> | admin     |<br /> | reader    |<br /> | publisher |<br /> When I am on the roles page<br /> Then I should see "admin"<br /> And I should see "reader"<br /> And I should see "publisher"</font>
+
+  <br />And when running cucumber I got a message that indicates that I have an undefined step for the Given step and this bit of code:
+
+ <img style="max-width: 800px;" src="/images/posts/missing_step.png" /><br />
+
+ Now that was a bit disconcerting since the Given step match this pickle steps:
+
+    <p style="margin-bottom: 0cm; background: none repeat scroll 0% 0% rgb(0, 0, 0);" align="LEFT"><font face="Courier 10 Pitch"><font color="#00ffff"># create models from a table<br />Given</font><font color="#f8f8f2">(</font><font color="#ffff66">/^the following #{</font><font color="#f8f8f2">capture_plural_factory</font><font color="#ffff66">} exists?:?$/</font><font color="#f8f8f2">)</font><font color="#40a187"> do</font><font color="#f8f8f2"> |</font><font color="#00ffff">plural_factory</font><font color="#f8f8f2">,</font><font color="#00ffff"> table</font><br /><font color="#ffffff"> create_models_from_table(plural_factory, table) </font><br /><font color="#40a187">|end</font></font>
+
+  Or so I though. The problem was that I didn't have the model or the db table yet. That was a bit disconcerting, I could expect the error message to tell me something more in the line of: Ups, we couldn't find a model for the User or something like.  
+
+ Once you think about it make sense, since capture_plural_factory will be evaluate on runtime and won't much any existing model.<br />
+
 <br /><br /><div class="zemanta-pixie"><img class="zemanta-pixie-img" alt="" src="http://img.zemanta.com/pixy.gif?x-id=da2873a1-ab82-8ca0-b2c8-eceff5bd0d36" /></div>
