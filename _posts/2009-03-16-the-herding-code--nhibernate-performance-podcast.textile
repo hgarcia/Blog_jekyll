@@ -1,6 +1,6 @@
 ---
 layout: post
-title: The Herding Code: NHibernate performance podcast
+title: The Herding Code- NHibernate performance podcast
 summary: &amp;#160;   Today I have the pleasure to listen to a really <a href="http://herdingcode.com/?p=171" target="_blank">good episode of The Herding Code</a>. The episode title was NHibernate performance. In the episode <a href="http://ayende.com/" ...
 ---
 &amp;#160;

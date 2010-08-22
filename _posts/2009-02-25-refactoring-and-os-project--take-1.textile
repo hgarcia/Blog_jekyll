@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Refactoring and OS project: take 1
+title: Refactoring and OS project- take 1
 summary: &amp;#160;   First thing first. This is not bad code. This is a drop that is there and the developer make a point to clarify all the problems “he” has with the code at the moment. I needed to make it work in a more generic way and since most...
 ---
 &amp;#160;

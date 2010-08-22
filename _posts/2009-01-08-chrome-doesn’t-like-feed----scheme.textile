@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Chrome doesn’t like feed:// scheme
+title: Chrome doesn’t like feed-// scheme
 summary: &amp;#160;   A coworker uses Google Chrome as her primary browser and she sent me and email about my feeds not working. So I went to her computer and yes, inside Chrome when clicked the Icon on the top of the blog nothing happened. I remembered ...
 ---
 &amp;#160;

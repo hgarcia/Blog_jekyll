@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Microsoft Lightweight Test Automation Framework: Fixing window.open errors
+title: Microsoft Lightweight Test Automation Framework- Fixing window.open errors
 summary:    <br />I have been playing with the <a href="http://aspnet.codeplex.com/Release/ProjectReleases.aspx?ReleaseId=22739" target="_blank">Microsoft Lightweight Test Automation Framework</a>, that’s a mouthful for the Microsoft’s Web testing fra...
 ---
    <br />I have been playing with the <a href="http://aspnet.codeplex.com/Release/ProjectReleases.aspx?ReleaseId=22739" target="_blank">Microsoft Lightweight Test Automation Framework</a>, that’s a mouthful for the Microsoft’s Web testing framework. 

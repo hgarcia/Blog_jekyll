@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Horn: First Impressions
+title: Horn- First Impressions
 summary: Some time ago I heard about the intent of putting together a package manager for .net ala <a href="http://docs.rubygems.org/" target="_blank">gems</a> or <a href="http://pear.php.net/" target="_blank">pear</a>. I wasn’t aware that this project ...
 ---
 Some time ago I heard about the intent of putting together a package manager for .net ala <a href="http://docs.rubygems.org/" target="_blank">gems</a> or <a href="http://pear.php.net/" target="_blank">pear</a>. I wasn’t aware that this project was actually under way. The name of the project, <a href="http://code.google.com/p/hornget/" target="_blank">Horn</a>.
