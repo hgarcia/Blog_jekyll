@@ -1,9 +1,9 @@
 ---
 layout: post
 title: Silent lately
-summary: &amp;#160;   I have been silent lately because I have been working on a project based on ASP.NET MVC. The idea is to have the bare minimum to create highly configurable sites.   The main obstacles I saw with the framework “out of the box” i...
+summary:    I have been silent lately because I have been working on a project based on ASP.NET MVC. The idea is to have the bare minimum to create highly configurable sites.   The main obstacles I saw with the framework “out of the box” is how to cre...
 ---
-&amp;#160;
+
   I have been silent lately because I have been working on a project based on ASP.NET MVC. The idea is to have the bare minimum to create highly configurable sites.
   The main obstacles I saw with the framework “out of the box” is how to create composite views. 
   This project is driven by a real need in the company I’m working right now. Let’s explore together the design and development process that we follow. Please note that I’m not saying the all the decisions taken so far are final or even the right decisions. I have changed my mind several times and there are still some things that I know I need to change to make it better.

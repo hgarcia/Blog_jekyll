@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Ruby Koans, learning ruby the test driven way.
-summary: Probably you are aware of Edgecase Ruby Koans. In case you aren’t, let me introduce you to them.   From Wikipedia, <a href="http-//en.wikipedia.org/wiki/K%C5%8Dan" target="_bl...
+summary: Probably you are aware of Edgecase Ruby Koans. In case you aren’t, let me introduce you to them.   From Wikipedia, Koan-   A kōan is fundamental part of the history and lore of Zen Buddhism. It consists of a story, dialogue, question, or state...
 ---
 Probably you are aware of <a href="http://github.com/edgecase/ruby_koans" target="_blank">Edgecase Ruby Koans</a>. In case you aren’t, let me introduce you to them. 
  From Wikipedia, <a href="http://en.wikipedia.org/wiki/K%C5%8Dan" target="_blank">Koan</a>:
@@ -9,7 +9,7 @@ Probably you are aware of <a href="http://github.com/edgecase/ruby_koans" target
 </blockquote> The Ruby Koans are a set of failing test that you need to resolve. Of course the idea is not just to resolve the test as fast as you can but to read the code carefully and understand why it’s failing and them provide the solution.
  Once you download the code you just run the rake command inside the folder where the Koans have been downloaded and you will be presented with a failing test and a message in the screen that indicates what you need to do to fix the test.
  You should take as much time as needed to contemplate the solution and internalize the code, the syntax and the constructs that Ruby use.
- I went through them once and I’m planning on do it again in a day of two. The Koans cover some important aspect in the following areas: asserts, arrays, arrays assignments, blocks. Classes, open classes and class methods.&amp;nbsp; Inheritance, hashes, exceptions and so much more, this is the complete list of files in the Koans folder:
+ I went through them once and I’m planning on do it again in a day of two. The Koans cover some important aspect in the following areas: asserts, arrays, arrays assignments, blocks. Classes, open classes and class methods. Inheritance, hashes, exceptions and so much more, this is the complete list of files in the Koans folder:
  <table style="background-color: #000; color: #fff" border="0"> <tbody> <tr> <td><pre>17/01/2010  11:25 PM             2,024 about_arrays.rb
 17/01/2010  11:29 PM             1,015 about_array_assignment.rb
 17/01/2010  12:27 PM               942 about_asserts.rb
@@ -48,7 +48,7 @@ Probably you are aware of <a href="http://github.com/edgecase/ruby_koans" target
 22/12/2009  10:24 PM                70 test_helper.rb
 18/01/2010  12:29 AM               821 triangle.rb
 </pre></td></tr></tbody></table>
-&amp;nbsp;
+
 
 Open your favorite editor, launch the console and start running the Koans, just type rake and you will be presented with messages like this,after fixing it your awareness will “expand”.
 
@@ -67,11 +67,11 @@ Please meditate on the following code:
 ./about_open_classes.rb:26:in `test_after_reopening_dogs_can_both_wag_and_bark'
 path_to_enlightenment.rb:28
 </pre></td></tr></tbody></table>
-&amp;nbsp;
+
 
 It’s very addictive, the only complain/suggestion I have is to provide some answer to some of the question in the code. May be in a separate show? 
 
-&amp;nbsp;
+
 <pre style="border-bottom: #ffffff 1px solid; border-left: #ffffff 1px solid; padding-bottom: 5px; background-color: #ffffff; min-height: 40px; padding-left: 5px; width: 650px; padding-right: 5px; overflow: auto; border-top: #ffffff 1px solid; border-right: #ffffff 1px solid; padding-top: 5px"><pre style="background-color: #ffffff; margin: 0em; width: 96.34%; font-family: consolas,'Courier New',courier,monospace; height: 15px; font-size: 12px">    # THINK ABOUT IT:
 </pre><pre style="background-color: #ffffff; margin: 0em; width: 92.69%; font-family: consolas,'Courier New',courier,monospace; height: 13px; font-size: 12px">    #
 </pre><pre style="background-color: #ffffff; margin: 0em; width: 100%; font-family: consolas,'Courier New',courier,monospace; font-size: 12px">    # Is it better to use

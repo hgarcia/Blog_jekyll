@@ -1,9 +1,9 @@
 ---
 layout: post
 title: Can Agile kill a project?
-summary: &amp;#160;   Mohammad Azam has a post entitled When Being Agile Kills the Pr...
+summary:    Mohammad Azam has a post entitled When Being Agile Kills the Project. He mentions a project were the client gave a one month deadline not negotiable and so, he had to go and start cutting corners to make the deadline since, he wanted needed to...
 ---
-&amp;#160;
+
   <a href="http://www.azamsharp.com/Default.aspx" target="_blank">Mohammad Azam</a> has a post entitled <a href="http://www.azamsharp.com/Posts/145_When_Being_Agile_Kills_the_Project.aspx" target="_blank">When Being Agile Kills the Project</a>. He mentions a project were the client gave a one month deadline not negotiable and so, he had to go and start cutting corners to make the deadline since, he <strike>wanted</strike> needed to keep his job (totally reasonable, keeping the job I mean).
   <blockquote>   Unfortunately, in this case the owner was fixed with the deadline and was not willing to move it further. The other option was to leave the project and search for a different one. This option was not reasonable for me as I was on a worker visa and finding another company to sponsor a new worker visa is like finding a needle in a hay stack
  </blockquote>  There is no discussion on this, but this post got me thinking. First the things that they have to sacrifice.

@@ -1,9 +1,9 @@
 ---
 layout: post
 title: VS 2010, Generate method from usage.
-summary: &amp;#160;   One of the main reasons I got ReSharper originally was for it’s ability to do micro code generation. This is a functionality that I found very useful when doing test first development.   You can write your test first that will ac...
+summary:    One of the main reasons I got ReSharper originally was for it’s ability to do micro code generation. This is a functionality that I found very useful when doing test first development.   You can write your test first that will access an obje...
 ---
-&amp;#160;
+
   One of the main reasons I got ReSharper originally was for it’s ability to do micro code generation. This is a functionality that I found very useful when doing test first development.
   You can write your test first that will access an object that it doesn’t exist yet and them consume some methods on that object. Them you just go Alt+Enter and ReSharper will generate the stubs for the class, the methods and the properties. 
   VS 2010 incorporate this functionality as well. In ReSharper you can write the initialization of a new class that it have not been create yet and you will see the blue underscore below it. Hit Ctrl+. (Control+dot) and a drop down menu will ask you to generate the class.

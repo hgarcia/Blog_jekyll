@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Adding LinqPad to my toolbox.
-summary: Tonight I added LinqPad to my toolbox. I did try this before but I guess I wasn’t very inspired because I didn’t stick with it. Let me tell you, that was a mistake. I have been playing with...
+summary: Tonight I added LinqPad to my toolbox. I did try this before but I guess I wasn’t very inspired because I didn’t stick with it. Let me tell you, that was a mistake. I have been playing with it for an hour or so and I’m loving it.   What is ...
 ---
 Tonight I added <a href="http://www.linqpad.net" target="_blank">LinqPad</a> to my toolbox. I did try this before but I guess I wasn’t very inspired because I didn’t stick with it. Let me tell you, that was a mistake. I have been playing with it for an hour or so and I’m loving it. 
  What is LinqPad you may ask? The name comes from the ability to write Linq queries in it, but it’s actually much more. <br>I will just use this snipped from their home page:

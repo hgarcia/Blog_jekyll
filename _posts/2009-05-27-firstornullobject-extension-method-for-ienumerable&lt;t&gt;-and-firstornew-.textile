@@ -1,9 +1,9 @@
 ---
 layout: post
 title: FirstOrNullObject extension method for IEnumerable&lt;T&gt; and FirstOrNew.
-summary: &amp;#160; In the context of this article every time I mention Linq I’m actually talking about Linq To Objects. Although       Linq has a very handy method on FirstOrDefault&amp;lt;T&amp;gt;. When applying this method to a collecti...
+summary:  In the context of this article every time I mention Linq I’m actually talking about Linq To Objects. Although       Linq has a very handy method on FirstOrDefault&amp;lt;T&amp;gt;. When applying this method to a collection you will get in retu...
 ---
-&amp;#160; <br />In the context of this article every time I mention Linq I’m actually talking about Linq To Objects. Although 
+ <br />In the context of this article every time I mention Linq I’m actually talking about Linq To Objects. Although 
      <br />Linq has a very handy method on FirstOrDefault&amp;lt;T&amp;gt;. When applying this method to a collection you will get in return the First object of the default of T. This works great with numeric values in the sense that the default is not null. So you can do stuff like this without anything blowing up.
   <pre><pre style="background-color: #fbfbfb; margin: 0em; width: 100%; font-family: consolas,&amp;#39;Courier New&amp;#39;,courier,monospace; font-size: 12px">  1: var list = <span style="color: #0000ff">new</span> List&amp;lt;<span style="color: #0000ff">int</span>&amp;gt; { 0, 1, 2, 3, 4, 5, 6, 7, 8, 9 };
 </pre><pre style="background-color: #ffffff; margin: 0em; width: 100%; font-family: consolas,&amp;#39;Courier New&amp;#39;,courier,monospace; font-size: 12px">  2: var valueAsString = list.FirstOrDefault(l =&amp;gt; l == 10).ToString();
@@ -23,29 +23,29 @@ You will get this:
 
 
 System.NullReferenceException was unhandled 
-  <br />&amp;#160; Message=Object reference not set to an instance of an object. 
+  <br /> Message=Object reference not set to an instance of an object. 
 
-  <br />&amp;#160; Source=FirstOrNullObject 
+  <br /> Source=FirstOrNullObject 
 
-  <br />&amp;#160; StackTrace: 
+  <br /> StackTrace: 
 
-  <br />&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160; at FirstOrNullObject.Program.Main(String[] args) in C:\Development\Code\DotNet\VS2010\DynamicProgrammer\FirstOrNullObject\FirstOrNullObject\Program.cs:line 21 
+  <br /> at FirstOrNullObject.Program.Main(String[] args) in C:\Development\Code\DotNet\VS2010\DynamicProgrammer\FirstOrNullObject\FirstOrNullObject\Program.cs:line 21 
 
-  <br />&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160; at System.AppDomain._nExecuteAssembly(RuntimeAssembly assembly, String[] args) 
+  <br /> at System.AppDomain._nExecuteAssembly(RuntimeAssembly assembly, String[] args) 
 
-  <br />&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160; at System.AppDomain.ExecuteAssembly(String assemblyFile, Evidence assemblySecurity, String[] args) 
+  <br /> at System.AppDomain.ExecuteAssembly(String assemblyFile, Evidence assemblySecurity, String[] args) 
 
-  <br />&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160; at Microsoft.VisualStudio.HostingProcess.HostProc.RunUsersAssembly() 
+  <br /> at Microsoft.VisualStudio.HostingProcess.HostProc.RunUsersAssembly() 
 
-  <br />&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160; at System.Threading.ThreadHelper.ThreadStart_Context(Object state) 
+  <br /> at System.Threading.ThreadHelper.ThreadStart_Context(Object state) 
 
-  <br />&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160; at System.Threading.ExecutionContext.Run(ExecutionContext executionContext, ContextCallback callback, Object state, Boolean ignoreSyncCtx) 
+  <br /> at System.Threading.ExecutionContext.Run(ExecutionContext executionContext, ContextCallback callback, Object state, Boolean ignoreSyncCtx) 
 
-  <br />&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160; at System.Threading.ExecutionContext.Run(ExecutionContext executionContext, ContextCallback callback, Object state) 
+  <br /> at System.Threading.ExecutionContext.Run(ExecutionContext executionContext, ContextCallback callback, Object state) 
 
-  <br />&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160; at System.Threading.ThreadHelper.ThreadStart() 
+  <br /> at System.Threading.ThreadHelper.ThreadStart() 
 
-  <br />&amp;#160; InnerException: 
+  <br /> InnerException: 
 
 
 Why? The default of string is null.

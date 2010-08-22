@@ -1,8 +1,8 @@
 ---
 layout: post
 title: DSL book from Martin Fowler
-summary: &amp;#160;   If you into DSL’s (Domain Specific Languages) or are interested on them, take a look at this DSL book, work in progress by Martin Fowler.   He started back in November...
+summary:    If you into DSL’s (Domain Specific Languages) or are interested on them, take a look at this DSL book, work in progress by Martin Fowler.   He started back in November 2007 and have been providing frequents updates. ...
 ---
-&amp;#160;
+
   If you into DSL’s (Domain Specific Languages) or are interested on them, take a look at <a href="http://martinfowler.com/dslwip/" target="_blank">this DSL book, work in progress by Martin Fowler</a>.
   He started back in November 2007 and have been providing frequents updates.

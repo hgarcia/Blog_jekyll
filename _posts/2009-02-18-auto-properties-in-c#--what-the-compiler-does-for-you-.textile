@@ -1,120 +1,120 @@
 ---
 layout: post
 title: Auto properties in c#, what the compiler does for you.
-summary: &amp;#160;   If you ever wonder what the compiler does to make the auto properties work let’s take a look at the code the way Reflector sees it. Let’s write some very useful code --)   <div style="font-size- 10pt; background- white; color- ...
+summary:    If you ever wonder what the compiler does to make the auto properties work let’s take a look at the code the way Reflector sees it. Let’s write some very useful code --)       public class AutoPropertiesDemo      {      public string MyStr...
 ---
-&amp;#160;
+
   If you ever wonder what the compiler does to make the auto properties work let’s take a look at the code the way Reflector sees it. Let’s write some very useful code :-)
-  <div style="font-size: 10pt; background: white; color: black; font-family: courier new">   <p style="margin: 0px">&amp;#160;&amp;#160;&amp;#160; <span style="color: blue">public</span> <span style="color: blue">class</span> <span style="color: #2b91af">AutoPropertiesDemo</span>
-    <p style="margin: 0px">&amp;#160;&amp;#160;&amp;#160; {
-    <p style="margin: 0px">&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160; <span style="color: blue">public</span> <span style="color: blue">string</span> MyString { <span style="color: blue">get</span>; <span style="color: blue">set</span>; }
-    <p style="margin: 0px">&amp;#160;
-    <p style="margin: 0px">&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160; <span style="color: blue">public</span> <span style="color: blue">int</span> MyInt { <span style="color: blue">get</span>; <span style="color: blue">private</span> <span style="color: blue">set</span>; }
-    <p style="margin: 0px">&amp;#160;
-    <p style="margin: 0px">&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160; <span style="color: blue">public</span> <span style="color: #2b91af">IEnumerator</span> Enumeration { <span style="color: blue">get</span>; <span style="color: blue">set</span>; }
-    <p style="margin: 0px">&amp;#160;&amp;#160;&amp;#160; }
+  <div style="font-size: 10pt; background: white; color: black; font-family: courier new">   <p style="margin: 0px"> <span style="color: blue">public</span> <span style="color: blue">class</span> <span style="color: #2b91af">AutoPropertiesDemo</span>
+    <p style="margin: 0px"> {
+    <p style="margin: 0px"> <span style="color: blue">public</span> <span style="color: blue">string</span> MyString { <span style="color: blue">get</span>; <span style="color: blue">set</span>; }
+    <p style="margin: 0px">
+    <p style="margin: 0px"> <span style="color: blue">public</span> <span style="color: blue">int</span> MyInt { <span style="color: blue">get</span>; <span style="color: blue">private</span> <span style="color: blue">set</span>; }
+    <p style="margin: 0px">
+    <p style="margin: 0px"> <span style="color: blue">public</span> <span style="color: #2b91af">IEnumerator</span> Enumeration { <span style="color: blue">get</span>; <span style="color: blue">set</span>; }
+    <p style="margin: 0px"> }
  </div>  Compiler this hitting F5 and them open the dll using Reflector. And this is what you will see.
   <div style="font-size: 10pt; background: white; color: black; font-family: courier new">   <p style="margin: 0px"><span style="color: blue">public</span> <span style="color: blue">class</span> <span style="color: #2b91af">AutoPropertiesDemo</span>
     <p style="margin: 0px">{
-    <p style="margin: 0px">&amp;#160;&amp;#160;&amp;#160; <span style="color: green">// Fields</span>
-    <p style="margin: 0px">&amp;#160;&amp;#160;&amp;#160; [<span style="color: #2b91af">CompilerGenerated</span>]
-    <p style="margin: 0px">&amp;#160;&amp;#160;&amp;#160; <span style="color: blue">private</span> IEnumerator &amp;lt;Enumeration&amp;gt;k__BackingField;
-    <p style="margin: 0px">&amp;#160;&amp;#160;&amp;#160; [<span style="color: #2b91af">CompilerGenerated</span>]
-    <p style="margin: 0px">&amp;#160;&amp;#160;&amp;#160; <span style="color: blue">private</span> <span style="color: blue">int</span> &amp;lt;MyInt&amp;gt;k__BackingField;
-    <p style="margin: 0px">&amp;#160;&amp;#160;&amp;#160; [<span style="color: #2b91af">CompilerGenerated</span>]
-    <p style="margin: 0px">&amp;#160;&amp;#160;&amp;#160; <span style="color: blue">private</span> <span style="color: blue">string</span> &amp;lt;MyString&amp;gt;k__BackingField;
-    <p style="margin: 0px">&amp;#160;
-    <p style="margin: 0px">&amp;#160;&amp;#160;&amp;#160; <span style="color: green">// Properties</span>
-    <p style="margin: 0px">&amp;#160;&amp;#160;&amp;#160; <span style="color: blue">public</span> <span style="color: #2b91af">IEnumerator</span> Enumeration
-    <p style="margin: 0px">&amp;#160;&amp;#160;&amp;#160; {
-    <p style="margin: 0px">&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160; [<span style="color: #2b91af">CompilerGenerated</span>]
-    <p style="margin: 0px">&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160; <span style="color: blue">get</span>
-    <p style="margin: 0px">&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160; {
-    <p style="margin: 0px">&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160; <span style="color: blue">return</span> <span style="color: blue">this</span>.&amp;lt;Enumeration&amp;gt;k__BackingField;
-    <p style="margin: 0px">&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160; }
-    <p style="margin: 0px">&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160; [<span style="color: #2b91af">CompilerGenerated</span>]
-    <p style="margin: 0px">&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160; <span style="color: blue">set</span>
-    <p style="margin: 0px">&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160; {
-    <p style="margin: 0px">&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160; <span style="color: blue">this</span>.&amp;lt;Enumeration&amp;gt;k__BackingField = <span style="color: blue">value</span>;
-    <p style="margin: 0px">&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160; }
-    <p style="margin: 0px">&amp;#160;&amp;#160;&amp;#160; }
-    <p style="margin: 0px">&amp;#160;
-    <p style="margin: 0px">&amp;#160;&amp;#160;&amp;#160; <span style="color: blue">public</span> <span style="color: blue">int</span> MyInt
-    <p style="margin: 0px">&amp;#160;&amp;#160;&amp;#160; {
-    <p style="margin: 0px">&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160; [<span style="color: #2b91af">CompilerGenerated</span>]
-    <p style="margin: 0px">&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160; <span style="color: blue">get</span>
-    <p style="margin: 0px">&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160; {
-    <p style="margin: 0px">&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160; <span style="color: blue">return</span> <span style="color: blue">this</span>.&amp;lt;MyInt&amp;gt;k__BackingField;
-    <p style="margin: 0px">&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160; }
-    <p style="margin: 0px">&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160; <span style="color: blue">private</span> [CompilerGenerated]
-    <p style="margin: 0px">&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160; <span style="color: blue">set</span>
-    <p style="margin: 0px">&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160; {
-    <p style="margin: 0px">&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160; <span style="color: blue">this</span>.&amp;lt;MyInt&amp;gt;k__BackingField = value;
-    <p style="margin: 0px">&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160; }
-    <p style="margin: 0px">&amp;#160;&amp;#160;&amp;#160; }
-    <p style="margin: 0px">&amp;#160;
-    <p style="margin: 0px">&amp;#160;&amp;#160;&amp;#160; <span style="color: blue">public</span> <span style="color: blue">string</span> MyString
-    <p style="margin: 0px">&amp;#160;&amp;#160;&amp;#160; {
-    <p style="margin: 0px">&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160; [<span style="color: #2b91af">CompilerGenerated</span>]
-    <p style="margin: 0px">&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160; <span style="color: blue">get</span>
-    <p style="margin: 0px">&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160; {
-    <p style="margin: 0px">&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160; <span style="color: blue">return</span> <span style="color: blue">this</span>.&amp;lt;MyString&amp;gt;k__BackingField;
-    <p style="margin: 0px">&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160; }
-    <p style="margin: 0px">&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160; [<span style="color: #2b91af">CompilerGenerated</span>]
-    <p style="margin: 0px">&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160; <span style="color: blue">set</span>
-    <p style="margin: 0px">&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160; {
-    <p style="margin: 0px">&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160; <span style="color: blue">this</span>.&amp;lt;MyString&amp;gt;k__BackingField = <span style="color: blue">value</span>;
-    <p style="margin: 0px">&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160; }
-    <p style="margin: 0px">&amp;#160;&amp;#160;&amp;#160; }
+    <p style="margin: 0px"> <span style="color: green">// Fields</span>
+    <p style="margin: 0px"> [<span style="color: #2b91af">CompilerGenerated</span>]
+    <p style="margin: 0px"> <span style="color: blue">private</span> IEnumerator &amp;lt;Enumeration&amp;gt;k__BackingField;
+    <p style="margin: 0px"> [<span style="color: #2b91af">CompilerGenerated</span>]
+    <p style="margin: 0px"> <span style="color: blue">private</span> <span style="color: blue">int</span> &amp;lt;MyInt&amp;gt;k__BackingField;
+    <p style="margin: 0px"> [<span style="color: #2b91af">CompilerGenerated</span>]
+    <p style="margin: 0px"> <span style="color: blue">private</span> <span style="color: blue">string</span> &amp;lt;MyString&amp;gt;k__BackingField;
+    <p style="margin: 0px">
+    <p style="margin: 0px"> <span style="color: green">// Properties</span>
+    <p style="margin: 0px"> <span style="color: blue">public</span> <span style="color: #2b91af">IEnumerator</span> Enumeration
+    <p style="margin: 0px"> {
+    <p style="margin: 0px"> [<span style="color: #2b91af">CompilerGenerated</span>]
+    <p style="margin: 0px"> <span style="color: blue">get</span>
+    <p style="margin: 0px"> {
+    <p style="margin: 0px"> <span style="color: blue">return</span> <span style="color: blue">this</span>.&amp;lt;Enumeration&amp;gt;k__BackingField;
+    <p style="margin: 0px"> }
+    <p style="margin: 0px"> [<span style="color: #2b91af">CompilerGenerated</span>]
+    <p style="margin: 0px"> <span style="color: blue">set</span>
+    <p style="margin: 0px"> {
+    <p style="margin: 0px"> <span style="color: blue">this</span>.&amp;lt;Enumeration&amp;gt;k__BackingField = <span style="color: blue">value</span>;
+    <p style="margin: 0px"> }
+    <p style="margin: 0px"> }
+    <p style="margin: 0px">
+    <p style="margin: 0px"> <span style="color: blue">public</span> <span style="color: blue">int</span> MyInt
+    <p style="margin: 0px"> {
+    <p style="margin: 0px"> [<span style="color: #2b91af">CompilerGenerated</span>]
+    <p style="margin: 0px"> <span style="color: blue">get</span>
+    <p style="margin: 0px"> {
+    <p style="margin: 0px"> <span style="color: blue">return</span> <span style="color: blue">this</span>.&amp;lt;MyInt&amp;gt;k__BackingField;
+    <p style="margin: 0px"> }
+    <p style="margin: 0px"> <span style="color: blue">private</span> [CompilerGenerated]
+    <p style="margin: 0px"> <span style="color: blue">set</span>
+    <p style="margin: 0px"> {
+    <p style="margin: 0px"> <span style="color: blue">this</span>.&amp;lt;MyInt&amp;gt;k__BackingField = value;
+    <p style="margin: 0px"> }
+    <p style="margin: 0px"> }
+    <p style="margin: 0px">
+    <p style="margin: 0px"> <span style="color: blue">public</span> <span style="color: blue">string</span> MyString
+    <p style="margin: 0px"> {
+    <p style="margin: 0px"> [<span style="color: #2b91af">CompilerGenerated</span>]
+    <p style="margin: 0px"> <span style="color: blue">get</span>
+    <p style="margin: 0px"> {
+    <p style="margin: 0px"> <span style="color: blue">return</span> <span style="color: blue">this</span>.&amp;lt;MyString&amp;gt;k__BackingField;
+    <p style="margin: 0px"> }
+    <p style="margin: 0px"> [<span style="color: #2b91af">CompilerGenerated</span>]
+    <p style="margin: 0px"> <span style="color: blue">set</span>
+    <p style="margin: 0px"> {
+    <p style="margin: 0px"> <span style="color: blue">this</span>.&amp;lt;MyString&amp;gt;k__BackingField = <span style="color: blue">value</span>;
+    <p style="margin: 0px"> }
+    <p style="margin: 0px"> }
     <p style="margin: 0px">}
  </div>  Of course this is not exactly what the compiler does, since that will be IL. But is the way Reflector shows it as C# code.
   Interesting, isn’t it?
   If you are wondering changing the settings in Reflector to actually shows IL get this:
   <div style="font-size: 10pt; background: white; color: black; font-family: courier new">   <p style="margin: 0px">.<span style="color: blue">class</span> <span style="color: blue">public</span> auto ansi beforefieldinit AutoPropertiesDemo
-    <p style="margin: 0px">&amp;#160;&amp;#160;&amp;#160; extends [mscorlib]System.Object
+    <p style="margin: 0px"> extends [mscorlib]System.Object
     <p style="margin: 0px">{
-    <p style="margin: 0px">&amp;#160;&amp;#160;&amp;#160; .method <span style="color: blue">public</span> hidebysig specialname rtspecialname instance <span style="color: blue">void</span> .ctor() cil managed
-    <p style="margin: 0px">&amp;#160;&amp;#160;&amp;#160; {
-    <p style="margin: 0px">&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160; .maxstack 8
-    <p style="margin: 0px">&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160; L_0000: ldarg.0 
-    <p style="margin: 0px">&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160; L_0001: call instance <span style="color: blue">void</span> [mscorlib]System.Object::.ctor()
-    <p style="margin: 0px">&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160; L_0006: ret 
-    <p style="margin: 0px">&amp;#160;&amp;#160;&amp;#160; }
-    <p style="margin: 0px">&amp;#160;
-    <p style="margin: 0px">&amp;#160;
-    <p style="margin: 0px">&amp;#160;&amp;#160;&amp;#160; .property instance <span style="color: blue">class</span> [mscorlib]System.Collections.IEnumerator Enumeration
-    <p style="margin: 0px">&amp;#160;&amp;#160;&amp;#160; {
-    <p style="margin: 0px">&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160; .get instance <span style="color: blue">class</span> [mscorlib]System.Collections.IEnumerator Pronghorn.Core.AutoPropertiesDemo::get_Enumeration()
-    <p style="margin: 0px">&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160; .set instance <span style="color: blue">void</span> Pronghorn.Core.AutoPropertiesDemo::set_Enumeration(<span style="color: blue">class</span> [mscorlib]System.Collections.IEnumerator)
-    <p style="margin: 0px">&amp;#160;&amp;#160;&amp;#160; }
-    <p style="margin: 0px">&amp;#160;
-    <p style="margin: 0px">&amp;#160;&amp;#160;&amp;#160; .property instance int32 MyInt
-    <p style="margin: 0px">&amp;#160;&amp;#160;&amp;#160; {
-    <p style="margin: 0px">&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160; .get instance int32 Pronghorn.Core.AutoPropertiesDemo::get_MyInt()
-    <p style="margin: 0px">&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160; .set instance <span style="color: blue">void</span> Pronghorn.Core.AutoPropertiesDemo::set_MyInt(int32)
-    <p style="margin: 0px">&amp;#160;&amp;#160;&amp;#160; }
-    <p style="margin: 0px">&amp;#160;
-    <p style="margin: 0px">&amp;#160;&amp;#160;&amp;#160; .property instance <span style="color: blue">string</span> MyString
-    <p style="margin: 0px">&amp;#160;&amp;#160;&amp;#160; {
-    <p style="margin: 0px">&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160; .get instance <span style="color: blue">string</span> Pronghorn.Core.AutoPropertiesDemo::get_MyString()
-    <p style="margin: 0px">&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160; .set instance <span style="color: blue">void</span> Pronghorn.Core.AutoPropertiesDemo::set_MyString(<span style="color: blue">string</span>)
-    <p style="margin: 0px">&amp;#160;&amp;#160;&amp;#160; }
-    <p style="margin: 0px">&amp;#160;
-    <p style="margin: 0px">&amp;#160;
-    <p style="margin: 0px">&amp;#160;&amp;#160;&amp;#160; .field <span style="color: blue">private</span> <span style="color: blue">class</span> [mscorlib]System.Collections.IEnumerator &amp;lt;Enumeration&amp;gt;k__BackingField
-    <p style="margin: 0px">&amp;#160;&amp;#160;&amp;#160; {
-    <p style="margin: 0px">&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160; .custom instance <span style="color: blue">void</span> [mscorlib]System.Runtime.CompilerServices.CompilerGeneratedAttribute::.ctor()
-    <p style="margin: 0px">&amp;#160;&amp;#160;&amp;#160; }
-    <p style="margin: 0px">&amp;#160;
-    <p style="margin: 0px">&amp;#160;&amp;#160;&amp;#160; .field <span style="color: blue">private</span> int32 &amp;lt;MyInt&amp;gt;k__BackingField
-    <p style="margin: 0px">&amp;#160;&amp;#160;&amp;#160; {
-    <p style="margin: 0px">&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160; .custom instance <span style="color: blue">void</span> [mscorlib]System.Runtime.CompilerServices.CompilerGeneratedAttribute::.ctor()
-    <p style="margin: 0px">&amp;#160;&amp;#160;&amp;#160; }
-    <p style="margin: 0px">&amp;#160;
-    <p style="margin: 0px">&amp;#160;&amp;#160;&amp;#160; .field <span style="color: blue">private</span> <span style="color: blue">string</span> &amp;lt;MyString&amp;gt;k__BackingField
-    <p style="margin: 0px">&amp;#160;&amp;#160;&amp;#160; {
-    <p style="margin: 0px">&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160; .custom instance <span style="color: blue">void</span> [mscorlib]System.Runtime.CompilerServices.CompilerGeneratedAttribute::.ctor()
-    <p style="margin: 0px">&amp;#160;&amp;#160;&amp;#160; }
-    <p style="margin: 0px">&amp;#160;
+    <p style="margin: 0px"> .method <span style="color: blue">public</span> hidebysig specialname rtspecialname instance <span style="color: blue">void</span> .ctor() cil managed
+    <p style="margin: 0px"> {
+    <p style="margin: 0px"> .maxstack 8
+    <p style="margin: 0px"> L_0000: ldarg.0 
+    <p style="margin: 0px"> L_0001: call instance <span style="color: blue">void</span> [mscorlib]System.Object::.ctor()
+    <p style="margin: 0px"> L_0006: ret 
+    <p style="margin: 0px"> }
+    <p style="margin: 0px">
+    <p style="margin: 0px">
+    <p style="margin: 0px"> .property instance <span style="color: blue">class</span> [mscorlib]System.Collections.IEnumerator Enumeration
+    <p style="margin: 0px"> {
+    <p style="margin: 0px"> .get instance <span style="color: blue">class</span> [mscorlib]System.Collections.IEnumerator Pronghorn.Core.AutoPropertiesDemo::get_Enumeration()
+    <p style="margin: 0px"> .set instance <span style="color: blue">void</span> Pronghorn.Core.AutoPropertiesDemo::set_Enumeration(<span style="color: blue">class</span> [mscorlib]System.Collections.IEnumerator)
+    <p style="margin: 0px"> }
+    <p style="margin: 0px">
+    <p style="margin: 0px"> .property instance int32 MyInt
+    <p style="margin: 0px"> {
+    <p style="margin: 0px"> .get instance int32 Pronghorn.Core.AutoPropertiesDemo::get_MyInt()
+    <p style="margin: 0px"> .set instance <span style="color: blue">void</span> Pronghorn.Core.AutoPropertiesDemo::set_MyInt(int32)
+    <p style="margin: 0px"> }
+    <p style="margin: 0px">
+    <p style="margin: 0px"> .property instance <span style="color: blue">string</span> MyString
+    <p style="margin: 0px"> {
+    <p style="margin: 0px"> .get instance <span style="color: blue">string</span> Pronghorn.Core.AutoPropertiesDemo::get_MyString()
+    <p style="margin: 0px"> .set instance <span style="color: blue">void</span> Pronghorn.Core.AutoPropertiesDemo::set_MyString(<span style="color: blue">string</span>)
+    <p style="margin: 0px"> }
+    <p style="margin: 0px">
+    <p style="margin: 0px">
+    <p style="margin: 0px"> .field <span style="color: blue">private</span> <span style="color: blue">class</span> [mscorlib]System.Collections.IEnumerator &amp;lt;Enumeration&amp;gt;k__BackingField
+    <p style="margin: 0px"> {
+    <p style="margin: 0px"> .custom instance <span style="color: blue">void</span> [mscorlib]System.Runtime.CompilerServices.CompilerGeneratedAttribute::.ctor()
+    <p style="margin: 0px"> }
+    <p style="margin: 0px">
+    <p style="margin: 0px"> .field <span style="color: blue">private</span> int32 &amp;lt;MyInt&amp;gt;k__BackingField
+    <p style="margin: 0px"> {
+    <p style="margin: 0px"> .custom instance <span style="color: blue">void</span> [mscorlib]System.Runtime.CompilerServices.CompilerGeneratedAttribute::.ctor()
+    <p style="margin: 0px"> }
+    <p style="margin: 0px">
+    <p style="margin: 0px"> .field <span style="color: blue">private</span> <span style="color: blue">string</span> &amp;lt;MyString&amp;gt;k__BackingField
+    <p style="margin: 0px"> {
+    <p style="margin: 0px"> .custom instance <span style="color: blue">void</span> [mscorlib]System.Runtime.CompilerServices.CompilerGeneratedAttribute::.ctor()
+    <p style="margin: 0px"> }
+    <p style="margin: 0px">
     <p style="margin: 0px">}
  </div>

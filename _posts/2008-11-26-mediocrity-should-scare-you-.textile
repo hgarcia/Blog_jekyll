@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Mediocrity should scare you.
-summary: A month ago or so I was talking to this developer on a party at a friends house.  He was telling me how much he hated his work. The guy was telling me about some of his coworkers.  The story goes like this. They had a new boss, and this new guy...
+summary: A month ago or so I was talking to this developer on a party at a friends house.  He was telling me how much he hated his work. The guy was telling me about some of his coworkers.  The story goes like this. They had a new boss, and this new guy w...
 ---
 A month ago or so I was talking to this developer on a party at a friends house. 
 He was telling me how much he hated his work. The guy was telling me about some of his coworkers. 

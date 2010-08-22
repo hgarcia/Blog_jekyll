@@ -1,9 +1,9 @@
 ---
 layout: post
 title: Coding standards on a team and a journalist Manual of Style and Usages
-summary: &amp;#160;   If your team is comprised by more than one developer you should have some coding guidelines and standards in place. (I can make the case to have this guidelines even if you code along but that can be another post).   I’m not talk...
+summary:    If your team is comprised by more than one developer you should have some coding guidelines and standards in place. (I can make the case to have this guidelines even if you code along but that can be another post).   I’m not talking about so...
 ---
-&amp;#160;
+
   If your team is comprised by more than one developer you should have some coding guidelines and standards in place. (I can make the case to have this guidelines even if you code along but that can be another post).
   I’m not talking about software design or things like the S.O.L.I.D principles, but more “down to the code” styles. Ex: how to name private fields, Constants, Methods, etc. 
   Let me talk a little bit about my other profession. Journalist. As a young journalist I was teach and trained on how to write (in my case mostly write for radio and print media). I was teach about theory.

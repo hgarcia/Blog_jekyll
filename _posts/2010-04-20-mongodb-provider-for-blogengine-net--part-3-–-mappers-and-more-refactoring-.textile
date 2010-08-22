@@ -57,7 +57,7 @@ Now that our code is better, let’s create the first mapper.
 </pre><pre style="background-color: #ffffff; margin: 0em; width: 100%; font-family: consolas,'Courier New',courier,monospace; font-size: 12px"> 19: 
 </pre><pre style="background-color: #ffffff; margin: 0em; width: 100%; font-family: consolas,'Courier New',courier,monospace; font-size: 12px"> 20:             <span style="color: #0000ff">return</span> post;
 </pre><pre style="background-color: #ffffff; margin: 0em; width: 100%; font-family: consolas,'Courier New',courier,monospace; font-size: 12px"> 21:         }</pre></pre>
-&amp;nbsp;
+
 
 That’s an ugly piece of code. And the worst thing is that we still have a lot of work ahead of us to finish this mapper. We haven’t dealt with any of the collections in the Post, for example the Comments, or the Tags. We didn’t write any error handling either, this will grow ugly fast. 
 

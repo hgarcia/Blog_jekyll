@@ -1,9 +1,9 @@
 ---
 layout: post
 title: JSLint for Visual Studio, Kew a new .Net language and other interesting stuff found on Codeplex
-summary: &amp;#160;   If you do any Js development at all you may want to consider installing this add in for Visual Studio that brings JSLint</...
+summary:    If you do any Js development at all you may want to consider installing this add in for Visual Studio that brings JSLint to the IDE.   If you are still doing asp.net web forms development you may consider to download this XHTML compliant templ...
 ---
-&amp;#160;
+
   If you do any Js development at all you may want to consider installing <a href="http://www.codeplex.com/jslint" target="_blank">this add in</a> for Visual Studio that brings <a href="http://www.jslint.com/" target="_blank">JSLint</a> to the IDE.
   If you are still doing asp.net web forms development you may consider to download <a href="http://www.codeplex.com/VSXHTML11Templates" target="_blank">this XHTML compliant templates</a> to clean up your code.
   ESENT is an embedded database that is part of Windows, this library is a <a href="http://www.codeplex.com/ManagedEsent" target="_blank">managed interface to ESENT</a>.

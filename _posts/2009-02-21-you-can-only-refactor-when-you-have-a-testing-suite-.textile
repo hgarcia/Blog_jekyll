@@ -1,9 +1,9 @@
 ---
 layout: post
 title: You can only refactor when you have a testing suite.
-summary: &amp;#160;   I don’t remember if I read this on Clean Code or Refactoring or maybe I just hear it somewhere, but It’s so true.    It’s not that you can’t change the code and that you can’t apply refactoring techniques. The problem is ...
+summary:    I don’t remember if I read this on Clean Code or Refactoring or maybe I just hear it somewhere, but It’s so true.    It’s not that you can’t change the code and that you can’t apply refactoring techniques. The problem is that each ch...
 ---
-&amp;#160;
+
   I don’t remember if I read this on Clean Code or Refactoring or maybe I just hear it somewhere, but It’s so true. 
   It’s not that you can’t change the code and that you can’t apply refactoring techniques. The problem is that each change may be breaking other stuff and changing functionality and there is not way to validate the state of the program without running the unit test.
   I started to work on a program that I download from Codeplex. The code is good but it’s not generic enough for what I need it to do, so I jump into it and started to refactor it.

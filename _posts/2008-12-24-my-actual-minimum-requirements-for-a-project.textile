@@ -1,9 +1,9 @@
 ---
 layout: post
 title: My actual minimum requirements for a project
-summary: &amp;#160;   My previous post got me thinking, what are the things I will considered as minimum requirements for me to work in a project even when I have serious constrains on time?   In requirements I mean methodologies and practices that I wi...
+summary:    My previous post got me thinking, what are the things I will considered as minimum requirements for me to work in a project even when I have serious constrains on time?   In requirements I mean methodologies and practices that I will need to u...
 ---
-&amp;#160;
+
   My previous post got me thinking, what are the things I will considered as minimum requirements for me to work in a project even when I have serious constrains on time?
   In requirements I mean methodologies and practices that I will need to use. After some thinking this is what I came up with.
   There are at least three things, commonly associated to an <a href="http://agilemanifesto.org/" target="_blank">Agile</a> project that I will want to have in place.

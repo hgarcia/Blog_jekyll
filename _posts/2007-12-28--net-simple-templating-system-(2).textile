@@ -10,6 +10,6 @@ Another constructor take an object that implements the ITemplateCompilable inter
 The support for nested objects is "perfect" now. There is no limit as how deep you want to go, of course this may affect perfomance since reflection is heavily used to get the values of the object, but the system impose no limits.
 You can use this notation:
 <pre lang="csharp">Hello #{member.name} our records indicate that you purchased the book: #{member.purchases.details.line1} .</pre>and pass an object to replace this whole variable (using the new Anonymous object notation the object may look like this).
-<pre lang="csharp">object o = new{member= new {name="Hernan", purchases= new{details= new{line1= "Agile Web Development with Rails", line2="Another book"} } } };</pre>&amp;nbsp;To get this output;
-<pre lang="csharp">Hello Hernan our records indicate that you purchased the book: Agile Web Development with Rails.</pre>You can find the new code <a target="_blank" href="content/binary/latrompalibraries.zip">here</a>.
-&amp;nbsp;
+<pre lang="csharp">object o = new{member= new {name="Hernan", purchases= new{details= new{line1= "Agile Web Development with Rails", line2="Another book"} } } };</pre>To get this output;
+<pre lang="csharp">Hello Hernan our records indicate that you purchased the book: Agile Web Development with Rails.</pre>You can find the new code <a target="_blank" href="images/posts/latrompalibraries.zip">here</a>.
+

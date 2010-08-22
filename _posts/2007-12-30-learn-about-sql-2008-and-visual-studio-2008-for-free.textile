@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Learn about SQL 2008 and Visual Studio 2008 for Free
-summary: Microsoft have a set of videos available to learn about the new features on SQL server 2008. You can find links to those videos <a href="http-//blogs.msdn.com/publicsector/archive/2007/12/27/free-e-learning-what-s-new-in-microsoft-sql-server-200...
+summary: Microsoft have a set of videos available to learn about the new features on SQL server 2008. You can find links to those videos here. Another set of videos give helpful information on the new features of VS 2008. The links to those video can be f...
 ---
 Microsoft have a set of videos available to learn about the new features on SQL server 2008.
 You can find links to those videos <a href="http://blogs.msdn.com/publicsector/archive/2007/12/27/free-e-learning-what-s-new-in-microsoft-sql-server-2008.aspx">here</a>.

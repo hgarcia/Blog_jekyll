@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Proper naming in generics and Lambda expressions.
-summary: Hopefully gone are the days were you considered ok the use of single letter names for your variables or your arguments and you are giving informative names to all the artifacts in your code.  But what about generics? What about the &amp;lt;T&amp...
+summary: Hopefully gone are the days were you considered ok the use of single letter names for your variables or your arguments and you are giving informative names to all the artifacts in your code.  But what about generics? What about the &amp;lt;T&amp;...
 ---
 Hopefully gone are the days were you considered ok the use of single letter names for your variables or your arguments and you are giving informative names to all the artifacts in your code.
  But what about generics? What about the &amp;lt;T&amp;gt; in them? Are you paying attention? More and more you will see that programmers are shying away from the single letter placeholder and are using more explanatory names. If you look at the code in FubuMvc you will see things like this.
