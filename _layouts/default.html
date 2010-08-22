@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+  <head>
+     <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+     <title>
+       The Dynamic Programmer - Hernan Garcia 
+       {% if page.title %}
+         : {{ page.title }}
+       {% endif %}
+     </title>
+     <meta name="author" content="Hernan Garcia" />
+     {% if page.summary %}
+       <meta namne="description" content="{{ page.summary }}" />
+     {% endif %}
+     <link href="http://feeds.feedburner.com/TheDynamicProgrammer" rel="alternate" title="The Dynamic Programmer - Hernan Garcia" type="application/atom+xml" />
+
+     <link rel="stylesheet" href="/stylesheets/syntax.css" type="text/css" />
+     <link rel="stylesheet" href="/stylesheets/default.css" type="text/css" />
+
+     {% for css in page.css %}
+       <link rel="stylesheet" href="{{ css }}" type="text/css" />
+     {% endfor %}
+  </head>
+  <body>
+      
+      <div id="content">
+        {{ content }}
+      </div>
+      
+    {% for js in page.javascript %}
+      <script type="text/javascript" src="{{ js }}"></script>
+    {% endfor %}
+
+	<script type="text/javascript">
+	var disqus_shortname = 'thedynamicprogrammer';
+	(function () {
+	  var s = document.createElement('script'); s.async = true;
+	  s.src = 'http://disqus.com/forums/thedynamicprogrammer/count.js';
+	  (document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
+	}());
+	</script>
+	<script type="text/javascript">
+		var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+		document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+		</script>
+		<script type="text/javascript">
+		try {
+		var pageTracker = _gat._getTracker("UA-7490131-1");
+		pageTracker._trackPageview();
+		} catch(err) {}
+	</script>
+
+  </body>
+</html>
