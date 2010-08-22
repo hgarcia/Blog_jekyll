@@ -1,15 +1,17 @@
 ---
 layout: post
 title: Implementing a validation class.
-summary:    How many times have you done this?   public void Delete(IEnumerable objectsToDelete){        if (objectsToDelete == null)    {        throw new ArgumentNullException(&amp;quot;objectsToDelete&amp;quot;);    }    //More code here}
-
-Every time I...
+summary: Every time I wrote validation this code I think, I should write a library to do this for me. So I went ahead and wrote this simple class. The idea is to use the Introduce Assertion Refactoring in this cases and write this code in this way. 
+     ...
 ---
-
-  How many times have you done this?
+Every time I wrote validation this code I think, I should write a library to do this for me. So I went ahead and wrote this simple class. The idea is to use the Introduce Assertion Refactoring in this cases and write this code in this way.
+
+      	
+      	
+  Instead of writing?
   <pre class="c#" name="code">public void Delete(IEnumerable objectsToDelete)<br />{    <br />    if (objectsToDelete == null)<br />    {<br />        throw new ArgumentNullException(&amp;quot;objectsToDelete&amp;quot;);<br />    }<br />    //More code here<br />}</pre>
 
-Every time I wrote this code I think, I should write a library to do this for me. So I went ahead and wrote this simple class. The idea is to use the Introduce Assertion Refactoring in this cases and write this code in this way.
+Now you can write
 
 
 <pre class="c#" name="code">public void Delete(IEnumerable objectsToDelete)<br />{<br />    Check.That(objectsToDelete).IsNotNull();<br />    //Mode code here<br />}</pre>
