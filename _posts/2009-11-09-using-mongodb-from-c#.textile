@@ -1,0 +1,102 @@
+---
+layout: post
+title: Using MongoDB from C#
+summary: The <a href="http://en.wikipedia.org/wiki/NoSQL" target="_blank">NoSql</a> movement is&amp;nbsp; gaining more and more inertia. A year or two ago I took a look at <a href="http://couchdb.apache.org/" target="_blank">CouchDb</a> but this time I wa...
+---
+The <a href="http://en.wikipedia.org/wiki/NoSQL" target="_blank">NoSql</a> movement is&amp;nbsp; gaining more and more inertia. A year or two ago I took a look at <a href="http://couchdb.apache.org/" target="_blank">CouchDb</a> but this time I wanted to try <a href="www.mongodb.org" target="_blank">MongoDB</a>. I have been hearing a lot of nice things about MongoDB, mostly about how simple is to query it and how fast is. So I decided that it was time to actually take it for a spin.
+ A quick search point me to <a href="http://odetocode.com/blogs/scott/archive/2009/10/13/experimenting-with-mongodb-from-c.aspx" target="_blank">this odetocode post</a> that was a great starting point to have Mongo running in my dev machine using the defaults and the Driver for C#. So, go and read K. Scott Allen’s post if you want to follow along with the code in the rest of this post.
+ <h5>Detour (some background on NoSql and MongoDB):</h5> <blockquote> <em>If you already know about this you can skip all this paragraph.</em>
+ <em>The so called NoSql movement is based on the notion that using RDBMS may not be the right choice in some cases. They propose using alternative databases, like key-value pair storages and document databases. To perform operations on the data some make use of Map-Reduce, others like MongoDB use a query mechanism that resembles Sql. One of the most attractive features of this db’s is the ability to easily run clusters and do </em><a href="http://www.codefutures.com/database-sharding/" target="_blank"><em>data sharding</em></a><em>. Most of them support both features without a lot of fuss, or that I heard.</em>
+ <em>MongoDB is a document based db, that stores the information as Binary Json.</em>
+ <em>End of detour.</em>
+</blockquote> <h5>What’s a document?</h5> A document is not the equivalent to a Row. A document can be seen as a key-value pair collection of objects. It’s actually a complete object Graph, persisted as Json. Documents are organized into Collections.
+ Now, to be usable in C# we need to have some mapping from the Document object to our object graph. We could use the Document directly but will be like going back to use DataTables, not very pretty.
+<pre><pre style="background-color: #ffffff; margin: 0em; width: 100%; font-family: consolas,'Courier New',courier,monospace; font-size: 12px">  1: <span style="color: #0000ff">var</span> movieName = movie["<span style="color: #8b0000">Name</span>"].ToString();
+</pre><pre style="background-color: #ffffff; margin: 0em; width: 100%; font-family: consolas,'Courier New',courier,monospace; font-size: 12px">  2: <span style="color: #0000ff">var</span> actors = JsonConvert.DeserializeObject&amp;lt;Dictionary&amp;lt;<span style="color: #0000ff">int</span>,string&amp;gt;&amp;gt;(movie["<span style="color: #8b0000">Actors</span>"].ToString());</pre></pre>
+The simple way to go from Json to an object should be to pass the load of a document to a JsonDeserializer like Json.Net and just get the object back, like this:
+<pre><pre style="background-color: #ffffff; margin: 0em; width: 100%; font-family: consolas,'Courier New',courier,monospace; font-size: 12px">  1: var movie = JsonConvert.DeserializeObject&amp;lt;Movie&amp;gt;(document.ToString());</pre></pre>
+But while trying to do so I got an error in the id of the document. Looking at the paymoad of the document the Id looks like this:
+<pre><pre style="background-color: #ffffff; margin: 0em; width: 100%; font-family: consolas,'Courier New',courier,monospace; font-size: 12px">  1: "<span style="color: #8b0000">_id</span>": ObjectId("<span style="color: #8b0000">4eebf0006829c72c1d000000</span>")</pre></pre>
+The problem is in the ObjectId function. But do not despair, there is an alternative.
+
+<h5>From a document to a fully usable object graph.</h5>
+The alternative is not pretty but works and is easy to implement. Just pass the document to the root of your object graph, an access the underlying collection via the objects properties. Let’s see how this can look like. (Note: Yes there are some hardcoded strings in there that should be removed. I’m also never closing the connection to the Db, when I probably should).
+<pre><pre style="background-color: #ffffff; margin: 0em; width: 100%; font-family: consolas,'Courier New',courier,monospace; font-size: 12px">  1: using System;
+</pre><pre style="background-color: #ffffff; margin: 0em; width: 100%; font-family: consolas,'Courier New',courier,monospace; font-size: 12px">  2: using System.Collections.Generic;</pre><pre style="background-color: #ffffff; margin: 0em; width: 100%; font-family: consolas,'Courier New',courier,monospace; font-size: 12px">  3: using Newtonsoft.Json;
+</pre><pre style="background-color: #ffffff; margin: 0em; width: 100%; font-family: consolas,'Courier New',courier,monospace; font-size: 12px">  4: using MongoDB.Driver;
+</pre><pre style="background-color: #ffffff; margin: 0em; width: 100%; font-family: consolas,'Courier New',courier,monospace; font-size: 12px">  5: 
+</pre><pre style="background-color: #ffffff; margin: 0em; width: 100%; font-family: consolas,'Courier New',courier,monospace; font-size: 12px">  6: <span style="color: #0000ff">public</span> <span style="color: #0000ff">class</span> Repository
+</pre><pre style="background-color: #ffffff; margin: 0em; width: 100%; font-family: consolas,'Courier New',courier,monospace; font-size: 12px">  7: {
+</pre><pre style="background-color: #ffffff; margin: 0em; width: 100%; font-family: consolas,'Courier New',courier,monospace; font-size: 12px">  8:     <span style="color: #0000ff">private</span> Database _db;
+</pre><pre style="background-color: #ffffff; margin: 0em; width: 100%; font-family: consolas,'Courier New',courier,monospace; font-size: 12px">  9: 
+</pre><pre style="background-color: #ffffff; margin: 0em; width: 100%; font-family: consolas,'Courier New',courier,monospace; font-size: 12px"> 10:     <span style="color: #0000ff">public</span> Database Db()
+</pre><pre style="background-color: #ffffff; margin: 0em; width: 100%; font-family: consolas,'Courier New',courier,monospace; font-size: 12px"> 11:     {
+</pre><pre style="background-color: #ffffff; margin: 0em; width: 100%; font-family: consolas,'Courier New',courier,monospace; font-size: 12px"> 12:         <span style="color: #0000ff">if</span>(_db != <span style="color: #0000ff">null</span>) <span style="color: #0000ff">return</span> _db;
+</pre><pre style="background-color: #ffffff; margin: 0em; width: 100%; font-family: consolas,'Courier New',courier,monospace; font-size: 12px"> 13:         <span style="color: #0000ff">var</span> server = <span style="color: #0000ff">new</span> Mongo();
+</pre><pre style="background-color: #ffffff; margin: 0em; width: 100%; font-family: consolas,'Courier New',courier,monospace; font-size: 12px"> 14:         server.Connect();
+</pre><pre style="background-color: #ffffff; margin: 0em; width: 100%; font-family: consolas,'Courier New',courier,monospace; font-size: 12px"> 15:         _db = server.getDB("<span style="color: #8b0000">DynamicProgrammer</span>");
+</pre><pre style="background-color: #ffffff; margin: 0em; width: 100%; font-family: consolas,'Courier New',courier,monospace; font-size: 12px"> 16:         <span style="color: #0000ff">return</span> _db;
+</pre><pre style="background-color: #ffffff; margin: 0em; width: 100%; font-family: consolas,'Courier New',courier,monospace; font-size: 12px"> 17:     }
+</pre><pre style="background-color: #ffffff; margin: 0em; width: 100%; font-family: consolas,'Courier New',courier,monospace; font-size: 12px"> 18: 
+</pre><pre style="background-color: #ffffff; margin: 0em; width: 100%; font-family: consolas,'Courier New',courier,monospace; font-size: 12px"> 19:     <span style="color: #0000ff">public</span> <span style="color: #0000ff">void</span> Insert(Document <span style="color: #0000ff">document</span>, string collectionName)
+</pre><pre style="background-color: #ffffff; margin: 0em; width: 100%; font-family: consolas,'Courier New',courier,monospace; font-size: 12px"> 20:     {
+</pre><pre style="background-color: #ffffff; margin: 0em; width: 100%; font-family: consolas,'Courier New',courier,monospace; font-size: 12px"> 21:         <span style="color: #0000ff">var</span> collection = Db().GetCollection(collectionName);
+</pre><pre style="background-color: #ffffff; margin: 0em; width: 100%; font-family: consolas,'Courier New',courier,monospace; font-size: 12px"> 22:         collection.Insert(<span style="color: #0000ff">document</span>);
+</pre><pre style="background-color: #ffffff; margin: 0em; width: 100%; font-family: consolas,'Courier New',courier,monospace; font-size: 12px"> 23:     }
+</pre><pre style="background-color: #ffffff; margin: 0em; width: 100%; font-family: consolas,'Courier New',courier,monospace; font-size: 12px"> 24: 
+</pre><pre style="background-color: #ffffff; margin: 0em; width: 100%; font-family: consolas,'Courier New',courier,monospace; font-size: 12px"> 25:     <span style="color: #0000ff">public</span> IEnumerable&amp;lt;TDocument&amp;gt; getListOf&amp;lt;TDocument&amp;gt;(string whereClause, string fromCollection) where TDocument : IMongoEntity
+</pre><pre style="background-color: #ffffff; margin: 0em; width: 100%; font-family: consolas,'Courier New',courier,monospace; font-size: 12px"> 26:     {
+</pre><pre style="background-color: #ffffff; margin: 0em; width: 100%; font-family: consolas,'Courier New',courier,monospace; font-size: 12px"> 27:         <span style="color: #0000ff">var</span> docs = Db().GetCollection(fromCollection)
+</pre><pre style="background-color: #ffffff; margin: 0em; width: 100%; font-family: consolas,'Courier New',courier,monospace; font-size: 12px"> 28:             .Find(whereClause).Documents;     
+</pre><pre style="background-color: #ffffff; margin: 0em; width: 100%; font-family: consolas,'Courier New',courier,monospace; font-size: 12px"> 29:         <span style="color: #0000ff">return</span> docsToCollection&amp;lt;TDocument&amp;gt;(docs);
+</pre><pre style="background-color: #ffffff; margin: 0em; width: 100%; font-family: consolas,'Courier New',courier,monospace; font-size: 12px"> 30: 
+</pre><pre style="background-color: #ffffff; margin: 0em; width: 100%; font-family: consolas,'Courier New',courier,monospace; font-size: 12px"> 31:     }
+</pre><pre style="background-color: #ffffff; margin: 0em; width: 100%; font-family: consolas,'Courier New',courier,monospace; font-size: 12px"> 32: 
+</pre><pre style="background-color: #ffffff; margin: 0em; width: 100%; font-family: consolas,'Courier New',courier,monospace; font-size: 12px"> 33:     <span style="color: #0000ff">private</span> IEnumerable&amp;lt;TDocument&amp;gt; docsToCollection&amp;lt;TDocument&amp;gt;(IEnumerable&amp;lt;Document&amp;gt; documents) where TDocument : IMongoEntity
+</pre><pre style="background-color: #ffffff; margin: 0em; width: 100%; font-family: consolas,'Courier New',courier,monospace; font-size: 12px"> 34:     {
+</pre><pre style="background-color: #ffffff; margin: 0em; width: 100%; font-family: consolas,'Courier New',courier,monospace; font-size: 12px"> 35:         <span style="color: #0000ff">var</span> list = <span style="color: #0000ff">new</span> List&amp;lt;TDocument&amp;gt;();
+</pre><pre style="background-color: #ffffff; margin: 0em; width: 100%; font-family: consolas,'Courier New',courier,monospace; font-size: 12px"> 36:         <span style="color: #0000ff">var</span> settings = <span style="color: #0000ff">new</span> JsonSerializerSettings();
+</pre><pre style="background-color: #ffffff; margin: 0em; width: 100%; font-family: consolas,'Courier New',courier,monospace; font-size: 12px"> 37: 
+</pre><pre style="background-color: #ffffff; margin: 0em; width: 100%; font-family: consolas,'Courier New',courier,monospace; font-size: 12px"> 38:         foreach (<span style="color: #0000ff">var</span> <span style="color: #0000ff">document</span> <span style="color: #0000ff">in</span> documents)
+</pre><pre style="background-color: #ffffff; margin: 0em; width: 100%; font-family: consolas,'Courier New',courier,monospace; font-size: 12px"> 39:         {
+</pre><pre style="background-color: #ffffff; margin: 0em; width: 100%; font-family: consolas,'Courier New',courier,monospace; font-size: 12px"> 40:             <span style="color: #0000ff">var</span> docType = Activator.CreateInstance&amp;lt;TDocument&amp;gt;();
+</pre><pre style="background-color: #ffffff; margin: 0em; width: 100%; font-family: consolas,'Courier New',courier,monospace; font-size: 12px"> 41:             docType.InternalDocument = <span style="color: #0000ff">document</span>;
+</pre><pre style="background-color: #ffffff; margin: 0em; width: 100%; font-family: consolas,'Courier New',courier,monospace; font-size: 12px"> 42:             list.Add(docType);
+</pre><pre style="background-color: #ffffff; margin: 0em; width: 100%; font-family: consolas,'Courier New',courier,monospace; font-size: 12px"> 43:         }
+</pre><pre style="background-color: #ffffff; margin: 0em; width: 100%; font-family: consolas,'Courier New',courier,monospace; font-size: 12px"> 44:         <span style="color: #0000ff">return</span> list;
+</pre><pre style="background-color: #ffffff; margin: 0em; width: 100%; font-family: consolas,'Courier New',courier,monospace; font-size: 12px"> 45:     }
+</pre><pre style="background-color: #ffffff; margin: 0em; width: 100%; font-family: consolas,'Courier New',courier,monospace; font-size: 12px"> 46: 
+</pre><pre style="background-color: #ffffff; margin: 0em; width: 100%; font-family: consolas,'Courier New',courier,monospace; font-size: 12px"> 47: }
+</pre><pre style="background-color: #ffffff; margin: 0em; width: 100%; font-family: consolas,'Courier New',courier,monospace; font-size: 12px"> 48: </pre></pre>
+IMongoEntity is a simple interface to force our entities to expose the Doc property.
+<pre><pre style="background-color: #ffffff; margin: 0em; width: 100%; font-family: consolas,'Courier New',courier,monospace; font-size: 12px">  1: <span style="color: #0000ff">public</span> <span style="color: #0000ff">interface</span> IMongoEntity
+</pre><pre style="background-color: #ffffff; margin: 0em; width: 100%; font-family: consolas,'Courier New',courier,monospace; font-size: 12px">  2: {
+</pre><pre style="background-color: #ffffff; margin: 0em; width: 100%; font-family: consolas,'Courier New',courier,monospace; font-size: 12px">  3:     Document InternalDocument { get; set; }
+</pre><pre style="background-color: #ffffff; margin: 0em; width: 100%; font-family: consolas,'Courier New',courier,monospace; font-size: 12px">  4: }
+</pre><pre style="background-color: #ffffff; margin: 0em; width: 100%; font-family: consolas,'Courier New',courier,monospace; font-size: 12px">  5: </pre></pre>
+And our Movie Entity will look like:
+<pre><pre style="background-color: #ffffff; margin: 0em; width: 100%; font-family: consolas,'Courier New',courier,monospace; font-size: 12px">  1: <span style="color: #0000ff">public</span> <span style="color: #0000ff">class</span> Movie : IMongoEntity
+</pre><pre style="background-color: #ffffff; margin: 0em; width: 100%; font-family: consolas,'Courier New',courier,monospace; font-size: 12px">  2: {
+</pre><pre style="background-color: #ffffff; margin: 0em; width: 100%; font-family: consolas,'Courier New',courier,monospace; font-size: 12px">  3:     <span style="color: #0000ff">public</span> string Name
+</pre><pre style="background-color: #ffffff; margin: 0em; width: 100%; font-family: consolas,'Courier New',courier,monospace; font-size: 12px">  4:     {
+</pre><pre style="background-color: #ffffff; margin: 0em; width: 100%; font-family: consolas,'Courier New',courier,monospace; font-size: 12px">  5:         get { <span style="color: #0000ff">return</span> InternalDocument["<span style="color: #8b0000">Name</span>"].ToString(); }
+</pre><pre style="background-color: #ffffff; margin: 0em; width: 100%; font-family: consolas,'Courier New',courier,monospace; font-size: 12px">  6:         set { InternalDocument["<span style="color: #8b0000">Name</span>"] = value; }
+</pre><pre style="background-color: #ffffff; margin: 0em; width: 100%; font-family: consolas,'Courier New',courier,monospace; font-size: 12px">  7:     }
+</pre><pre style="background-color: #ffffff; margin: 0em; width: 100%; font-family: consolas,'Courier New',courier,monospace; font-size: 12px">  8: 
+</pre><pre style="background-color: #ffffff; margin: 0em; width: 100%; font-family: consolas,'Courier New',courier,monospace; font-size: 12px">  9:     <span style="color: #0000ff">public</span> <span style="color: #0000ff">int</span> ProductionYear
+</pre><pre style="background-color: #ffffff; margin: 0em; width: 100%; font-family: consolas,'Courier New',courier,monospace; font-size: 12px"> 10:     {
+</pre><pre style="background-color: #ffffff; margin: 0em; width: 100%; font-family: consolas,'Courier New',courier,monospace; font-size: 12px"> 11:         get { <span style="color: #0000ff">return</span> (<span style="color: #0000ff">int</span>)InternalDocument["<span style="color: #8b0000">Year</span>"]; }
+</pre><pre style="background-color: #ffffff; margin: 0em; width: 100%; font-family: consolas,'Courier New',courier,monospace; font-size: 12px"> 12:         set { InternalDocument["<span style="color: #8b0000">Year</span>"] = value; }
+</pre><pre style="background-color: #ffffff; margin: 0em; width: 100%; font-family: consolas,'Courier New',courier,monospace; font-size: 12px"> 13:     }
+</pre><pre style="background-color: #ffffff; margin: 0em; width: 100%; font-family: consolas,'Courier New',courier,monospace; font-size: 12px"> 14: 
+</pre><pre style="background-color: #ffffff; margin: 0em; width: 100%; font-family: consolas,'Courier New',courier,monospace; font-size: 12px"> 15:     <span style="color: #0000ff">public</span> Dictionary&amp;lt;<span style="color: #0000ff">int</span>, string&amp;gt; Actors
+</pre><pre style="background-color: #ffffff; margin: 0em; width: 100%; font-family: consolas,'Courier New',courier,monospace; font-size: 12px"> 16:     {
+</pre><pre style="background-color: #ffffff; margin: 0em; width: 100%; font-family: consolas,'Courier New',courier,monospace; font-size: 12px"> 17:         get { <span style="color: #0000ff">return</span> JsonConvert.DeserializeObject&amp;lt;Dictionary&amp;lt;<span style="color: #0000ff">int</span>, string&amp;gt;&amp;gt;(InternalDocument["<span style="color: #8b0000">Actors</span>"].ToString()); }
+</pre><pre style="background-color: #ffffff; margin: 0em; width: 100%; font-family: consolas,'Courier New',courier,monospace; font-size: 12px"> 18:         set { InternalDocument["<span style="color: #8b0000">Actors</span>"] = value; }
+</pre><pre style="background-color: #ffffff; margin: 0em; width: 100%; font-family: consolas,'Courier New',courier,monospace; font-size: 12px"> 19:     }
+</pre><pre style="background-color: #ffffff; margin: 0em; width: 100%; font-family: consolas,'Courier New',courier,monospace; font-size: 12px"> 20: 
+</pre><pre style="background-color: #ffffff; margin: 0em; width: 100%; font-family: consolas,'Courier New',courier,monospace; font-size: 12px"> 21:     <span style="color: #0000ff">public</span> Document InternalDocument { get; set; }
+</pre><pre style="background-color: #ffffff; margin: 0em; width: 100%; font-family: consolas,'Courier New',courier,monospace; font-size: 12px"> 22: }</pre></pre>
+Notice I’m using JsonConverter to return a complex type, we should probably encapsulate that functionality in some kind of base class, maybe convert IMongoEntity into an abstract class that provides some basic utilities.
+
+I will try to dig deeper into MongoDB, seems to be really suited to a Domain first approach. I wasn’t able to have anything but the most simple queries working, so I will have to take a closer look at the syntax.

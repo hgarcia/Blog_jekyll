@@ -1,0 +1,9 @@
+---
+layout: post
+title: Microsoft Volta - AIR.NET?
+summary: I just came across this: <a target="_blank" href="http://labs.live.com/volta/">http://labs.live.com/volta/.</a> I haven't downloaded or anything but my first impression is that this try to be some kind of AIR. It's not exactly the same, but the ...
+---
+I just came across this: <a target="_blank" href="http://labs.live.com/volta/">http://labs.live.com/volta/.</a>
+I haven't downloaded or anything but my first impression is that this try to be some kind of AIR. It's not exactly the same, but the idea, according with my limited understading, is that you program an application using any .NET language and them you can compile the application targeting different architectures. The client side always run on a JScript interpreter, most of the time that will be a browser.
+I tried some of the examples and the load time seems to be a little too much for my taste. Upon looking at the Net tab in Firebug, a simple Ajax dictionary download 2.67 Mg of code mostly JavaScript files that map into .net classes, but that is not the worst part, the really bad thing is that it do this making <strong>175 individual httpRequest!!!!</strong>
+To be fair this is just a Technology Preview and I'm sure that they may work on some of this issues. This came out just two days ago, so I encourage you all to download it and give a try to learn more, I know I will do that.

@@ -1,0 +1,73 @@
+---
+layout: post
+title: MongoDb provider for BlogEngine.net, part 3 – Mappers and more refactoring.
+summary: In the previous post on this series we manage to get our Insert and a basic Select methods working. Today we need to implement the mapper class for Post. But first let’s check what we have done so far and see if we can improve this a bit. We no...
+---
+In the previous post on this series we manage to get our Insert and a basic Select methods working. Today we need to implement the mapper class for Post. But first let’s check what we have done so far and see if we can improve this a bit. We notice some duplication on the MongoDb class.
+ This code is triplicate.
+<pre><pre style="background-color: #ffffff; margin: 0em; width: 100%; font-family: consolas,'Courier New',courier,monospace; font-size: 12px">  1:         <span style="color: #0000ff">public</span> <span style="color: #0000ff">void</span> Insert&amp;lt;TEntity&amp;gt;(TEntity entity)
+</pre><pre style="background-color: #ffffff; margin: 0em; width: 100%; font-family: consolas,'Courier New',courier,monospace; font-size: 12px">  2:         {
+</pre><pre style="background-color: #ffffff; margin: 0em; width: 100%; font-family: consolas,'Courier New',courier,monospace; font-size: 12px">  3:             var document = _mongoMapperFactory.GetMapper&amp;lt;TEntity&amp;gt;().Map(entity);
+</pre><pre style="background-color: #ffff80; margin: 0em; width: 100%; font-family: consolas,'Courier New',courier,monospace; font-size: 12px">  4:             Db(db=&amp;gt; db.GetCollection(entity.GetType().Name+"<span style="color: #8b0000">Docs</span>").Insert(document));
+</pre><pre style="background-color: #ffffff; margin: 0em; width: 100%; font-family: consolas,'Courier New',courier,monospace; font-size: 12px">  5:         }
+</pre><pre style="background-color: #ffffff; margin: 0em; width: 100%; font-family: consolas,'Courier New',courier,monospace; font-size: 12px">  6: </pre></pre><pre><pre style="background-color: #ffffff; margin: 0em; width: 100%; font-family: consolas,'Courier New',courier,monospace; font-size: 12px">  1: 
+</pre><pre style="background-color: #ffffff; margin: 0em; width: 100%; font-family: consolas,'Courier New',courier,monospace; font-size: 12px">  2:         <span style="color: #0000ff">public</span> TEntity SelectOne&amp;lt;TEntity&amp;gt;(<span style="color: #0000ff">string</span> id)
+</pre><pre style="background-color: #ffffff; margin: 0em; width: 100%; font-family: consolas,'Courier New',courier,monospace; font-size: 12px">  3:         {
+</pre><pre style="background-color: #ffffff; margin: 0em; width: 100%; font-family: consolas,'Courier New',courier,monospace; font-size: 12px">  4:             Document document;
+</pre><pre style="background-color: #ffffff; margin: 0em; width: 100%; font-family: consolas,'Courier New',courier,monospace; font-size: 12px">  5:             <span style="color: #0000ff">using</span> (var server = GetServer())
+</pre><pre style="background-color: #ffffff; margin: 0em; width: 100%; font-family: consolas,'Courier New',courier,monospace; font-size: 12px">  6:             {
+</pre><pre style="background-color: #ffffff; margin: 0em; width: 100%; font-family: consolas,'Courier New',courier,monospace; font-size: 12px">  7:                 document = server.getDB(_dbName)
+</pre><pre style="background-color: #ffff80; margin: 0em; width: 100%; font-family: consolas,'Courier New',courier,monospace; font-size: 12px">  8:                     .GetCollection(<span style="color: #0000ff">typeof</span> (TEntity).Name + "<span style="color: #8b0000">Docs</span>")
+</pre><pre style="background-color: #ffffff; margin: 0em; width: 100%; font-family: consolas,'Courier New',courier,monospace; font-size: 12px">  9:                     .AsQueryable()
+</pre><pre style="background-color: #ffffff; margin: 0em; width: 100%; font-family: consolas,'Courier New',courier,monospace; font-size: 12px"> 10:                     .First(doc =&amp;gt; doc["<span style="color: #8b0000">Id</span>"].ToString().Contains(id));
+</pre><pre style="background-color: #ffffff; margin: 0em; width: 100%; font-family: consolas,'Courier New',courier,monospace; font-size: 12px"> 11:                 var mapper = _mongoMapperFactory.GetMapper&amp;lt;TEntity&amp;gt;();
+</pre><pre style="background-color: #ffffff; margin: 0em; width: 100%; font-family: consolas,'Courier New',courier,monospace; font-size: 12px"> 12:                 <span style="color: #0000ff">return</span> mapper.Map(document);
+</pre><pre style="background-color: #ffffff; margin: 0em; width: 100%; font-family: consolas,'Courier New',courier,monospace; font-size: 12px"> 13:             }
+</pre><pre style="background-color: #ffffff; margin: 0em; width: 100%; font-family: consolas,'Courier New',courier,monospace; font-size: 12px"> 14:         }</pre></pre><pre><pre style="background-color: #ffffff; margin: 0em; width: 100%; font-family: consolas,'Courier New',courier,monospace; font-size: 12px">  1: 
+</pre><pre style="background-color: #ffffff; margin: 0em; width: 100%; font-family: consolas,'Courier New',courier,monospace; font-size: 12px">  2:         <span style="color: #0000ff">public</span> IQueryable GetQueryableFOr&amp;lt;TEntity&amp;gt;()
+</pre><pre style="background-color: #ffffff; margin: 0em; width: 100%; font-family: consolas,'Courier New',courier,monospace; font-size: 12px">  3:         {
+</pre><pre style="background-color: #ffffff; margin: 0em; width: 100%; font-family: consolas,'Courier New',courier,monospace; font-size: 12px">  4:             <span style="color: #0000ff">return</span> GetServer().getDB(_dbName)
+</pre><pre style="background-color: #ffff80; margin: 0em; width: 100%; font-family: consolas,'Courier New',courier,monospace; font-size: 12px">  5:                 .GetCollection(<span style="color: #0000ff">typeof</span> (TEntity).Name + "<span style="color: #8b0000">Docs</span>")
+</pre><pre style="background-color: #ffffff; margin: 0em; width: 100%; font-family: consolas,'Courier New',courier,monospace; font-size: 12px">  6:                 .AsQueryable();
+</pre><pre style="background-color: #ffffff; margin: 0em; width: 100%; font-family: consolas,'Courier New',courier,monospace; font-size: 12px">  7:         }</pre></pre>
+First we modify the semantics in the first routine to make it identical to the other two. Them we do Extract method on it and replace all the instances with a call to this new method.
+<pre><pre style="background-color: #ffffff; margin: 0em; width: 100%; font-family: consolas,'Courier New',courier,monospace; font-size: 12px">  1:         <span style="color: #0000ff">public</span> <span style="color: #0000ff">static</span> <span style="color: #0000ff">string</span> GetCollectionNameFor&amp;lt;TEntity&amp;gt;()
+</pre><pre style="background-color: #ffffff; margin: 0em; width: 100%; font-family: consolas,'Courier New',courier,monospace; font-size: 12px">  2:         {
+</pre><pre style="background-color: #ffffff; margin: 0em; width: 100%; font-family: consolas,'Courier New',courier,monospace; font-size: 12px">  3:             <span style="color: #0000ff">return</span> <span style="color: #0000ff">typeof</span> (TEntity).Name + "<span style="color: #8b0000">Docs</span>";
+</pre><pre style="background-color: #ffffff; margin: 0em; width: 100%; font-family: consolas,'Courier New',courier,monospace; font-size: 12px">  4:         }</pre></pre>
+Now that our code is better, let’s create the first mapper.
+<pre><pre style="background-color: #ffffff; margin: 0em; width: 100%; font-family: consolas,'Courier New',courier,monospace; font-size: 12px">  1:         <span style="color: #0000ff">public</span> Post Map(Document document)
+</pre><pre style="background-color: #ffffff; margin: 0em; width: 100%; font-family: consolas,'Courier New',courier,monospace; font-size: 12px">  2:         {
+</pre><pre style="background-color: #ffffff; margin: 0em; width: 100%; font-family: consolas,'Courier New',courier,monospace; font-size: 12px">  3:             var post = <span style="color: #0000ff">new</span> Post
+</pre><pre style="background-color: #ffffff; margin: 0em; width: 100%; font-family: consolas,'Courier New',courier,monospace; font-size: 12px">  4:                            {
+</pre><pre style="background-color: #ffffff; margin: 0em; width: 100%; font-family: consolas,'Courier New',courier,monospace; font-size: 12px">  5:                                Id = <span style="color: #0000ff">new</span> Guid(document["<span style="color: #8b0000">Id</span>"].ToString()),
+</pre><pre style="background-color: #ffffff; margin: 0em; width: 100%; font-family: consolas,'Courier New',courier,monospace; font-size: 12px">  6:                                Author = document["<span style="color: #8b0000">Author</span>"].ToString(),
+</pre><pre style="background-color: #ffffff; margin: 0em; width: 100%; font-family: consolas,'Courier New',courier,monospace; font-size: 12px">  7:                                Title = document["<span style="color: #8b0000">Title</span>"].ToString(),
+</pre><pre style="background-color: #ffffff; margin: 0em; width: 100%; font-family: consolas,'Courier New',courier,monospace; font-size: 12px">  8:                                Description = document["<span style="color: #8b0000">Description</span>"].ToString(),
+</pre><pre style="background-color: #ffffff; margin: 0em; width: 100%; font-family: consolas,'Courier New',courier,monospace; font-size: 12px">  9:                                Content = document["<span style="color: #8b0000">Content</span>"].ToString(),
+</pre><pre style="background-color: #ffffff; margin: 0em; width: 100%; font-family: consolas,'Courier New',courier,monospace; font-size: 12px"> 10:                                DateCreated = DateTime.Parse(document["<span style="color: #8b0000">Raters</span>"].ToString(), CultureInfo.InvariantCulture),
+</pre><pre style="background-color: #ffffff; margin: 0em; width: 100%; font-family: consolas,'Courier New',courier,monospace; font-size: 12px"> 11:                                DateModified =
+</pre><pre style="background-color: #ffffff; margin: 0em; width: 100%; font-family: consolas,'Courier New',courier,monospace; font-size: 12px"> 12:                                    DateTime.Parse(document["<span style="color: #8b0000">Raters</span>"].ToString(), CultureInfo.InvariantCulture),
+</pre><pre style="background-color: #ffffff; margin: 0em; width: 100%; font-family: consolas,'Courier New',courier,monospace; font-size: 12px"> 13:                                IsPublished = <span style="color: #0000ff">bool</span>.Parse(document["<span style="color: #8b0000">Raters</span>"].ToString()),
+</pre><pre style="background-color: #ffffff; margin: 0em; width: 100%; font-family: consolas,'Courier New',courier,monospace; font-size: 12px"> 14:                                IsCommentsEnabled = <span style="color: #0000ff">bool</span>.Parse(document["<span style="color: #8b0000">Raters</span>"].ToString()),
+</pre><pre style="background-color: #ffffff; margin: 0em; width: 100%; font-family: consolas,'Courier New',courier,monospace; font-size: 12px"> 15:                                Raters = <span style="color: #0000ff">int</span>.Parse(document["<span style="color: #8b0000">Raters</span>"].ToString(), CultureInfo.InvariantCulture),
+</pre><pre style="background-color: #ffffff; margin: 0em; width: 100%; font-family: consolas,'Courier New',courier,monospace; font-size: 12px"> 16:                                Rating = <span style="color: #0000ff">float</span>.Parse(document["<span style="color: #8b0000">Rating</span>"].ToString(), CultureInfo.GetCultureInfo("<span style="color: #8b0000">en-gb</span>")),
+</pre><pre style="background-color: #ffffff; margin: 0em; width: 100%; font-family: consolas,'Courier New',courier,monospace; font-size: 12px"> 17:                                Slug = document["<span style="color: #8b0000">Slug</span>"].ToString()
+</pre><pre style="background-color: #ffffff; margin: 0em; width: 100%; font-family: consolas,'Courier New',courier,monospace; font-size: 12px"> 18:                            };
+</pre><pre style="background-color: #ffffff; margin: 0em; width: 100%; font-family: consolas,'Courier New',courier,monospace; font-size: 12px"> 19: 
+</pre><pre style="background-color: #ffffff; margin: 0em; width: 100%; font-family: consolas,'Courier New',courier,monospace; font-size: 12px"> 20:             <span style="color: #0000ff">return</span> post;
+</pre><pre style="background-color: #ffffff; margin: 0em; width: 100%; font-family: consolas,'Courier New',courier,monospace; font-size: 12px"> 21:         }</pre></pre>
+&amp;nbsp;
+
+That’s an ugly piece of code. And the worst thing is that we still have a lot of work ahead of us to finish this mapper. We haven’t dealt with any of the collections in the Post, for example the Comments, or the Tags. We didn’t write any error handling either, this will grow ugly fast. 
+
+A better way to deal with it will be to start leveraging conventions and mappers to deal with it as automatically as possible.
+
+<h5>Conclusion.</h5>
+As you can see using MongoDb in an existing application is possible. I purposely didn’t touch the code of the application what could have made some of this changes easier. 
+
+NoRM is looking very good and if you are starting from scratch I will use that driver that provides serialization and deserialization out of the box.
+
+Today I saw that MongoHQ release a free version of their hosted solution and paying accounts start for as little as $5/month.
+
+Go ahead and give Mongo a try. You will be happy.

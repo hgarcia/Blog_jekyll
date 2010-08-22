@@ -1,0 +1,44 @@
+---
+layout: post
+title: MongoDB provider for Blogengine.net, saving a Post – Part 2
+summary: Yesterday we created our first method in the MongoDbProvider, our implementation of BlogProvider. We created a few supporting classes, but we don’t have test for those classes. We recognize that we went a little bit too far in our coding. We go...
+---
+Yesterday we created our first method in the MongoDbProvider, our implementation of BlogProvider. We created a few supporting classes, but we don’t have test for those classes. We recognize that we went a little bit too far in our coding. We got carry away and we started to implement a little bit more than needed to make the test pass.
+ So let’s fix that. First we need to see our first test passing. We run it expecting to fail to save and load the post but we have a different Exception thrown.
+ <a href="http://blog.dynamicprogrammer.com/content/binary/WindowsLiveWriter/MongoDBproviderforBl.netsavingaPostPart2_8480/server_null_failing_test.png"><img style="border-right-width: 0px; display: inline; border-top-width: 0px; border-bottom-width: 0px; border-left-width: 0px" title="server_null_failing_test" border="0" alt="server_null_failing_test" src="http://blog.dynamicprogrammer.com/content/binary/WindowsLiveWriter/MongoDBproviderforBl.netsavingaPostPart2_8480/server_null_failing_test_thumb.png" width="545" height="182"></a> 
+ If we look at the code we notice that we made a big mistake in the Mongo class. We declared a _server private field but we are initializing a local server variable. <br>So when calling Disconnect on _server inside the Dispose method we get the NullReferenceException. <br>Let’s write a test to reproduce that bug at the unit level and see what else we can fix in that class.
+ Looking at it we discover a few dependencies that can be brake. First we create an IMongoMapperFactory interface and we make MongoMapperFactory to implement it. <br>There is another dependency, the name of the database to use. We made both parameters for the constructor <a href="http://en.wikipedia.org/wiki/Dependency_inversion_principle" target="_blank">inverting the dependencies</a>.
+<pre><pre style="background-color: #ffffff; margin: 0em; width: 100%; font-family: consolas,'Courier New',courier,monospace; font-size: 12px">  1:         <span style="color: #0000ff">public</span> MongoDb(IMongoMapperFactory mongoMapperFactory, <span style="color: #0000ff">string</span> dbName)
+</pre><pre style="background-color: #ffffff; margin: 0em; width: 100%; font-family: consolas,'Courier New',courier,monospace; font-size: 12px">  2:         {
+</pre><pre style="background-color: #ffffff; margin: 0em; width: 100%; font-family: consolas,'Courier New',courier,monospace; font-size: 12px">  3:             _mongoMapperFactory = mongoMapperFactory;
+</pre><pre style="background-color: #ffffff; margin: 0em; width: 100%; font-family: consolas,'Courier New',courier,monospace; font-size: 12px">  4:             _dbName = dbName;
+</pre><pre style="background-color: #ffffff; margin: 0em; width: 100%; font-family: consolas,'Courier New',courier,monospace; font-size: 12px">  5:         }</pre></pre>
+We also changed the Insert method:
+<pre><pre style="background-color: #ffffff; margin: 0em; width: 100%; font-family: consolas,'Courier New',courier,monospace; font-size: 12px">  1:         <span style="color: #0000ff">public</span> <span style="color: #0000ff">void</span> Insert&amp;lt;TEntity&amp;gt;(TEntity entity)
+</pre><pre style="background-color: #ffffff; margin: 0em; width: 100%; font-family: consolas,'Courier New',courier,monospace; font-size: 12px">  2:         {
+</pre><pre style="background-color: #ffffff; margin: 0em; width: 100%; font-family: consolas,'Courier New',courier,monospace; font-size: 12px">  3:             var document = _mongoMapperFactory.GetMapper&amp;lt;TEntity&amp;gt;().Map(entity);
+</pre><pre style="background-color: #ffffff; margin: 0em; width: 100%; font-family: consolas,'Courier New',courier,monospace; font-size: 12px">  4:             Db(db=&amp;gt; db.GetCollection(entity.GetType().Name+"<span style="color: #8b0000">Docs</span>").Insert(document));
+</pre><pre style="background-color: #ffffff; margin: 0em; width: 100%; font-family: consolas,'Courier New',courier,monospace; font-size: 12px">  5:         }</pre></pre>
+Notice that the private Db method now takes an Action&amp;lt;Database&amp;gt;
+<pre><pre style="background-color: #ffffff; margin: 0em; width: 100%; font-family: consolas,'Courier New',courier,monospace; font-size: 12px">  1:         <span style="color: #0000ff">private</span> <span style="color: #0000ff">void</span> Db(Action&amp;lt;Database&amp;gt; action)
+</pre><pre style="background-color: #ffffff; margin: 0em; width: 100%; font-family: consolas,'Courier New',courier,monospace; font-size: 12px">  2:         {
+</pre><pre style="background-color: #ffffff; margin: 0em; width: 100%; font-family: consolas,'Courier New',courier,monospace; font-size: 12px">  3:             <span style="color: #0000ff">using</span> (var server = getServer())
+</pre><pre style="background-color: #ffffff; margin: 0em; width: 100%; font-family: consolas,'Courier New',courier,monospace; font-size: 12px">  4:             {
+</pre><pre style="background-color: #ffffff; margin: 0em; width: 100%; font-family: consolas,'Courier New',courier,monospace; font-size: 12px">  5:                 var db = server.getDB(_dbName);
+</pre><pre style="background-color: #ffffff; margin: 0em; width: 100%; font-family: consolas,'Courier New',courier,monospace; font-size: 12px">  6:                 action.Invoke(db);
+</pre><pre style="background-color: #ffffff; margin: 0em; width: 100%; font-family: consolas,'Courier New',courier,monospace; font-size: 12px">  7:             }
+</pre><pre style="background-color: #ffffff; margin: 0em; width: 100%; font-family: consolas,'Courier New',courier,monospace; font-size: 12px">  8:         }
+</pre><pre style="background-color: #ffffff; margin: 0em; width: 100%; font-family: consolas,'Courier New',courier,monospace; font-size: 12px">  9: 
+</pre><pre style="background-color: #ffffff; margin: 0em; width: 100%; font-family: consolas,'Courier New',courier,monospace; font-size: 12px"> 10:         <span style="color: #0000ff">private</span> Mongo getServer()
+</pre><pre style="background-color: #ffffff; margin: 0em; width: 100%; font-family: consolas,'Courier New',courier,monospace; font-size: 12px"> 11:         {
+</pre><pre style="background-color: #ffffff; margin: 0em; width: 100%; font-family: consolas,'Courier New',courier,monospace; font-size: 12px"> 12:             var server = <span style="color: #0000ff">new</span> Mongo();
+</pre><pre style="background-color: #ffffff; margin: 0em; width: 100%; font-family: consolas,'Courier New',courier,monospace; font-size: 12px"> 13:             server.Connect();
+</pre><pre style="background-color: #ffffff; margin: 0em; width: 100%; font-family: consolas,'Courier New',courier,monospace; font-size: 12px"> 14:             <span style="color: #0000ff">return</span> server;
+</pre><pre style="background-color: #ffffff; margin: 0em; width: 100%; font-family: consolas,'Courier New',courier,monospace; font-size: 12px"> 15:         }</pre></pre>
+And the newly created getServer() helper method to clean up the code. We also made some changes on the query method but I will leave that for the next post.
+
+Our passing test result indicates some success.
+
+<a href="http://blog.dynamicprogrammer.com/content/binary/WindowsLiveWriter/MongoDBproviderforBl.netsavingaPostPart2_8480/passing_test.png"><img style="border-right-width: 0px; display: inline; border-top-width: 0px; border-bottom-width: 0px; border-left-width: 0px" title="passing_test" border="0" alt="passing_test" src="http://blog.dynamicprogrammer.com/content/binary/WindowsLiveWriter/MongoDBproviderforBl.netsavingaPostPart2_8480/passing_test_thumb.png" width="576" height="108"></a>
+
+Next: Mapping from Document to Entity and back.

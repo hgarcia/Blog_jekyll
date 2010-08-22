@@ -1,0 +1,121 @@
+---
+layout: post
+title: Nullable types, what’s going on when you do int?
+summary: &amp;#160;   As you know some types are not nullable like: int, decimal, double or DateTime. So if for some reason we need a null int we need to use the nullable types.   To define a nullable type we use the question mark notation like this: in...
+---
+&amp;#160;
+  As you know some types are not nullable like: int, decimal, double or DateTime. So if for some reason we need a null int we need to use the nullable types.
+  To define a nullable type we use the question mark notation like this: int?, decimal?, double? or DateTime?. 
+  But what happened on the background? How are those types interpreted by the runtime?
+  Let’s take the following code. 
+  <div style="font-size: 10pt; background: white; color: black; font-family: courier new">   <p style="margin: 0px">&amp;#160;&amp;#160;&amp;#160; <span style="color: blue">public</span> <span style="color: blue">class</span> <span style="color: #2b91af">NullableEnum</span>&amp;#160;&amp;#160; 
+    <p style="margin: 0px">&amp;#160;&amp;#160;&amp;#160; {
+    <p style="margin: 0px">&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160; <span style="color: blue">private</span> <span style="color: blue">int</span>? nullableInt;
+    <p style="margin: 0px">&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160; <span style="color: blue">private</span> <span style="color: blue">double</span>? nullableDouble;
+    <p style="margin: 0px">&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160; <span style="color: blue">private</span> <span style="color: blue">decimal</span>? nullableDecimal;
+    <p style="margin: 0px">&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160; <span style="color: blue">private</span> <span style="color: #2b91af">DateTime</span>? nullableDatetime;
+    <p style="margin: 0px">&amp;#160;&amp;#160;&amp;#160; }
+ </div>  Compile it and use Reflector to take a look at the result:
+  Opening the resulting assembly with reflector shows no changes if we see the code as C# but take a look at the IL code:
+  <blockquote>   <div style="font-size: 10pt; background: white; color: black; font-family: courier new">     <p style="margin: 0px">.<span style="color: blue">class</span> <span style="color: blue">public</span> auto ansi beforefieldinit NullableEnum
+      <p style="margin: 0px">&amp;#160;&amp;#160;&amp;#160; extends [mscorlib]System.Object
+      <p style="margin: 0px">{
+      <p style="margin: 0px">&amp;#160;&amp;#160;&amp;#160; .method <span style="color: blue">public</span> hidebysig specialname rtspecialname instance <span style="color: blue">void</span> .ctor() cil managed
+      <p style="margin: 0px">&amp;#160;&amp;#160;&amp;#160; {
+      <p style="margin: 0px">&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160; .maxstack 8
+      <p style="margin: 0px">&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160; L_0000: ldarg.0 
+      <p style="margin: 0px">&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160; L_0001: call instance <span style="color: blue">void</span> [mscorlib]System.Object::.ctor()
+      <p style="margin: 0px">&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160; L_0006: ret 
+      <p style="margin: 0px">&amp;#160;&amp;#160;&amp;#160; }
+      <p style="margin: 0px">&amp;#160;
+      <p style="margin: 0px">&amp;#160;&amp;#160;&amp;#160; .field <span style="color: blue">private</span> valuetype [mscorlib]System.Nullable`1&amp;lt;valuetype [mscorlib]System.DateTime&amp;gt; nullableDatetime
+      <p style="margin: 0px">&amp;#160;&amp;#160;&amp;#160; .field <span style="color: blue">private</span> valuetype [mscorlib]System.Nullable`1&amp;lt;valuetype [mscorlib]System.Decimal&amp;gt; nullableDecimal
+      <p style="margin: 0px">&amp;#160;&amp;#160;&amp;#160; .field <span style="color: blue">private</span> valuetype [mscorlib]System.Nullable`1&amp;lt;float64&amp;gt; nullableDouble
+      <p style="margin: 0px">&amp;#160;&amp;#160;&amp;#160; .field <span style="color: blue">private</span> valuetype [mscorlib]System.Nullable`1&amp;lt;int32&amp;gt; nullableInt
+      <p style="margin: 0px">}
+   </div> </blockquote>  Look at the type of the fields they are all of System.Nullable&amp;lt;T&amp;gt;. This type is defined in mscorlib as follow.
+  <blockquote>   <div style="font-size: 10pt; background: white; color: black; font-family: courier new">     <p style="margin: 0px">[<span style="color: #2b91af">Serializable</span>, <span style="color: #2b91af">StructLayout</span>(<span style="color: #2b91af">LayoutKind</span>.Sequential), TypeDependency(<span style="color: #a31515">&amp;quot;System.Collections.Generic.NullableComparer`1&amp;quot;</span>), TypeDependency(<span style="color: #a31515">&amp;quot;System.Collections.Generic.NullableEqualityComparer`1&amp;quot;</span>)]
+      <p style="margin: 0px"><span style="color: blue">public</span> <span style="color: blue">struct</span> <span style="color: #2b91af">Nullable</span>&amp;lt;T&amp;gt; <span style="color: blue">where</span> T: <span style="color: blue">struct</span>
+      <p style="margin: 0px">{
+      <p style="margin: 0px">&amp;#160;&amp;#160;&amp;#160; <span style="color: blue">private</span> <span style="color: blue">bool</span> hasValue;
+      <p style="margin: 0px">&amp;#160;&amp;#160;&amp;#160; <span style="color: blue">internal</span> T value;
+      <p style="margin: 0px">&amp;#160;&amp;#160;&amp;#160; <span style="color: blue">public</span> Nullable(T value)
+      <p style="margin: 0px">&amp;#160;&amp;#160;&amp;#160; {
+      <p style="margin: 0px">&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160; <span style="color: blue">this</span>.value = value;
+      <p style="margin: 0px">&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160; <span style="color: blue">this</span>.hasValue = <span style="color: blue">true</span>;
+      <p style="margin: 0px">&amp;#160;&amp;#160;&amp;#160; }
+      <p style="margin: 0px">&amp;#160;
+      <p style="margin: 0px">&amp;#160;&amp;#160;&amp;#160; <span style="color: blue">public</span> <span style="color: blue">bool</span> HasValue
+      <p style="margin: 0px">&amp;#160;&amp;#160;&amp;#160; {
+      <p style="margin: 0px">&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160; <span style="color: blue">get</span>
+      <p style="margin: 0px">&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160; {
+      <p style="margin: 0px">&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160; <span style="color: blue">return</span> <span style="color: blue">this</span>.hasValue;
+      <p style="margin: 0px">&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160; }
+      <p style="margin: 0px">&amp;#160;&amp;#160;&amp;#160; }
+      <p style="margin: 0px">&amp;#160;&amp;#160;&amp;#160; <span style="color: blue">public</span> T Value
+      <p style="margin: 0px">&amp;#160;&amp;#160;&amp;#160; {
+      <p style="margin: 0px">&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160; <span style="color: blue">get</span>
+      <p style="margin: 0px">&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160; {
+      <p style="margin: 0px">&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160; <span style="color: blue">if</span> (!<span style="color: blue">this</span>.HasValue)
+      <p style="margin: 0px">&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160; {
+      <p style="margin: 0px">&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160; ThrowHelper.ThrowInvalidOperationException(ExceptionResource.InvalidOperation_NoValue);
+      <p style="margin: 0px">&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160; }
+      <p style="margin: 0px">&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160; <span style="color: blue">return</span> <span style="color: blue">this</span>.value;
+      <p style="margin: 0px">&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160; }
+      <p style="margin: 0px">&amp;#160;&amp;#160;&amp;#160; }
+      <p style="margin: 0px">&amp;#160;&amp;#160;&amp;#160; <span style="color: blue">public</span> T GetValueOrDefault()
+      <p style="margin: 0px">&amp;#160;&amp;#160;&amp;#160; {
+      <p style="margin: 0px">&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160; <span style="color: blue">return</span> <span style="color: blue">this</span>.value;
+      <p style="margin: 0px">&amp;#160;&amp;#160;&amp;#160; }
+      <p style="margin: 0px">&amp;#160;
+      <p style="margin: 0px">&amp;#160;&amp;#160;&amp;#160; <span style="color: blue">public</span> T GetValueOrDefault(T defaultValue)
+      <p style="margin: 0px">&amp;#160;&amp;#160;&amp;#160; {
+      <p style="margin: 0px">&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160; <span style="color: blue">if</span> (!<span style="color: blue">this</span>.HasValue)
+      <p style="margin: 0px">&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160; {
+      <p style="margin: 0px">&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160; <span style="color: blue">return</span> defaultValue;
+      <p style="margin: 0px">&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160; }
+      <p style="margin: 0px">&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160; <span style="color: blue">return</span> <span style="color: blue">this</span>.value;
+      <p style="margin: 0px">&amp;#160;&amp;#160;&amp;#160; }
+      <p style="margin: 0px">&amp;#160;
+      <p style="margin: 0px">&amp;#160;&amp;#160;&amp;#160; <span style="color: blue">public</span> <span style="color: blue">override</span> <span style="color: blue">bool</span> Equals(<span style="color: blue">object</span> other)
+      <p style="margin: 0px">&amp;#160;&amp;#160;&amp;#160; {
+      <p style="margin: 0px">&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160; <span style="color: blue">if</span> (!<span style="color: blue">this</span>.HasValue)
+      <p style="margin: 0px">&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160; {
+      <p style="margin: 0px">&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160; <span style="color: blue">return</span> (other == <span style="color: blue">null</span>);
+      <p style="margin: 0px">&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160; }
+      <p style="margin: 0px">&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160; <span style="color: blue">if</span> (other == <span style="color: blue">null</span>)
+      <p style="margin: 0px">&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160; {
+      <p style="margin: 0px">&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160; <span style="color: blue">return</span> <span style="color: blue">false</span>;
+      <p style="margin: 0px">&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160; }
+      <p style="margin: 0px">&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160; <span style="color: blue">return</span> <span style="color: blue">this</span>.value.Equals(other);
+      <p style="margin: 0px">&amp;#160;&amp;#160;&amp;#160; }
+      <p style="margin: 0px">&amp;#160;
+      <p style="margin: 0px">&amp;#160;&amp;#160;&amp;#160; <span style="color: blue">public</span> <span style="color: blue">override</span> <span style="color: blue">int</span> GetHashCode()
+      <p style="margin: 0px">&amp;#160;&amp;#160;&amp;#160; {
+      <p style="margin: 0px">&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160; <span style="color: blue">if</span> (!<span style="color: blue">this</span>.HasValue)
+      <p style="margin: 0px">&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160; {
+      <p style="margin: 0px">&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160; <span style="color: blue">return</span> 0;
+      <p style="margin: 0px">&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160; }
+      <p style="margin: 0px">&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160; <span style="color: blue">return</span> <span style="color: blue">this</span>.value.GetHashCode();
+      <p style="margin: 0px">&amp;#160;&amp;#160;&amp;#160; }
+      <p style="margin: 0px">&amp;#160;
+      <p style="margin: 0px">&amp;#160;&amp;#160;&amp;#160; <span style="color: blue">public</span> <span style="color: blue">override</span> <span style="color: blue">string</span> ToString()
+      <p style="margin: 0px">&amp;#160;&amp;#160;&amp;#160; {
+      <p style="margin: 0px">&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160; <span style="color: blue">if</span> (!<span style="color: blue">this</span>.HasValue)
+      <p style="margin: 0px">&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160; {
+      <p style="margin: 0px">&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160; <span style="color: blue">return</span> <span style="color: #a31515">&amp;quot;&amp;quot;</span>;
+      <p style="margin: 0px">&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160; }
+      <p style="margin: 0px">&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160; <span style="color: blue">return</span> <span style="color: blue">this</span>.value.ToString();
+      <p style="margin: 0px">&amp;#160;&amp;#160;&amp;#160; }
+      <p style="margin: 0px">&amp;#160;
+      <p style="margin: 0px">&amp;#160;&amp;#160;&amp;#160; <span style="color: blue">public</span> <span style="color: blue">static</span> <span style="color: blue">implicit</span> <span style="color: blue">operator</span> T?(T value)
+      <p style="margin: 0px">&amp;#160;&amp;#160;&amp;#160; {
+      <p style="margin: 0px">&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160; <span style="color: blue">return</span> <span style="color: blue">new</span> T?(value);
+      <p style="margin: 0px">&amp;#160;&amp;#160;&amp;#160; }
+      <p style="margin: 0px">&amp;#160;
+      <p style="margin: 0px">&amp;#160;&amp;#160;&amp;#160; <span style="color: blue">public</span> <span style="color: blue">static</span> <span style="color: blue">explicit</span> <span style="color: blue">operator</span> T(T? value)
+      <p style="margin: 0px">&amp;#160;&amp;#160;&amp;#160; {
+      <p style="margin: 0px">&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160; <span style="color: blue">return</span> value.Value;
+      <p style="margin: 0px">&amp;#160;&amp;#160;&amp;#160; }
+      <p style="margin: 0px">}
+   </div> </blockquote>  Interesting, isn’t it?

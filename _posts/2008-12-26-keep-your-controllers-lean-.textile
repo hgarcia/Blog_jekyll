@@ -1,0 +1,28 @@
+---
+layout: post
+title: Keep your Controllers lean.
+summary: &amp;#160;   I was going to write a post about this but my thoughts are exactly the same as <a href="http://weblogs.asp.net/fredriknormen/archive/2008/12/01/controllers-in-the-mvc-pattern-is-not-a-replacement-for-business-logic-layer.aspx" targe...
+---
+&amp;#160;
+  I was going to write a post about this but my thoughts are exactly the same as <a href="http://weblogs.asp.net/fredriknormen/archive/2008/12/01/controllers-in-the-mvc-pattern-is-not-a-replacement-for-business-logic-layer.aspx" target="_blank">Fredrik Normen’s.</a>
+  For example, one thing that creeps me out is seen think like this in the Controller.
+  <div style="font-size: 10pt; background: white; color: black; font-family: courier new">   <p style="margin: 0px"><span style="color: #2b91af">&amp;#160;&amp;#160; 23</span>&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160; <span style="color: blue">public</span> <span style="color: #2b91af">ActionResult</span> Index()
+    <p style="margin: 0px"><span style="color: #2b91af">&amp;#160;&amp;#160; 24</span>&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160; {
+    <p style="margin: 0px"><span style="color: #2b91af">&amp;#160;&amp;#160; 25</span>&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160; <span style="color: blue">var</span> repository = <span style="color: #2b91af">IocContainer</span>.GetClassInstance&amp;lt;<span style="color: #2b91af">IRepository</span>&amp;gt;();
+    <p style="margin: 0px"><span style="color: #2b91af">&amp;#160;&amp;#160; 26</span>&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160; <span style="color: blue">var</span> members = repository.GetAll&amp;lt;<span style="color: #2b91af">Member</span>&amp;gt;();
+    <p style="margin: 0px"><span style="color: #2b91af">&amp;#160;&amp;#160; 27</span>&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160; ViewData[<span style="color: #a31515">&amp;quot;members&amp;quot;</span>] = members;
+    <p style="margin: 0px"><span style="color: #2b91af">&amp;#160;&amp;#160; 28</span>&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160; <span style="color: blue">return</span> View();
+    <p style="margin: 0px"><span style="color: #2b91af">&amp;#160;&amp;#160; 29</span>&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160; }
+ </div>  Or even worse:
+  <div style="font-size: 10pt; background: white; color: black; font-family: courier new">   <p style="margin: 0px"><span style="color: #2b91af">&amp;#160;&amp;#160; 45</span>&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160; <span style="color: blue">public</span> <span style="color: #2b91af">ActionResult</span> CreateMember()
+    <p style="margin: 0px"><span style="color: #2b91af">&amp;#160;&amp;#160; 46</span>&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160; {
+    <p style="margin: 0px"><span style="color: #2b91af">&amp;#160;&amp;#160; 47</span>&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160; <span style="color: blue">var</span> member = <span style="color: blue">new</span> <span style="color: #2b91af">Member</span>();
+    <p style="margin: 0px"><span style="color: #2b91af">&amp;#160;&amp;#160; 48</span>&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160; member.Hydrate(Request.Form);
+    <p style="margin: 0px"><span style="color: #2b91af">&amp;#160;&amp;#160; 49</span>&amp;#160;
+    <p style="margin: 0px"><span style="color: #2b91af">&amp;#160;&amp;#160; 50</span>&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160; <span style="color: blue">if</span> (member.Email == <span style="color: blue">null</span>)
+    <p style="margin: 0px"><span style="color: #2b91af">&amp;#160;&amp;#160; 51</span>&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160; {
+    <p style="margin: 0px"><span style="color: #2b91af">&amp;#160;&amp;#160; 52</span>&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160; ViewData.ModelState.AddModelError(<span style="color: #a31515">&amp;quot;Email&amp;quot;</span>, <span style="color: #a31515">&amp;quot;Email can't be empty&amp;quot;</span>);
+    <p style="margin: 0px"><span style="color: #2b91af">&amp;#160;&amp;#160; 53</span>&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160; }
+    <p style="margin: 0px"><span style="color: #2b91af">&amp;#160;&amp;#160; 54</span>&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160; <span style="color: green">//More code here</span>
+    <p style="margin: 0px"><span style="color: #2b91af">&amp;#160;&amp;#160; 55</span>&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160; }
+ </div>  I don’t think that the controller should ever touch the repository and of course it shouldn’t do any type of validation besides data entry from the view.

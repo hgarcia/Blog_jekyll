@@ -1,0 +1,55 @@
+---
+layout: post
+title: VS 2010, Generate method from usage.
+summary: &amp;#160;   One of the main reasons I got ReSharper originally was for it’s ability to do micro code generation. This is a functionality that I found very useful when doing test first development.   You can write your test first that will ac...
+---
+&amp;#160;
+  One of the main reasons I got ReSharper originally was for it’s ability to do micro code generation. This is a functionality that I found very useful when doing test first development.
+  You can write your test first that will access an object that it doesn’t exist yet and them consume some methods on that object. Them you just go Alt+Enter and ReSharper will generate the stubs for the class, the methods and the properties. 
+  VS 2010 incorporate this functionality as well. In ReSharper you can write the initialization of a new class that it have not been create yet and you will see the blue underscore below it. Hit Ctrl+. (Control+dot) and a drop down menu will ask you to generate the class.
+  All this is good and works very similar to ReSharper, but not so powerful. If you are initializing the class with some parameters a constructor will be created for you. The name of the parameters will be inferred (if at all possible) from the name of the variable that you are using in your code. For example in this code the MyNewClass didn’t exist before hand.
+  <pre><pre style="background-color: #fbfbfb; margin: 0em; width: 100%; font-family: consolas,&amp;#39;Courier New&amp;#39;,courier,monospace; font-size: 12px">  1:         <span style="color: #0000ff">public</span> <span style="color: #0000ff">void</span> CreateClassFromusage()
+</pre><pre style="background-color: #ffffff; margin: 0em; width: 100%; font-family: consolas,&amp;#39;Courier New&amp;#39;,courier,monospace; font-size: 12px">  2:         {
+</pre><pre style="background-color: #fbfbfb; margin: 0em; width: 100%; font-family: consolas,&amp;#39;Courier New&amp;#39;,courier,monospace; font-size: 12px">  3:             var obj = <span style="color: #0000ff">new</span> MyNewCLass(&amp;quot;<span style="color: #8b0000">someVariable</span>&amp;quot;);
+</pre><pre style="background-color: #ffffff; margin: 0em; width: 100%; font-family: consolas,&amp;#39;Courier New&amp;#39;,courier,monospace; font-size: 12px">  4:             obj.GetSumOfTwoNumbers(3, 5);
+</pre><pre style="background-color: #fbfbfb; margin: 0em; width: 100%; font-family: consolas,&amp;#39;Courier New&amp;#39;,courier,monospace; font-size: 12px">  5:             var originalString = &amp;quot;<span style="color: #8b0000">This is the title.</span>&amp;quot;;
+</pre><pre style="background-color: #ffffff; margin: 0em; width: 100%; font-family: consolas,&amp;#39;Courier New&amp;#39;,courier,monospace; font-size: 12px">  6:             var stringsToAdd = <span style="color: #0000ff">new</span>[]{&amp;quot;<span style="color: #8b0000">First line</span>&amp;quot;,&amp;quot;<span style="color: #8b0000">Second line</span>&amp;quot;};
+</pre><pre style="background-color: #fbfbfb; margin: 0em; width: 100%; font-family: consolas,&amp;#39;Courier New&amp;#39;,courier,monospace; font-size: 12px">  7:             <span style="color: #0000ff">string</span> concatenatedString = obj.ConcatTwoStrings(originalString, stringsToAdd);
+</pre><pre style="background-color: #ffffff; margin: 0em; width: 100%; font-family: consolas,&amp;#39;Courier New&amp;#39;,courier,monospace; font-size: 12px">  8:         }</pre></pre>
+
+After writing the code I when Ctrl+dot and create the class (it was created in a new file by default, nice) and the methods. 
+
+
+<pre><pre style="background-color: #fbfbfb; margin: 0em; width: 100%; font-family: consolas,&amp;#39;Courier New&amp;#39;,courier,monospace; font-size: 12px">  1: <span style="color: #0000ff">using</span> System;
+</pre><pre style="background-color: #ffffff; margin: 0em; width: 100%; font-family: consolas,&amp;#39;Courier New&amp;#39;,courier,monospace; font-size: 12px">  2: <span style="color: #0000ff">using</span> System.Collections.Generic;
+</pre><pre style="background-color: #fbfbfb; margin: 0em; width: 100%; font-family: consolas,&amp;#39;Courier New&amp;#39;,courier,monospace; font-size: 12px">  3: <span style="color: #0000ff">using</span> System.Linq;
+</pre><pre style="background-color: #ffffff; margin: 0em; width: 100%; font-family: consolas,&amp;#39;Courier New&amp;#39;,courier,monospace; font-size: 12px">  4: <span style="color: #0000ff">using</span> System.Text;
+</pre><pre style="background-color: #fbfbfb; margin: 0em; width: 100%; font-family: consolas,&amp;#39;Courier New&amp;#39;,courier,monospace; font-size: 12px">  5: 
+</pre><pre style="background-color: #ffffff; margin: 0em; width: 100%; font-family: consolas,&amp;#39;Courier New&amp;#39;,courier,monospace; font-size: 12px">  6: <span style="color: #0000ff">namespace</span> dynamicDemo
+</pre><pre style="background-color: #fbfbfb; margin: 0em; width: 100%; font-family: consolas,&amp;#39;Courier New&amp;#39;,courier,monospace; font-size: 12px">  7: {
+</pre><pre style="background-color: #ffffff; margin: 0em; width: 100%; font-family: consolas,&amp;#39;Courier New&amp;#39;,courier,monospace; font-size: 12px">  8:     <span style="color: #0000ff">public</span> <span style="color: #0000ff">class</span> MyNewCLass
+</pre><pre style="background-color: #fbfbfb; margin: 0em; width: 100%; font-family: consolas,&amp;#39;Courier New&amp;#39;,courier,monospace; font-size: 12px">  9:     {
+</pre><pre style="background-color: #ffffff; margin: 0em; width: 100%; font-family: consolas,&amp;#39;Courier New&amp;#39;,courier,monospace; font-size: 12px"> 10:         <span style="color: #0000ff">private</span> <span style="color: #0000ff">string</span> p;
+</pre><pre style="background-color: #fbfbfb; margin: 0em; width: 100%; font-family: consolas,&amp;#39;Courier New&amp;#39;,courier,monospace; font-size: 12px"> 11: 
+</pre><pre style="background-color: #ffffff; margin: 0em; width: 100%; font-family: consolas,&amp;#39;Courier New&amp;#39;,courier,monospace; font-size: 12px"> 12:         <span style="color: #0000ff">public</span> MyNewCLass(<span style="color: #0000ff">string</span> p)
+</pre><pre style="background-color: #fbfbfb; margin: 0em; width: 100%; font-family: consolas,&amp;#39;Courier New&amp;#39;,courier,monospace; font-size: 12px"> 13:         {
+</pre><pre style="background-color: #ffffff; margin: 0em; width: 100%; font-family: consolas,&amp;#39;Courier New&amp;#39;,courier,monospace; font-size: 12px"> 14:             <span style="color: #008000">// TODO: Complete member initialization</span>
+</pre><pre style="background-color: #fbfbfb; margin: 0em; width: 100%; font-family: consolas,&amp;#39;Courier New&amp;#39;,courier,monospace; font-size: 12px"> 15:             <span style="color: #0000ff">this</span>.p = p;
+</pre><pre style="background-color: #ffffff; margin: 0em; width: 100%; font-family: consolas,&amp;#39;Courier New&amp;#39;,courier,monospace; font-size: 12px"> 16:         }
+</pre><pre style="background-color: #fbfbfb; margin: 0em; width: 100%; font-family: consolas,&amp;#39;Courier New&amp;#39;,courier,monospace; font-size: 12px"> 17: 
+</pre><pre style="background-color: #ffffff; margin: 0em; width: 100%; font-family: consolas,&amp;#39;Courier New&amp;#39;,courier,monospace; font-size: 12px"> 18:         <span style="color: #0000ff">public</span> <span style="color: #0000ff">int</span> GetSumOfTwoNumbers(<span style="color: #0000ff">int</span> p, <span style="color: #0000ff">int</span> p_2)
+</pre><pre style="background-color: #fbfbfb; margin: 0em; width: 100%; font-family: consolas,&amp;#39;Courier New&amp;#39;,courier,monospace; font-size: 12px"> 19:         {
+</pre><pre style="background-color: #ffffff; margin: 0em; width: 100%; font-family: consolas,&amp;#39;Courier New&amp;#39;,courier,monospace; font-size: 12px"> 20:             <span style="color: #0000ff">return</span> p+p_2;
+</pre><pre style="background-color: #fbfbfb; margin: 0em; width: 100%; font-family: consolas,&amp;#39;Courier New&amp;#39;,courier,monospace; font-size: 12px"> 21:         }
+</pre><pre style="background-color: #ffffff; margin: 0em; width: 100%; font-family: consolas,&amp;#39;Courier New&amp;#39;,courier,monospace; font-size: 12px"> 22: 
+</pre><pre style="background-color: #fbfbfb; margin: 0em; width: 100%; font-family: consolas,&amp;#39;Courier New&amp;#39;,courier,monospace; font-size: 12px"> 23:         <span style="color: #0000ff">public</span> <span style="color: #0000ff">string</span> ConcatTwoStrings(<span style="color: #0000ff">string</span> originalString, <span style="color: #0000ff">string</span>[] stringsToAdd)
+</pre><pre style="background-color: #ffffff; margin: 0em; width: 100%; font-family: consolas,&amp;#39;Courier New&amp;#39;,courier,monospace; font-size: 12px"> 24:         {
+</pre><pre style="background-color: #fbfbfb; margin: 0em; width: 100%; font-family: consolas,&amp;#39;Courier New&amp;#39;,courier,monospace; font-size: 12px"> 25:             <span style="color: #0000ff">throw</span> <span style="color: #0000ff">new</span> NotImplementedException();
+</pre><pre style="background-color: #ffffff; margin: 0em; width: 100%; font-family: consolas,&amp;#39;Courier New&amp;#39;,courier,monospace; font-size: 12px"> 26:         }
+</pre><pre style="background-color: #fbfbfb; margin: 0em; width: 100%; font-family: consolas,&amp;#39;Courier New&amp;#39;,courier,monospace; font-size: 12px"> 27:     }
+</pre><pre style="background-color: #ffffff; margin: 0em; width: 100%; font-family: consolas,&amp;#39;Courier New&amp;#39;,courier,monospace; font-size: 12px"> 28: }</pre></pre>
+
+Notice the name of the parameters, in those ones where I used variables the parameters have proper names, the other parameters names are kind of ugly and I hope they fix that (p, p_2?). My suggestion will be to use the type plus some contextual information or at least the type plus the word parameter and them a number if you need it. In the case of strings the whole string or the first word if it’s a phrase. All in all it’s a nice feature to come with the IDE.
+
+
+<div style="padding-bottom: 0px; margin: 0px; padding-left: 0px; padding-right: 0px; display: inline; float: none; padding-top: 0px" id="scid:0767317B-992E-4b12-91E0-4F059A8CECA8:3cac442d-cd3b-4f35-8b34-1b5c181694d7" class="wlWriterEditableSmartContent">Technorati Tags: <a href="http://technorati.com/tags/Visual+Studio+2010" rel="tag">Visual Studio 2010</a>,<a href="http://technorati.com/tags/Code+Generation" rel="tag">Code Generation</a>,<a href="http://technorati.com/tags/Generate+from+usage" rel="tag">Generate from usage</a>,<a href="http://technorati.com/tags/Test+driven+development" rel="tag">Test driven development</a></div>

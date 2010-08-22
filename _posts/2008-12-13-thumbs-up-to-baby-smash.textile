@@ -1,0 +1,10 @@
+---
+layout: post
+title: Thumbs up to Baby Smash
+summary: &amp;nbsp;   I’m sitting besides my 19th month old trying to write some code. Of course he is trying to help me. Let me tell you his C# is not bad :-) He was so exited about typing thaT I decided to give him something he could play with. I rem...
+---
+&amp;nbsp;
+  I’m sitting besides my 19th month old trying to write some code. Of course he is trying to help me. Let me tell you his C# is not bad :-) He was so exited about typing thaT I decided to give him something he could play with. I remembered <a href="http://www.hanselman.com/babysmash/index.htm" target="_blank">Scott Hanselman’s baby smash</a>. So I went to the site and install it. 
+  I have to admit that this have been the easiest application ever to install (I had .net 3.5 installed already). Just click once, one prompt, and there you go.
+  My son got hooked immediately. Tree house was in the TV but he just couldn’t stop banging the keyboard. I still can’t write any code, but at least one of us is happy. I better go to get my other machine. 
+  <div class="wlWriterEditableSmartContent" id="scid:0767317B-992E-4b12-91E0-4F059A8CECA8:d3d1d8ba-e5c3-40ac-ac8a-c77afada3f23" style="margin: 0px; padding: 0px; display: inline; float: none;">Technorati Tags: <a href="http://technorati.com/tags/BabySmash" rel="tag">BabySmash</a>,<a href="http://technorati.com/tags/WPF" rel="tag">WPF</a>,<a href="http://technorati.com/tags/Click+Once" rel="tag">Click Once</a></div>

@@ -1,0 +1,25 @@
+---
+layout: post
+title: Validator moves to it’s own package
+summary: &amp;#160;   Today I move the code of LaTrompa.Validation into it’s own package, with no external dependencies (besides the framework of course).   I added a class to validate XmlNodes.   The string validation now has a IsOneOf method to mat...
+---
+&amp;#160;
+  Today I move the code of LaTrompa.Validation into it’s own package, with no external dependencies (besides the framework of course).
+  I added a class to validate XmlNodes.
+  The string validation now has a IsOneOf method to match the string against a list of options.
+  <div style="font-size: 10pt; background: white; color: black; font-family: courier new">   <p style="margin: 0px">&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160; <span style="color: blue">var</span> options = <span style="color: blue">new</span>[] { <span style="color: #a31515">&amp;quot;0056&amp;quot;</span>, <span style="color: #a31515">&amp;quot;0256&amp;quot;</span>, <span style="color: #a31515">&amp;quot;0512&amp;quot;</span>, <span style="color: #a31515">&amp;quot;0752&amp;quot;</span>, <span style="color: #a31515">&amp;quot;1100&amp;quot;</span> };
+    <p style="margin: 0px">&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160; <span style="color: blue">new</span> <span style="color: #2b91af">Validator</span>().CheckThat(() =&amp;gt; _stringToTest).IsOneOf(options)
+    <p style="margin: 0px">&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160; .ThrowFirst();
+    <p style="margin: 0px">&amp;#160;
+ </div>  I still need to add a generic version for this method, I guess it pass by me.
+  Also in the string validation there are two new validations to check if a string can be converted into an Int32 or a Boolean.
+  <div style="font-size: 10pt; background: white; color: black; font-family: courier new">   <p style="margin: 0px">&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160; <span style="color: blue">new</span> <span style="color: #2b91af">Validator</span>().CheckThat(()=&amp;gt; <span style="color: #a31515">&amp;quot;true&amp;quot;</span>).CanConvertToBool().Throw();
+ </div>  <br />  <div style="font-size: 10pt; background: white; color: black; font-family: courier new">   <p style="margin: 0px">&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160; <span style="color: blue">new</span> <span style="color: #2b91af">Validator</span>().CheckThat(()=&amp;gt;<span style="color: #a31515">&amp;quot;23&amp;quot;</span>).CanConvertToInt32().ThrowFirst();
+ </div>  The whole conversion validation looks like a good candidate for refactoring and generalize it into a base class. that way it will be easy to offer conversion checking against all types.
+  I added the ThrowFirst method into the Validator class. This method was available only in the CheckThat classes.
+  <div style="font-size: 10pt; background: white; color: black; font-family: courier new">   <p style="margin: 0px">&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160; <span style="color: blue">var</span> secondVariable = 45;
+    <p style="margin: 0px">&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160; <span style="color: blue">var</span> validator = <span style="color: blue">new</span> <span style="color: #2b91af">Validator</span>();
+    <p style="margin: 0px">&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160; validator.CheckThat(() =&amp;gt; _stringToTest).HasNoSpaces().LengthLessThan(4);
+    <p style="margin: 0px">&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160; validator.CheckThat(() =&amp;gt; secondVariable).IsBetween(56, 100);
+    <p style="margin: 0px">&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160; validator.ThrowFirst();
+ </div>  I moved all the Throw methods into their own class ErrorThrower (I should rename this to ExceptionThrower). Previously I was doing almost the same thing in two different places. Not very <a href="http://en.wikipedia.org/wiki/Don%27t_repeat_yourself" target="_blank">DRY</a>. 

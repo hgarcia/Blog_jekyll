@@ -1,0 +1,77 @@
+---
+layout: post
+title: Lightweight Test Framework, attaching to a new window after window.open
+summary:    <br />In <a href="http://blog.dynamicprogrammer.com/2009/03/25/LightweightTestFrameworkFixingHowToHandleWindowopen.aspx" target="_blank">a previous post</a> I mention about a fix to been able to open a new window both in IE and Firefox using t...
+---
+   <br />In <a href="http://blog.dynamicprogrammer.com/2009/03/25/LightweightTestFrameworkFixingHowToHandleWindowopen.aspx" target="_blank">a previous post</a> I mention about a fix to been able to open a new window both in IE and Firefox using the <a href="http://aspnet.codeplex.com/Release/ProjectReleases.aspx?ReleaseId=22739" target="_blank">Lightweight Test Framework</a>.
+  Today I want to talk about how to hook into the newly opened window or any other window opened by the testing framework.    <br />Let me said this, it’s not very difficult but is kind of convoluted, I won’t be surprised if there is a better way to do this, but I can’t seem to find it.
+  The key resides in the BrowserCommandTarget object. This object has a property WindowIndex that maps to the index of the _windowCollection array on the client side code (the JavaScript implementation of the framework).
+  The next thing we need to do is figure out how to send a BrowserCommand to this window, and sure enough BrowserCommand has a target property that takes a BrowserCommandTarget.
+  So here is the code to click a button in a window that was open after calling window.open in the main window.
+  <div style="font-family: courier new; background: white; color: black; font-size: 10pt">   <div style="font-family: courier new; background: white; color: black; font-size: 10pt">     <p style="margin: 0px"><span style="color: #2b91af">&amp;#160;&amp;#160;&amp;#160; 1</span>&amp;#160;&amp;#160;&amp;#160;&amp;#160; [WebTestMethod]
+      <p style="margin: 0px"><span style="color: #2b91af">&amp;#160;&amp;#160;&amp;#160; 2</span>&amp;#160;&amp;#160;&amp;#160;&amp;#160; <span style="color: blue">public</span> <span style="color: blue">void</span> OpenNewWindow()
+      <p style="margin: 0px"><span style="color: #2b91af">&amp;#160;&amp;#160;&amp;#160; 3</span>&amp;#160;&amp;#160;&amp;#160;&amp;#160; {
+      <p style="margin: 0px"><span style="color: #2b91af">&amp;#160;&amp;#160;&amp;#160; 4</span>&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160; <span style="color: blue">var</span> page = <span style="color: blue">new</span> HtmlPage(<span style="color: #a31515">&amp;quot;../SiteToTest/HTMLPage.htm&amp;quot;</span>);
+      <p style="margin: 0px"><span style="color: #2b91af">&amp;#160;&amp;#160;&amp;#160; 5</span>&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160; page.Elements.Find(<span style="color: #a31515">&amp;quot;openWindow&amp;quot;</span>).Click(WaitFor.None);
+      <p style="margin: 0px"><span style="color: #2b91af">&amp;#160;&amp;#160;&amp;#160; 6</span>&amp;#160;
+      <p style="margin: 0px"><span style="color: #2b91af">&amp;#160;&amp;#160;&amp;#160; 7</span>&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160; <span style="color: blue">var</span> handler = <span style="color: blue">new</span> BrowserCommandHandler
+      <p style="margin: 0px"><span style="color: #2b91af">&amp;#160;&amp;#160;&amp;#160; 8</span>&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160; {
+      <p style="margin: 0px"><span style="color: #2b91af">&amp;#160;&amp;#160;&amp;#160; 9</span>&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160; PopupAction = PopupAction.None,
+      <p style="margin: 0px"><span style="color: #2b91af">&amp;#160;&amp;#160; 10</span>&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160; RequiresElementFound = <span style="color: blue">true</span>,
+      <p style="margin: 0px"><span style="color: #2b91af">&amp;#160;&amp;#160; 11</span>&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160; ClientFunctionName = BrowserCommand.FunctionNames.ClickElement
+      <p style="margin: 0px"><span style="color: #2b91af">&amp;#160;&amp;#160; 12</span>&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160; };
+      <p style="margin: 0px"><span style="color: #2b91af">&amp;#160;&amp;#160; 13</span>&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160; <span style="color: blue">var</span> target = <span style="color: blue">new</span> BrowserCommandTarget
+      <p style="margin: 0px"><span style="color: #2b91af">&amp;#160;&amp;#160; 14</span>&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160; {
+      <p style="margin: 0px"><span style="color: #2b91af">&amp;#160;&amp;#160; 15</span>&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160; WindowIndex = 1,
+      <p style="margin: 0px"><span style="color: #2b91af">&amp;#160;&amp;#160; 16</span>&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160; Id = <span style="color: #a31515">&amp;quot;clickedOnTheSecondWindow&amp;quot;</span>
+      <p style="margin: 0px"><span style="color: #2b91af">&amp;#160;&amp;#160; 17</span>&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160; };
+      <p style="margin: 0px"><span style="color: #2b91af">&amp;#160;&amp;#160; 18</span>&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160; handler.SetArguments(<span style="color: blue">false</span>);
+      <p style="margin: 0px"><span style="color: #2b91af">&amp;#160;&amp;#160; 19</span>&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160; <span style="color: blue">var</span> command = <span style="color: blue">new</span> BrowserCommand(BrowserCommand.FunctionNames.ClickElement)
+      <p style="margin: 0px"><span style="color: #2b91af">&amp;#160;&amp;#160; 20</span>&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160; {
+      <p style="margin: 0px"><span style="color: #2b91af">&amp;#160;&amp;#160; 21</span>&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160; Description = <span style="color: #a31515">&amp;quot;Click&amp;quot;</span>,
+      <p style="margin: 0px"><span style="color: #2b91af">&amp;#160;&amp;#160; 22</span>&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160; Target = target,
+      <p style="margin: 0px"><span style="color: #2b91af">&amp;#160;&amp;#160; 23</span>&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160; Handler = handler
+      <p style="margin: 0px"><span style="color: #2b91af">&amp;#160;&amp;#160; 24</span>&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160; };
+      <p style="margin: 0px"><span style="color: #2b91af">&amp;#160;&amp;#160; 25</span>&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160; <span style="color: blue">var</span> info = page.ExecuteCommand(command);
+      <p style="margin: 0px"><span style="color: #2b91af">&amp;#160;&amp;#160; 26</span>&amp;#160;&amp;#160;&amp;#160;&amp;#160; }
+   </div>    <p style="margin: 0px">
+ </div>  
+  Lines 4 and 5 is just the normal way you click in an element. In this case I look for an element with the Id of “openWindow” and do a Click. This is the html of the page we are testing.
+  <pre>&amp;lt;!DOCTYPE html PUBLIC &amp;quot;-//W3C//DTD XHTML 1.0 Transitional//EN&amp;quot; &amp;quot;<a href="http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd&amp;quot;">http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd&amp;quot;</a>&amp;gt; 
+
+&amp;lt;html xmlns=&amp;quot;<a href="http://www.w3.org/1999/xhtml&amp;quot;&amp;gt;">http://www.w3.org/1999/xhtml&amp;quot;&amp;gt;
+</a><br />&amp;lt;head&amp;gt;<br />&amp;#160;&amp;#160;&amp;#160; &amp;lt;title&amp;gt;My page&amp;lt;/title&amp;gt;
+<br />&amp;#160;&amp;#160;&amp;#160; &amp;lt;script&amp;gt;&amp;#160;&amp;#160; <br />&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160; function doConfirm() {
+<br />&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160; if (confirm(&amp;quot;Do you confirm this?&amp;quot;)) {
+<br />&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160; document.getElementById(&amp;quot;mySpan&amp;quot;).innerHTML = &amp;quot;OK&amp;quot;;
+<br />&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160; } else {
+<br />&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160; document.getElementById(&amp;quot;mySpan&amp;quot;).innerHTML = &amp;quot;CANCEL&amp;quot;;
+<br />&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160; }
+<br />&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160; }
+
+<br />&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160; function openNewWindow () {
+<br />&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160; window.open(&amp;quot;HTMLPage.htm&amp;quot;,&amp;quot;_blank&amp;quot;,&amp;quot;toolbar=no&amp;quot;,false);  <br />&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160; }
+  <br />&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160; function addsAMessage () {
+<br />&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160; document.getElementById(&amp;quot;message&amp;quot;).innerHTML = &amp;quot;This message should only appear on the second window.&amp;quot;
+<br />&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160; }&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160; <br />&amp;#160;&amp;#160;&amp;#160; &amp;lt;/script&amp;gt;
+<br />&amp;lt;/head&amp;gt;
+<br />&amp;lt;body&amp;gt;
+<br />&amp;#160;&amp;#160;&amp;#160; &amp;lt;input type=&amp;quot;button&amp;quot; name=&amp;quot;myButtom&amp;quot; value=&amp;quot;Do confirm&amp;quot; onclick=&amp;quot;doConfirm();&amp;quot; /&amp;gt;
+<br />&amp;#160;&amp;#160;&amp;#160; &amp;lt;span id=&amp;quot;mySpan&amp;quot;&amp;gt;&amp;lt;/span&amp;gt;
+<br />&amp;#160;&amp;#160;&amp;#160; &amp;lt;input type=&amp;quot;button&amp;quot; name=&amp;quot;openWindow&amp;quot; value=&amp;quot;Open new window&amp;quot; onclick=&amp;quot;openNewWindow();&amp;quot; /&amp;gt;
+<br />&amp;#160;&amp;#160;&amp;#160; &amp;lt;input type=&amp;quot;button&amp;quot; name=&amp;quot;clickedOnTheSecondWindow&amp;quot; value=&amp;quot;Clicked on the second window&amp;quot; onclick=&amp;quot;addsAMessage();&amp;quot; /&amp;gt;<br />&amp;#160;&amp;#160;&amp;#160; &amp;lt;span id=&amp;quot;message&amp;quot;&amp;gt;&amp;lt;/span&amp;gt; <br />&amp;lt;/body&amp;gt; <br />&amp;lt;/html&amp;gt;
+&amp;#160;
+</pre>
+
+After this page opens I want to click the button with the name “clickedOnTheSecondWindow” in the newly opened window. For that I create a BrowserCommandHandler that knows how to handle the onclick event. A BrowserCommandTarget with the Id of the element to be checked and I pass the index (1) for the newly opened window, the original window already opened in the test frame is index 0.
+  <br />Then I create a BrowserCommand and assign the target and the handler to it.
+
+  <br />Finally I call ExecuteCommand in the page object passing the newly created command.
+
+  <br />This may sound counter intuitive since page is the same object we used before to click “openWindow” in the test frame.&amp;#160; But page.ExecuteCommand takes all the data from the passed in command argument. I consider that it should be a better way to do this and maybe this is a smell on the API or me not figuring out the right way to use it.
+
+
+I mentioned before that BrowserCommandTarget.Id takes the Id of the element, I’m sure that you notice that none of the buttons have an Id but only a name. The framework will first search by Id and then by name always using the value passed to the Id property.
+
+
+So far I haven’t figured out how to make an assertion in the new window though, I guess that will be something to deal with in another post.

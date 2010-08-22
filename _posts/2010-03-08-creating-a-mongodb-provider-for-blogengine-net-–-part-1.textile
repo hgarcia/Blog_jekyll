@@ -1,0 +1,83 @@
+---
+layout: post
+title: Creating a MongoDB provider for Blogengine.Net – Part 1
+summary: <blockquote> <em>The code in this post is of demo quality and should not be taken as production ready code. It’s a first take on the project and will evolve during a series of posts.</em> </blockquote> <a href="http://www.dotnetblogengine.net/...
+---
+<blockquote> <em>The code in this post is of demo quality and should not be taken as production ready code. It’s a first take on the project and will evolve during a series of posts.</em>
+</blockquote> <a href="http://www.dotnetblogengine.net/" target="_blank">Blogengine.net</a> is an open source blogging platform written in asp.net. The engine comes with two Data store providers a DB provider and an XML provider. Since the engine is using the provider model, it should be fairly easy to write a new data store provider.
+ As you may have noticed by some of my previous posts, I’m really interested in alternatives to relational databases, the so called NoSql movement. 
+ <h5>Getting all the pieces together.</h5> First download the Blogengine.net source code from <a href="http://www.codeplex.com/blogengine" target="_blank">codeplex.com</a>, a <a href="http://github.com/samus/mongodb-csharp/downloads" target="_blank">mongodb driver</a> for .net and <a href="http://www.mongodb.org/display/DOCS/Downloads" target="_blank">mongodb</a>.
+ At the moment I’m aware of two drivers for .net, the more mature <a href="http://github.com/samus/mongodb-csharp/downloads" target="_blank">mongodb-csharp</a> and a more resent one <a href="http://github.com/atheken/NoRM" target="_blank">NoRM</a>. NoRM is trying to provide a more OO experience, avoiding the use of strings as much as possible and embracing Linq, it’s still very young but very promising. You can check <a href="http://blog.wekeroad.com/2010/03/04/using-mongo-with-linq" target="_blank">an article by Rob Connery</a> to learn some of the capabilities. We will be using mongodb-csharp in this example. (Build from 2010-03-01).
+ Be certain of download the proper version of MongoDB for your OS 32 or 64 bits.
+ <h5>Installing MongoDB</h5> Unzip the files downloaded into a folder of your choice. I’m using c:\MongoDB.
+ Create a data and db folders under c, you should have something like c:\data\db
+ Run mongod.exe from the mobogodb bin folder.
+<pre style="border-bottom: #cecece 1px solid; border-left: #cecece 1px solid; padding-bottom: 5px; background-color: #000000; min-height: 40px; padding-left: 5px; width: 690px; padding-right: 5px; height: 150px; color: #fff; overflow: auto; border-top: #cecece 1px solid; border-right: #cecece 1px solid; padding-top: 5px"><pre style="background-color: #000000; margin: 0em; width: 100%; font-family: consolas,'Courier New',courier,monospace; font-size: 12px">c:\MongoDB\bin&amp;gt;mongod.exe
+</pre><pre style="background-color: #000000; margin: 0em; width: 100%; font-family: consolas,'Courier New',courier,monospace; font-size: 12px">mongod.exe --help for help and startup options
+</pre><pre style="background-color: #000000; margin: 0em; width: 100%; font-family: consolas,'Courier New',courier,monospace; font-size: 12px">Fri Mar 05 23:09:29 Mongo DB : starting : pid = 0 port = 27017 dbpath = /data/db/ master = 0 slave = 0  64-bit
+</pre><pre style="background-color: #000000; margin: 0em; width: 100%; font-family: consolas,'Courier New',courier,monospace; font-size: 12px">Fri Mar 05 23:09:29 db version v1.2.4, pdfile version 4.5
+</pre><pre style="background-color: #000000; margin: 0em; width: 100%; font-family: consolas,'Courier New',courier,monospace; font-size: 12px">Fri Mar 05 23:09:29 git version: 5cf582d3d96b882c400c33e7670b811ccd47f477
+</pre><pre style="background-color: #000000; margin: 0em; width: 100%; font-family: consolas,'Courier New',courier,monospace; font-size: 12px">Fri Mar 05 23:09:29 sys info: windows (6, 0, 6002, 2, 'Service Pack 2') BOOST_LIB_VERSION=1_39
+</pre><pre style="background-color: #000000; margin: 0em; width: 100%; font-family: consolas,'Courier New',courier,monospace; font-size: 12px">Fri Mar 05 23:09:29 waiting for connections on port 27017</pre></pre>
+To stop the daemon just type Ctrl+c.
+
+<h5>Setting up the project.</h5>
+You can download the project as I have it set from <a href="http://nosqlproviders.codeplex.com/" target="_blank">my codeplex repo</a> using Mercurial to save you some time.(Changeset <a href="http://nosqlproviders.codeplex.com/SourceControl/changeset/view/59b63f72169f">59b63f72169f</a>)
+
+What I did was to create a new folder \lib under the solution root (of the BlogEngine.Net code), added Nunit, Rhino Mocks and the MongoDb drivers libraries. Them from within VS I added an Specs project to hold my test and a second project to hold the code for the provider.
+
+You should have something like this right now.
+
+<a href="http://blog.dynamicprogrammer.com/content/binary/WindowsLiveWriter/CreatingaMongoDBproviderforBlogengin.Net_14694/initial_solution_set_up.png"><img style="border-right-width: 0px; display: inline; border-top-width: 0px; border-bottom-width: 0px; border-left-width: 0px" title="initial_solution_set_up" border="0" alt="initial_solution_set_up" src="http://blog.dynamicprogrammer.com/content/binary/WindowsLiveWriter/CreatingaMongoDBproviderforBlogengin.Net_14694/initial_solution_set_up_thumb.png" width="244" height="168"></a> 
+
+And the following directory structure.
+
+<a href="http://blog.dynamicprogrammer.com/content/binary/WindowsLiveWriter/CreatingaMongoDBproviderforBlogengin.Net_14694/initial_dir_structure.png"><img style="border-right-width: 0px; display: inline; border-top-width: 0px; border-bottom-width: 0px; border-left-width: 0px" title="initial_dir_structure" border="0" alt="initial_dir_structure" src="http://blog.dynamicprogrammer.com/content/binary/WindowsLiveWriter/CreatingaMongoDBproviderforBlogengin.Net_14694/initial_dir_structure_thumb.png" width="288" height="275"></a> 
+
+You may not have the Resharper files and folders, that depends if you have Resharper installed or not.
+
+<h5>Lets write the first test for our MongoDBProvider and generate the class, it needs to inherit from BlogProvider.</h5>
+Even when I have the source I’m treating BlogEngine.Net as a close system. This change a little bit the way I will develop such a provider. I have control of the code there are a bunch of stuff that I will probably refactor or move around. But in this case I can’t since I don’t want to fork the project.
+
+The first test will be to insert a new post. The code will look something like this.
+<pre><pre style="background-color: #ffffff; margin: 0em; width: 100%; font-family: consolas,'Courier New',courier,monospace; font-size: 12px">        <span style="color: #0000ff">public</span> <span style="color: #0000ff">override</span> <span style="color: #0000ff">void</span> InsertPost(Post post)
+</pre><pre style="background-color: #ffffff; margin: 0em; width: 100%; font-family: consolas,'Courier New',courier,monospace; font-size: 12px">        {
+</pre><pre style="background-color: #ffffff; margin: 0em; width: 100%; font-family: consolas,'Courier New',courier,monospace; font-size: 12px">            <span style="color: #0000ff">using</span> (var db = <span style="color: #0000ff">new</span> MongoDB())
+</pre><pre style="background-color: #ffffff; margin: 0em; width: 100%; font-family: consolas,'Courier New',courier,monospace; font-size: 12px">            {
+</pre><pre style="background-color: #ffffff; margin: 0em; width: 100%; font-family: consolas,'Courier New',courier,monospace; font-size: 12px">                db.Insert(post);
+</pre><pre style="background-color: #ffffff; margin: 0em; width: 100%; font-family: consolas,'Courier New',courier,monospace; font-size: 12px">            }
+</pre><pre style="background-color: #ffffff; margin: 0em; width: 100%; font-family: consolas,'Courier New',courier,monospace; font-size: 12px">        }</pre></pre>
+Let’s take a look at the MongoDB class.
+<pre><pre style="background-color: #ffffff; margin: 0em; width: 100%; font-family: consolas,'Courier New',courier,monospace; font-size: 12px">  1:     <span style="color: #0000ff">public</span> <span style="color: #0000ff">class</span> MongoDB : IDisposable
+</pre><pre style="background-color: #ffffff; margin: 0em; width: 100%; font-family: consolas,'Courier New',courier,monospace; font-size: 12px">  2:     {
+</pre><pre style="background-color: #ffffff; margin: 0em; width: 100%; font-family: consolas,'Courier New',courier,monospace; font-size: 12px">  3:         <span style="color: #0000ff">private</span> Mongo _server;
+</pre><pre style="background-color: #ffffff; margin: 0em; width: 100%; font-family: consolas,'Courier New',courier,monospace; font-size: 12px">  4:         <span style="color: #0000ff">private</span> Database _db;
+</pre><pre style="background-color: #ffffff; margin: 0em; width: 100%; font-family: consolas,'Courier New',courier,monospace; font-size: 12px">  5: 
+</pre><pre style="background-color: #ffffff; margin: 0em; width: 100%; font-family: consolas,'Courier New',courier,monospace; font-size: 12px">  6:         <span style="color: #0000ff">public</span> MongoDB()
+</pre><pre style="background-color: #ffffff; margin: 0em; width: 100%; font-family: consolas,'Courier New',courier,monospace; font-size: 12px">  7:         {
+</pre><pre style="background-color: #ffffff; margin: 0em; width: 100%; font-family: consolas,'Courier New',courier,monospace; font-size: 12px">  8:             _server = <span style="color: #0000ff">new</span> Mongo();
+</pre><pre style="background-color: #ffffff; margin: 0em; width: 100%; font-family: consolas,'Courier New',courier,monospace; font-size: 12px">  9:         }
+</pre><pre style="background-color: #ffffff; margin: 0em; width: 100%; font-family: consolas,'Courier New',courier,monospace; font-size: 12px"> 10: 
+</pre><pre style="background-color: #ffffff; margin: 0em; width: 100%; font-family: consolas,'Courier New',courier,monospace; font-size: 12px"> 11:         <span style="color: #0000ff">private</span> Database Db()
+</pre><pre style="background-color: #ffffff; margin: 0em; width: 100%; font-family: consolas,'Courier New',courier,monospace; font-size: 12px"> 12:         {
+</pre><pre style="background-color: #ffffff; margin: 0em; width: 100%; font-family: consolas,'Courier New',courier,monospace; font-size: 12px"> 13:             <span style="color: #0000ff">if</span> (_db != <span style="color: #0000ff">null</span>) <span style="color: #0000ff">return</span> _db;
+</pre><pre style="background-color: #ffffff; margin: 0em; width: 100%; font-family: consolas,'Courier New',courier,monospace; font-size: 12px"> 14:             var server = <span style="color: #0000ff">new</span> Mongo();
+</pre><pre style="background-color: #ffffff; margin: 0em; width: 100%; font-family: consolas,'Courier New',courier,monospace; font-size: 12px"> 15:             server.Connect();
+</pre><pre style="background-color: #ffffff; margin: 0em; width: 100%; font-family: consolas,'Courier New',courier,monospace; font-size: 12px"> 16:             _db = server.getDB(BlogSettings.Instance.Name.Replace("<span style="color: #8b0000"> </span>", "<span style="color: #8b0000">_</span>"));
+</pre><pre style="background-color: #ffffff; margin: 0em; width: 100%; font-family: consolas,'Courier New',courier,monospace; font-size: 12px"> 17:             <span style="color: #0000ff">return</span> _db;
+</pre><pre style="background-color: #ffffff; margin: 0em; width: 100%; font-family: consolas,'Courier New',courier,monospace; font-size: 12px"> 18:         }
+</pre><pre style="background-color: #ffffff; margin: 0em; width: 100%; font-family: consolas,'Courier New',courier,monospace; font-size: 12px"> 19:         <span style="color: #0000ff">public</span> <span style="color: #0000ff">void</span> Insert&amp;lt;TEntity&amp;gt;(TEntity entity)
+</pre><pre style="background-color: #ffffff; margin: 0em; width: 100%; font-family: consolas,'Courier New',courier,monospace; font-size: 12px"> 20:         {
+</pre><pre style="background-color: #ffffff; margin: 0em; width: 100%; font-family: consolas,'Courier New',courier,monospace; font-size: 12px"> 21:             Document document = DocumentMapperFactory.GetMapper&amp;lt;TEntity&amp;gt;().Map(entity);
+</pre><pre style="background-color: #ffffff; margin: 0em; width: 100%; font-family: consolas,'Courier New',courier,monospace; font-size: 12px"> 22:             Db().GetCollection(entity.GetType().Name+"<span style="color: #8b0000">Docs</span>").Insert(document);
+</pre><pre style="background-color: #ffffff; margin: 0em; width: 100%; font-family: consolas,'Courier New',courier,monospace; font-size: 12px"> 23:         }
+</pre><pre style="background-color: #ffffff; margin: 0em; width: 100%; font-family: consolas,'Courier New',courier,monospace; font-size: 12px"> 24:         
+</pre><pre style="background-color: #ffffff; margin: 0em; width: 100%; font-family: consolas,'Courier New',courier,monospace; font-size: 12px"> 25:         <span style="color: #0000ff">public</span> <span style="color: #0000ff">void</span> Dispose()
+</pre><pre style="background-color: #ffffff; margin: 0em; width: 100%; font-family: consolas,'Courier New',courier,monospace; font-size: 12px"> 26:         {
+</pre><pre style="background-color: #ffff80; margin: 0em; width: 100%; font-family: consolas,'Courier New',courier,monospace; font-size: 12px"> 27:             _server.Disconnect();
+</pre><pre style="background-color: #ffffff; margin: 0em; width: 100%; font-family: consolas,'Courier New',courier,monospace; font-size: 12px"> 28:             _server.Dispose();
+</pre><pre style="background-color: #ffffff; margin: 0em; width: 100%; font-family: consolas,'Courier New',courier,monospace; font-size: 12px"> 29:         }
+</pre><pre style="background-color: #ffffff; margin: 0em; width: 100%; font-family: consolas,'Courier New',courier,monospace; font-size: 12px"> 30:     }</pre></pre>
+In line 27 I made sure we disconnect from the db. Note in line 21 that I’m getting a mapper from a factory. This is an obvious requirement since we need a mechanism to map from our objects to the documents and back.
+
+In the next article we will take a look at the Mapper class for Post, save and update our first entity.

@@ -1,0 +1,9 @@
+---
+layout: post
+title: PDC 2009 dates and mailing list.
+summary: &amp;nbsp;   A few days ago was announced the date for the Professional Developers Conference 2009 or PDC. You can see the <a href="http://channel9.msdn.com/posts/PDCNews/Announcing-PDC2009/" target="_blank">announcement</a> or <a href="https://...
+---
+&amp;nbsp;
+  A few days ago was announced the date for the Professional Developers Conference 2009 or PDC. You can see the <a href="http://channel9.msdn.com/posts/PDCNews/Announcing-PDC2009/" target="_blank">announcement</a> or <a href="https://www.ustechsregister.com/pdc09mailinglist/main.aspx" target="_blank">subscribe</a> to the mailing list. The conference will be on November 17-20, 2009 in Los Angeles, California.
+  <em>Note: The page for the mailing list has the PDC 2008 logo, but that’s ok.</em>
+  <div class="wlWriterEditableSmartContent" id="scid:0767317B-992E-4b12-91E0-4F059A8CECA8:ab1fdb0c-0bfa-43fc-a5ff-e91fd86b6e12" style="margin: 0px; padding: 0px; display: inline; float: none;">Technorati Tags: <a href="http://technorati.com/tags/PDC+2009" rel="tag">PDC 2009</a></div>

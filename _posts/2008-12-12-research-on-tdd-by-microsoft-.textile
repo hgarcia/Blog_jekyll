@@ -1,0 +1,11 @@
+---
+layout: post
+title: Research on TDD by Microsoft.
+summary: &amp;nbsp;   There is a nice <a href="http://channel9.msdn.com/posts/Peli/Experimental-study-about-Test-Driven-Development/" target="_blank">video</a> on Channel 9 about a study done by Microsoft Research about TDD and it’s impact on a real in...
+---
+&amp;nbsp;
+  There is a nice <a href="http://channel9.msdn.com/posts/Peli/Experimental-study-about-Test-Driven-Development/" target="_blank">video</a> on Channel 9 about a study done by Microsoft Research about TDD and it’s impact on a real industry scenario. 
+  The study was done post mortem, so the developers were not influenced while developing the product. The results indicate that the Quality of the code is substantial, but there is a slight penalty (on ma hours) due to time spend writing the test.
+  In any case the defect rates drops between 50 to 90 percent, so subsequent development and maintenance should be cheaper.
+  You can download the paper on the <a href="http://research.microsoft.com/en-us/projects/esm/" target="_blank">Empirical Software Engineering Group site</a> make sure you click in the Local Copy link and not the title and you will save $34 .
+  <div class="wlWriterEditableSmartContent" id="scid:0767317B-992E-4b12-91E0-4F059A8CECA8:3970df0a-2dd0-4557-914f-0e1a39ca7285" style="margin: 0px; padding: 0px; display: inline; float: none;">Technorati Tags: <a href="http://technorati.com/tags/TDD" rel="tag">TDD</a></div>

@@ -1,0 +1,64 @@
+---
+layout: post
+title: Mercurial integration with Visual Studio
+summary: I recently posted about how to <a href="http://blog.dynamicprogrammer.com/2010/02/15/GitIntegrationWithVisualStudio.aspx" target="_blank">integrate Git with Visual Studio</a>. Of course Git is not the only DVCS out there.   Mercurial is another ...
+---
+I recently posted about how to <a href="http://blog.dynamicprogrammer.com/2010/02/15/GitIntegrationWithVisualStudio.aspx" target="_blank">integrate Git with Visual Studio</a>. Of course Git is not the only DVCS out there. 
+ Mercurial is another source control system similar to Git that is having more and more relevance. Google code have been supporting it for quite a while and <a href="http://blogs.msdn.com/codeplex/archive/2010/01/22/codeplex-now-supporting-native-mercurial.aspx" target="_blank">recently Microsoft announced that Codeplex is adding it as an option for new projects</a>. (Codeplex already supported TFS and Subversion).
+ At work we use <a href="http://www.fogcreek.com/FogBugz/" target="_blank">Fogbugz</a> as our bug tracking/project management tool. A few months ago the people at <a href="http://fogcreek.com/" target="_blank">Fogcreek</a> started a beta for <a href="http://fogcreek.com/kiln/" target="_blank">Kiln</a> a code review/source control system that runs on top of mercurial.
+ I sign up for the beta and have been running a pilot project on it. Since I really like it I decided to start moving all our projects to Kiln and ditch Subversion. The piece that I was missing was a good integration into VS for the rest of my team.
+ A few day ago I found <a href="http://www.newsupaplex.pp.ru/hgscc_news_eng.html" target="_blank">Mercurial VSS</a> an integration package for Mercurial into VS.
+ The installation is very simple, just select the version of VS you want to install against (version 1.0.7 released today integrates without problems with both VS 2008 and 2010 RC).
+ <a href="http://blog.dynamicprogrammer.com/content/binary/WindowsLiveWriter/MercurialintegrationwithVisualStudio_1474C/select_vs_version.png"><img style="border-bottom: 0px; border-left: 0px; display: inline; border-top: 0px; border-right: 0px" title="select_vs_version" border="0" alt="select_vs_version" src="http://blog.dynamicprogrammer.com/content/binary/WindowsLiveWriter/MercurialintegrationwithVisualStudio_1474C/select_vs_version_thumb.png" width="358" height="197"></a> 
+ &amp;nbsp;
+ After installed go to Tools –&amp;gt; Options and make sure you select display all options (only in VS 2008).
+ <a href="http://blog.dynamicprogrammer.com/content/binary/WindowsLiveWriter/MercurialintegrationwithVisualStudio_1474C/select_show_all_options.png"><img style="border-bottom: 0px; border-left: 0px; display: inline; border-top: 0px; border-right: 0px" title="select_show_all_options" border="0" alt="select_show_all_options" src="http://blog.dynamicprogrammer.com/content/binary/WindowsLiveWriter/MercurialintegrationwithVisualStudio_1474C/select_show_all_options_thumb.png" width="236" height="404"></a>
+ Select the Source Control option and in the Plug-in Selection option change it to Mercurial.
+ <a href="http://blog.dynamicprogrammer.com/content/binary/WindowsLiveWriter/MercurialintegrationwithVisualStudio_1474C/set_scs_plug_inn.png"><img style="border-bottom: 0px; border-left: 0px; display: inline; border-top: 0px; border-right: 0px" title="set_scs_plug_inn" border="0" alt="set_scs_plug_inn" src="http://blog.dynamicprogrammer.com/content/binary/WindowsLiveWriter/MercurialintegrationwithVisualStudio_1474C/set_scs_plug_inn_thumb.png" width="506" height="207"></a>&amp;nbsp;
+ After open a project (even one that is already under source control) you will need to select the Add to source control option from the contextual menu inside the Solution explorer.
+ <a href="http://blog.dynamicprogrammer.com/content/binary/WindowsLiveWriter/MercurialintegrationwithVisualStudio_1474C/add_to_sc.png"><img style="border-bottom: 0px; border-left: 0px; display: inline; border-top: 0px; border-right: 0px" title="add_to_sc" border="0" alt="add_to_sc" src="http://blog.dynamicprogrammer.com/content/binary/WindowsLiveWriter/MercurialintegrationwithVisualStudio_1474C/add_to_sc_thumb.png" width="293" height="256"></a>&amp;nbsp; 
+ After added you will se a tilde besides each project.
+ <a href="http://blog.dynamicprogrammer.com/content/binary/WindowsLiveWriter/MercurialintegrationwithVisualStudio_1474C/solution_added.png"><img style="border-bottom: 0px; border-left: 0px; display: inline; border-top: 0px; border-right: 0px" title="solution_added" border="0" alt="solution_added" src="http://blog.dynamicprogrammer.com/content/binary/WindowsLiveWriter/MercurialintegrationwithVisualStudio_1474C/solution_added_thumb.png" width="306" height="147"></a> 
+ This are the options available from the contextual menu.
+ <a href="http://blog.dynamicprogrammer.com/content/binary/WindowsLiveWriter/MercurialintegrationwithVisualStudio_1474C/hg_menu_options.png"><img style="border-bottom: 0px; border-left: 0px; display: inline; border-top: 0px; border-right: 0px" title="hg_menu_options" border="0" alt="hg_menu_options" src="http://blog.dynamicprogrammer.com/content/binary/WindowsLiveWriter/MercurialintegrationwithVisualStudio_1474C/hg_menu_options_thumb.png" width="330" height="280"></a> 
+ 
+ 
+ 
+ 
+ 
+ &amp;nbsp;
+ And a few screen captures of the different options.
+ &amp;nbsp;
+ Change log
+ <a href="http://blog.dynamicprogrammer.com/content/binary/WindowsLiveWriter/MercurialintegrationwithVisualStudio_1474C/Change_log.png"><img style="border-bottom: 0px; border-left: 0px; display: inline; border-top: 0px; border-right: 0px" title="Change_log" border="0" alt="Change_log" src="http://blog.dynamicprogrammer.com/content/binary/WindowsLiveWriter/MercurialintegrationwithVisualStudio_1474C/Change_log_thumb.png" width="546" height="263"></a>
+ &amp;nbsp;
+ Commit
+ &amp;nbsp;<a href="http://blog.dynamicprogrammer.com/content/binary/WindowsLiveWriter/MercurialintegrationwithVisualStudio_1474C/commit_window.png"><img style="border-bottom: 0px; border-left: 0px; display: inline; border-top: 0px; border-right: 0px" title="commit_window" border="0" alt="commit_window" src="http://blog.dynamicprogrammer.com/content/binary/WindowsLiveWriter/MercurialintegrationwithVisualStudio_1474C/commit_window_thumb.png" width="537" height="417"></a>
+ &amp;nbsp;
+ History
+ &amp;nbsp;<a href="http://blog.dynamicprogrammer.com/content/binary/WindowsLiveWriter/MercurialintegrationwithVisualStudio_1474C/history.png"><img style="border-bottom: 0px; border-left: 0px; display: inline; border-top: 0px; border-right: 0px" title="history" border="0" alt="history" src="http://blog.dynamicprogrammer.com/content/binary/WindowsLiveWriter/MercurialintegrationwithVisualStudio_1474C/history_thumb.png" width="526" height="293"></a>
+ &amp;nbsp;
+ Pull
+ &amp;nbsp;<a href="http://blog.dynamicprogrammer.com/content/binary/WindowsLiveWriter/MercurialintegrationwithVisualStudio_1474C/Pull.png"><img style="border-bottom: 0px; border-left: 0px; display: inline; border-top: 0px; border-right: 0px" title="Pull" border="0" alt="Pull" src="http://blog.dynamicprogrammer.com/content/binary/WindowsLiveWriter/MercurialintegrationwithVisualStudio_1474C/Pull_thumb.png" width="538" height="226"></a>
+ &amp;nbsp;
+ Push
+ &amp;nbsp;<a href="http://blog.dynamicprogrammer.com/content/binary/WindowsLiveWriter/MercurialintegrationwithVisualStudio_1474C/push.png"><img style="border-bottom: 0px; border-left: 0px; display: inline; border-top: 0px; border-right: 0px" title="push" border="0" alt="push" src="http://blog.dynamicprogrammer.com/content/binary/WindowsLiveWriter/MercurialintegrationwithVisualStudio_1474C/push_thumb.png" width="548" height="233"></a>
+ &amp;nbsp;
+ Revert
+ &amp;nbsp;<a href="http://blog.dynamicprogrammer.com/content/binary/WindowsLiveWriter/MercurialintegrationwithVisualStudio_1474C/revert.png"><img style="border-bottom: 0px; border-left: 0px; display: inline; border-top: 0px; border-right: 0px" title="revert" border="0" alt="revert" src="http://blog.dynamicprogrammer.com/content/binary/WindowsLiveWriter/MercurialintegrationwithVisualStudio_1474C/revert_thumb.png" width="453" height="268"></a>
+ &amp;nbsp;
+ Tags
+ &amp;nbsp;<a href="http://blog.dynamicprogrammer.com/content/binary/WindowsLiveWriter/MercurialintegrationwithVisualStudio_1474C/taggingt.png"><img style="border-bottom: 0px; border-left: 0px; display: inline; border-top: 0px; border-right: 0px" title="taggingt" border="0" alt="taggingt" src="http://blog.dynamicprogrammer.com/content/binary/WindowsLiveWriter/MercurialintegrationwithVisualStudio_1474C/taggingt_thumb.png" width="472" height="269"></a>
+ &amp;nbsp;
+ Update
+ &amp;nbsp;<a href="http://blog.dynamicprogrammer.com/content/binary/WindowsLiveWriter/MercurialintegrationwithVisualStudio_1474C/Update_window.png"><img style="border-bottom: 0px; border-left: 0px; display: inline; border-top: 0px; border-right: 0px" title="Update_window" border="0" alt="Update_window" src="http://blog.dynamicprogrammer.com/content/binary/WindowsLiveWriter/MercurialintegrationwithVisualStudio_1474C/Update_window_thumb.png" width="525" height="282"></a> 
+ &amp;nbsp;
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ <h5>Conclusion</h5> WIth the support from Codeplex and Google code to Mercurial and the tight integration that this plug in presents I see no reason why people will not use it as the DVCS of choice for .net open source projects hosted on those sites. 
