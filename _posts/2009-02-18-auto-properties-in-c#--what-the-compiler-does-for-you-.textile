@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Auto properties in c#, what the compiler does for you.
-summary: &amp;#160;   If you ever wonder what the compiler does to make the auto properties work let’s take a look at the code the way Reflector sees it. Let’s write some very useful code :-)   <div style="font-size: 10pt; background: white; color: ...
+summary: &amp;#160;   If you ever wonder what the compiler does to make the auto properties work let’s take a look at the code the way Reflector sees it. Let’s write some very useful code --)   <div style="font-size- 10pt; background- white; color- ...
 ---
 &amp;#160;
   If you ever wonder what the compiler does to make the auto properties work let’s take a look at the code the way Reflector sees it. Let’s write some very useful code :-)

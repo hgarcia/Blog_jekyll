@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Hurray to my team
-summary: In the last year my team was able to successfully adopt the following practices in no particular order:    Unit testing (mostly Test First or TDD) - we were doing no formal repetitive testing before.Continuous Integration using CC.net. - a b...
+summary: In the last year my team was able to successfully adopt the following practices in no particular order-    Unit testing (mostly Test First or TDD) - we were doing no formal repetitive testing before.Continuous Integration using CC.net. - a b...
 ---
 In the last year my team was able to successfully adopt the following practices in no particular order:   
 Unit testing (mostly Test First or TDD) - we were doing no formal repetitive testing before.<br>Continuous Integration using CC.net. - a build you mean F5 on VS? Nant to drive our builds.<br>Subversion as our source control system (we have no VCS before!).<br>NHibernate (we were using DooDads or simple Ado.NET before).<br>DI with Castle.Windsor.<br>Mocking (we started using NMock2 but we are moving to Rhino.Mocks now).<br>Code reviews and some type of pair programming.<br>Fogbugz as our bug tracking system (we had an in house tool before, but I hated that we also have to do maintenance of this tool and that have no value to the core business). 

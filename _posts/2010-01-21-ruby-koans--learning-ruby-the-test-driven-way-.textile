@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Ruby Koans, learning ruby the test driven way.
-summary: Probably you are aware of Edgecase Ruby Koans. In case you aren’t, let me introduce you to them.   From Wikipedia, <a href="http://en.wikipedia.org/wiki/K%C5%8Dan" target="_bl...
+summary: Probably you are aware of Edgecase Ruby Koans. In case you aren’t, let me introduce you to them.   From Wikipedia, <a href="http-//en.wikipedia.org/wiki/K%C5%8Dan" target="_bl...
 ---
 Probably you are aware of <a href="http://github.com/edgecase/ruby_koans" target="_blank">Edgecase Ruby Koans</a>. In case you aren’t, let me introduce you to them. 
  From Wikipedia, <a href="http://en.wikipedia.org/wiki/K%C5%8Dan" target="_blank">Koan</a>:

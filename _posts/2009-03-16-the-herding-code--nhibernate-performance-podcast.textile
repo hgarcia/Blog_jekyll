@@ -1,7 +1,7 @@
 ---
 layout: post
 title: The Herding Code- NHibernate performance podcast
-summary: &amp;#160;   Today I have the pleasure to listen to a really good episode of The Herding Code. The episode title was NHibernate performance. In the episode <a href="http://ayende.com/" ...
+summary: &amp;#160;   Today I have the pleasure to listen to a really good episode of The Herding Code. The episode title was NHibernate performance. In the episode <a href="http-//ayende.com/" ...
 ---
 &amp;#160;
   Today I have the pleasure to listen to a really <a href="http://herdingcode.com/?p=171" target="_blank">good episode of The Herding Code</a>. The episode title was NHibernate performance. In the episode <a href="http://ayende.com/" target="_blank">Ayende</a>, <a href="http://pentonizer.com/" target="_blank">David Penton</a> and <a href="http://flux88.com/" target="_blank">Ben Scheirman</a> talked about <a href="http://nhforge.org/" target="_blank">NHibernate</a> and the performance of the tool when compared with writing SQL directly to the database and other scenarios.

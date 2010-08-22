@@ -1,7 +1,7 @@
 ---
 layout: post
 title: What is ProngHorn and why I’m doing it?
-summary: You can find this text in the the wiki for Pronghorn on Code  plex. http://pronghorn.codeplex.com  Pronghorn is still a work in progress and the architecture+design is changing very fast. At this ...
+summary: You can find this text in the the wiki for Pronghorn on Code  plex. http-//pronghorn.codeplex.com  Pronghorn is still a work in progress and the architecture+design is changing very fast. At this ...
 ---
 You can find this text in the the wiki for Pronghorn on Code
  plex. <a href="http://pronghorn.codeplex.com">http://pronghorn.codeplex.com</a>

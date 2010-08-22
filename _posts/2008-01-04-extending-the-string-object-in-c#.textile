@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Extending the string object in c#
-summary: UPDATE: Thanks to Peter I modify where the string[] is declared and changed an obvious mistake instead of string s = ""; I use the correct form of string s = string.Empty;, I can't believe I miss that one, I really annoy me tea...
+summary: UPDATE- Thanks to Peter I modify where the string[] is declared and changed an obvious mistake instead of string s = ""; I use the correct form of string s = string.Empty;, I can't believe I miss that one, I really annoy me tea...
 ---
 <span class="Code">UPDATE: Thanks to Peter I modify where the string[] is declared and changed an obvious mistake instead of string s = ""; I use the correct form of string s = string.Empty;, I can't believe I miss that one, I really annoy me team with that line :-)</span>
 I have found some controversy in post demostrating how to extend the string object. Sometimes the controversy is around the examples presented. So I decided to make my own example with methods that I wish were included in the framework.
