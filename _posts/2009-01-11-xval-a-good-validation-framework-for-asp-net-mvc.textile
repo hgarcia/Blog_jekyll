@@ -1,7 +1,7 @@
 ---
 layout: post
 title: xVal a good validation framework for ASP.NET MVC
-summary: &amp;#160;   I found this project on <a href="http://www.codeplex.com" target="_blank">CodePlex</a> called <a href="http://www.codeplex.com/xval" target="_blank">xVal</a>. It’s <a href="http://blog.codeville.net/" target="_blank">Steve Sanders...
+summary: &amp;#160;   I found this project on CodePlex called xVal. It’s Steve Sanders...
 ---
 &amp;#160;
   I found this project on <a href="http://www.codeplex.com" target="_blank">CodePlex</a> called <a href="http://www.codeplex.com/xval" target="_blank">xVal</a>. It’s <a href="http://blog.codeville.net/" target="_blank">Steve Sanderson’s</a> take on validation for the ASP.NET MVC framework, more to the point on how to use validation across tiers (validate on the server side, present errors to the client, etc.)

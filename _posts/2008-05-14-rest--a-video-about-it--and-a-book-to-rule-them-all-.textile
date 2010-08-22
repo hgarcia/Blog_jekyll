@@ -1,7 +1,7 @@
 ---
 layout: post
 title: REST, a video about it, and a book to rule them all.
-summary: I seriously believe that REST is a simple and yet powerful architecture that can be used in most scenarios where web services need to be deployed. This week the good guys at <a href="http://www.infoq.com/interviews/pete-lacey-rest">infoq.com </a...
+summary: I seriously believe that REST is a simple and yet powerful architecture that can be used in most scenarios where web services need to be deployed. This week the good guys at infoq.com </a...
 ---
 I seriously believe that REST is a simple and yet powerful architecture that can be used in most scenarios where web services need to be deployed.
 This week the good guys at <a href="http://www.infoq.com/interviews/pete-lacey-rest">infoq.com </a>have an interview with Pete Lacey a fervent proponent of REST where he explains the reasons behind his passion. He talk about it and about the WS* stack and why he things that is bloated and not very useful.

@@ -1,7 +1,7 @@
 ---
 layout: post
 title: A simple solution to the Big Fat Controller problem in MVC.
-summary: &amp;#160;   This post have been inspired by <a href="http://www.lostechies.com/blogs/chad_myers/archive/2009/06/18/going-controller-less-in-mvc-the-way-fowler-meant-it.aspx" target="_blank">the talks about </a><a href="http://www.jeremyskinner....
+summary: &amp;#160;   This post have been inspired by the talks about <a href="http://www.jeremyskinner....
 ---
 &amp;#160;
   This post have been inspired by <a href="http://www.lostechies.com/blogs/chad_myers/archive/2009/06/18/going-controller-less-in-mvc-the-way-fowler-meant-it.aspx" target="_blank">the talks about </a><a href="http://www.jeremyskinner.co.uk/2009/06/20/controllerless-actions-with-asp-net-mvc/" target="_blank">controllerless actions</a>. This is NOT an alternative to that. Controllerless actions is an interesting concept that should be study. Actually <a href="http://jeffreypalermo.com/" target="_blank">Jeffrey Palermo</a> has a <a href="http://jeffreypalermo.com/blog/the-asp-net-mvc-actioncontroller-ndash-the-controllerless-action-or-actionless-controller/" target="_blank">concept implementation</a>.

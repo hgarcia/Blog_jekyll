@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Gherkin editor, syntax highlighting and auto complete to write your stories.
-summary: Last Friday I was showing some of the guys at the office how to write user stories with the <a href="http://wiki.github.com/aslakhellesoy/cucumber/gherkin" target="_blank">Gherkin</a> language to been able to use them in either <a href="http://cu...
+summary: Last Friday I was showing some of the guys at the office how to write user stories with the Gherkin language to been able to use them in either <a href="http://cu...
 ---
 Last Friday I was showing some of the guys at the office how to write user stories with the <a href="http://wiki.github.com/aslakhellesoy/cucumber/gherkin" target="_blank">Gherkin</a> language to been able to use them in either <a href="http://cukes.info/" target="_blank">Cucumber</a> or <a href="http://specflow.org/" target="_blank">Specflow</a> as executable specifications.
  They were receptive but they have a problem. Notepad. They wanted to use Word and have a template, and some spell checking support….

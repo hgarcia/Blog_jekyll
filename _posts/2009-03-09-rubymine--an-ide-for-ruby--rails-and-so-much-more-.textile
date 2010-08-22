@@ -1,7 +1,7 @@
 ---
 layout: post
 title: RubyMine, an IDE for Ruby, Rails and so much more.
-summary: &amp;#160;   Ok, first let me be really clear, I’m not a <a href="http://www.jetbrains.com/index.html" target="_blank">JetBrains</a> fan boy.     <br />Yes, I use <a href="http://www.jetbrains.com/resharper/index.html" target="_blank">ReSharpe...
+summary: &amp;#160;   Ok, first let me be really clear, I’m not a JetBrains fan boy.     Yes, I use ReSharpe...
 ---
 &amp;#160;
   Ok, first let me be really clear, I’m not a <a href="http://www.jetbrains.com/index.html" target="_blank">JetBrains</a> fan boy.     <br />Yes, I use <a href="http://www.jetbrains.com/resharper/index.html" target="_blank">ReSharper</a> and yes, I also use <a href="http://www.jetbrains.com/teamcity/index.html" target="_blank">TeamCity</a> at home as my <a href="http://martinfowler.com/articles/continuousIntegration.html" target="_blank">Continuous Integration</a> server for some of my projects.

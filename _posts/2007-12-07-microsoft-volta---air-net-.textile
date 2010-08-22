@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Microsoft Volta - AIR.NET?
-summary: I just came across this: <a target="_blank" href="http://labs.live.com/volta/">http://labs.live.com/volta/.</a> I haven't downloaded or anything but my first impression is that this try to be some kind of AIR. It's not exactly the same, but the ...
+summary: I just came across this: http://labs.live.com/volta/. I haven't downloaded or anything but my first impression is that this try to be some kind of AIR. It's not exactly the same, but the ...
 ---
 I just came across this: <a target="_blank" href="http://labs.live.com/volta/">http://labs.live.com/volta/.</a>
 I haven't downloaded or anything but my first impression is that this try to be some kind of AIR. It's not exactly the same, but the idea, according with my limited understading, is that you program an application using any .NET language and them you can compile the application targeting different architectures. The client side always run on a JScript interpreter, most of the time that will be a browser.

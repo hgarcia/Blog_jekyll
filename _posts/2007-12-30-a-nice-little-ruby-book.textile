@@ -1,7 +1,7 @@
 ---
 layout: post
 title: A nice little Ruby book
-summary: If you are learning Ruby or if you just wander what is all of that about there are a few free online books that you should jump into. <a href="http://www.infoq.com/minibooks/ruby">Mr. Neighborly's Humble Little Ruby Book</a> is a free e-book fro...
+summary: If you are learning Ruby or if you just wander what is all of that about there are a few free online books that you should jump into. Mr. Neighborly's Humble Little Ruby Book is a free e-book fro...
 ---
 If you are learning Ruby or if you just wander what is all of that about there are a few free online books that you should jump into.
 <a href="http://www.infoq.com/minibooks/ruby">Mr. Neighborly's Humble Little Ruby Book</a> is a free e-book from the guys of <a href="http://www.infoq.com">http://infoq.com</a> you just need to create an account log in and download the pdf, if you like the book you can purchase it for just $9.95. The book is written in an easy to follow language (sometimes a little too campy for my taste) but is clear and you can get started on Ruby right away. It goes throught all the language constructs, objects, etc. It even have a chapter on sockets, http and web services.<br>I found this a nice book to start your journey into Ruby land.

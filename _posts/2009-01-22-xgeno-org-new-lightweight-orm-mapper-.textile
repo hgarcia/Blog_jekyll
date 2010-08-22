@@ -1,7 +1,7 @@
 ---
 layout: post
 title: XGENO.ORG new lightweight ORM Mapper.
-summary: &amp;#160;   You can find this new ORM framework at <a href="http://code.msdn.microsoft.com/XGENOORM">http://code.msdn.microsoft.com/XGENOORM</a>. Starting with it is fairly easy. Just add a reference on your project to the very small (32K) dll ...
+summary: &amp;#160;   You can find this new ORM framework at http://code.msdn.microsoft.com/XGENOORM. Starting with it is fairly easy. Just add a reference on your project to the very small (32K) dll ...
 ---
 &amp;#160;
   You can find this new ORM framework at <a href="http://code.msdn.microsoft.com/XGENOORM">http://code.msdn.microsoft.com/XGENOORM</a>. Starting with it is fairly easy. Just add a reference on your project to the very small (32K) dll (only one!) and you can start playing with it.

@@ -1,7 +1,7 @@
 ---
 layout: post
 title: The simplicity and speed of Git and DVCS in general.
-summary: Since I started using <a href="http://git-scm.com/" target="_blank">Git</a> a few months ago, and particularly GitHub since last September, my life have been good in <a href="http://en.wikipedia.org/wiki/Distributed_revision_control" target="_bla...
+summary: Since I started using Git a few months ago, and particularly GitHub since last September, my life have been good in <a href="http://en.wikipedia.org/wiki/Distributed_revision_control" target="_bla...
 ---
 Since I started using <a href="http://git-scm.com/" target="_blank">Git</a> a few months ago, and particularly GitHub since last September, my life have been good in <a href="http://en.wikipedia.org/wiki/Distributed_revision_control" target="_blank">DVCS</a> land.<br><br>I used to be a Subversion user and I was happy*, maybe because I didn’t know anything better. Of course I heard all the cool kids (specially in the Ruby world) talking about Git and bragging about it, but I was being loyal to my old pal SVN.
  But this was slowing me down and I wasn’t aware of it. I’m not sure what make me install msysgit for the first time. After struggling a little bit at the beginning and wrapping my head around the concepts and the commands I noticed that my flow started to change.<br><br>This change was good. Was more Agile. Doing small commits for little changes of code seems natural since the speed of this commits was almost instantaneous (remember the commits happens in your own machine). I’m talking of commits been done almost at the line of code level. 

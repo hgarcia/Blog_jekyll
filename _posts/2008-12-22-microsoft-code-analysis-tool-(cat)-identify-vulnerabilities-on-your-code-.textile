@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Microsoft Code Analysis Tool (CAT) identify vulnerabilities on your code.
-summary: &amp;#160;   <a href="http://www.microsoft.com/downloads/details.aspx?FamilyId=0178e2ef-9da8-445e-9348-c93f24cc9f9d&amp;amp;displaylang=en" target="_blank">CAT</a> is a Visual Studio Add-in that analyze your code and all the references in your p...
+summary: &amp;#160;   CAT is a Visual Studio Add-in that analyze your code and all the references in your p...
 ---
 &amp;#160;
   <a href="http://www.microsoft.com/downloads/details.aspx?FamilyId=0178e2ef-9da8-445e-9348-c93f24cc9f9d&amp;amp;displaylang=en" target="_blank">CAT</a> is a Visual Studio Add-in that analyze your code and all the references in your project looking for vulnerabilities to common attacks.

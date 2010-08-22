@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Gurtle, access your Google code issue tracker from inside TortoiseSVN
-summary: &amp;#160;   <a href="http://blog.dynamicprogrammer.com/2009/02/14/IntegrateVisualStudioWithTortoiseSVNForFree.aspx" target="_blank">In my previous</a> post I mentioned how to integrate Visual Studio with Subversion for free and without having t...
+summary: &amp;#160;   In my previous post I mentioned how to integrate Visual Studio with Subversion for free and without having t...
 ---
 &amp;#160;
   <a href="http://blog.dynamicprogrammer.com/2009/02/14/IntegrateVisualStudioWithTortoiseSVNForFree.aspx" target="_blank">In my previous</a> post I mentioned how to integrate Visual Studio with Subversion for free and without having to install fancy plug-ins.

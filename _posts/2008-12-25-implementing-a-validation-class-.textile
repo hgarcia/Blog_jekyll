@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Implementing a validation class.
-summary: &amp;#160;   How many times have you done this?   <pre class="c#" name="code">public void Delete(IEnumerable objectsToDelete)<br />{    <br />    if (objectsToDelete == null)<br />    {<br />        throw new ArgumentNullException(&amp;quot;obj...
+summary: &amp;#160;   How many times have you done this?   public void Delete(IEnumerable objectsToDelete){        if (objectsToDelete == null)    {        throw new ArgumentNullException(&amp;quot;obj...
 ---
 &amp;#160;
   How many times have you done this?

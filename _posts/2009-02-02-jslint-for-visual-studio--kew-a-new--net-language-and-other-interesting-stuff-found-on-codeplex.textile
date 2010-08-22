@@ -1,7 +1,7 @@
 ---
 layout: post
 title: JSLint for Visual Studio, Kew a new .Net language and other interesting stuff found on Codeplex
-summary: &amp;#160;   If you do any Js development at all you may want to consider installing <a href="http://www.codeplex.com/jslint" target="_blank">this add in</a> for Visual Studio that brings <a href="http://www.jslint.com/" target="_blank">JSLint</...
+summary: &amp;#160;   If you do any Js development at all you may want to consider installing this add in for Visual Studio that brings JSLint</...
 ---
 &amp;#160;
   If you do any Js development at all you may want to consider installing <a href="http://www.codeplex.com/jslint" target="_blank">this add in</a> for Visual Studio that brings <a href="http://www.jslint.com/" target="_blank">JSLint</a> to the IDE.

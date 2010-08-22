@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Pragmatic Thinking &amp; Learning book review.
-summary: The tag line of <a href="http://pragprog.com/titles/ahptl/pragmatic-thinking-and-learning" target="_blank">the book is refactor your wetware</a>, and after reading it, you will.  <a href="http://en.wikipedia.org/wiki/Andy_Hunt_%28author%29" targ...
+summary: The tag line of the book is refactor your wetware, and after reading it, you will.  <a href="http://en.wikipedia.org/wiki/Andy_Hunt_%28author%29" targ...
 ---
 The tag line of <a href="http://pragprog.com/titles/ahptl/pragmatic-thinking-and-learning" target="_blank">the book is refactor your wetware</a>, and after reading it, you will.
  <a href="http://en.wikipedia.org/wiki/Andy_Hunt_%28author%29" target="_blank">Andy Hunt</a> explores how the brain works and try to point us (the readers) into ways to improve our use of it.

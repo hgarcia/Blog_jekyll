@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Excellent presentation on REST by Stefan Tilkov
-summary: &amp;#160;   Stefan Tilkov is one of the guys behind the fabulous <a href="http://www.infoq.com" target="_blank">info.com</a> and is a big <a href="http://www.ics.uci.edu/~fielding/pubs/dissertation/rest_arch_style.htm" target="_blank">REST</a> ...
+summary: &amp;#160;   Stefan Tilkov is one of the guys behind the fabulous info.com and is a big REST ...
 ---
 &amp;#160;
   Stefan Tilkov is one of the guys behind the fabulous <a href="http://www.infoq.com" target="_blank">info.com</a> and is a big <a href="http://www.ics.uci.edu/~fielding/pubs/dissertation/rest_arch_style.htm" target="_blank">REST</a> proponent. The talk is titled REST, an alternative to Web Services.

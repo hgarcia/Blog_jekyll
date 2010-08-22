@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Big Visible Cruise patch to specify projects in the configuration file
-summary: </arrayofstring></value></setting>   Ok, the patch can be downloaded from the <a href="http://code.google.com/p/bigvisiblecruise/issues/detail?id=32" target="_blank">Issue tracker of the project</a>. This support the following notation in the ap...
+summary:    Ok, the patch can be downloaded from the Issue tracker of the project. This support the following notation in the ap...
 ---
 </arrayofstring></value></setting>
   Ok, the patch can be downloaded from the <a href="http://code.google.com/p/bigvisiblecruise/issues/detail?id=32" target="_blank">Issue tracker of the project</a>. This support the following notation in the app.config.

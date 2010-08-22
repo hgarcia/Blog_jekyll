@@ -1,7 +1,7 @@
 ---
 layout: post
 title: NHibernate in Action – First impressions
-summary: &amp;#160;   I got the book <a href="http://www.manning.com/kuate/" target="_blank">NHibernate in Action</a> a few months ago via the <a href="http://www.manning.com/about/meap.html" target="_blank">MEAP</a> program. Finally I was able to put my...
+summary: &amp;#160;   I got the book NHibernate in Action a few months ago via the MEAP program. Finally I was able to put my...
 ---
 &amp;#160;
   I got the book <a href="http://www.manning.com/kuate/" target="_blank">NHibernate in Action</a> a few months ago via the <a href="http://www.manning.com/about/meap.html" target="_blank">MEAP</a> program. Finally I was able to put my hands in the print version a few weeks ago. I have been reading it mostly in the subway during my commute. I’m very excited about it. 

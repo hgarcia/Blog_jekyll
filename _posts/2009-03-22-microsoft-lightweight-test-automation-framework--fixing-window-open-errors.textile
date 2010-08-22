@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Microsoft Lightweight Test Automation Framework- Fixing window.open errors
-summary:    <br />I have been playing with the <a href="http://aspnet.codeplex.com/Release/ProjectReleases.aspx?ReleaseId=22739" target="_blank">Microsoft Lightweight Test Automation Framework</a>, that’s a mouthful for the Microsoft’s Web testing fra...
+summary:    I have been playing with the Microsoft Lightweight Test Automation Framework, that’s a mouthful for the Microsoft’s Web testing fra...
 ---
    <br />I have been playing with the <a href="http://aspnet.codeplex.com/Release/ProjectReleases.aspx?ReleaseId=22739" target="_blank">Microsoft Lightweight Test Automation Framework</a>, that’s a mouthful for the Microsoft’s Web testing framework. 
   I think that (in general) looks like a nice alternative to some of the other frameworks around (like Watir or Selenium). I will try to give a quick overview of what I have been using so far and what I like and don’t like. 

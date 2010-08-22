@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Ta-Da List and Chrome, or how to do good products.
-summary: I have looking for a simple to use, fast, ubiquous to do list for a long time. I used several different solutions. Web and desktop application. So far none of them really worked for me. <br>Some of them are too simple, other too complex. One that...
+summary: I have looking for a simple to use, fast, ubiquous to do list for a long time. I used several different solutions. Web and desktop application. So far none of them really worked for me. Some of them are too simple, other too complex. One that...
 ---
 I have looking for a simple to use, fast, ubiquous to do list for a long time. I used several different solutions. Web and desktop application. So far none of them really worked for me. <br>Some of them are too simple, other too complex. One that I still use is Task Coach. A nice little application that allows me to create sets of task (projects) and set hierarchies of task. I usually use it when I start a new project. It's a nice tool to just add requirements in a very easy and fast way, also organize those requirements upon dependencies. <br>But for my everyday task I needed something different. I always went back to the pen and paper or the notepad document open on the desktop.
 <h3>Enter Ta-Da Lists</h3>This is a product from <a target="_blank" title="37 signals" href="http://www.37signals.com/">37 signals</a>, the same guys that gave us rails. <a target="_blank" title="Ta-Da list home page" href="http://www.tadalist.com/">Ta-Da List </a>is easy to use. <br>Create an account, a simple process, with a short form. You are done. <br>&amp;nbsp;

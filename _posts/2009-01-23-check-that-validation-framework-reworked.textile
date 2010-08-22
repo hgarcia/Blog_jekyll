@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Check.That validation framework reworked
-summary: &amp;#160;   I just finished a complete re write of my validation framework. This re write was due to feedback received from some of my co workers so I owe to them my thanks.    <br />The validator is not an static class anymore, so you need to ...
+summary: &amp;#160;   I just finished a complete re write of my validation framework. This re write was due to feedback received from some of my co workers so I owe to them my thanks.    The validator is not an static class anymore, so you need to ...
 ---
 &amp;#160;
   I just finished a complete re write of my validation framework. This re write was due to feedback received from some of my co workers so I owe to them my thanks.    <br />The validator is not an static class anymore, so you need to create an instance of it.
