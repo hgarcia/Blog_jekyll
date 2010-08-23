@@ -16,9 +16,12 @@ Today, Microsoft announced the release of WebMatrix Beta. This WebMatrix is a co
 
 You can even use urls like this: /some_crazy_handler/more-stuff/1256 and they still will be handled by the same .cshtml page. The extra data in the url can be accessed by index using the UrlData helper like this:
 
-<pre style="background-color: #ffffff; margin: 0em; width: 100%; font-family: consolas,'Courier New',courier,monospace; font-size: 12px">@UrlData[0] =&amp;gt; more-stuff
-@UrlData[1] =&amp;gt; 1256</pre>
-A nice thing is that if the item you are looking for is not there you won’t get an IndexOutOfBoundException but an empty string. Be aware that if you have a folder with the same name of an existing WebPage any WebPage inside that folder won’t be found, other resources will be served normally.<br><br>Ex: lets create a handler called images.cshtml and a folder with the same name.
+<pre>
+@UrlData[0] => more-stuff
+@UrlData[1] => 1256
+</pre>
+
+A nice thing is that if the item you are looking for is not there you won’t get an IndexOutOfBoundException but an empty string. Be aware that if you have a folder with the same name of an existing WebPage any WebPage inside that folder won’t be found, other resources will be served normally.<br/>Ex: lets create a handler called images.cshtml and a folder with the same name.
 
 <a href="../../../images/posts/WebMatrixredofirstimpressions_14D2D/folder_handler_same_name.png"><img style="border-right-width: 0px; display: inline; border-top-width: 0px; border-bottom-width: 0px; border-left-width: 0px" title="folder_handler_same_name" border="0" alt="folder_handler_same_name" src="../../../images/posts/WebMatrixredofirstimpressions_14D2D/folder_handler_same_name_thumb.png" width="212" height="244"></a> 
 
@@ -27,20 +30,21 @@ Both the image and the html page will be served correctly but the WebPage “Pag
 <h3>Adding routing to the mix.</h3>
 What if you don’t want to tie up the name of the page to the route? For example handle routes in different languages. Let’s put routing to the task. Now, there may be a better way to do this but this is what I put together.
 
-First we need to add a reference to System.Web.Routing, them add an APP_CODE folder to the solution and create a class in there that inherits from IRouteHandler. <br><strong><font color="#ff0000">ATENTION: this is a completely naive implementation and a lot of things can and will go wrong if you put this in production.</font></strong>
+First we need to add a reference to System.Web.Routing, them add an APP_CODE folder to the solution and create a class in there that inherits from IRouteHandler. <br/><span class="attention">ATTENTION: this is a completely naive implementation and a lot of things can and will go wrong if you put this in production.</span>
 
 <script src="http://gist.github.com/468993.js?file=WebPageRouteHandler.cs"></script>
 Now add a global.asax page to the solution and the following at the top below the language directive.
 
-<pre><pre style="background-color: #ffffff; margin: 0em; width: 100%; font-family: consolas,'Courier New',courier,monospace; font-size: 12px">&amp;lt;%@ Import <span style="color: #0000ff">namespace</span>="<span style="color: #8b0000">System.Web.Routing</span>" %&amp;gt;
-</pre><pre style="background-color: #ffffff; margin: 0em; width: 100%; font-family: consolas,'Courier New',courier,monospace; font-size: 12px"></pre></pre>
-Next, create a new method to do the route registration and call it from Application_Start (nothing new here, if you did any MVC or WebForms routing before you already saw some variation of this). <br>And modify the Application_Start method to call it:
+<pre>
+<%@ Import namespace ="System.Web.Routing" %>
+</pre>
+Next, create a new method to do the route registration and call it from Application_Start (nothing new here, if you did any MVC or WebForms routing before you already saw some variation of this). <br/>And modify the Application_Start method to call it:
 
 <script src="http://gist.github.com/468993.js?file=global.asax.cs"></script>
 Nice, isn’t it? Well, there is a problem. These routes won’t work with extra parameters defined this way. We need to figured out a way to pass those values (identified using placeholders in the route) into the UrlData collection. One solution is to use Reflection to set the UrlData to the WebPageRenderingBase, so we modify our WebPageRouteHandler as follow.
 
 <script src="http://gist.github.com/468993.js?file=WebPageRouteHandler2.cs"></script>
-Notice that we need to set the Context as well or we will get a null Exception when calling the UrlData property. Yes, I used Reflector like crazy to figure some of this things out :-) <br><em>Note to Microsoft: Why is UrlDataList internal??? that made my code way more complicate that it should have been, anyway.</em>
+Notice that we need to set the Context as well or we will get a null Exception when calling the UrlData property. Yes, I used Reflector like crazy to figure some of this things out :-) <br/><em>Note to Microsoft: Why is UrlDataList internal??? that made my code way more complicate that it should have been, anyway.</em>
 
 And once again, please do not use this code as is in production, notice that the data should be escaped and validated since urls are user input.
 
@@ -56,4 +60,4 @@ And now when we can use localized urls to visit the same page. Of course you sho
 <a href="../../../images/posts/WebMatrixredofirstimpressions_14D2D/spanish_2.png"><img style="border-bottom: 0px; border-left: 0px; display: inline; border-top: 0px; border-right: 0px" title="spanish" border="0" alt="spanish" src="../../../images/posts/WebMatrixredofirstimpressions_14D2D/spanish_thumb.png" width="391" height="221"></a> 
 
 <h3>Conclusion</h3>
-I think that Razor, WebPages and the other technologies packaged under WebMatrix can be used to do some rapid web development without sacrifice quality. Yes, the professional developer may not be the public that WebMatrix is intended for, but I wouldn’t dismiss it as a toy. Yes, some of the demos are not showing code that I will consider Kosher and unit testing or TDD is not a feature in those demos (or even this article) either but I see the potential. <br>I can see how some of this tools can serve as building blocks for some lightweight framework ala Sinatra or Padrino. Let’s see what we, the community, can do with this.
+I think that Razor, WebPages and the other technologies packaged under WebMatrix can be used to do some rapid web development without sacrifice quality. Yes, the professional developer may not be the public that WebMatrix is intended for, but I wouldn’t dismiss it as a toy. Yes, some of the demos are not showing code that I will consider Kosher and unit testing or TDD is not a feature in those demos (or even this article) either but I see the potential. <br/>I can see how some of this tools can serve as building blocks for some lightweight framework ala Sinatra or Padrino. Let’s see what we, the community, can do with this.
