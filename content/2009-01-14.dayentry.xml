@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<DayEntry xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="urn:newtelligence-com:dasblog:runtime:data">
+  <Date>2009-01-13T17:00:00-07:00</Date>
+  <Entries>
+    <Entry>
+      <Content>&lt;p&gt;&amp;#160;&lt;/p&gt;  &lt;p&gt;If you into DSL’s (Domain Specific Languages) or are interested on them, take a look at &lt;a href="http://martinfowler.com/dslwip/" target="_blank"&gt;this DSL book, work in progress by Martin Fowler&lt;/a&gt;.&lt;/p&gt;  &lt;p&gt;He started back in November 2007 and have been providing frequents updates.&lt;/p&gt;</Content>
+      <Created>2009-01-13T18:38:00-07:00</Created>
+      <Modified>2009-01-11T11:38:30.479546-07:00</Modified>
+      <EntryId>24e89fde-727c-4afc-9110-ddeef915aa0c</EntryId>
+      <Description />
+      <Title>DSL book from Martin Fowler</Title>
+      <Categories>Books;Programming</Categories>
+      <Author>hgarcia</Author>
+      <IsPublic>true</IsPublic>
+      <Syndicated>true</Syndicated>
+      <ShowOnFrontPage>true</ShowOnFrontPage>
+      <AllowComments>true</AllowComments>
+      <Attachments />
+      <Crossposts />
+      <Latitude xsi:nil="true" />
+      <Longitude xsi:nil="true" />
+    </Entry>
+    <Entry>
+      <Content>&lt;p&gt;&amp;#160;&lt;/p&gt;  &lt;p&gt;If you use Cruise Control.Net you may want to take a look at this project: &lt;a href="http://www.codeplex.com/ccnetplugins" target="_blank"&gt;CC.Net Community PlugIns&lt;/a&gt;.&lt;/p&gt;  &lt;blockquote&gt;   &lt;p&gt;Designed to be a repository for many different plugins for CruiseControl.NET. Hope to have many users contributing plugins to the repository.&lt;/p&gt;&lt;/blockquote&gt;</Content>
+      <Created>2009-01-13T20:27:00-07:00</Created>
+      <Modified>2009-01-11T13:27:35.482115-07:00</Modified>
+      <EntryId>79f8e7ea-90e7-4020-98c4-0ba254370ab6</EntryId>
+      <Description />
+      <Title>New Release of CC.Net Community plugIns on CodePlex</Title>
+      <Categories>Continuous Integration;Methodology</Categories>
+      <Author>hgarcia</Author>
+      <IsPublic>true</IsPublic>
+      <Syndicated>true</Syndicated>
+      <ShowOnFrontPage>true</ShowOnFrontPage>
+      <AllowComments>true</AllowComments>
+      <Attachments />
+      <Crossposts />
+      <Latitude xsi:nil="true" />
+      <Longitude xsi:nil="true" />
+    </Entry>
+  </Entries>
+</DayEntry>

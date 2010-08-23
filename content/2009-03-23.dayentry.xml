@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<DayEntry xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="urn:newtelligence-com:dasblog:runtime:data">
+  <Date>2009-03-22T17:00:00-07:00</Date>
+  <Entries>
+    <Entry>
+      <Content>&lt;p&gt;   &lt;br /&gt;I have been playing with the &lt;a href="http://aspnet.codeplex.com/Release/ProjectReleases.aspx?ReleaseId=22739" target="_blank"&gt;Microsoft Lightweight Test Automation Framework&lt;/a&gt;, that’s a mouthful for the Microsoft’s Web testing framework. &lt;/p&gt;  &lt;p&gt;I think that (in general) looks like a nice alternative to some of the other frameworks around (like Watir or Selenium). I will try to give a quick overview of what I have been using so far and what I like and don’t like. &lt;/p&gt;  &lt;p&gt;For more information on the framework, take a look at the &lt;a href="http://forums.asp.net/1193.aspx" target="_blank"&gt;Forum&lt;/a&gt;.&lt;/p&gt;  &lt;h3&gt;What I like.&lt;/h3&gt;  &lt;ol&gt;   &lt;li&gt;Open Source (you can download the source from Codeplex). &lt;/li&gt;    &lt;li&gt;A first sample is included &lt;/li&gt;    &lt;li&gt;Since the library is written in c# you can write the test in your language of choice inside VS. This may encourage to write the UI test first. This can be even written by the same developer that is implementing the UI. &lt;/li&gt;    &lt;li&gt;Nice API, providing methods, properties and objects that represent an HTML page and help to navigate the DOM. &lt;/li&gt;    &lt;li&gt;No problem handling JavaScript’s alert and confirm dialogs. &lt;/li&gt;    &lt;li&gt;Look’s to been able to handle asynchronous Ajax calls (I haven’t tried it yet). &lt;/li&gt;    &lt;li&gt;Cross browser, cross platform. &lt;/li&gt; &lt;/ol&gt;  &lt;h3&gt;What I think needs improvement. &lt;/h3&gt;  &lt;ol&gt;   &lt;li&gt;Documentation (*). &lt;/li&gt;    &lt;li&gt;Some internal objects should be public, like the BrowserInfo. (*) &lt;/li&gt;    &lt;li&gt;Setup, Teardown attributes (not very high on my list, but may be useful). (*) &lt;/li&gt;    &lt;li&gt;Provide a way to attach to a new window, or even Assert that a new window was open. (The JavaScript engine already contains a collection of newly opened windows, so this should be easy to implement). &lt;/li&gt; &lt;/ol&gt;  &lt;p&gt;*. The Roadmap document mention these issues as forthcoming or in consideration.&lt;/p&gt;  &lt;p&gt;In following posts I will try to find solutions to some of these issues.&lt;/p&gt;</Content>
+      <Created>2009-03-22T23:00:00-07:00</Created>
+      <Modified>2009-03-22T19:41:31.2376927-07:00</Modified>
+      <EntryId>91498ef3-c9ae-4a21-90a5-d20bb39954f9</EntryId>
+      <Description />
+      <Title>Microsoft Lightweight Test Automation Framework: Fixing window.open errors</Title>
+      <Categories>Lightweight Testing Framework;Programming;Testing;Tools</Categories>
+      <Author>hgarcia</Author>
+      <IsPublic>true</IsPublic>
+      <Syndicated>true</Syndicated>
+      <ShowOnFrontPage>true</ShowOnFrontPage>
+      <AllowComments>true</AllowComments>
+      <Attachments />
+      <Crossposts />
+      <Latitude xsi:nil="true" />
+      <Longitude xsi:nil="true" />
+    </Entry>
+  </Entries>
+</DayEntry>

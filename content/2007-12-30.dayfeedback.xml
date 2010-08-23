@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<DayExtra xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="urn:newtelligence-com:dasblog:runtime:data">
+  <Date>2007-12-29T19:00:00-05:00</Date>
+  <Comments>
+    <Comment>
+      <Content>[...] A nice little Ruby book [...] </Content>
+      <Created>2007-12-31T03:42:58-05:00</Created>
+      <Modified>2007-12-31T03:42:58-05:00</Modified>
+      <TargetTitle>A nice little Ruby book</TargetTitle>
+      <TargetEntryId>25</TargetEntryId>
+      <Author>W&amp;ouml;chentliche Rundablage: ASP.NET MVC, ASP.NET 3.5, ADO.NET Data Services, C# 3.0, ASP.NET AJAX, LINQ, WPF, Surface, Javascript | Code-Inside Blog</Author>
+      <AuthorEmail />
+      <AuthorHomepage>http://code-inside.de/blog/2007/12/31/wchentliche-rundablage-aspnet-mvc-aspnet-35-adonet-data-services-c-30-aspnet-ajax-linq-wpf-surface-javascript/</AuthorHomepage>
+      <AuthorIPAddress>80.237.162.105</AuthorIPAddress>
+      <IsPublic>true</IsPublic>
+      <OpenId>false</OpenId>
+      <SpamState>NotChecked</SpamState>
+    </Comment>
+  </Comments>
+  <Trackings />
+</DayExtra>

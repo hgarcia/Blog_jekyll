@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<DayEntry xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="urn:newtelligence-com:dasblog:runtime:data">
+  <Date>2009-09-19T17:00:00-07:00</Date>
+  <Entries>
+    <Entry>
+      <Content>&lt;p&gt;Hopefully gone are the days were you considered ok the use of single letter names for your variables or your arguments and you are giving informative names to all the artifacts in your code.&lt;/p&gt; &lt;p&gt;But what about generics? What about the &amp;lt;T&amp;gt; in them? Are you paying attention? More and more you will see that programmers are shying away from the single letter placeholder and are using more explanatory names. If you look at the code in FubuMvc you will see things like this.&lt;/p&gt;&lt;pre&gt;&lt;pre style="background-color: #ffffff; margin: 0em; width: 100%; font-family: consolas,'Courier New',courier,monospace; font-size: 12px"&gt;&lt;span style="color: #0000ff"&gt;public&lt;/span&gt; TFlashModel Load&amp;lt;TFlashModel&amp;gt;() where TFlashModel : &lt;span style="color: #0000ff"&gt;class&lt;/span&gt;, &lt;span style="color: #0000ff"&gt;new&lt;/span&gt;()&lt;/pre&gt;&lt;/pre&gt;
+&lt;p&gt;That is more informative than Load&amp;lt;T&amp;gt;. &lt;br&gt;I used to do the single letter naming for generics in my code, but I’m trying to avoid it as much as possible today. The same way I won’t tolerate bad names for my functions anymore. I still have a problem with the T in there. I was also doing that, but lately I have dropped the T altogether as well. I see the use of the T as a kind of Hungarian notation. &lt;/p&gt;
+&lt;p&gt;In the Lambdas department the single letter variables are all over the place.&lt;/p&gt;&lt;pre&gt;&lt;pre style="background-color: #ffffff; margin: 0em; width: 100%; font-family: consolas,'Courier New',courier,monospace; font-size: 12px"&gt;var cities = citiesRepository.GetAll();
+&lt;/pre&gt;&lt;pre style="background-color: #ffffff; margin: 0em; width: 100%; font-family: consolas,'Courier New',courier,monospace; font-size: 12px"&gt;cities.Select(c =&amp;gt; c.Name.Length &amp;gt; 10);&lt;/pre&gt;&lt;/pre&gt;
+&lt;p&gt;Why “c”? Why not say?&lt;/p&gt;&lt;pre&gt;&lt;pre style="background-color: #ffffff; margin: 0em; width: 100%; font-family: consolas,'Courier New',courier,monospace; font-size: 12px"&gt;cities.Select(city =&amp;gt; city.Name.Length &amp;gt; 10);&lt;/pre&gt;&lt;/pre&gt;
+&lt;p&gt;This is a simple example, where c may be sufficient since you are properly naming the collection (cities) but I still think there is something there, specially when you have longer expressions. And certainly don’t use x. Like in&lt;/p&gt;&lt;pre&gt;&lt;pre style="background-color: #ffffff; margin: 0em; width: 100%; font-family: consolas,'Courier New',courier,monospace; font-size: 12px"&gt;cities.Select(x =&amp;gt; x.Name.Length &amp;gt; 10);&lt;/pre&gt;&lt;/pre&gt;
+&lt;p&gt;What’s x? What do you think?&lt;/p&gt;
+&lt;h3&gt;Why should you care?&lt;/h3&gt;
+&lt;p&gt;Making your code readable will make your code better. When you have to think about the proper name for a variable or a method, you also have to think about what that method do and what that variable represents. You can catch possible errors or misconceptions just because the name is not right. It will make your methods shorter and will help you to make your methods do just “one thing and one thing only” (since is very difficult to fins a name for something that does to many things). Oh, by the way, just in case you didn’t get the memo, anything with the word manager in it, is wrong.&lt;/p&gt;
+&lt;p&gt;Oh, I forgot, maybe the most important think of all. In a year from now when you need to do some maintenance in the code, you will be up and running in seconds and not pulling your hair of trying to understand what the hell you were thinking when you wrote that. And that, my friend, is a good thing.&lt;/p&gt;</Content>
+      <Created>2009-09-19T17:02:24.7816238-07:00</Created>
+      <Modified>2009-09-19T17:02:24.7816238-07:00</Modified>
+      <EntryId>d3d599e3-d47f-4955-8598-ef241ab72997</EntryId>
+      <Description />
+      <Title>Proper naming in generics and Lambda expressions.</Title>
+      <Categories />
+      <Author>hgarcia</Author>
+      <IsPublic>true</IsPublic>
+      <Syndicated>true</Syndicated>
+      <ShowOnFrontPage>true</ShowOnFrontPage>
+      <AllowComments>true</AllowComments>
+      <Attachments />
+      <Crossposts />
+      <Latitude xsi:nil="true" />
+      <Longitude xsi:nil="true" />
+    </Entry>
+  </Entries>
+</DayEntry>

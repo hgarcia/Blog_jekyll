@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<DayEntry xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="urn:newtelligence-com:dasblog:runtime:data">
+  <Date>2010-02-18T17:00:00-07:00</Date>
+  <Entries>
+    <Entry>
+      <Content>&lt;p&gt;This is a very short book on a great practice for any agile team. The book walk you through a lot of techniques an exercises that will help you and your team to have successful retrospectives.&lt;/p&gt; &lt;p&gt;The first 3 chapters provide information on what retrospectives are about. How to create one for your team and what you need to learn to lead them.&lt;/p&gt; &lt;p&gt;The next 5 chapters provide techniques that will help you to go through the different stages of the retrospective. Each technique is clearly explained, with step by step guides and diagrams (when necessary) to provide more information. In some cases, when some techniques are complimentary, this is clearly indicated.&lt;/p&gt; &lt;p&gt;The authors also provide guidance on the scope where to apply the activities and a time estimate.&lt;/p&gt; &lt;p&gt;The previous to last chapter talk briefly about release retrospectives and the last one give some pointers in how to act on the actions, resolutions and experiments the team agree to follow.&lt;/p&gt; &lt;p&gt;If you work as a team lead in an agile team and you are in charge of facilitating the retrospectives, this book is a good tool to have.&lt;/p&gt;</Content>
+      <Created>2010-02-18T21:00:16.0799283-07:00</Created>
+      <Modified>2010-02-18T21:00:16.0799283-07:00</Modified>
+      <EntryId>ba89969b-2442-4fe5-91e9-01b61d1ca504</EntryId>
+      <Description />
+      <Title>Book review: Agile Retrospectives – Making good teams great.</Title>
+      <Categories>Books;Methodology</Categories>
+      <Author>hgarcia</Author>
+      <IsPublic>true</IsPublic>
+      <Syndicated>true</Syndicated>
+      <ShowOnFrontPage>true</ShowOnFrontPage>
+      <AllowComments>true</AllowComments>
+      <Attachments />
+      <Crossposts />
+      <Latitude xsi:nil="true" />
+      <Longitude xsi:nil="true" />
+    </Entry>
+  </Entries>
+</DayEntry>

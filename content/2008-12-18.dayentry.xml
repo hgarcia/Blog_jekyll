@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<DayEntry xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="urn:newtelligence-com:dasblog:runtime:data">
+  <Date>2008-12-17T17:00:00-07:00</Date>
+  <Entries>
+    <Entry>
+      <Content>&lt;p&gt;&amp;#160;&lt;/p&gt;  &lt;p&gt;This is a plug-in for Resharper that allows you to use Reflector and and the .Net framework source code to navigate your code.&lt;/p&gt;  &lt;p&gt;You can download it from the &lt;a href="http://code.google.com/p/scoutplugin/" target="_blank"&gt;Google code project page&lt;/a&gt;.&lt;/p&gt;  &lt;p&gt;Install it is a non issue. Once installed open VS and the Resharper options page. Under environment go to Search and Navigation-&amp;gt; Scout&lt;/p&gt;  &lt;p&gt;Clicking into it will ask you if you want to download Reflector, click Yes if you haven’t done this before. Since I already have Reflector I just browse to the exe file. You can them can set some configuration options like using the same instance of Reflector each time or set some configuration per solution or custom.&lt;/p&gt;  &lt;p&gt;To configure the MS server reference follow &lt;a href="http://weblogs.asp.net/scottgu/archive/2007/10/03/releasing-the-source-code-for-the-net-framework-libraries.aspx" target="_blank"&gt;the instructions on Scott Gu site&lt;/a&gt;.&lt;/p&gt;  &lt;p&gt;Once you are done you can do right click in a class or method and hit Go to declaration, is the class is in an external assembly reflector will open up and navigate to the given method showing the code in it. For example HttpContext.Cache().&lt;/p&gt;  &lt;p&gt;Very powerful.&lt;/p&gt;  &lt;div class="wlWriterEditableSmartContent" id="scid:0767317B-992E-4b12-91E0-4F059A8CECA8:35d3add2-1e2b-4e92-9f8d-2608b6c04841" style="padding-right: 0px; display: inline; padding-left: 0px; float: none; padding-bottom: 0px; margin: 0px; padding-top: 0px"&gt;Technorati Tags: &lt;a href="http://technorati.com/tags/Reflector" rel="tag"&gt;Reflector&lt;/a&gt;,&lt;a href="http://technorati.com/tags/Resharper" rel="tag"&gt;Resharper&lt;/a&gt;,&lt;a href="http://technorati.com/tags/Debug" rel="tag"&gt;Debug&lt;/a&gt;,&lt;a href="http://technorati.com/tags/Code+inspection" rel="tag"&gt;Code inspection&lt;/a&gt;&lt;/div&gt;</Content>
+      <Created>2008-12-18T04:24:00-07:00</Created>
+      <Modified>2008-12-16T21:25:00.4269453-07:00</Modified>
+      <EntryId>16dfc370-a34f-47ad-8a10-bb62256f05dd</EntryId>
+      <Description />
+      <Title>Scout plug in for Resharper to navigate your code.</Title>
+      <Categories>Tools</Categories>
+      <Author>hgarcia</Author>
+      <IsPublic>true</IsPublic>
+      <Syndicated>true</Syndicated>
+      <ShowOnFrontPage>true</ShowOnFrontPage>
+      <AllowComments>true</AllowComments>
+      <Attachments />
+      <Crossposts />
+      <Latitude xsi:nil="true" />
+      <Longitude xsi:nil="true" />
+    </Entry>
+  </Entries>
+</DayEntry>

@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<DayExtra xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="urn:newtelligence-com:dasblog:runtime:data">
+  <Date>2009-07-21T17:00:00-07:00</Date>
+  <Comments>
+    <Comment>
+      <Content>This is the first time I've read about sticky notes in VS2010. I guess they could be a useful feature for grueling debug sessions. BTW it's good to see some F# in action. I really look forward to getting into that.</Content>
+      <Created>2009-08-06T03:50:52.9855735-07:00</Created>
+      <Modified>2009-08-06T03:50:52.9855735-07:00</Modified>
+      <EntryId>1d603a9d-cc01-44c9-a9ba-54b767fd5adb</EntryId>
+      <TargetTitle>Yellow sticky notes for your watched variables in the new VS 2010</TargetTitle>
+      <TargetEntryId>3BFD8A44-4504-4B7E-8016-A765CBDB6BE7</TargetEntryId>
+      <Author>Josh -ex membership blueprints</Author>
+      <AuthorEmail>joshhardspace@gmail.com</AuthorEmail>
+      <AuthorHomepage>http://hubpages.com/hub/Membership-Blueprints-Review--</AuthorHomepage>
+      <AuthorIPAddress>122.131.248.48</AuthorIPAddress>
+      <IsPublic>true</IsPublic>
+      <SpamState>NotChecked</SpamState>
+      <AuthorUserAgent>Mozilla/5.0 (Windows; U; Windows NT 6.1; en-US; rv:1.9.1.1) Gecko/20090715 Firefox/3.5.1 GTB5 (.NET CLR 3.5.30729)</AuthorUserAgent>
+    </Comment>
+  </Comments>
+  <Trackings />
+</DayExtra>

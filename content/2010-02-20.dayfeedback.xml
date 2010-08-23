@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<DayExtra xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="urn:newtelligence-com:dasblog:runtime:data">
+  <Date>2010-02-19T17:00:00-07:00</Date>
+  <Comments>
+    <Comment>
+      <Content>Thanks for your post and recommendation for hgscc.
+On your first step, I am not finding the 'display all options' option. Where is that screen shot from? It doesn't look like VS's.  I'm using VS 2008</Content>
+      <Created>2010-03-19T09:51:38.6550417-07:00</Created>
+      <Modified>2010-03-19T09:51:38.6550417-07:00</Modified>
+      <EntryId>4406de26-ac15-42a5-8f95-89abaa87f2b2</EntryId>
+      <TargetTitle>Mercurial integration with Visual Studio</TargetTitle>
+      <TargetEntryId>201E653D-0FD0-464D-9D2E-42707F7B1E33</TargetEntryId>
+      <Author>Alan</Author>
+      <AuthorEmail>blogger@kleymeyer.com</AuthorEmail>
+      <AuthorHomepage>http://blog.kleymeyer.com</AuthorHomepage>
+      <AuthorIPAddress>66.69.232.128</AuthorIPAddress>
+      <IsPublic>true</IsPublic>
+      <SpamState>NotChecked</SpamState>
+      <AuthorUserAgent>Mozilla/5.0 (Windows; U; Windows NT 6.1; en-US) AppleWebKit/532.5 (KHTML, like Gecko) Chrome/4.1.249.1036 Safari/532.5</AuthorUserAgent>
+    </Comment>
+    <Comment>
+      <Content>thanks for sharing such valuable information in regards of how to integrate Git with Visual Studio, really helped to me, may be beneficial to other also.
+</Content>
+      <Created>2010-04-14T00:45:39.9592904-07:00</Created>
+      <Modified>2010-04-14T00:45:39.9592904-07:00</Modified>
+      <EntryId>2bb6df47-beb0-4bdd-84c3-dcecf18fcb87</EntryId>
+      <TargetTitle>Mercurial integration with Visual Studio</TargetTitle>
+      <TargetEntryId>201E653D-0FD0-464D-9D2E-42707F7B1E33</TargetEntryId>
+      <Author>Internet Marketing</Author>
+      <AuthorEmail>johnsonmarkq@gmail.com</AuthorEmail>
+      <AuthorHomepage>http://bonusfor.com</AuthorHomepage>
+      <AuthorIPAddress>122.173.32.170</AuthorIPAddress>
+      <IsPublic>true</IsPublic>
+      <SpamState>NotChecked</SpamState>
+      <AuthorUserAgent>Mozilla/5.0 (Windows; U; Windows NT 6.1; en-US; rv:1.9.1.7) Gecko/20091221 Firefox/3.5.7 GTBDFff GTB7.0</AuthorUserAgent>
+    </Comment>
+  </Comments>
+  <Trackings />
+</DayExtra>

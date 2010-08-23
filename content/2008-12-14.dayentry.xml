@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<DayEntry xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="urn:newtelligence-com:dasblog:runtime:data">
+  <Date>2008-12-13T17:00:00-07:00</Date>
+  <Entries>
+    <Entry>
+      <Content>&lt;p&gt;&amp;#160;&lt;/p&gt;  &lt;p&gt;On Dec 10 the &lt;a href="http://www.codeplex.com/IronPython/Release/ProjectReleases.aspx?ReleaseId=8365" target="_blank"&gt;IronPython&lt;/a&gt; team made available the version 2.0 on &lt;a href="http://www.codeplex.com/IronPython/Release/ProjectReleases.aspx?ReleaseId=8365" target="_blank"&gt;Codeplex&lt;/a&gt;.&lt;/p&gt;  &lt;p&gt;Go download it now and start playing!&lt;/p&gt;</Content>
+      <Created>2008-12-14T10:38:18.1378848-07:00</Created>
+      <Modified>2008-12-14T10:38:18.1378848-07:00</Modified>
+      <EntryId>10df6702-73a1-4d45-a4d5-1157b34b6262</EntryId>
+      <Description />
+      <Title>IronPython 2.0 released!</Title>
+      <Categories />
+      <Author>hgarcia</Author>
+      <IsPublic>true</IsPublic>
+      <Syndicated>true</Syndicated>
+      <ShowOnFrontPage>true</ShowOnFrontPage>
+      <AllowComments>true</AllowComments>
+      <Attachments />
+      <Crossposts />
+      <Latitude xsi:nil="true" />
+      <Longitude xsi:nil="true" />
+    </Entry>
+  </Entries>
+</DayEntry>

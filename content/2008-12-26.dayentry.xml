@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<DayEntry xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="urn:newtelligence-com:dasblog:runtime:data">
+  <Date>2008-12-25T17:00:00-07:00</Date>
+  <Entries>
+    <Entry>
+      <Content>
+      	
+      	&lt;p&gt;Every time I wrote validation this code I think, I should write a library to do this for me. So I went ahead and wrote this simple class. The idea is to use the Introduce Assertion Refactoring in this cases and write this code in this way.&lt;/p&gt;
+      	
+      	&lt;p&gt;&amp;#160;&lt;/p&gt;  &lt;p&gt;Instead of writing?&lt;/p&gt;  &lt;pre class="c#" name="code"&gt;public void Delete(IEnumerable objectsToDelete)&lt;br /&gt;{    &lt;br /&gt;    if (objectsToDelete == null)&lt;br /&gt;    {&lt;br /&gt;        throw new ArgumentNullException(&amp;quot;objectsToDelete&amp;quot;);&lt;br /&gt;    }&lt;br /&gt;    //More code here&lt;br /&gt;}&lt;/pre&gt;
+
+&lt;p&gt;Now you can write&lt;/p&gt;
+
+&lt;pre class="c#" name="code"&gt;public void Delete(IEnumerable objectsToDelete)&lt;br /&gt;{&lt;br /&gt;    Check.That(objectsToDelete).IsNotNull();&lt;br /&gt;    //Mode code here&lt;br /&gt;}&lt;/pre&gt;
+
+&lt;p&gt;If the parameter is null an Exception of type NullReferenceException will be thrown. Of course, this is not the right Exception in this context, so you should do this.&lt;/p&gt;
+
+&lt;pre class="c#" name="code"&gt;public void Delete(IEnumerable objectsToDelete)&lt;br /&gt;{&lt;br /&gt;    Check.That(objectsToDelete)&lt;br /&gt;        .IsNotNull(new ArgumentNullException(&amp;quot;objectsToDelete&amp;quot;));&lt;br /&gt;    //More code here&lt;br /&gt;}&lt;/pre&gt;
+
+&lt;p&gt;Of course, I may want to check more than one thing at a time, and I may not want to throw an Exception but look at the errors and pass them all at once to a higher tier, maybe a UI so the user can fix the problem.
+  &lt;br /&gt;In that case I can use it like this.&lt;/p&gt;
+
+&lt;pre class="c#" name="code"&gt;public void Delete(IEnumerable objectsToDelete)&lt;br /&gt;{&lt;br /&gt;    &lt;br /&gt;    //I want to make sure that the IEnumerable is not null&lt;br /&gt;    //And I also want to check that is not an empty collection&lt;br /&gt;&lt;br /&gt;    var errors = Check.That(objectsToDelete, &amp;quot;objectsToDelete&amp;quot;)&lt;br /&gt;        .IsNotNull().CountMoreThan(0).Errors;&lt;br /&gt;&lt;br /&gt;&lt;br /&gt;&lt;br /&gt;    //More code here&lt;br /&gt;}&lt;/pre&gt;
+
+&lt;p&gt;At this moment the Check class has methods to validate String, IEnumerable, IEnumerable&amp;lt;T&amp;gt;, object, int, decimal, double and DateTime.
+  &lt;br /&gt;This is not complete by any stretch of the imagination but I like it so far.&lt;/p&gt;
+
+&lt;p&gt;You can download a Release of my base library on &lt;a href="http://code.google.com/p/latrompa/downloads/list" target="_blank"&gt;Google code&lt;/a&gt;.
+
+  &lt;br /&gt;You can also download the code from: &lt;a title="http://code.google.com/p/latrompa/source/checkout" href="http://code.google.com/p/latrompa/source/checkout"&gt;http://code.google.com/p/latrompa/source/checkout&lt;/a&gt;&lt;/p&gt;</Content>
+      <Created>2008-12-25T21:55:52.2733719-07:00</Created>
+      <Modified>2008-12-25T21:55:52.2733719-07:00</Modified>
+      <EntryId>1c98a0cd-4c79-4acb-af8c-8b700bdd03e6</EntryId>
+      <Description />
+      <Title>Implementing a validation class.</Title>
+      <Categories>Programming</Categories>
+      <Author>hgarcia</Author>
+      <IsPublic>true</IsPublic>
+      <Syndicated>true</Syndicated>
+      <ShowOnFrontPage>true</ShowOnFrontPage>
+      <AllowComments>true</AllowComments>
+      <Attachments />
+      <Crossposts />
+      <Latitude xsi:nil="true" />
+      <Longitude xsi:nil="true" />
+    </Entry>
+  </Entries>
+</DayEntry>

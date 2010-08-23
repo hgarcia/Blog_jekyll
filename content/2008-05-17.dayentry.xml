@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<DayEntry xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="urn:newtelligence-com:dasblog:runtime:data">
+  <Date>2008-05-16T17:00:00-07:00</Date>
+  <Entries>
+    <Entry>
+      <Content>During Scott's Hanselmann presentation on Dynamic Data at the TVBUG he show a little trick that I didn't know about and I want to show it here.It always annoy me that every time you click run ina a web application using VS it runs using the ASP.Net development server and starts in a random port.So if you want to make sure that the projects starts always at the same port, all you need to do is right click on the solution and select propertiesIn the property sheet for the solution click on the Web tab:Change the default Auto-assign Port to Specific port and type a port of your liking.&lt;br&gt;&lt;br&gt;&lt;img src="content/binary/sp32-20080517-140354.png" alt="" border="0"&gt;</Content>
+      <Created>2008-05-17T11:29:40-07:00</Created>
+      <Modified>2008-12-14T22:06:39.0098633-07:00</Modified>
+      <EntryId>43</EntryId>
+      <Description />
+      <Title>ASP.Net Development server in a custom port</Title>
+      <Categories>Programming;Testing;Tools</Categories>
+      <Author>hgarcia</Author>
+      <IsPublic>true</IsPublic>
+      <Syndicated>true</Syndicated>
+      <ShowOnFrontPage>true</ShowOnFrontPage>
+      <AllowComments>true</AllowComments>
+      <Attachments />
+      <Crossposts />
+      <Latitude xsi:nil="true" />
+      <Longitude xsi:nil="true" />
+    </Entry>
+  </Entries>
+</DayEntry>

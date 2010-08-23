@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<DayExtra xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="urn:newtelligence-com:dasblog:runtime:data">
+  <Date>2010-01-27T17:00:00-07:00</Date>
+  <Comments>
+    <Comment>
+      <Content>Very cool. I'd looked briefly at webrat/mechanize but just went with calling Watir directly from Cucumber. 
+
+Very cool that RubyMine supports Cucumber features. Been writing them up in e TextEditor, but having some IDE tooling for this type of stuff will be very handy.
+
+Thanks.</Content>
+      <Created>2010-01-28T07:21:21.89246-07:00</Created>
+      <Modified>2010-01-28T07:21:21.89246-07:00</Modified>
+      <EntryId>8512615d-1cd9-4ad7-8bb5-c6f9c25a26fb</EntryId>
+      <TargetTitle>Test driven outside in, starting with Cucumber and RubyMine.</TargetTitle>
+      <TargetEntryId>A6AC40EA-5116-44F3-AF01-F745DF463FA3</TargetEntryId>
+      <Author>Michael D. Hall</Author>
+      <AuthorEmail>mhall@just3ws.com</AuthorEmail>
+      <AuthorHomepage>http://www.just3ws.com</AuthorHomepage>
+      <AuthorIPAddress>64.81.143.52</AuthorIPAddress>
+      <IsPublic>true</IsPublic>
+      <SpamState>NotChecked</SpamState>
+      <AuthorUserAgent>Mozilla/5.0 (Windows; U; Windows NT 6.1; en-US; rv:1.9.2) Gecko/20100115 Firefox/3.6</AuthorUserAgent>
+    </Comment>
+  </Comments>
+  <Trackings />
+</DayExtra>

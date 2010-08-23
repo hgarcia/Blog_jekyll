@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<DayEntry xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="urn:newtelligence-com:dasblog:runtime:data">
+  <Date>2009-01-10T17:00:00-07:00</Date>
+  <Entries>
+    <Entry>
+      <Content>&lt;p&gt;&amp;#160;&lt;/p&gt;  &lt;p&gt;I found this project on &lt;a href="http://www.codeplex.com" target="_blank"&gt;CodePlex&lt;/a&gt; called &lt;a href="http://www.codeplex.com/xval" target="_blank"&gt;xVal&lt;/a&gt;. It’s &lt;a href="http://blog.codeville.net/" target="_blank"&gt;Steve Sanderson’s&lt;/a&gt; take on validation for the ASP.NET MVC framework, more to the point on how to use validation across tiers (validate on the server side, present errors to the client, etc.)&lt;/p&gt;  &lt;blockquote&gt;   &lt;p&gt;&lt;em&gt;xVal is a validation framework for ASP.NET MVC applications. It makes it easy to link up your choice of server-side validation mechanism with your choice of client-side validation library, neatly fitting both into ASP.NET MVC architecture and conventions.&lt;/em&gt;&lt;/p&gt; &lt;/blockquote&gt;  &lt;p&gt;It’s extensible so you can use whatever validation framework you want in the server and client side. &lt;/p&gt;  &lt;blockquote&gt;   &lt;ul&gt;     &lt;li&gt;&lt;em&gt;&lt;b&gt;Define your validation rules using attributes&lt;/b&gt; on model properties, e.g., &lt;/em&gt;&lt;/li&gt;      &lt;li&gt;&lt;em&gt;&lt;b&gt;Designed to fit into ASP.NET MVC conventions&lt;/b&gt; for handling form posts and storing and retrieving error information in ModelState &lt;/em&gt;&lt;/li&gt;      &lt;li&gt;&lt;em&gt;&lt;b&gt;Use your choice of server-side validation framework&lt;/b&gt;. Out of the box, xVal lets you use .NET 3.5's built-in &lt;/em&gt;&lt;a href="http://msdn.microsoft.com/en-us/library/system.componentmodel.dataannotations.aspx"&gt;&lt;em&gt;DataAnnotations&lt;/em&gt;&lt;/a&gt;&lt;em&gt; classes or &lt;/em&gt;&lt;a href="http://erichauser.net/2008/08/28/castle-validator-enhancements/"&gt;&lt;em&gt;Castle Validator&lt;/em&gt;&lt;/a&gt;&lt;em&gt; (or both). If you want to use something different, you can create your own provider just by implementing IRulesProvider. &lt;/em&gt;&lt;/li&gt;      &lt;li&gt;&lt;em&gt;&lt;b&gt;Use your choice of client-side validation library&lt;/b&gt;. Out of the box, xVal lets you use &lt;/em&gt;&lt;a href="http://docs.jquery.com/Plugins/Validation"&gt;&lt;em&gt;jQuery Validation&lt;/em&gt;&lt;/a&gt;&lt;em&gt; or ASP.NET's native client-side validation library (a.k.a. WebUIValidation.js, as used by WebForms). Or, use any other client-side validation library by writing a plug-in to configure it using xVal's standard JSON rules description format. &lt;/em&gt;&lt;/li&gt;      &lt;li&gt;&lt;em&gt;&lt;b&gt;Supports localized error messages&lt;/b&gt; using resource files. Vary the language of your validation messages according to the current thread's culture. &lt;/em&gt;&lt;/li&gt;      &lt;li&gt;&lt;em&gt;&lt;b&gt;Add custom validation logic&lt;/b&gt; that runs both on the server and on the client, either by sub classing an existing rule or by referencing a custom JavaScript function&lt;/em&gt; &lt;/li&gt;   &lt;/ul&gt; &lt;/blockquote&gt;  &lt;p&gt;It just released version 0.5 and you can find a quick tutorial on &lt;a href="http://blog.codeville.net/2009/01/10/xval-a-validation-framework-for-aspnet-mvc/" target="_blank"&gt;Steve’s blog&lt;/a&gt;.&lt;/p&gt;</Content>
+      <Created>2009-01-11T09:52:11.9811135-07:00</Created>
+      <Modified>2009-01-11T09:52:11.9811135-07:00</Modified>
+      <EntryId>62286978-8261-41e9-a742-53e6dd28103c</EntryId>
+      <Description />
+      <Title>xVal a good validation framework for ASP.NET MVC</Title>
+      <Categories>Frameworks;Programming</Categories>
+      <Author>hgarcia</Author>
+      <IsPublic>true</IsPublic>
+      <Syndicated>true</Syndicated>
+      <ShowOnFrontPage>true</ShowOnFrontPage>
+      <AllowComments>true</AllowComments>
+      <Attachments />
+      <Crossposts />
+      <Latitude xsi:nil="true" />
+      <Longitude xsi:nil="true" />
+    </Entry>
+    <Entry>
+      <Content>&lt;p&gt;&amp;#160;&lt;/p&gt;  &lt;p&gt;I can only agree. &lt;a title="http://www.lostechies.com/blogs/chad_myers/archive/2009/01/11/a-rant-on-professionalism.aspx" href="http://www.lostechies.com/blogs/chad_myers/archive/2009/01/11/a-rant-on-professionalism.aspx"&gt;http://www.lostechies.com/blogs/chad_myers/archive/2009/01/11/a-rant-on-professionalism.aspx&lt;/a&gt;&lt;/p&gt;</Content>
+      <Created>2009-01-11T11:32:54.6475825-07:00</Created>
+      <Modified>2009-01-11T11:32:54.6475825-07:00</Modified>
+      <EntryId>c11b36b3-0e94-4e74-a358-2661194fed3c</EntryId>
+      <Description />
+      <Title>A rant on professionalism by Chad Myers</Title>
+      <Categories />
+      <Author>hgarcia</Author>
+      <IsPublic>true</IsPublic>
+      <Syndicated>true</Syndicated>
+      <ShowOnFrontPage>true</ShowOnFrontPage>
+      <AllowComments>true</AllowComments>
+      <Attachments />
+      <Crossposts />
+      <Latitude xsi:nil="true" />
+      <Longitude xsi:nil="true" />
+    </Entry>
+  </Entries>
+</DayEntry>

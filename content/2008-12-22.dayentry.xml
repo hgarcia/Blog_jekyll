@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<DayEntry xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="urn:newtelligence-com:dasblog:runtime:data">
+  <Date>2008-12-21T17:00:00-07:00</Date>
+  <Entries>
+    <Entry>
+      <Content>&lt;p&gt;&amp;#160;&lt;/p&gt;  &lt;p&gt;&lt;a href="http://www.microsoft.com/downloads/details.aspx?FamilyId=0178e2ef-9da8-445e-9348-c93f24cc9f9d&amp;amp;displaylang=en" target="_blank"&gt;CAT&lt;/a&gt; is a Visual Studio Add-in that analyze your code and all the references in your project looking for vulnerabilities to common attacks.&lt;/p&gt;  &lt;p&gt;According to the copy in the download page this version deals with:&lt;/p&gt;  &lt;ul&gt;   &lt;li&gt;Cross Site Scripting &lt;/li&gt;    &lt;li&gt;SQL Injection &lt;/li&gt;    &lt;li&gt;Process Command Injection &lt;/li&gt;    &lt;li&gt;File Canonicalization &lt;/li&gt;    &lt;li&gt;Exception Information &lt;/li&gt;    &lt;li&gt;LDAP Injection &lt;/li&gt;    &lt;li&gt;XPATH Injection &lt;/li&gt;    &lt;li&gt;Redirection to User Controlled Site&lt;/li&gt; &lt;/ul&gt;</Content>
+      <Created>2008-12-22T04:29:00-07:00</Created>
+      <Modified>2008-12-19T21:29:10.9974008-07:00</Modified>
+      <EntryId>ae19dcc0-2457-406c-b597-829f36c741fd</EntryId>
+      <Description />
+      <Title>Microsoft Code Analysis Tool (CAT) identify vulnerabilities on your code.</Title>
+      <Categories>Tools</Categories>
+      <Author>hgarcia</Author>
+      <IsPublic>true</IsPublic>
+      <Syndicated>true</Syndicated>
+      <ShowOnFrontPage>true</ShowOnFrontPage>
+      <AllowComments>true</AllowComments>
+      <Attachments />
+      <Crossposts />
+      <Latitude xsi:nil="true" />
+      <Longitude xsi:nil="true" />
+    </Entry>
+  </Entries>
+</DayEntry>

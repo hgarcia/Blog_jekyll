@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<DayExtra xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="urn:newtelligence-com:dasblog:runtime:data">
+  <Date>2009-07-20T17:00:00-07:00</Date>
+  <Comments>
+    <Comment>
+      <Content>I'm trying this out now. Thanks for writing about it... Well, it's a pretty good idea from MS. I can't see any use outside of it's sole purpose though.</Content>
+      <Created>2009-08-04T21:29:55.2824975-07:00</Created>
+      <Modified>2009-08-04T21:29:55.2824975-07:00</Modified>
+      <EntryId>5bf33eea-852d-4bcf-b877-ba155a455bf3</EntryId>
+      <TargetTitle>Record steps to reproduce a problem on windows 7.</TargetTitle>
+      <TargetEntryId>63CDD585-0A78-45F0-8A16-395291AFC2F9</TargetEntryId>
+      <Author>Josh -code membership blueprints</Author>
+      <AuthorEmail>joshhardspace@gmail.com</AuthorEmail>
+      <AuthorHomepage>http://hubpages.com/hub/Membership-Blueprints-Review--</AuthorHomepage>
+      <AuthorIPAddress>122.131.248.48</AuthorIPAddress>
+      <IsPublic>true</IsPublic>
+      <SpamState>NotChecked</SpamState>
+      <AuthorUserAgent>Mozilla/5.0 (Windows; U; Windows NT 6.1; en-US; rv:1.9.1.1) Gecko/20090715 Firefox/3.5.1 GTB5 (.NET CLR 3.5.30729)</AuthorUserAgent>
+    </Comment>
+
+  </Comments>
+  <Trackings />
+</DayExtra>

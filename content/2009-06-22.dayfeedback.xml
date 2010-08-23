@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<DayExtra xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="urn:newtelligence-com:dasblog:runtime:data">
+  <Date>2009-06-21T17:00:00-07:00</Date>
+  <Comments>
+    <Comment>
+      <Content>Hi,
+
+I was just wondering if you are still planning to write about widget implementation you mentioned in this post?
+
+Regards,
+Ajay
+</Content>
+      <Created>2009-07-04T02:07:57.5403233-07:00</Created>
+      <Modified>2009-07-04T02:07:57.5403233-07:00</Modified>
+      <EntryId>4de40803-d169-48e2-8645-c8e3a94509d2</EntryId>
+      <TargetTitle>A simple solution to the Big Fat Controller problem in MVC.</TargetTitle>
+      <TargetEntryId>FC497741-559D-4CEB-A030-843132EDC1E9</TargetEntryId>
+      <Author>Ajay</Author>
+      <AuthorEmail />
+      <AuthorHomepage />
+      <AuthorIPAddress>122.170.2.17</AuthorIPAddress>
+      <IsPublic>true</IsPublic>
+      <SpamState>NotChecked</SpamState>
+      <AuthorUserAgent>Mozilla/4.0 (compatible; MSIE 7.0; Windows NT 5.1; Trident/4.0; .NET CLR 2.0.50727; .NET CLR 3.0.04506.648; .NET CLR 3.5.21022; FDM; .NET CLR 3.0.4506.2152; .NET CLR 3.5.30729; MS-RTC LM 8; OfficeLiveConnector.1.3; OfficeLivePatch.0.0; msn OptimizedIE8;ENUS)</AuthorUserAgent>
+    </Comment>
+    <Comment>
+      <Content>Yes, I have been busy with stuff at work and home. You can take a look at the source code downloading it from http://pronghorn.codeplex.com. Mind it, it's a very early version not ready for production yet, but you will be able to get a hold on how injection widgets work.</Content>
+      <Created>2009-07-08T17:21:39.5811463-07:00</Created>
+      <Modified>2009-07-08T17:21:39.5811463-07:00</Modified>
+      <EntryId>867ae462-bb40-4dd7-8804-c31e23f61d82</EntryId>
+      <TargetTitle>A simple solution to the Big Fat Controller problem in MVC.</TargetTitle>
+      <TargetEntryId>FC497741-559D-4CEB-A030-843132EDC1E9</TargetEntryId>
+      <Author>Hernan Garcia</Author>
+      <AuthorEmail>hernifootball@yahoo.com</AuthorEmail>
+      <AuthorHomepage />
+      <AuthorIPAddress>99.231.75.201</AuthorIPAddress>
+      <IsPublic>true</IsPublic>
+      <SpamState>NotChecked</SpamState>
+      <AuthorUserAgent>Mozilla/5.0 (Windows; U; Windows NT 6.1; en-GB; rv:1.9.1) Gecko/20090624 Firefox/3.5 (.NET CLR 3.5.30729)</AuthorUserAgent>
+    </Comment>
+  </Comments>
+  <Trackings />
+</DayExtra>

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<DayEntry xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="urn:newtelligence-com:dasblog:runtime:data">
+  <Date>2008-05-14T17:00:00-07:00</Date>
+  <Entries>
+    <Entry>
+      <Content>&lt;p&gt;I seriously believe that REST is a simple and yet powerful architecture that can be used in most scenarios where web services need to be deployed.&lt;/p&gt;&lt;p&gt;This week the good guys at &lt;a href="http://www.infoq.com/interviews/pete-lacey-rest"&gt;infoq.com &lt;/a&gt;have an interview with Pete Lacey a fervent proponent of REST where he explains the reasons behind his passion. He talk about it and about the WS* stack and why he things that is bloated and not very useful.&lt;/p&gt;&lt;p&gt;I tend to agree with him in most of his opinions specially when talking about security and transactions. I do think that HTTPS is good enough (not actually is very good!) and you can on top of that roll your own security. On the issue of transactions I always thought that not just web services but services in general should be transaction agnostic.&lt;/p&gt;&lt;p&gt;What I mean with transaction agnostic? The service may be part of a transaction but should have no knowledge of it. So the service will receive a request with a payload and sometimes, maybe, return a result. So when you delegate work on that service you should account for that maybe, what happens if the service is not available, etc.&lt;/p&gt;</Content>
+      <Created>2008-05-14T20:05:40-07:00</Created>
+      <Modified>2008-12-14T22:35:56.1704321-07:00</Modified>
+      <EntryId>41</EntryId>
+      <Description />
+      <Title>REST, a video about it, and a book to rule them all.</Title>
+      <Categories>Architecture</Categories>
+      <Author>hgarcia</Author>
+      <IsPublic>true</IsPublic>
+      <Syndicated>true</Syndicated>
+      <ShowOnFrontPage>true</ShowOnFrontPage>
+      <AllowComments>true</AllowComments>
+      <Attachments />
+      <Crossposts />
+      <Latitude xsi:nil="true" />
+      <Longitude xsi:nil="true" />
+    </Entry>
+  </Entries>
+</DayEntry>

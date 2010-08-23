@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<DayEntry xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="urn:newtelligence-com:dasblog:runtime:data">
+  <Date>2008-11-21T17:00:00-07:00</Date>
+  <Entries>
+    <Entry>
+      <Content>&lt;p&gt;I have been looking for a tool to drive my web sites smoke and regression test for quite a while, between the tools I used I want to mention Sahi and Selenium, really good tools.  &lt;/p&gt;&lt;p&gt;In the company I'm working right now we have a framework that is used by several companies to drive their websites. They can change the skinning a little bit but all the sites have the same structure and there a minimum of artifacts that remain from page to page (even when they look different).  &lt;/p&gt;&lt;p&gt;Trying to test this with Selenium wasn't easy, since I don't want to create a complete suite of test for each site, I need to modify the test suite after it was created and imported on the language of choice. At that moment a disconnect is produced between the tester using the recorder and whoever will maintain the test code.  &lt;/p&gt;&lt;p&gt;So I decided that we needed something different, some kind of scripting tool to drive the test. I took a look a Watir a year ago or so and at that time it was mostly IE specific. That was a deal breaker for me. Recently I decided to initiate the search once more and I found out that Watir now come with FireWatir integrated so it can drive both IE and Firefox and also there is Safariwatir to run test against Safari.  &lt;/p&gt;&lt;p&gt;So, I downloaded, installed and run it. It was quite simple and I enjoyed that uses Ruby as the language to create test. In a few minutes I was able to put together a very simple test to log into our site and log out, interacting with some AJAX in the process. &lt;/p&gt;&lt;p&gt;Please note that my Ruby is quite basic and it was my first time using the Watir library. A few more minutes and I was able to refactor the test to load username, password, site domain and browser from a YAML file. So now I can have a configuration file and a single test that will run against as many sites (domains really) I want, with as many different users, even invalid one.  &lt;/p&gt;&lt;p&gt;The next step is to encapsulate this functionality in a library and them use either RSpec or TestUnit to drive the tests and generate a report.  So far I'm very excited and enjoying it.&lt;/p&gt;</Content>
+      <Created>2008-11-22T10:00:30-07:00</Created>
+      <Modified>2008-12-14T22:08:03.2859251-07:00</Modified>
+      <EntryId>93</EntryId>
+      <Description />
+      <Title>Watir to run my smoke and regression tests</Title>
+      <Categories>Testing;Tools</Categories>
+      <Author>hgarcia</Author>
+      <IsPublic>true</IsPublic>
+      <Syndicated>true</Syndicated>
+      <ShowOnFrontPage>true</ShowOnFrontPage>
+      <AllowComments>true</AllowComments>
+      <Attachments />
+      <Crossposts />
+      <Latitude xsi:nil="true" />
+      <Longitude xsi:nil="true" />
+    </Entry>
+    <Entry>
+      <Content>&lt;p&gt;I will try to create a simple CMS framework on top of the ASP.Net MVC. This will be mostly an exercise, something that I feel I need to try to see how it works.  Some of the goals:&lt;/p&gt;&lt;ol&gt;    &lt;li&gt;The framework will be extensible but opinionated.&lt;/li&gt;    &lt;li&gt;The views need to be composite and the markup created by the designer should be very simple with minimum or no code at all.&lt;/li&gt;    &lt;li&gt;The framework needs to provide a centralize Exception handler mechanism.&lt;/li&gt;    &lt;li&gt;Multiple sites in one install.&lt;/li&gt;    &lt;li&gt;Partial views should use a common interface (IViewModule?) so we can provide a modular architecture.&lt;/li&gt;    &lt;li&gt;Easy to template by a designer, easy to skin by a designer.&lt;/li&gt;    &lt;li&gt;HTML and CSS standards compliance friendly.&lt;/li&gt;    &lt;li&gt;In line administration are fully backend integrated to the site.&lt;/li&gt;    &lt;li&gt;Testability is paramount, and the framework should come with a good set of unit test as part of the release.&lt;/li&gt;    &lt;li&gt;Been able to run the test from inside the framework, so install can diagnose problems.&lt;/li&gt;&lt;/ol&gt;&lt;p&gt;I will be posting more about this and some code as soon as I have something put together.&lt;/p&gt;</Content>
+      <Created>2008-11-21T23:15:45-07:00</Created>
+      <Modified>2008-12-14T22:29:55.5244268-07:00</Modified>
+      <EntryId>92</EntryId>
+      <Description />
+      <Title>Uskhay a web framework and a programming exercise</Title>
+      <Categories>Architecture;Frameworks;Patterns</Categories>
+      <Author>hgarcia</Author>
+      <IsPublic>true</IsPublic>
+      <Syndicated>true</Syndicated>
+      <ShowOnFrontPage>true</ShowOnFrontPage>
+      <AllowComments>true</AllowComments>
+      <Attachments />
+      <Crossposts />
+      <Latitude xsi:nil="true" />
+      <Longitude xsi:nil="true" />
+    </Entry>
+  </Entries>
+</DayEntry>

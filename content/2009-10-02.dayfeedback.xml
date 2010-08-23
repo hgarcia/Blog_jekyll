@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<DayExtra xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="urn:newtelligence-com:dasblog:runtime:data">
+  <Date>2009-10-01T17:00:00-07:00</Date>
+  <Comments>
+    <Comment>
+      <Content>Thanks for your posting. I needed a clear example and with your information I got my Log4Net to use 1 connection string in the web.config.  Great Job.</Content>
+      <Created>2010-07-21T11:22:06.7123868-07:00</Created>
+      <Modified>2010-07-21T11:22:06.7123868-07:00</Modified>
+      <EntryId>010ef659-eeb4-4cec-be72-fe41486d5191</EntryId>
+      <TargetTitle>Using the Connection String section for Log4Net and NHibernate</TargetTitle>
+      <TargetEntryId>357A3FBE-59E7-4DD4-846A-89083E903532</TargetEntryId>
+      <Author>Don Sabio</Author>
+      <AuthorEmail />
+      <AuthorHomepage />
+      <AuthorIPAddress>205.172.107.75</AuthorIPAddress>
+      <IsPublic>true</IsPublic>
+      <SpamState>NotChecked</SpamState>
+      <AuthorUserAgent>Mozilla/5.0 (Windows; U; Windows NT 5.1; en-US; rv:1.9.2.6) Gecko/20100625 Firefox/3.6.6 (.NET CLR 3.5.30729)</AuthorUserAgent>
+    </Comment>
+  </Comments>
+  <Trackings />
+</DayExtra>

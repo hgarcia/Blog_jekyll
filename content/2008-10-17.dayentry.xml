@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<DayEntry xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="urn:newtelligence-com:dasblog:runtime:data">
+  <Date>2008-10-16T17:00:00-07:00</Date>
+  <Entries>
+    <Entry>
+      <Content>I consider extension methods one of the most interesting features of the .Net framework. I like it so much because It brings some of the strength of JavaScript into the framework. The possibility of write stuff like this.&lt;pre&gt; var percentage = 10.PercentOf(100);&lt;/pre&gt;An do stuff like this:&lt;pre&gt; public void OutputTabData(List&lt;post&gt; posts){&lt;br&gt;  var rowTemplate = "{0}\t{1}\t{2}\n";&lt;br&gt;  posts.ForEach(f =&amp;gt; Console.WriteLine(string.Format(rowTemplate, f.Title, f.Author, f.Posted)));&lt;br&gt; }&lt;/post&gt;&lt;/pre&gt;With this output:&lt;font size="1"&gt;&lt;br&gt;First post&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp; Hernan&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp; 17/10/2008 11:45:10 PM&lt;br&gt;Second post&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp; Diego&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp; 17/10/2008 11:45:10 PM&lt;br&gt;&lt;br&gt;&lt;/font&gt;There are a lot of discussions about when to use extension methods and when not to. The problem is when you use extension methods instead of inheritance.&lt;h2&gt;Using extension methods to augment the framework or modify the language&lt;/h2&gt;A clear choice for me is when you want to augment types, like the previous example of using PercentOf in an integer.Or what about this.&lt;pre&gt; Console.WriteLine(4.DaysAgo());&lt;br&gt; Console.WriteLine(4.YearsFromNow());&lt;br&gt; //14/10/2008 12:07:11 AM&lt;br&gt; //18/10/2012 12:07:11 AM&lt;/pre&gt; Or what about having a handy method to get the Unix Time right from the DateTime object?&lt;pre&gt;var unixDate = DateTime.Now.ToUnixTime();&lt;br&gt;//1224303150.54688&lt;/pre&gt;Or the other way around&lt;pre&gt;var date = 1224303150.54688.FromUnixTime();&lt;br&gt;// 18/10/2008&lt;/pre&gt;&lt;h2&gt;Encapsulate functionality that you always do&lt;/h2&gt;I need to use Reflection quite a lot for one of my projects and I have a set of methods to do some very common operations, like get a value from a property, get a list of properties, etc. What if those methods where available for you in every object?&lt;pre&gt;var result = new MyClass().GetPropertyList();&lt;br&gt;foreach (var key in result.Keys){&lt;br&gt;&amp;nbsp;Console.WriteLine(key + " = " + result[key].ToString());&lt;br&gt;}&lt;br&gt;//&lt;br&gt;// _fieldOne = value of field 1&lt;br&gt;// _fieldTwo = value of field 2&lt;br&gt;//&lt;/pre&gt;Or what about some handy string methods&lt;pre&gt;"There is   a   lot of white     space  in here  .    ".Squeeze();&lt;br&gt;//"There is a lot of white space in here."&lt;/pre&gt;Have fun!!! &lt;br&gt;&lt;br&gt;NOTE: Some of the utilities methods like Squeeze are part of the Subsonic Utilities library that I modify and turn into extension methods.</Content>
+      <Created>2008-10-17T06:25:31-07:00</Created>
+      <Modified>2008-12-14T22:05:13.1581106-07:00</Modified>
+      <EntryId>91</EntryId>
+      <Description />
+      <Title>Using Extension methods: Improving readability.</Title>
+      <Categories>Programming</Categories>
+      <Author>hgarcia</Author>
+      <IsPublic>true</IsPublic>
+      <Syndicated>true</Syndicated>
+      <ShowOnFrontPage>true</ShowOnFrontPage>
+      <AllowComments>true</AllowComments>
+      <Attachments />
+      <Crossposts />
+      <Latitude xsi:nil="true" />
+      <Longitude xsi:nil="true" />
+    </Entry>
+  </Entries>
+</DayEntry>

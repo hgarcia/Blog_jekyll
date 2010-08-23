@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="utf-8"?>
+<DayExtra xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="urn:newtelligence-com:dasblog:runtime:data">
+  <Date>2009-11-09T17:00:00-07:00</Date>
+  <Comments>
+    <Comment>
+      <Content>Hey there,
+
+Is it possible to do searches for Documents within a Document?
+
+For example...
+
+Document FoundDocument = SomeDocument[&amp;quot;NestedDocument(Name='Test')&amp;quot;];
+
+Currently the only way I think I can do this is by enumerating each Document and checking the &amp;quot;Name&amp;quot; property on each one...
+
+foreach(String document in SomeDocument.Keys)
+{
+   Object current = SomeDocument[document];
+   if(... check object type here ...)
+   {
+      Document currentDoc = (Document)current;
+      if(currentDoc[&amp;quot;Name&amp;quot;] == &amp;quot;Test&amp;quot;)
+      {
+         //found it
+      }
+   }
+}</Content>
+      <Created>2009-12-04T09:37:41.853343-07:00</Created>
+      <Modified>2009-12-04T09:37:41.853343-07:00</Modified>
+      <EntryId>7a8f375e-cc89-4a2f-8ae1-7c24c22c3198</EntryId>
+      <TargetTitle>Using MongoDB from C#</TargetTitle>
+      <TargetEntryId>C2BB6ACE-7F84-48C7-957A-E7998A2F789B</TargetEntryId>
+      <Author>Nick</Author>
+      <AuthorEmail>nick@npsoftware.co.uk</AuthorEmail>
+      <AuthorHomepage />
+      <AuthorIPAddress>93.97.161.124</AuthorIPAddress>
+      <IsPublic>true</IsPublic>
+      <SpamState>NotChecked</SpamState>
+      <AuthorUserAgent>Mozilla/4.0 (compatible; MSIE 8.0; Windows NT 6.1; Trident/4.0; SLCC2; .NET CLR 2.0.50727; .NET CLR 3.5.30729; .NET CLR 3.0.30729; Media Center PC 6.0; InfoPath.2; OfficeLiveConnector.1.3; OfficeLivePatch.0.0)</AuthorUserAgent>
+    </Comment>
+    <Comment>
+      <Content>@Nick:
+
+Sorry I didn't answer before. The driver comes with a Linq provider. There is also a newly published episode of dnrtv.com with one of the developers on MongoDB that shows some more advanced queries.
+
+http://www.dnrtv.com/default.aspx?showNum=163
+
+Hope that helps.</Content>
+      <Created>2010-01-18T21:24:21.73715-07:00</Created>
+      <Modified>2010-01-18T21:24:21.73715-07:00</Modified>
+      <EntryId>aa9083dd-acf7-46d5-abef-b3df334418bd</EntryId>
+      <TargetTitle>Using MongoDB from C#</TargetTitle>
+      <TargetEntryId>C2BB6ACE-7F84-48C7-957A-E7998A2F789B</TargetEntryId>
+      <Author>Hernan Garcia</Author>
+      <AuthorEmail>hernan@dynamicprogrammer.com</AuthorEmail>
+      <AuthorHomepage>http://blog.dynamicprogrammer.com</AuthorHomepage>
+      <AuthorIPAddress>99.231.64.9</AuthorIPAddress>
+      <IsPublic>true</IsPublic>
+      <SpamState>NotChecked</SpamState>
+      <AuthorUserAgent>Mozilla/5.0 (Windows; U; Windows NT 6.1; en-GB; rv:1.9.1.7) Gecko/20091221 Firefox/3.5.7 (.NET CLR 3.5.30729)</AuthorUserAgent>
+    </Comment>
+    <Comment>
+      <Content>public IEnumerable&amp;lt;TDocument&amp;gt; getListOf&amp;lt;TDocument&amp;gt;(string whereClause, string fromCollection) where TDocument : IMongoEntity
+
+
+Parameter &amp;quot;(string)whereClause&amp;quot; for this method is what write ?
+&amp;quot;id&amp;lt;100&amp;quot; or &amp;quot;{'id':{$lt:100}}&amp;quot; or other?
+
+I am a Chinese ,English is not good! I am sorry!
+I hope you can understand what I mean under
+
+Thinks! Waiting Online!
+
+ </Content>
+      <Created>2010-02-03T20:01:05.4059447-07:00</Created>
+      <Modified>2010-02-03T20:01:05.4059447-07:00</Modified>
+      <EntryId>8eaf4840-390f-4a01-8d8b-939c5aadab01</EntryId>
+      <TargetTitle>Using MongoDB from C#</TargetTitle>
+      <TargetEntryId>C2BB6ACE-7F84-48C7-957A-E7998A2F789B</TargetEntryId>
+      <Author>zhulinlin</Author>
+      <AuthorEmail>cclove2@163.com</AuthorEmail>
+      <AuthorHomepage>http://www.17eyes.com/images/mc.gif</AuthorHomepage>
+      <AuthorIPAddress>122.224.234.14</AuthorIPAddress>
+      <IsPublic>true</IsPublic>
+      <SpamState>NotChecked</SpamState>
+      <AuthorUserAgent>Mozilla/5.0 (Windows; U; Windows NT 5.2; zh-CN; rv:1.9.0.2) Gecko/2008091620 Firefox/3.0.2 (.NET CLR 3.5.30729)</AuthorUserAgent>
+    </Comment>
+    <Comment>
+      <Content>@zhulinlin
+
+In your case the clause should be &amp;quot;{id : {$lt: 100}}&amp;quot; haven't tested but that should work:
+
+You can check the docs for advanced queries here: http://is.gd/9gX2A</Content>
+      <Created>2010-02-26T15:08:23.2679393-07:00</Created>
+      <Modified>2010-02-26T15:08:23.2679393-07:00</Modified>
+      <EntryId>ca44c3f0-aa6b-4887-afc8-4813c08c49d3</EntryId>
+      <TargetTitle>Using MongoDB from C#</TargetTitle>
+      <TargetEntryId>C2BB6ACE-7F84-48C7-957A-E7998A2F789B</TargetEntryId>
+      <Author>Hernan Garcia</Author>
+      <AuthorEmail>hernan@dynamicprogrammer.com</AuthorEmail>
+      <AuthorHomepage>http://blog.dynamicprogrammer.com</AuthorHomepage>
+      <AuthorIPAddress>72.0.192.114</AuthorIPAddress>
+      <IsPublic>true</IsPublic>
+      <SpamState>NotChecked</SpamState>
+      <AuthorUserAgent>Mozilla/5.0 (Windows; U; Windows NT 6.1; en-US; rv:1.9.2) Gecko/20100115 Firefox/3.6</AuthorUserAgent>
+    </Comment>
+
+  </Comments>
+  <Trackings />
+</DayExtra>

@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<DayExtra xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="urn:newtelligence-com:dasblog:runtime:data">
+  <Date>2009-06-03T17:00:00-07:00</Date>
+  <Comments>
+    <Comment>
+      <Content>Developer Express built something similar to this for Microsoft for VS2008 &lt;a href="http://msdn.microsoft.com/en-us/vcsharp/dd218053.aspx"&gt;&amp;quot;CodeRush Xpress for C#&amp;quot;&lt;/a&gt;.  It's a cut down version of the CodeRush/Refactor product, but it's free and it contains some of the &amp;quot;Declare from Use&amp;quot; stuff from the commercial product.  It also uses the smart naming heuristics from the full product so it should offer more reasonable names.
+
+It should coexist in VS with resharper in case you want to test out a different implementation of similar functionality.</Content>
+      <Created>2009-06-04T00:27:14.6081969-07:00</Created>
+      <Modified>2009-06-04T00:27:14.6081969-07:00</Modified>
+      <EntryId>2771c398-3c86-44e2-86eb-c993ea554633</EntryId>
+      <TargetTitle>VS 2010, Generate method from usage.</TargetTitle>
+      <TargetEntryId>5CC8F342-E9FA-4376-8DC3-CD8611AC6EB2</TargetEntryId>
+      <Author>richard morris</Author>
+      <AuthorEmail>me@dxram.com</AuthorEmail>
+      <AuthorHomepage>http://twitter.com/dxram</AuthorHomepage>
+      <AuthorIPAddress>150.101.201.60</AuthorIPAddress>
+      <IsPublic>true</IsPublic>
+      <SpamState>NotChecked</SpamState>
+      <AuthorUserAgent>Mozilla/5.0 (Macintosh; U; Intel Mac OS X 10.5; en-US; rv:1.9.1b4) Gecko/20090423 Firefox/3.5b4</AuthorUserAgent>
+    </Comment>
+    <Comment>
+      <Content>Hi Richard:
+
+Thank you. I did check CodeRush Xpress for C#. It's good and it's free. I just wanted to see what was in the box on 2010.</Content>
+      <Created>2009-06-04T12:29:34.4460863-07:00</Created>
+      <Modified>2009-06-04T12:29:34.4460863-07:00</Modified>
+      <EntryId>32c3dc5e-2431-4d4d-85db-efb6dc2f628c</EntryId>
+      <TargetTitle>VS 2010, Generate method from usage.</TargetTitle>
+      <TargetEntryId>5CC8F342-E9FA-4376-8DC3-CD8611AC6EB2</TargetEntryId>
+      <Author>@Richard Morris</Author>
+      <AuthorEmail>hernifootball@yahoo.com</AuthorEmail>
+      <AuthorHomepage>http://blog.dynamicprogrammer.com</AuthorHomepage>
+      <AuthorIPAddress>99.231.75.201</AuthorIPAddress>
+      <IsPublic>true</IsPublic>
+      <SpamState>NotChecked</SpamState>
+      <AuthorUserAgent>Mozilla/5.0 (Windows; U; Windows NT 5.1; en-GB; rv:1.9.0.10) Gecko/2009042316 Firefox/3.0.10 (.NET CLR 4.0.20506)</AuthorUserAgent>
+    </Comment>
+  </Comments>
+  <Trackings />
+</DayExtra>

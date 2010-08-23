@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="utf-8"?>
+<DayExtra xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="urn:newtelligence-com:dasblog:runtime:data">
+  <Date>2007-12-30T17:00:00-07:00</Date>
+  <Comments>
+    <Comment>
+      <Content>Hi, I do like the idea but you could achieve the same thing with the built in extension methods. If you change to an List you can recreate the first example like this:
+
+l.ForEach(s =&amp;gt; { Console.WriteLine(s); });
+
+and the second example would become:
+
+l.Select(s =&amp;gt; s = s + " - Modified").ToList().ForEach(s =&amp;gt; { Console.WriteLine(s); });
+
+Thanks for the article, got me thinking!
+
+Sean</Content>
+      <Created>2007-12-31T03:47:47-07:00</Created>
+      <Modified>2007-12-31T03:47:47-07:00</Modified>
+      <OpenId>false</OpenId>
+      <TargetTitle>Implementing the Each method in C# collections</TargetTitle>
+      <TargetEntryId>26</TargetEntryId>
+      <Author>Sean Blakemore</Author>
+      <AuthorEmail>sean.blakemore@flawlesscode.com</AuthorEmail>
+      <AuthorHomepage>http://www.flawlesscode.com/</AuthorHomepage>
+      <AuthorIPAddress>84.9.145.168</AuthorIPAddress>
+      <IsPublic>true</IsPublic>
+      <SpamState>NotChecked</SpamState>
+    </Comment>
+    <Comment>
+      <Content>Why not just use List.ForEach()?</Content>
+      <Created>2007-12-31T06:02:39-07:00</Created>
+      <Modified>2007-12-31T06:02:39-07:00</Modified>
+      <OpenId>false</OpenId>
+      <TargetTitle>Implementing the Each method in C# collections</TargetTitle>
+      <TargetEntryId>26</TargetEntryId>
+      <Author>John S.</Author>
+      <AuthorEmail>johnsheehan@gmail.com</AuthorEmail>
+      <AuthorHomepage>http://john-sheehan.com/blog</AuthorHomepage>
+      <AuthorIPAddress>71.195.39.140</AuthorIPAddress>
+      <IsPublic>true</IsPublic>
+      <SpamState>NotChecked</SpamState>
+    </Comment>
+    <Comment>
+      <Content>@Sean and John:
+
+ForEach is a method of List&lt;T&gt; the generic version and it doesn't seems to be available in the ArrayList one, but is a good point nonetheless.
+
+Thanks for your comments!</Content>
+      <Created>2007-12-31T10:26:26-07:00</Created>
+      <Modified>2007-12-31T10:26:26-07:00</Modified>
+      <OpenId>false</OpenId>
+      <TargetTitle>Implementing the Each method in C# collections</TargetTitle>
+      <TargetEntryId>26</TargetEntryId>
+      <Author>Hernan Garcia</Author>
+      <AuthorEmail>hernifootball@yahoo.com</AuthorEmail>
+      <AuthorHomepage>http://www.latrompa.com</AuthorHomepage>
+      <AuthorIPAddress>38.112.106.104</AuthorIPAddress>
+      <IsPublic>true</IsPublic>
+      <SpamState>NotChecked</SpamState>
+    </Comment>
+    <Comment>
+      <Content>[...] this is a practical example [...] </Content>
+      <Created>2008-01-02T00:13:06-07:00</Created>
+      <Modified>2008-01-02T00:13:06-07:00</Modified>
+      <OpenId>false</OpenId>
+      <TargetTitle>Implementing the Each method in C# collections</TargetTitle>
+      <TargetEntryId>26</TargetEntryId>
+      <Author>Have u ever needed to extend a string? [Extension Methods] - .net Wand</Author>
+      <AuthorEmail />
+      <AuthorHomepage>http://aspxwizard.net/blogs/wand/archive/2007/12/27/have-u-ever-needed-to-extend-a-string-extension-methods.aspx</AuthorHomepage>
+      <AuthorIPAddress>209.59.195.8</AuthorIPAddress>
+      <IsPublic>true</IsPublic>
+      <SpamState>NotChecked</SpamState>
+    </Comment>
+    <Comment>
+      <Content>A couple of things...
+
+You don't need to declare your own delegate types (GetObject and ModifyObject).  You can use the Action and Func types provided by the framework instead.
+
+It might be worth considering iterating over IEnumerable rather than IList.  That way your extension method can be applied to any enumerable type.
+
+Also you don't need to use reflection to instantiate a list, use the C# "yield" statement instead.</Content>
+      <Created>2008-01-08T17:40:37-07:00</Created>
+      <Modified>2008-01-08T17:40:37-07:00</Modified>
+      <OpenId>false</OpenId>
+      <TargetTitle>Implementing the Each method in C# collections</TargetTitle>
+      <TargetEntryId>26</TargetEntryId>
+      <Author>Alex Hoffman</Author>
+      <AuthorEmail>alexh@alintex.com</AuthorEmail>
+      <AuthorHomepage />
+      <AuthorIPAddress>144.131.137.164</AuthorIPAddress>
+      <IsPublic>true</IsPublic>
+      <SpamState>NotChecked</SpamState>
+    </Comment>
+    <Comment>
+      <Content>@Alex: Interesting comment.
+This example started extending IEnumerable but IEnumerable doesn't define the Add method, that I needed for my second example, IList does, but using yield solve this issue.
+I'm adding an example of using Action and Func as well, thanks so much for your comments.</Content>
+      <Created>2008-01-08T19:47:29-07:00</Created>
+      <Modified>2008-01-08T19:47:29-07:00</Modified>
+      <OpenId>false</OpenId>
+      <TargetTitle>Implementing the Each method in C# collections</TargetTitle>
+      <TargetEntryId>26</TargetEntryId>
+      <Author>Hernan Garcia</Author>
+      <AuthorEmail>hernifootball@yahoo.com</AuthorEmail>
+      <AuthorHomepage>http://www.dynamicprogrammer.com</AuthorHomepage>
+      <AuthorIPAddress>99.242.19.160</AuthorIPAddress>
+      <IsPublic>true</IsPublic>
+      <SpamState>NotChecked</SpamState>
+    </Comment>
+    <Comment>
+      <Content>Hi Hernan - one more thing... if you look at the implementation of the framework "Select" extension, it performs exactly the same functionality as your second "Each" example.  In other words "Select" can be used to project each element of an IEnumerable or IQueryable into a (optionally transformed) result.
+
+i.e. ...
+
+int[] numbers = {1,2,3};
+var result = numbers.Select(i =&amp;gt; i *2);
+
+// result contains 2,4,6</Content>
+      <Created>2008-01-08T21:40:15-07:00</Created>
+      <Modified>2008-01-08T21:40:15-07:00</Modified>
+      <OpenId>false</OpenId>
+      <TargetTitle>Implementing the Each method in C# collections</TargetTitle>
+      <TargetEntryId>26</TargetEntryId>
+      <Author>Alex Hoffman</Author>
+      <AuthorEmail>alexh@alintex.com</AuthorEmail>
+      <AuthorHomepage />
+      <AuthorIPAddress>144.131.137.164</AuthorIPAddress>
+      <IsPublic>true</IsPublic>
+      <SpamState>NotChecked</SpamState>
+    </Comment>
+    <Comment>
+      <Content>Different people in every country take the &lt;a href="http://lowest-rate-loans.com/topics/mortgage-loans"&gt;mortgage loans&lt;/a&gt; from various creditors, because it is comfortable and fast. </Content>
+      <Created>2010-06-17T18:36:16.138096-07:00</Created>
+      <Modified>2010-06-17T18:36:16.138096-07:00</Modified>
+      <EntryId>bcb21e01-41d3-4062-9bf2-25729b596453</EntryId>
+      <TargetTitle>Implementing the Each method in C# collections</TargetTitle>
+      <TargetEntryId>26</TargetEntryId>
+      <Author>ErnaCarr</Author>
+      <AuthorEmail>barbarajackson@mail15.com</AuthorEmail>
+      <AuthorHomepage>http://www.lowest-rate-loans.com</AuthorHomepage>
+      <AuthorIPAddress>91.201.66.6</AuthorIPAddress>
+      <IsPublic>true</IsPublic>
+      <SpamState>NotChecked</SpamState>
+      <AuthorUserAgent>Mozilla/4.0 (compatible; MSIE 7.0; Windows NT 6.1; WOW64; Trident/4.0; SLCC2; .NET CLR 2.0.50727; .NET CLR 3.5.30729; .NET CLR 3.0.30729)</AuthorUserAgent>
+    </Comment>
+  </Comments>
+  <Trackings />
+</DayExtra>

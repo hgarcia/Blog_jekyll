@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<DayExtra xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="urn:newtelligence-com:dasblog:runtime:data">
+  <Date>2010-03-16T17:00:00-07:00</Date>
+  <Comments>
+    <Comment>
+      <Content>Hi, I'm the author of Cucumber. This looks very promising!
+
+A few comments:
+
+I strongly recommend that the editor do _not_ recognise &amp;quot;In order to&amp;quot;, &amp;quot;I am&amp;quot; etc and try to highlight them. Users should be free to write whatever they like here, and shouldn't be forced to use this style. Those words are just a recommendation. We recently removed this highlighting from the TextMate Cucumber bundle: http://bit.ly/cd0jRY
+Besides, these sentence snippets are not translated to any other languages.
+
+The Gherkin project (soon used by both SpecFlow and Cucumber) has a Ruby class that is very handy for toold developers, making it easy to support all 40 of Gherkin's i18n languages. Cuke4Nuke, Cuke4Duke, the Pygments lexer and Cucumber.tmbundle all use it for code generation:
+
+* http://github.com/richardlawrence/Cuke4Nuke/blob/contrib/lib/task/Cuke4NukeCodeGeneration.rake
+
+* http://github.com/aslakhellesoy/cuke4duke/blob/master/Rakefile#L30
+
+* http://github.com/bmabey/cucumber-tmbundle/blob/master/Support/bundle_tasks/syntax.rake
+
+* http://github.com/aslakhellesoy/gherkin-pygments-lexer/blob/master/Rakefile
+
+If you want to discuss further, don't hesitate to pop into the Cucumber google group: http://groups.google.com/group/cukes
+
+Cheers,
+Aslak</Content>
+      <Created>2010-03-23T08:19:55.2996217-07:00</Created>
+      <Modified>2010-03-23T08:19:55.2996217-07:00</Modified>
+      <EntryId>c4d06090-b40a-41bc-8300-f1c119369413</EntryId>
+      <TargetTitle>Gherkin editor, syntax highlighting and auto complete to write your stories.</TargetTitle>
+      <TargetEntryId>CFC87837-7A67-4C13-9101-CB777F859536</TargetEntryId>
+      <Author>Aslak Helles&amp;#248;y</Author>
+      <AuthorEmail>aslak.hellesoy@gmail.com</AuthorEmail>
+      <AuthorHomepage>http://twitter.com/aslak_hellesoy</AuthorHomepage>
+      <AuthorIPAddress>139.112.1.135</AuthorIPAddress>
+      <IsPublic>true</IsPublic>
+      <SpamState>NotChecked</SpamState>
+      <AuthorUserAgent>Mozilla/5.0 (Macintosh; U; Intel Mac OS X 10.6; en-US; rv:1.9.2) Gecko/20100115 Firefox/3.6</AuthorUserAgent>
+    </Comment>
+  </Comments>
+  <Trackings />
+</DayExtra>

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<DayEntry xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="urn:newtelligence-com:dasblog:runtime:data">
+  <Date>2009-07-11T17:00:00-07:00</Date>
+  <Entries>
+    <Entry>
+      <Content>&lt;p&gt;You can find this text in the the wiki for Pronghorn on Code&lt;/p&gt; &lt;p&gt;plex. &lt;a href="http://pronghorn.codeplex.com"&gt;http://pronghorn.codeplex.com&lt;/a&gt;&lt;/p&gt; &lt;p&gt;Pronghorn is still a work in progress and the architecture+design is changing very fast. &lt;br&gt;At this moment the main focus is on the ViewEngine because is what will provide most of the value for my actual employer. &lt;/p&gt; &lt;hr&gt;  &lt;p&gt;Most LOB applications can be done using just one or two master pages and one area of content per URL. In this context ASP.NET MVC can be used out of the box with no or just a few changes. HTML.RenderAction can be used in lieu of widgets in the page without a big penalty on composition.&lt;/p&gt; &lt;p&gt;But there is also a need for more complex applications, those where web pages are build from a collection of discrete components (widgets). These widgets should be added or removed in a dynamic fashion without the involvement of a developer. Those are the scenarios where CMS frameworks come to play. Pronghorn is not a CMS but it provides the tools to make this type of composition on top of ASP.NET MVC.&lt;/p&gt; &lt;p&gt;To accomplish that much, Pronghorn has “some opinions" on the way you should build composite applications using MVC. These opinions are expressed via the use of interfaces and base classes that extend and sometime constrain the MVC framework.&lt;/p&gt; &lt;p&gt;Controllers should be small and map to only one resource. They should be Rest-like (use the HTTP verbs for the actions names, enforced via the ControllerBase.ExecuteCore).&lt;/p&gt; &lt;p&gt;The ControllerBase.OnActionExecuted adds "Areas" for a given view based upon the Controller, Action and SiteContext. This Area loads a collection of widgets in a specific order, that can change from area to area between pages.&lt;/p&gt; &lt;p&gt;At this point is where the ProngHorn.ViewEngine kicks in. ProngHorn.ViewEngine is an html based view engine, that uses a similar syntax to the one used in the prototype.js templates.&lt;/p&gt; &lt;p&gt;Composition is achieved via some Injection mechanism using DI.&lt;/p&gt; &lt;p&gt;Widgets "publish" to the page, called skin in Pronghorn witch css, js files will need. These resources should be minified and combined to reduce network traffic and # of http calls from the browsers to improve performance and load time.&lt;/p&gt; &lt;hr&gt;  &lt;p&gt;To keep up with the project you can subscribe to the &lt;a href="http://pronghorn.codeplex.com/Project/ProjectRss.aspx?ProjectRSSFeed=codeplex%3a%2f%2fwiki%2fProngHorn"&gt;project’s wiki RSS&lt;/a&gt;. Where you can get all the updates, a bit chatty but may be useful or visit the &lt;a href="http://pronghorn.codeplex.com"&gt;project’s home page&lt;/a&gt; periodically.&lt;/p&gt; &lt;p&gt; &lt;div style="padding-bottom: 0px; margin: 0px; padding-left: 0px; padding-right: 0px; display: inline; float: none; padding-top: 0px" id="scid:0767317B-992E-4b12-91E0-4F059A8CECA8:9d59cc46-18df-4aac-9967-5c1ad2cf122e" class="wlWriterEditableSmartContent"&gt;Technorati Tags: &lt;a href="http://technorati.com/tags/ASP.NET+MVC" rel="tag"&gt;ASP.NET MVC&lt;/a&gt;,&lt;a href="http://technorati.com/tags/Composition" rel="tag"&gt;Composition&lt;/a&gt;,&lt;a href="http://technorati.com/tags/ProngHorn" rel="tag"&gt;ProngHorn&lt;/a&gt;&lt;/div&gt;&lt;/p&gt;</Content>
+      <Created>2009-07-11T20:32:53.2002039-07:00</Created>
+      <Modified>2009-07-11T20:33:47.9278103-07:00</Modified>
+      <EntryId>eb8717c4-6a67-42b3-ae80-333e6a4bc8f1</EntryId>
+      <Description />
+      <Title>What is ProngHorn and why I’m doing it?</Title>
+      <Categories>Frameworks;Programming;Tools</Categories>
+      <Author>hgarcia</Author>
+      <IsPublic>true</IsPublic>
+      <Syndicated>true</Syndicated>
+      <ShowOnFrontPage>true</ShowOnFrontPage>
+      <AllowComments>true</AllowComments>
+      <Attachments />
+      <Crossposts />
+      <Latitude xsi:nil="true" />
+      <Longitude xsi:nil="true" />
+    </Entry>
+  </Entries>
+</DayEntry>

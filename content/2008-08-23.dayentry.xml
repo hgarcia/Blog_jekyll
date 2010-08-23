@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<DayEntry xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="urn:newtelligence-com:dasblog:runtime:data">
+  <Date>2008-08-22T17:00:00-07:00</Date>
+  <Entries>
+    <Entry>
+      <Content>First let me said, thanks &lt;a href="http://devlicio.us/blogs/sergio_pereira/archive/2008/08/22/don-t-tell-me-you-did-that-with-javascript.aspx" title="Don't tell me you did that with JavaScript" target="_blank"&gt;for this post&lt;/a&gt;.&lt;br&gt;I always sustained that you can't do modern web development without using JavaScript. I never understood when in some user group presentation or a Microsoft product launch somebody drag and drop a control from the AJAX tool kit into a webform to provide some dynamic capability and exclaim "and you haven't wrote a line of JavaScript!".&lt;br&gt;My though always was, aren't you guys web developers? If you are a database developer you don't want to learn T-SQL or P-SQL or whatever the SQL flavor of the database product you are using?&lt;br&gt; I will concede that some developers may be better on the backend (I consider myself a really bad designer), but that is not excuse not to know your way on HTML, JavaScript and CSS.&lt;br&gt;That is your presentation layer, even if you don't design it, you may have to maintain it. &lt;br&gt;If not don't call yourself a web developer. &lt;br&gt;Please don't misunderstand me, I'm not saying that you should know every little CSS trick or every possible browser implementation of HTML standard (does IE put the margins outside or inside the box?).&lt;br&gt; I'm not even saying that you should be a javascript ninja.&lt;br&gt; What I'm saying is that you shouldn't be afraid of those technologies, you should embrace them and learn them.&lt;br&gt;JavaScript in particular is an amazing language with a lot of power and following a few simple rules will help you to discover the joy of working with such a language.&lt;br&gt;And please if you haven't do it yet, take the time to learn how AJAX works, remember that there is not such thing as an update panel in HTML.</Content>
+      <Created>2008-08-22T21:19:56-07:00</Created>
+      <Modified>2008-12-14T22:20:56.2637174-07:00</Modified>
+      <EntryId>69</EntryId>
+      <Description />
+      <Title>On Sergio Pereira's - Don't tell me you did that with JavaScript</Title>
+      <Categories>General;Programming</Categories>
+      <Author>hgarcia</Author>
+      <IsPublic>true</IsPublic>
+      <Syndicated>true</Syndicated>
+      <ShowOnFrontPage>true</ShowOnFrontPage>
+      <AllowComments>true</AllowComments>
+      <Attachments />
+      <Crossposts />
+      <Latitude xsi:nil="true" />
+      <Longitude xsi:nil="true" />
+    </Entry>
+  </Entries>
+</DayEntry>

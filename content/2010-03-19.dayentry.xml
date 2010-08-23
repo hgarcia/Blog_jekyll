@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<DayEntry xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="urn:newtelligence-com:dasblog:runtime:data">
+  <Date>2010-03-18T17:00:00-07:00</Date>
+  <Entries>
+    <Entry>
+      <Content>&lt;p&gt;I pick up &lt;a href="http://is.gd/aO7t2" target="_blank"&gt;the book&lt;/a&gt; with a lot of interesting an enthusiasm. My goals were to learn techniques and proper ways to write down user stories, improve my estimation techniques and been able to apply some of those techniques back at work.&lt;/p&gt; &lt;p&gt;The book delivers in it’s promise. Some of the things I hope to use at work are the story writing workshops and user role modelling.&lt;/p&gt; &lt;p&gt;User role modelling was one of the most interesting techniques for me. I also enjoyed the guidance for writing good user stories. &lt;/p&gt; &lt;p&gt;Mike Cohn takes a very pragmatic approach to some issues usually very controversial in the agile community, like using sticky notes or software to write stories. I particulary liked that.&lt;/p&gt; &lt;p&gt;I was a bit disappointed with the third part of the book but I think that depends on the background of the reader. The catalogue of Story smells is a must read though.&lt;/p&gt; &lt;p&gt;The last part of the book is an example that walk us on how to come up with the user roles, write the stories, estimate them, create a release plan and acceptance tests. If you are working in an agile team and have some input on the writing of stories I will recommend that read this book.&lt;/p&gt;</Content>
+      <Created>2010-03-18T19:42:44.0467996-07:00</Created>
+      <Modified>2010-03-18T19:42:44.0467996-07:00</Modified>
+      <EntryId>0f23082e-a680-4f6f-a02d-cb0f569c1d85</EntryId>
+      <Description />
+      <Title>Book review: User Stories Applied: For Agile Software Development by Mike Cohn</Title>
+      <Categories>Books;General;Methodology</Categories>
+      <Author>hgarcia</Author>
+      <IsPublic>true</IsPublic>
+      <Syndicated>true</Syndicated>
+      <ShowOnFrontPage>true</ShowOnFrontPage>
+      <AllowComments>true</AllowComments>
+      <Attachments />
+      <Crossposts />
+      <Latitude xsi:nil="true" />
+      <Longitude xsi:nil="true" />
+    </Entry>
+  </Entries>
+</DayEntry>

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<DayEntry xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="urn:newtelligence-com:dasblog:runtime:data">
+  <Date>2007-10-05T17:00:00-07:00</Date>
+  <Entries>
+    <Entry>
+      <Content>&lt;p&gt;I'm trilled to discover that I'm not crazy and that my search and adoption of alternative tools (alternatives to the Microsoft tools) to develop in .net is a philosophy adopted not only by me but for a lot of people.&lt;/p&gt;&lt;p&gt;It even has a name ALT.NET a term create by &lt;a target="_blank" href="http://laribee.com/blog/2007/04/10/altnet/"&gt;David Larabee&lt;/a&gt;.&lt;/p&gt;&lt;p&gt;Just to clarify is not that I hate Microsoft, I agree that they produce very good tools and very good software in general, even IE is not that bad, even when all of us that do Web development complain constantly about it, security holes, non-standard js and DOM implementations, etc. My problem with some of the Microsoft tools is that they use too many wizards for everything or they make things easy to use only if you want to do it the Microsoft way.&lt;/p&gt;&lt;p&gt;The Redmond giant have been changing its ways lately and they are even releasing some really good and promising stuff, like Silverlight and the ability to run it in any browser (my test in IE and Firefox have been very promising, there is not support for Opera thought and Safari in a power PC only works with the version 1.0, but this is still better than using Windows Media player embed.&lt;/p&gt;&lt;p&gt;My problems come when looking at integrated solutions to manage the development cycle. I took a look at TFS and the whole Team System ecology and they look fine on paper but they don't work really well for me. And what with the complicate versioning and licensing!!!&lt;/p&gt;&lt;p&gt;For all my non .net development I settle on &lt;a target="_blank" href="http://www.eclipse.org"&gt;Eclipse&lt;/a&gt;, I rely heavily on it, I have integration with &lt;a target="_blank" href="http://ant.apache.org"&gt;Ant&lt;/a&gt; and &lt;a target="_blank" href="http://subversion.tigris.org"&gt;Subversion&lt;/a&gt;, support for editing Java, PHP, and AJAX based applications all in the same environment. I have been playing with &lt;a target="_blank" href="http://www.eclipse.org/mylyn/"&gt;Mylyn&lt;/a&gt; and a little plug in for FogBugz later and I'm very please that I don't need to leave Eclipse at all, I even have my UML tool of choice running on it, &lt;a target="_blank" href="http://www.visual-paradigm.com"&gt;Paradigm&lt;/a&gt;.&lt;/p&gt;&lt;p&gt;I don't want to be unfair, I have been able to integrate VS 2005 with Subversion and FogBugz as well. FogBugz provides their own add in and I'm using VisualSVN for Subversion (I like Ankhsvn but has issues with web apps, there are workarounds but &lt;a target="_blank" href="http://www.visualsvn.com"&gt;VisualSVN&lt;/a&gt; cost almost nothing and works right out of the box, it leverage &lt;a target="_blank" href="http://tortoisesvn.tigris.org"&gt;TortoiseSVN&lt;/a&gt;).&lt;/p&gt;&lt;p&gt;&amp;nbsp;&lt;/p&gt;</Content>
+      <Created>2007-10-06T12:28:36-07:00</Created>
+      <Modified>2008-12-14T22:41:08.9372753-07:00</Modified>
+      <EntryId>3</EntryId>
+      <Description />
+      <Title>ALT.NET</Title>
+      <Categories>General</Categories>
+      <Author>hgarcia</Author>
+      <IsPublic>true</IsPublic>
+      <Syndicated>true</Syndicated>
+      <ShowOnFrontPage>true</ShowOnFrontPage>
+      <AllowComments>true</AllowComments>
+      <Attachments />
+      <Crossposts />
+      <Latitude xsi:nil="true" />
+      <Longitude xsi:nil="true" />
+    </Entry>
+  </Entries>
+</DayEntry>

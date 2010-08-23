@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<DayExtra xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="urn:newtelligence-com:dasblog:runtime:data">
+  <Date>2009-01-01T17:00:00-07:00</Date>
+  <Comments>
+    <Comment>
+      <Content>This looks awesome - i'll have to check it out. Thanks!</Content>
+      <Created>2009-09-04T14:59:37.0752129-07:00</Created>
+      <Modified>2009-09-04T14:59:37.0752129-07:00</Modified>
+      <EntryId>3888844b-c568-4f83-aa15-0492a58d3946</EntryId>
+      <TargetTitle>Catharsis, a complete framework for developing Web apps using MVC and NHibernate 2.0</TargetTitle>
+      <TargetEntryId>5B05CA5F-80E7-4D00-9686-62332F42D72C</TargetEntryId>
+      <Author>Jason Irwin</Author>
+      <AuthorEmail>jason.irwin@hotmail.com</AuthorEmail>
+      <AuthorHomepage>http://irwinj.blogspot.com</AuthorHomepage>
+      <AuthorIPAddress>65.217.49.3</AuthorIPAddress>
+      <IsPublic>true</IsPublic>
+      <SpamState>NotChecked</SpamState>
+      <AuthorUserAgent>Mozilla/5.0 (Windows; U; Windows NT 5.1; en-US) AppleWebKit/532.0 (KHTML, like Gecko) Chrome/3.0.195.10 Safari/532.0</AuthorUserAgent>
+    </Comment>
+  </Comments>
+  <Trackings />
+</DayExtra>

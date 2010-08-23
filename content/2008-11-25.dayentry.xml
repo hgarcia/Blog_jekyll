@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<DayEntry xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="urn:newtelligence-com:dasblog:runtime:data">
+  <Date>2008-11-24T17:00:00-07:00</Date>
+  <Entries>
+    <Entry>
+      <Content>&lt;p&gt;In the last year my team was able to successfully adopt the following practices in no particular order:   &lt;/p&gt;&lt;p&gt;Unit testing (mostly Test First or TDD) - we were doing no formal repetitive testing before.&lt;br&gt;Continuous Integration using CC.net. - a build you mean F5 on VS? Nant to drive our builds.&lt;br&gt;Subversion as our source control system (we have no VCS before!).&lt;br&gt;NHibernate (we were using DooDads or simple Ado.NET before).&lt;br&gt;DI with Castle.Windsor.&lt;br&gt;Mocking (we started using NMock2 but we are moving to Rhino.Mocks now).&lt;br&gt;Code reviews and some type of pair programming.&lt;br&gt;Fogbugz as our bug tracking system (we had an in house tool before, but I hated that we also have to do maintenance of this tool and that have no value to the core business). &lt;/p&gt;&lt;p&gt;Weekly meetings were we watch videos about the technologies we are using or we plan to use, we discuss methodologies or how to better use the tools we have. We read something and we talk about it.&lt;/p&gt;&lt;p&gt;I found this meetings really productive. At the beginning it was difficult for some of the members of the team to participate, to express their point of views; but that have changed. This participation makes for a more cohesive team with new ideas and different point of views. &lt;/p&gt;&lt;p&gt;We started to implement some automation in our regression and smoke tests as well, but we are in the exploratory phase here.  &lt;/p&gt;&lt;p&gt;This is a testimony to the mature of the team and how well they are taking on new challenges. Our next goal is to apply some of the Lean ideas like Kanbam.&lt;/p&gt;</Content>
+      <Created>2008-11-25T12:05:15-07:00</Created>
+      <Modified>2008-12-14T22:18:14.0455592-07:00</Modified>
+      <EntryId>96</EntryId>
+      <Description />
+      <Title>Hurray to my team</Title>
+      <Categories>General</Categories>
+      <Author>hgarcia</Author>
+      <IsPublic>true</IsPublic>
+      <Syndicated>true</Syndicated>
+      <ShowOnFrontPage>true</ShowOnFrontPage>
+      <AllowComments>true</AllowComments>
+      <Attachments />
+      <Crossposts />
+      <Latitude xsi:nil="true" />
+      <Longitude xsi:nil="true" />
+    </Entry>
+    <Entry>
+      <Content>One of the most difficult tasks as a team lead is to find the right people. &lt;br&gt;I'm happy to say that at this moment our team seems to be working well together, but it took almost three years to get to this point.&lt;br&gt;I have been thinking about why it's so difficult to find the right people and I will try to put down my thoughts here.&lt;br&gt;The hiring process for the company may not be adequate for you team, it's not the same to hire a developer that a designer or a marketing person. &lt;br&gt;HR should suggest practices but should not impose a pre defined hiring process. Each department should use it's own selection criteria (as far as the general guidelines are the same for the company).&lt;br&gt;&lt;br&gt;The recruiters companies may not understand what you need. &lt;br&gt;We worked with several recruitment agencies and there is only one of them that take the time to sit with me to understand what I'm looking for, they ask about our development process, the environment and other details, so they can find the right candidate.&lt;br&gt;This saves me a lot of time, since most of the resumes they send are from candidates that I wish to interview.&lt;br&gt;It can also be that when I put the job description together, I'm not expressing my needs or the spirit of the company.&lt;br&gt;&lt;br&gt;The team change with time (hopefully). The developers get better and your development process should evolve as well (continuous Improvement).&lt;br&gt;&lt;br&gt;The company change so the expectations on performance will change. In this case a team member that look as a good fit a few months ago, may not be so today.There is no place for the Primma Donna Developer in a modern development team. A cohesive team is very important. It's good to have different personalities and cultural backgrounds but they should all work well together.&lt;br&gt;This is even more important on an agile team.&lt;br&gt;&lt;br&gt;You. The team leader may not find the proper way to communicate to the team, and this is difficult to diagnose on your own. You will need somebody from outside to tell you.&lt;br&gt;&lt;br&gt;What do you think?</Content>
+      <Created>2008-11-24T20:59:23-07:00</Created>
+      <Modified>2008-12-14T22:39:22.5079355-07:00</Modified>
+      <EntryId>95</EntryId>
+      <Description />
+      <Title>Building the right team</Title>
+      <Categories>General</Categories>
+      <Author>hgarcia</Author>
+      <IsPublic>true</IsPublic>
+      <Syndicated>true</Syndicated>
+      <ShowOnFrontPage>true</ShowOnFrontPage>
+      <AllowComments>true</AllowComments>
+      <Attachments />
+      <Crossposts />
+      <Latitude xsi:nil="true" />
+      <Longitude xsi:nil="true" />
+    </Entry>
+  </Entries>
+</DayEntry>

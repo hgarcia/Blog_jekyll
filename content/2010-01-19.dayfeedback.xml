@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<DayExtra xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="urn:newtelligence-com:dasblog:runtime:data">
+  <Date>2010-01-18T17:00:00-07:00</Date>
+  <Comments>
+    <Comment>
+      <Content>Great writeup.  This was my first year at CodeMash too.  I really enjoyed it and I hope I can attend it again next year.  I will try to bring the family next time too.
+
+My only complaint was the network was ungodly slow.  Other than that pretty much all the sessions were great.  A wide choice of topics and the hotel and food were great.
+
+Joe O'Brien's Rafactoring the Programmer and Mary's Lean Keynote were very memorable and was what I needed coming back to work starting off the 2010 with positive motivation to improve my skillset and work environment.  
+
+</Content>
+      <Created>2010-01-20T13:18:11.0572203-07:00</Created>
+      <Modified>2010-01-20T13:18:11.0572203-07:00</Modified>
+      <EntryId>dfa04ce8-b366-4632-9fb1-8ebdc0735128</EntryId>
+      <TargetTitle>Notes and personal retrospective from my first Codemash.</TargetTitle>
+      <TargetEntryId>ED4C2DD7-F334-4D99-AD7E-4226BC4BDAE3</TargetEntryId>
+      <Author>Frank</Author>
+      <AuthorEmail>frank_lapoint@hotmail.com</AuthorEmail>
+      <AuthorHomepage />
+      <AuthorIPAddress>205.161.125.254</AuthorIPAddress>
+      <IsPublic>true</IsPublic>
+      <SpamState>NotChecked</SpamState>
+      <AuthorUserAgent>Mozilla/4.0 (compatible; MSIE 7.0; Windows NT 5.1; InfoPath.2; .NET CLR 2.0.50727; .NET CLR 3.0.4506.2152; .NET CLR 3.5.30729; OfficeLiveConnector.1.4; OfficeLivePatch.1.3) chromeframe/4.0</AuthorUserAgent>
+    </Comment>
+  </Comments>
+  <Trackings />
+</DayExtra>

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<DayEntry xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="urn:newtelligence-com:dasblog:runtime:data">
+  <Date>2008-05-29T17:00:00-07:00</Date>
+  <Entries>
+    <Entry>
+      <Content>I was helping a colleague at work to debug an old classic asp script that uploads an image to the server, create some folders if they don't exist and copy the image on those folders.He was having a permissions denied error. Of course he added permissions to IIS_IUSR to modify the folder but still the same error. In IIS 5.0 and IIS 6.0 this is the user that you grant permissions to write files to the server.We search for an answer on google but nothing came up. Actually we found some posts of people that found the same problem, most of them using PHP on IIS 7.0.Looking at the system users in the machine (Vista Premiun) I saw a user with the name IIS_WPG, that sound like the IIS Worker Process, we give permissions to that user and suddenly the script started to work.I haven't tried it with PHP but my guest is that it's going to work. (I stopped running PHP on IIS long time ago and I stick with Apache even in windows.)&lt;h2&gt;Note on security&lt;/h2&gt;If this was a production machine I would probably enable impersonate and create an ad hoc user to upload files and not give access to the IIS_WPG directly. </Content>
+      <Created>2008-05-29T21:22:50-07:00</Created>
+      <Modified>2008-12-14T22:24:25.6589972-07:00</Modified>
+      <EntryId>54</EntryId>
+      <Description />
+      <Title>IIS 7.0 and classic ASP can't create folder (or upload files).</Title>
+      <Categories>Programming</Categories>
+      <Author>hgarcia</Author>
+      <IsPublic>true</IsPublic>
+      <Syndicated>true</Syndicated>
+      <ShowOnFrontPage>true</ShowOnFrontPage>
+      <AllowComments>true</AllowComments>
+      <Attachments />
+      <Crossposts />
+      <Latitude xsi:nil="true" />
+      <Longitude xsi:nil="true" />
+    </Entry>
+  </Entries>
+</DayEntry>

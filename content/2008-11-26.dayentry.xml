@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<DayEntry xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="urn:newtelligence-com:dasblog:runtime:data">
+  <Date>2008-11-25T17:00:00-07:00</Date>
+  <Entries>
+    <Entry>
+      <Content>&lt;p&gt;A month ago or so I was talking to this developer on a party at a friends house. &lt;/p&gt;&lt;p&gt;He was telling me how much he hated his work. The guy was telling me about some of his coworkers. &lt;/p&gt;&lt;p&gt;The story goes like this. They had a new boss, and this new guy wanted to bring XP, pair programming and some other things like DI, DDD, etc. He also wanted to try MonoRails. &lt;br&gt;The guy at the party was furious. He loved his drag and drop web forms and he saw no point wasting time sitting with another developer to do a data grid based report.  &lt;br&gt;Why they needed to move the code outside of the code behind to another project? &lt;br&gt;Code reuse? &lt;br&gt;What that's think about Unit test? He tested his pages all right hitting F5 and clicking the submit button. &lt;/p&gt;&lt;p&gt;I was trying to be polite but I couldn't avoid to ask him: &lt;br&gt;Don't you have problems during the maintenance phase, or each time you need to change something, something else brakes and you never find it until it goes to production?  &lt;/p&gt;&lt;p&gt;He looked at me like I was crazy and said:&lt;br&gt;"Yeah, but there is nothing you can do about it. And besides if it's perfect they won't need me anymore."   &lt;/p&gt;&lt;p&gt;He was serious.&lt;/p&gt;</Content>
+      <Created>2008-11-26T08:18:01-07:00</Created>
+      <Modified>2008-12-14T22:17:57.2589908-07:00</Modified>
+      <EntryId>97</EntryId>
+      <Description />
+      <Title>Mediocrity should scare you.</Title>
+      <Categories>General</Categories>
+      <Author>hgarcia</Author>
+      <IsPublic>true</IsPublic>
+      <Syndicated>true</Syndicated>
+      <ShowOnFrontPage>true</ShowOnFrontPage>
+      <AllowComments>true</AllowComments>
+      <Attachments />
+      <Crossposts />
+      <Latitude xsi:nil="true" />
+      <Longitude xsi:nil="true" />
+    </Entry>
+  </Entries>
+</DayEntry>

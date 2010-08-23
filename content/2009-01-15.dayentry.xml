@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<DayEntry xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="urn:newtelligence-com:dasblog:runtime:data">
+  <Date>2009-01-14T17:00:00-07:00</Date>
+  <Entries>
+    <Entry>
+      <Content>&lt;p&gt;&amp;#160;&lt;/p&gt;  &lt;p&gt;Besides programming against Interfaces and using &lt;a href="http://en.wikipedia.org/wiki/Dependency_injection" target="_blank"&gt;Dependency Injection&lt;/a&gt; to reduce coupling, there is another practice that can/should be used when you consume an external library. That is provide a wrapper around the library or in other words the use of the &lt;a href="http://en.wikipedia.org/wiki/Facade_pattern" target="_blank"&gt;Facade pattern&lt;/a&gt;.&lt;/p&gt;  &lt;h3&gt;Why?&lt;/h3&gt;  &lt;p&gt;Consider this example.&lt;/p&gt;  &lt;pre class="c#:collapse" name="code"&gt;using System;&lt;br /&gt;using System.Collections.Generic;&lt;br /&gt;using System.Text;&lt;br /&gt;using log4net.Core;&lt;br /&gt;&lt;br /&gt;namespace HtmlHelpers&lt;br /&gt;{&lt;br /&gt;    public class UnorderedList&lt;br /&gt;    {&lt;br /&gt;        private readonly ILogger _logger;&lt;br /&gt;&lt;br /&gt;        public UnorderedList(ILogger logger)&lt;br /&gt;        {&lt;br /&gt;            _logger = logger;&lt;br /&gt;        }&lt;br /&gt;&lt;br /&gt;        public string Render(IEnumerable&amp;lt;string&amp;gt; collectionToPrint)&lt;br /&gt;        {&lt;br /&gt;            try&lt;br /&gt;            {&lt;br /&gt;                _logger.Log(collectionToPrint.GetType(),Level.Info,&amp;quot;Starting to render the list&amp;quot;,null);&lt;br /&gt;&lt;br /&gt;                var list = new StringBuilder();&lt;br /&gt;                list.Append(&amp;quot;&amp;lt;ul&amp;gt;&amp;quot;);&lt;br /&gt;&lt;br /&gt;                foreach (var item in collectionToPrint)&lt;br /&gt;                {&lt;br /&gt;                    list.AppendFormat(&amp;quot;&amp;lt;li&amp;gt;{0}&amp;lt;/li&amp;gt;&amp;quot;, item);&lt;br /&gt;                }&lt;br /&gt;&lt;br /&gt;                list.Append(&amp;quot;&amp;lt;/ul&amp;gt;&amp;quot;);&lt;br /&gt;&lt;br /&gt;                _logger.Log(collectionToPrint.GetType(), Level.Info, &amp;quot;Finishing to render the list&amp;quot;, null);&lt;br /&gt;&lt;br /&gt;                return list.ToString();&lt;br /&gt;            }&lt;br /&gt;            catch (Exception e)&lt;br /&gt;            {&lt;br /&gt;                _logger.Log(collectionToPrint.GetType(),Level.Fatal,&amp;quot;Can't render the list&amp;quot;,e);&lt;br /&gt;                throw;&lt;br /&gt;            }&lt;br /&gt;        }&lt;br /&gt;    }&lt;br /&gt;}&lt;/pre&gt;
+
+&lt;p&gt;As you can see using the ILogger interface in the constructor give us the ability to pass any object that implements it, but take a look at the using statements.&lt;/p&gt;
+
+&lt;pre class="c#:collapse" name="code"&gt;using System;&lt;br /&gt;using System.Collections.Generic;&lt;br /&gt;using System.Text;&lt;br /&gt;using &lt;font color="#ff0000"&gt;log4net.Core&lt;/font&gt;;&lt;/pre&gt;
+
+&lt;p&gt;Yeah, Log4Net is there, so even when we are isolating ourselves from a dependency to the concrete implementation, we are still carrying a dependency to the assembly. Not only that but if we want to change our logging service we need to do it for some other logging service that implements the same interface. &lt;/p&gt;
+
+&lt;p&gt;As well you are having a dependency on the Level enumeration used in the signature of the Log method from the ILogger interface.&lt;/p&gt;
+
+&lt;pre class="c#:collapse" name="code"&gt;_logger.Log(collectionToPrint.GetType(),&lt;font color="#ff0000"&gt;Level.Fatal&lt;/font&gt;,&amp;quot;Can't render the list&amp;quot;,e);&lt;/pre&gt;
+
+&lt;p&gt;While we are at this, take a look at that signature, you may want to do something simpler to use. So what will be the chance for another third party Logging library to implement this ILogger interface? Null of course. &lt;/p&gt;
+
+&lt;p&gt;The solution is the Facade pattern. We start defining our own interface for logging.&lt;/p&gt;
+
+&lt;pre class="c#:collapse" name="code"&gt;using System;&lt;br /&gt;&lt;br /&gt;namespace FacadePattern&lt;br /&gt;{&lt;br /&gt;    public interface ILogger&lt;br /&gt;    {&lt;br /&gt;        void LogException(Exception e);&lt;br /&gt;        void LogException(string message, Exception e);&lt;br /&gt;        void LogInfo(string message);&lt;br /&gt;    }&lt;br /&gt;}&lt;/pre&gt;
+
+&lt;p&gt;Notice how we create specific method for the levels we want to use, you may need other methods later on, but you can always implement them when you actually need them.
+  &lt;br /&gt;Now, we create a concrete implementation that uses Log4Net.&lt;/p&gt;
+
+&lt;pre class="c#:collapse" name="code"&gt;using System;&lt;br /&gt;using System.Diagnostics;&lt;br /&gt;using System.IO;&lt;br /&gt;using System.Reflection;&lt;br /&gt;using log4net;&lt;br /&gt;using log4net.Config;&lt;br /&gt;&lt;br /&gt;namespace FacadePattern&lt;br /&gt;{&lt;br /&gt;    public class Logger : ILogger&lt;br /&gt;    {&lt;br /&gt;        private readonly ILog _logger;&lt;br /&gt;&lt;br /&gt;        public Logger()&lt;br /&gt;        {&lt;br /&gt;            XmlConfigurator.ConfigureAndWatch(new FileInfo(Path.Combine(&lt;br /&gt;                                                               AppDomain.CurrentDomain.SetupInformation.ApplicationBase,&lt;br /&gt;                                                               &amp;quot;log4net.config&amp;quot;)));&lt;br /&gt;            MethodBase m = new StackTrace().GetFrame(1).GetMethod();&lt;br /&gt;            _logger = LogManager.GetLogger(string.Format(&amp;quot;{0}.{1}&amp;quot;, m.DeclaringType, m.Name));&lt;br /&gt;        }&lt;br /&gt;&lt;br /&gt;        public void LogException(Exception e)&lt;br /&gt;        {&lt;br /&gt;            _logger.Error(e.Message, e);&lt;br /&gt;        }&lt;br /&gt; &lt;br /&gt;        public void LogException(string message, Exception e)&lt;br /&gt;        {&lt;br /&gt;            _logger.Error(message, e);&lt;br /&gt;        }&lt;br /&gt;&lt;br /&gt;        public void LogInfo(string message)&lt;br /&gt;        {&lt;br /&gt;            _logger.Info(message);&lt;br /&gt;        }&lt;br /&gt;    }&lt;br /&gt;}&lt;/pre&gt;
+
+&lt;p&gt;Now our objects that need Logging can consume our own implementation and any dependency on Log4Net is removed. At this point we can use Dependency Injection to provide our concrete implementation of the logging class and we are free to change the library that does the actual logging anytime we want.&lt;/p&gt;
+
+&lt;pre class="c#:collapse" name="code"&gt;using System;&lt;br /&gt;using System.Collections.Generic;&lt;br /&gt;using System.Text;&lt;br /&gt;using FacadePattern;&lt;br /&gt;&lt;br /&gt;namespace HtmlHelpers&lt;br /&gt;{&lt;br /&gt;    public class UnorderedList&lt;br /&gt;    {&lt;br /&gt;        private readonly ILogger _logger;&lt;br /&gt;        public UnorderedList(ILogger logger)&lt;br /&gt;        {&lt;br /&gt;            _logger = logger;&lt;br /&gt;        }&lt;br /&gt;&lt;br /&gt;        public string Render(IEnumerable&amp;lt;string&amp;gt; collectionToPrint)&lt;br /&gt;        {&lt;br /&gt;            try&lt;br /&gt;            {&lt;br /&gt;                _logger.LogInfo(&amp;quot;Starting to render the list&amp;quot;);&lt;br /&gt;&lt;br /&gt;                var list = new StringBuilder();&lt;br /&gt;                list.Append(&amp;quot;&amp;lt;ul&amp;gt;&amp;quot;);&lt;br /&gt;&lt;br /&gt;                foreach (var item in collectionToPrint)&lt;br /&gt;                {&lt;br /&gt;                    list.AppendFormat(&amp;quot;&amp;lt;li&amp;gt;{0}&amp;lt;/li&amp;gt;&amp;quot;, item);&lt;br /&gt;                }&lt;br /&gt;&lt;br /&gt;                list.Append(&amp;quot;&amp;lt;/ul&amp;gt;&amp;quot;);&lt;br /&gt;&lt;br /&gt;                _logger.LogInfo(&amp;quot;Finishing to render the list&amp;quot;);&lt;br /&gt;&lt;br /&gt;                return list.ToString();&lt;br /&gt;            }&lt;br /&gt;            catch (Exception e)&lt;br /&gt;            {&lt;br /&gt;                _logger.LogException(&amp;quot;Can't render the list&amp;quot;,e);&lt;br /&gt;                throw;&lt;br /&gt;            }&lt;br /&gt;        }&lt;br /&gt;    }&lt;br /&gt;}&lt;/pre&gt;
+
+&lt;pre class="c#:collapse" name="code"&gt;&lt;br /&gt;Also notice how much more clean and readable is the log code.&lt;/pre&gt;</Content>
+      <Created>2009-01-14T21:25:00-07:00</Created>
+      <Modified>2009-01-11T14:27:30.055722-07:00</Modified>
+      <EntryId>f6cda480-8d8f-4ed4-b264-9a9b55293419</EntryId>
+      <Description />
+      <Title>Isolate yourself from external libraries using the Facade pattern.</Title>
+      <Categories>Patterns;Programming</Categories>
+      <Author>hgarcia</Author>
+      <IsPublic>true</IsPublic>
+      <Syndicated>true</Syndicated>
+      <ShowOnFrontPage>true</ShowOnFrontPage>
+      <AllowComments>true</AllowComments>
+      <Attachments />
+      <Crossposts />
+      <Latitude xsi:nil="true" />
+      <Longitude xsi:nil="true" />
+    </Entry>
+    <Entry>
+      <Content>&lt;p&gt;&amp;#160;&lt;/p&gt;  &lt;p&gt;This week the guys at the herding code chat with &lt;a href="http://www.lostechies.com/blogs/chad_myers/" target="_blank"&gt;Chad Myers&lt;/a&gt; and &lt;a href="http://codebetter.com/blogs/jeremy.miller/default.aspx" target="_blank"&gt;Jeremy Miller&lt;/a&gt; on &lt;a href="http://www.ohloh.net/p/FubuMVC" target="_blank"&gt;FubuMVC&lt;/a&gt;, testing with JavaScript and &lt;a href="http://docs.jquery.com/QUnit" target="_blank"&gt;QUnit&lt;/a&gt; and &lt;a href="http://butunclebob.com/ArticleS.UncleBob.PrinciplesOfOod" target="_blank"&gt;SOLID principles&lt;/a&gt;.&lt;/p&gt;  &lt;p&gt;&lt;a title="http://herdingcode.com/?p=131" href="http://herdingcode.com/?p=131"&gt;http://herdingcode.com/?p=131&lt;/a&gt;&lt;/p&gt;</Content>
+      <Created>2009-01-15T04:51:00-07:00</Created>
+      <Modified>2009-01-13T21:51:58.3065347-07:00</Modified>
+      <EntryId>628aee85-e5e1-4c14-84e3-5e7c90693c77</EntryId>
+      <Description />
+      <Title>The Herding code podcast about FubuMVC</Title>
+      <Categories>Frameworks;Methodology;Programming</Categories>
+      <Author>hgarcia</Author>
+      <IsPublic>true</IsPublic>
+      <Syndicated>true</Syndicated>
+      <ShowOnFrontPage>true</ShowOnFrontPage>
+      <AllowComments>true</AllowComments>
+      <Attachments />
+      <Crossposts />
+      <Latitude xsi:nil="true" />
+      <Longitude xsi:nil="true" />
+    </Entry>
+  </Entries>
+</DayEntry>

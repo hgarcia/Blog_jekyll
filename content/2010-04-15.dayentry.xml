@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<DayEntry xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="urn:newtelligence-com:dasblog:runtime:data">
+  <Date>2010-04-14T17:00:00-07:00</Date>
+  <Entries>
+    <Entry>
+      <Content>&lt;p&gt;I finally got the courage and sent a proposal for speaking at the Toronto code camp. The good news is that it was accepted and I will be speaking this coming May 1st at this year code camp. &lt;/p&gt; &lt;p&gt;This time around will be at Seneca college in front of another full house. 8 tracks of .Net goodness ranging from SharePoint development to JQuery, testing (Unit and BDD), Silverlight, OData, Win Phone 7, etc. Check all the details visiting the Code camp website: &lt;a title="http://www.torontocodecamp.net/Agenda/tabid/56/Default.aspx" href="http://www.torontocodecamp.net/Agenda/tabid/56/Default.aspx"&gt;http://www.torontocodecamp.net/Agenda/tabid/56/Default.aspx&lt;/a&gt;&lt;/p&gt; &lt;h5&gt; About my talk.&lt;/h5&gt; &lt;p&gt;I will describe what BDD is and give a brief introduction to user stories. I will de demoing how to use them to generate executable code that exercise your system and tells the clients that your program is working as expected.&lt;/p&gt; &lt;p&gt;This technique can help you to increase the communication bandwidth between business, development and other stakeholders. I will explore this technique not just in the context of a green field application but will talk about how to use it around a legacy or existing app that has no specifications as a security net for modifying it. &lt;/p&gt; &lt;p&gt;As a code camp talk I will be showing a lot of code and examples with different tools so you can decide witch one fit best into your workflow. &lt;/p&gt;</Content>
+      <Created>2010-04-15T04:22:25.308846-07:00</Created>
+      <Modified>2010-04-15T04:22:25.308846-07:00</Modified>
+      <EntryId>40e34321-4747-4193-aa1d-cef7b7731a20</EntryId>
+      <Description />
+      <Title>Speaking at Toronto Code Camp 2010 on BDD + User stories for end to end testing.</Title>
+      <Categories>General;Talks</Categories>
+      <Author>hgarcia</Author>
+      <IsPublic>true</IsPublic>
+      <Syndicated>true</Syndicated>
+      <ShowOnFrontPage>true</ShowOnFrontPage>
+      <AllowComments>true</AllowComments>
+      <Attachments />
+      <Crossposts />
+      <Latitude xsi:nil="true" />
+      <Longitude xsi:nil="true" />
+    </Entry>
+  </Entries>
+</DayEntry>

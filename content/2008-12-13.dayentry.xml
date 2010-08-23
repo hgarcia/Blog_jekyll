@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<DayEntry xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="urn:newtelligence-com:dasblog:runtime:data">
+  <Date>2008-12-12T17:00:00-07:00</Date>
+  <Entries>
+    <Entry>
+      <Content>&lt;p&gt;&amp;nbsp;&lt;/p&gt;  &lt;p&gt;I’m sitting besides my 19th month old trying to write some code. Of course he is trying to help me. Let me tell you his C# is not bad :-) He was so exited about typing thaT I decided to give him something he could play with. I remembered &lt;a href="http://www.hanselman.com/babysmash/index.htm" target="_blank"&gt;Scott Hanselman’s baby smash&lt;/a&gt;. So I went to the site and install it. &lt;/p&gt;  &lt;p&gt;I have to admit that this have been the easiest application ever to install (I had .net 3.5 installed already). Just click once, one prompt, and there you go.&lt;/p&gt;  &lt;p&gt;My son got hooked immediately. Tree house was in the TV but he just couldn’t stop banging the keyboard. I still can’t write any code, but at least one of us is happy. I better go to get my other machine. &lt;/p&gt;  &lt;div class="wlWriterEditableSmartContent" id="scid:0767317B-992E-4b12-91E0-4F059A8CECA8:d3d1d8ba-e5c3-40ac-ac8a-c77afada3f23" style="margin: 0px; padding: 0px; display: inline; float: none;"&gt;Technorati Tags: &lt;a href="http://technorati.com/tags/BabySmash" rel="tag"&gt;BabySmash&lt;/a&gt;,&lt;a href="http://technorati.com/tags/WPF" rel="tag"&gt;WPF&lt;/a&gt;,&lt;a href="http://technorati.com/tags/Click+Once" rel="tag"&gt;Click Once&lt;/a&gt;&lt;/div&gt;</Content>
+      <Created>2008-12-13T12:29:24.184-07:00</Created>
+      <Modified>2008-12-13T13:03:21.8027639-07:00</Modified>
+      <EntryId>7e7ec154-497e-485e-96d5-d704ed2b2192</EntryId>
+      <Description />
+      <Title>Thumbs up to Baby Smash</Title>
+      <Categories>General</Categories>
+      <Author>hgarcia</Author>
+      <IsPublic>true</IsPublic>
+      <Syndicated>true</Syndicated>
+      <ShowOnFrontPage>true</ShowOnFrontPage>
+      <AllowComments>true</AllowComments>
+      <Attachments />
+      <Crossposts />
+      <Latitude xsi:nil="true" />
+      <Longitude xsi:nil="true" />
+    </Entry>
+  </Entries>
+</DayEntry>

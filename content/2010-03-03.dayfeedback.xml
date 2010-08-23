@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<DayExtra xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="urn:newtelligence-com:dasblog:runtime:data">
+  <Date>2010-03-02T17:00:00-07:00</Date>
+  <Comments>
+    <Comment>
+      <Content>Btw, in the v1.0.9 of HgSccPackage you can do clone or edit remote paths using plugin UI.</Content>
+      <Created>2010-03-09T11:29:43.5104051-07:00</Created>
+      <Modified>2010-03-09T11:29:43.5104051-07:00</Modified>
+      <EntryId>424530e5-7585-4e61-8b4d-0a56eb1ea22a</EntryId>
+      <TargetTitle>Clone a project on Codeplex to your own Codeplex repo with Mercurial.</TargetTitle>
+      <TargetEntryId>C7C2B4C2-A8CA-4AA9-8A0C-2E06D059995D</TargetEntryId>
+      <Author>zzsergant</Author>
+      <AuthorEmail>sergant_@mail.ru</AuthorEmail>
+      <AuthorHomepage>http://www.newsupaplex.pp.ru</AuthorHomepage>
+      <AuthorIPAddress>95.161.7.51</AuthorIPAddress>
+      <IsPublic>true</IsPublic>
+      <SpamState>NotChecked</SpamState>
+      <AuthorUserAgent>Mozilla/5.0 (Windows; U; Windows NT 6.0; en-US; rv:1.9.2) Gecko/20100115 Firefox/3.6 (.NET CLR 3.5.30729)</AuthorUserAgent>
+    </Comment>
+  </Comments>
+  <Trackings />
+</DayExtra>

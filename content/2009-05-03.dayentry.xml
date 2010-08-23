@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<DayEntry xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="urn:newtelligence-com:dasblog:runtime:data">
+  <Date>2009-05-02T17:00:00-07:00</Date>
+  <Entries>
+    <Entry>
+      <Content>&lt;p&gt;   &lt;br /&gt;Last weekend was the &lt;a href="http://www.torontocodecamp.net/" target="_blank"&gt;2009 edition of the Toronto Code Camp&lt;/a&gt; were I had the privilege to participate as one of the many volunteers.     &lt;br /&gt;This is a free event that runs from 9 am to 6 pm with 25 sessions in topics such as: &lt;a href="http://wix.sourceforge.net/" target="_blank"&gt;Wix&lt;/a&gt;, &lt;a href="http://silverlight.net/getstarted/silverlight3/default.aspx" target="_blank"&gt;Silverlight 3&lt;/a&gt;, &lt;a href="http://www.asp.net/mvc/" target="_blank"&gt;ASP.NET MVC&lt;/a&gt;, &lt;a href="http://research.microsoft.com/en-us/um/cambridge/projects/fsharp/" target="_blank"&gt;F#&lt;/a&gt;, &lt;a href="http://www.microsoft.com/azure/data.mspx" target="_blank"&gt;SQL Data Services&lt;/a&gt;, Extending VS, new features in VB10, Linq internals and more.&lt;/p&gt;  &lt;p&gt;I was impressed by how well organized the event was. The sessions I was able to assist were no bad at all. The presenters were experienced and well prepared. Most of the material was at the 100 to 200 level, maybe the Linq internals session touch around the 300 with expression trees. Even if you consider yourself at the 400 level, with so many sessions on so different topics you can always find something interesting and new things to learn.&lt;/p&gt;  &lt;p&gt;The interaction with fellow developers and the involvement in the community have a lot of value as well. There was a high sense of camaraderie during the event and the after party. On a personal note I was able to “infest” another volunteer with the MVC virus.&lt;/p&gt;  &lt;p&gt;If you haven’t attend a code camp near you city or town make sure to check for them and don’t miss it. They are a lot of fun. As a developer I want to thanks &lt;a href="http://gtaeast.torontoug.net/"&gt;Chris Dufour&lt;/a&gt; for putting the time to organize such an event.&lt;/p&gt;  &lt;p&gt;P.S.: I got a cool Polo shirt sponsored by &lt;a href="http://www.objectsharp.com/Pages/default.aspx" target="_blank"&gt;ObjectSharp&lt;/a&gt;.&lt;/p&gt;</Content>
+      <Created>2009-05-02T20:45:13.440418-07:00</Created>
+      <Modified>2009-05-02T20:45:13.440418-07:00</Modified>
+      <EntryId>af0d9322-91d9-4594-ad6e-6746739d06aa</EntryId>
+      <Description />
+      <Title>Toronto Code Camp 2009</Title>
+      <Categories>General</Categories>
+      <Author>hgarcia</Author>
+      <IsPublic>true</IsPublic>
+      <Syndicated>true</Syndicated>
+      <ShowOnFrontPage>true</ShowOnFrontPage>
+      <AllowComments>true</AllowComments>
+      <Attachments />
+      <Crossposts />
+      <Latitude xsi:nil="true" />
+      <Longitude xsi:nil="true" />
+    </Entry>
+  </Entries>
+</DayEntry>

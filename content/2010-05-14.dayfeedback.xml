@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<DayExtra xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="urn:newtelligence-com:dasblog:runtime:data">
+  <Date>2010-05-13T17:00:00-07:00</Date>
+  <Comments>
+    <Comment>
+      <Content>Hey, thanks for posting this. I have a few questions regarding the capabilities of Kobo -
+
+1) Can you annotate (specially highlight) all the types of files (in different file formats)?
+2) Do you have to convert PDFs to ePub to make the text more readable? (I am asking this because I bought a Sony few days back but returned it, because of some limitations - like some of the PDF files' font used to be so small that I had to magnify it to read properly, but then the diagrams and other images got screwed)
+
+Regards,
+Manoj.</Content>
+      <Created>2010-05-14T07:10:48.203884-07:00</Created>
+      <Modified>2010-05-14T07:10:48.203884-07:00</Modified>
+      <EntryId>00a6f7bc-e3e0-432f-8735-0cf739e4180a</EntryId>
+      <TargetTitle>Are there a lot of programs for that?</TargetTitle>
+      <TargetEntryId>83F5C35A-AA4B-491F-8C88-440BEE30D0B0</TargetEntryId>
+      <Author>Manoj Waikar</Author>
+      <AuthorEmail />
+      <AuthorHomepage />
+      <AuthorIPAddress>192.251.13.62</AuthorIPAddress>
+      <IsPublic>true</IsPublic>
+      <SpamState>NotChecked</SpamState>
+      <AuthorUserAgent>Mozilla/5.0 (Windows; U; Windows NT 6.0; en-US; rv:1.9.2.3) Gecko/20100401 Firefox/3.6.3 ( .NET CLR 3.5.30729)</AuthorUserAgent>
+    </Comment>
+    <Comment>
+      <Content>1) Supports both ePub and PDF
+2) PDF's are Ok but with limitations, diagrams and so don't get screwed but you need to scroll horizontally what's annoying. I converted a few PDF's to ePub but I'm not happy with that. SO I stick to ePub format. Most of the books I read usually have an ePub format available.</Content>
+      <Created>2010-05-17T05:55:10.7394673-07:00</Created>
+      <Modified>2010-05-17T05:55:10.7394673-07:00</Modified>
+      <EntryId>645c82c8-6f58-472e-adfc-8f36b9d37489</EntryId>
+      <TargetTitle>Are there a lot of programs for that?</TargetTitle>
+      <TargetEntryId>83F5C35A-AA4B-491F-8C88-440BEE30D0B0</TargetEntryId>
+      <Author>Hernan Garcia</Author>
+      <AuthorEmail>hernifootball@yaoo.com</AuthorEmail>
+      <AuthorHomepage />
+      <AuthorIPAddress>99.231.64.9</AuthorIPAddress>
+      <IsPublic>true</IsPublic>
+      <SpamState>NotChecked</SpamState>
+      <AuthorUserAgent>Mozilla/5.0 (Windows; U; Windows NT 6.1; en-GB; rv:1.9.2.3) Gecko/20100401 Firefox/3.6.3</AuthorUserAgent>
+    </Comment>
+  </Comments>
+  <Trackings />
+</DayExtra>

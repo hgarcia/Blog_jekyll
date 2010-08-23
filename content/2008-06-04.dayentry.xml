@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<DayEntry xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="urn:newtelligence-com:dasblog:runtime:data">
+  <Date>2008-06-03T17:00:00-07:00</Date>
+  <Entries>
+    <Entry>
+      <Content>&lt;p&gt;Yesterday I listened to show 115 of &lt;a href="http://www.hanselman.com/blog/" title="Scott Hanselman" target="_blank"&gt;Scott Hanselman&lt;/a&gt; podcast &lt;a href="http://www.hanselminutes.com/default.aspx?showID=133" title="Hanselminutes 115 - Finding Passion for Software" target="_blank"&gt;"Hanselminutes"&lt;/a&gt;, the title was "Finding passion for Software". &lt;br&gt;When I first got the link on my rss reader I wasn't sure If I even wanted to download it into my mp3 player, I have so much stuff that I listen in a weekly basics that sometimes I skip some episodes of podcast that I don't find relevant to my interests, but Scott Hanselman is that rare type of communicator that can make interesting very arid topics. &lt;br&gt; &lt;i&gt;Side note: That actually means that there is not such thing as uninteresting "stuff", but is mostly the ability of the person that talks about it who can make it interesting or uninteresting&lt;/i&gt; &lt;br&gt; Back to the topic of this post. &lt;br&gt; In this episode Hanselman talks with &lt;a href="http://www.intellectualhedonism.com/" title="Carl Franklin" target="_blank"&gt;Carl Franklin&lt;/a&gt; about the joys of programming and getting back to basics. &lt;br&gt;The chat moves around what and why development software is (or can be) fun. &lt;br&gt;Both hosts talk about their mentors and the impact they have in their careers and why they love to do what they do. How this have an impact as well on their writing, talking and sharing their knowledge. &lt;br&gt; Carl makes a point about pretentious people that believes that they know it all, or that they know the "only" way to do something. Scott mentions that sometimes you can tell somebody how not to do something, but leave them find a good way to do it, there is a good chance they will come up with a different way to do it and maybe a more elegant solution that anything you may think about. &lt;br&gt; He is talking about using the anti patterns as examples of bad coding.  The shows run for a little bit more than the usual 30 minutes and makes for a great listening.&lt;br&gt; Go and &lt;a href="http://www.hanselminutes.com/default.aspx?showID=133" title="Hanselminutes 115 - Finding Passion for Software" target="_blank"&gt;check it out&lt;/a&gt;.&lt;/p&gt;</Content>
+      <Created>2008-06-04T13:00:46-07:00</Created>
+      <Modified>2008-12-14T22:13:42.0750695-07:00</Modified>
+      <EntryId>56</EntryId>
+      <Description />
+      <Title>Hanselminutes and the passion for software development</Title>
+      <Categories>Programming</Categories>
+      <Author>hgarcia</Author>
+      <IsPublic>true</IsPublic>
+      <Syndicated>true</Syndicated>
+      <ShowOnFrontPage>true</ShowOnFrontPage>
+      <AllowComments>true</AllowComments>
+      <Attachments />
+      <Crossposts />
+      <Latitude xsi:nil="true" />
+      <Longitude xsi:nil="true" />
+    </Entry>
+    <Entry>
+      <Content>&lt;p&gt;&lt;a target="_blank" title="Douglas Crockford" href="http://crockford.com/"&gt;Douglas Crockford&lt;/a&gt; is well known from his work on javascript, specially from tools like &lt;a target="_blank" title="JSLint" href="http://www.jslint.com/"&gt;Jslint&lt;/a&gt; and &lt;a target="_blank" title="JSmin" href="http://javascript.crockford.com/jsmin.html"&gt;Jsmin&lt;/a&gt;.   He is working at Yahoo as a JavaScript Architect.He is somehow responsible for the architecture of the YUI library. He is also the creator? of &lt;a target="_blank" title="JSON - Javascript Object Notation" href="http://www.json.org/"&gt;JSON&lt;/a&gt;, Javascript Object Notation and one of the best ways to pass data when using AJAX.  He gave a talk in 2007 at Yahoo that is available in the Yahoo developer network about The good parts of Javascript.  Six or seven months ago I watched the video with my team and everybody love it. We do quiet a lot of Javascript and we are using more and more AJAX to drive and improve the user experience of our sites. We rapidly adapted most of the patterns and recommendations from Crockford in the re write of our extensive JavaScript library.&lt;/p&gt;&lt;!--more--&gt;&lt;p&gt;Imagine my excitement when I saw a few months ago that &lt;a target="_blank" title="O'Reilly" href="http://www.oreilly.com/catalog/9780596517748/"&gt;O'reilly&lt;/a&gt; announced a book by &lt;a target="_blank" title="Douglas Crockford" href="http://crockford.com/"&gt;Douglas Crockford&lt;/a&gt; entitled, &lt;a target="_blank" title="Javascript: The Good Parts" href="http://www.oreilly.com/catalog/9780596517748/"&gt;Javascript, the good parts.&lt;/a&gt; I look at the table of contents and I knew that I have to have it. I ordered two copies right away, one from my  team and one for my personal library.  The book came two weeks ago and I'm loving it. It's a short book (170 pages) with just content, full of code examples, not just how to do stuff but also how not to do things. I really appreciate this because sometimes is easier to see the problem looking at code that smells.  I certainly recommend that if you do any web UI development at all, read &lt;a target="_blank" title="Javascript: The Good Parts" href="http://www.amazon.com/JavaScript-Good-Parts-Douglas-Crockford/dp/0596517742/ref=pd_bbs_sr_4?ie=UTF8&amp;amp;s=books&amp;amp;qid=1212542239&amp;amp;sr=8-4"&gt;this book&lt;/a&gt;. I will recommend it to everybody, not matter how knowledgeable you are on the language.   I'm embedding the video below, if you want to see more from Crockford visit the &lt;a target="_blank" title="YUI Theatre" href="http://developer.yahoo.com/yui/theater/"&gt;YUI theatre&lt;/a&gt;.&lt;/p&gt;&lt;object height="323" width="512"&gt;&lt;param value="http://d.yimg.com/static.video.yahoo.com/yep/YV_YEP.swf?ver=2.2.2" name="movie"&gt;&lt;param value="true" name="allowFullScreen"&gt;&lt;param value="id=2974197&amp;amp;vid=630959&amp;amp;lang=en-us&amp;amp;intl=us&amp;amp;thumbUrl=http%3A//us.i1.yimg.com/us.yimg.com/i/us/sch/cn/v/v1/w826/630959_100_70.jpeg%3Fx%3D158%26y%3D111%26sig%3DMUc0gpdIoywY3Yi7Bqgn1g--&amp;amp;embed=1" name="flashVars"&gt;&lt;embed flashvars="id=2974197&amp;amp;vid=630959&amp;amp;lang=en-us&amp;amp;intl=us&amp;amp;thumbUrl=http%3A//us.i1.yimg.com/us.yimg.com/i/us/sch/cn/v/v1/w826/630959_100_70.jpeg%3Fx%3D158%26y%3D111%26sig%3DMUc0gpdIoywY3Yi7Bqgn1g--&amp;amp;embed=1" allowfullscreen="true" type="application/x-shockwave-flash" src="http://d.yimg.com/static.video.yahoo.com/yep/YV_YEP.swf?ver=2.2.2" height="323" width="512"&gt;&lt;/object&gt;</Content>
+      <Created>2008-06-03T18:50:27-07:00</Created>
+      <Modified>2008-12-14T22:38:03.6141842-07:00</Modified>
+      <EntryId>55</EntryId>
+      <Description />
+      <Title>Javascript, the good parts, the book.</Title>
+      <Categories>Books;Programming</Categories>
+      <Author>hgarcia</Author>
+      <IsPublic>true</IsPublic>
+      <Syndicated>true</Syndicated>
+      <ShowOnFrontPage>true</ShowOnFrontPage>
+      <AllowComments>true</AllowComments>
+      <Attachments />
+      <Crossposts />
+      <Latitude xsi:nil="true" />
+      <Longitude xsi:nil="true" />
+    </Entry>
+  </Entries>
+</DayEntry>

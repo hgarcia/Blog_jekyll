@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<DayExtra xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="urn:newtelligence-com:dasblog:runtime:data">
+  <Date>2009-03-07T17:00:00-07:00</Date>
+  <Comments>
+    <Comment>
+      <Content>It is really the shame that in the year 2009 in february we get such an outdated book.
+Mostly when NHibernate is changing so fast, v2.1 is comming with few neat changes, FluentNhibernate is here etc etc...
+
+I would buy this book, just my opinnion, better watch _excellent_ summerofnhibernate.com videos.</Content>
+      <Created>2009-03-14T04:14:26.2954287-07:00</Created>
+      <Modified>2009-03-14T04:14:26.2954287-07:00</Modified>
+      <EntryId>f0498aaf-0c45-4ab1-b0cf-f6df6f62d14c</EntryId>
+      <TargetTitle>NHibernate in Action – First impressions</TargetTitle>
+      <TargetEntryId>E9D9330E-FD03-4B19-8EBE-DF747BFA1199</TargetEntryId>
+      <Author>cowgaR</Author>
+      <AuthorEmail>cowgaR@gmail.com</AuthorEmail>
+      <AuthorHomepage />
+      <AuthorIPAddress>93.96.242.147</AuthorIPAddress>
+      <IsPublic>true</IsPublic>
+      <SpamState>NotChecked</SpamState>
+      <AuthorUserAgent>Mozilla/5.0 (Windows; U; Windows NT 6.0; en-GB; rv:1.8.1.20) Gecko/20081217 Firefox/2.0.0.20</AuthorUserAgent>
+    </Comment>
+    <Comment>
+      <Content>@cowgaR
+
+You are right, it could be nice to have version 2.0 also covered in this book, but 
+I disagree and this not been a useful book. I think that you have a lot of information even without covering V2.0 or FluentNHibernate. Most of the concepts very well apply. summerofnhibernate.com is a very good resource as well.</Content>
+      <Created>2009-03-15T20:45:40.36916-07:00</Created>
+      <Modified>2009-03-15T20:45:40.36916-07:00</Modified>
+      <EntryId>e1a8039d-c7bb-4868-8861-75857bd2aa1d</EntryId>
+      <TargetTitle>NHibernate in Action – First impressions</TargetTitle>
+      <TargetEntryId>E9D9330E-FD03-4B19-8EBE-DF747BFA1199</TargetEntryId>
+      <Author>Hernan Garcia</Author>
+      <AuthorEmail />
+      <AuthorHomepage />
+      <AuthorIPAddress>99.242.18.171</AuthorIPAddress>
+      <IsPublic>true</IsPublic>
+      <SpamState>NotChecked</SpamState>
+      <AuthorUserAgent>Mozilla/5.0 (Windows; U; Windows NT 5.1; en-GB; rv:1.9.0.7) Gecko/2009021910 Firefox/3.0.7 (.NET CLR 3.5.30729)</AuthorUserAgent>
+    </Comment>
+  </Comments>
+  <Trackings />
+</DayExtra>

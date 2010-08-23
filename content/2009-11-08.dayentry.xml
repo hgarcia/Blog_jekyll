@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<DayEntry xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="urn:newtelligence-com:dasblog:runtime:data">
+  <Date>2009-11-07T17:00:00-07:00</Date>
+  <Entries>
+    <Entry>
+      <Content>&lt;iframe height="430" border="0" src="http://www.businessinsider.com/embed?id=4af379ed0000000000f9b6a8&amp;amp;width=950&amp;amp;height=430" frameborder="0" width="950"&gt;&lt;/iframe&gt;</Content>
+      <Created>2009-11-07T22:43:56.3711886-07:00</Created>
+      <Modified>2009-11-07T22:43:56.3711886-07:00</Modified>
+      <EntryId>96142ec6-3559-4ff2-869a-e11ab12b2ea1</EntryId>
+      <Description />
+      <Title>Excellent post on a real site using MongoDB</Title>
+      <Categories />
+      <Author>hgarcia</Author>
+      <IsPublic>true</IsPublic>
+      <Syndicated>true</Syndicated>
+      <ShowOnFrontPage>true</ShowOnFrontPage>
+      <AllowComments>true</AllowComments>
+      <Attachments />
+      <Crossposts />
+      <Latitude xsi:nil="true" />
+      <Longitude xsi:nil="true" />
+    </Entry>
+  </Entries>
+</DayEntry>

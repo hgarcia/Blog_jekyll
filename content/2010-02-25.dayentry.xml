@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<DayEntry xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="urn:newtelligence-com:dasblog:runtime:data">
+  <Date>2010-02-24T17:00:00-07:00</Date>
+  <Entries>
+    <Entry>
+      <Content>&lt;p&gt;If you, like me, haven’t been able to go to PyCon don’t despair. The videos of the sessions are available at &lt;a href="http://blip.tv" target="_blank"&gt;blip.tv&lt;/a&gt;, just visited &lt;a title="http://pycon.blip.tv/" href="http://pycon.blip.tv/"&gt;http://pycon.blip.tv/&lt;/a&gt; or &lt;a title="http://pycon.blip.tv/posts?view=archive&amp;amp;nsfw=dc" href="http://pycon.blip.tv/posts?view=archive&amp;amp;nsfw=dc"&gt;http://pycon.blip.tv/posts?view=archive&amp;amp;nsfw=dc&lt;/a&gt; for a list of all the videos.&lt;/p&gt; &lt;p&gt;Some of my recommendation so far.&lt;/p&gt; &lt;p&gt;Test and Testability, &lt;a title="http://pycon.blip.tv/file/3261272/" href="http://pycon.blip.tv/file/3261272/"&gt;http://pycon.blip.tv/file/3261272/&lt;/a&gt;&lt;/p&gt; &lt;p&gt;Selenium RC with Python, &lt;a title="http://pycon.blip.tv/file/3264579/" href="http://pycon.blip.tv/file/3264579/"&gt;http://pycon.blip.tv/file/3264579/&lt;/a&gt;&lt;/p&gt; &lt;p&gt;What every developer should know about database scalability: &lt;a title="http://pycon.blip.tv/file/3261223/" href="http://pycon.blip.tv/file/3261223/"&gt;http://pycon.blip.tv/file/3261223/&lt;/a&gt;&lt;/p&gt;</Content>
+      <Created>2010-02-25T07:15:03.1083647-07:00</Created>
+      <Modified>2010-02-25T07:15:32.3747151-07:00</Modified>
+      <EntryId>68bda724-29a4-427a-98ff-803e4d56a713</EntryId>
+      <Description />
+      <Title>Videos of the PyCon 2010 sessions.</Title>
+      <Categories>General;Programming</Categories>
+      <Author>hgarcia</Author>
+      <IsPublic>true</IsPublic>
+      <Syndicated>true</Syndicated>
+      <ShowOnFrontPage>true</ShowOnFrontPage>
+      <AllowComments>true</AllowComments>
+      <Attachments />
+      <Crossposts />
+      <Latitude xsi:nil="true" />
+      <Longitude xsi:nil="true" />
+    </Entry>
+    <Entry>
+      <Content>&lt;p&gt;This blog is going mobile. I will be using the services of &lt;a href="http://mippin.com" target="_blank"&gt;Mippin&lt;/a&gt;. To visit the mobile version of the site just go to: &lt;a href="http://mippin.com/dynamicprogrammer" target="_blank"&gt;http://mippin.com/dynamicprogrammer&lt;/a&gt;&lt;/p&gt;</Content>
+      <Created>2010-02-25T06:35:11.7542495-07:00</Created>
+      <Modified>2010-02-25T06:47:49.8556875-07:00</Modified>
+      <EntryId>0ab2eb65-fd64-411a-842f-2f2a957fa87d</EntryId>
+      <Description />
+      <Title>Going mobile with Mippin.</Title>
+      <Categories>General</Categories>
+      <Author>hgarcia</Author>
+      <IsPublic>true</IsPublic>
+      <Syndicated>true</Syndicated>
+      <ShowOnFrontPage>true</ShowOnFrontPage>
+      <AllowComments>true</AllowComments>
+      <Attachments />
+      <Crossposts />
+      <Latitude xsi:nil="true" />
+      <Longitude xsi:nil="true" />
+    </Entry>
+  </Entries>
+</DayEntry>

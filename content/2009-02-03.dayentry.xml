@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<DayEntry xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="urn:newtelligence-com:dasblog:runtime:data">
+  <Date>2009-02-02T17:00:00-07:00</Date>
+  <Entries>
+    <Entry>
+      <Content>&lt;p&gt;&amp;#160;&lt;/p&gt;  &lt;p&gt;If you do any Js development at all you may want to consider installing &lt;a href="http://www.codeplex.com/jslint" target="_blank"&gt;this add in&lt;/a&gt; for Visual Studio that brings &lt;a href="http://www.jslint.com/" target="_blank"&gt;JSLint&lt;/a&gt; to the IDE.&lt;/p&gt;  &lt;p&gt;If you are still doing asp.net web forms development you may consider to download &lt;a href="http://www.codeplex.com/VSXHTML11Templates" target="_blank"&gt;this XHTML compliant templates&lt;/a&gt; to clean up your code.&lt;/p&gt;  &lt;p&gt;ESENT is an embedded database that is part of Windows, this library is a &lt;a href="http://www.codeplex.com/ManagedEsent" target="_blank"&gt;managed interface to ESENT&lt;/a&gt;.&lt;/p&gt;  &lt;p&gt;If you need to DUMP a database as Insert statements &lt;a href="http://www.codeplex.com/GetMsSqlDump" target="_blank"&gt;GetMsSqlDump&lt;/a&gt; is the tool you are looking for.&lt;/p&gt;  &lt;p&gt;&lt;a href="http://www.codeplex.com/kew" target="_blank"&gt;Kew&lt;/a&gt; now named &lt;a href="http://www.codeplex.com/kew" target="_blank"&gt;Rokyt&lt;/a&gt; is a new object oriented based on closures language, the syntax is very simple and looks really good.&lt;/p&gt;  &lt;p&gt;If you need to do a backup of your SVN repository, &lt;a href="http://www.codeplex.com/svnbackup" target="_blank"&gt;SVN Backup&lt;/a&gt; is a nice little tool to do so in just one line.&lt;/p&gt;  &lt;p&gt;&lt;a href="http://www.codeplex.com/ValidationAspects" target="_blank"&gt;ValidationAspects&lt;/a&gt; is an AOP framework to perform validation on objects, methods and parameters by contract, you can use attributes or augment the code programmatically.&lt;/p&gt;  &lt;p&gt;If Kew (sorry Rokyt), is not our cup of tea, take a look at this Lisp based scripting language for the CLR, &lt;a href="http://www.codeplex.com/Yarr" target="_blank"&gt;Yarr&lt;/a&gt;. The home page claims to be a good starting point to build DSL’s.&lt;/p&gt;  &lt;p&gt;&lt;a href="http://www.codeplex.com/sqlinstaller" target="_blank"&gt;SQLInstaller&lt;/a&gt; a toolset to assist with deployment of database related projects.&lt;/p&gt;</Content>
+      <Created>2009-02-02T22:11:53.1425311-07:00</Created>
+      <Modified>2009-02-02T22:11:53.1425311-07:00</Modified>
+      <EntryId>b55549d3-ea8e-4398-bac3-b74add2fc6f5</EntryId>
+      <Description />
+      <Title>JSLint for Visual Studio, Kew a new .Net language and other interesting stuff found on Codeplex</Title>
+      <Categories />
+      <Author>hgarcia</Author>
+      <IsPublic>true</IsPublic>
+      <Syndicated>true</Syndicated>
+      <ShowOnFrontPage>true</ShowOnFrontPage>
+      <AllowComments>true</AllowComments>
+      <Attachments />
+      <Crossposts />
+      <Latitude xsi:nil="true" />
+      <Longitude xsi:nil="true" />
+    </Entry>
+  </Entries>
+</DayEntry>

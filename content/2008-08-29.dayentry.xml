@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<DayEntry xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="urn:newtelligence-com:dasblog:runtime:data">
+  <Date>2008-08-28T17:00:00-07:00</Date>
+  <Entries>
+    <Entry>
+      <Content>&lt;p&gt;After I wrote my last post I remembered that some time ago I did intall an Add-In for Visual Studio called CopySource-AsHTML. So I decided that it was time to try it.  I love it almost inmidiatly. The reason I like it better than the previous tool I mention is that this preserves my VS style, so the code looks exactly how it looks in my editing window. But even more important I just copy the code from VS and paste it into my blog editor.&lt;/p&gt;&lt;p&gt;The usage is dead simple, you just highlight what you want to publish and doing right click on it you are presented with an option in the contextual menu to Copy Source As HTML.&lt;/p&gt;&lt;p&gt;  &lt;img alt="" src="content/binary/sp32-20080828-235218.png" title="Contextual menu for Copy Source as HTML" border="0"&gt; &lt;br&gt;&lt;/p&gt;&lt;p&gt;The tool have some pretty good options and they are presented to you after clicking in the menu item: &lt;br&gt;&lt;/p&gt;&lt;p&gt;&lt;img alt="" src="content/binary/sp32-20080828-235306.png" title="Options for Copy Source as HTML" border="0"&gt; &lt;br&gt;&lt;/p&gt;&lt;p&gt;You should be able to get the tool from here: &lt;a href="http://www.jtleigh.com/people/colin/software/CopySourceAsHtml/" target="_blank"&gt;http://www.jtleigh.com/people/colin/software/CopySourceAsHtml/&lt;/a&gt; but it doesn't seem to be up at this moment. There is a link to a zip file in this blog post as well: &lt;a href="http://blogs.microsoft.co.il/blogs/bursteg/archive/2007/11/21/copy-source-as-html-copysourceashtml-for-visual-studio-2008-rtm.aspx" target="_blank"&gt;Guy Burstein's Blog&lt;/a&gt;.&lt;/p&gt;</Content>
+      <Created>2008-08-29T11:00:31-07:00</Created>
+      <Modified>2008-12-14T22:05:50.1946472-07:00</Modified>
+      <EntryId>77</EntryId>
+      <Description />
+      <Title>More tools to format C# code into HTML</Title>
+      <Categories>Tools</Categories>
+      <Author>hgarcia</Author>
+      <IsPublic>true</IsPublic>
+      <Syndicated>true</Syndicated>
+      <ShowOnFrontPage>true</ShowOnFrontPage>
+      <AllowComments>true</AllowComments>
+      <Attachments />
+      <Crossposts />
+      <Latitude xsi:nil="true" />
+      <Longitude xsi:nil="true" />
+    </Entry>
+    <Entry>
+      <Content>Browsing around I landed on &lt;a href="http://www.opgenorth.net/Default.aspx" title="opgenorth.net" target="_blank"&gt;opgenorth.net blog&lt;/a&gt; an drift into his &lt;a href="http://www.opgenorth.net/softwaretools.aspx" title="opgenorth Software tools page" target="_blank"&gt;software tools page&lt;/a&gt;. Most of the tools I either knew or actually use, but this one I didn't.&lt;a href="http://www.manoli.net/csharpformat/" title="C# format" target="_blank"&gt; C# format&lt;/a&gt; is an online tool to format your C#, VB, HTML, XML, T-SQL or MSH code into valid HTML 4.01 complaint code to put online. The usage is dead simple, you just paste your code in a textarea, select a few options and click a button, voila! Your code have been formated and is ready for you to copy and paste in your HTML page or blog post.Between the options available you have: include line numbers, alternate code line background colours and embed the stylesheet. If you choose not to embed the stylesheet, you need to download the provided stylesheet and insert it in your page.I like this tool, I think that I will start using it from now on for my code post.</Content>
+      <Created>2008-08-28T20:30:43-07:00</Created>
+      <Modified>2008-12-14T22:36:19.5405803-07:00</Modified>
+      <EntryId>74</EntryId>
+      <Description />
+      <Title>Do you need to format the code for your blog?</Title>
+      <Categories>General;Tools</Categories>
+      <Author>hgarcia</Author>
+      <IsPublic>true</IsPublic>
+      <Syndicated>true</Syndicated>
+      <ShowOnFrontPage>true</ShowOnFrontPage>
+      <AllowComments>true</AllowComments>
+      <Attachments />
+      <Crossposts />
+      <Latitude xsi:nil="true" />
+      <Longitude xsi:nil="true" />
+    </Entry>
+  </Entries>
+</DayEntry>

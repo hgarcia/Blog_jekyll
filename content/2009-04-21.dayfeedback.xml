@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<DayExtra xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="urn:newtelligence-com:dasblog:runtime:data">
+  <Date>2009-04-20T17:00:00-07:00</Date>
+  <Comments>
+    <Comment>
+      <Content>Can you explain the &amp;quot;The widgets are resolved using an IOC that is injected into the base controller by a custom controller factory&amp;quot; part?</Content>
+      <Created>2009-05-25T21:53:49.4882758-07:00</Created>
+      <Modified>2009-05-25T21:53:49.4882758-07:00</Modified>
+      <EntryId>04c7651e-a09f-4190-b99b-8d3610cbcd71</EntryId>
+      <TargetTitle>Extending ASP.NET MVC</TargetTitle>
+      <TargetEntryId>BCCD525B-1C65-4B5D-8AC2-F4A8551AAE4C</TargetEntryId>
+      <Author>AlexB</Author>
+      <AuthorEmail />
+      <AuthorHomepage />
+      <AuthorIPAddress>89.218.26.229</AuthorIPAddress>
+      <IsPublic>true</IsPublic>
+      <SpamState>NotChecked</SpamState>
+      <AuthorUserAgent>Mozilla/4.0 (compatible; MSIE 8.0; Windows NT 5.1; Trident/4.0; MyIE2; .NET CLR 1.1.4322; InfoPath.1; .NET CLR 2.0.50727)</AuthorUserAgent>
+    </Comment>
+    <Comment>
+      <Content>@AlexB:
+I will post that code in a new post later on, where I will show the template engine as well, It needs a bit more work thought. 
+But in the meantime I suggest you look at the MVCContrib project. They include a Windsot Controller Factory. http://www.codeplex.com/MVCContrib. Or take a look at this post by Andre Loker: http://blog.andreloker.de/post/2009/03/28/ASPNET-MVC-with-Windsor-programmatic-controller-registration.aspx.
+You can use any IoC you want.
+
+</Content>
+      <Created>2009-05-26T04:26:41.6877708-07:00</Created>
+      <Modified>2009-05-26T04:26:41.6877708-07:00</Modified>
+      <EntryId>1ff24370-78a8-49b7-91dd-594cc9cdd2c5</EntryId>
+      <TargetTitle>Extending ASP.NET MVC</TargetTitle>
+      <TargetEntryId>BCCD525B-1C65-4B5D-8AC2-F4A8551AAE4C</TargetEntryId>
+      <Author>Hernan Garcia</Author>
+      <AuthorEmail>hernifootball@yahoo.com</AuthorEmail>
+      <AuthorHomepage>http://blog.synamicprogrammr.com</AuthorHomepage>
+      <AuthorIPAddress>99.231.75.201</AuthorIPAddress>
+      <IsPublic>true</IsPublic>
+      <SpamState>NotChecked</SpamState>
+      <AuthorUserAgent>Mozilla/5.0 (Windows; U; Windows NT 5.1; en-GB; rv:1.9.0.10) Gecko/2009042316 Firefox/3.0.10 (.NET CLR 4.0.20506)</AuthorUserAgent>
+    </Comment>
+
+  </Comments>
+  <Trackings />
+</DayExtra>

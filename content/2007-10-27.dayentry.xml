@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<DayEntry xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="urn:newtelligence-com:dasblog:runtime:data">
+  <Date>2007-10-26T17:00:00-07:00</Date>
+  <Entries>
+    <Entry>
+      <Content>&lt;p&gt;A great &lt;a href="http://www.infoq.com/news/2007/10/prototype-script.aculo.us" target="_blank"&gt;presentation&lt;/a&gt; from &lt;a href="http://mir.aculo.us/" target="_blank"&gt;Thomas Fuchs&lt;/a&gt; creador the &lt;a href="http://script.aculo.us/" target="_blank"&gt;Script.aculo.us&lt;/a&gt; at &lt;a href="http://infoq.com" target="_blank"&gt;infoq.com.&lt;/a&gt;&lt;/p&gt;&lt;p&gt;A preview of the &lt;a href="http://mir.aculo.us/2007/10/26/script-aculo-us-2-0-slides" target="_blank"&gt;new 2.0 version of the Script.aculo.us&lt;/a&gt; library on Thomas Fuchs blog.&lt;/p&gt;&lt;p&gt;Enjoy!&lt;/p&gt;</Content>
+      <Created>2007-10-27T07:14:30-07:00</Created>
+      <Modified>2008-12-14T22:27:58.018448-07:00</Modified>
+      <EntryId>7</EntryId>
+      <Description />
+      <Title>Prototype and Script.aculo.us presentation</Title>
+      <Categories>Tools</Categories>
+      <Author>hgarcia</Author>
+      <IsPublic>true</IsPublic>
+      <Syndicated>true</Syndicated>
+      <ShowOnFrontPage>true</ShowOnFrontPage>
+      <AllowComments>true</AllowComments>
+      <Attachments />
+      <Crossposts />
+      <Latitude xsi:nil="true" />
+      <Longitude xsi:nil="true" />
+    </Entry>
+    <Entry>
+      <Content>&lt;p&gt;I'm working in an application originally programmed in 200 by only one developer. I really clever guy that put in place quiet a bit of base code. The original design of the application is not all that bad, but several waves of developers have done maintenance on it. The browser landscape have changed and the application, been live and having a lot of success have to be patched on the fly.&lt;/p&gt;&lt;p&gt;This patches have created a lot of crud and the whole base coded it's getting tired.&lt;/p&gt;&lt;p&gt;I'm not going to go in details about the server side code, I want to concentrate in the client side part of the app.&lt;/p&gt;&lt;p&gt;&lt;/p&gt;&lt;div style="page-break-after: always;"&gt;&lt;span style="display: none;"&gt;&amp;nbsp;&lt;/span&gt;&lt;/div&gt;&lt;p&gt;&lt;/p&gt;&lt;p&gt;We notice the problems mostly in the html generated. It's not standard compliance since was done back them when you needed to support Netscape 4 and IE 4 (that was a real nightmare) and most people was using tables for layout, images as spacers and the style was mostly applied inline (we know today that these are all very bad practices). The JavaScript code is also old and you find the same method that does almost the same thing in four or five places, sometimes we found exactly the same function copy and paste with comments and all in two scripts files, and them both scripts file were included in the same html page.&lt;/p&gt;&lt;p&gt;So we decided that we had enought and was time to fix the problem. The application syndicate a lot of it's content in the form of widgets and we want to make sure that we are not breaking somebody else code (our bad html has been the source of complains from some bloggers). Also we need to be sure that the css classes and the javascript methods that our widgets use are not going to interfere with other people applications.&lt;/p&gt;&lt;p&gt;This should be a common concern for anybody doing webs sites today. Web 2.0 may have lost it's original meaning and today is mostly a marketing term, but it's quiet possible that you end up doing some type of mash up in the near future.&lt;/p&gt;&lt;p&gt;Some tips that you may found usefull:&lt;/p&gt;&lt;ol&gt;    &lt;li&gt;Use a global namespace to contain all your global variables and global methods.&lt;/li&gt;    &lt;li&gt;Create other namespaces but try to keep the tree short (I try to keep my hierarchy under three levels)&lt;/li&gt;    &lt;li&gt;If you work in a shop that have more than one product, separate your common functions for that application intro specific scripts using a second level NameSpace.&lt;/li&gt;    &lt;li&gt;Do not use eval (just for security).&lt;/li&gt;    &lt;li&gt;Pass data around using JSON instead of a propietary format.&lt;/li&gt;    &lt;li&gt;Check all your scripts in &lt;a target="_blank" href="http://www.jslint.com/"&gt;JSLint &lt;/a&gt;either &lt;a target="_blank" href="http://www.jslint.com/"&gt;online &lt;/a&gt;or install &lt;a target="_blank" href="http://developer.yahoo.com/yslow/"&gt;YSlow &lt;/a&gt;on top of &lt;a target="_blank" href="http://www.getfirebug.com/"&gt;Firebug &lt;/a&gt;and run it there, there is a third option that allow you to run it in the commad prompt called &lt;a target="_blank" href="http://code.google.com/p/jslint4java/"&gt;jslint4java &lt;/a&gt;but I have different results in the same script running it this way.&lt;/li&gt;    &lt;li&gt;Sit down and try to map in a text file how your are going to divide your code (general rules, like naming conventions and directory structure) even if you do Agile a little bit of architecture never hurt anybody.&lt;/li&gt;&lt;/ol&gt;&lt;p&gt;I recommend that you take a look at the serie of videos by &lt;a href="http://www.crockford.com/" target="_blank"&gt;Douglas Crockford&lt;/a&gt; in the &lt;a href="http://developer.yahoo.com/yui/theater/" target="_blank"&gt;YUI theatre&lt;/a&gt;.&lt;/p&gt;&lt;p&gt;&amp;nbsp;&lt;/p&gt;</Content>
+      <Created>2007-10-27T07:07:14-07:00</Created>
+      <Modified>2008-12-14T22:28:17.7067838-07:00</Modified>
+      <EntryId>6</EntryId>
+      <Description />
+      <Title>Why you need to use a good architecture when writing JavaScript</Title>
+      <Categories>General;Methodology;Programming</Categories>
+      <Author>hgarcia</Author>
+      <IsPublic>true</IsPublic>
+      <Syndicated>true</Syndicated>
+      <ShowOnFrontPage>true</ShowOnFrontPage>
+      <AllowComments>true</AllowComments>
+      <Attachments />
+      <Crossposts />
+      <Latitude xsi:nil="true" />
+      <Longitude xsi:nil="true" />
+    </Entry>
+  </Entries>
+</DayEntry>

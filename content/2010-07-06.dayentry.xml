@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<DayEntry xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="urn:newtelligence-com:dasblog:runtime:data">
+  <Date>2010-07-05T17:00:00-07:00</Date>
+  <Entries>
+    <Entry>
+      <Content>&lt;p&gt;Last Saturday I had the opportunity to assist the first &lt;a href="http://windycitydb.org/" target="_blank"&gt;WindyCityDb&lt;/a&gt;. A one day, single track conference on databases technologies that are usually grouped under the NoSql umbrella. &lt;/p&gt; &lt;p&gt;In general the conference was very good. I appreciated the Lab installed in the break room. A bunch of Apple computers with different NoSql offerings installed for the attendants to play and get familiar with. &lt;br&gt;The sessions were good as well. I was specially impressed by &lt;a href="http://www.slideshare.net/slidarko/graph-windycitydb2010" target="_blank"&gt;The Graph Traversal Programming Pattern&lt;/a&gt; by &lt;a href="http://markorodriguez.com/" target="_blank"&gt;Marko Rodriguez&lt;/a&gt; and &lt;a href="http://www.slideshare.net/jwoodslideshare/polyglot-persistence-two-great-tastes-that-taste-great-together-4625004" target="_blank"&gt;Polyglot Persistence: Two Great Tastes That Taste Great Together!&lt;/a&gt; by &lt;a href="http://twitter.com/johnpwood" target="_blank"&gt;John Wood&lt;/a&gt;. The former was a very academic talk explained in layman terms that made it very accessible and enjoyable, instead of dry and boring. The latest, was a very entertaining talk with a pragmatic flair to it, showing how NoSql is not a replacement for RDBMS but an alternative. &lt;p&gt;&amp;nbsp; &lt;p&gt;The third most interesting talk for me was the keynote by &lt;a href="http://twitter.com/jnunemaker" target="_blank"&gt;John Nunemaker&lt;/a&gt;, &lt;a href="http://www.slideshare.net/jnunemaker/why-is-nosql-so-darn-popular" target="_blank"&gt;Why NoSql?&lt;/a&gt;.&amp;nbsp; Nunemaker explores why a lot of us are looking at this alternatives. I personally think that this talk should be shown to all those out there that are feeling threatened by the NoSql movement, or just discredit it without taking the time to listen and learn. John also lament the name of the movement. NoSql. This remind me a little bit to the discussions around the Alt.Net movement and it’s name. A name that makes sense in context sometimes lose it’s meaning and get miss-interpreted once removed from it.  &lt;p&gt;&amp;nbsp; &lt;p&gt;It’s very important to notice that nobody made fun of relational databases during the conference. There was no bashing of those tools. I will even go as far as to say that pragmatism was in the air. This is obviously a very young movement. Some early adopters here and there. A lot of pilot projects in some big companies among the participants, and a lot of questions. &lt;p&gt;&amp;nbsp; &lt;p&gt;The exchange of information during lunch was really good. I had the opportunity to share the table with some guys with a lot of experience with &lt;a href="http://www.mongodb.org/" target="_blank"&gt;MongoDB&lt;/a&gt; in production and the exchange was great. There was an after party that I didn’t attend since I was beat from driving all day on Friday. I will make sure to be more rested next time. &lt;p&gt;&amp;nbsp; &lt;p&gt;I was amaze, although not really surprised, to notice that maybe 95 percent of the laptops were Mac’s (maybe more like 98). At least I was running Ubuntu in my Dell :-). I only saw three Windows machines in the audience. The main language was ruby followed by Java. I only spoke with five other .net developers in the conference.  &lt;p&gt;&amp;nbsp; &lt;p&gt;I certainly plan to attend again next year. A great conference of a movement that I think will be very important as more and more web applications try to incorporate social features and incredible large sets of data. As a bonus I get to go to a Cubs game and enjoy the very good Chicago pizza. </Content>
+      <Created>2010-07-05T23:21:00-07:00</Created>
+      <Modified>2010-07-05T16:22:12.6350329-07:00</Modified>
+      <EntryId>7587f94d-abe2-45c2-bf9e-427989970c39</EntryId>
+      <Description />
+      <Title>A personal retrospective on WindyCityDb</Title>
+      <Categories>MongoDB;Programming</Categories>
+      <Author>hgarcia</Author>
+      <IsPublic>true</IsPublic>
+      <Syndicated>true</Syndicated>
+      <ShowOnFrontPage>true</ShowOnFrontPage>
+      <AllowComments>true</AllowComments>
+      <Attachments />
+      <Crossposts />
+      <Latitude xsi:nil="true" />
+      <Longitude xsi:nil="true" />
+    </Entry>
+  </Entries>
+</DayEntry>

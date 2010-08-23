@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<DayEntry xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="urn:newtelligence-com:dasblog:runtime:data">
+  <Date>2008-05-17T17:00:00-07:00</Date>
+  <Entries>
+    <Entry>
+      <Content>&lt;p&gt;I was creating for the 10th time today a nant build file from Visual Studio when I came to the realization that I needed to automate the process a bit more. So I created an item template to include build files.  You just need to copy this &lt;a href="content/binary/nant-build-file.zip" target="_blank"&gt;zip file&lt;/a&gt; into the ItemTemplate folder inside your Templates.  Usually is My Documents\Visual Studio 2008\Templates\ItemTemplates  After that just right click on a project or solution and select Add New Item, at the bottom of the dialog you will see a section called My Templates.&lt;br&gt;&lt;img src="content/binary/sp32-20080517-175301.png" alt="" border="0"&gt; &lt;br&gt;&lt;/p&gt;&lt;p&gt; Notice the new Nant build file item.&lt;/p&gt;&lt;p&gt;&lt;br&gt;
+&lt;img src="content/binary/sp32-20080517-175933.png" alt="" border="0"&gt;&lt;/p&gt;
+&lt;h2&gt;Adding intellisense to edit the file&lt;/h2&gt;&lt;p&gt;There are a few other post out there to do this on VS 2005 on VS 2008 there are a few changes. The most important one is where to install the schemas.&lt;/p&gt;&lt;ol&gt;    &lt;li&gt;Copy the nant.xsd schema file from your Nant folder, inside a subfolder called schema&lt;/li&gt;    &lt;li&gt;Paste the file on the schemas folder for VS 2008; C:\Program Files\Microsoft Visual Studio 9.0\Xml\Schemas&lt;/li&gt;    &lt;li&gt;Open Visual Studio and use the new item template to create a build file&lt;/li&gt;&lt;/ol&gt;&lt;p&gt;If you type &amp;amp;ltg; you will see a list of options&lt;/p&gt; &lt;img src="content/binary/sp32-20080517-181043.png" alt="" border="0"&gt;&lt;h2&gt;Troubleshooting&lt;/h2&gt;&lt;p&gt;If it doesn't work for you it may be possible that you have a different version of schema files. On VS with the build file open click on Xml -&amp;gt;Schemas  Locate the entry for the build file and check the target namespace, it should be the same as the xmlns attribute of your project tag &lt;font color="#dfdfbf" size="2"&gt;xmlns&lt;/font&gt;&lt;font color="#efef8f" size="2"&gt;=&lt;/font&gt;&lt;font color="#cc9393" size="2"&gt;"http://nant.sf.net/release/0.86-beta1/nant.xsd"&lt;/font&gt; &lt;br&gt; &lt;img src="content/binary/sp32-20080517-214607.png" alt="" border="0"&gt;&lt;br&gt;  If it's not change the attribute value with the value displayed in the schemas dialog.&lt;/p&gt;&lt;h2&gt;More to do&lt;/h2&gt;&lt;p&gt;You may want to customize the item template and add the most common options for your build files, like add the automatic execution of your unit test, Ncover, FxCop, package, etc. I notice that I usually end up with a similar script in most cases, you can them save the script as an item template using File-&amp;gt;Export Template, when asked choose to import the template into VS.&lt;/p&gt;</Content>
+      <Created>2008-05-18T12:00:00-07:00</Created>
+      <Modified>2008-12-14T22:06:14.5008494-07:00</Modified>
+      <EntryId>50</EntryId>
+      <Description />
+      <Title>Nant build scripts template for Visual Studio</Title>
+      <Categories>Programming;Tools</Categories>
+      <Author>hgarcia</Author>
+      <IsPublic>true</IsPublic>
+      <Syndicated>true</Syndicated>
+      <ShowOnFrontPage>true</ShowOnFrontPage>
+      <AllowComments>true</AllowComments>
+      <Attachments />
+      <Crossposts />
+      <Latitude xsi:nil="true" />
+      <Longitude xsi:nil="true" />
+    </Entry>
+  </Entries>
+</DayEntry>

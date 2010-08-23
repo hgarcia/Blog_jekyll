@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<DayEntry xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="urn:newtelligence-com:dasblog:runtime:data">
+  <Date>2009-06-08T17:00:00-07:00</Date>
+  <Entries>
+    <Entry>
+      <Content>&lt;p&gt;&amp;#160;&lt;/p&gt;  &lt;p&gt;These guys are working hard and given us releases almost every month. I ‘m happy to see some of the feedback from the community incorporated into the Framework.&lt;/p&gt;  &lt;p&gt;Go ahead download it from &lt;a href="http://aspnet.codeplex.com/Release/ProjectReleases.aspx?ReleaseId=28536" target="_blank"&gt;CodePlex&lt;/a&gt; and give it a try to test your web application.&lt;/p&gt;</Content>
+      <Created>2009-06-09T15:48:03.5560874-07:00</Created>
+      <Modified>2009-06-09T15:48:03.5560874-07:00</Modified>
+      <EntryId>4635a159-fb27-445b-b1d3-35a05301790c</EntryId>
+      <Description />
+      <Title>Lightweight Test Automation Framework June Update</Title>
+      <Categories>Lightweight Testing Framework;Testing</Categories>
+      <Author>hgarcia</Author>
+      <IsPublic>true</IsPublic>
+      <Syndicated>true</Syndicated>
+      <ShowOnFrontPage>true</ShowOnFrontPage>
+      <AllowComments>true</AllowComments>
+      <Attachments />
+      <Crossposts />
+      <Latitude xsi:nil="true" />
+      <Longitude xsi:nil="true" />
+    </Entry>
+  </Entries>
+</DayEntry>

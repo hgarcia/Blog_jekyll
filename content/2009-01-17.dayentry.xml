@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<DayEntry xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="urn:newtelligence-com:dasblog:runtime:data">
+  <Date>2009-01-16T17:00:00-07:00</Date>
+  <Entries>
+    <Entry>
+      <Content>&lt;p&gt;&amp;#160;&lt;/p&gt;  &lt;p&gt;A few moments ago (55 minutes to be exact) &lt;a href="http://www.lostechies.com/blogs/chad_myers/" target="_blank"&gt;Chad Myers&lt;/a&gt; made a commit on &lt;a href="http://code.google.com/p/fubumvc/source/detail?r=55" target="_blank"&gt;revision 55&lt;/a&gt; of the &lt;a href="http://code.google.com/p/fubumvc/" target="_blank"&gt;FubuMVC&lt;/a&gt; enabling this to run using F5 inside Visual Studio, using Cassini.    &lt;br /&gt;He also updated &lt;a href="http://fubumvc.pbwiki.com/" target="_blank"&gt;the wiki&lt;/a&gt; with new information about minimum requirements, compiling the code and running the demo site.&lt;/p&gt;  &lt;p&gt;It’s interesting to look at the details of the commit and notice the changes needed on the project file to launch Cassini.&lt;/p&gt;</Content>
+      <Created>2009-01-17T15:49:52.7965413-07:00</Created>
+      <Modified>2009-01-17T16:03:28.2502768-07:00</Modified>
+      <EntryId>60a01360-f3d7-4182-9520-a16f8d126d2f</EntryId>
+      <Description />
+      <Title>FubuMVC now runs on Cassini!!!</Title>
+      <Categories>Frameworks</Categories>
+      <Author>hgarcia</Author>
+      <IsPublic>true</IsPublic>
+      <Syndicated>true</Syndicated>
+      <ShowOnFrontPage>true</ShowOnFrontPage>
+      <AllowComments>true</AllowComments>
+      <Attachments />
+      <Crossposts />
+      <Latitude xsi:nil="true" />
+      <Longitude xsi:nil="true" />
+    </Entry>
+  </Entries>
+</DayEntry>

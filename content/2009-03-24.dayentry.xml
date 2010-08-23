@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<DayEntry xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="urn:newtelligence-com:dasblog:runtime:data">
+  <Date>2009-03-23T17:00:00-07:00</Date>
+  <Entries>
+    <Entry>
+      <Content>&lt;p&gt;   &lt;br /&gt;&lt;em&gt;&lt;strong&gt;UPDATE:&lt;/strong&gt; There is another way to do this. Check &lt;/em&gt;&lt;a href="http://weblogs.asp.net/asptest/archive/2008/12/02/running-the-lightweight-test-automation-framework-for-asp-net-from-a-separate-application.aspx" target="_blank"&gt;&lt;em&gt;this post from the QA team blog&lt;/em&gt;&lt;/a&gt;&lt;em&gt;.&lt;/em&gt;&lt;/p&gt;  &lt;p&gt;This is a quick post. In the samples for the framework the test are written in the same system to test.&lt;/p&gt;  &lt;p&gt;This is not terrible, since you can easily remove those files for the final compilation, but I prefer to have my test in a different project. Well that’s very easy to do. Just create another web application and follow the same conventions that in the sample to create your test.    &lt;br /&gt;Add a reference to the framework, create an App_Code folder if you don’t have one, add a Tests folder inside and create all your test fixtures in it.&lt;/p&gt;  &lt;p&gt;Them when loading the pages to test just use a relative path.&lt;/p&gt;  &lt;p&gt;The important thing is to run the test runner under the same domain of the app you want to test.&lt;/p&gt;</Content>
+      <Created>2009-03-24T03:00:00-07:00</Created>
+      <Modified>2009-03-23T16:00:16.7244426-07:00</Modified>
+      <EntryId>d133bd6a-081a-4b15-8e4b-defdc594524a</EntryId>
+      <Description />
+      <Title>Microsoft Lightweight Automation Framework: Writing your tests in a different web</Title>
+      <Categories>Lightweight Testing Framework;Programming;Testing;Tools</Categories>
+      <Author>hgarcia</Author>
+      <IsPublic>true</IsPublic>
+      <Syndicated>true</Syndicated>
+      <ShowOnFrontPage>true</ShowOnFrontPage>
+      <AllowComments>true</AllowComments>
+      <Attachments />
+      <Crossposts />
+      <Latitude xsi:nil="true" />
+      <Longitude xsi:nil="true" />
+    </Entry>
+  </Entries>
+</DayEntry>

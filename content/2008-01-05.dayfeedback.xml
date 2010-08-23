@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<DayExtra xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="urn:newtelligence-com:dasblog:runtime:data">
+  <Date>2008-01-04T19:00:00-05:00</Date>
+  <Comments>
+    <Comment>
+      <Content>I wonder, why would you want ToPascal() and ToCamel()? Can you give me some idea? Just curious</Content>
+      <Created>2008-01-08T01:33:10-05:00</Created>
+      <Modified>2008-01-08T01:33:10-05:00</Modified>
+      <TargetTitle>Extending the string object in c#</TargetTitle>
+      <TargetEntryId>31</TargetEntryId>
+      <Author>Podi</Author>
+      <AuthorEmail>lukasz.podolak@gmail.com</AuthorEmail>
+      <AuthorHomepage />
+      <AuthorIPAddress>89.79.125.14</AuthorIPAddress>
+      <IsPublic>true</IsPublic>
+      <OpenId>false</OpenId>
+      <SpamState>NotChecked</SpamState>
+    </Comment>
+    <Comment>
+      <Content>[...] Extending the String Object in C# (some extension method ideas) (via DotNetKicks) [...] </Content>
+      <Created>2008-01-08T06:33:30-05:00</Created>
+      <Modified>2008-01-08T06:33:30-05:00</Modified>
+      <TargetTitle>Extending the string object in c#</TargetTitle>
+      <TargetEntryId>31</TargetEntryId>
+      <Author>&amp;raquo; Daily Bits - January 8, 2008 Alvin Ashcraft&amp;#8217;s Daily Geek Bits: Daily links plus random ramblings about development, gadgets and raising rugrats.</Author>
+      <AuthorEmail />
+      <AuthorHomepage>http://www.alvinashcraft.com/2008/01/08/daily-bits-january-8-2008/</AuthorHomepage>
+      <AuthorIPAddress>64.235.54.104</AuthorIPAddress>
+      <IsPublic>true</IsPublic>
+      <OpenId>false</OpenId>
+      <SpamState>NotChecked</SpamState>
+    </Comment>
+    <Comment>
+      <Content>@Podi: I had a parser in js that use those methods from prototype, writing the parser in c# I found that I need them.</Content>
+      <Created>2008-01-08T21:17:36-05:00</Created>
+      <Modified>2008-01-08T21:17:36-05:00</Modified>
+      <TargetTitle>Extending the string object in c#</TargetTitle>
+      <TargetEntryId>31</TargetEntryId>
+      <Author>Hernan Garcia</Author>
+      <AuthorEmail>hernifootball@yahoo.com</AuthorEmail>
+      <AuthorHomepage>http://www.dynamicprogrammer.com</AuthorHomepage>
+      <AuthorIPAddress>99.242.19.160</AuthorIPAddress>
+      <IsPublic>true</IsPublic>
+      <OpenId>false</OpenId>
+      <SpamState>NotChecked</SpamState>
+    </Comment>
+    <Comment>
+      <Content>Nice. However I will suggest that the declaration 
+string[] ar = null; 
+goes after 
+            if (s.Length == 0)
+            {
+                return value;
+            }
+why defining an array reference when it's possible to not use it.
+Just one more thing. Replace s = ""; with s = string.Empty;
+
+:)</Content>
+      <Created>2008-01-09T00:39:36-05:00</Created>
+      <Modified>2008-01-09T00:39:36-05:00</Modified>
+      <TargetTitle>Extending the string object in c#</TargetTitle>
+      <TargetEntryId>31</TargetEntryId>
+      <Author>Petar Petrov</Author>
+      <AuthorEmail>codemastering@gmail.com</AuthorEmail>
+      <AuthorHomepage />
+      <AuthorIPAddress>85.130.3.219</AuthorIPAddress>
+      <IsPublic>true</IsPublic>
+      <OpenId>false</OpenId>
+      <SpamState>NotChecked</SpamState>
+    </Comment>
+    <Comment>
+      <Content>@Peter: Of course you are right in both accounts, how I miss that? I shouldn't write code at 2 am in the morning :-)</Content>
+      <Created>2008-01-09T11:50:04-05:00</Created>
+      <Modified>2008-01-09T11:50:04-05:00</Modified>
+      <TargetTitle>Extending the string object in c#</TargetTitle>
+      <TargetEntryId>31</TargetEntryId>
+      <Author>Hernan Garcia</Author>
+      <AuthorEmail>hernifootball@yahoo.com</AuthorEmail>
+      <AuthorHomepage>http://www.dynamicprogrammer.com</AuthorHomepage>
+      <AuthorIPAddress>99.242.19.160</AuthorIPAddress>
+      <IsPublic>true</IsPublic>
+      <OpenId>false</OpenId>
+      <SpamState>NotChecked</SpamState>
+    </Comment>
+  </Comments>
+  <Trackings />
+</DayExtra>

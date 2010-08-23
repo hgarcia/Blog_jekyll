@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<DayEntry xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="urn:newtelligence-com:dasblog:runtime:data">
+  <Date>2007-12-24T17:00:00-07:00</Date>
+  <Entries>
+    <Entry>
+      <Content>&lt;p&gt;This is a cool example I haven't see before of using LINQ to query and filter an array.&lt;/p&gt;&lt;p&gt;&lt;a href="http://microsoft.apress.com/article/74080/coming-of-age"&gt;http://microsoft.apress.com/article/74080/coming-of-age&lt;/a&gt;.&lt;/p&gt;&lt;p&gt;I like this use of LINQ, it shows the power of the language and what I think is a much useful "usage" than to query db. I need to take a deeper look into this and start using it for xml too.&lt;/p&gt;&lt;p&gt;Another of my favorite "new things" in c# 3.0 is auto-implemented properties. They are so powerfull and so simple to use. Let me tell you that I'm a fanatic of the principle of encapsulation, I really think that is one of the most important features of OO (maybe the one that I see most beneficial since reusability can be achieve with well written libraries of procedural code as well).&lt;/p&gt;&lt;p&gt;&lt;!--more--&gt;&lt;/p&gt;&lt;p&gt;Being so I get mad each time that I see somebody doing:&lt;/p&gt;&lt;p&gt;&amp;nbsp;&lt;/p&gt;&lt;pre lang="csharp"&gt;public class Person{&lt;br&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp; public string FirstName;&lt;br&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp; public string LastName;&lt;br&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp; public int Age;&lt;br&gt;&amp;nbsp;}&lt;/pre&gt;&lt;p&gt;&amp;nbsp;&lt;/p&gt;&lt;p&gt;The excuse is usually that it takes too long to declare the fields private and create the accesors for them, so they just go ahead and expose the guts of the class for everybody to see it.&lt;/p&gt;&lt;p&gt;Now auto-generated properties make all this excuses redundant.&lt;/p&gt;&lt;p&gt;&amp;nbsp;&lt;/p&gt;&lt;pre lang="csharp"&gt;public class Person{&lt;br&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;public string FirstName {get; set;}&lt;br&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp; public string LastName&amp;nbsp; {get; set;}&lt;br&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp; public int Age  {get; set;}&lt;br&gt;}&lt;/pre&gt;&lt;p&gt;To make a read only property just add the private modifier before set, and assign the values in the constructor.&lt;/p&gt;</Content>
+      <Created>2007-12-25T00:00:38-07:00</Created>
+      <Modified>2008-12-14T22:33:27.7278686-07:00</Modified>
+      <EntryId>20</EntryId>
+      <Description />
+      <Title>LINQ to search arrays and Auto-implemented properties.</Title>
+      <Categories>Programming</Categories>
+      <Author>hgarcia</Author>
+      <IsPublic>true</IsPublic>
+      <Syndicated>true</Syndicated>
+      <ShowOnFrontPage>true</ShowOnFrontPage>
+      <AllowComments>true</AllowComments>
+      <Attachments />
+      <Crossposts />
+      <Latitude xsi:nil="true" />
+      <Longitude xsi:nil="true" />
+    </Entry>
+    <Entry>
+      <Content>&lt;p&gt;The guys from &lt;a target="_blank" href="http://www.infoq.com"&gt;InfoQ &lt;/a&gt;has a very interesting video with &lt;a target="_blank" href="http://www.infoq.com/interviews/mads-torgersen-csharp"&gt;Mads Torgersen&lt;/a&gt;,&amp;nbsp; PM of C# talking about the future of the language.&lt;/p&gt;&lt;p&gt;They talk about LINQ and the changes needed to support it in c#. There is a very interesting point on Extension methods a feature that fascinate myself and scare me a little bit. It's so cool that I know that we will overuse it at the beginning.&lt;/p&gt;&lt;p&gt;Type inference is also referred in this chat and why the use of var have been included now (no, is not to make look more like javascript:-) ).&lt;/p&gt;&lt;p&gt;Check it out.&lt;/p&gt;</Content>
+      <Created>2007-12-24T22:20:08-07:00</Created>
+      <Modified>2008-12-14T22:40:55.4892995-07:00</Modified>
+      <EntryId>19</EntryId>
+      <Description />
+      <Title>The future of C#</Title>
+      <Categories>General</Categories>
+      <Author>hgarcia</Author>
+      <IsPublic>true</IsPublic>
+      <Syndicated>true</Syndicated>
+      <ShowOnFrontPage>true</ShowOnFrontPage>
+      <AllowComments>true</AllowComments>
+      <Attachments />
+      <Crossposts />
+      <Latitude xsi:nil="true" />
+      <Longitude xsi:nil="true" />
+    </Entry>
+    <Entry>
+      <Content>&lt;p&gt;The guys from InfoQ have &lt;a href="http://www.infoq.com/articles/ruby20-dhh-interview" target="_blank"&gt;this very good article&lt;/a&gt; about the release of &lt;a href="http://www.rubyonrails.org/down"&gt;Ruby on Rails 2.0&lt;/a&gt;.&lt;/p&gt;&lt;p&gt;It's very interesting to notice that 2.0 won't be fully compatible with the previous versions of Rails, I don't have nothing important or too complicated written with Rails so I don't expect to have too much trouble upgrading but I will like to see what is the response of the rails community to this.&lt;/p&gt;&lt;p&gt;Of course a major version upgrade can't be fully backward compatible with some older versions of the framework so I don't see the problem but we usually hear complains when some other vendors make some drastic changes. The argument can be made that Rails (and ruby) are open source and free, so you don't have the same investment than when you pay tons of money to a vendor for a platform and them&amp;nbsp; he decides to change without consulting you.&lt;/p&gt;&lt;p&gt;Worst case scenario you may probably keep running your old Rails app in the old version of the framework.&lt;/p&gt;&lt;p&gt;I'm personally doing most of my Rails work using the &lt;a target="_blank" href="http://jruby.codehaus.org/"&gt;Jruby &lt;/a&gt;interpreter and &lt;a target="_blank" href="http://www.netbeans.org/features/ruby/index.html"&gt;Netbeans 6.0&lt;/a&gt;, the support of this IDE to the framework and the language is very cool, there is nothing like that so far in all the others I tried, even &lt;a target="_blank" href="http://www.aptana.com/rails/"&gt;RadRails &lt;/a&gt;(now supported by &lt;a target="_blank" href="http://www.aptana.com"&gt;Aptana &lt;/a&gt;and very much improved).&lt;/p&gt;&lt;p&gt;&amp;nbsp;&lt;/p&gt;</Content>
+      <Created>2007-12-24T22:10:18-07:00</Created>
+      <Modified>2008-12-14T22:31:11.1731909-07:00</Modified>
+      <EntryId>18</EntryId>
+      <Description />
+      <Title>Ruby on Rails 2.0</Title>
+      <Categories>Frameworks;Programming</Categories>
+      <Author>hgarcia</Author>
+      <IsPublic>true</IsPublic>
+      <Syndicated>true</Syndicated>
+      <ShowOnFrontPage>true</ShowOnFrontPage>
+      <AllowComments>true</AllowComments>
+      <Attachments />
+      <Crossposts />
+      <Latitude xsi:nil="true" />
+      <Longitude xsi:nil="true" />
+    </Entry>
+  </Entries>
+</DayEntry>

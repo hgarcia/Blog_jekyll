@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<DayEntry xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="urn:newtelligence-com:dasblog:runtime:data">
+  <Date>2009-01-24T17:00:00-07:00</Date>
+  <Entries>
+    <Entry>
+      <Content>&lt;p&gt;&amp;#160;&lt;/p&gt;  &lt;p&gt;I have been playing with both Ruby and Rails for maybe two years. Never doing anything really “serious”, like an external project for a client. I kind of know my way around it when I need it, but I still consider myself a Beginner. So when a few days ago I read this &lt;a href="http://72.249.21.88/nonintersecting/2009/01/17/introducing-the-xprest-project/" target="_blank"&gt;post&lt;/a&gt; about &lt;a href="http://code.google.com/p/xprest" target="_blank"&gt;Xprest&lt;/a&gt; I got exited. &lt;/p&gt;  &lt;p&gt;&lt;a href="http://code.google.com/p/xprest" target="_blank"&gt;XPrest&lt;/a&gt; is; according to the project page (emphasis mine):&lt;/p&gt;  &lt;blockquote&gt;   &lt;p&gt;This project is an open source enterprise expense reporting system. It's raison d'etre is to act &lt;strong&gt;as an example system for showing how to build RESTful enterprise systems&lt;/strong&gt;. While it will be a functional expense reporting system, it is not designed to be a complete answer to enterprise expense reporting needs.&lt;/p&gt; &lt;/blockquote&gt;  &lt;p&gt;There are already a few articles in the wiki:&lt;/p&gt;  &lt;p&gt;&lt;a href="http://code.google.com/p/xprest/wiki/ProjectIntroduction" target="_blank"&gt;Introduction&lt;/a&gt;    &lt;br /&gt;&lt;a href="http://code.google.com/p/xprest/wiki/ProjectOverview" target="_blank"&gt;Overview&lt;/a&gt;    &lt;br /&gt;&lt;a href="http://code.google.com/p/xprest/wiki/DetailedRequirements" target="_blank"&gt;Requirements&lt;/a&gt;&lt;/p&gt;  &lt;p&gt;and maybe the most important&lt;/p&gt;  &lt;p&gt;&lt;a href="http://code.google.com/p/xprest/wiki/DevelopmentEnvironment" target="_blank"&gt;Development environment setup&lt;/a&gt;&lt;/p&gt;  &lt;p&gt;I suggest you tag along this project, it looks like the perfect opportunity to learn both a very good language and an excellent framework for development web apps.&lt;/p&gt;  &lt;p&gt;I also suggest you subscribe to &lt;a href="http://72.249.21.88/nonintersecting/2009/01/23/lesson-zero/" target="_blank"&gt;Pete Lacey’s blog&lt;/a&gt;&lt;/p&gt;</Content>
+      <Created>2009-01-24T17:05:00-07:00</Created>
+      <Modified>2009-01-23T22:13:50.7228994-07:00</Modified>
+      <EntryId>97853f7b-f421-4432-8e59-74c917c3aa91</EntryId>
+      <Description />
+      <Title>Have you ever wanted to learn Rails but you never wanted where to start?</Title>
+      <Categories>General;Programming</Categories>
+      <Author>hgarcia</Author>
+      <IsPublic>true</IsPublic>
+      <Syndicated>true</Syndicated>
+      <ShowOnFrontPage>true</ShowOnFrontPage>
+      <AllowComments>true</AllowComments>
+      <Attachments />
+      <Crossposts />
+      <Latitude xsi:nil="true" />
+      <Longitude xsi:nil="true" />
+    </Entry>
+  </Entries>
+</DayEntry>

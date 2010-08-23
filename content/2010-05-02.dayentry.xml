@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<DayEntry xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="urn:newtelligence-com:dasblog:runtime:data">
+  <Date>2010-05-01T17:00:00-07:00</Date>
+  <Entries>
+    <Entry>
+      <Content>&lt;p&gt;Yesterday I presented at Toronto code camp a session on BDD + User Stories and what frameworks to use in the .net work to support the practice. The session went well and most of the feedback was extremely positive, even the negative points have been offered in a very constructive way and I really appreciate that. &lt;/p&gt; &lt;p&gt;The slides and all the code can be downloaded from my github repo here: &lt;a title="http://github.com/hgarcia/DynamicProg/downloads" href="http://github.com/hgarcia/DynamicProg/downloads"&gt;http://github.com/hgarcia/DynamicProg/downloads&lt;/a&gt;&lt;/p&gt; &lt;p&gt;These are my opinions from the feedback received and how I felt given the talk:&lt;/p&gt; &lt;p&gt;57 persons in attendance that stay through the whole presentation, even with how hot it was in the room.&lt;/p&gt; &lt;p&gt;Lot’s of interest and questions at the end of the talk and one on ones after it. &lt;/p&gt; &lt;p&gt;I need to remember to speak louder. What kills me is that I know about that but can’t seem to be able to manage my voice level. For the next time I will need to use some kind of amplification. More on that later.&lt;/p&gt; &lt;p&gt;I was a bit to ambitious and went overboard with the demos and the frameworks I showcase. I really didn’t want to leave any framework out so people can make their choice, but that may have actually been a bad thing, since I really didn’t focus deeply in any of them. &lt;/p&gt; &lt;p&gt;I show demos with SpecFlow, StoryQ, StorEvil and MSpec.&lt;/p&gt; &lt;p&gt;I didn’t cover/explain user stories as deeply as I should. &lt;/p&gt; &lt;p&gt;Some of attendees mentioned I was to fast, others to slow. I get that it depends when they wrote the feedback. I know I started slow and them I speed up to my normal speed (too fast). So I need to work hard on that as well and manage my speed.&lt;/p&gt; &lt;p&gt;I realize now that the title of the talk should have been more like: BDD frameworks in .net&lt;/p&gt; &lt;p&gt;Thanks to the organizers for the opportunity and everybody that attend my session. &lt;/p&gt;</Content>
+      <Created>2010-05-02T08:17:44.5188141-07:00</Created>
+      <Modified>2010-05-02T08:18:34.4085735-07:00</Modified>
+      <EntryId>7004a045-b8bb-4048-9c0e-5efe23f70839</EntryId>
+      <Description />
+      <Title>My BDD Session at Toronto Code Camp - slides, code and retrospective.</Title>
+      <Categories>Frameworks;General;Talks;Tools</Categories>
+      <Author>hgarcia</Author>
+      <IsPublic>true</IsPublic>
+      <Syndicated>true</Syndicated>
+      <ShowOnFrontPage>true</ShowOnFrontPage>
+      <AllowComments>true</AllowComments>
+      <Attachments />
+      <Crossposts />
+      <Latitude xsi:nil="true" />
+      <Longitude xsi:nil="true" />
+    </Entry>
+  </Entries>
+</DayEntry>
