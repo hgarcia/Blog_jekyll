@@ -2,6 +2,7 @@
 layout: post
 title: Node.js web development with Express
 summary:  	 	    I have been researching node.js and the ecosystem around it. Yes, node has an ecosystem, a very vibrant one if I may say. Today I tried a simple web framework that resembles Ruby's Sinatra by the name of Express. Installation  There are 2...
+categories: [Frameworks,node.js,Programming,Tools]
 ---
 <style type="text/css"> 	<!-- 		@page { margin: 2cm } 		P { margin-bottom: 0.21cm } 		H1 { margin-bottom: 0.21cm } 		H1.western { font-family: "Liberation Sans", sans-serif; font-size: 16pt } 		H1.cjk { font-family: "DejaVu Sans"; font-size: 16pt } 		H1.ctl { font-family: "DejaVu Sans"; font-size: 16pt } 		H3 { margin-bottom: 0.21cm } 		H3.western { font-family: "Liberation Sans", sans-serif } 	--> 	</style>    <p style="margin-bottom: 0cm;">I have been researching node.js and the ecosystem around it. Yes, node has an ecosystem, a very vibrant one if I may say. Today I tried a simple web framework that resembles Ruby's Sinatra by the name of Express.
 <h3 style="margin-bottom: 0cm;">Installation<br /></h3>  <p style="margin-bottom: 0cm;">There are 2 ways to install it, one using Kiwi a node package manager, the other is cloning the github repo and doing make install on it. I first tried using Kiwi but it didn't work for me so I got the code with git and didn't have a problem.

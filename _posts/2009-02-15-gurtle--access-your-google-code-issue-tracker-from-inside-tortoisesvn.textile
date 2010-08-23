@@ -2,6 +2,7 @@
 layout: post
 title: Gurtle, access your Google code issue tracker from inside TortoiseSVN
 summary:    In my previous post I mentioned how to integrate Visual Studio with Subversion for free and without having to install fancy plug-ins.   Now, with Gurtle you install this issue tracker provider that will log into your Google code account and pu...
+categories: [Tools]
 ---
 
   <a href="2009/02/14/IntegrateVisualStudioWithTortoiseSVNForFree.aspx" target="_blank">In my previous</a> post I mentioned how to integrate Visual Studio with Subversion for free and without having to install fancy plug-ins.

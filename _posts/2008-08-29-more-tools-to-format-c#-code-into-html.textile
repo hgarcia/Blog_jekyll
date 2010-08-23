@@ -2,6 +2,7 @@
 layout: post
 title: More tools to format C# code into HTML
 summary: After I wrote my last post I remembered that some time ago I did intall an Add-In for Visual Studio called CopySource-AsHTML. So I decided that it was time to try it.  I love it almost inmidiatly. The reason I like it better than the previous too...
+categories: [Tools]
 ---
 After I wrote my last post I remembered that some time ago I did intall an Add-In for Visual Studio called CopySource-AsHTML. So I decided that it was time to try it.  I love it almost inmidiatly. The reason I like it better than the previous tool I mention is that this preserves my VS style, so the code looks exactly how it looks in my editing window. But even more important I just copy the code from VS and paste it into my blog editor.
 The usage is dead simple, you just highlight what you want to publish and doing right click on it you are presented with an option in the contextual menu to Copy Source As HTML.

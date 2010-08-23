@@ -2,6 +2,7 @@
 layout: post
 title: Silent lately
 summary:    I have been silent lately because I have been working on a project based on ASP.NET MVC. The idea is to have the bare minimum to create highly configurable sites.   The main obstacles I saw with the framework “out of the box” is how to cre...
+categories: [Programming]
 ---
 
   I have been silent lately because I have been working on a project based on ASP.NET MVC. The idea is to have the bare minimum to create highly configurable sites.

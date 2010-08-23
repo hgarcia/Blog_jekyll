@@ -2,6 +2,7 @@
 layout: post
 title: CruiseControl.NET Build Station or how to run CC.net in a development machine without IIS
 summary:    I just saw this project in Codeplex; CruiseControl.Net build station sounds interesting and very useful if you happen to work in a machine without IIS.   UPDATE-   I had a comment for this post, promoting another build system (not open source,...
+categories: [Continuous Integration]
 ---
    <br />I just saw this project in Codeplex; <a href="http://www.codeplex.com/CCNetBuildStation" target="_blank">CruiseControl.Net build station</a> sounds interesting and very useful if you happen to work in a machine without IIS.
   <strong>UPDATE:</strong>

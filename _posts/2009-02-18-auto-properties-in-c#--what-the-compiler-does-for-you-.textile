@@ -2,6 +2,7 @@
 layout: post
 title: Auto properties in c#, what the compiler does for you.
 summary:    If you ever wonder what the compiler does to make the auto properties work let’s take a look at the code the way Reflector sees it. Let’s write some very useful code --)       public class AutoPropertiesDemo      {      public string MyStr...
+categories: [General,Programming]
 ---
 
   If you ever wonder what the compiler does to make the auto properties work let’s take a look at the code the way Reflector sees it. Let’s write some very useful code :-)

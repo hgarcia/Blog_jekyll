@@ -2,6 +2,7 @@
 layout: post
 title: You can only refactor when you have a testing suite.
 summary:    I don’t remember if I read this on Clean Code or Refactoring or maybe I just hear it somewhere, but It’s so true.    It’s not that you can’t change the code and that you can’t apply refactoring techniques. The problem is that each ch...
+categories: [Programming,Testing]
 ---
 
   I don’t remember if I read this on Clean Code or Refactoring or maybe I just hear it somewhere, but It’s so true. 

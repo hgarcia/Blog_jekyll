@@ -2,6 +2,7 @@
 layout: post
 title: Scout plug in for Resharper to navigate your code.
 summary:    This is a plug-in for Resharper that allows you to use Reflector and and the .Net framework source code to navigate your code.   You can download it from the Google code project page.   Install it is a non issue. Once installed open VS and the...
+categories: [Tools]
 ---
 
   This is a plug-in for Resharper that allows you to use Reflector and and the .Net framework source code to navigate your code.

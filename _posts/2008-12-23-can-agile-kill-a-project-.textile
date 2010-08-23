@@ -2,6 +2,7 @@
 layout: post
 title: Can Agile kill a project?
 summary:    Mohammad Azam has a post entitled When Being Agile Kills the Project. He mentions a project were the client gave a one month deadline not negotiable and so, he had to go and start cutting corners to make the deadline since, he wanted needed to...
+categories: [Methodology]
 ---
 
   <a href="http://www.azamsharp.com/Default.aspx" target="_blank">Mohammad Azam</a> has a post entitled <a href="http://www.azamsharp.com/Posts/145_When_Being_Agile_Kills_the_Project.aspx" target="_blank">When Being Agile Kills the Project</a>. He mentions a project were the client gave a one month deadline not negotiable and so, he had to go and start cutting corners to make the deadline since, he <strike>wanted</strike> needed to keep his job (totally reasonable, keeping the job I mean).

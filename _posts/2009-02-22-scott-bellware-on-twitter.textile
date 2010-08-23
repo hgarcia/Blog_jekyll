@@ -2,6 +2,7 @@
 layout: post
 title: Scott Bellware on Twitter
 summary:       Development teams have two processes- their development process, and the processes of improving their development process.     Scott Bellware ...
+categories: []
 ---
 
   <blockquote>   Development teams have two processes: their development process, and the processes of improving their development process.

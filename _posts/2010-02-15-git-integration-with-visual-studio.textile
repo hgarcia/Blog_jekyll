@@ -2,6 +2,7 @@
 layout: post
 title: Git integration with Visual Studio
 summary: I started to use Git seriously 5 months ago when I sign up for my Github account on September 1st 2009. Before that I was a very happy subversion user. One of the things that I really like about Git is the speed.   I decided to use Git from the c...
+categories: [Programming,Tools]
 ---
 I started to use <a href="http://git-scm.com/" target="_blank">Git</a> seriously 5 months ago when I sign up for my <a href="http://github.com/" target="_blank">Github</a> account on September 1st 2009. Before that I was a <strike>very</strike> happy subversion user. One of the things that I really like about Git is the speed. 
  I decided to use Git from the command line to learn and understand the commands really well. I occasionally used the GUI to perform some tasks that seemed easier to do that way.

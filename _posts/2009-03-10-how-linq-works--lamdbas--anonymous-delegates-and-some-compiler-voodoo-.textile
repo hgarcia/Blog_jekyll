@@ -2,6 +2,7 @@
 layout: post
 title: How Linq works, lamdbas, anonymous delegates and some compiler voodoo.
 summary:    If you have been following this blog, you probably saw a few posts about what’s going on behind closed doors once you submit your code to the mercy of the compiler. Specially some of the new Magic features of C#, like auto properties and nul...
+categories: [Programming]
 ---
 
   If you have been following this blog, you probably saw a few posts about what’s going on behind closed doors once you submit your code to the mercy of the compiler. Specially some of the new Magic features of C#, like auto properties and nullable types.

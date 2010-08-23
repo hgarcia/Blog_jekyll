@@ -2,6 +2,7 @@
 layout: post
 title: Microsoft Lightweight Automation Framework- Writing your tests in a different web
 summary:    UPDATE- There is another way to do this. Check this post from the QA team blog.   This is a quick post. In the samples for the framework the test are written in the same system to test.   This is not terrible, since you can easily remove those...
+categories: [Lightweight Testing Framework,Programming,Testing,Tools]
 ---
    <br /><em><strong>UPDATE:</strong> There is another way to do this. Check </em><a href="http://weblogs.asp.net/asptest/archive/2008/12/02/running-the-lightweight-test-automation-framework-for-asp-net-from-a-separate-application.aspx" target="_blank"><em>this post from the QA team blog</em></a><em>.</em>
   This is a quick post. In the samples for the framework the test are written in the same system to test.

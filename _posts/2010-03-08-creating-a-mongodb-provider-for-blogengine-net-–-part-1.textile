@@ -2,6 +2,7 @@
 layout: post
 title: Creating a MongoDB provider for Blogengine.Net – Part 1
 summary:  The code in this post is of demo quality and should not be taken as production ready code. It’s a first take on the project and will evolve during a series of posts.  Blogengine.net is an open source blogging platform written in asp.net. The e...
+categories: [MongoDB,Programming]
 ---
 <blockquote> <em>The code in this post is of demo quality and should not be taken as production ready code. It’s a first take on the project and will evolve during a series of posts.</em>
 </blockquote> <a href="http://www.dotnetblogengine.net/" target="_blank">Blogengine.net</a> is an open source blogging platform written in asp.net. The engine comes with two Data store providers a DB provider and an XML provider. Since the engine is using the provider model, it should be fairly easy to write a new data store provider.

@@ -2,6 +2,7 @@
 layout: post
 title: Using the Connection String section for Log4Net and NHibernate
 summary: The other day at the office my boss took a look at our configuration files and he expressed his concern about breaking DRY with all the ConnectionStrings. One for Ado.Net, one for NHibernate, one for our caching db and another for Log4Net. Not on...
+categories: [Programming]
 ---
 The other day at the office my boss took a look at our configuration files and he expressed his concern about breaking DRY with all the ConnectionStrings. One for Ado.Net, one for NHibernate, one for our caching db and another for Log4Net. Not only that but they are all over the place in the file, not all together.
  On top of that,, some of those are the same, so changing a username or a password means changing them all over. Of course he was right.

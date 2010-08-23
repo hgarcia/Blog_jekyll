@@ -2,6 +2,7 @@
 layout: post
 title: FubuMVC another MVC framework for .Net
 summary:    We are living in very exiting times in the .Net world. Every time I look I find a new framework to do web development. I recently found FubuMVC. This framework is a bit different from Sharp Architecture or the Catharsis guidance since this one...
+categories: [Frameworks,Patterns]
 ---
 
   We are living in very exiting times in the .Net world. Every time I look I find a new framework to do web development. I recently found <a href="http://code.google.com/p/fubumvc/" target="_blank">FubuMVC</a>. This framework is a bit different from <a href="2008/12/19/SharpArchitectureApproachingVersion10.aspx" target="_blank">Sharp Architecture</a> or the <a href="2009/01/02/CatharsisACompleteFrameworkForDevelopingWebAppsUsingMVCAndNHibernate20.aspx" target="_blank">Catharsis guidance</a> since this one does not use <a href="http://www.asp.net/mvc/" target="_blank">ASP.NET MVC</a> but is inspired by it.

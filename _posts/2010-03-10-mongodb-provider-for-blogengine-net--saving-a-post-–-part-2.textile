@@ -2,6 +2,7 @@
 layout: post
 title: MongoDB provider for Blogengine.net, saving a Post – Part 2
 summary: Yesterday we created our first method in the MongoDbProvider, our implementation of BlogProvider. We created a few supporting classes, but we don’t have test for those classes. We recognize that we went a little bit too far in our coding. We go...
+categories: [MongoDB,Programming]
 ---
 Yesterday we created our first method in the MongoDbProvider, our implementation of BlogProvider. We created a few supporting classes, but we don’t have test for those classes. We recognize that we went a little bit too far in our coding. We got carry away and we started to implement a little bit more than needed to make the test pass.
  So let’s fix that. First we need to see our first test passing. We run it expecting to fail to save and load the post but we have a different Exception thrown.

@@ -2,6 +2,7 @@
 layout: post
 title: Big Visible Cruise- Cruise control project status in a big screen
 summary:    Lava lamps, Orbs, led displays, they all have been used and are still being used to show the build status of projects under Continuous Integration.    What about using a big flat panel TV? Cruise Control provides information via xml as a servi...
+categories: [Continuous Integration,Methodology]
 ---
 
   Lava lamps, Orbs, led displays, they all have been used and are still being used to show the build status of projects under Continuous Integration. 

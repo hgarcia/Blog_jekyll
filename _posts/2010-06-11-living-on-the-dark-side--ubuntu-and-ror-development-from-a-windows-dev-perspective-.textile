@@ -2,6 +2,7 @@
 layout: post
 title: Living on the dark side. Ubuntu and RoR development from a Windows dev perspective.
 summary:  	 	   Some background information.  I'm not a complete newbie to Linux. 12 years ago or so, while still doing lots of IT work I used to admin two Red Hat servers- FTP, file sharing, email, proxy and web servers. Those were the days of RedHat 5.0...
+categories: [General,Programming]
 ---
 <style type="text/css"> 	<!-- 		@page { margin: 2cm } 		P { margin-bottom: 0.21cm } 		H1 { margin-bottom: 0.21cm } 		H1.western { font-family: "Liberation Sans", sans-serif; font-size: 16pt } 		H1.cjk { font-family: "DejaVu Sans"; font-size: 16pt } 		H1.ctl { font-family: "DejaVu Sans"; font-size: 16pt } 		H3 { margin-bottom: 0.21cm } 		H3.western { font-family: "Liberation Sans", sans-serif } 	--> 	</style>   <h3 class="western">Some background information.</h3>  <p style="margin-bottom: 0cm;">I'm not a complete newbie to Linux. 12 years ago or so, while still doing lots of IT work I used to admin two Red Hat servers: FTP, file sharing, email, proxy and web servers. Those were the days of RedHat 5.0 and 5.2  
  <p style="margin-bottom: 0cm;">The next version I played with was Red Hat 7.0 that I installed and used for a little while, but I was already deep into Microsoft development stuff and never had the time to do any serious work on Linux and stop using it for a while until Ubuntu 6 that I installed in a VM.<br>

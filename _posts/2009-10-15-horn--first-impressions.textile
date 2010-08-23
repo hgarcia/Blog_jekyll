@@ -2,6 +2,7 @@
 layout: post
 title: Horn- First Impressions
 summary: Some time ago I heard about the intent of putting together a package manager for .net ala gems or pear. I wasn’t aware that this project was actually under way. The name of the project, Horn.  Please check the links in the project home page on ...
+categories: [Frameworks,Programming,Tools]
 ---
 Some time ago I heard about the intent of putting together a package manager for .net ala <a href="http://docs.rubygems.org/" target="_blank">gems</a> or <a href="http://pear.php.net/" target="_blank">pear</a>. I wasn’t aware that this project was actually under way. The name of the project, <a href="http://code.google.com/p/hornget/" target="_blank">Horn</a>.
  Please check the links in the project home page on how to get started with <a href="http://code.google.com/p/hornget/" target="_blank">Horn</a>. It’s very simple and actually works as promised. One thing you need to remember is that you will have to install a subversion client and a <a href="http://git-scm.com/" target="_blank">Git</a> client for Horn to check out the source code from the projects you want to build.

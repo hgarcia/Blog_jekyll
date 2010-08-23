@@ -2,6 +2,7 @@
 layout: post
 title: Have you ever wanted to learn Rails but you never wanted where to start?
 summary:    I have been playing with both Ruby and Rails for maybe two years. Never doing anything really “serious”, like an external project for a client. I kind of know my way around it when I need it, but I still consider myself a Beginner. So when...
+categories: [General,Programming]
 ---
 
   I have been playing with both Ruby and Rails for maybe two years. Never doing anything really “serious”, like an external project for a client. I kind of know my way around it when I need it, but I still consider myself a Beginner. So when a few days ago I read this <a href="http://72.249.21.88/nonintersecting/2009/01/17/introducing-the-xprest-project/" target="_blank">post</a> about <a href="http://code.google.com/p/xprest" target="_blank">Xprest</a> I got exited. 

@@ -2,6 +2,7 @@
 layout: post
 title: ASP.NET Mvc in Action. Book review
 summary: Some time ago I wrote a first impressions about ASP.NET MVC in Action from Manning. It was after downloading an reading a few chapters available via the Manning early access program (MEAP). The book was written by Jeffrey Palermo, Ben Scheirman a...
+categories: [Books]
 ---
 Some time ago I wrote a first impressions about ASP.NET MVC in Action from Manning. It was after downloading an reading a few chapters available via the Manning early access program (MEAP). The book was written by Jeffrey Palermo, Ben Scheirman and Jimmy Bogard.
  A month ago or so I finally got my print copy and I started reading it right away. Let me put it simple, this book is fantastic. If you are planning to do any development with the framework you need to have it in your book shelves.

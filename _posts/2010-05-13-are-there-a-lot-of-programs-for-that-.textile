@@ -2,6 +2,7 @@
 layout: post
 title: Are there a lot of programs for that?
 summary: This is a post on communication, on how developers and technically savvy people think in general and the differences with the archetypical user.  Two weeks ago I brought a Kobo. It’s an e-reader device promoted by Indigo (a big Canadian booksto...
+categories: [General,Methodology]
 ---
 This is a post on communication, on how developers and technically savvy people think in general and the differences with the archetypical user.
  Two weeks ago I brought a Kobo. It’s an e-reader device promoted by Indigo (a big Canadian bookstore chain). I’m very happy with it and I use it every day in my half hour commute in the subway. 

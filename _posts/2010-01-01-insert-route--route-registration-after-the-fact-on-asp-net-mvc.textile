@@ -2,6 +2,7 @@
 layout: post
 title: Insert route, route registration after the fact on ASP.NET MVC
 summary: Kazi Manzur Rashid has a post about registering Areas dynamically after the registration of other routes and the problems this has since the order the routes are registered is very important. Go read his post and come back for a possible solution...
+categories: [Programming]
 ---
 Kazi Manzur Rashid has a post about registering Areas dynamically after the registration of other routes and the problems this has since the order the routes are registered is very important. Go <a href="http://weblogs.asp.net/rashid/archive/2009/12/30/asp-net-mvc-2-and-why-dynamic-area-is-not-supported.aspx" target="_blank">read his post</a> and come back for a possible solution to the problem.
  Ok, based on his post I decided to try to implement exactly what he is looking for. After poking around with reflector and brushing up my Reflection skills I came up with a first implementation that does the trick.

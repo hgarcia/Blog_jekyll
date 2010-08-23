@@ -2,6 +2,7 @@
 layout: post
 title: Tuple, a new type on .Net 4.0
 summary:    If you ever played with some language that have the Tuple type I bet you miss it in .Net. Well 4.0 adds it.   What is a Tuple?  Let’s see what the ubiquitous Wikipedia have to say about it.      In mathematics, a tuple is a sequence (or orde...
+categories: [Programming]
 ---
    <br />If you ever played with some language that have the Tuple type I bet you miss it in .Net. Well 4.0 adds it.
   <h3>What is a Tuple?</h3>  Let’s see what the ubiquitous <a href="http://en.wikipedia.org/wiki/Tuple" target="_blank">Wikipedia</a> have to say about it.

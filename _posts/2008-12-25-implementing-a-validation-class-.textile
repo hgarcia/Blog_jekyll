@@ -3,6 +3,7 @@ layout: post
 title: Implementing a validation class.
 summary: Every time I wrote validation this code I think, I should write a library to do this for me. So I went ahead and wrote this simple class. The idea is to use the Introduce Assertion Refactoring in this cases and write this code in this way. 
      ...
+categories: [Programming]
 ---
 Every time I wrote validation this code I think, I should write a library to do this for me. So I went ahead and wrote this simple class. The idea is to use the Introduce Assertion Refactoring in this cases and write this code in this way.
 

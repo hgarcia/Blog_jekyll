@@ -2,6 +2,7 @@
 layout: post
 title: Surface development at the Metro Toronto .Net User Group
 summary:    The people from Infusion came last Tuesday Jan 13th to present Surface and Surface development. They bring a Surface (device?, table?) and they walk us through some of the things you can do and what you need to develop for the Surface.    The ...
+categories: [Programming]
 ---
 
   The people from Infusion came last Tuesday Jan 13th to present Surface and Surface development. They bring a Surface (device?, table?) and they walk us through some of the things you can do and what you need to develop for the Surface. 

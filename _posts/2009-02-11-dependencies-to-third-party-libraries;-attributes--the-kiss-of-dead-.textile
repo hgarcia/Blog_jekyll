@@ -2,6 +2,7 @@
 layout: post
 title: Dependencies to third party libraries; attributes, the kiss of dead.
 summary:    In part 1 I talked about using the facade pattern or a wrapper to avoid dependencies to third party libraries. In the second part I talked about taking care of custom exceptions defined in those libraries and how to shield you client code from...
+categories: [Patterns,Programming]
 ---
 
   In <a href="2009/01/15/IsolateYourselfFromExternalLibrariesUsingTheFacadePattern.aspx">part 1</a> I talked about using the facade pattern or a wrapper to avoid dependencies to third party libraries. In the second part I talked about <a href="2009/02/10/TheProblemWithThirdPartyLibrariesExceptions.aspx">taking care of custom exceptions</a> defined in those libraries and how to shield you client code from them.

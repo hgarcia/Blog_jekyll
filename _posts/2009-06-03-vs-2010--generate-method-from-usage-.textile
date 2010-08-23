@@ -2,6 +2,7 @@
 layout: post
 title: VS 2010, Generate method from usage.
 summary:    One of the main reasons I got ReSharper originally was for it’s ability to do micro code generation. This is a functionality that I found very useful when doing test first development.   You can write your test first that will access an obje...
+categories: [Programming,Tools]
 ---
 
   One of the main reasons I got ReSharper originally was for it’s ability to do micro code generation. This is a functionality that I found very useful when doing test first development.

@@ -2,6 +2,7 @@
 layout: post
 title: Chrome doesn’t like feed-// scheme
 summary:    A coworker uses Google Chrome as her primary browser and she sent me and email about my feeds not working. So I went to her computer and yes, inside Chrome when clicked the Icon on the top of the blog nothing happened. I remembered that I enab...
+categories: [General]
 ---
 
   A coworker uses Google Chrome as her primary browser and she sent me and email about my feeds not working. So I went to her computer and yes, inside Chrome when clicked the Icon on the top of the blog nothing happened. I remembered that I enable the feed:// scheme in my blog engine (this way if you have a Feed reader it will be picked up) and most browsers (IE, Firefox) will also pick this up. 

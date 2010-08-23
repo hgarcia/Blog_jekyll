@@ -2,6 +2,7 @@
 layout: post
 title: Codemash Scheduler online – pick and choose sessions to go and export to your calendar.
 summary: When the Codemash guys announced their API I decided to create an app using it. I wasn’t sure what to do at first but It was pretty obvious anyway. Some kind of scheduling tool.   It took me some time to have the time to start and them to finis...
+categories: [General]
 ---
 When the Codemash guys announced their API I decided to create an app using it. I wasn’t sure what to do at first but It was pretty obvious anyway. Some kind of scheduling tool. 
  It took me some time to have the time to start and them to finish it. I finally was able to deploy this last night and today I add another feature to considered completed based on my initial goal.

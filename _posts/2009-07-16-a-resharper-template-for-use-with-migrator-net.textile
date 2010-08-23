@@ -2,6 +2,7 @@
 layout: post
 title: A Resharper template for use with Migrator.net
 summary: I have been playing at home for the last few days with different migrations strategies for db development. The one that I like the most so far is Migrator.Net. Here are the things I really like.  The migration project/code is independent from the...
+categories: [Continuous Integration,Methodology,Programming,Tools]
 ---
 I have been playing at home for the last few days with different migrations strategies for db development. The one that I like the most so far is Migrator.Net. Here are the things I really like.
  The migration project/code is independent from the technology you use to persist your data, so changing persistence strategies does not affect your migrations.<br>You have a good migration history, since each new migration is it’s own class. It provides an Up and a down method to run the migration or undo it. You mostly don’t have to write SQL, but you can if you need/want. 

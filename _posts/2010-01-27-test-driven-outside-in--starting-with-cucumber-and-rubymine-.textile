@@ -2,6 +2,7 @@
 layout: post
 title: Test driven outside in, starting with Cucumber and RubyMine.
 summary: On my new project I want to start using end to end testing.  The idea is to write an specification run it against an outer interface. Gui, Web service, etc. It fails. So you start implementing the feature using TDD until the Spec pass.   You writ...
+categories: [Frameworks,Methodology,Programming,Testing,Tools]
 ---
 On my new project I want to start using end to end testing.
  The idea is to write an specification run it against an outer interface. Gui, Web service, etc. It fails. So you start implementing the feature using TDD until the Spec pass. 

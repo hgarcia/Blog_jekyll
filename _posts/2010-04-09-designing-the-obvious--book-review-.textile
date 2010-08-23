@@ -2,6 +2,7 @@
 layout: post
 title: Designing the obvious, book review.
 summary: I just finished reading Designing the obvious by Robert Hoekman, Jr. This is a book about how to design good web applications. The subtitle, a common sense approach to web application design, it’s also a good synopsis.  The book was written in ...
+categories: [Books,General]
 ---
 I just finished reading Designing the obvious by Robert Hoekman, Jr. This is a book about how to design good web applications. The subtitle, a common sense approach to web application design, it’s also a good synopsis.
  The book was written in 2007. There is nothing really revolutionary in it, but it summons up lots of good advices and examples on how to make your web application interface easier to use. 

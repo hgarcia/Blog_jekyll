@@ -2,6 +2,7 @@
 layout: post
 title: What I enjoyed at StackOverflow DevDays Toronto.
 summary: I got my tickets the first week the conference was announced, not really knowing what to expect but exited on the opportunity to learn new things and talk to people that work in other languages/technologies beside the .net world.  Once the sessio...
+categories: [General]
 ---
 I got my tickets the first week the conference was announced, not really knowing what to expect but exited on the opportunity to learn new things and talk to people that work in other languages/technologies beside the .net world.
  Once the sessions were announced my excitement decreased a little bit.

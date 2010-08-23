@@ -2,6 +2,7 @@
 layout: post
 title: My new an improved tooling for builds and project management.
 summary: I try to be pragmatic in my approach to development and one of the things that change the most are the tools I use to deliver software. There are several reasons why I change tools so often.    The evolution of the software I write call for new o...
+categories: [Continuous Integration,Methodology,Programming,Testing,Tools]
 ---
 I try to be pragmatic in my approach to development and one of the things that change the most are the tools I use to deliver software. There are several reasons why I change tools so often. 
  <ol> <li>The evolution of the software I write call for new or different tools.</li> <li>Search for efficiency and eliminate pain points.</li> <li>I change my approach to software development and new methodologies need new tools.</li> <li>I just love to try new stuff :-)</li></ol> In this post I want to concentrate in the tools used to manage projects and builds. Until recently my favoured tools in this context consisted of NAnt, CC.Net/Hudson and Subversion.

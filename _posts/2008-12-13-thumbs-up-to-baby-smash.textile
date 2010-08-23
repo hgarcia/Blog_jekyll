@@ -2,6 +2,7 @@
 layout: post
 title: Thumbs up to Baby Smash
 summary:    I’m sitting besides my 19th month old trying to write some code. Of course he is trying to help me. Let me tell you his C# is not bad --) He was so exited about typing thaT I decided to give him something he could play with. I remembered Sco...
+categories: [General]
 ---
 
   I’m sitting besides my 19th month old trying to write some code. Of course he is trying to help me. Let me tell you his C# is not bad :-) He was so exited about typing thaT I decided to give him something he could play with. I remembered <a href="http://www.hanselman.com/babysmash/index.htm" target="_blank">Scott Hanselman’s baby smash</a>. So I went to the site and install it. 

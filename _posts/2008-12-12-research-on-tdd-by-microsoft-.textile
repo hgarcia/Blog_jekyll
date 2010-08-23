@@ -2,6 +2,7 @@
 layout: post
 title: Research on TDD by Microsoft.
 summary:    There is a nice video on Channel 9 about a study done by Microsoft Research about TDD and it’s impact on a real industry scenario.    The study was done post mortem, so the developers were not influenced while developing the product. The res...
+categories: [Methodology,Testing]
 ---
 
   There is a nice <a href="http://channel9.msdn.com/posts/Peli/Experimental-study-about-Test-Driven-Development/" target="_blank">video</a> on Channel 9 about a study done by Microsoft Research about TDD and it’s impact on a real industry scenario. 
