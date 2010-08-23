@@ -1,10 +1,74 @@
 ---
 layout: post
 title: The SmartBag to replace the ViewData on MVC
-summary: Jeffrey Palermo posted about replacing the ViewData on the MVC framework with a generic container called SmartBag. The advantage is that the container will return an object of a given type, so no more casting and also no more using string keys to...
----
-<a href="http://codebetter.com/blogs/jeffrey.palermo/archive/2008/01/19/introducing-the-smartbag-for-asp-net-mvc-and-soliciting-feedback.aspx">Jeffrey Palermo</a> posted about replacing the ViewData on the MVC framework with a generic container called SmartBag.
-The advantage is that the container will return an object of a given type, so no more casting and also no more using string keys to get a given object since the type is used as the key.<br>Palermo's code take cares of 80 per cent of the usage cases, the only issue will be if you have more than one object of the same type in the smartbag. Jeffrey is asking for feedback from the community so don't hesitate and provide it.
-I made a small modification of the code to deal with the 20% of cases stated on the post. Here is the code with those changes.
-
- public class SmartBag : Hashtable<br> {<br> public T First&amp;lt;T&amp;gt;()<br> {<br> return (T)this.Get(typeof(T), 0);<br> }<br><br> public int CountOf&amp;lt;T&amp;gt;()<br> {<br> Type type = typeof(T);<br> if (!ContainsKey(type))<br> {<br> string message = string.Format("No object exists that is of type '{0}'.", type);<br> throw new ArgumentException(message);<br> }<br><br> return ((ArrayList)this[type]).Count;<br> }<br><br> public T Get&amp;lt;T&amp;gt;(int index)<br> {<br> return (T)this.Get(typeof(T), index);<br> }<br><br> private object Get(Type type, int index)<br> {<br> if (!ContainsKey(type))<br> {<br> string message = string.Format("No object exists that is of type '{0}'.", type);<br> throw new ArgumentException(message);<br> }<br><br> return ((ArrayList)this[type])[index];<br> }<br><br> public void Add(object anObject)<br> {<br> Type type = anObject.GetType();<br> this.Add(type, anObject);<br> }<br><br> public override void Add(object key, object value)<br> {<br> if (ContainsKey(key))<br> {<br> ((ArrayList)this[key]).Add(value);<br> }<br> else<br> {<br> ArrayList al = new ArrayList();<br> al.Add(value);<br> base.Add(key, al);<br> }<br> }<br><br> public bool Contains&amp;lt;T&amp;gt;()<br> {<br> return ContainsKey(typeof(T));<br> }<br> }
+summary: Jeffrey Palermo posted about replacing the ViewData on the MVC framework with a generic container called SmartBag. The advantage is that the container will return an object of a given type, so no more casting and also no more using string keys...
+---
+
+<a href="http://codebetter.com/blogs/jeffrey.palermo/archive/2008/01/19/introducing-the-smartbag-for-asp-net-mvc-and-soliciting-feedback.aspx">Jeffrey Palermo</a> posted about replacing the ViewData on the MVC framework with a generic container called SmartBag.
+
+The advantage is that the container will return an object of a given type, so no more casting and also no more using string keys to get a given object since the type is used as the key.
+
+Palermo's code take cares of 80 per cent of the usage cases, the only issue will be if you have more than one object of the same type in the smartbag. Jeffrey is asking for feedback from the community so don't hesitate and provide it.
+
+I made a small modification of the code to deal with the 20% of cases stated on the post. Here is the code with those changes.
+
+{% highlight aspx-cs %}
+	public class SmartBag : Hashtable
+	{
+		public T First<T>()
+		{
+			return (T)this.Get(typeof(T), 0);
+		}
+		
+		public int CountOf<T>()
+		{
+			Type type = typeof(T);
+			if (!ContainsKey(type))
+			{
+				string message = string.Format("No object exists that is of type '{0}'.", type);
+				throw new ArgumentException(message);
+			}
+			return ((ArrayList)this[type]).Count;
+		}
+		
+		public T Get<T>(int index)
+		{
+			return (T)this.Get(typeof(T), index);
+		}
+		
+		private object Get(Type type, int index)
+		{
+			if (!ContainsKey(type))
+			{
+				string message = string.Format("No object exists that is of type '{0}'.", type);
+				throw new ArgumentException(message);
+			}
+			return ((ArrayList)this[type])[index];
+		}
+		
+		public void Add(object anObject)
+		{
+			Type type = anObject.GetType();
+			this.Add(type, anObject);
+		}
+		
+		public override void Add(object key, object value)
+		{
+			if (ContainsKey(key))
+			{
+				((ArrayList)this[key]).Add(value);
+			}
+			else
+			{
+				ArrayList al = new ArrayList();
+				al.Add(value);
+				base.Add(key, al);
+			}
+		}
+		
+		public bool Contains<T>()
+		{
+			return ContainsKey(typeof(T));
+		}
+	}
+{% endhighlight %}
