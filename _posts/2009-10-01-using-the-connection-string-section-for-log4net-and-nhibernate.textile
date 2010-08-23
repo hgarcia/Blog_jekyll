@@ -16,7 +16,7 @@ The other day at the office my boss took a look at our configuration files and h
 </pre><pre style="background-color: #ffffff; margin: 0em; width: 100%; font-family: consolas,'Courier New',courier,monospace; font-size: 12px">	        <span style="color: #0000ff">&amp;lt;</span><span style="color: #800000">mapping</span> <span style="color: #ff0000">assembly</span>=<span style="color: #0000ff">"ACME.Model"</span><span style="color: #0000ff">/&amp;gt;</span>
 </pre><pre style="background-color: #ffffff; margin: 0em; width: 100%; font-family: consolas,'Courier New',courier,monospace; font-size: 12px">	<span style="color: #0000ff">&amp;lt;/</span><span style="color: #800000">session</span>-factory<span style="color: #0000ff">&amp;gt;</span>
 </pre><pre style="background-color: #ffffff; margin: 0em; width: 100%; font-family: consolas,'Courier New',courier,monospace; font-size: 12px"><span style="color: #0000ff">&amp;lt;/</span><span style="color: #800000">hibernate</span>-configuration<span style="color: #0000ff">&amp;gt;</span></pre></pre>
-<h1></h1>
+<h3></h3>
 <h3>Log4Net solution</h3>
 For Log4Net was not so easy. I found references to a patch that provides similar functionality to the one observed in NHibernate and references to that patch been applied to the latest release, but It doesn’t seem to be there.
 

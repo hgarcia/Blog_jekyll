@@ -23,5 +23,5 @@ Last week I wrote about using cucumber to test your web applications outside in.
  You will generate the specification from an item template.
  <a href="../../../images/posts/UsingSpecFlowWatiNorBDDforwebapplicatio_14C77/004_features.png"><img style="border-bottom: 0px; border-left: 0px; display: inline; border-top: 0px; border-right: 0px" title="004_features" border="0" alt="004_features" src="../../../images/posts/UsingSpecFlowWatiNorBDDforwebapplicatio_14C77/004_features_thumb.png" width="508" height="149"></a> 
  
- <h5>Conclusion:</h5> I think that this is a great tool, specially if you are using it to develop desktop apps or library code in c#. You can use tools like R# to generate your classes and methods from the step definition class directly.
+ <h3>Conclusion:</h3> I think that this is a great tool, specially if you are using it to develop desktop apps or library code in c#. You can use tools like R# to generate your classes and methods from the step definition class directly.
  For using with WatiN or similar tools to drive the browser I will probably keep using pure cucumber with Ruby at least until the <a href="http://msdn.microsoft.com/en-us/library/system.stathreadattribute%28VS.80%29.aspx" target="_blank">STAThread</a> issue gets solved.

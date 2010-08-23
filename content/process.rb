@@ -69,7 +69,7 @@ summary: #{@content.gsub(/<pre>.*<\/pre>/s,"").gsub(/<\/?[^>]*>/, "").gsub("\r\n
 	end
 	
 	def content
-		@content.gsub(/content\/binary/,"../../../images/posts").gsub(/http:\/\/blog.dynamicprogrammer.com\//,'').gsub(/WindowsLiveWriter\//,'')
+		@content.gsub(/content\/binary/,"../../../images/posts").gsub(/http:\/\/blog.dynamicprogrammer.com\//,'').gsub(/WindowsLiveWriter\//,'').gsub(/<h[1245]>/,"<h3>").gsub(/<\/h[1245]>/,"</h3>")
 	end
 end
 

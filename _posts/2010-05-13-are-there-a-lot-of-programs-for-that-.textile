@@ -17,7 +17,7 @@ This is a post on communication, on how developers and technically savvy people 
  And them it sunk on me, when he said software he meant books!!!
  <em>-Oh, the book, of course, sorry. Yes, you can use pdf’s or ePub, both open formats…</em> - I was losing him again – <em>Yes, there are lots of books you can read with it.</em>
  He smiled, happy to get his question answered, and we continue our respective commutes without other word.
- <h5>What’s the point of telling you about my commute?</h5> You may be wondering.
+ <h3>What’s the point of telling you about my commute?</h3> You may be wondering.
  This conversation was a casual one, with a normal person that for sure can be characterized as the user for some of the software that we write every day. <br>He was calling the books, programs. <br>He has no idea what ePub of PDF’s are. He has no clue about why open formats are an important consideration (at least for me) or what the hell are they. <br>And I’m not saying that he should.<br>What he needed to know was, can I actually read the books I want in that thing?
  Sometimes as programmers we can be as thick an literal as a computer. We make technical considerations based in our own knowledge and our experience but we struggle communicating the importance of those decisions. Maybe the problem is because of the work we do, trying to express as precise as possible a set of instructions for the computer.
  That is why Agile methodologies and practices like, Scrum, User Stories, short feedback loops, BDD, etc. are important.

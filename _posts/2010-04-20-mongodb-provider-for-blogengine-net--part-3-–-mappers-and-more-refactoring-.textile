@@ -63,7 +63,7 @@ That’s an ugly piece of code. And the worst thing is that we still have a lot 
 
 A better way to deal with it will be to start leveraging conventions and mappers to deal with it as automatically as possible.
 
-<h5>Conclusion.</h5>
+<h3>Conclusion.</h3>
 As you can see using MongoDb in an existing application is possible. I purposely didn’t touch the code of the application what could have made some of this changes easier. 
 
 NoRM is looking very good and if you are starting from scratch I will use that driver that provides serialization and deserialization out of the box.
