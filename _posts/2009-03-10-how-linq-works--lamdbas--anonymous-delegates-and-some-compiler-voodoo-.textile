@@ -33,7 +33,7 @@ summary:    If you have been following this blog, you probably saw a few posts a
     <p style="margin: 0px"> }
     <p style="margin: 0px">}
  </div>  That looks very similar to the original code, the lambda notation have been replaced by an anonymous delegate but the rest of the code looks the same. But wait take a look at the object tree for this class.
-  <a href="http://blog.dynamicprogrammer.com/images/posts/WindowsLiveWriter/HowLinqworkslamdbasanonymousdelegatesan_88A/ScreenHunter_16%202009-03-09%2000.11.23_2.jpg"><img title="ScreenHunter_16 2009-03-09 00.11.23" style="border-right: 0px; border-top: 0px; display: inline; border-left: 0px; border-bottom: 0px" height="185" alt="ScreenHunter_16 2009-03-09 00.11.23" src="/images/posts/WindowsLiveWriter/HowLinqworkslamdbasanonymousdelegatesan_88A/ScreenHunter_16%202009-03-09%2000.11.23_thumb.jpg" width="395" border="0" /></a> 
+  <a href="images/posts/WindowsLiveWriter/HowLinqworkslamdbasanonymousdelegatesan_88A/ScreenHunter_16%202009-03-09%2000.11.23_2.jpg"><img title="ScreenHunter_16 2009-03-09 00.11.23" style="border-right: 0px; border-top: 0px; display: inline; border-left: 0px; border-bottom: 0px" height="185" alt="ScreenHunter_16 2009-03-09 00.11.23" src="images/posts/WindowsLiveWriter/HowLinqworkslamdbasanonymousdelegatesan_88A/ScreenHunter_16%202009-03-09%2000.11.23_thumb.jpg" width="395" border="0" /></a> 
   Do you see that &amp;lt;&amp;gt;c_DisplayClass1 private sealed subclass inside our original class?
   Let’s take a look at the code.
   
