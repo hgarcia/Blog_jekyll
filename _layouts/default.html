@@ -14,23 +14,15 @@
      {% endif %}
      <link href="http://feeds.feedburner.com/TheDynamicProgrammer" rel="alternate" title="The Dynamic Programmer - Hernan Garcia" type="application/atom+xml" />
 
-     <link rel="stylesheet" href="/stylesheets/syntax.css" type="text/css" />
-     <link rel="stylesheet" href="/stylesheets/default.css" type="text/css" />
+     <link rel="stylesheet" href="../../../stylesheets/syntax.css" type="text/css" />
+     <link rel="stylesheet" href="../../../stylesheets/default.css" type="text/css" />
 
-     {% for css in page.css %}
-       <link rel="stylesheet" href="{{ css }}" type="text/css" />
-     {% endfor %}
   </head>
   <body>
       
       <div id="content">
         {{ content }}
       </div>
-      
-    {% for js in page.javascript %}
-      <script type="text/javascript" src="{{ js }}"></script>
-    {% endfor %}
-
 	<script type="text/javascript">
 	var disqus_shortname = 'thedynamicprogrammer';
 	(function () {
