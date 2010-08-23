@@ -2,7 +2,7 @@
 layout: post
 title: Watir to run my smoke and regression tests
 summary: I have been looking for a tool to drive my web sites smoke and regression test for quite a while, between the tools I used I want to mention Sahi and Selenium, really good tools.   In the company I'm working right now we have a framework that is ...
-categories: [Testing,Tools]
+categories: [Testing, Tools]
 ---
 I have been looking for a tool to drive my web sites smoke and regression test for quite a while, between the tools I used I want to mention Sahi and Selenium, really good tools.  
 In the company I'm working right now we have a framework that is used by several companies to drive their websites. They can change the skinning a little bit but all the sites have the same structure and there a minimum of artifacts that remain from page to page (even when they look different).  

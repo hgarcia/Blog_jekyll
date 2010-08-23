@@ -2,7 +2,7 @@
 layout: post
 title: Keep your Controllers lean.
 summary:    I was going to write a post about this but my thoughts are exactly the same as Fredrik Normen’s.   For example, one thing that creeps me out is seen think like this in the Controller.       23 public ActionResult Index()      24 {      25 va...
-categories: [Frameworks,Patterns,Programming]
+categories: [Frameworks, Patterns, Programming]
 ---
 
   I was going to write a post about this but my thoughts are exactly the same as <a href="http://weblogs.asp.net/fredriknormen/archive/2008/12/01/controllers-in-the-mvc-pattern-is-not-a-replacement-for-business-logic-layer.aspx" target="_blank">Fredrik Normen’s.</a>

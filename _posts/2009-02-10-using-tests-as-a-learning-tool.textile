@@ -2,7 +2,7 @@
 layout: post
 title: Using tests as a learning tool
 summary:   I try to practice TDD most of the time these days. I don’t write new code without a test first. A few years ago write the test first was something that I understood from an intellectual point of view but it sounded impractical. Today I can im...
-categories: [Methodology,Programming,Testing]
+categories: [Methodology, Programming, Testing]
 ---
 
  I try to practice TDD most of the time these days. I don’t write new code without a test first. A few years ago write the test first was something that I understood from an intellectual point of view but it sounded impractical. Today I can imagine going back to my old practices.

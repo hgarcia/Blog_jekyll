@@ -2,7 +2,7 @@
 layout: post
 title: My BDD Session at Toronto Code Camp - slides, code and retrospective.
 summary: Yesterday I presented at Toronto code camp a session on BDD + User Stories and what frameworks to use in the .net work to support the practice. The session went well and most of the feedback was extremely positive, even the negative points have b...
-categories: [Frameworks,General,Talks,Tools]
+categories: [Frameworks, General, Talks, Tools]
 ---
 Yesterday I presented at Toronto code camp a session on BDD + User Stories and what frameworks to use in the .net work to support the practice. The session went well and most of the feedback was extremely positive, even the negative points have been offered in a very constructive way and I really appreciate that. 
  The slides and all the code can be downloaded from my github repo here: <a title="http://github.com/hgarcia/DynamicProg/downloads" href="http://github.com/hgarcia/DynamicProg/downloads">http://github.com/hgarcia/DynamicProg/downloads</a>

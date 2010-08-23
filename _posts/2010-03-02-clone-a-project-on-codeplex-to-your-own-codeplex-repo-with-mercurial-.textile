@@ -2,7 +2,7 @@
 layout: post
 title: Clone a project on Codeplex to your own Codeplex repo with Mercurial.
 summary: If you use Github (Git) or Bitbucket (Mercurial) you are familiar with the ability to fork a project into your own repository in those sites.         Once forked you can start working in your own repo and once you are ready to integrate you will ...
-categories: [Programming,Tools]
+categories: [Programming, Tools]
 ---
 If you use Github (Git) or Bitbucket (Mercurial) you are familiar with the ability to fork a project into your own repository in those sites.
  <a href="../../../images/posts/Cloneaprojectoncodeplextoyourowncodeple_14BF6/github_fork.png"><img style="border-right-width: 0px; display: inline; border-top-width: 0px; border-bottom-width: 0px; border-left-width: 0px" title="github_fork" border="0" alt="github_fork" src="../../../images/posts/Cloneaprojectoncodeplextoyourowncodeple_14BF6/github_fork_thumb.png" width="510" height="145"></a> 

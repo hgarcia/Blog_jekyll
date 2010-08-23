@@ -2,7 +2,7 @@
 layout: post
 title: Catharsis, a complete framework for developing Web apps using MVC and NHibernate 2.0
 summary:    Once in a while I like to browse around Codeplex to see what’s new and if I found anything interesting.   Today I found this Gem of a project called Catharsis.     To be able to use it you will need VS 2008 with SP1.    The Guidance Automati...
-categories: [Architecture,Frameworks,Programming,Tools]
+categories: [Architecture, Frameworks, Programming, Tools]
 ---
 
   Once in a while I like to browse around <a href="http://www.codeplex.com" target="_blank">Codeplex</a> to see what’s new and if I found anything interesting.

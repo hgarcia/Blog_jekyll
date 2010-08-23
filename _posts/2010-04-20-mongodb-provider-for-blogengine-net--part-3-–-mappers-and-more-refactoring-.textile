@@ -2,7 +2,7 @@
 layout: post
 title: MongoDb provider for BlogEngine.net, part 3 – Mappers and more refactoring.
 summary: In the previous post on this series we manage to get our Insert and a basic Select methods working. Today we need to implement the mapper class for Post. But first let’s check what we have done so far and see if we can improve this a bit. We no...
-categories: [MongoDB,Programming]
+categories: [MongoDB, Programming]
 ---
 In the previous post on this series we manage to get our Insert and a basic Select methods working. Today we need to implement the mapper class for Post. But first let’s check what we have done so far and see if we can improve this a bit. We notice some duplication on the MongoDb class.
  This code is triplicate.

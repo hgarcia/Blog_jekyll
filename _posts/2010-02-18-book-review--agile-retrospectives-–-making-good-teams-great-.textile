@@ -2,7 +2,7 @@
 layout: post
 title: Book review- Agile Retrospectives – Making good teams great.
 summary: This is a very short book on a great practice for any agile team. The book walk you through a lot of techniques an exercises that will help you and your team to have successful retrospectives.  The first 3 chapters provide information on what ret...
-categories: [Books,Methodology]
+categories: [Books, Methodology]
 ---
 This is a very short book on a great practice for any agile team. The book walk you through a lot of techniques an exercises that will help you and your team to have successful retrospectives.
  The first 3 chapters provide information on what retrospectives are about. How to create one for your team and what you need to learn to lead them.

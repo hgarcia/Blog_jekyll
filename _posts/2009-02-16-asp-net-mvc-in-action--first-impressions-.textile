@@ -2,7 +2,7 @@
 layout: post
 title: ASP.NET MVC in Action, first impressions.
 summary:    I got a copy of the MEAP edition for ASP.NET MVC in Action. This is the book on the (new?) ASP.NET MVC framework written by Jeffrey Palermo, Ben Scheirman, and Jimmy Bogard.   I have been looking forward to both the final release of the framew...
-categories: [Books,Patterns]
+categories: [Books, Patterns]
 ---
 
   I got a copy of the <a href="http://www.manning.com/about/meap.html#meapfaq" target="_blank">MEAP</a> edition for <a href="http://www.manning.com/palermo/" target="_blank">ASP.NET MVC in Action</a>. This is the book on the (new?) ASP.NET MVC framework written by <a href="http://jeffreypalermo.com/" target="_blank">Jeffrey Palermo</a>, <a href="http://flux88.com/" target="_blank">Ben Scheirman</a>, and <a href="http://www.lostechies.com/blogs/jimmy_bogard/" target="_blank">Jimmy Bogard</a>.

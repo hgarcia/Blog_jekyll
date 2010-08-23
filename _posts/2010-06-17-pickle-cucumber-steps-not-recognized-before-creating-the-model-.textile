@@ -2,7 +2,7 @@
 layout: post
 title: Pickle cucumber steps not recognized before creating the model.
 summary: The title kind of tell it all. I started to use pickle now for filling up and managing my test with cucumber. Fill up data, etc.  Pickle creates some step definitions for you to make things easy, what it's much appreciated. There is a great RailC...
-categories: [General,Programming]
+categories: [General, Programming]
 ---
 The title kind of tell it all. I started to use pickle now for filling up and managing my test with cucumber. Fill up data, etc.
  Pickle creates some step definitions for you to make things easy, what it's much appreciated. There is a great RailCast on setting things up, you can <a href="http://railscasts.com/episodes/186-pickle-with-cucumber">watch</a> it or <a href="http://asciicasts.com/episodes/186-pickle-with-cucumber">read</a> about it.

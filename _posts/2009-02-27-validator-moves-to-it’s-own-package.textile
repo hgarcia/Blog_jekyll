@@ -2,7 +2,7 @@
 layout: post
 title: Validator moves to it’s own package
 summary:    Today I move the code of LaTrompa.Validation into it’s own package, with no external dependencies (besides the framework of course).   I added a class to validate XmlNodes.   The string validation now has a IsOneOf method to match the string...
-categories: [Programming,Tools]
+categories: [Programming, Tools]
 ---
 
   Today I move the code of LaTrompa.Validation into it’s own package, with no external dependencies (besides the framework of course).

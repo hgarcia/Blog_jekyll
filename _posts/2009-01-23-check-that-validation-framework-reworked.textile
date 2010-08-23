@@ -2,7 +2,7 @@
 layout: post
 title: Check.That validation framework reworked
 summary:    I just finished a complete re write of my validation framework. This re write was due to feedback received from some of my co workers so I owe to them my thanks.    The validator is not an static class anymore, so you need to create an instanc...
-categories: [Programming,Tools]
+categories: [Programming, Tools]
 ---
 
   I just finished a complete re write of my validation framework. This re write was due to feedback received from some of my co workers so I owe to them my thanks.    <br />The validator is not an static class anymore, so you need to create an instance of it.

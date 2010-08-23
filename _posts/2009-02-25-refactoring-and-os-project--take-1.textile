@@ -2,7 +2,7 @@
 layout: post
 title: Refactoring and OS project- take 1
 summary:    First thing first. This is not bad code. This is a drop that is there and the developer make a point to clarify all the problems “he” has with the code at the moment. I needed to make it work in a more generic way and since most of the wor...
-categories: [Programming,Testing]
+categories: [Programming, Testing]
 ---
 
   First thing first. This is not bad code. This is a drop that is there and the developer make a point to clarify all the problems “he” has with the code at the moment. I needed to make it work in a more generic way and since most of the work is done for me, it’s better I refactor the existing code than start from scratch. I will send my changes to the original developer once I’m happy with them.

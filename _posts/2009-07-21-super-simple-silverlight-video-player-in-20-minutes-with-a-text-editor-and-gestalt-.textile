@@ -2,7 +2,7 @@
 layout: post
 title: Super simple Silverlight video player in 20 minutes with a text editor and Gestalt.
 summary: A few hours ago I saw a Twit by @shanselman about having Ruby and Python scripts tags in your html pages. Clicking in the URL took me to http-//visitmix.com/labs/gestalt/. I didn’t have to read much to understand the potential. I’m myself an ...
-categories: [Frameworks,Gestalt,Programming]
+categories: [Frameworks, Gestalt, Programming]
 ---
 A few hours ago I saw a Twit by <a href="http://twitter.com/shanselman" target="_blank">@shanselman</a> about having Ruby and Python scripts tags in your html pages. Clicking in the URL took me to <a title="http://visitmix.com/labs/gestalt/" href="http://visitmix.com/labs/gestalt/" target="_blank">http://visitmix.com/labs/gestalt/</a>. I didn’t have to read much to understand the potential. <br>I’m myself an old web guy that still love to craft my JavaScript, Html and PHP code using a text editor. (My old time favourite was <a href="http://www.pspad.com/" target="_blank">PSPad</a> but lately I have been using <a href="http://www.e-texteditor.com/" target="_blank">e</a>, a “clone” of <a href="http://macromates.com/" target="_blank">TextMate</a> for windows. 
  My team make fun of me since sometimes I even fire up e to fix some bug in C# files. 

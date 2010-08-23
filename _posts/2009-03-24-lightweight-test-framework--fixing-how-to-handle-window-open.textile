@@ -2,7 +2,7 @@
 layout: post
 title: Lightweight Test Framework, fixing how to handle window.open
 summary:    As I mentioned in a previous post I have been playing with the Microsoft Lightweight Test Automation Framework.   The Lightweight framework handle alert and confirms without any problem, both in IE and Firefox out of the box. I guess it won’...
-categories: [Lightweight Testing Framework,Programming,Testing,Tools]
+categories: [Lightweight Testing Framework, Programming, Testing, Tools]
 ---
 
   As I mentioned in a previous post I have been playing with the <a href="http://aspnet.codeplex.com/Release/ProjectReleases.aspx?ReleaseId=22739" target="_blank">Microsoft Lightweight Test Automation Framework</a>.

@@ -2,7 +2,7 @@
 layout: post
 title: Why testing saves time.
 summary:    Some of the detractors of TDD or testing in general is that you waste time writing test instead of writing “useful” code.   Well, writing test just save me a few hours of debugging. Look at this very simple class, there is an stupid mistak...
-categories: [Programming,Testing]
+categories: [Programming, Testing]
 ---
 
   Some of the detractors of TDD or testing in general is that you waste time writing test instead of writing “useful” code.

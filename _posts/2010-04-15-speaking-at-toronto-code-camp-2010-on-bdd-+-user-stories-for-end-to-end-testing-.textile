@@ -2,7 +2,7 @@
 layout: post
 title: Speaking at Toronto Code Camp 2010 on BDD + User stories for end to end testing.
 summary: I finally got the courage and sent a proposal for speaking at the Toronto code camp. The good news is that it was accepted and I will be speaking this coming May 1st at this year code camp.   This time around will be at Seneca college in front of...
-categories: [General,Talks]
+categories: [General, Talks]
 ---
 I finally got the courage and sent a proposal for speaking at the Toronto code camp. The good news is that it was accepted and I will be speaking this coming May 1st at this year code camp. 
  This time around will be at Seneca college in front of another full house. 8 tracks of .Net goodness ranging from SharePoint development to JQuery, testing (Unit and BDD), Silverlight, OData, Win Phone 7, etc. Check all the details visiting the Code camp website: <a title="http://www.torontocodecamp.net/Agenda/tabid/56/Default.aspx" href="http://www.torontocodecamp.net/Agenda/tabid/56/Default.aspx">http://www.torontocodecamp.net/Agenda/tabid/56/Default.aspx</a>

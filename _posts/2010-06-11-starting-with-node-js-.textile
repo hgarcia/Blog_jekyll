@@ -2,7 +2,7 @@
 layout: post
 title: Starting with Node.js.
 summary: Installing node.js  First, you need a supported OS, like Linux, Mac or Solaris. I will be doing the install on Ubuntu.Go to the node.js download page download the Gzipped file and extract in a folder of your choice in your disk.Open a terminal an...
-categories: [General,Programming,node.js]
+categories: [General, Programming, node.js]
 ---
 <h3>Installing node.js</h3>  First, you need a supported OS, like Linux, Mac or Solaris. I will be doing the install on Ubuntu.<br>Go to the <a href="http://nodejs.org/#download" target="_blank">node.js download page</a> download the Gzipped file and extract in a folder of your choice in your disk.<br>Open a terminal and go to the folder where you extracted the downloaded files.<br>Type ./configure, if you don't have a c++ compiler you will see an error.<br><img src="../../../images/posts/moz-screenshot.png" name="graphics1" border="0" height="72" width="603"><br><br>I choose to go with the g++ one, so I typed:
  <p style="background: none repeat scroll 0% 0% rgb(192, 192, 192);"><font face="Courier 10 Pitch">sudo apt-get install g++</font>

@@ -2,7 +2,7 @@
 layout: post
 title: Lightweight Test Automation Framework June Update
 summary:    These guys are working hard and given us releases almost every month. I ‘m happy to see some of the feedback from the community incorporated into the Framework.   Go ahead download it from CodePlex and give it a try to test your web applicat...
-categories: [Lightweight Testing Framework,Testing]
+categories: [Lightweight Testing Framework, Testing]
 ---
 
   These guys are working hard and given us releases almost every month. I ‘m happy to see some of the feedback from the community incorporated into the Framework.

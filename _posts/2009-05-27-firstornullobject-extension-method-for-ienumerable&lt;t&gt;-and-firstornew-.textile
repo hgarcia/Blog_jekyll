@@ -2,7 +2,7 @@
 layout: post
 title: FirstOrNullObject extension method for IEnumerable&lt;T&gt; and FirstOrNew.
 summary:  In the context of this article every time I mention Linq I’m actually talking about Linq To Objects. Although       Linq has a very handy method on FirstOrDefault&amp;lt;T&amp;gt;. When applying this method to a collection you will get in retu...
-categories: [Patterns,Programming]
+categories: [Patterns, Programming]
 ---
  <br />In the context of this article every time I mention Linq I’m actually talking about Linq To Objects. Although 
      <br />Linq has a very handy method on FirstOrDefault&amp;lt;T&amp;gt;. When applying this method to a collection you will get in return the First object of the default of T. This works great with numeric values in the sense that the default is not null. So you can do stuff like this without anything blowing up.

@@ -2,7 +2,7 @@
 layout: post
 title: ELMAH error handler for asp.net applications
 summary:    This looks very interesting. (from their site)      ELMAH (Error Logging Modules and Handlers) is an application-wide error logging facility that is completely pluggable. It can be dynamically added to a running ASP.NET web application, or eve...
-categories: [General,Tools]
+categories: [General, Tools]
 ---
 
   This looks very interesting. (from their site)

@@ -2,7 +2,7 @@
 layout: post
 title: Using SpecFlow + WatiN or BDD for web applications without leaving the CLR.
 summary: Last week I wrote about using cucumber to test your web applications outside in. In the post I showed a simple example (actually comes with cucumber) to open a browser, go to a site and perform some actions.  I showed the same to my team at work ...
-categories: [Programming,Tools]
+categories: [Programming, Tools]
 ---
 Last week I wrote about using cucumber to test your web applications outside in. In the post I showed a simple example (actually comes with cucumber) to open a browser, go to a site and perform some actions.
  I showed the same to my team at work and they mention that could be nice to been able to use c# and Visual Studio to do something similar.

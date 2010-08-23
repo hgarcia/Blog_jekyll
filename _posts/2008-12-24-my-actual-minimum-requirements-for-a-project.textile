@@ -2,7 +2,7 @@
 layout: post
 title: My actual minimum requirements for a project
 summary:    My previous post got me thinking, what are the things I will considered as minimum requirements for me to work in a project even when I have serious constrains on time?   In requirements I mean methodologies and practices that I will need to u...
-categories: [Methodology,Programming,Tools]
+categories: [Methodology, Programming, Tools]
 ---
 
   My previous post got me thinking, what are the things I will considered as minimum requirements for me to work in a project even when I have serious constrains on time?
