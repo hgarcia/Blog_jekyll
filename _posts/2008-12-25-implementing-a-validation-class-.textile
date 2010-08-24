@@ -1,37 +1,61 @@
 ---
 layout: post
 title: Implementing a validation class.
-summary: Every time I wrote validation this code I think, I should write a library to do this for me. So I went ahead and wrote this simple class. The idea is to use the Introduce Assertion Refactoring in this cases and write this code in this way. 
-     ...
-categories: [Programming]
----
-Every time I wrote validation this code I think, I should write a library to do this for me. So I went ahead and wrote this simple class. The idea is to use the Introduce Assertion Refactoring in this cases and write this code in this way.
+summary: Every time I wrote validation this code I think, I should write a library to do this for me. So I went ahead and wrote this simple class. The idea is to use the Introduce Assertion Refactoring in this cases and write this code in this way. ...
+categories: [Programming, .Net]
+---
 
-      	
-      	
-  Instead of writing?
-  <pre class="c#" name="code">public void Delete(IEnumerable objectsToDelete)<br />{    <br />    if (objectsToDelete == null)<br />    {<br />        throw new ArgumentNullException(&amp;quot;objectsToDelete&amp;quot;);<br />    }<br />    //More code here<br />}</pre>
+Every time I wrote validation this code I think, I should write a library to do this for me. So I went ahead and wrote this simple class. The idea is to use the Introduce Assertion Refactoring in this cases and write this code in this way.
 
-Now you can write
+Instead of writing?
 
+{% highlight aspx-cs %}	
+	public void Delete(IEnumerable objectsToDelete)
+	{
+		if (objectsToDelete == null)
+		{
+			throw new ArgumentNullException("objectsToDelete");
+		}
+		//More code here
+	}
+{% endhighlight %}
 
-<pre class="c#" name="code">public void Delete(IEnumerable objectsToDelete)<br />{<br />    Check.That(objectsToDelete).IsNotNull();<br />    //Mode code here<br />}</pre>
+Now you can write
 
-If the parameter is null an Exception of type NullReferenceException will be thrown. Of course, this is not the right Exception in this context, so you should do this.
+{% highlight aspx-cs %}
+	public void Delete(IEnumerable objectsToDelete)
+	{
+		Check.That(objectsToDelete).IsNotNull();
+		//Mode code here
+	}
+{% endhighlight %}
 
+If the parameter is null an Exception of type NullReferenceException will be thrown. Of course, this is not the right Exception in this context, so you should do this.
 
-<pre class="c#" name="code">public void Delete(IEnumerable objectsToDelete)<br />{<br />    Check.That(objectsToDelete)<br />        .IsNotNull(new ArgumentNullException(&amp;quot;objectsToDelete&amp;quot;));<br />    //More code here<br />}</pre>
+{% highlight aspx-cs %}
+	public void Delete(IEnumerable objectsToDelete)
+	{
+		Check.That(objectsToDelete)
+			.IsNotNull(new ArgumentNullException("objectsToDelete"));
+			//More code here
+		}
+{% endhighlight %}
 
-Of course, I may want to check more than one thing at a time, and I may not want to throw an Exception but look at the errors and pass them all at once to a higher tier, maybe a UI so the user can fix the problem.
-  <br />In that case I can use it like this.
+Of course, I may want to check more than one thing at a time, and I may not want to throw an Exception but look at the errors and pass them all at once to a higher tier, maybe a UI so the user can fix the problem. In that case I can use it like this.
 
+{% highlight aspx-cs %}
+	public void Delete(IEnumerable objectsToDelete)
+	{
+		//I want to make sure that the IEnumerable is not null
+		//And I also want to check that is not an empty collection
+		var errors = Check.That(objectsToDelete, "objectsToDelete")
+				.IsNotNull().CountMoreThan(0).Errors;
+				//More code here
+	}
+{% endhighlight %}
 
-<pre class="c#" name="code">public void Delete(IEnumerable objectsToDelete)<br />{<br />    <br />    //I want to make sure that the IEnumerable is not null<br />    //And I also want to check that is not an empty collection<br /><br />    var errors = Check.That(objectsToDelete, &amp;quot;objectsToDelete&amp;quot;)<br />        .IsNotNull().CountMoreThan(0).Errors;<br /><br /><br /><br />    //More code here<br />}</pre>
-
-At this moment the Check class has methods to validate String, IEnumerable, IEnumerable&amp;lt;T&amp;gt;, object, int, decimal, double and DateTime.
-  <br />This is not complete by any stretch of the imagination but I like it so far.
-
+At this moment the Check class has methods to validate String, IEnumerable, IEnumerable<T>, object, int, decimal, double and DateTime. This is not complete by any stretch of the imagination but I like it so far.
 
 You can download a Release of my base library on <a href="http://code.google.com/p/latrompa/downloads/list" target="_blank">Google code</a>.
 
-  <br />You can also download the code from: <a title="http://code.google.com/p/latrompa/source/checkout" href="http://code.google.com/p/latrompa/source/checkout">http://code.google.com/p/latrompa/source/checkout</a>
+You can also download the code from: <a title="http://code.google.com/p/latrompa/source/checkout" href="http://code.google.com/p/latrompa/source/checkout">http://code.google.com/p/latrompa/source/checkout</a>

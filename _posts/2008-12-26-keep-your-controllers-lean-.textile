@@ -1,29 +1,37 @@
 ---
 layout: post
 title: Keep your Controllers lean.
-summary:    I was going to write a post about this but my thoughts are exactly the same as Fredrik Normen’s.   For example, one thing that creeps me out is seen think like this in the Controller.       23 public ActionResult Index()      24 {      25 va...
+summary: I was going to write a post about this but my thoughts are exactly the same as Fredrik Normen’s.   For example, one thing that creeps me out is seen think like this in the Controller.
 categories: [Frameworks, Patterns, Programming]
----
-
-  I was going to write a post about this but my thoughts are exactly the same as <a href="http://weblogs.asp.net/fredriknormen/archive/2008/12/01/controllers-in-the-mvc-pattern-is-not-a-replacement-for-business-logic-layer.aspx" target="_blank">Fredrik Normen’s.</a>
-  For example, one thing that creeps me out is seen think like this in the Controller.
-  <div style="font-size: 10pt; background: white; color: black; font-family: courier new">   <p style="margin: 0px"><span style="color: #2b91af"> 23</span> <span style="color: blue">public</span> <span style="color: #2b91af">ActionResult</span> Index()
-    <p style="margin: 0px"><span style="color: #2b91af"> 24</span> {
-    <p style="margin: 0px"><span style="color: #2b91af"> 25</span> <span style="color: blue">var</span> repository = <span style="color: #2b91af">IocContainer</span>.GetClassInstance&amp;lt;<span style="color: #2b91af">IRepository</span>&amp;gt;();
-    <p style="margin: 0px"><span style="color: #2b91af"> 26</span> <span style="color: blue">var</span> members = repository.GetAll&amp;lt;<span style="color: #2b91af">Member</span>&amp;gt;();
-    <p style="margin: 0px"><span style="color: #2b91af"> 27</span> ViewData[<span style="color: #a31515">&amp;quot;members&amp;quot;</span>] = members;
-    <p style="margin: 0px"><span style="color: #2b91af"> 28</span> <span style="color: blue">return</span> View();
-    <p style="margin: 0px"><span style="color: #2b91af"> 29</span> }
- </div>  Or even worse:
-  <div style="font-size: 10pt; background: white; color: black; font-family: courier new">   <p style="margin: 0px"><span style="color: #2b91af"> 45</span> <span style="color: blue">public</span> <span style="color: #2b91af">ActionResult</span> CreateMember()
-    <p style="margin: 0px"><span style="color: #2b91af"> 46</span> {
-    <p style="margin: 0px"><span style="color: #2b91af"> 47</span> <span style="color: blue">var</span> member = <span style="color: blue">new</span> <span style="color: #2b91af">Member</span>();
-    <p style="margin: 0px"><span style="color: #2b91af"> 48</span> member.Hydrate(Request.Form);
-    <p style="margin: 0px"><span style="color: #2b91af"> 49</span>
-    <p style="margin: 0px"><span style="color: #2b91af"> 50</span> <span style="color: blue">if</span> (member.Email == <span style="color: blue">null</span>)
-    <p style="margin: 0px"><span style="color: #2b91af"> 51</span> {
-    <p style="margin: 0px"><span style="color: #2b91af"> 52</span> ViewData.ModelState.AddModelError(<span style="color: #a31515">&amp;quot;Email&amp;quot;</span>, <span style="color: #a31515">&amp;quot;Email can't be empty&amp;quot;</span>);
-    <p style="margin: 0px"><span style="color: #2b91af"> 53</span> }
-    <p style="margin: 0px"><span style="color: #2b91af"> 54</span> <span style="color: green">//More code here</span>
-    <p style="margin: 0px"><span style="color: #2b91af"> 55</span> }
- </div>  I don’t think that the controller should ever touch the repository and of course it shouldn’t do any type of validation besides data entry from the view.
+---
+
+I was going to write a post about this but my thoughts are exactly the same as <a href="http://weblogs.asp.net/fredriknormen/archive/2008/12/01/controllers-in-the-mvc-pattern-is-not-a-replacement-for-business-logic-layer.aspx" target="_blank">Fredrik Normen’s.</a>
+
+For example, one thing that creeps me out is seen think like this in the Controller.
+
+{% highlight aspx-cs %}
+	public ActionResult Index()
+	{
+		var repository = IocContainer.GetClassInstance<IRepository>();
+		var members = repository.GetAll<Member>();
+		ViewData["members"] = members;
+		return View();
+	}
+{% endhighlight %} 
+ 
+Or even worse:
+
+{% highlight aspx-cs %}
+	public ActionResult CreateMember()
+	{
+		var member = new Member();
+		member.Hydrate(Request.Form);
+		if (member.Email == null)
+		{
+			ViewData.ModelState.AddModelError("Email", "Email can't be empty");
+		}
+		//More code here
+	}
+{% endhighlight %}
+ 
+I don’t think that the controller should ever touch the repository and of course it shouldn’t do any type of validation besides data entry from the view.
