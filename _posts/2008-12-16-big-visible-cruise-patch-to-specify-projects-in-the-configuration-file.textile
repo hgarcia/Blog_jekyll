@@ -1,23 +1,27 @@
 ---
 layout: post
 title: Big Visible Cruise patch to specify projects in the configuration file
-summary:    Ok, the patch can be downloaded from the Issue tracker of the project. This support the following notation in the app.config.   &amp;lt;setting name=&amp;quot;IncludedProjects&amp;quot; serializeAs=&amp;quot;Xml&amp;quot;&amp;gt;  &amp;lt;valu...
+summary: Download the patch
 categories: [Continuous Integration, Tools]
----
-</arrayofstring></value></setting>
-  Ok, the patch can be downloaded from the <a href="http://code.google.com/p/bigvisiblecruise/issues/detail?id=32" target="_blank">Issue tracker of the project</a>. This support the following notation in the app.config.
-  <pre class="xml" name="code">&amp;lt;setting name=&amp;quot;IncludedProjects&amp;quot; serializeAs=&amp;quot;Xml&amp;quot;&amp;gt;<br />  &amp;lt;value&amp;gt;<br />    &amp;lt;ArrayOfString xmlns:xsi=&amp;quot;http://www.w3.org/2001/XMLSchema-instance&amp;quot;<br />      xmlns:xsd=&amp;quot;http://www.w3.org/2001/XMLSchema&amp;quot;&amp;gt;<br />    &amp;lt;string&amp;gt;CCNet&amp;lt;/string&amp;gt;<br />    &amp;lt;string&amp;gt;Ivy.NET&amp;lt;/string&amp;gt;<br />    &amp;lt;/ArrayOfString&amp;gt;<br />  &amp;lt;/value&amp;gt;<br />&amp;lt;/setting&amp;gt;</pre>
+---
 
-Where each &amp;lt;string&amp;gt; is the name of a project. The project names are case sensitive. If you set a RegEx to filter the projects, the expression will be evaluated first.
+Ok, the patch can be downloaded from the <a href="http://code.google.com/p/bigvisiblecruise/issues/detail?id=32" target="_blank">Issue tracker of the project</a>. 
 
+This support the following notation in the app.config.
 
-This patch have been done over the Revision 125 of the Trunk.
+{% highlight xml %}
+<setting name="IncludedProjects" serializeAs="Xml">
+	<value>
+		<ArrayOfString xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+			<string>CCNet</string>
+			<string>Ivy.NET</string>
+		</ArrayOfString>
+	</value>
+</setting>
+{% endhighlight %}
 
+Where each <string> is the name of a project. The project names are case sensitive. If you set a RegEx to filter the projects, the expression will be evaluated first.
 
-Enjoy!
+This patch have been done over the Revision 125 of the Trunk.
 
-
-
-
-
-<div class="wlWriterEditableSmartContent" id="scid:0767317B-992E-4b12-91E0-4F059A8CECA8:acac02fd-976f-43fd-9ea3-f409aade013f" style="padding-right: 0px; display: inline; padding-left: 0px; float: none; padding-bottom: 0px; margin: 0px; padding-top: 0px">Technorati Tags: <a href="http://technorati.com/tags/Cruise+Control" rel="tag">Cruise Control</a>,<a href="http://technorati.com/tags/Continuous+Integration" rel="tag">Continuous Integration</a></div>
+Enjoy!
