@@ -1,24 +1,99 @@
 ---
 layout: post
 title: Using tests as a learning tool
-summary:   I try to practice TDD most of the time these days. I don’t write new code without a test first. A few years ago write the test first was something that I understood from an intellectual point of view but it sounded impractical. Today I can im...
+summary: I try to practice TDD most of the time these days. I don’t write new code without a test first. A few years ago write the test first was something that I understood from an intellectual point of view but it sounded impractical.
 categories: [Methodology, Programming, Testing]
----
-
- I try to practice TDD most of the time these days. I don’t write new code without a test first. A few years ago write the test first was something that I understood from an intellectual point of view but it sounded impractical. Today I can imagine going back to my old practices.
- So, now I’m one of those advocates that try to convert other developers to the practice. I try to draw from my experience and I try to address their concerns as a challenge to discover new practices and improve mines.
- Recently I came across this challenge. How you can write your test first when you are learning a new API of a library? If you practice TDD you will said something like, but that s the perfect scenario to use TDD! Now, that’s true but is not immediately evident to a developer that is just starting on the practice.
- What we need to understand is that sometimes we can use the test as a learning tool. We also need to understand that we will refactor the test code. We can even use code that we originally used in our test and move that into our implementation.
- Today I had the perfect example: we needed to convert a string into a DateTime object, the string is in the following format: 2009-01-07-23-15-09. 
- Our first implementation looked something like this:
-<pre class="c#:collapse" name="code">//The unit test<br>[Test]<br>public void Check_that_when_converting_a_string_time_we_have_the_right_date()<br>}<br>    <br><br>    var controlDate = new DateTime(2009,01,07,23,15,09);<br>    var date = GetDateFromString("2009-01-07-23-15-09");<br><br>    Assert.That(controlDate, Is.EqualTo(date));<br>}<br><br>//And the implementation<br>public DateTime GetDateFromString(string date){</pre><pre class="c#:collapse" name="code">    var date = "2009-01-07-23-15-09".Split('-');<br><br>    return new DateTime(Convert.ToInt(dateParts[0]),<br>                        Convert.ToInt(dateParts[1]),<br>                        Convert.ToInt(dateParts[2]),<br>                        Convert.ToInt(dateParts[3]),<br>                        Convert.ToInt(dateParts[4]),<br>                        Convert.ToInt(dateParts[5]));<br><br>}</pre>
-This worked but was messy, and besides adding some more test will make it fail easily. For example passing a malformed string. In those cases we wanted to have an exception raised that was meaningful. We imagine that we should be able to use DateTime.ParseExact() but we didn’t really know how it worked. O we changed our test like this.
-<pre class="c#:collapse" name="code">//The unit test<br>[Test]<br>public void Check_that_when_converting_a_string_time_we_have_the_right_date()<br>}<br>    //Some code to get the cultureinfo<br><br>    var controlDate = new DateTime(2009,01,07,23,15,09);<br>    var date = DateTime.ParseExact("2009-01-07-23-15-09",”yyyy-MM-dd-hh-mm-ss”,culture);<br><br>    Assert.That(controlDate, Is.EqualTo(date));<br>}<br></pre>
-And the test to check for the exception
-<pre class="c#:collapse" name="code">//The unit test<br>[Test]<br>[ExpectedException(typeof(exceptionType)]<br>public void Check_that_when_converting_a_string_time_we_have_the_right_date()<br>}<br>    //Some code to get the cultureinfo<br><br>    var date = DateTime.ParseExact("29-01-07-23-15-09",”yyyy-MM-dd-hh-mm-ss”,culture);<br><br>}<br></pre>
-We run the test and we see it pass, so them we just copy and paste the code into the implementation of the client function and we change the test back.
-<pre class="c#:collapse" name="code">//The unit test<br>[Test]<br>public void Check_that_when_converting_a_string_time_we_have_the_right_date()<br>}<br>    <br><br>    var controlDate = new DateTime(2009,01,07,23,15,09);<br>    var date = GetDateFromString("2009-01-07-23-15-09");<br><br>    Assert.That(controlDate, Is.EqualTo(date));<br>}</pre><pre class="c#:collapse" name="code">//And the test for the Exception</pre><pre class="c#:collapse" name="code">//The unit test<br>[Test]<br>[ExpectedException(typeof(exceptionType)]<br>public void Check_that_when_converting_a_string_time_we_have_the_right_date()<br>}<br><br><br>    var date = GetDateFromString("29-01-07-23-15-09”);<br><br>}<br></pre><pre class="c#:collapse" name="code"><br><br>//And the implementation<br>public DateTime GetDateFromString(string date){</pre>
-<blockquote><pre class="c#:collapse" name="code">//Some code to get the cultureinfo<br>return DateTime.ParseExact("2009-01-07-23-15-09",”yyyy-MM-dd-hh-mm-ss”,culture);</pre></blockquote>}<pre></pre>
-This is a trivial example and you may think that we probably should change the code in the implementation right away, and that may be ok in this case, but using this practice all the time make it natural later on when you have to deal with a more complex API, like using some third party component.
+---
 
-In a future post I will show how to use tests as a debugging tool that will help you to fix problems and ensure they don’t show up again.
+I try to practice TDD most of the time these days. I don’t write new code without a test first. A few years ago write the test first was something that I understood from an intellectual point of view but it sounded impractical. Today I can imagine going back to my old practices.
+
+So, now I’m one of those advocates that try to convert other developers to the practice. I try to draw from my experience and I try to address their concerns as a challenge to discover new practices and improve mines.
+
+Recently I came across this challenge. How you can write your test first when you are learning a new API of a library? If you practice TDD you will said something like, but that s the perfect scenario to use TDD! Now, that’s true but is not immediately evident to a developer that is just starting on the practice.
+
+What we need to understand is that sometimes we can use the test as a learning tool. We also need to understand that we will refactor the test code. We can even use code that we originally used in our test and move that into our implementation.
+
+Today I had the perfect example: we needed to convert a string into a DateTime object, the string is in the following format: 2009-01-07-23-15-09. 
+
+Our first implementation looked something like this:
+
+{% highlight aspx-cs %}
+	//The unit test
+	[Test]
+	public void Check_that_when_converting_a_string_time_we_have_the_right_date()
+	{
+		var controlDate = new DateTime(2009,01,07,23,15,09);
+		var date = GetDateFromString("2009-01-07-23-15-09");
+		Assert.That(controlDate, Is.EqualTo(date));
+	}
+	//And the implementation
+	
+	public DateTime GetDateFromString(string date)
+	{
+		var date = "2009-01-07-23-15-09".Split('-');
+		return new DateTime(Convert.ToInt(dateParts[0]),
+			Convert.ToInt(dateParts[1]),
+			Convert.ToInt(dateParts[2]),
+			Convert.ToInt(dateParts[3]),
+			Convert.ToInt(dateParts[4]),
+			Convert.ToInt(dateParts[5]));
+	}
+{% endhighlight %}
+
+This worked but was messy, and besides adding some more test will make it fail easily. For example passing a malformed string. In those cases we wanted to have an exception raised that was meaningful. We imagine that we should be able to use DateTime.ParseExact() but we didn’t really know how it worked. So we changed our test like this.
+
+{% highlight aspx-cs %}
+	//The unit test
+	[Test]
+	public void Check_that_when_converting_a_string_time_we_have_the_right_date()
+	{
+		//Some code to get the cultureinfo
+		var controlDate = new DateTime(2009,01,07,23,15,09);
+		var date = DateTime.ParseExact("2009-01-07-23-15-09","yyyy-MM-dd-hh-mm-ss",culture);
+		Assert.That(controlDate, Is.EqualTo(date));
+	}
+{% endhighlight %}
+
+And the test to check for the exception
+
+{% highlight aspx-cs %}
+	//The unit test
+	[Test]
+	[ExpectedException(typeof(exceptionType)]
+	public void Check_that_when_converting_a_string_time_we_have_the_right_date()
+	{
+		//Some code to get the cultureinfo
+		var date = DateTime.ParseExact("29-01-07-23-15-09","yyyy-MM-dd-hh-mm-ss",culture);
+	}
+{% endhighlight %}
+
+We run the test and we see it pass, so them we just copy and paste the code into the implementation of the client function and we change the test back.
+
+{% highlight aspx-cs %}
+	//The unit test
+	[Test]
+	public void Check_that_when_converting_a_string_time_we_have_the_right_date()
+	{
+		var controlDate = new DateTime(2009,01,07,23,15,09);
+		var date = GetDateFromString("2009-01-07-23-15-09");
+		Assert.That(controlDate, Is.EqualTo(date));
+	}
+	
+	//And the test for the Exception
+	//The unit test
+	[Test]
+	[ExpectedException(typeof(exceptionType)]
+	public void Check_that_when_converting_a_string_time_we_have_the_right_date()
+	{
+		var date = GetDateFromString("29-01-07-23-15-09");
+	}
+	
+	//And the implementation
+	public DateTime GetDateFromString(string date)
+	{
+		//Some code to get the cultureinfo
+		return DateTime.ParseExact("2009-01-07-23-15-09","yyyy-MM-dd-hh-mm-ss",culture);
+	}
+{% endhighlight %}
+	
+This is a trivial example and you may think that we probably should change the code in the implementation right away, and that may be ok in this case, but using this practice all the time make it natural later on when you have to deal with a more complex API, like using some third party component.
