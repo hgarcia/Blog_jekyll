@@ -48,6 +48,7 @@ Then I added this lines of code to alternate the style for each row in the summa
 <xsl:if test="position() mod 2 = 0">
 	<xsl:attribute name="class">section-oddrow</xsl:attribute>
 </xsl:if>
+{% endhighlight %}
 
 This code needs to be added after opening the table row (tr element) inside the for-each loop and before creating the cell (td element) or you will have an error on runtime when the server tries to generated the report. 
 
