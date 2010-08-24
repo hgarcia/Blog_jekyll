@@ -2,6 +2,7 @@
 layout: post
 title: .Net simple Templating system (2)
 summary: There was something that I wasn't happy with my template system, so I decided to improved it. The algorithm used was wrong, I was checking for all the properties and/or fields of the object instead of check for the variables in the template first...
+categories: [Programming]
 ---
 
 There was something that I wasn't happy with my template system, so I decided to improved it. The algorithm used was wrong, I was checking for all the properties and/or fields of the object instead of check for the variables in the template first.

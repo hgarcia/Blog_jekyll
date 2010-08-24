@@ -1,7 +1,8 @@
 ---
 layout: post
 title: LINQ to search arrays and Auto-implemented properties.
-summary: This is a cool example I haven't see before of using LINQ to query and filter an array. http-//microsoft.apress.com/article/74080/coming-of-age. I like this use of LINQ, it shows the power of the language and what I think is a much useful "usage"...
+summary: This is a cool example I haven't see before of using LINQ to query and filter an array. I like this use of LINQ, it shows the power of the language and what I think is a much useful "usage"...
+categories: [Programming, .Net]
 ---
 
 This is a cool example I haven't see before of using LINQ to query and filter an array.

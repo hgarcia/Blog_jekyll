@@ -2,6 +2,7 @@
 layout: post
 title: The same template in the client and server side.
 summary: Prototype is one of the most popular javascript libraries out there and one of the features I really like is the template implementation. When you create an Ajax application there are multiple opportunities to use templates in the client side.
+categories: [Programming, JavaScript, .Net]
 ---
 
 <a href="http://www.prototypejs.org/">Prototype </a>is one of the most popular javascript libraries out there and one of the features I really like is the template implementation.

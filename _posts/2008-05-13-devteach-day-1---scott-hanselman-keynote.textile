@@ -1,7 +1,8 @@
 ---
 layout: post
 title: DevTeach day 1 - Scott Hanselman keynote
-summary: Following to yesterday presentation at the TVBUG, Scott Hanselman gave the keynote on Data Services and Dynamic Data. Both of this two (products?, projects?, solutions?) are focus in different ways to provide access to your data.Dynamic data allo...
+summary: Following to yesterday presentation at the TVBUG, Scott Hanselman gave the keynote on Data Services and Dynamic Data. Both of this two (products?, projects?, solutions?) are focus in different ways to provide access to your data.
+categories: [General]
 ---
 
 Following to yesterday presentation at the TVBUG, Scott Hanselman gave the keynote on <a href="http://astoria.mslivelabs.com/">Data Services</a> and <a href="http://blogs.msdn.com/davidebb/default.aspx">Dynamic Data</a>.

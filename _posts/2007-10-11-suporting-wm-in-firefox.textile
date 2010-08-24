@@ -2,6 +2,7 @@
 layout: post
 title: Suporting WM in Firefox
 summary: WM 11 and Firefox don't like each other very much. The infamous squishy bug is plaging the web. It's almost imposible to find a custom player around the work as it's suppose to with WM embeded in Firefox.
+categories: [General, Programming]
 ---
 
 WM 11 and Firefox don't like each other very much.

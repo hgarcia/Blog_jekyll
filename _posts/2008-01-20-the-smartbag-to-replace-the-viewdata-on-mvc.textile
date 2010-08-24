@@ -2,6 +2,7 @@
 layout: post
 title: The SmartBag to replace the ViewData on MVC
 summary: Jeffrey Palermo posted about replacing the ViewData on the MVC framework with a generic container called SmartBag. The advantage is that the container will return an object of a given type, so no more casting and also no more using string keys...
+categories: [Programming, .Net]
 ---
 
 <a href="http://codebetter.com/blogs/jeffrey.palermo/archive/2008/01/19/introducing-the-smartbag-for-asp-net-mvc-and-soliciting-feedback.aspx">Jeffrey Palermo</a> posted about replacing the ViewData on the MVC framework with a generic container called SmartBag.

@@ -2,6 +2,7 @@
 layout: post
 title: ALT.NET
 summary: I'm trilled to discover that I'm not crazy and that my search and adoption of alternative tools (alternatives to the Microsoft tools) to develop in .net is a philosophy adopted not only by me but for a lot of people. It even has a name ALT.NET.
+categories: [General, .Net]
 ---
 
 I'm trilled to discover that I'm not crazy and that my search and adoption of alternative tools (alternatives to the Microsoft tools) to develop in .net is a philosophy adopted not only by me but for a lot of people.

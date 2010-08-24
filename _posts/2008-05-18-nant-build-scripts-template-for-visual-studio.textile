@@ -1,7 +1,8 @@
 ---
 layout: post
 title: Nant build scripts template for Visual Studio
-summary: I was creating for the 10th time today a nant build file from Visual Studio when I came to the realization that I needed to automate the process a bit more. So I created an item template to include build files.  You just need to copy this zip fil...
+summary: I was creating for the 10th time today a nant build file from Visual Studio when I came to the realization that I needed to automate the process a bit more. So I created an item template to include build files.  You just need to copy this zip file...
+categories: [Programming, Tools, .Net]
 ---
 
 I was creating for the 10th time today a nant build file from Visual Studio when I came to the realization that I needed to automate the process a bit more. So I created an item template to include build files. You just need to copy this <a href="../../../images/posts/nant-build-file.zip" target="_blank">zip file</a> into the ItemTemplate folder inside your Templates. Usually is My Documents\Visual Studio 2008\Templates\ItemTemplates  

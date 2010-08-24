@@ -2,6 +2,7 @@
 layout: post
 title: IIS 7.0 and classic ASP can't create folder (or upload files).
 summary: I was helping a colleague at work to debug an old classic asp script that uploads an image to the server, create some folders if they don't exist and copy the image on those folders.He was having a permissions denied error.
+categories: [Programming]
 ---
 
 I was helping a colleague at work to debug an old classic asp script that uploads an image to the server, create some folders if they don't exist and copy the image on those folders.<br/>He was having a permissions denied error. 

@@ -2,6 +2,7 @@
 layout: post
 title: Heroes happen here - Toronto
 summary: I'm not always exited about Microsoft launches but the 2008 series (Server, Sql, VS) is quite good. So I went to this event with the highest expectation, hoping, for once, to be able to learn something. I chose the Architect track...
+categories: [General]
 ---
 
 I'm not always exited about Microsoft launches but the 2008 series (Server, Sql, VS) is quite good. So I went to this event with the highest expectation, hoping, for once, to be able to learn something.

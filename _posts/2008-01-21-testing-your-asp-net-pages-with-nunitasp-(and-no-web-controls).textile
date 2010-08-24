@@ -1,7 +1,8 @@
 ---
 layout: post
 title: Testing your asp.net pages with NunitAsp (and no web controls)
-summary: Testing is fundamental to get your code into shape and to be sure that what you are doing is behaving as expected. New methodologies like Test Driven Design (TDD) point to that goal. We (developers) are lazy and very self confident, we normally w...
+summary: Testing is fundamental to get your code into shape and to be sure that what you are doing is behaving as expected. New methodologies like Test Driven Design (TDD) point to that goal.
+categories: [Programming, Testing, Tools, .Net]
 ---
 
 Testing is fundamental to get your code into shape and to be sure that what you are doing is behaving as expected. New methodologies like Test Driven Design (TDD) point to that goal. We (developers) are lazy and very self confident, we normally write the code and run it a few times without paying a lot of attention of the requirements, if the code works as we think it should we are happy and move to code something else (or write some blog post :-) ).

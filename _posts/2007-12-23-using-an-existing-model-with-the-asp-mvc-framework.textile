@@ -1,10 +1,11 @@
 ---
 layout: post
 title: Using an existing Model with the ASP.MVC framework
-summary: I have been reading a lot about how this framework will better be used in brand new developments. I agree that you won't migrate an existing site to this framework if the existing site is working, but I'm worry that we are missing another opportu...
+summary: I have been reading a lot about how this framework will better be used in brand new developments. I agree that you won't migrate an existing site to this framework.
+categories: [Frameworks, Patterns, Programming]
 ---
 
-I have been reading a lot about how this framework will better be used in brand new developments. I agree that you won't migrate an existing site to this framework if the existing site is working, but I'm worry that we are missing another opportunity to use this framework and that is leverage existing models an business logic.
+I have been reading a lot about how this framework will better be used in brand new developments. I agree that you won't migrate an existing site to this framework if the existing site is working, but I'm worry that we are missing another opportunity to use this framework.
 
 Most examples keep using LINQ TO SQL to generate the model from scratch and that may give the false impression that you need to generate the model that way.<br/>I will show how to use an existing model with the MVC, in this case a DooDads DAL.
 

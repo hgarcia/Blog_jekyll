@@ -2,6 +2,7 @@
 layout: post
 title: The importance of code review
 summary: I have been working in different companies where the practice of an Agile methodology is in place, but in most of them the part that is always left behind is pair programming and/or code review.
+categories: [Methodology, Programming]
 ---
 
 I have been working in different companies where the practice of an Agile methodology is in place, but in most of them the part that is always left behind is <a href="http://www.extremeprogramming.org/rules/pair.html">pair programming</a> and/or <a href="http://en.wikipedia.org/wiki/Code_review">code review</a>.

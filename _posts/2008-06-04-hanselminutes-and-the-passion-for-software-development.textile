@@ -2,6 +2,7 @@
 layout: post
 title: Hanselminutes and the passion for software development
 summary: Yesterday I listened to show 115 of Scott Hanselman podcast "Hanselminutes", the title was "Finding passion for Software".
+categories: [Programming]
 ---
 
 Yesterday I listened to show 115 of <a href="http://www.hanselman.com/blog/" title="Scott Hanselman" target="_blank">Scott Hanselman</a> podcast <a href="http://www.hanselminutes.com/default.aspx?showID=133" title="Hanselminutes 115 - Finding Passion for Software" target="_blank">"Hanselminutes"</a>, the title was "Finding passion for Software". <br/>When I first got the link on my rss reader I wasn't sure If I even wanted to download it into my mp3 player, I have so much stuff that I listen in a weekly basics that sometimes I skip some episodes of podcast that I don't find relevant to my interests, but Scott Hanselman is that rare type of communicator that can make interesting very arid topics.

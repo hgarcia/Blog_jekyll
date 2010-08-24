@@ -1,7 +1,8 @@
 ---
 layout: post
 title: ASP.Net Development server in a custom port
-summary: During Scott's Hanselmann presentation on Dynamic Data at the TVBUG he show a little trick that I didn't know about and I want to show it here.It always annoy me that every time you click run ina a web application using VS it runs using the ASP.N...
+summary: During Scott's Hanselmann presentation on Dynamic Data at the TVBUG he show a little trick that I didn't know about and I want to show it here.It always annoy me that every time you click run in a web application using VS it runs using ...
+categories: [Programming, Testing, Tools]
 ---
 
 During Scott's Hanselmann presentation on Dynamic Data at the TVBUG he show a little trick that I didn't know about and I want to share here.

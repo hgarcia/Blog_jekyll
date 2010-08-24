@@ -2,6 +2,7 @@
 layout: post
 title: MVC framework in .NET by Microsoft
 summary: In the altnet conference the guys from Microsoft presented an MVC framework that will be released on the spring. It promise to be something really good, it's seems to be so flexible that you can plug into it whatever framework you are used to.
+categories: [Frameworks, Patterns, .Net]
 ---
 
 In the altnet conference the guys from Microsoft presented an MVC framework that will be released on the spring.

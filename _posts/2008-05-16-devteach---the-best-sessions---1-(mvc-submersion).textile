@@ -2,6 +2,7 @@
 layout: post
 title: DevTeach - The best sessions - 1 (MVC submersion)
 summary: Jeffrey Palermo gave a great presentation about the ASP.NET MVC framework. If you read my blog you know that MVC is kind of an obsession with me. The presentation used the codecampserver project that use the last drop of the code for MVC
+categories: [Architecture, Frameworks, Patterns]
 ---
 
 <a href="http://codebetter.com/blogs/jeffrey.palermo/default.aspx" title="Jeffrey Palermo">Jeffrey Palermo</a> gave a great presentation about the ASP.NET MVC framework.

@@ -2,6 +2,7 @@
 layout: post
 title: PartCover the Code Coverage tool for me
 summary: A free tool to do code coverage with a nice GUI for the developers to use, that can be run on the command prompt, that generates nice xml based reports (to integrate with your CC server) and best of all for me) that works fine with Static methods...
+categories: [Methodology, Testing, Tools, .Net]
 ---
 
 A free tool to do code coverage with a nice GUI for the developers to use, that can be run on the command prompt, that generates nice xml based reports (to integrate with your CC server) and best of all for me) that works fine with Static methods.

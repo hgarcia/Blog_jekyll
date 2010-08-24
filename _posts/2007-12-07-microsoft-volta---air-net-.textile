@@ -2,6 +2,7 @@
 layout: post
 title: Microsoft Volta - AIR.NET?
 summary: I just came across Volta in Microsoft live labs. I haven't downloaded or anything but my first impression is that this try to be some kind of AIR.
+categories: [Frameworks, General]
 ---
 
 I just came across this: <a target="_blank" href="http://labs.live.com/volta/">http://labs.live.com/volta/.</a>

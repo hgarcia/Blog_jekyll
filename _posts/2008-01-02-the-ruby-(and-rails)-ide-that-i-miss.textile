@@ -2,6 +2,7 @@
 layout: post
 title: The Ruby (and Rails) IDE that I miss
 summary: I keep searching for the right IDE for my Ruby and Ruby on Rails adventures. I keep changing and playing around with the ones I had and lately I keep using NetBeans 6.0. Yesterday I decide to try again and after looking at The usual suspects, I found Eclipse for Rails...
+categories: [Programming, Tools, Ruby]
 ---
 
 I keep searching for the right IDE for my Ruby and Ruby on Rails adventures. I keep changing and playing around with the ones I had and lately I keep using NetBeans 6.0.

@@ -2,6 +2,7 @@
 layout: post
 title: Ajax Hacks
 summary: I really like the Hacks series form O'Reilly, these are very simple references books. They present a problem and a solution in the form of quick articles and they are usually based on common issues for that technology.
+categories: [Books, Programming]
 ---
 
 I really like the <a target="_blank" href="http://www.oreilly.com/catalog/ajaxhks/">Hacks </a>series form <a target="_blank" href="http://www.oreilly.com/">O'Reilly</a>, these are very simple references books.

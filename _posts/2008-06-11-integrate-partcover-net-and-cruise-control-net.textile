@@ -2,6 +2,115 @@
 layout: post
 title: Integrate PartCover.Net and Cruise Control.Net
 summary: A few months ago I mentioned that I was using PartCover.Net to measure test coverage in my projects. I have been really busy but I decided that this week I was going to integrate the reports with CC.Net. Cruise Control ships with NCover support o...
-categories: [Continuous Integration, Methodology, Testing, Tools]
----
-A few months ago I mentioned that I was using PartCover.Net to measure test coverage in my projects. I have been really busy but I decided that this week I was going to integrate the reports with CC.Net. Cruise Control ships with NCover support out of the box but it's also very easy to integrate other reports as far as they are in xml format and you know (or have) an xml stylesheet to generate html from the report.Partcover comes with two xslt files one to report results by assembly and a second one to report results by class.To use this files in CC.Net you need to make a minor change on them or they don't work.Let start with the class.report.xslt file.Open the file using your favorite text editor (PSPad anybody?) and look for this line:&amp;lt;xsl:for-each select="/PartCoverReport/type"&amp;gt;Change it to:&amp;lt;xsl:for-each select="//PartCoverReport/type"&amp;gt;Notice the double back slash, this change is needed because the way of CC.Net works is merging all the reports for all your tool together in a big xml file, so at that moment PartCoverReport is not the root element but a child element of the merged xml file.Open the Assembly.report.xslt file and add the "extra" back slash in any mention to /PartCoverReport.<h3>Configuring CC.Net</h3>Copy the modified xslt files into the stylesheets folder of your webdashboard install, usually CruiseControl.Net\webdashboard\xsl\I like to change the name of the files to indicate what report they affect, in this case I named PartCover.assembly.report.xsl and PartCover.class.report.xsl (notice that I drop the "t" from the extension, I don't thing this is important, but all the files in this folder have an xsl extension, this way I keep things consistent).Now we need to configure the reports plug ins, open dashboard.config usually at CruiseControl.Net\webdashborad and under &amp;lt;buildPlugins&amp;gt;   &amp;lt;buildReportBuildPlugin&amp;gt;      &amp;lt;xslFileNames&amp;gt;<br><br>You enter:&amp;lt;xslFile&amp;gt;xsl\PartCover.assembly.report.xsl&amp;lt;/xslFile&amp;gt;<br>This will add a summary on the build report page.<br>Then under &amp;lt;buildPlugins&amp;gt;   &amp;lt;buildReportBuildPlugin&amp;gt;······&amp;lt;buildLogBuildPlugin /&amp;gt;<br>Enter:&amp;lt;xslReportBuildPlugin description="PartCover Details" actionName="PartCoverDetailsBuildReport" xslFileName="xsl\PartCover.class.report.xsl" /&amp;gt;<br><br>This will add a link on the right navigation bar to see the details of the report for this build.You need to restart IIS for CC.Net to pick up the changes. <br><br>You will see a menu item to the PartCover report on the side.<br><br><img src="../../../images/posts/sp32-20080611-233002.png" alt="" border="0"><br><br>Clicking on the link you will see a simple report like this:<br><br><img src="../../../images/posts/sp32-20080611-233104.png" alt="" border="0"><br>(I had to hide the name of the company) but you will see the qualified name for the class.<h3>Running PartCover.Net from Nant</h3>I decided to Run PartCover from Nant using and exec task.This is an example:<br><br>&amp;lt;property name="partCoverReportPath" value="D:\BuildReports\PartCover\${projectName}\" /&amp;gt; <br>&amp;lt;property name="nunitExePath" value="D:/NUnit-2.4.7/bin/nunit-console.exe" /&amp;gt;  <br>&amp;lt;target name="testCoverage" depends="UnitTest" description="Measures how much code have been covered by the test"&amp;gt;<br>&amp;lt;mkdir dir="${partCoverReportPath}" unless="${directory::exists(partCoverReportPath)}"/&amp;gt;    <br>&amp;lt;exec program="D:/PartCover/PartCover.exe" failonerror="false"&amp;gt;        <br>&amp;lt;arg value="--target=${nunitExePath}" /&amp;gt;<br>&amp;lt;arg value="--target-work-dir=${buildPath}" /&amp;gt;<br>&amp;lt;arg value="--target-args=${projectTests}.dll" /&amp;gt;<br>&amp;lt;arg value="--include=[LaTrompa]*" /&amp;gt;<br>&amp;lt;arg value="--output=${partCoverReportPath}\${projectTests}-Results.xml" /&amp;gt;<br>&amp;lt;/exec&amp;gt;<br>&amp;lt;/target&amp;gt;<br><br>${projectName} is a property where I store the name of my project.<br>${projectTest} is a property where I store the name of the project that has all the unit test.<br>${buildPath} is a property where I store the build folder.<br><br>Let me explain each argument:<br>--target is the Path to your nunit-console.exe<br>--target-work-dir is the Path to the folder where the dll(s) that contains the test resides.<br>--target-args is the name of the dll<br>--include is used to indicate witch namespaces and classes to include in the report, in this cases I'm saying any class under the LaTrompa namespace<br>--output is where I want to save my report, this is the complete path with the name of the fileThere is another argument that is very useful<br>--exclude is used to ignore some classes or namespaces from the report.<h3>Adding the report to the build</h3>Now you need to configure your project in CC.Net to merge the report generated by PartCover.To do this, inside the project tag in your ccnet.config file lock for the publishers tag and add a new file under  &amp;lt;publishers&amp;gt;         &amp;lt;merge&amp;gt;             &amp;lt;files&amp;gt;                &amp;lt;file&amp;gt;D:\BuildReports\PartCover\LaTrompaLibraries\UnitTesting-Results.xml&amp;lt;/file&amp;gt; <br><br>......After doing this you can run a build for the project and your PartCover results will be added.<h3>Next steps</h3>I will try in a future post to modify the xsl to have more data, make it look nicer and integrate a bit more with the general look and feel of the CC.Net dashboard.I think that I will be able to provide detailed information per class and method and I will also see how can I modify the <a href="http://www.ridgway.co.za/archive/2007/04/22/dojo-based-cruisecontrol-statistics-graphs.aspx" target="_blank">Dojo based statistics plugin</a> to include this data.
+categories: [Continuous Integration, Methodology, Testing, Tools, .Net]
+---
+
+A few months ago I mentioned that I was using PartCover.Net to measure test coverage in my projects. I have been really busy but I decided that this week I was going to integrate the reports with CC.Net. 
+
+Cruise Control ships with NCover support out of the box but it's also very easy to integrate other reports as far as they are in xml format and you know (or have) an xml stylesheet to generate html from the report.
+
+Partcover comes with two xslt files one to report results by assembly and a second one to report results by class. To use this files in CC.Net you need to make a minor change on them or they won't work.
+
+Let start with the class.report.xslt file. Open the file using your favorite text editor (PSPad anybody?) and look for this line:
+
+{% highlight xlst %}
+<xsl:for-each select="/PartCoverReport/type">
+{% endhighlight %}
+
+Change it to:
+
+{% highlight xslt %}
+<xsl:for-each select="//PartCoverReport/type">
+{% endhighlight %}
+
+Notice the double back slash, this change is needed because the way of CC.Net works is merging all the reports for all your tool together in a big xml file, so at that moment PartCoverReport is not the root element but a child element of the merged xml file.
+
+Open the Assembly.report.xslt file and add the "extra" back slash in any mention to /PartCoverReport as well.
+
+<h3>Configuring CC.Net</h3> 
+Copy the modified xslt files into the stylesheets folder of your webdashboard install, usually CruiseControl.Net\webdashboard\xsl\, I like to change the name of the files to indicate what report they affect, in this case I named PartCover.assembly.report.xsl and PartCover.class.report.xsl (notice that I droped the "t" from the file extension, I don't thing this is important, but all the files in this folder have an xsl extension, this way I keep things consistent).
+
+Now we need to configure the reports plug ins, open dashboard.config usually at CruiseControl.Net\webdashborad and under 
+
+{% highlight xml %}
+<buildPlugins>   
+<buildReportBuildPlugin>      
+<xslFileNames>
+{% endhighlight %}
+
+You need to enter:
+
+{% highlight xml %}
+<xslFile>xsl\PartCover.assembly.report.xsl</xslFile>
+{% endhighlight %}
+
+This will add a summary on the build report page. Then under 
+
+{% highlight xml %}
+<buildPlugins>
+<buildReportBuildPlugin>
+<buildLogBuildPlugin />
+{% endhighlight %}
+
+Enter:
+
+{% highlight xml %}
+<xslReportBuildPlugin description="PartCover Details" actionName="PartCoverDetailsBuildReport" xslFileName="xsl\PartCover.class.report.xsl" />
+{% endhighlight %}
+
+This will add a link on the right navigation bar to see the details of the report for this build.You need to restart IIS for CC.Net to pick up the changes.
+
+You will see a menu item to the PartCover report on the side.
+
+<img src="../../../images/posts/sp32-20080611-233002.png" alt="PartCover report menu item" border="0"/>
+
+Clicking on the link you will see a simple report like this:
+
+<img src="../../../images/posts/sp32-20080611-233104.png" alt="PartCover class report" border="0"/>
+
+(I had to hide the name of the company) but you will see the qualified name for the class.
+
+<h3>Running PartCover.Net from Nant</h3>
+I decided to Run PartCover from Nant using and exec task. This is an example:
+
+{% highlight xml %}
+<property name="partCoverReportPath" value="D:\BuildReports\PartCover\${projectName}\" /> <property name="nunitExePath" value="D:/NUnit-2.4.7/bin/nunit-console.exe" />
+<target name="testCoverage" depends="UnitTest" description="Measures how much code have been covered by the test">
+<mkdir dir="${partCoverReportPath}" unless="${directory::exists(partCoverReportPath)}"/>
+<exec program="D:/PartCover/PartCover.exe" failonerror="false">
+<arg value="--target=${nunitExePath}" />
+<arg value="--target-work-dir=${buildPath}" />
+<arg value="--target-args=${projectTests}.dll" />
+<arg value="--include=[LaTrompa]*" />
+<arg value="--output=${partCoverReportPath}\${projectTests}-Results.xml" />
+</exec>
+</target>
+{% endhighlight %}
+
+${projectName} is the property where I store the name of my project. ${projectTest} is the property where I store the name of the project that has all the unit test. ${buildPath} is the property where I store the build folder.
+
+Let me explain each argument:
+
+--target is the Path to your nunit-console.exe
+--target-work-dir is the Path to the folder where the dll(s) that contains the test resides.
+--target-args is the name of the dll
+--include is used to indicate witch namespaces and classes to include in the report, in this cases I'm saying any class under the LaTrompa namespace
+--output is where I want to save my report, this is the complete path with the name of the file. 
+There is another argument that is very useful
+--exclude is used to ignore some classes or namespaces from the report.
+
+<h3>Adding the report to the build</h3>
+Now you need to configure your project in CC.Net to merge the report generated by PartCover.To do this, inside the project tag in your ccnet.config file lock for the publishers tag and add a new file under  
+
+{% highlight xml %}
+<publishers>
+<merge>
+<files>
+<file>D:\BuildReports\PartCover\LaTrompaLibraries\UnitTesting-Results.xml</file> 
+{% endhighlight %}
+
+After doing this you can run a build for the project and your PartCover results will be added.
+
+<h3>Next steps</h3>
+
+I will try in a future post to modify the xsl to have more data, make it look nicer and integrate a bit more with the general look and feel of the CC.Net dashboard.I think that I will be able to provide detailed information per class and method and I will also see how can I modify the <a href="http://www.ridgway.co.za/archive/2007/04/22/dojo-based-cruisecontrol-statistics-graphs.aspx" target="_blank">Dojo based statistics plugin</a> to include this data.
