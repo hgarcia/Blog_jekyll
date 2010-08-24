@@ -13,9 +13,30 @@ String has two very useful methods ToUpper() and ToLower(), but I found myself l
 
 <h3>Let's write down what we want to acomplish.</h3>
 
-<table style="width: 100%;" border="0" cellpadding="1" cellspacing="1">    <tbody>        <tr>            <td>            Method
-
-            </td>            <td>Definition</td>        </tr>        <tr>            <td>ToCamel()</td>            <td>Given a set of words separated by a space or an underscore return a lower Camel cased word. ex: Hernan Garcia -&amp;gt; hernanGarcia</td>        </tr>        <tr>            <td>ToPascal()</td>            <td>Like ToCamel but all words start with an uppercase</td>        </tr>        <tr>            <td>Capitalize()</td>            <td>Given a word or a phrase make the first letter of the phrase and the first letter after a point Upper case and all the rest lower case.</td>        </tr>        <tr>            <td>CapitalizeAll()</td>            <td>Like Capitalize but all words start with an uppercase letter.</td>        </tr>    </tbody></table>
+<table style="width: 100%;" border="0" cellpadding="1" cellspacing="1">    
+	<tbody>
+		<tr>
+			<td>Method</td>
+			<td>Definition</td>
+		</tr>
+		<tr>
+			<td>ToCamel()</td>
+			<td>Given a set of words separated by a space or an underscore return a lower Camel cased word. ex: Hernan Garcia -> hernanGarcia</td>
+		</tr>
+		<tr>
+			<td>ToPascal()</td>
+			<td>Like ToCamel but all words start with an uppercase</td>
+		</tr>
+		<tr>
+			<td>Capitalize()</td>
+			<td>Given a word or a phrase make the first letter of the phrase and the first letter after a point Upper case and all the rest lower case.</td>
+		</tr>
+		<tr>
+			<td>CapitalizeAll()</td>
+			<td>Like Capitalize but all words start with an uppercase letter.</td>
+		</tr>
+	</tbody>
+</table>
 
 <h3>ToCamel()</h3>
 
