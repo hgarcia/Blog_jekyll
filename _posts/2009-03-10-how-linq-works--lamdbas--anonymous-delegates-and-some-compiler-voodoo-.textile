@@ -1,124 +1,161 @@
 ---
 layout: post
 title: How Linq works, lamdbas, anonymous delegates and some compiler voodoo.
-summary:    If you have been following this blog, you probably saw a few posts about what’s going on behind closed doors once you submit your code to the mercy of the compiler. Specially some of the new Magic features of C#, like auto properties and nul...
-categories: [Programming]
----
-
-  If you have been following this blog, you probably saw a few posts about what’s going on behind closed doors once you submit your code to the mercy of the compiler. Specially some of the new Magic features of C#, like auto properties and nullable types.
-  The next logical step is to take a pick to how Linq works (or more specifically some of the implementation).
-  Let’s take a look at something very simple. A function that filters a list of strings by the initial character.
-  <div style="font-size: 10pt; background: white; color: black; font-family: courier new">   <div style="font-size: 10pt; background: white; color: black; font-family: courier new">     <p style="margin: 0px"><span style="color: blue">namespace</span> CodeBehind
-      <p style="margin: 0px">{
-      <p style="margin: 0px"> <span style="color: blue">public</span> <span style="color: blue">class</span> <span style="color: #2b91af">LookBehindLinq</span>
-      <p style="margin: 0px"> {
-      <p style="margin: 0px"> <span style="color: blue">public</span> <span style="color: #2b91af">IList</span>&amp;lt;<span style="color: blue">string</span>&amp;gt; UsernamesByStartingChar(<span style="color: #2b91af">IList</span>&amp;lt;<span style="color: blue">string</span>&amp;gt; userNames, <span style="color: blue">char</span> startingChar)
-      <p style="margin: 0px"> {
-      <p style="margin: 0px"> <span style="color: blue">return</span> userNames.Where(item =&amp;gt; item.ToLower().StartsWith(startingChar.ToString())).ToList();
-      <p style="margin: 0px"> }
-      <p style="margin: 0px"> }
-      <p style="margin: 0px">}
-   </div>    <p style="margin: 0px">
- </div>  We are using the extension method Where and we pass a lambda expression that reads something like, get each item, making it lowercase and check if starts with this character, if so put it in a new enumeration. Them we use another extension method to convert the enumeration to a List.
-  Let’s compile this and see what Reflector have to tell us about it.
-  Let’s look at the code as C#:
-  <div style="font-size: 10pt; background: white; color: black; font-family: courier new">   <p style="margin: 0px"><span style="color: blue">public</span> <span style="color: blue">class</span> <span style="color: #2b91af">LookBehindLinq</span>
-    <p style="margin: 0px">{
-    <p style="margin: 0px"> <span style="color: green">// Methods</span>
-    <p style="margin: 0px"> <span style="color: blue">public</span> <span style="color: #2b91af">IList</span>&amp;lt;<span style="color: blue">string</span>&amp;gt; UsernamesByStartingChar(<span style="color: #2b91af">IList</span>&amp;lt;<span style="color: blue">string</span>&amp;gt; userNames, <span style="color: blue">char</span> startingChar)
-    <p style="margin: 0px"> {
-    <p style="margin: 0px"> <span style="color: blue">return</span> userNames.Where&amp;lt;<span style="color: blue">string</span>&amp;gt;(<span style="color: blue">delegate</span>(<span style="color: blue">string</span> item)
-    <p style="margin: 0px"> {
-    <p style="margin: 0px"> <span style="color: blue">return</span> item.ToLower().StartsWith(startingChar.ToString());
-    <p style="margin: 0px"> }).ToList&amp;lt;<span style="color: blue">string</span>&amp;gt;();
-    <p style="margin: 0px"> }
-    <p style="margin: 0px">}
- </div>  That looks very similar to the original code, the lambda notation have been replaced by an anonymous delegate but the rest of the code looks the same. But wait take a look at the object tree for this class.
-  <a href="../../../images/posts/HowLinqworkslamdbasanonymousdelegatesan_88A/ScreenHunter_16%202009-03-09%2000.11.23_2.jpg"><img title="ScreenHunter_16 2009-03-09 00.11.23" style="border-right: 0px; border-top: 0px; display: inline; border-left: 0px; border-bottom: 0px" height="185" alt="ScreenHunter_16 2009-03-09 00.11.23" src="../../../images/posts/HowLinqworkslamdbasanonymousdelegatesan_88A/ScreenHunter_16%202009-03-09%2000.11.23_thumb.jpg" width="395" border="0" /></a> 
-  Do you see that &amp;lt;&amp;gt;c_DisplayClass1 private sealed subclass inside our original class?
-  Let’s take a look at the code.
-  
-  
-  <div style="font-size: 10pt; background: white; color: black; font-family: courier new">   <p style="margin: 0px">[<span style="color: #2b91af">CompilerGenerated</span>]
-    <p style="margin: 0px"><span style="color: blue">private</span> <span style="color: blue">sealed</span> <span style="color: blue">class</span> &amp;lt;&amp;gt;c__DisplayClass1
-    <p style="margin: 0px">{
-    <p style="margin: 0px"> <span style="color: green">// Fields</span>
-    <p style="margin: 0px"> <span style="color: blue">public</span> <span style="color: blue">char</span> startingChar;
-    <p style="margin: 0px">
-    <p style="margin: 0px"> <span style="color: green">// Methods</span>
-    <p style="margin: 0px"> <span style="color: blue">public</span> <span style="color: blue">bool</span> &amp;lt;UsernamesByStartingChar&amp;gt;b__0(<span style="color: blue">string</span> item)
-    <p style="margin: 0px"> {
-    <p style="margin: 0px"> <span style="color: blue">return</span> item.ToLower().StartsWith(<span style="color: blue">this</span>.startingChar.ToString());
-    <p style="margin: 0px"> }
-    <p style="margin: 0px">}
- </div>  This class has only one method that looks like our delegate. That makes sense but how the Where works? It calls this delegate that returns true or false, and them what?   <br />Let’s click in the Where method in Reflector and take a deeper look.
-  <div style="font-size: 10pt; background: white; color: black; font-family: courier new">   <p style="margin: 0px"><span style="color: blue">public</span> <span style="color: blue">static</span> IEnumerable&amp;lt;TSource&amp;gt; Where&amp;lt;TSource&amp;gt;(<span style="color: blue">this</span> IEnumerable&amp;lt;TSource&amp;gt; source, Func&amp;lt;TSource, <span style="color: blue">bool</span>&amp;gt; predicate)
-    <p style="margin: 0px">{
-    <p style="margin: 0px"> <span style="color: blue">if</span> (source == <span style="color: blue">null</span>)
-    <p style="margin: 0px"> {
-    <p style="margin: 0px"> <span style="color: blue">throw</span> Error.ArgumentNull(<span style="color: #a31515">&amp;quot;source&amp;quot;</span>);
-    <p style="margin: 0px"> }
-    <p style="margin: 0px"> <span style="color: blue">if</span> (predicate == <span style="color: blue">null</span>)
-    <p style="margin: 0px"> {
-    <p style="margin: 0px"> <span style="color: blue">throw</span> Error.ArgumentNull(<span style="color: #a31515">&amp;quot;predicate&amp;quot;</span>);
-    <p style="margin: 0px"> }
-    <p style="margin: 0px"> <span style="color: blue">if</span> (source <span style="color: blue">is</span> Iterator&amp;lt;TSource&amp;gt;)
-    <p style="margin: 0px"> {
-    <p style="margin: 0px"> <span style="color: blue">return</span> ((Iterator&amp;lt;TSource&amp;gt;) source).Where(predicate);
-    <p style="margin: 0px"> }
-    <p style="margin: 0px"> <span style="color: blue">if</span> (source <span style="color: blue">is</span> TSource[])
-    <p style="margin: 0px"> {
-    <p style="margin: 0px"> <span style="color: blue">return</span> <span style="color: blue">new</span> WhereArrayIterator&amp;lt;TSource&amp;gt;((TSource[]) source, predicate);
-    <p style="margin: 0px"> }
-    <p style="margin: 0px"> <span style="color: blue">if</span> (source <span style="color: blue">is</span> List&amp;lt;TSource&amp;gt;)
-    <p style="margin: 0px"> {
-    <p style="margin: 0px"> <span style="color: blue">return</span> <span style="color: blue">new</span> WhereListIterator&amp;lt;TSource&amp;gt;((List&amp;lt;TSource&amp;gt;) source, predicate);
-    <p style="margin: 0px"> }
-    <p style="margin: 0px"> <span style="color: blue">return</span> <span style="color: blue">new</span> WhereEnumerableIterator&amp;lt;TSource&amp;gt;(source, predicate);
-    <p style="margin: 0px">}
- </div>  Since we are passing a List I guess we should take a look at the WhereListIterator object. This is a private class inside the Enumerable object.
-  <div style="font-size: 10pt; background: white; color: black; font-family: courier new">   <p style="margin: 0px"><span style="color: blue">private</span> <span style="color: blue">class</span> <span style="color: #2b91af">WhereListIterator</span>&amp;lt;TSource&amp;gt; : Enumerable.Iterator&amp;lt;TSource&amp;gt;
-    <p style="margin: 0px">{
-    <p style="margin: 0px"> <span style="color: green">// Fields</span>
-    <p style="margin: 0px"> <span style="color: blue">private</span> <span style="color: #2b91af">List</span>&amp;lt;TSource&amp;gt;.<span style="color: #2b91af">Enumerator</span> enumerator;
-    <p style="margin: 0px"> <span style="color: blue">private</span> Func&amp;lt;TSource, <span style="color: blue">bool</span>&amp;gt; predicate;
-    <p style="margin: 0px"> <span style="color: blue">private</span> <span style="color: #2b91af">List</span>&amp;lt;TSource&amp;gt; source;
-    <p style="margin: 0px">
-    <p style="margin: 0px"> <span style="color: green">// Methods</span>
-    <p style="margin: 0px"> <span style="color: blue">public</span> WhereListIterator(<span style="color: #2b91af">List</span>&amp;lt;TSource&amp;gt; source, Func&amp;lt;TSource, <span style="color: blue">bool</span>&amp;gt; predicate);
-    <p style="margin: 0px"> <span style="color: blue">public</span> <span style="color: blue">override</span> <span style="color: #2b91af">Enumerable</span>.Iterator&amp;lt;TSource&amp;gt; Clone();
-    <p style="margin: 0px"> <span style="color: blue">public</span> <span style="color: blue">override</span> <span style="color: blue">bool</span> MoveNext();
-    <p style="margin: 0px"> <span style="color: blue">public</span> <span style="color: blue">override</span> <span style="color: #2b91af">IEnumerable</span>&amp;lt;TResult&amp;gt; Select&amp;lt;TResult&amp;gt;(Func&amp;lt;TSource, TResult&amp;gt; selector);
-    <p style="margin: 0px"> <span style="color: blue">public</span> <span style="color: blue">override</span> <span style="color: #2b91af">IEnumerable</span>&amp;lt;TSource&amp;gt; Where(Func&amp;lt;TSource, <span style="color: blue">bool</span>&amp;gt; predicate);
-    <p style="margin: 0px">}
- </div>  Now, we “know” that all the Linq magic happens when the code is actually run (<a href="http://www.hookedonlinq.com/DeferredExecution.ashx" target="_blank">deferred execution</a>) so the bits that we are interest in should be on the MoveNext method:
-  <div style="font-size: 10pt; background: white; color: black; font-family: courier new">   <p style="margin: 0px"> <span style="color: blue">public</span> <span style="color: blue">override</span> <span style="color: blue">bool</span> MoveNext()
-    <p style="margin: 0px"> {
-    <p style="margin: 0px"> <span style="color: blue">switch</span> (<span style="color: blue">base</span>.state)
-    <p style="margin: 0px"> {
-    <p style="margin: 0px"> <span style="color: blue">case</span> 1:
-    <p style="margin: 0px"> <span style="color: blue">this</span>.enumerator = <span style="color: blue">this</span>.source.GetEnumerator();
-    <p style="margin: 0px"> <span style="color: blue">base</span>.state = 2;
-    <p style="margin: 0px"> <span style="color: blue">break</span>;
-    <p style="margin: 0px">
-    <p style="margin: 0px"> <span style="color: blue">case</span> 2:
-    <p style="margin: 0px"> <span style="color: blue">break</span>;
-    <p style="margin: 0px">
-    <p style="margin: 0px"> <span style="color: blue">default</span>:
-    <p style="margin: 0px"> <span style="color: blue">goto</span> Label_0069;
-    <p style="margin: 0px"> }
-    <p style="margin: 0px"> <span style="color: blue">while</span> (<span style="color: blue">this</span>.enumerator.MoveNext())
-    <p style="margin: 0px"> {
-    <p style="margin: 0px"> TSource current = <span style="color: blue">this</span>.enumerator.Current;
-    <p style="margin: 0px"> <span style="color: blue">if</span> (<span style="color: blue">this</span>.predicate(current))
-    <p style="margin: 0px"> {
-    <p style="margin: 0px"> <span style="color: blue">base</span>.current = current;
-    <p style="margin: 0px"> <span style="color: blue">return</span> <span style="color: blue">true</span>;
-    <p style="margin: 0px"> }
-    <p style="margin: 0px"> }
-    <p style="margin: 0px"> <span style="color: blue">this</span>.Dispose();
-    <p style="margin: 0px"> Label_0069:
-    <p style="margin: 0px"> <span style="color: blue">return</span> <span style="color: blue">false</span>;
-    <p style="margin: 0px"> }
- </div>  I’m not sure why we have a Label_0069 in there and the goto in the switch statement, that sounds fishy, but again I don’t really know all the scenarios for this code.   <br />The filtering happens in the while loop.
-  It takes the current item of the enumeration, pass the item to the delegate and if the result is true it add the item back to the base. It does this each time is called.   <br />I guess my next one may be the Select method, any suggestion?
+summary: If you have been following this blog, you probably saw a few posts about what’s going on behind closed doors once you submit your code to the mercy of the compiler.
+categories: [Programming, .Net]
+---
+
+If you have been following this blog, you probably saw a few posts about what’s going on behind closed doors once you submit your code to the mercy of the compiler. Specially some of the new Magic features of C#, like auto properties and nullable types.
+
+The next logical step is to take a pick to how Linq works (or more specifically some of the implementation).
+
+Let’s take a look at something very simple. A function that filters a list of strings by the initial character.
+
+{% highlight aspx-cs %}
+	namespace CodeBehind
+	{
+		public class LookBehindLinq
+		{
+			public IList<string> UsernamesByStartingChar(IList<string> userNames, char startingChar)
+			{
+				return userNames.Where(item => item.ToLower()
+				.StartsWith(startingChar.ToString())).ToList();
+			}
+		}
+	}
+{% endhighlight %}    
+
+We are using the extension method Where and we pass a lambda expression that reads something like, get each item, making it lowercase and check if starts with this character, if so put it in a new enumeration. Them we use another extension method to convert the enumeration to a List.
+
+Let’s compile this and see what Reflector have to tell us about it. Let’s look at the code as C#:
+
+{% highlight aspx-cs %}	
+	public class LookBehindLinq
+	{
+		// Methods
+		public IList<string> UsernamesByStartingChar(IList<string> userNames, char startingChar)
+		{
+			return userNames.Where<string>(delegate(string item)
+				{
+					return item.ToLower().StartsWith(startingChar.ToString());
+				}).ToList<string>();
+		}
+	}
+{% endhighlight %}
+
+That looks very similar to the original code, the lambda notation have been replaced by an anonymous delegate but the rest of the code looks the same. But wait take a look at the object tree for this class.
+
+<a href="../../../images/posts/HowLinqworkslamdbasanonymousdelegatesan_88A/ScreenHunter_16%202009-03-09%2000.11.23_2.jpg"><img height="185" alt="ScreenHunter_16 2009-03-09 00.11.23" src="../../../images/posts/HowLinqworkslamdbasanonymousdelegatesan_88A/ScreenHunter_16%202009-03-09%2000.11.23_thumb.jpg" width="395" border="0" /></a> 
+
+Do you see that <>c_DisplayClass1 private sealed subclass inside our original class?
+
+Let’s take a look at the code.
+
+{% highlight aspx-cs %}
+[CompilerGenerated]
+	private sealed class <>c__DisplayClass1
+	{
+		// Fields
+		public char startingChar;
+	
+		// Methods
+		public bool <UsernamesByStartingChar>b__0(string item)
+		{
+			return item.ToLower().StartsWith(this.startingChar.ToString());
+		}
+	}
+{% endhighlight %}
+
+This class has only one method that looks like our delegate. That makes sense but how the Where works? It calls this delegate that returns true or false, and them what?
+Let’s click in the Where method in Reflector and take a deeper look.
+
+{% highlight aspx-cs %}
+	public static IEnumerable<TSource> Where<TSource>(this IEnumerable<TSource> source, Func<TSource, bool> predicate)
+	{
+		if (source == null)
+		{
+			throw Error.ArgumentNull("source");
+		}
+		
+		if (predicate == null)
+		{
+			throw Error.ArgumentNull("predicate");
+		}
+		
+		if (source is Iterator<TSource>)
+		{
+			return ((Iterator<TSource>) source).Where(predicate);
+		}
+		
+		if (source is TSource[])
+		{
+			return new WhereArrayIterator<TSource>((TSource[]) source, predicate);
+		}
+		
+		if (source is List<TSource>)
+		{
+			return new WhereListIterator<TSource>((List<TSource>) source, predicate);
+		}
+		
+		return new WhereEnumerableIterator<TSource>(source, predicate);
+
+	}
+{% endhighlight %}
+  
+Since we are passing a List I guess we should take a look at the WhereListIterator object. This is a private class inside the Enumerable object.
+
+{% highlight aspx-cs %}
+	private class WhereListIterator<TSource> : Enumerable.Iterator<TSource>
+	{
+		// Fields
+		private List<TSource>.Enumerator enumerator;
+		private Func<TSource, bool> predicate;
+		private List<TSource> source;
+		
+		// Methods
+		public WhereListIterator(List<TSource> source, Func<TSource, bool> predicate);
+		public override Enumerable.Iterator<TSource> Clone();
+		public override bool MoveNext();
+		public override IEnumerable<TResult> Select<TResult>(Func<TSource, TResult> selector);
+		public override IEnumerable<TSource> Where(Func<TSource, bool> predicate);
+	}
+{% endhighlight %}
+ 
+Now, we "know" that all the Linq magic happens when the code is actually run (<a href="http://www.hookedonlinq.com/DeferredExecution.ashx" target="_blank">deferred execution</a>) so the bits that we are interest in should be on the MoveNext method:
+
+{% highlight aspx-cs %}
+	public override bool MoveNext()
+	{
+		switch (base.state)
+		{
+			case 1:
+				this.enumerator = this.source.GetEnumerator();
+				base.state = 2;
+				break;
+			case 2:
+				break;
+			default:
+				goto Label_0069;
+		}
+		
+		while (this.enumerator.MoveNext())
+		{
+			TSource current = this.enumerator.Current;
+			if (this.predicate(current))
+			{
+				base.current = current;
+				return true;
+			}
+		}
+
+		this.Dispose();
+		Label_0069:
+		return false;
+	}
+{% endhighlight %}
+
+I’m not sure why we have a Label_0069 in there and the goto in the switch statement, that sounds fishy, but again I don’t really know all the scenarios for this code.
+The filtering happens in the while loop.
+
+It takes the current item of the enumeration, pass the item to the delegate and if the result is true it add the item back to the base. It does this each time is called.
+I guess my next one may be the Select method, any suggestion?

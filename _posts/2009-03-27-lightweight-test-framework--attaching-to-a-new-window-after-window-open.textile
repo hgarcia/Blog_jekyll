@@ -1,78 +1,93 @@
 ---
 layout: post
 title: Lightweight Test Framework, attaching to a new window after window.open
-summary:    In a previous post I mention about a fix to been able to open a new window both in IE and Firefox using the Lightweight Test Framework.   Today I want to talk about how to hook into the newly opened window or any other window opened by the tes...
+summary: In a previous post I mention about a fix to been able to open a new window both in IE and Firefox using the Lightweight Test Framework.
 categories: [Lightweight Testing Framework, Programming, Testing, Tools]
----
-   <br />In <a href="2009/03/25/LightweightTestFrameworkFixingHowToHandleWindowopen.aspx" target="_blank">a previous post</a> I mention about a fix to been able to open a new window both in IE and Firefox using the <a href="http://aspnet.codeplex.com/Release/ProjectReleases.aspx?ReleaseId=22739" target="_blank">Lightweight Test Framework</a>.
-  Today I want to talk about how to hook into the newly opened window or any other window opened by the testing framework.    <br />Let me said this, it’s not very difficult but is kind of convoluted, I won’t be surprised if there is a better way to do this, but I can’t seem to find it.
-  The key resides in the BrowserCommandTarget object. This object has a property WindowIndex that maps to the index of the _windowCollection array on the client side code (the JavaScript implementation of the framework).
-  The next thing we need to do is figure out how to send a BrowserCommand to this window, and sure enough BrowserCommand has a target property that takes a BrowserCommandTarget.
-  So here is the code to click a button in a window that was open after calling window.open in the main window.
-  <div style="font-family: courier new; background: white; color: black; font-size: 10pt">   <div style="font-family: courier new; background: white; color: black; font-size: 10pt">     <p style="margin: 0px"><span style="color: #2b91af"> 1</span> [WebTestMethod]
-      <p style="margin: 0px"><span style="color: #2b91af"> 2</span> <span style="color: blue">public</span> <span style="color: blue">void</span> OpenNewWindow()
-      <p style="margin: 0px"><span style="color: #2b91af"> 3</span> {
-      <p style="margin: 0px"><span style="color: #2b91af"> 4</span> <span style="color: blue">var</span> page = <span style="color: blue">new</span> HtmlPage(<span style="color: #a31515">&amp;quot;../SiteToTest/HTMLPage.htm&amp;quot;</span>);
-      <p style="margin: 0px"><span style="color: #2b91af"> 5</span> page.Elements.Find(<span style="color: #a31515">&amp;quot;openWindow&amp;quot;</span>).Click(WaitFor.None);
-      <p style="margin: 0px"><span style="color: #2b91af"> 6</span>
-      <p style="margin: 0px"><span style="color: #2b91af"> 7</span> <span style="color: blue">var</span> handler = <span style="color: blue">new</span> BrowserCommandHandler
-      <p style="margin: 0px"><span style="color: #2b91af"> 8</span> {
-      <p style="margin: 0px"><span style="color: #2b91af"> 9</span> PopupAction = PopupAction.None,
-      <p style="margin: 0px"><span style="color: #2b91af"> 10</span> RequiresElementFound = <span style="color: blue">true</span>,
-      <p style="margin: 0px"><span style="color: #2b91af"> 11</span> ClientFunctionName = BrowserCommand.FunctionNames.ClickElement
-      <p style="margin: 0px"><span style="color: #2b91af"> 12</span> };
-      <p style="margin: 0px"><span style="color: #2b91af"> 13</span> <span style="color: blue">var</span> target = <span style="color: blue">new</span> BrowserCommandTarget
-      <p style="margin: 0px"><span style="color: #2b91af"> 14</span> {
-      <p style="margin: 0px"><span style="color: #2b91af"> 15</span> WindowIndex = 1,
-      <p style="margin: 0px"><span style="color: #2b91af"> 16</span> Id = <span style="color: #a31515">&amp;quot;clickedOnTheSecondWindow&amp;quot;</span>
-      <p style="margin: 0px"><span style="color: #2b91af"> 17</span> };
-      <p style="margin: 0px"><span style="color: #2b91af"> 18</span> handler.SetArguments(<span style="color: blue">false</span>);
-      <p style="margin: 0px"><span style="color: #2b91af"> 19</span> <span style="color: blue">var</span> command = <span style="color: blue">new</span> BrowserCommand(BrowserCommand.FunctionNames.ClickElement)
-      <p style="margin: 0px"><span style="color: #2b91af"> 20</span> {
-      <p style="margin: 0px"><span style="color: #2b91af"> 21</span> Description = <span style="color: #a31515">&amp;quot;Click&amp;quot;</span>,
-      <p style="margin: 0px"><span style="color: #2b91af"> 22</span> Target = target,
-      <p style="margin: 0px"><span style="color: #2b91af"> 23</span> Handler = handler
-      <p style="margin: 0px"><span style="color: #2b91af"> 24</span> };
-      <p style="margin: 0px"><span style="color: #2b91af"> 25</span> <span style="color: blue">var</span> info = page.ExecuteCommand(command);
-      <p style="margin: 0px"><span style="color: #2b91af"> 26</span> }
-   </div>    <p style="margin: 0px">
- </div>  
-  Lines 4 and 5 is just the normal way you click in an element. In this case I look for an element with the Id of “openWindow” and do a Click. This is the html of the page we are testing.
-  <pre>&amp;lt;!DOCTYPE html PUBLIC &amp;quot;-//W3C//DTD XHTML 1.0 Transitional//EN&amp;quot; &amp;quot;<a href="http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd&amp;quot;">http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd&amp;quot;</a>&amp;gt; 
-
-&amp;lt;html xmlns=&amp;quot;<a href="http://www.w3.org/1999/xhtml&amp;quot;&amp;gt;">http://www.w3.org/1999/xhtml&amp;quot;&amp;gt;
-</a><br />&amp;lt;head&amp;gt;<br /> &amp;lt;title&amp;gt;My page&amp;lt;/title&amp;gt;
-<br /> &amp;lt;script&amp;gt; <br /> function doConfirm() {
-<br /> if (confirm(&amp;quot;Do you confirm this?&amp;quot;)) {
-<br /> document.getElementById(&amp;quot;mySpan&amp;quot;).innerHTML = &amp;quot;OK&amp;quot;;
-<br /> } else {
-<br /> document.getElementById(&amp;quot;mySpan&amp;quot;).innerHTML = &amp;quot;CANCEL&amp;quot;;
-<br /> }
-<br /> }
+---
 
-<br /> function openNewWindow () {
-<br /> window.open(&amp;quot;HTMLPage.htm&amp;quot;,&amp;quot;_blank&amp;quot;,&amp;quot;toolbar=no&amp;quot;,false);  <br /> }
-  <br /> function addsAMessage () {
-<br /> document.getElementById(&amp;quot;message&amp;quot;).innerHTML = &amp;quot;This message should only appear on the second window.&amp;quot;
-<br /> } <br /> &amp;lt;/script&amp;gt;
-<br />&amp;lt;/head&amp;gt;
-<br />&amp;lt;body&amp;gt;
-<br /> &amp;lt;input type=&amp;quot;button&amp;quot; name=&amp;quot;myButtom&amp;quot; value=&amp;quot;Do confirm&amp;quot; onclick=&amp;quot;doConfirm();&amp;quot; /&amp;gt;
-<br /> &amp;lt;span id=&amp;quot;mySpan&amp;quot;&amp;gt;&amp;lt;/span&amp;gt;
-<br /> &amp;lt;input type=&amp;quot;button&amp;quot; name=&amp;quot;openWindow&amp;quot; value=&amp;quot;Open new window&amp;quot; onclick=&amp;quot;openNewWindow();&amp;quot; /&amp;gt;
-<br /> &amp;lt;input type=&amp;quot;button&amp;quot; name=&amp;quot;clickedOnTheSecondWindow&amp;quot; value=&amp;quot;Clicked on the second window&amp;quot; onclick=&amp;quot;addsAMessage();&amp;quot; /&amp;gt;<br /> &amp;lt;span id=&amp;quot;message&amp;quot;&amp;gt;&amp;lt;/span&amp;gt; <br />&amp;lt;/body&amp;gt; <br />&amp;lt;/html&amp;gt;
-
-</pre>
+In <a href="2009/03/25/LightweightTestFrameworkFixingHowToHandleWindowopen.aspx" target="_blank">a previous post</a> I mention about a fix to been able to open a new window both in IE and Firefox using the <a href="http://aspnet.codeplex.com/Release/ProjectReleases.aspx?ReleaseId=22739" target="_blank">Lightweight Test Framework</a>.
 
-After this page opens I want to click the button with the name “clickedOnTheSecondWindow” in the newly opened window. For that I create a BrowserCommandHandler that knows how to handle the onclick event. A BrowserCommandTarget with the Id of the element to be checked and I pass the index (1) for the newly opened window, the original window already opened in the test frame is index 0.
-  <br />Then I create a BrowserCommand and assign the target and the handler to it.
+Today I want to talk about how to hook into the newly opened window or any other window opened by the testing framework.
+Let me said this, it’s not very difficult but is kind of convoluted, I won’t be surprised if there is a better way to do this, but I can’t seem to find it.
 
-  <br />Finally I call ExecuteCommand in the page object passing the newly created command.
+The key resides in the BrowserCommandTarget object. This object has a property WindowIndex that maps to the index of the _windowCollection array on the client side code (the JavaScript implementation of the framework).
 
-  <br />This may sound counter intuitive since page is the same object we used before to click “openWindow” in the test frame. But page.ExecuteCommand takes all the data from the passed in command argument. I consider that it should be a better way to do this and maybe this is a smell on the API or me not figuring out the right way to use it.
+The next thing we need to do is figure out how to send a BrowserCommand to this window, and sure enough BrowserCommand has a target property that takes a BrowserCommandTarget.
 
+So here is the code to click a button in a window that was open after calling window.open in the main window.
 
-I mentioned before that BrowserCommandTarget.Id takes the Id of the element, I’m sure that you notice that none of the buttons have an Id but only a name. The framework will first search by Id and then by name always using the value passed to the Id property.
+{% highlight aspx-cs %}
+	[WebTestMethod]
+	public void OpenNewWindow()
+	{
+		var page = new HtmlPage("../SiteToTest/HTMLPage.htm");
+		page.Elements.Find("openWindow").Click(WaitFor.None);
+		
+		var handler = new BrowserCommandHandler
+		{
+			PopupAction = PopupAction.None,
+			RequiresElementFound = true,
+			ClientFunctionName = BrowserCommand.FunctionNames.ClickElement
+		};
+		
+		var target = new BrowserCommandTarget
+		{
+			WindowIndex = 1,
+			Id = "clickedOnTheSecondWindow"
+		};
+		
+		handler.SetArguments(false);
+		
+		var command = new BrowserCommand(BrowserCommand.FunctionNames.ClickElement)
+		{
+			Description = "Click",
+			Target = target,
+			Handler = handler
+		};
+		
+		var info = page.ExecuteCommand(command);
+	}
+{% endhighlight %}
 
+Lines 4 and 5 is just the normal way you click in an element. In this case I look for an element with the Id of "openWindow" and do a Click. This is the html of the page we are testing.
 
-So far I haven’t figured out how to make an assertion in the new window though, I guess that will be something to deal with in another post.
+{% highlight html %}
+<html>
+	<head>
+		<title>My page</title>
+		<script>
+			function doConfirm() {
+				if (confirm("Do you confirm this?")) {
+					document.getElementById("mySpan").innerHTML = "OK";
+				} else {
+					document.getElementById("mySpan").innerHTML = "CANCEL";
+				}
+			}
+
+			function openNewWindow () {
+				window.open("HTMLPage.htm","_blank","toolbar=no",false);
+			}
+			function addsAMessage () {
+				document.getElementById("message").innerHTML = "This message should only appear on the second window."
+			}
+		</script>
+	</head>
+	<body>
+		<input type="button" name="myButtom" value="Do confirm" onclick="doConfirm();" />
+		<span id="mySpan"></span>
+		<input type="button" name="openWindow" value="Open new window" onclick="openNewWindow();" />
+		<input type="button" name="clickedOnTheSecondWindow" value="Clicked on the second window" onclick="addsAMessage();" />
+		<span id="message"></span>
+	</body>
+</html>
+{% endhighlight %}
+
+After this page opens I want to click the button with the name "clickedOnTheSecondWindow" in the newly opened window. For that I create a BrowserCommandHandler that knows how to handle the onclick event. A BrowserCommandTarget with the Id of the element to be checked and I pass the index (1) for the newly opened window, the original window already opened in the test frame is index 0.
+Then I create a BrowserCommand and assign the target and the handler to it.
+Finally I call ExecuteCommand in the page object passing the newly created command.
+
+This may sound counter intuitive since page is the same object we used before to click "openWindow" in the test frame. But page.ExecuteCommand takes all the data from the passed in command argument. I consider that it should be a better way to do this and maybe this is a smell on the API or me not figuring out the right way to use it.
+
+I mentioned before that BrowserCommandTarget.Id takes the Id of the element, I’m sure that you notice that none of the buttons have an Id but only a name. The framework will first search by Id and then by name always using the value passed to the Id property.
+
+So far I haven’t figured out how to make an assertion in the new window though, I guess that will be something to deal with in another post.
