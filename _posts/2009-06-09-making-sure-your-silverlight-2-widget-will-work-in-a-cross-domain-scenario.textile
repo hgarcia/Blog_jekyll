@@ -1,51 +1,56 @@
 ---
 layout: post
 title: Making sure your Silverlight 2 widget will work in a cross domain scenario
-summary:    When creating a Silverlight application that will be used as a widget, you need to make sure that it will work in a cross domain scenario. You will certainly serve the widgets from your own domain and the widget will be consumed from other dom...
+summary: When creating a Silverlight application that will be used as a widget, you need to make sure that it will work in a cross domain scenario.
 categories: [Programming]
----
-   <br />When creating a Silverlight application that will be used as a widget, you need to make sure that it will work in a cross domain scenario. You will certainly serve the widgets from your own domain and the widget will be consumed from other domains, like wordpress.com or blogger.com.
-  You can find this information in msdn and some other blogs but it’s scattered in bits and pieces and not all together, also I struggle with some examples were they set the value of ExternalCallersFromCrossDomain to FullAccess, what is not supported in Silverlight 2 anymore.
-  Silverlight security model make it that by default the application is closed to cross domain activity. So here are the three things you need to enable to make sure that you don't have problems down the road.
-  First, on your Silverlight project expand the Properties folder an open the AppManifest.xml
-  Make sure that you add the ExternalCallersFromCrossDomain attribute to the Deployment element and that you set the value to ScriptableOnly, after making the changes your AppManifest should look something like this.
-  <pre><pre style="background-color: #fbfbfb; margin: 0em; width: 100%; font-family: consolas,&amp;#39;Courier New&amp;#39;,courier,monospace; font-size: 12px">  1: <span style="color: #0000ff">&amp;lt;</span><span style="color: #800000">Deployment</span> <span style="color: #ff0000">xmlns</span>=<span style="color: #0000ff">&amp;quot;http://schemas.microsoft.com/client/2007/deployment&amp;quot;</span>
-</pre><pre style="background-color: #ffffff; margin: 0em; width: 100%; font-family: consolas,&amp;#39;Courier New&amp;#39;,courier,monospace; font-size: 12px">  2:         <span style="color: #ff0000">xmlns</span>:<span style="color: #ff0000">x</span>=<span style="color: #0000ff">&amp;quot;http://schemas.microsoft.com/winfx/2006/xaml&amp;quot;</span>
-</pre><pre style="background-color: #fbfbfb; margin: 0em; width: 100%; font-family: consolas,&amp;#39;Courier New&amp;#39;,courier,monospace; font-size: 12px">  3:             <span style="color: #ff0000">ExternalCallersFromCrossDomain</span>=<span style="color: #0000ff">&amp;quot;ScriptableOnly&amp;quot;</span>
-</pre><pre style="background-color: #ffffff; margin: 0em; width: 100%; font-family: consolas,&amp;#39;Courier New&amp;#39;,courier,monospace; font-size: 12px">  4: <span style="color: #0000ff">&amp;gt;</span>
-</pre><pre style="background-color: #fbfbfb; margin: 0em; width: 100%; font-family: consolas,&amp;#39;Courier New&amp;#39;,courier,monospace; font-size: 12px">  5:     <span style="color: #0000ff">&amp;lt;</span><span style="color: #800000">Deployment.Parts</span><span style="color: #0000ff">&amp;gt;</span>
-</pre><pre style="background-color: #ffffff; margin: 0em; width: 100%; font-family: consolas,&amp;#39;Courier New&amp;#39;,courier,monospace; font-size: 12px">  6:     <span style="color: #0000ff">&amp;lt;/</span><span style="color: #800000">Deployment.Parts</span><span style="color: #0000ff">&amp;gt;</span>
-</pre><pre style="background-color: #fbfbfb; margin: 0em; width: 100%; font-family: consolas,&amp;#39;Courier New&amp;#39;,courier,monospace; font-size: 12px">  7: <span style="color: #0000ff">&amp;lt;/</span><span style="color: #800000">Deployment</span><span style="color: #0000ff">&amp;gt;</span></pre></pre>
+---
 
-Second: Make sure you decorate the methods that you want to expose to JavaScript with the ScriptableMember attribute, this is necessary to access your code even in the same domain.
+When creating a Silverlight application that will be used as a widget, you need to make sure that it will work in a cross domain scenario. You will certainly serve the widgets from your own domain and the widget will be consumed from other domains, like wordpress.com or blogger.com.
 
+You can find this information in msdn and some other blogs but it’s scattered in bits and pieces and not all together, also I struggle with some examples were they set the value of ExternalCallersFromCrossDomain to FullAccess, what is not supported in Silverlight 2 anymore.
 
-<pre><pre style="background-color: #fbfbfb; margin: 0em; width: 100%; font-family: consolas,&amp;#39;Courier New&amp;#39;,courier,monospace; font-size: 12px">  1:         [ScriptableMember]
-</pre><pre style="background-color: #ffffff; margin: 0em; width: 100%; font-family: consolas,&amp;#39;Courier New&amp;#39;,courier,monospace; font-size: 12px">  2:         <span style="color: #0000ff">public</span> <span style="color: #0000ff">void</span> SeekPlayback(<span style="color: #0000ff">string</span> time)
-</pre><pre style="background-color: #fbfbfb; margin: 0em; width: 100%; font-family: consolas,&amp;#39;Courier New&amp;#39;,courier,monospace; font-size: 12px">  3:         {
-</pre><pre style="background-color: #ffffff; margin: 0em; width: 100%; font-family: consolas,&amp;#39;Courier New&amp;#39;,courier,monospace; font-size: 12px">  4:             TimeSpan tsTime = TimeSpan.Parse(time);
-</pre><pre style="background-color: #fbfbfb; margin: 0em; width: 100%; font-family: consolas,&amp;#39;Courier New&amp;#39;,courier,monospace; font-size: 12px">  5:             mediaControls.Seek(tsTime);
-</pre><pre style="background-color: #ffffff; margin: 0em; width: 100%; font-family: consolas,&amp;#39;Courier New&amp;#39;,courier,monospace; font-size: 12px">  6:         }</pre></pre>
+Silverlight security model make it that by default the application is closed to cross domain activity. So here are the three things you need to enable to make sure that you don't have problems down the road.
 
-Third: Make sure that you enable access to the page were the widget will be embedded into. This is accomplished via the enableHtmlAccess param of the object tag. This is only needed if your Widget needs to access the page where it will live. If you use the HtmlPage in any way shape or form you will need to set this up.
+First, on your Silverlight project expand the Properties folder an open the AppManifest.xml
 
+Make sure that you add the ExternalCallersFromCrossDomain attribute to the Deployment element and that you set the value to ScriptableOnly, after making the changes your AppManifest should look something like this.
 
-<pre><pre style="background-color: #fbfbfb; margin: 0em; width: 100%; font-family: consolas,&amp;#39;Courier New&amp;#39;,courier,monospace; font-size: 12px"> 1: <span style="color: #0000ff">&amp;lt;</span><span style="color: #800000">object</span> <span style="color: #ff0000">data</span>=<span style="color: #0000ff">&amp;quot;data:application/x-silverlight,&amp;quot;</span> <span style="color: #ff0000">type</span>=<span style="color: #0000ff">&amp;quot;application/x-silverlight-2&amp;quot;</span> 
-<blockquote><span style="color: #ff0000">width</span>=<span style="color: #0000ff">&amp;quot;100&amp;quot;</span> <span style="color: #ff0000">height</span>=<span style="color: #0000ff">&amp;quot;100&amp;quot;</span><span style="color: #0000ff">&amp;gt;</span>
-</blockquote></pre><pre style="background-color: #ffffff; margin: 0em; width: 100%; font-family: consolas,&amp;#39;Courier New&amp;#39;,courier,monospace; font-size: 12px"> 2: <span style="color: #0000ff">&amp;lt;</span><span style="color: #800000">param</span> <span style="color: #ff0000">name</span>=<span style="color: #0000ff">&amp;quot;source&amp;quot;</span> <span style="color: #ff0000">value</span>=<span style="color: #0000ff">&amp;quot;http://your.domain.com/widget.xap&amp;quot;</span><span style="color: #0000ff">/&amp;gt;</span>
-</pre><pre style="background-color: #fbfbfb; margin: 0em; width: 100%; font-family: consolas,&amp;#39;Courier New&amp;#39;,courier,monospace; font-size: 12px"> 3: <span style="color: #0000ff">&amp;lt;</span><span style="color: #800000">param</span> <span style="color: #ff0000">name</span>=<span style="color: #0000ff">&amp;quot;onerror&amp;quot;</span> <span style="color: #ff0000">value</span>=<span style="color: #0000ff">&amp;quot;onSilverlightError&amp;quot;</span> <span style="color: #0000ff">/&amp;gt;</span>
-</pre><pre style="background-color: #ffffff; margin: 0em; width: 100%; font-family: consolas,&amp;#39;Courier New&amp;#39;,courier,monospace; font-size: 12px">  4: <span style="color: #0000ff">&amp;lt;</span><span style="color: #800000">param</span> <span style="color: #ff0000">name</span>=<span style="color: #0000ff">&amp;quot;background&amp;quot;</span> <span style="color: #ff0000">value</span>=<span style="color: #0000ff">&amp;quot;#000000&amp;quot;</span> <span style="color: #0000ff">/&amp;gt;</span>
-</pre><pre style="background-color: #fbfbfb; margin: 0em; width: 100%; font-family: consolas,&amp;#39;Courier New&amp;#39;,courier,monospace; font-size: 12px">  5: <span style="color: #0000ff">&amp;lt;</span><span style="color: #800000">param</span> <span style="color: #ff0000">name</span>=<span style="color: #0000ff">&amp;quot;minRuntimeVersion&amp;quot;</span> <span style="color: #ff0000">value</span>=<span style="color: #0000ff">&amp;quot;2.0.31005.0&amp;quot;</span> <span style="color: #0000ff">/&amp;gt;</span>
-</pre><pre style="background-color: #ffffff; margin: 0em; width: 100%; font-family: consolas,&amp;#39;Courier New&amp;#39;,courier,monospace; font-size: 12px">  6: <span style="color: #0000ff">&amp;lt;</span><span style="color: #800000">param</span> <span style="color: #ff0000">name</span>=<span style="color: #0000ff">&amp;quot;enableHtmlAccess&amp;quot;</span> <span style="color: #ff0000">value</span>=<span style="color: #0000ff">&amp;quot;true&amp;quot;</span> <span style="color: #0000ff">/&amp;gt;</span>
-</pre><pre style="background-color: #fbfbfb; margin: 0em; width: 100%; font-family: consolas,&amp;#39;Courier New&amp;#39;,courier,monospace; font-size: 12px">  7: <span style="color: #0000ff">&amp;lt;</span><span style="color: #800000">param</span> <span style="color: #ff0000">name</span>=<span style="color: #0000ff">&amp;quot;autoUpgrade&amp;quot;</span> <span style="color: #ff0000">value</span>=<span style="color: #0000ff">&amp;quot;true&amp;quot;</span> <span style="color: #0000ff">/&amp;gt;</span>
-</pre><pre style="background-color: #ffffff; margin: 0em; width: 100%; font-family: consolas,&amp;#39;Courier New&amp;#39;,courier,monospace; font-size: 12px">  8:  <span style="color: #0000ff">&amp;lt;</span><span style="color: #800000">param</span> <span style="color: #ff0000">name</span>=<span style="color: #0000ff">&amp;quot;initParams&amp;quot;</span> <span style="color: #ff0000">value</span>=<span style="color: #0000ff">&amp;quot;someparameters here&amp;quot;</span> <span style="color: #0000ff">/&amp;gt;</span>
-</pre><pre style="background-color: #fbfbfb; margin: 0em; width: 100%; font-family: consolas,&amp;#39;Courier New&amp;#39;,courier,monospace; font-size: 12px">  9: <span style="color: #0000ff">&amp;lt;</span><span style="color: #800000">table</span> <span style="color: #ff0000">width</span>=<span style="color: #0000ff">&amp;quot;100&amp;quot;</span> <span style="color: #ff0000">height</span>=<span style="color: #0000ff">&amp;quot;100&amp;quot;</span> <span style="color: #ff0000">cellspacing</span>=<span style="color: #0000ff">&amp;quot;0&amp;quot;</span> <span style="color: #ff0000">cellpadding</span>=<span style="color: #0000ff">&amp;quot;0&amp;quot;</span><span style="color: #0000ff">&amp;gt;</span><span style="color: #0000ff">&amp;lt;</span><span style="color: #800000">tr</span><span style="color: #0000ff">&amp;gt;</span><span style="color: #0000ff">&amp;lt;</span><span style="color: #800000">td</span> <span style="color: #ff0000">align</span>=<span style="color: #0000ff">&amp;quot;center&amp;quot;</span> <span style="color: #ff0000">valign</span>=<span style="color: #0000ff">&amp;quot;middle&amp;quot;</span><span style="color: #0000ff">&amp;gt;</span>
-</pre><pre style="background-color: #ffffff; margin: 0em; width: 100%; font-family: consolas,&amp;#39;Courier New&amp;#39;,courier,monospace; font-size: 12px"> 10: <span style="color: #0000ff">&amp;lt;</span><span style="color: #800000">a</span> <span style="color: #ff0000">href</span>=<span style="color: #0000ff">&amp;quot;Silverlight.getSilverlight('2.0')&amp;quot;</span> <span style="color: #ff0000">style</span>=<span style="color: #0000ff">&amp;quot;text-decoration: none;&amp;quot;</span><span style="color: #0000ff">&amp;gt;</span>
-</pre><pre style="background-color: #fbfbfb; margin: 0em; width: 100%; font-family: consolas,&amp;#39;Courier New&amp;#39;,courier,monospace; font-size: 12px"> 11: <span style="color: #0000ff">&amp;lt;</span><span style="color: #800000">img</span> <span style="color: #ff0000">src</span>=<span style="color: #0000ff">&amp;quot;http://go.microsoft.com/fwlink/?LinkId=108181&amp;quot;</span> <span style="color: #ff0000">alt</span>=<span style="color: #0000ff">&amp;quot;Get Silverlight&amp;quot;</span> <span style="color: #ff0000">style</span>=<span style="color: #0000ff">&amp;quot;border-style: </span>
-<blockquote><span style="color: #0000ff">none; margin-bottom: 5px;&amp;quot;</span><span style="color: #0000ff">/&amp;gt;</span>
-</blockquote></pre><pre style="background-color: #ffffff; margin: 0em; width: 100%; font-family: consolas,&amp;#39;Courier New&amp;#39;,courier,monospace; font-size: 12px"> 12: <span style="color: #0000ff">&amp;lt;/</span><span style="color: #800000">a</span><span style="color: #0000ff">&amp;gt;</span>
-</pre><pre style="background-color: #fbfbfb; margin: 0em; width: 100%; font-family: consolas,&amp;#39;Courier New&amp;#39;,courier,monospace; font-size: 12px"> 13: <span style="color: #0000ff">&amp;lt;/</span><span style="color: #800000">td</span><span style="color: #0000ff">&amp;gt;</span><span style="color: #0000ff">&amp;lt;/</span><span style="color: #800000">tr</span><span style="color: #0000ff">&amp;gt;</span><span style="color: #0000ff">&amp;lt;/</span><span style="color: #800000">table</span><span style="color: #0000ff">&amp;gt;</span>
-</pre><pre style="background-color: #ffffff; margin: 0em; width: 100%; font-family: consolas,&amp;#39;Courier New&amp;#39;,courier,monospace; font-size: 12px"> 14: <span style="color: #0000ff">&amp;lt;/</span><span style="color: #800000">object</span><span style="color: #0000ff">&amp;gt;</span>
-</pre><pre style="background-color: #fbfbfb; margin: 0em; width: 100%; font-family: consolas,&amp;#39;Courier New&amp;#39;,courier,monospace; font-size: 12px"> 15: </pre></pre>
+{% highlight xml %} 
+	<Deployment xmlns="http://schemas.microsoft.com/client/2007/deployment"  xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" ExternalCallersFromCrossDomain="ScriptableOnly">
+		<Deployment.Parts></Deployment.Parts>
+	</Deployment>
+{% endhighlight %}
 
-<div style="padding-bottom: 0px; margin: 0px; padding-left: 0px; padding-right: 0px; display: inline; float: none; padding-top: 0px" id="scid:0767317B-992E-4b12-91E0-4F059A8CECA8:9bbe60c7-a28d-4a83-8211-d38e15b8dd78" class="wlWriterEditableSmartContent">Technorati Tags: <a href="http://technorati.com/tags/Silverlight" rel="tag">Silverlight</a>,<a href="http://technorati.com/tags/cross+domain" rel="tag">cross domain</a></div>
+Second: Make sure you decorate the methods that you want to expose to JavaScript with the ScriptableMember attribute, this is necessary to access your code even in the same domain.
+
+{% highlight aspx-cs %} 
+[ScriptableMember]
+	public void SeekPlayback(string time)
+	{
+    	TimeSpan tsTime = TimeSpan.Parse(time);
+    	mediaControls.Seek(tsTime);
+	}
+{% endhighlight %}
+
+Third: Make sure that you enable access to the page were the widget will be embedded into. This is accomplished via the enableHtmlAccess param of the object tag. This is only needed if your Widget needs to access the page where it will live. If you use the HtmlPage in any way shape or form you will need to set this up.
+
+{% highlight html %} 
+	<object data="data:application/x-silverlight," type="application/x-silverlight-2" width="100" height="100">
+		<param name="source" value="http://your.domain.com/widget.xap"/>
+		<param name="onerror" value="onSilverlightError" />
+		<param name="background" value="#000000" />
+		<param name="minRuntimeVersion" value="2.0.31005.0" />
+		<param name="enableHtmlAccess" value="true" />
+		<param name="autoUpgrade" value="true" />
+		<param name="initParams" value="someparameters here" />
+		<table width="100" height="100" cellspacing="0" cellpadding="0">
+			<tr>
+				<td align="center" valign="middle">
+					<a href="Silverlight.getSilverlight('2.0')" style="text-decoration: none;">
+						<img src="http://go.microsoft.com/fwlink/?LinkId=108181" alt="Get Silverlight" style="border-style: none; margin-bottom: 5px;"/>
+					</a>
+				</td>
+			</tr>
+		</table>
+	</object>
+{% endhighlight %}

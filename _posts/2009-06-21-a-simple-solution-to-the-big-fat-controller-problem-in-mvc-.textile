@@ -1,48 +1,61 @@
 ---
 layout: post
 title: A simple solution to the Big Fat Controller problem in MVC.
-summary:    This post have been inspired by the talks about controllerless actions. This is NOT an alternative to that. Controllerless actions is an interesting concept that should be study. Actually Jeffrey Palermo has a concept implementation.   There i...
+summary: This post have been inspired by the talks about controllerless actions. This is NOT an alternative to that. Controllerless actions is an interesting concept that should be study. Actually Jeffrey Palermo has a concept implementation.
 categories: [Frameworks, Programming]
----
-
-  This post have been inspired by <a href="http://www.lostechies.com/blogs/chad_myers/archive/2009/06/18/going-controller-less-in-mvc-the-way-fowler-meant-it.aspx" target="_blank">the talks about </a><a href="http://www.jeremyskinner.co.uk/2009/06/20/controllerless-actions-with-asp-net-mvc/" target="_blank">controllerless actions</a>. This is NOT an alternative to that. Controllerless actions is an interesting concept that should be study. Actually <a href="http://jeffreypalermo.com/" target="_blank">Jeffrey Palermo</a> has a <a href="http://jeffreypalermo.com/blog/the-asp-net-mvc-actioncontroller-ndash-the-controllerless-action-or-actionless-controller/" target="_blank">concept implementation</a>.
-  There is a problem with controllers that grow or contain too much code in them.
-  For the second problem, containing too much code, the only solution I see is code reviews and practice of proper separation of concerns.
-  For the first problem, we can apply some constrains in the way controllers are written and used to limit the number of methods.
-  The way we use controllers today is by (sometimes) mimicking the old document based model for web applications.
-  We call the first screen of our web application Home page, so to handle access to this resource we create a HomeController (so far so good). Now what happens when somebody browse to the route we assign to this resource with no action defined in it? The controller is called and “a default action” is executed, and we tend to call it “Index”.
-  Think about it, why is this action called “Index”? What are we indexing? Nothing. We call it Index and we never look back, because it fits with our old way of doing things. Remember how we used to call the default document/page in the document based web applications a long time ago? <a href="http://en.wikipedia.org/wiki/Webserver_directory_index" target="_blank">index.html</a>
-  <em>Side note: [In asp and asp.net default.asp was the general name of this page and how IIS got configured, so this action could very well be called Default for similar reasons, but default (all lowercase) is a reserved world in C#, so maybe that played against it. In any case, even when Default is a more meaningful name for the action than Index, it’s still not good for our purposes.]</em>
-  Of course there is nothing that force you to call this Actions Index and maybe you are calling them something completely different, but this is the default name after creating a new project. 
-  When you do a request to the Home resource typing the route in the address bar of the browser and hit enter you are using the Get http verb, so the name of the action should be Get(). Where am I going with all this? 
-  The controller should control how your presentation handle request, and request are performed using different verbs against resources, so the controller should know how to react to those verbs and coordinate some work with a lower layer, acting almost as a translation layer between your business code and the view. The controller should not know that you want to FindABook or SignIn or LogOut or SendAMail.
-  Let’s limit the actions in a controller to the HTTPVerbs you want to support and no more than that. There are only (4-5 at the most) http verbs you may want to support for a given resource. (Get, Post, Put, Delete, Head) 
-  Most web applications will only support two Get and Post. These will keep your controllers very, very small as far as you don’t write 500 lines in each method, or switch statements to support “multiple actions” per method. 
-  To enforce this on code you can create your own base controller overridden the ExecuteCore method with something like this:
-  <pre><pre style="background-color: #fbfbfb; margin: 0em; width: 100%; font-family: consolas,&amp;#39;Courier New&amp;#39;,courier,monospace; font-size: 12px">  1:     <span style="color: #0000ff">protected</span> <span style="color: #0000ff">override</span> <span style="color: #0000ff">void</span> ExecuteCore()
-</pre><pre style="background-color: #ffffff; margin: 0em; width: 100%; font-family: consolas,&amp;#39;Courier New&amp;#39;,courier,monospace; font-size: 12px">  2:     {
-</pre><pre style="background-color: #fbfbfb; margin: 0em; width: 100%; font-family: consolas,&amp;#39;Courier New&amp;#39;,courier,monospace; font-size: 12px">  3:       TempData.Load(<span style="color: #0000ff">base</span>.ControllerContext, TempDataProvider);
-</pre><pre style="background-color: #ffffff; margin: 0em; width: 100%; font-family: consolas,&amp;#39;Courier New&amp;#39;,courier,monospace; font-size: 12px">  4:       <span style="color: #0000ff">try</span>
-</pre><pre style="background-color: #fbfbfb; margin: 0em; width: 100%; font-family: consolas,&amp;#39;Courier New&amp;#39;,courier,monospace; font-size: 12px">  5:       {
-</pre><pre style="background-color: #ffffff; margin: 0em; width: 100%; font-family: consolas,&amp;#39;Courier New&amp;#39;,courier,monospace; font-size: 12px">  6:           <span style="color: #0000ff">string</span> actionName = <span style="color: #0000ff">base</span>.ControllerContext.HttpContext.Request.HttpMethod;
-</pre><pre style="background-color: #fbfbfb; margin: 0em; width: 100%; font-family: consolas,&amp;#39;Courier New&amp;#39;,courier,monospace; font-size: 12px">  7:           <span style="color: #0000ff">if</span> (!ActionInvoker.InvokeAction(<span style="color: #0000ff">base</span>.ControllerContext, actionName))
-</pre><pre style="background-color: #ffffff; margin: 0em; width: 100%; font-family: consolas,&amp;#39;Courier New&amp;#39;,courier,monospace; font-size: 12px">  8:           {
-</pre><pre style="background-color: #fbfbfb; margin: 0em; width: 100%; font-family: consolas,&amp;#39;Courier New&amp;#39;,courier,monospace; font-size: 12px">  9:               HandleUnknownAction(actionName);
-</pre><pre style="background-color: #ffffff; margin: 0em; width: 100%; font-family: consolas,&amp;#39;Courier New&amp;#39;,courier,monospace; font-size: 12px"> 10:           }
-</pre><pre style="background-color: #fbfbfb; margin: 0em; width: 100%; font-family: consolas,&amp;#39;Courier New&amp;#39;,courier,monospace; font-size: 12px"> 11:       }
-</pre><pre style="background-color: #ffffff; margin: 0em; width: 100%; font-family: consolas,&amp;#39;Courier New&amp;#39;,courier,monospace; font-size: 12px"> 12:       <span style="color: #0000ff">finally</span>
-</pre><pre style="background-color: #fbfbfb; margin: 0em; width: 100%; font-family: consolas,&amp;#39;Courier New&amp;#39;,courier,monospace; font-size: 12px"> 13:       {
-</pre><pre style="background-color: #ffffff; margin: 0em; width: 100%; font-family: consolas,&amp;#39;Courier New&amp;#39;,courier,monospace; font-size: 12px"> 14:           TempData.Save(<span style="color: #0000ff">base</span>.ControllerContext, TempDataProvider);
-</pre><pre style="background-color: #fbfbfb; margin: 0em; width: 100%; font-family: consolas,&amp;#39;Courier New&amp;#39;,courier,monospace; font-size: 12px"> 15:       }
-</pre><pre style="background-color: #ffffff; margin: 0em; width: 100%; font-family: consolas,&amp;#39;Courier New&amp;#39;,courier,monospace; font-size: 12px"> 16:     }</pre></pre>
+---
 
-Please note that this is not REST, if you want or need to go REST make yourself a favor and take a look at <a href="http://www.ohloh.net/p/openrasta" target="_blank">openrasta</a>.
+This post have been inspired by <a href="http://www.lostechies.com/blogs/chad_myers/archive/2009/06/18/going-controller-less-in-mvc-the-way-fowler-meant-it.aspx" target="_blank">the talks about </a><a href="http://www.jeremyskinner.co.uk/2009/06/20/controllerless-actions-with-asp-net-mvc/" target="_blank">controllerless actions</a>. 
 
+This is NOT an alternative to that. Controllerless actions is an interesting concept that should be study. Actually <a href="http://jeffreypalermo.com/" target="_blank">Jeffrey Palermo</a> has a <a href="http://jeffreypalermo.com/blog/the-asp-net-mvc-actioncontroller-ndash-the-controllerless-action-or-actionless-controller/" target="_blank">concept implementation</a>.
 
-If your view have multiple parts, like in most complex applications, you may think that this approach is limited and unpractical and it won’t work. I plan to show in a later post how to implement widgets following this approach, keep tune.
+There is a problem with controllers that grow or contain too much code in them.
 
+For the second problem, containing too much code, the only solution I see is code reviews and practice of proper separation of concerns.
 
-I hope this is useful. 
+For the first problem, we can apply some constrains in the way controllers are written and used to limit the number of methods.
 
+The way we use controllers today is by (sometimes) mimicking the old document based model for web applications.
 
-<div style="padding-bottom: 0px; margin: 0px; padding-left: 0px; padding-right: 0px; display: inline; float: none; padding-top: 0px" id="scid:0767317B-992E-4b12-91E0-4F059A8CECA8:86d027ad-a281-467e-9ac8-2fb6ed7c6d89" class="wlWriterEditableSmartContent">Technorati Tags: <a href="http://technorati.com/tags/asp.net+mvc" rel="tag">asp.net mvc</a></div>
+We call the first screen of our web application Home page, so to handle access to this resource we create a HomeController (so far so good). Now what happens when somebody browse to the route we assign to this resource with no action defined in it? The controller is called and "a default action" is executed, and we tend to call it "Index".
+
+Think about it, why is this action called “Index”? What are we indexing? Nothing. We call it Index and we never look back, because it fits with our old way of doing things. Remember how we used to call the default document/page in the document based web applications a long time ago? <a href="http://en.wikipedia.org/wiki/Webserver_directory_index" target="_blank">index.html</a>
+
+<em>Side note: [In asp and asp.net default.asp was the general name of this page and how IIS got configured, so this action could very well be called Default for similar reasons, but default (all lowercase) is a reserved world in C#, so maybe that played against it. In any case, even when Default is a more meaningful name for the action than Index, it’s still not good for our purposes.]</em>
+
+Of course there is nothing that force you to call this Actions Index and maybe you are calling them something completely different, but this is the default name after creating a new project. 
+
+When you do a request to the Home resource typing the route in the address bar of the browser and hit enter you are using the Get http verb, so the name of the action should be Get(). Where am I going with all this? 
+
+The controller should control how your presentation handle request, and request are performed using different verbs against resources, so the controller should know how to react to those verbs and coordinate some work with a lower layer, acting almost as a translation layer between your business code and the view. The controller should not know that you want to FindABook or SignIn or LogOut or SendAMail.
+
+Let’s limit the actions in a controller to the HTTPVerbs you want to support and no more than that. There are only (4-5 at the most) http verbs you may want to support for a given resource. (Get, Post, Put, Delete, Head) 
+
+Most web applications will only support two Get and Post. These will keep your controllers very, very small as far as you don’t write 500 lines in each method, or switch statements to support “multiple actions” per method. 
+
+To enforce this on code you can create your own base controller overridden the ExecuteCore method with something like this:
+
+{% highlight aspx-cs %} 
+	protected override void ExecuteCore()
+	{
+		TempData.Load(base.ControllerContext, TempDataProvider);
+		try
+		{
+			string actionName = base.ControllerContext.HttpContext.Request.HttpMethod;
+			if (!ActionInvoker.InvokeAction(base.ControllerContext, actionName))
+			{
+				HandleUnknownAction(actionName);
+			}
+		}
+		finally
+		{
+			TempData.Save(base.ControllerContext, TempDataProvider);
+		}
+	}
+{% endhighlight %}
+
+Please note that this is not REST, if you want or need to go REST make yourself a favor and take a look at <a href="http://www.ohloh.net/p/openrasta" target="_blank">openrasta</a>.
+
+If your view have multiple parts, like in most complex applications, you may think that this approach is limited and unpractical and it won’t work. I plan to show in a later post how to implement widgets following this approach, keep tune.
+
+I hope this is useful. 
