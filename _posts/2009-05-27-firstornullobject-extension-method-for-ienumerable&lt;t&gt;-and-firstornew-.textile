@@ -40,6 +40,7 @@ at System.Threading.ExecutionContext.Run(ExecutionContext executionContext, Cont
 at System.Threading.ExecutionContext.Run(ExecutionContext executionContext, ContextCallback callback, Object state) 
 at System.Threading.ThreadHelper.ThreadStart() 
 InnerException: 
+{% endhighlight %}
 
 Why? The default of string is null.
 
