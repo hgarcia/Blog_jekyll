@@ -1,73 +1,105 @@
 ---
 layout: post
 title: Extending ASP.NET MVC
-summary:    I want to be positive in this post. So I will just mention this once. The framework is very extensible but It’s more difficult that It should. I guess that the problem is not really with the framework, but me trying to make it do something t...
-categories: [Programming]
----
-   <br />I want to be positive in this post. So I will just mention this once. The framework is very extensible but It’s more difficult that It should. I guess that the problem is not really with the framework, but me trying to make it do something that is not in the spirit of it.
-  I had two main requirements: Composed views and dynamic layouts. This means that the same action can use two (or more) completely different layouts, and the content of the different areas on any of those layouts can change from site to site as well.
-  Besides that, I want my views to be pure html. That means writing my own engine. The good thing is that the framework allows you to plug any view engine that implements IViewEngine.
-  <h3>How to deal with the composition of the view.</h3>  There are two questions here, how and where. 
-  How: After executing an action in a controller we need to select a view that will be rendered, that view depends not just on the action we just run but in the site we are viewing. It can also depend on some of the context content (like sessions, query string, form post data, cookies, etc.).
-  We also need to know the widgets that will be in each area of the view layout. That represents a problem since each layout can change between sites and therefore, the number of areas in each layout and the number and type of widgets in those areas will change as well. The view engine can implement a GetLayout method but I don’t believe this is the proper place for this logic. Why? Because the widgets classes are mini controllers. They need to load specific data that they need to render or interact with some services to perform a given task.
-  So I decided to create an ILayoutLocator: The layout locator class has a method GetLayout that returns a layout class.
-  <div style="font-family: courier new; background: white; color: black; font-size: 10pt">   <p style="margin: 0px"><span style="color: #2b91af"> 3</span> <span style="color: blue">public</span> <span style="color: blue">interface</span> <span style="color: #2b91af">ILayoutLocator</span>
-    <p style="margin: 0px"><span style="color: #2b91af"> 4</span> {
-    <p style="margin: 0px"><span style="color: #2b91af"> 5</span> <span style="color: #2b91af">IProngHornLayout</span> GetLayout(<span style="color: #2b91af">IProngHornControllerContext</span> context);
-    <p style="margin: 0px"><span style="color: #2b91af"> 6</span> }
- </div>  The ProngHornLayout class is very simple:
-  <div style="font-family: courier new; background: white; color: black; font-size: 10pt">   <div style="font-family: courier new; background: white; color: black; font-size: 10pt">     <p style="margin: 0px"><span style="color: #2b91af"> 9</span> <span style="color: blue">public</span> <span style="color: blue">class</span> <span style="color: #2b91af">ProngHornLayout</span> : <span style="color: #2b91af">IProngHornLayout</span>
-      <p style="margin: 0px"><span style="color: #2b91af"> 10</span> {
-      <p style="margin: 0px"><span style="color: #2b91af"> 11</span> <span style="color: blue">private</span> <span style="color: #2b91af">IDictionary</span>&amp;lt;<span style="color: blue">string</span>, <span style="color: #2b91af">IProngHornLayoutAreas</span>&amp;gt; _areas = <span style="color: blue">new</span> <span style="color: #2b91af">Dictionary</span>&amp;lt;<span style="color: blue">string</span>, <span style="color: #2b91af">IProngHornLayoutAreas</span>&amp;gt;();
-      <p style="margin: 0px"><span style="color: #2b91af"> 12</span>
-      <p style="margin: 0px"><span style="color: #2b91af"> 13</span> <span style="color: blue">public</span> ProngHornLayout(<span style="color: blue">string</span> layoutPath)
-      <p style="margin: 0px"><span style="color: #2b91af"> 14</span> {
-      <p style="margin: 0px"><span style="color: #2b91af"> 15</span> LayoutPath = layoutPath;
-      <p style="margin: 0px"><span style="color: #2b91af"> 16</span> }
-      <p style="margin: 0px"><span style="color: #2b91af"> 17</span>
-      <p style="margin: 0px"><span style="color: #2b91af"> 18</span> <span style="color: blue">public</span> <span style="color: blue">string</span> LayoutPath { <span style="color: blue">get</span>; <span style="color: blue">set</span>; }
-      <p style="margin: 0px"><span style="color: #2b91af"> 19</span>
-      <p style="margin: 0px"><span style="color: #2b91af"> 20</span> <span style="color: blue">public</span> <span style="color: #2b91af">IDictionary</span>&amp;lt;<span style="color: blue">string</span>, <span style="color: #2b91af">IProngHornLayoutArea</span>&amp;gt; Areas
-      <p style="margin: 0px"><span style="color: #2b91af"> 21</span> {
-      <p style="margin: 0px"><span style="color: #2b91af"> 22</span> <span style="color: blue">get</span> { <span style="color: blue">return</span> _areas; }
-      <p style="margin: 0px"><span style="color: #2b91af"> 23</span> <span style="color: blue">set</span> { _areas = <span style="color: blue">value</span>; }
-      <p style="margin: 0px"><span style="color: #2b91af"> 24</span> }
-      <p style="margin: 0px"><span style="color: #2b91af"> 25</span> }
-   </div> </div>  And check the <span style="color: #2b91af">IProngHornLayoutArea</span>
-  
-  <div style="font-family: courier new; background: white; color: black; font-size: 10pt">   <p style="margin: 0px"><span style="color: #2b91af"> 5</span> <span style="color: blue">public</span> <span style="color: blue">interface</span> <span style="color: #2b91af">IProngHornLayoutArea</span>
-    <p style="margin: 0px"><span style="color: #2b91af"> 6</span> {
-    <p style="margin: 0px"><span style="color: #2b91af"> 7</span> <span style="color: #2b91af">IDictionary</span>&amp;lt;<span style="color: blue">string</span>, <span style="color: #2b91af">IWidget</span>&amp;gt; Widgets { <span style="color: blue">get</span>; <span style="color: blue">set</span>; }
-    <p style="margin: 0px"><span style="color: #2b91af"> 8</span> }
- </div>  So the layout locator will use all relevant information in the controller context to find the layout. Layouts are configured in the database, so from there It gets, the layout path, the keys for the Areas and a list of Widgets for each area. The widgets are resolved using an IOC that is injected into the base controller by a custom controller factory.
-  The widgets interface is simple:
-  <div style="font-family: courier new; background: white; color: black; font-size: 10pt">   <p style="margin: 0px"><span style="color: #2b91af"> 7</span> <span style="color: blue">public</span> <span style="color: blue">interface</span> <span style="color: #2b91af">IWidget</span>
-    <p style="margin: 0px"><span style="color: #2b91af"> 8</span> {
-    <p style="margin: 0px"><span style="color: #2b91af"> 9</span> <span style="color: #2b91af">IProngHornControllerContext</span> ControllerContext { <span style="color: blue">get</span>; }
-    <p style="margin: 0px"><span style="color: #2b91af"> 10</span> <span style="color: #2b91af">IList</span>&amp;lt;<span style="color: blue">string</span>&amp;gt; Scripts { <span style="color: blue">get</span>; <span style="color: blue">set</span>; }
-    <p style="margin: 0px"><span style="color: #2b91af"> 11</span> <span style="color: #2b91af">IList</span>&amp;lt;<span style="color: blue">string</span>&amp;gt; StyleSheets { <span style="color: blue">get</span>; <span style="color: blue">set</span>; }
-    <p style="margin: 0px"><span style="color: #2b91af"> 12</span> <span style="color: blue">string</span> Title { <span style="color: blue">get</span>; <span style="color: blue">set</span>; }
-    <p style="margin: 0px"><span style="color: #2b91af"> 13</span> <span style="color: blue">string</span> Rendered { <span style="color: blue">get</span>; }
-    <p style="margin: 0px"><span style="color: #2b91af"> 14</span> <span style="color: #2b91af">IList</span>&amp;lt;<span style="color: #2b91af">IWidget</span>&amp;gt; Widgets { <span style="color: blue">get</span>; <span style="color: blue">set</span>; }
-    <p style="margin: 0px"><span style="color: #2b91af"> 15</span> <span style="color: blue">void</span> Render(<span style="color: #2b91af">TextWriter</span> writer);
-    <p style="margin: 0px"><span style="color: #2b91af"> 16</span> <span style="color: blue">void</span> Render(<span style="color: #2b91af">StringBuilder</span> builder);
-    <p style="margin: 0px"><span style="color: #2b91af"> 17</span> <span style="color: blue">string</span> Render();
-    <p style="margin: 0px"><span style="color: #2b91af"> 18</span> }
- </div>  I plan on leave only one or two Render methods but I haven’t decided yet on the right API. The Widgets will load the proper template (View) to render and coordinate with the necessary services to get the model they need. They will also use the caching service to reduce the number of calls to the database.
-  The <span style="color: #2b91af">IProngHornLayout</span> is them pass into a custom ViewDataDictionary the IProngHornViewDataDictionary.
-  <div style="font-family: courier new; background: white; color: black; font-size: 10pt">   <p style="margin: 0px"><span style="color: #2b91af"> 6</span> <span style="color: blue">public</span> <span style="color: blue">class</span> <span style="color: #2b91af">ProngHornViewDataDictionary</span> : <span style="color: #2b91af">ViewDataDictionary</span>, <span style="color: #2b91af">IProngHornViewDataDictionary</span>
-    <p style="margin: 0px"><span style="color: #2b91af"> 7</span> {
-    <p style="margin: 0px"><span style="color: #2b91af"> 8</span> <span style="color: blue">public</span> ProngHornViewDataDictionary()
-    <p style="margin: 0px"><span style="color: #2b91af"> 9</span> {
-    <p style="margin: 0px"><span style="color: #2b91af"> 10</span> Containers = <span style="color: blue">new</span> <span style="color: #2b91af">Dictionary</span>&amp;lt;<span style="color: blue">string</span>, <span style="color: #2b91af">IProngHornLayout</span>&amp;gt;();
-    <p style="margin: 0px"><span style="color: #2b91af"> 11</span> Scripts = <span style="color: blue">new</span> <span style="color: #2b91af">List</span>&amp;lt;<span style="color: blue">string</span>&amp;gt;();
-    <p style="margin: 0px"><span style="color: #2b91af"> 12</span> StyleSheets = <span style="color: blue">new</span> <span style="color: #2b91af">List</span>&amp;lt;<span style="color: blue">string</span>&amp;gt;();
-    <p style="margin: 0px"><span style="color: #2b91af"> 13</span> Title = <span style="color: blue">string</span>.Empty;
-    <p style="margin: 0px"><span style="color: #2b91af"> 14</span> }
-    <p style="margin: 0px"><span style="color: #2b91af"> 15</span> <span style="color: blue">public</span> <span style="color: #2b91af">IList</span>&amp;lt;<span style="color: blue">string</span>&amp;gt; Scripts { <span style="color: blue">get</span>; <span style="color: blue">set</span>; }
-    <p style="margin: 0px"><span style="color: #2b91af"> 16</span> <span style="color: blue">public</span> <span style="color: #2b91af">IList</span>&amp;lt;<span style="color: blue">string</span>&amp;gt; StyleSheets { <span style="color: blue">get</span>; <span style="color: blue">set</span>; }
-    <p style="margin: 0px"><span style="color: #2b91af"> 17</span> <span style="color: blue">public</span> <span style="color: blue">string</span> Title { <span style="color: blue">get</span>; <span style="color: blue">set</span>; }
-    <p style="margin: 0px"><span style="color: #2b91af"> 18</span> <span style="color: blue">public</span> <span style="color: #2b91af">IDictionary</span>&amp;lt;<span style="color: blue">string</span>, <span style="color: #2b91af">IProngHornLayout</span>&amp;gt; Areas { <span style="color: blue">get</span>; <span style="color: blue">set</span>; }
-    <p style="margin: 0px"><span style="color: #2b91af"> 19</span> }
- </div>  Note the Scripts and StyleSheets properties, the Widgets can register in this properties their own dependencies and the ViewEngine should combine all them into one file to minimize load time.
-  Where: All this happens in the OnActionExecuted method that we override in the ProngHornControllerBase class.
+summary: I want to be positive in this post. So I will just mention this once. The framework is very extensible but It’s more difficult that It should. I guess that the problem is not really with the framework, but me trying to make it do something that is not in the spirit of it.
+categories: [Programming, .Net]
+---
+
+I want to be positive in this post. So I will just mention this once. The framework is very extensible but It’s more difficult that It should. I guess that the problem is not really with the framework, but me trying to make it do something that is not in the spirit of it.
+
+I had two main requirements: Composed views and dynamic layouts. This means that the same action can use two (or more) completely different layouts, and the content of the different areas on any of those layouts can change from site to site as well.
+
+Besides that, I want my views to be pure html. That means writing my own engine. The good thing is that the framework allows you to plug any view engine that implements IViewEngine.
+
+<h3>How to deal with the composition of the view.</h3>  
+
+There are two questions here, how and where. 
+
+How: After executing an action in a controller we need to select a view that will be rendered, that view depends not just on the action we just run but in the site we are viewing. It can also depend on some of the context content (like sessions, query string, form post data, cookies, etc.).
+
+We also need to know the widgets that will be in each area of the view layout. That represents a problem since each layout can change between sites and therefore, the number of areas in each layout and the number and type of widgets in those areas will change as well. The view engine can implement a GetLayout method but I don’t believe this is the proper place for this logic. Why? Because the widgets classes are mini controllers. They need to load specific data that they need to render or interact with some services to perform a given task.
+
+So I decided to create an ILayoutLocator: The layout locator class has a method GetLayout that returns a layout class.
+
+{% highlight aspx-cs %}
+	public interface ILayoutLocator
+	{
+		IProngHornLayout GetLayout(IProngHornControllerContext context);
+	}
+{% endhighlight %}
+  
+The ProngHornLayout class is very simple:
+
+{% highlight aspx-cs %}
+	public class ProngHornLayout : IProngHornLayout
+	{
+		private IDictionary<string, IProngHornLayoutAreas> _areas = new Dictionary<string, IProngHornLayoutAreas>();
+	
+		public ProngHornLayout(string layoutPath)
+		{
+			LayoutPath = layoutPath;
+		}
+		
+		public string LayoutPath { get; set; }
+		
+		public IDictionary<string, IProngHornLayoutArea> Areas
+		{
+			get { return _areas; }
+			set { _areas = value; }
+		}
+	}
+{% endhighlight %}
+   
+And check the IProngHornLayoutArea.
+
+{% highlight aspx-cs %}
+	public interface IProngHornLayoutArea
+	{
+		IDictionary<string, IWidget> Widgets { get; set; }
+	}
+{% endhighlight %}
+ 
+So the layout locator will use all relevant information in the controller context to find the layout. Layouts are configured in the database, so from there It gets, the layout path, the keys for the Areas and a list of Widgets for each area. The widgets are resolved using an IOC that is injected into the base controller by a custom controller factory.
+
+The widgets interface is simple:
+
+{% highlight aspx-cs %}
+	public interface IWidget
+	{
+		IProngHornControllerContext ControllerContext { get; }
+		IList<string> Scripts { get; set; }
+		IList<string> StyleSheets { get; set; }
+		string Title { get; set; }
+		string Rendered { get; }
+		IList<IWidget> Widgets { get; set; }
+		void Render(TextWriter writer);
+		void Render(StringBuilder builder);
+		string Render();
+	}
+{% endhighlight %}
+
+I plan on leave only one or two Render methods but I haven’t decided yet on the right API. The Widgets will load the proper template (View) to render and coordinate with the necessary services to get the model they need. They will also use the caching service to reduce the number of calls to the database.
+
+The IProngHornLayout is them pass into a custom ViewDataDictionary the IProngHornViewDataDictionary.
+
+{% highlight aspx-cs %}
+	public class ProngHornViewDataDictionary : ViewDataDictionary, IProngHornViewDataDictionary
+	{
+		public ProngHornViewDataDictionary()
+		{
+			Containers = new Dictionary<string, IProngHornLayout>();
+			Scripts = new List<string>();
+			StyleSheets = new List<string>();
+			Title = string.Empty;
+		}
+		
+		public IList<string> Scripts { get; set; }
+		public IList<string> StyleSheets { get; set; }
+		public string Title { get; set; }
+		public IDictionary<string, IProngHornLayout> Areas { get; set; }
+	}
+{% endhighlight %}
+ 
+Note the Scripts and StyleSheets properties, the Widgets can register in this properties their own dependencies and the ViewEngine should combine all them into one file to minimize load time.
+
+Where: All this happens in the OnActionExecuted method that we override in the ProngHornControllerBase class.

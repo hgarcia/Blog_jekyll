@@ -1,155 +1,153 @@
 ---
 layout: post
 title: Tuple, a new type on .Net 4.0
-summary:    If you ever played with some language that have the Tuple type I bet you miss it in .Net. Well 4.0 adds it.   What is a Tuple?  Let’s see what the ubiquitous Wikipedia have to say about it.      In mathematics, a tuple is a sequence (or orde...
-categories: [Programming]
----
-   <br />If you ever played with some language that have the Tuple type I bet you miss it in .Net. Well 4.0 adds it.
-  <h3>What is a Tuple?</h3>  Let’s see what the ubiquitous <a href="http://en.wikipedia.org/wiki/Tuple" target="_blank">Wikipedia</a> have to say about it.
-  <blockquote>   In <a href="http://en.wikipedia.org/wiki/Mathematics">mathematics</a>, a <b>tuple</b> is a <a href="http://en.wikipedia.org/wiki/Sequence">sequence</a> (or ordered list) of <a href="http://en.wikipedia.org/wiki/Finite">finite</a> length. An <b><var>n</var>-tuple</b> is a tuple with <var>n</var> elements. Tuples are usually written within parenthesis. For example, (2, 7, 4, 1, 7) is a 5-tuple.
-    Tuples are often used to describe mathematical objects that consist of specified components. For example, a <a href="http://en.wikipedia.org/wiki/Graph">graph</a> is commonly defined as the 2-tuple (<var>V</var>, <var>E</var>) where <var>V</var> is the set of vertices and <var>E</var> is the set of edges. The edge set <var>E</var> is a subset of the <a href="http://en.wikipedia.org/wiki/Cartesian_product">cartesian product</a> <var>V</var> × <var>V</var>, hence a set of 2-tuples.
- </blockquote>  In programming languages you can use Tuples to define a small, finite list of objects, for example in Erlang DateTime is a Tuple with this form:
-  {Date, Time} Where Date and Time are both Tuples.
-  Date = {Year, Month, Day}    <br />Time = {Hour, Minute, Second}
-  <h3>When to use Tuple?</h3>  Tuples are commonly used on functional programming. 
-  A common example is to use them when a method needs to return more than one value, for example a method that returns a point in a grid can return this point as a set of x,y coordinates in a Tuple.
-  <pre><pre style="background-color: #fbfbfb; margin: 0em; width: 100%; font-family: consolas,&amp;#39;Courier New&amp;#39;,courier,monospace; font-size: 12px">  1:     <span style="color: #0000ff">public</span> <span style="color: #0000ff">class</span> Point
-</pre><pre style="background-color: #ffffff; margin: 0em; width: 100%; font-family: consolas,&amp;#39;Courier New&amp;#39;,courier,monospace; font-size: 12px">  2:     {
-</pre><pre style="background-color: #fbfbfb; margin: 0em; width: 100%; font-family: consolas,&amp;#39;Courier New&amp;#39;,courier,monospace; font-size: 12px">  3:         <span style="color: #0000ff">public</span> Tuple&amp;lt;<font color="#0000ff">double</font>, <font color="#0000ff">double</font>&amp;gt; CalculatePosition()
-</pre><pre style="background-color: #ffffff; margin: 0em; width: 100%; font-family: consolas,&amp;#39;Courier New&amp;#39;,courier,monospace; font-size: 12px">  4:         {
-</pre><pre style="background-color: #fbfbfb; margin: 0em; width: 100%; font-family: consolas,&amp;#39;Courier New&amp;#39;,courier,monospace; font-size: 12px">  5:             <span style="color: #0000ff">double</span> positionOnX;
-</pre><pre style="background-color: #ffffff; margin: 0em; width: 100%; font-family: consolas,&amp;#39;Courier New&amp;#39;,courier,monospace; font-size: 12px">  6:             <span style="color: #0000ff">double</span> positionOnY;
-</pre><pre style="background-color: #fbfbfb; margin: 0em; width: 100%; font-family: consolas,&amp;#39;Courier New&amp;#39;,courier,monospace; font-size: 12px">  7:             <span style="color: #008000">//Some crazy algorythm to calculate the position of Point.</span>
-</pre><pre style="background-color: #ffffff; margin: 0em; width: 100%; font-family: consolas,&amp;#39;Courier New&amp;#39;,courier,monospace; font-size: 12px">  8:             <span style="color: #0000ff">return</span> <span style="color: #0000ff">new</span> Tuple&amp;lt;<span style="color: #0000ff">double</span>, <span style="color: #0000ff">double</span>&amp;gt;(positionOnX, positionOnY);
-</pre><pre style="background-color: #fbfbfb; margin: 0em; width: 100%; font-family: consolas,&amp;#39;Courier New&amp;#39;,courier,monospace; font-size: 12px">  9:         }
-</pre><pre style="background-color: #ffffff; margin: 0em; width: 100%; font-family: consolas,&amp;#39;Courier New&amp;#39;,courier,monospace; font-size: 12px"> 10:     }</pre></pre>
+summary: If you ever played with some language that have the Tuple type I bet you miss it in .Net. Well 4.0 adds it. What is a Tuple?  Let’s see what the ubiquitous Wikipedia have to say about it.
+categories: [Programming, .Net]
+---
 
-Of course if the Position or Location is an important object in your domain you should create a type for that. But bare with me on this simple example.
+If you ever played with some language that have the Tuple type I bet you miss it in .Net. Well 4.0 adds it.
 
+<h3>What is a Tuple?</h3>
 
-So, how you access the values in the Tuple? Very simple.
+Let’s see what the ubiquitous <a href="http://en.wikipedia.org/wiki/Tuple" target="_blank">Wikipedia</a> have to say about it.
 
+<blockquote>In <a href="http://en.wikipedia.org/wiki/Mathematics">mathematics</a>, a <b>tuple</b> is a <a href="http://en.wikipedia.org/wiki/Sequence">sequence</a> (or ordered list) of <a href="http://en.wikipedia.org/wiki/Finite">finite</a> length. An <b>n-tuple</b> is a tuple with n elements. Tuples are usually written within parenthesis. For example, (2, 7, 4, 1, 7) is a 5-tuple.
 
-<pre><pre style="background-color: #fbfbfb; margin: 0em; width: 100%; font-family: consolas,&amp;#39;Courier New&amp;#39;,courier,monospace; font-size: 12px">  1:         <span style="color: #0000ff">public</span> <span style="color: #0000ff">void</span> DisplayPositionInConsole(Point point)
-</pre><pre style="background-color: #ffffff; margin: 0em; width: 100%; font-family: consolas,&amp;#39;Courier New&amp;#39;,courier,monospace; font-size: 12px">  2:         {
-</pre><pre style="background-color: #fbfbfb; margin: 0em; width: 100%; font-family: consolas,&amp;#39;Courier New&amp;#39;,courier,monospace; font-size: 12px">  3:             var position = point.CalculatePosition();
-</pre><pre style="background-color: #ffffff; margin: 0em; width: 100%; font-family: consolas,&amp;#39;Courier New&amp;#39;,courier,monospace; font-size: 12px">  4:             Console.WriteLine(<span style="color: #0000ff">string</span>.Format(&amp;quot;<span style="color: #8b0000">The point is located at x equal {0} and y equal {1}</span>&amp;quot;
-</pre><pre style="background-color: #fbfbfb; margin: 0em; width: 100%; font-family: consolas,&amp;#39;Courier New&amp;#39;,courier,monospace; font-size: 12px">  5:                 ,position.Item1
-</pre><pre style="background-color: #ffffff; margin: 0em; width: 100%; font-family: consolas,&amp;#39;Courier New&amp;#39;,courier,monospace; font-size: 12px">  6:                 , position.Item2));
-</pre><pre style="background-color: #fbfbfb; margin: 0em; width: 100%; font-family: consolas,&amp;#39;Courier New&amp;#39;,courier,monospace; font-size: 12px">  7:         }</pre></pre>
+Tuples are often used to describe mathematical objects that consist of specified components. For example, a <a href="http://en.wikipedia.org/wiki/Graph">graph</a> is commonly defined as the 2-tuple (V, E) where V is the set of vertices and E is the set of edges. The edge set E is a subset of the <a href="http://en.wikipedia.org/wiki/Cartesian_product">cartesian product</a> V × V, hence a set of 2-tuples.</blockquote>
 
-The tuple has a bunch of Item(s) properties each named Item1,2,etc. depending on how many Items the Tuple has. If you are asking yourself if there is a way to determine the number of Item properties programmatically (without using Reflection), the answer, as far as I know, is no.
+In programming languages you can use Tuples to define a small, finite list of objects, for example in Erlang DateTime is a Tuple with this form:
 
+{Date, Time} Where Date and Time are both Tuples.
+Date = {Year, Month, Day}
+Time = {Hour, Minute, Second}
 
-And that is kind of odd since the Tuple object implements the ITuple interface and that interface has a definition for the Size method. Not only that but the method is implemented in all eight Tuple types. Yes, you hear it correctly eight different Tuple types.
+<h3>When to use Tuple?</h3>
 
+Tuples are commonly used on functional programming. 
 
-The problem is that the ITuple interface is internal.
+A common example is to use them when a method needs to return more than one value, for example a method that returns a point in a grid can return this point as a set of x,y coordinates in a Tuple.
 
+{% highlight aspx-cs %}
+	public class Point
+	{
+		public Tuple<double</font>, double</font>> CalculatePosition()
+		{
+			double positionOnX;
+			double positionOnY;
+			//Some crazy algorythm to calculate the position of Point.
+			return new Tuple<double, double>(positionOnX, positionOnY);
+		}
+	}
+{% endhighlight %}
 
-This causes a problem when using the “infinite” Tuple or the Tuple with eight parameters in the constructor. This Tuple expects that the last parameter implements ITuple, thus been a Tuple as well.
+Of course if the Position or Location is an important object in your domain you should create a type for that. But bare with me on this simple example.
 
+So, how you access the values in the Tuple? Very simple.
 
-The problem is that this can’t be enforced on compilation time since ITuple is internal and may cause a runtime exception to be thrown. This code below compiles with no problems.
+{% highlight aspx-cs %}
+	public void DisplayPositionInConsole(Point point)
+	{
+		var position = point.CalculatePosition();
+		Console.WriteLine(string.Format("The point is located at x equal {0} and y equal {1}",position.Item1, position.Item2));
+	}
+{% endhighlight %}
 
+The tuple has a bunch of Item(s) properties each named Item1,2,etc. depending on how many Items the Tuple has. If you are asking yourself if there is a way to determine the number of Item properties programmatically (without using Reflection), the answer, as far as I know, is no.
 
-<pre><pre style="background-color: #fbfbfb; margin: 0em; width: 100%; font-family: consolas,&amp;#39;Courier New&amp;#39;,courier,monospace; font-size: 12px">  1:         <span style="color: #0000ff">static</span> <span style="color: #0000ff">void</span> Main(<span style="color: #0000ff">string</span>[] args)
-</pre><pre style="background-color: #ffffff; margin: 0em; width: 100%; font-family: consolas,&amp;#39;Courier New&amp;#39;,courier,monospace; font-size: 12px">  2:         {
-</pre><pre style="background-color: #fbfbfb; margin: 0em; width: 100%; font-family: consolas,&amp;#39;Courier New&amp;#39;,courier,monospace; font-size: 12px">  3:             var myInfiniteTuple = <span style="color: #0000ff">new</span> Tuple&amp;lt;<span style="color: #0000ff">int</span>, <span style="color: #0000ff">int</span>, <span style="color: #0000ff">int</span>, <span style="color: #0000ff">int</span>, <span style="color: #0000ff">int</span>, <span style="color: #0000ff">int</span>, <span style="color: #0000ff">int</span>, <span style="color: #0000ff">int</span>&amp;gt;(0, 1, 2, 3, 4, 5, 6, 7);
-</pre><pre style="background-color: #ffffff; margin: 0em; width: 100%; font-family: consolas,&amp;#39;Courier New&amp;#39;,courier,monospace; font-size: 12px">  4:             Console.WriteLine(myInfiniteTuple.Item1);
-</pre><pre style="background-color: #fbfbfb; margin: 0em; width: 100%; font-family: consolas,&amp;#39;Courier New&amp;#39;,courier,monospace; font-size: 12px">  5:             Console.Read();
-</pre><pre style="background-color: #ffffff; margin: 0em; width: 100%; font-family: consolas,&amp;#39;Courier New&amp;#39;,courier,monospace; font-size: 12px">  6:         }</pre></pre>
+And that is kind of odd since the Tuple object implements the ITuple interface and that interface has a definition for the Size method. Not only that but the method is implemented in all eight Tuple types. Yes, you hear it correctly eight different Tuple types.
 
-But upon running, this is the Exception thrown.
+The problem is that the ITuple interface is internal.
 
+This causes a problem when using the “infinite” Tuple or the Tuple with eight parameters in the constructor. This Tuple expects that the last parameter implements ITuple, thus been a Tuple as well.
 
-System.ArgumentException was unhandled 
-  <br /> Message=The last element of an eight element tuple must be a Tuple. 
+The problem is that this can’t be enforced on compilation time since ITuple is internal and may cause a runtime exception to be thrown. This code below compiles with no problems.
 
-  <br /> Source=mscorlib 
+{% highlight aspx-cs %}
+	static void Main(string[] args)
+	{
+		var myInfiniteTuple = new Tuple<int, int, int, int, int, int, int, int>(0, 1, 2, 3, 4, 5, 6, 7);
+		Console.WriteLine(myInfiniteTuple.Item1);
+		Console.Read();
+	}
+{% endhighlight %}
 
-  <br /> StackTrace: 
+But upon running, this is the Exception thrown.
 
-  <br /> at System.Tuple`8..ctor(T1 item1, T2 item2, T3 item3, T4 item4, T5 item5, T6 item6, T7 item7, TRest rest) 
+{% highlight console %}
+	System.ArgumentException was unhandled 
+	Message=The last element of an eight element tuple must be a Tuple. 
+	Source=mscorlib 
+	StackTrace: 
+	at System.Tuple`8..ctor(T1 item1, T2 item2, T3 item3, T4 item4, T5 item5, T6 item6, T7 item7, TRest rest) 
+	at TupleDemo.Program.Main(String[] args) in C:\Development\Code\DotNet\VS2010\DynamicProgrammer\TupleDemo\TupleDemo\Program.cs:line 12 
+	
+	at System.AppDomain._nExecuteAssembly(RuntimeAssembly assembly, String[] args) 
+	at System.AppDomain.ExecuteAssembly(String assemblyFile, Evidence assemblySecurity, String[] args) 
+	at Microsoft.VisualStudio.HostingProcess.HostProc.RunUsersAssembly() 
+	at System.Threading.ThreadHelper.ThreadStart_Context(Object state) 
+	at System.Threading.ExecutionContext.Run(ExecutionContext executionContext, ContextCallback callback, Object state, Boolean ignoreSyncCtx) 
+	at System.Threading.ExecutionContext.Run(ExecutionContext executionContext, ContextCallback callback, Object state) 
+	at System.Threading.ThreadHelper.ThreadStart() 
+	InnerException: 
+{% endhighlight %}
 
-  <br /> at TupleDemo.Program.Main(String[] args) in C:\Development\Code\DotNet\VS2010\DynamicProgrammer\TupleDemo\TupleDemo\Program.cs:line 12 
+The problem is in the way this check is performed. Using reflector we can see this in the constructor.
 
-  <br /> at System.AppDomain._nExecuteAssembly(RuntimeAssembly assembly, String[] args) 
+{% highlight aspx-cs %}
+	public Tuple(T1 item1, T2 item2, T3 item3, T4 item4, T5 item5, T6 item6, T7 item7, TRest rest)
+	{
+		if (!(rest is ITuple))
+		{
+			throw new ArgumentException(Environment.GetResourceString("ArgumentException_TupleLastArgumentNotATuple"));
+		}
+		this.m_Item1 = item1;
+		this.m_Item2 = item2;
+		this.m_Item3 = item3;
+		this.m_Item4 = item4;
+		this.m_Item5 = item5;
+		this.m_Item6 = item6;
+		this.m_Item7 = item7;
+		this.m_Rest = rest;
+		}
+{% endhighlight %}
 
-  <br /> at System.AppDomain.ExecuteAssembly(String assemblyFile, Evidence assemblySecurity, String[] args) 
+Notice the check in line 3. If ITuple were public the constructor (and class definition) could be written like this:
 
-  <br /> at Microsoft.VisualStudio.HostingProcess.HostProc.RunUsersAssembly() 
+{% highlight aspx-cs %}
+	public class MyTuple<T1, T2, T3, T4, T5, T6, T7, T8> : IMytuple
+	{
+		public MyTuple(T1 item1, T2 item2, T3 item3, T4 item4, T5 item5, T6 item6, T7 item7, IMytuple itemTuple)
+		{
+			Item1 = item1;
+			Item2 = item2;
+			Item3 = item3;
+			Item4 = item4;
+			Item5 = item5;
+			Item6 = item6;
+			Item7 = item7;
+			ItemTuple = itemTuple;
+		}
+			
+		public T1 Item1{get;private set;}
+		public T2 Item2{get;private set;}
+		public T3 Item3{get;private set;}
+		public T4 Item4{get;private set;}
+		public T5 Item5{get;private set;}
+		public T6 Item6{get;private set;}
+		public T7 Item7{get;private set;}
+		public IMytuple ItemTuple{get;private set;}
+		
+		public int Size
+		{
+			get { return 8; }
+		}       
+	}
+{% endhighlight %}
 
-  <br /> at System.Threading.ThreadHelper.ThreadStart_Context(Object state) 
+IMyTuple is the same as ITuple but public. This will help to avoid the possible runtime error shown before since the compiler will refuse to compile anything that is not an implementation of ITuple.
 
-  <br /> at System.Threading.ExecutionContext.Run(ExecutionContext executionContext, ContextCallback callback, Object state, Boolean ignoreSyncCtx) 
+{% highlight console %}
+Error 1 The best overloaded method match for 'TupleDemo.MyTuple<int,int,int,int,int,int,int,TupleDemo.IMytuple>.MyTuple(int, int, int, int, int, int, int, TupleDemo.IMytuple)' has some invalid arguments C:\Development\Code\DotNet\VS2010\DynamicProgrammer\TupleDemo\TupleDemo\Program.cs 13 35 TupleDemo.
+{% endhighlight %}
 
-  <br /> at System.Threading.ExecutionContext.Run(ExecutionContext executionContext, ContextCallback callback, Object state) 
-
-  <br /> at System.Threading.ThreadHelper.ThreadStart() 
-
-  <br /> InnerException: 
-
-
-The problem is in the way this check is performed. Using reflector we can see this in the constructor.
-
-
-<pre><pre style="background-color: #fbfbfb; margin: 0em; width: 100%; font-family: consolas,&amp;#39;Courier New&amp;#39;,courier,monospace; font-size: 12px">  1: <span style="color: #0000ff">public</span> Tuple(T1 item1, T2 item2, T3 item3, T4 item4, T5 item5, T6 item6, T7 item7, TRest rest)
-</pre><pre style="background-color: #ffffff; margin: 0em; width: 100%; font-family: consolas,&amp;#39;Courier New&amp;#39;,courier,monospace; font-size: 12px">  2: {
-</pre><pre style="background-color: #fbfbfb; margin: 0em; width: 100%; font-family: consolas,&amp;#39;Courier New&amp;#39;,courier,monospace; font-size: 12px">  3:     <span style="color: #0000ff">if</span> (!(rest <span style="color: #0000ff">is</span> ITuple))
-</pre><pre style="background-color: #ffffff; margin: 0em; width: 100%; font-family: consolas,&amp;#39;Courier New&amp;#39;,courier,monospace; font-size: 12px">  4:     {
-</pre><pre style="background-color: #fbfbfb; margin: 0em; width: 100%; font-family: consolas,&amp;#39;Courier New&amp;#39;,courier,monospace; font-size: 12px">  5:         <span style="color: #0000ff">throw</span> <span style="color: #0000ff">new</span> ArgumentException(Environment.GetResourceString(&amp;quot;<span style="color: #8b0000">ArgumentException_TupleLastArgumentNotATuple</span>&amp;quot;));
-</pre><pre style="background-color: #ffffff; margin: 0em; width: 100%; font-family: consolas,&amp;#39;Courier New&amp;#39;,courier,monospace; font-size: 12px">  6:     }
-</pre><pre style="background-color: #fbfbfb; margin: 0em; width: 100%; font-family: consolas,&amp;#39;Courier New&amp;#39;,courier,monospace; font-size: 12px">  7:     <span style="color: #0000ff">this</span>.m_Item1 = item1;
-</pre><pre style="background-color: #ffffff; margin: 0em; width: 100%; font-family: consolas,&amp;#39;Courier New&amp;#39;,courier,monospace; font-size: 12px">  8:     <span style="color: #0000ff">this</span>.m_Item2 = item2;
-</pre><pre style="background-color: #fbfbfb; margin: 0em; width: 100%; font-family: consolas,&amp;#39;Courier New&amp;#39;,courier,monospace; font-size: 12px">  9:     <span style="color: #0000ff">this</span>.m_Item3 = item3;
-</pre><pre style="background-color: #ffffff; margin: 0em; width: 100%; font-family: consolas,&amp;#39;Courier New&amp;#39;,courier,monospace; font-size: 12px"> 10:     <span style="color: #0000ff">this</span>.m_Item4 = item4;
-</pre><pre style="background-color: #fbfbfb; margin: 0em; width: 100%; font-family: consolas,&amp;#39;Courier New&amp;#39;,courier,monospace; font-size: 12px"> 11:     <span style="color: #0000ff">this</span>.m_Item5 = item5;
-</pre><pre style="background-color: #ffffff; margin: 0em; width: 100%; font-family: consolas,&amp;#39;Courier New&amp;#39;,courier,monospace; font-size: 12px"> 12:     <span style="color: #0000ff">this</span>.m_Item6 = item6;
-</pre><pre style="background-color: #fbfbfb; margin: 0em; width: 100%; font-family: consolas,&amp;#39;Courier New&amp;#39;,courier,monospace; font-size: 12px"> 13:     <span style="color: #0000ff">this</span>.m_Item7 = item7;
-</pre><pre style="background-color: #ffffff; margin: 0em; width: 100%; font-family: consolas,&amp;#39;Courier New&amp;#39;,courier,monospace; font-size: 12px"> 14:     <span style="color: #0000ff">this</span>.m_Rest = rest;
-</pre><pre style="background-color: #fbfbfb; margin: 0em; width: 100%; font-family: consolas,&amp;#39;Courier New&amp;#39;,courier,monospace; font-size: 12px"> 15: }
-</pre></pre>
-
-Notice the check in line 3. If ITuple were public the constructor (and class definition) could be written like this:
-
-
-<pre><pre style="background-color: #fbfbfb; margin: 0em; width: 100%; font-family: consolas,&amp;#39;Courier New&amp;#39;,courier,monospace; font-size: 12px">  1:     <span style="color: #0000ff">public</span> <span style="color: #0000ff">class</span> MyTuple&amp;lt;T1, T2, T3, T4, T5, T6, T7, T8&amp;gt; : IMytuple
-</pre><pre style="background-color: #ffffff; margin: 0em; width: 100%; font-family: consolas,&amp;#39;Courier New&amp;#39;,courier,monospace; font-size: 12px">  2:     {
-</pre><pre style="background-color: #fbfbfb; margin: 0em; width: 100%; font-family: consolas,&amp;#39;Courier New&amp;#39;,courier,monospace; font-size: 12px">  3:         <span style="color: #0000ff">public</span> MyTuple(T1 item1, T2 item2, T3 item3, T4 item4, T5 item5, T6 item6, T7 item7, IMytuple itemTuple)
-</pre><pre style="background-color: #ffffff; margin: 0em; width: 100%; font-family: consolas,&amp;#39;Courier New&amp;#39;,courier,monospace; font-size: 12px">  4:         {
-</pre><pre style="background-color: #fbfbfb; margin: 0em; width: 100%; font-family: consolas,&amp;#39;Courier New&amp;#39;,courier,monospace; font-size: 12px">  5:             Item1 = item1;
-</pre><pre style="background-color: #ffffff; margin: 0em; width: 100%; font-family: consolas,&amp;#39;Courier New&amp;#39;,courier,monospace; font-size: 12px">  6:             Item2 = item2;
-</pre><pre style="background-color: #fbfbfb; margin: 0em; width: 100%; font-family: consolas,&amp;#39;Courier New&amp;#39;,courier,monospace; font-size: 12px">  7:             Item3 = item3;
-</pre><pre style="background-color: #ffffff; margin: 0em; width: 100%; font-family: consolas,&amp;#39;Courier New&amp;#39;,courier,monospace; font-size: 12px">  8:             Item4 = item4;
-</pre><pre style="background-color: #fbfbfb; margin: 0em; width: 100%; font-family: consolas,&amp;#39;Courier New&amp;#39;,courier,monospace; font-size: 12px">  9:             Item5 = item5;
-</pre><pre style="background-color: #ffffff; margin: 0em; width: 100%; font-family: consolas,&amp;#39;Courier New&amp;#39;,courier,monospace; font-size: 12px"> 10:             Item6 = item6;
-</pre><pre style="background-color: #fbfbfb; margin: 0em; width: 100%; font-family: consolas,&amp;#39;Courier New&amp;#39;,courier,monospace; font-size: 12px"> 11:             Item7 = item7;
-</pre><pre style="background-color: #ffffff; margin: 0em; width: 100%; font-family: consolas,&amp;#39;Courier New&amp;#39;,courier,monospace; font-size: 12px"> 12:             ItemTuple = itemTuple;
-</pre><pre style="background-color: #fbfbfb; margin: 0em; width: 100%; font-family: consolas,&amp;#39;Courier New&amp;#39;,courier,monospace; font-size: 12px"> 13:         }
-</pre><pre style="background-color: #ffffff; margin: 0em; width: 100%; font-family: consolas,&amp;#39;Courier New&amp;#39;,courier,monospace; font-size: 12px"> 14:         <span style="color: #0000ff">public</span> T1 Item1{<span style="color: #0000ff">get</span>;<span style="color: #0000ff">private</span> <span style="color: #0000ff">set</span>;}
-</pre><pre style="background-color: #fbfbfb; margin: 0em; width: 100%; font-family: consolas,&amp;#39;Courier New&amp;#39;,courier,monospace; font-size: 12px"> 15:         <span style="color: #0000ff">public</span> T2 Item2{<span style="color: #0000ff">get</span>;<span style="color: #0000ff">private</span> <span style="color: #0000ff">set</span>;}
-</pre><pre style="background-color: #ffffff; margin: 0em; width: 100%; font-family: consolas,&amp;#39;Courier New&amp;#39;,courier,monospace; font-size: 12px"> 16:         <span style="color: #0000ff">public</span> T3 Item3{<span style="color: #0000ff">get</span>;<span style="color: #0000ff">private</span> <span style="color: #0000ff">set</span>;}
-</pre><pre style="background-color: #fbfbfb; margin: 0em; width: 100%; font-family: consolas,&amp;#39;Courier New&amp;#39;,courier,monospace; font-size: 12px"> 17:         <span style="color: #0000ff">public</span> T4 Item4{<span style="color: #0000ff">get</span>;<span style="color: #0000ff">private</span> <span style="color: #0000ff">set</span>;}
-</pre><pre style="background-color: #ffffff; margin: 0em; width: 100%; font-family: consolas,&amp;#39;Courier New&amp;#39;,courier,monospace; font-size: 12px"> 18:         <span style="color: #0000ff">public</span> T5 Item5{<span style="color: #0000ff">get</span>;<span style="color: #0000ff">private</span> <span style="color: #0000ff">set</span>;}
-</pre><pre style="background-color: #fbfbfb; margin: 0em; width: 100%; font-family: consolas,&amp;#39;Courier New&amp;#39;,courier,monospace; font-size: 12px"> 19:         <span style="color: #0000ff">public</span> T6 Item6{<span style="color: #0000ff">get</span>;<span style="color: #0000ff">private</span> <span style="color: #0000ff">set</span>;}
-</pre><pre style="background-color: #ffffff; margin: 0em; width: 100%; font-family: consolas,&amp;#39;Courier New&amp;#39;,courier,monospace; font-size: 12px"> 20:         <span style="color: #0000ff">public</span> T7 Item7{<span style="color: #0000ff">get</span>;<span style="color: #0000ff">private</span> <span style="color: #0000ff">set</span>;}
-</pre><pre style="background-color: #fbfbfb; margin: 0em; width: 100%; font-family: consolas,&amp;#39;Courier New&amp;#39;,courier,monospace; font-size: 12px"> 21:         <span style="color: #0000ff">public</span> IMytuple ItemTuple{<span style="color: #0000ff">get</span>;<span style="color: #0000ff">private</span> <span style="color: #0000ff">set</span>;}
-</pre><pre style="background-color: #ffffff; margin: 0em; width: 100%; font-family: consolas,&amp;#39;Courier New&amp;#39;,courier,monospace; font-size: 12px"> 22: 
-</pre><pre style="background-color: #fbfbfb; margin: 0em; width: 100%; font-family: consolas,&amp;#39;Courier New&amp;#39;,courier,monospace; font-size: 12px"> 23:         <span style="color: #0000ff">public</span> <span style="color: #0000ff">int</span> Size
-</pre><pre style="background-color: #ffffff; margin: 0em; width: 100%; font-family: consolas,&amp;#39;Courier New&amp;#39;,courier,monospace; font-size: 12px"> 24:         {
-</pre><pre style="background-color: #fbfbfb; margin: 0em; width: 100%; font-family: consolas,&amp;#39;Courier New&amp;#39;,courier,monospace; font-size: 12px"> 25:             <span style="color: #0000ff">get</span> { <span style="color: #0000ff">return</span> 8; }
-</pre><pre style="background-color: #ffffff; margin: 0em; width: 100%; font-family: consolas,&amp;#39;Courier New&amp;#39;,courier,monospace; font-size: 12px"> 26:         }       
-</pre><pre style="background-color: #fbfbfb; margin: 0em; width: 100%; font-family: consolas,&amp;#39;Courier New&amp;#39;,courier,monospace; font-size: 12px"> 27:     }
-</pre><pre style="background-color: #ffffff; margin: 0em; width: 100%; font-family: consolas,&amp;#39;Courier New&amp;#39;,courier,monospace; font-size: 12px"> 28: </pre></pre>
-
-IMyTuple is the same as ITuple but public. This will help to avoid the possible runtime error shown before since the compiler will refuse to compile anything that is not an implementation of ITuple.
-
-
-Error 1 The best overloaded method match for 'TupleDemo.MyTuple&amp;lt;int,int,int,int,int,int,int,TupleDemo.IMytuple&amp;gt;.MyTuple(int, int, int, int, int, int, int, TupleDemo.IMytuple)' has some invalid arguments C:\Development\Code\DotNet\VS2010\DynamicProgrammer\TupleDemo\TupleDemo\Program.cs 13 35 TupleDemo.
-
-
-If ITuple is made public thought users may implement the interface in classes that are not Tuple, for example mutable classes, what can be even worse that the runtime error.
-
-
-<div style="padding-bottom: 0px; margin: 0px; padding-left: 0px; padding-right: 0px; display: inline; float: none; padding-top: 0px" id="scid:0767317B-992E-4b12-91E0-4F059A8CECA8:3d9fa15d-73e0-4006-81df-032fdd840cb7" class="wlWriterEditableSmartContent">Technorati Tags: <a href="http://technorati.com/tags/Tuple" rel="tag">Tuple</a>,<a href="http://technorati.com/tags/.net4" rel="tag">.net4</a></div>
+If ITuple is made public thought users may implement the interface in classes that are not Tuple, for example mutable classes, what can be even worse that the runtime error.

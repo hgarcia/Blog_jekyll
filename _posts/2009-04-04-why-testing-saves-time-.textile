@@ -1,56 +1,69 @@
 ---
 layout: post
 title: Why testing saves time.
-summary:    Some of the detractors of TDD or testing in general is that you waste time writing test instead of writing “useful” code.   Well, writing test just save me a few hours of debugging. Look at this very simple class, there is an stupid mistak...
+summary: Some of the detractors of TDD or testing in general is that you waste time writing test instead of writing "useful" code. Well, writing test just save me a few hours of debugging.
 categories: [Programming, Testing]
----
-
-  Some of the detractors of TDD or testing in general is that you waste time writing test instead of writing “useful” code.
-  Well, writing test just save me a few hours of debugging. Look at this very simple class, there is an stupid mistake in the code.
-  <div style="font-family: courier new; background: white; color: black; font-size: 10pt">   <p style="margin: 0px"><span style="color: #2b91af"> 6</span> <span style="color: blue">public</span> <span style="color: blue">class</span> <span style="color: #2b91af">Widget</span> : <span style="color: #2b91af">Controller</span>
-    <p style="margin: 0px"><span style="color: #2b91af"> 7</span> {
-    <p style="margin: 0px"><span style="color: #2b91af"> 8</span> <span style="color: blue">public</span> <span style="color: #2b91af">TemplateView</span> Template { <span style="color: blue">get</span>; <span style="color: blue">protected</span> <span style="color: blue">set</span>; }
-    <p style="margin: 0px"><span style="color: #2b91af"> 9</span> <span style="color: blue">public</span> <span style="color: #2b91af">ICache</span> Cache { <span style="color: blue">get</span>; <span style="color: blue">private</span> <span style="color: blue">set</span>; }
-    <p style="margin: 0px"><span style="color: #2b91af"> 10</span> <span style="color: blue">public</span> <span style="color: blue">string</span> Key { <span style="color: blue">get</span>; <span style="color: blue">private</span> <span style="color: blue">set</span>; }
-    <p style="margin: 0px"><span style="color: #2b91af"> 11</span>
-    <p style="margin: 0px"><span style="color: #2b91af"> 12</span> <span style="color: blue">public</span> Widget(<span style="color: #2b91af">ICache</span> cache, <span style="color: blue">string</span> key)
-    <p style="margin: 0px"><span style="color: #2b91af"> 13</span> {
-    <p style="margin: 0px"><span style="color: #2b91af"> 14</span> Cache = cache;
-    <p style="margin: 0px"><span style="color: #2b91af"> 15</span> Template = getTemplateView();
-    <p style="margin: 0px"><span style="color: #2b91af"> 16</span> Key = key;
-    <p style="margin: 0px"><span style="color: #2b91af"> 17</span> }
-    <p style="margin: 0px"><span style="color: #2b91af"> 18</span>
-    <p style="margin: 0px"><span style="color: #2b91af"> 19</span> <span style="color: blue">private</span> <span style="color: #2b91af">TemplateView</span> getTemplateView()
-    <p style="margin: 0px"><span style="color: #2b91af"> 20</span> {
-    <p style="margin: 0px"><span style="color: #2b91af"> 21</span> <span style="color: blue">return</span> <span style="color: blue">new</span> <span style="color: #2b91af">TemplateView</span> { Rendered = Cache.Get(Key) };
-    <p style="margin: 0px"><span style="color: #2b91af"> 22</span> }
-    <p style="margin: 0px"><span style="color: #2b91af"> 23</span>
-    <p style="margin: 0px"><span style="color: #2b91af"> 24</span> <span style="color: blue">public</span> <span style="color: blue">virtual</span> <span style="color: #2b91af">ViewContext</span> GetViewContext(<span style="color: #2b91af">ControllerContext</span> controllerContext)
-    <p style="margin: 0px"><span style="color: #2b91af"> 25</span> {
-    <p style="margin: 0px"><span style="color: #2b91af"> 26</span> <span style="color: blue">return</span> <span style="color: blue">new</span> <span style="color: #2b91af">ViewContext</span>(controllerContext,Template,ViewData,TempData); 
-    <p style="margin: 0px"><span style="color: #2b91af"> 27</span> }
-    <p style="margin: 0px"><span style="color: #2b91af"> 28</span>
-    <p style="margin: 0px"><span style="color: #2b91af"> 29</span> }
- </div>  Did you see it? Good for you! I didn’t but since I have my test and when I run it it fail.
-  <div style="font-family: courier new; background: white; color: black; font-size: 10pt">   <p style="margin: 0px"><span style="color: #2b91af"> 12</span> [<span style="color: #2b91af">Test</span>]
-    <p style="margin: 0px"><span style="color: #2b91af"> 13</span> <span style="color: blue">public</span> <span style="color: blue">void</span> Given_a_key_loads_the_template_from_the_cache_when_exists()
-    <p style="margin: 0px"><span style="color: #2b91af"> 14</span> {
-    <p style="margin: 0px"><span style="color: #2b91af"> 15</span> <span style="color: blue">var</span> cache = <span style="color: #2b91af">MockRepository</span>.GenerateStub&amp;lt;<span style="color: #2b91af">ICache</span>&amp;gt;();
-    <p style="margin: 0px"><span style="color: #2b91af"> 16</span> <span style="color: blue">var</span> template = <span style="color: #a31515">&amp;quot;&amp;lt;div class=\&amp;quot;simpleTemplate\&amp;quot;&amp;gt;#{menuItems}&amp;lt;/div&amp;gt;&amp;quot;</span>;
-    <p style="margin: 0px"><span style="color: #2b91af"> 17</span> cache.Stub(c =&amp;gt; c.Get(<span style="color: #a31515">&amp;quot;menu&amp;quot;</span>)).Return(template);
-    <p style="margin: 0px"><span style="color: #2b91af"> 18</span> <span style="color: blue">var</span> widget = <span style="color: blue">new</span> <span style="color: #2b91af">Widget</span>(cache, <span style="color: #a31515">&amp;quot;menu&amp;quot;</span>);
-    <p style="margin: 0px"><span style="color: #2b91af"> 19</span> <span style="color: #2b91af">Assert</span>.That(widget.Template.Rendered, <span style="color: #2b91af">Is</span>.EqualTo(template));
-    <p style="margin: 0px"><span style="color: #2b91af"> 20</span> }
- </div> <a href="../../../images/posts/Whytestingsavestime_932/ScreenHunter_01%202009-04-05%2000.31.28_2.jpg"><img style="border-bottom: 0px; border-left: 0px; display: inline; border-top: 0px; border-right: 0px" title="ScreenHunter_01 2009-04-05 00.31.28" border="0" alt="ScreenHunter_01 2009-04-05 00.31.28" src="../../../images/posts/Whytestingsavestime_932/ScreenHunter_01%202009-04-05%2000.31.28_thumb.jpg" width="760" height="51" /></a>   
-  
-  
-  Notice that the error mention that widget.Template.Rendered was null, but I’m mocking the ICache implementation and returning the template string when Get is called with the right key.
-  Upon running the test in debug the error was evident, I was calling getTemplateView before setting the Key property of the object!
-  Here is the code after been fixed, changing the position of lines 15 and 16 did it.
-  <div style="font-family: courier new; background: white; color: black; font-size: 10pt">   <p style="margin: 0px"><span style="color: #2b91af"> 12</span> <span style="color: blue">public</span> Widget(<span style="color: #2b91af">ICache</span> cache, <span style="color: blue">string</span> key)
-    <p style="margin: 0px"><span style="color: #2b91af"> 13</span> {
-    <p style="margin: 0px"><span style="color: #2b91af"> 14</span> Cache = cache;
-    <p style="margin: 0px"><span style="color: #2b91af"> 15</span> Key = key;
-    <p style="margin: 0px"><span style="color: #2b91af"> 16</span> Template = getTemplateView();
-    <p style="margin: 0px"><span style="color: #2b91af"> 17</span> }
- </div>  The good thing is that I caught the error immediately, while the logic that I use to write the code was still fresh in my mind, so I did not spend hours trying to figure out what’s going on. Granted this is a very easy to spot issue, but believe that if you catch this error three or four days after writing the code you will spend more than the 5 minutes that took to write the unit test.
+---
+
+Some of the detractors of TDD or testing in general is that you waste time writing test instead of writing "useful" code.
+
+Well, writing test just save me a few hours of debugging. Look at this very simple class, there is an stupid mistake in the code.
+
+{% highlight aspx-cs %}
+	public class Widget : Controller
+	{
+		public TemplateView Template { get; protected set; }
+		public ICache Cache { get; private set; }
+		public string Key { get; private set; }
+		
+		public Widget(ICache cache, string key)
+		{
+			Cache = cache;
+			Template = getTemplateView();
+			Key = key;
+		}
+		
+		private TemplateView getTemplateView()
+		{
+			return new TemplateView { Rendered = Cache.Get(Key) };
+		}
+		
+		public virtual ViewContext GetViewContext(ControllerContext controllerContext)
+		{
+			return new ViewContext(controllerContext,Template,ViewData,TempData); 
+		}
+	}
+{% endhighlight %}
+
+Did you see it? Good for you! I didn’t but since I have my test and when I run it it fail.
+
+{% highlight aspx-cs %}
+	[Test]
+	public void Given_a_key_loads_the_template_from_the_cache_when_exists()
+	{
+		var cache = MockRepository.GenerateStub<ICache>();
+		var template = "<div class=\"simpleTemplate\">#{menuItems}</div>";
+		cache.Stub(c => c.Get("menu")).Return(template);
+		var widget = new Widget(cache, "menu");
+		Assert.That(widget.Template.Rendered, Is.EqualTo(template));
+	}
+{% endhighlight %}
+
+<a href="../../../images/posts/Whytestingsavestime_932/ScreenHunter_01%202009-04-05%2000.31.28_2.jpg"><img border="0" alt="ScreenHunter_01 2009-04-05 00.31.28" src="../../../images/posts/Whytestingsavestime_932/ScreenHunter_01%202009-04-05%2000.31.28_thumb.jpg" width="760" height="51" /></a>   
+
+Notice that the error mention that widget.Template.Rendered was null, but I’m mocking the ICache implementation and returning the template string when Get is called with the right key.
+
+Upon running the test in debug the error was evident, I was calling getTemplateView before setting the Key property of the object!
+
+Here is the code after been fixed, changing the position of lines 15 and 16 did it.
+
+{% highlight aspx-cs %}
+	public Widget(ICache cache, string key)
+	{
+		Cache = cache;
+		Key = key;
+		Template = getTemplateView();
+	}
+{% endhighlight %}
+
+The good thing is that I caught the error immediately, while the logic that I use to write the code was still fresh in my mind, so I did not spend hours trying to figure out what’s going on. Granted this is a very easy to spot issue, but believe that if you catch this error three or four days after writing the code you will spend more than the 5 minutes that took to write the unit test.

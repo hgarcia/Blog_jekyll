@@ -1,116 +1,101 @@
 ---
 layout: post
-title: FirstOrNullObject extension method for IEnumerable&lt;T&gt; and FirstOrNew.
-summary:  In the context of this article every time I mention Linq I’m actually talking about Linq To Objects. Although       Linq has a very handy method on FirstOrDefault&amp;lt;T&amp;gt;. When applying this method to a collection you will get in retu...
-categories: [Patterns, Programming]
----
- <br />In the context of this article every time I mention Linq I’m actually talking about Linq To Objects. Although 
-     <br />Linq has a very handy method on FirstOrDefault&amp;lt;T&amp;gt;. When applying this method to a collection you will get in return the First object of the default of T. This works great with numeric values in the sense that the default is not null. So you can do stuff like this without anything blowing up.
-  <pre><pre style="background-color: #fbfbfb; margin: 0em; width: 100%; font-family: consolas,&amp;#39;Courier New&amp;#39;,courier,monospace; font-size: 12px">  1: var list = <span style="color: #0000ff">new</span> List&amp;lt;<span style="color: #0000ff">int</span>&amp;gt; { 0, 1, 2, 3, 4, 5, 6, 7, 8, 9 };
-</pre><pre style="background-color: #ffffff; margin: 0em; width: 100%; font-family: consolas,&amp;#39;Courier New&amp;#39;,courier,monospace; font-size: 12px">  2: var valueAsString = list.FirstOrDefault(l =&amp;gt; l == 10).ToString();
-</pre><pre style="background-color: #fbfbfb; margin: 0em; width: 100%; font-family: consolas,&amp;#39;Courier New&amp;#39;,courier,monospace; font-size: 12px">  3: Console.WriteLine(valueAsString);</pre></pre>
+title: FirstOrNullObject extension method for IEnumerable<T> and FirstOrNew.
+summary: In the context of this article every time I mention Linq I’m actually talking about Linq To Objects. Although  Linq has a very handy method on FirstOrDefault<T>.
+categories: [Patterns, Programming, .Net]
+---
 
-The result will be “0”.
+In the context of this article every time I mention Linq I’m actually talking about Linq To Objects. Although 
 
+Linq has a very handy method on FirstOrDefault<T>. When applying this method to a collection you will get in return the First object of the default of T. This works great with numeric values in the sense that the default is not null. So you can do stuff like this without anything blowing up.
 
-But what if you do this with a list of strings?
+{% highlight aspx-cs %}
+  	var list = new List<int> { 0, 1, 2, 3, 4, 5, 6, 7, 8, 9 };
+	var valueAsString = list.FirstOrDefault(l => l == 10).ToString();
+	Console.WriteLine(valueAsString);
+{% endhighlight %}
 
+The result will be "0". But what if you do this with a list of strings?
 
-<pre><pre style="background-color: #fbfbfb; margin: 0em; width: 100%; font-family: consolas,&amp;#39;Courier New&amp;#39;,courier,monospace; font-size: 12px">  1: var listOfStrings = <span style="color: #0000ff">new</span> List&amp;lt;<span style="color: #0000ff">string</span>&amp;gt; { &amp;quot;<span style="color: #8b0000">h</span>&amp;quot;, &amp;quot;<span style="color: #8b0000">j</span>&amp;quot;, &amp;quot;<span style="color: #8b0000">k</span>&amp;quot; };
-</pre><pre style="background-color: #ffffff; margin: 0em; width: 100%; font-family: consolas,&amp;#39;Courier New&amp;#39;,courier,monospace; font-size: 12px">  2: var stringToUpper = listOfStrings.FirstOrDefault(l =&amp;gt; l == &amp;quot;<span style="color: #8b0000">a</span>&amp;quot;).ToUpper();
-</pre><pre style="background-color: #fbfbfb; margin: 0em; width: 100%; font-family: consolas,&amp;#39;Courier New&amp;#39;,courier,monospace; font-size: 12px">  3: Console.WriteLine(stringToUpper);</pre></pre>
+{% highlight aspx-cs %} 
+	var listOfStrings = new List<string> { "h", "j", "k" };
+	var stringToUpper = listOfStrings.FirstOrDefault(l => l == "a").ToUpper();
+	Console.WriteLine(stringToUpper);
+{% endhighlight %}
 
-You will get this:
+You will get this:
 
-
+{% highlight console %}
 System.NullReferenceException was unhandled 
-  <br /> Message=Object reference not set to an instance of an object. 
+Message=Object reference not set to an instance of an object. 
+Source=FirstOrNullObject 
 
-  <br /> Source=FirstOrNullObject 
+StackTrace: 
+at FirstOrNullObject.Program.Main(String[] args) in C:\Development\Code\DotNet\VS2010\DynamicProgrammer\FirstOrNullObject\FirstOrNullObject\Program.cs:line 21 
+at System.AppDomain._nExecuteAssembly(RuntimeAssembly assembly, String[] args) 
+at System.AppDomain.ExecuteAssembly(String assemblyFile, Evidence assemblySecurity, String[] args) 
+at Microsoft.VisualStudio.HostingProcess.HostProc.RunUsersAssembly() 
+at System.Threading.ThreadHelper.ThreadStart_Context(Object state) 
+at System.Threading.ExecutionContext.Run(ExecutionContext executionContext, ContextCallback callback, Object state, Boolean ignoreSyncCtx) 
+at System.Threading.ExecutionContext.Run(ExecutionContext executionContext, ContextCallback callback, Object state) 
+at System.Threading.ThreadHelper.ThreadStart() 
+InnerException: 
 
-  <br /> StackTrace: 
-
-  <br /> at FirstOrNullObject.Program.Main(String[] args) in C:\Development\Code\DotNet\VS2010\DynamicProgrammer\FirstOrNullObject\FirstOrNullObject\Program.cs:line 21 
-
-  <br /> at System.AppDomain._nExecuteAssembly(RuntimeAssembly assembly, String[] args) 
-
-  <br /> at System.AppDomain.ExecuteAssembly(String assemblyFile, Evidence assemblySecurity, String[] args) 
-
-  <br /> at Microsoft.VisualStudio.HostingProcess.HostProc.RunUsersAssembly() 
-
-  <br /> at System.Threading.ThreadHelper.ThreadStart_Context(Object state) 
-
-  <br /> at System.Threading.ExecutionContext.Run(ExecutionContext executionContext, ContextCallback callback, Object state, Boolean ignoreSyncCtx) 
-
-  <br /> at System.Threading.ExecutionContext.Run(ExecutionContext executionContext, ContextCallback callback, Object state) 
-
-  <br /> at System.Threading.ThreadHelper.ThreadStart() 
-
-  <br /> InnerException: 
-
-
-Why? The default of string is null.
-
-
-<h3></h3>
+Why? The default of string is null.
 
 <h3>A possible solution.</h3>
 
 Sometimes you need to filter a list of objects and access one of the properties of the object right away. For that we can use the <a href="http://en.wikipedia.org/wiki/Null_Object_pattern" target="_blank">Null Object pattern</a>, but how to tell Linq about it? 
 
-  <br />Linq is implemented as a set of extension methods on IEnumeration&amp;lt;T&amp;gt;, so let’s add another one!
+Linq is implemented as a set of extension methods on IEnumeration<T>, so let’s add another one!
 
+{% highlight aspx-cs %}        
+	public static T FirstOrNullObject<T>(this IEnumerable<T> enumerable, Func<T, bool> func, T nullObject)
+	{    
+		var val = enumerable.FirstOrDefault<T>(func);
+		if (val == null)
+		{
+	    	val = nullObject;
+		}
+		return val;                
+	}
+{% endhighlight %}
 
-<pre><pre style="background-color: #fbfbfb; margin: 0em; width: 100%; font-family: consolas,&amp;#39;Courier New&amp;#39;,courier,monospace; font-size: 12px">  1:         <span style="color: #0000ff">public</span> <span style="color: #0000ff">static</span> T FirstOrNullObject&amp;lt;T&amp;gt;(<span style="color: #0000ff">this</span> IEnumerable&amp;lt;T&amp;gt; enumerable, Func&amp;lt;T, <span style="color: #0000ff">bool</span>&amp;gt; func, T nullObject)
-</pre><pre style="background-color: #ffffff; margin: 0em; width: 100%; font-family: consolas,&amp;#39;Courier New&amp;#39;,courier,monospace; font-size: 12px">  2:         {    
-</pre><pre style="background-color: #fbfbfb; margin: 0em; width: 100%; font-family: consolas,&amp;#39;Courier New&amp;#39;,courier,monospace; font-size: 12px">  3:             var val = enumerable.FirstOrDefault&amp;lt;T&amp;gt;(func);
-</pre><pre style="background-color: #ffffff; margin: 0em; width: 100%; font-family: consolas,&amp;#39;Courier New&amp;#39;,courier,monospace; font-size: 12px">  4:             <span style="color: #0000ff">if</span> (val == <span style="color: #0000ff">null</span>)
-</pre><pre style="background-color: #fbfbfb; margin: 0em; width: 100%; font-family: consolas,&amp;#39;Courier New&amp;#39;,courier,monospace; font-size: 12px">  5:             {
-</pre><pre style="background-color: #ffffff; margin: 0em; width: 100%; font-family: consolas,&amp;#39;Courier New&amp;#39;,courier,monospace; font-size: 12px">  6:                 val = nullObject;
-</pre><pre style="background-color: #fbfbfb; margin: 0em; width: 100%; font-family: consolas,&amp;#39;Courier New&amp;#39;,courier,monospace; font-size: 12px">  7:             }
-</pre><pre style="background-color: #ffffff; margin: 0em; width: 100%; font-family: consolas,&amp;#39;Courier New&amp;#39;,courier,monospace; font-size: 12px">  8:             <span style="color: #0000ff">return</span> val;                
-</pre><pre style="background-color: #fbfbfb; margin: 0em; width: 100%; font-family: consolas,&amp;#39;Courier New&amp;#39;,courier,monospace; font-size: 12px">  9:         }</pre></pre>
+This is easy to understand, we apply the passed Func<T,bool> to FirstOrDefault if the result is null we return the passed nullObject. 
+For completion we also need to create on that can be used to get the first element of the collection without applying any filtering.
 
-This is easy to understand, we apply the passed Func&amp;lt;T,bool&amp;gt; to FirstOrDefault if the result is null we return the passed nullObject. 
-  <br />For completion we also need to create on that can be used to get the first element of the collection without applying any filtering.
+{% highlight aspx-cs %}
+	public static T FirstOrNullObject<T>(this IEnumerable<T> enumerable, T nullObject)
+	{
+	    var val = enumerable.FirstOrDefault<T>();
+	    if (val == null)
+	    {
+	        val = nullObject;
+	    }
+	    return val;
+	}
+{% endhighlight %}
 
+You get the most value of this methods when filtering collections of complex objects, like your domain objects. You have to be careful to use them when expecting a null object is ok, sometimes is not and a null value should be treated as an error or an exception, but in other cases is perfectly normal to get a null object as the default. You should understand that the null object is different from a default implementation of the object (like a new instance). Default objects may return some default values in their properties. For those scenarios I like to create another extension methods where you pass an instance of a new T.
 
-<pre><pre style="background-color: #fbfbfb; margin: 0em; width: 100%; font-family: consolas,&amp;#39;Courier New&amp;#39;,courier,monospace; font-size: 12px">  1:         <span style="color: #0000ff">public</span> <span style="color: #0000ff">static</span> T FirstOrNullObject&amp;lt;T&amp;gt;(<span style="color: #0000ff">this</span> IEnumerable&amp;lt;T&amp;gt; enumerable, T nullObject)
-</pre><pre style="background-color: #ffffff; margin: 0em; width: 100%; font-family: consolas,&amp;#39;Courier New&amp;#39;,courier,monospace; font-size: 12px">  2:         {
-</pre><pre style="background-color: #fbfbfb; margin: 0em; width: 100%; font-family: consolas,&amp;#39;Courier New&amp;#39;,courier,monospace; font-size: 12px">  3:             var val = enumerable.FirstOrDefault&amp;lt;T&amp;gt;();
-</pre><pre style="background-color: #ffffff; margin: 0em; width: 100%; font-family: consolas,&amp;#39;Courier New&amp;#39;,courier,monospace; font-size: 12px">  4:             <span style="color: #0000ff">if</span> (val == <span style="color: #0000ff">null</span>)
-</pre><pre style="background-color: #fbfbfb; margin: 0em; width: 100%; font-family: consolas,&amp;#39;Courier New&amp;#39;,courier,monospace; font-size: 12px">  5:             {
-</pre><pre style="background-color: #ffffff; margin: 0em; width: 100%; font-family: consolas,&amp;#39;Courier New&amp;#39;,courier,monospace; font-size: 12px">  6:                 val = nullObject;
-</pre><pre style="background-color: #fbfbfb; margin: 0em; width: 100%; font-family: consolas,&amp;#39;Courier New&amp;#39;,courier,monospace; font-size: 12px">  7:             }
-</pre><pre style="background-color: #ffffff; margin: 0em; width: 100%; font-family: consolas,&amp;#39;Courier New&amp;#39;,courier,monospace; font-size: 12px">  8:             <span style="color: #0000ff">return</span> val;
-</pre><pre style="background-color: #fbfbfb; margin: 0em; width: 100%; font-family: consolas,&amp;#39;Courier New&amp;#39;,courier,monospace; font-size: 12px">  9:         }</pre></pre>
+{% highlight aspx-cs %}
+	public static T FirstOrNew<T>(this IEnumerable<T> enumerable, Func<T, bool> func, T newObject)
+	{
+	    return enumerable.FirstOrNullObject<T>(func, newObject);
+	}
+	public static T FirstOrNew<T>(this IEnumerable<T> enumerable, T newObject)
+	{
+	    return enumerable.FirstOrNullObject<T>(newObject);
+	}
+{% endhighlight %}
 
-You get the most value of this methods when filtering collections of complex objects, like your domain objects. You have to be careful to use them when expecting a null object is ok, sometimes is not and a null value should be treated as an error or an exception, but in other cases is perfectly normal to get a null object as the default. You should understand that the null object is different from a default implementation of the object (like a new instance). Default objects may return some default values in their properties. For those scenarios I like to create another extension methods where you pass an instance of a new T.
+You may notice that the implementation is calling the methods we created before, the only difference is in the name of the methods and the parameters. But it’s important to be clear on what the methods will do.
 
+Another approach is to use the same FirstOrDefault name for your new methods and you will end up with four methods, the two on Linq plus two implement by you with this signature.
 
-<pre><pre style="background-color: #fbfbfb; margin: 0em; width: 100%; font-family: consolas,&amp;#39;Courier New&amp;#39;,courier,monospace; font-size: 12px">  1:         <span style="color: #0000ff">public</span> <span style="color: #0000ff">static</span> T FirstOrNew&amp;lt;T&amp;gt;(<span style="color: #0000ff">this</span> IEnumerable&amp;lt;T&amp;gt; enumerable, Func&amp;lt;T, <span style="color: #0000ff">bool</span>&amp;gt; func, T newObject)
-</pre><pre style="background-color: #ffffff; margin: 0em; width: 100%; font-family: consolas,&amp;#39;Courier New&amp;#39;,courier,monospace; font-size: 12px">  2:         {
-</pre><pre style="background-color: #fbfbfb; margin: 0em; width: 100%; font-family: consolas,&amp;#39;Courier New&amp;#39;,courier,monospace; font-size: 12px">  3:             <span style="color: #0000ff">return</span> enumerable.FirstOrNullObject&amp;lt;T&amp;gt;(func, newObject);
-</pre><pre style="background-color: #ffffff; margin: 0em; width: 100%; font-family: consolas,&amp;#39;Courier New&amp;#39;,courier,monospace; font-size: 12px">  4:         }
-</pre><pre style="background-color: #fbfbfb; margin: 0em; width: 100%; font-family: consolas,&amp;#39;Courier New&amp;#39;,courier,monospace; font-size: 12px">  5:         <span style="color: #0000ff">public</span> <span style="color: #0000ff">static</span> T FirstOrNew&amp;lt;T&amp;gt;(<span style="color: #0000ff">this</span> IEnumerable&amp;lt;T&amp;gt; enumerable, T newObject)
-</pre><pre style="background-color: #ffffff; margin: 0em; width: 100%; font-family: consolas,&amp;#39;Courier New&amp;#39;,courier,monospace; font-size: 12px">  6:         {
-</pre><pre style="background-color: #fbfbfb; margin: 0em; width: 100%; font-family: consolas,&amp;#39;Courier New&amp;#39;,courier,monospace; font-size: 12px">  7:             <span style="color: #0000ff">return</span> enumerable.FirstOrNullObject&amp;lt;T&amp;gt;(newObject);
-</pre><pre style="background-color: #ffffff; margin: 0em; width: 100%; font-family: consolas,&amp;#39;Courier New&amp;#39;,courier,monospace; font-size: 12px">  8:         }</pre></pre>
+{% highlight aspx-cs %}
+	public static T FirstOrDefault<T>(this IEnumerable<T> enumerable, Func<T, bool> func, T defaultObject)
+	public static T FirstOrDefault<T>(this IEnumerable<T> enumerable, T defaultObject)
+{% endhighlight %}
 
-You may notice that the implementation is calling the methods we created before, the only difference is in the name of the methods and the parameters. But it’s important to be clear on what the methods will do.
-
-
-Another approach is to use the same FirstOrDefault name for your new methods and you will end up with four methods, the two on Linq plus two implement by you with this signature.
-
-
-<pre><pre style="background-color: #fbfbfb; margin: 0em; width: 100%; font-family: consolas,&amp;#39;Courier New&amp;#39;,courier,monospace; font-size: 12px">  1:  <span style="color: #0000ff">public</span> <span style="color: #0000ff">static</span> T FirstOrDefault&amp;lt;T&amp;gt;(<span style="color: #0000ff">this</span> IEnumerable&amp;lt;T&amp;gt; enumerable, Func&amp;lt;T, <span style="color: #0000ff">bool</span>&amp;gt; func, T defaultObject)
-</pre><pre style="background-color: #ffffff; margin: 0em; width: 100%; font-family: consolas,&amp;#39;Courier New&amp;#39;,courier,monospace; font-size: 12px">  2:  <span style="color: #0000ff">public</span> <span style="color: #0000ff">static</span> T FirstOrDefault&amp;lt;T&amp;gt;(<span style="color: #0000ff">this</span> IEnumerable&amp;lt;T&amp;gt; enumerable, T defaultObject)
-</pre></pre>
-
-And who knows, maybe that is the best approach. 
-
-
-
-
-
-<div style="padding-bottom: 0px; margin: 0px; padding-left: 0px; padding-right: 0px; display: inline; float: none; padding-top: 0px" id="scid:0767317B-992E-4b12-91E0-4F059A8CECA8:7e89b657-28b3-4301-89d1-71c3c5563a24" class="wlWriterEditableSmartContent">Technorati Tags: <a href="http://technorati.com/tags/Linq" rel="tag">Linq</a>,<a href="http://technorati.com/tags/Null+Object" rel="tag">Null Object</a></div>
+And who knows, maybe that is the best approach. 
