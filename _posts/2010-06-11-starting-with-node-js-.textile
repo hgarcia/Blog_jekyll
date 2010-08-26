@@ -1,12 +1,44 @@
 ---
 layout: post
 title: Starting with Node.js.
-summary: Installing node.js  First, you need a supported OS, like Linux, Mac or Solaris. I will be doing the install on Ubuntu.Go to the node.js download page download the Gzipped file and extract in a folder of your choice in your disk.Open a terminal an...
+summary: Installing node.js  First, you need a supported OS, like Linux, Mac or Solaris. I will be doing the install on Ubuntu.Go to the node.js download page download the Gzipped file and extract in a folder of your choice in your disk.
 categories: [General, Programming, node.js]
----
-<h3>Installing node.js</h3>  First, you need a supported OS, like Linux, Mac or Solaris. I will be doing the install on Ubuntu.<br>Go to the <a href="http://nodejs.org/#download" target="_blank">node.js download page</a> download the Gzipped file and extract in a folder of your choice in your disk.<br>Open a terminal and go to the folder where you extracted the downloaded files.<br>Type ./configure, if you don't have a c++ compiler you will see an error.<br><img src="../../../images/posts/moz-screenshot.png" name="graphics1" border="0" height="72" width="603"><br><br>I choose to go with the g++ one, so I typed:
- <p style="background: none repeat scroll 0% 0% rgb(192, 192, 192);"><font face="Courier 10 Pitch">sudo apt-get install g++</font>
-  <p style="background: none repeat scroll 0% 0% transparent;"><font face="Liberation Serif, serif">Running ./configure once again and everything should go with no problems.<br>Now type <font face="Courier 10 Pitch"><span style="background: none repeat scroll 0% 0% rgb(192, 192, 192);">make</span></font> and once that is finished <font face="Courier 10 Pitch"><span style="background: none repeat scroll 0% 0% rgb(192, 192, 192);">sudo make install</span></font><span style="background: none repeat scroll 0% 0% transparent;">.<br>To verify that everything has been installed correctly type <font face="Courier 10 Pitch"><span style="background: none repeat scroll 0% 0% rgb(192, 192, 192);">node</span></font> in the command, you should have the Repl. </span></font> 
- <h3>Writing your first program.</h3> <p style="background: none repeat scroll 0% 0% transparent;"><font face="Liberation Serif, serif"><span style="background: none repeat scroll 0% 0% transparent;">Once in the shell you can type <font face="Courier 10 Pitch"><span style="background: none repeat scroll 0% 0% rgb(192, 192, 192);">.help</span></font> to see a list of some of the commands available.</span></font>
-<font face="Liberation Serif, serif"><span style="background: none repeat scroll 0% 0% transparent;"><img style="max-width: 800px;" src="../../../images/posts/repl.png"><br>As with any Repl you can use it to play with and explore the different features or to write little one off scripts.</span></font> <p style="background: none repeat scroll 0% 0% transparent;"><font face="Liberation Serif, serif"><span style="background: none repeat scroll 0% 0% transparent;">Let's try a to write a little webserver (code taken from the node.js website)</span></font>
- <pre class="western" style="background: none repeat scroll 0% 0% transparent;"></pre><img style="max-width: 800px;" src="../../../images/posts/server1.png"><br><img style="max-width: 800px;" src="../../../images/posts/server2.png"><font face="Liberation Serif, serif"><span style="background: none repeat scroll 0% 0% transparent;"><br><br>Now when we visit “<a href="http://127.0.0.1:8124/">http://127.0.0.1:8124</a>” this is what we see.<br><img style="max-width: 800px;" src="../../../images/posts/browser.png"></span></font><br>
+---
+
+<h3>Installing node.js</h3>
+
+First, you need a supported OS, like Linux, Mac or Solaris. I will be doing the install on Ubuntu.
+Go to the <a href="http://nodejs.org/#download" target="_blank">node.js download page</a> download the Gzipped file and extract in a folder of your choice in your disk.
+Open a terminal and go to the folder where you extracted the downloaded files.
+Type ./configure, if you don't have a c++ compiler you will see an error.
+
+<img src="../../../images/posts/moz-screenshot.png" name="graphics1" border="0" height="72" width="603">
+
+I choose to go with the g++ one, so I typed:
+
+{% highlight console %}
+	sudo apt-get install g++
+{% endhighlight %}
+
+Running ./configure once again and everything should go with no problems.
+Now type "make" and once that is finished 
+{% highlight console %}
+	sudo make install
+{% endhighlight %}
+
+To verify that everything has been installed correctly type "node" in the command, you should have the Repl. 
+<h3>Writing your first program.</h3>
+
+Once in the shell you can type .help to see a list of some of the commands available.
+
+<img src="../../../images/posts/repl.png" border="0" />
+
+As with any Repl you can use it to play with and explore the different features or to write little one off scripts.
+Let's try a to write a little webserver (code taken from the node.js website).
+
+<img src="../../../images/posts/server1.png" border="0" />
+<img src="../../../images/posts/server2.png" border="0" />
+
+Now when we visit "http://127.0.0.1:8124" this is what we see.
+
+<img src="../../../images/posts/browser.png" border="0" />
