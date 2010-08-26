@@ -11,7 +11,7 @@ Pickle creates some step definitions for you to make things easy, what it's much
 
 The problem I got was that I wrote the following Cucumber scenario:
 
-{% highlight ruby %}
+{% highlight cucumber %}
 	@wipScenario: Assign roles Given the following roles exist 
 		| name      | 
 		| admin     | 
