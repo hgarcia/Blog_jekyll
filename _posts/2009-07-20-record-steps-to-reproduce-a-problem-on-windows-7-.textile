@@ -17,7 +17,6 @@ I was, of course, curious about it. So I clicked and a recording bar displays on
 
 <a href="../../../images/posts/Recordstepstoreproduceaproblemonwindows_769/ScreenShot003_2.png"><img border="0" alt="ScreenShot003" src="../../../images/posts/Recordstepstoreproduceaproblemonwindows_769/ScreenShot003_thumb.png" width="372" height="68"></a> 
 
- 
 Now, this does not records video but still images, every click a new image, a new step. You can also add comments while recording.
 
 Click the stop button and will prompt you for a place to save a zip file.

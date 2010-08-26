@@ -1,46 +1,65 @@
 ---
 layout: post
 title: Using the Connection String section for Log4Net and NHibernate
-summary: The other day at the office my boss took a look at our configuration files and he expressed his concern about breaking DRY with all the ConnectionStrings. One for Ado.Net, one for NHibernate, one for our caching db and another for Log4Net. Not on...
-categories: [Programming]
----
-The other day at the office my boss took a look at our configuration files and he expressed his concern about breaking DRY with all the ConnectionStrings. One for Ado.Net, one for NHibernate, one for our caching db and another for Log4Net. Not only that but they are all over the place in the file, not all together.
- On top of that,, some of those are the same, so changing a username or a password means changing them all over. Of course he was right.
- <h3>NHibernate solution</h3> For NHibernate I just use the connection.connection_string_name property instead of the connection.connection_string. This points to a connection string defined in that section of the configuration file with the provided name.
-<pre><pre style="background-color: #ffffff; margin: 0em; width: 100%; font-family: consolas,'Courier New',courier,monospace; font-size: 12px"><span style="color: #0000ff">&amp;lt;</span><span style="color: #800000">hibernate</span>-<span style="color: #ff0000">configuration</span> <span style="color: #ff0000">xmlns</span>=<span style="color: #0000ff">"urn:nhibernate-configuration-2.2"</span><span style="color: #0000ff">&amp;gt;</span>
-</pre><pre style="background-color: #ffffff; margin: 0em; width: 100%; font-family: consolas,'Courier New',courier,monospace; font-size: 12px">	<span style="color: #0000ff">&amp;lt;</span><span style="color: #800000">session</span>-<span style="color: #ff0000">factory</span><span style="color: #0000ff">&amp;gt;</span>
-</pre><pre style="background-color: #ffffff; margin: 0em; width: 100%; font-family: consolas,'Courier New',courier,monospace; font-size: 12px">		<span style="color: #0000ff">&amp;lt;</span><span style="color: #800000">property</span> <span style="color: #ff0000">name</span>=<span style="color: #0000ff">"dialect"</span><span style="color: #0000ff">&amp;gt;</span>NHibernate.Dialect.MsSql2005Dialect<span style="color: #0000ff">&amp;lt;/</span><span style="color: #800000">property</span><span style="color: #0000ff">&amp;gt;</span>
-</pre><pre style="background-color: #ffffff; margin: 0em; width: 100%; font-family: consolas,'Courier New',courier,monospace; font-size: 12px">		<span style="color: #0000ff">&amp;lt;</span><span style="color: #800000">property</span> <span style="color: #ff0000">name</span>=<span style="color: #0000ff">"connection.provider"</span><span style="color: #0000ff">&amp;gt;</span>NHibernate.Connection.DriverConnectionProvider<span style="color: #0000ff">&amp;lt;/</span><span style="color: #800000">property</span><span style="color: #0000ff">&amp;gt;</span>
-</pre><pre style="background-color: #ffffff; margin: 0em; width: 100%; font-family: consolas,'Courier New',courier,monospace; font-size: 12px">		<span style="color: #0000ff">&amp;lt;</span><span style="color: #800000">property</span> <span style="color: #ff0000">name</span>=<span style="color: #0000ff">"connection.connection_string_name"</span><span style="color: #0000ff">&amp;gt;</span>ConnectionString<span style="color: #0000ff">&amp;lt;/</span><span style="color: #800000">property</span><span style="color: #0000ff">&amp;gt;</span>
-</pre><pre style="background-color: #ffffff; margin: 0em; width: 100%; font-family: consolas,'Courier New',courier,monospace; font-size: 12px">		<span style="color: #0000ff">&amp;lt;</span><span style="color: #800000">property</span> <span style="color: #ff0000">name</span>=<span style="color: #0000ff">"show_sql"</span><span style="color: #0000ff">&amp;gt;</span>true<span style="color: #0000ff">&amp;lt;/</span><span style="color: #800000">property</span><span style="color: #0000ff">&amp;gt;</span>
-</pre><pre style="background-color: #ffffff; margin: 0em; width: 100%; font-family: consolas,'Courier New',courier,monospace; font-size: 12px">		<span style="color: #0000ff">&amp;lt;</span><span style="color: #800000">property</span> <span style="color: #ff0000">name</span>=<span style="color: #0000ff">"use_proxy_validator"</span><span style="color: #0000ff">&amp;gt;</span>false<span style="color: #0000ff">&amp;lt;/</span><span style="color: #800000">property</span><span style="color: #0000ff">&amp;gt;</span>
-</pre><pre style="background-color: #ffffff; margin: 0em; width: 100%; font-family: consolas,'Courier New',courier,monospace; font-size: 12px">	        <span style="color: #0000ff">&amp;lt;</span><span style="color: #800000">mapping</span> <span style="color: #ff0000">assembly</span>=<span style="color: #0000ff">"ACME.Model"</span><span style="color: #0000ff">/&amp;gt;</span>
-</pre><pre style="background-color: #ffffff; margin: 0em; width: 100%; font-family: consolas,'Courier New',courier,monospace; font-size: 12px">	<span style="color: #0000ff">&amp;lt;/</span><span style="color: #800000">session</span>-factory<span style="color: #0000ff">&amp;gt;</span>
-</pre><pre style="background-color: #ffffff; margin: 0em; width: 100%; font-family: consolas,'Courier New',courier,monospace; font-size: 12px"><span style="color: #0000ff">&amp;lt;/</span><span style="color: #800000">hibernate</span>-configuration<span style="color: #0000ff">&amp;gt;</span></pre></pre>
-<h3></h3>
+summary: The other day at the office my boss took a look at our configuration files and he expressed his concern about breaking DRY with all the ConnectionStrings. One for Ado.Net, one for NHibernate, one for our caching db and another for Log4Net.
+categories: [Programming, .Net]
+---
+
+The other day at the office my boss took a look at our configuration files and he expressed his concern about breaking DRY with all the ConnectionStrings. One for Ado.Net, one for NHibernate, one for our caching db and another for Log4Net. Not only that but they are all over the place in the file, not all together.
+
+On top of that,, some of those are the same, so changing a username or a password means changing them all over. Of course he was right.
+
+<h3>NHibernate solution</h3>
+
+For NHibernate I just use the connection.connection_string_name property instead of the connection.connection_string. This points to a connection string defined in that section of the configuration file with the provided name.
+
+{% highlight xml %}
+	<hibernate-configuration xmlns="urn:nhibernate-configuration-2.2">
+		<session-factory>
+			<property name="dialect">NHibernate.Dialect.MsSql2005Dialect</property>
+			<property name="connection.provider">NHibernate.Connection.DriverConnectionProvider</property>
+			<property name="connection.connection_string_name">ConnectionString</property>
+			<property name="show_sql">true</property>
+			<property name="use_proxy_validator">false</property>
+		    <mapping assembly="ACME.Model"/>
+		</session-factory>
+	</hibernate-configuration>
+{% endhighlight %}
+
 <h3>Log4Net solution</h3>
-For Log4Net was not so easy. I found references to a patch that provides similar functionality to the one observed in NHibernate and references to that patch been applied to the latest release, but It doesn’t seem to be there.
 
-So the solution I came with is to extend the default AdoNetAppender and in the constructor of the new class try to read the connection string from the configuration file, the only problem with this approach is that I’m hard coding the expected name of an AppSetting that will contain the name of the connection string.
+For Log4Net was not so easy. I found references to a patch that provides similar functionality to the one observed in NHibernate and references to that patch been applied to the latest release, but It doesn’t seem to be there.
 
-Note: Utils.GetAppSetting and Utils.GetConnectionString are utility methods that I use to read from the configuration files.
-<pre><pre style="background-color: #ffffff; margin: 0em; width: 100%; font-family: consolas,'Courier New',courier,monospace; font-size: 12px"><span style="color: #0000ff">using</span> log4net.Appender;
-</pre><pre style="background-color: #ffffff; margin: 0em; width: 100%; font-family: consolas,'Courier New',courier,monospace; font-size: 12px"></pre><pre style="background-color: #ffffff; margin: 0em; width: 100%; font-family: consolas,'Courier New',courier,monospace; font-size: 12px"><span style="color: #0000ff">namespace</span> ACME.Logging
-</pre><pre style="background-color: #ffffff; margin: 0em; width: 100%; font-family: consolas,'Courier New',courier,monospace; font-size: 12px">{
-</pre><pre style="background-color: #ffffff; margin: 0em; width: 100%; font-family: consolas,'Courier New',courier,monospace; font-size: 12px">	<span style="color: #0000ff">public</span> <span style="color: #0000ff">class</span> CustomAdoNetAppender : AdoNetAppender
-</pre><pre style="background-color: #ffffff; margin: 0em; width: 100%; font-family: consolas,'Courier New',courier,monospace; font-size: 12px">	{
-</pre><pre style="background-color: #ffffff; margin: 0em; width: 100%; font-family: consolas,'Courier New',courier,monospace; font-size: 12px">		<span style="color: #0000ff">public</span> CustomAdoNetAppender()
-</pre><pre style="background-color: #ffffff; margin: 0em; width: 100%; font-family: consolas,'Courier New',courier,monospace; font-size: 12px">		{
-</pre><pre style="background-color: #ffffff; margin: 0em; width: 100%; font-family: consolas,'Courier New',courier,monospace; font-size: 12px">			var stringKey = Utils.GetAppSetting("<span style="color: #8b0000">Log4NetConnectionStringName</span>");
-</pre><pre style="background-color: #ffffff; margin: 0em; width: 100%; font-family: consolas,'Courier New',courier,monospace; font-size: 12px">			<span style="color: #0000ff">if</span> (<span style="color: #0000ff">string</span>.IsNullOrEmpty(stringKey)) <span style="color: #0000ff">return</span>;
-</pre><pre style="background-color: #ffffff; margin: 0em; width: 100%; font-family: consolas,'Courier New',courier,monospace; font-size: 12px">			var connectionString = Utils.GetConnectionString(stringKey);
-</pre><pre style="background-color: #ffffff; margin: 0em; width: 100%; font-family: consolas,'Courier New',courier,monospace; font-size: 12px">			<span style="color: #0000ff">if</span> (!<span style="color: #0000ff">string</span>.IsNullOrEmpty(connectionString)) ConnectionString = connectionString;
-</pre><pre style="background-color: #ffffff; margin: 0em; width: 100%; font-family: consolas,'Courier New',courier,monospace; font-size: 12px">		}
-</pre><pre style="background-color: #ffffff; margin: 0em; width: 100%; font-family: consolas,'Courier New',courier,monospace; font-size: 12px">	}</pre><pre style="background-color: #ffffff; margin: 0em; width: 100%; font-family: consolas,'Courier New',courier,monospace; font-size: 12px">}</pre></pre>
-In your configuration file you need to have and appSetting that look like this:
-<pre><pre style="background-color: #ffffff; margin: 0em; width: 100%; font-family: consolas,'Courier New',courier,monospace; font-size: 12px"><span style="color: #0000ff">&amp;lt;</span><span style="color: #800000">add</span> <span style="color: #ff0000">key</span>=<span style="color: #0000ff">"Log4NetConnectionStringName"</span> <span style="color: #ff0000">value</span>=<span style="color: #0000ff">"ConnectionString"</span><span style="color: #0000ff">/&amp;gt;</span></pre></pre>
-Them you will need to tell Log4Net to use this appender for logging so in your log4net.config file you should do something like this:
-<pre><pre style="background-color: #ffffff; margin: 0em; width: 100%; font-family: consolas,'Courier New',courier,monospace; font-size: 12px"><span style="color: #0000ff">&amp;lt;</span><span style="color: #800000">appender</span> <span style="color: #ff0000">name</span>=<span style="color: #0000ff">"AdoNetAppender"</span> <span style="color: #ff0000">type</span>=<span style="color: #0000ff">"ACME.Logging.CustomAdoAppender"</span><span style="color: #0000ff">&amp;gt;</span></pre></pre>
-
+So the solution I came with is to extend the default AdoNetAppender and in the constructor of the new class try to read the connection string from the configuration file, the only problem with this approach is that I’m hard coding the expected name of an AppSetting that will contain the name of the connection string.
 
-<div style="padding-bottom: 0px; margin: 0px; padding-left: 0px; padding-right: 0px; display: inline; float: none; padding-top: 0px" id="scid:0767317B-992E-4b12-91E0-4F059A8CECA8:48b34e9b-5a4b-4868-a7dd-0219141ae486" class="wlWriterEditableSmartContent">Technorati Tags: <a href="http://technorati.com/tags/Log4Net" rel="tag">Log4Net</a>,<a href="http://technorati.com/tags/NHibernate" rel="tag">NHibernate</a>,<a href="http://technorati.com/tags/ConnectionString" rel="tag">ConnectionString</a>,<a href="http://technorati.com/tags/DRY" rel="tag">DRY</a>,<a href="http://technorati.com/tags/AdoNetAppender" rel="tag">AdoNetAppender</a></div>
+Note: Utils.GetAppSetting and Utils.GetConnectionString are utility methods that I use to read from the configuration files.
+
+{% highlight aspx-cs %}
+	using log4net.Appender;
+	
+	namespace ACME.Logging
+	{
+		public class CustomAdoNetAppender : AdoNetAppender
+		{
+			public CustomAdoNetAppender()
+			{
+				var stringKey = Utils.GetAppSetting("Log4NetConnectionStringName");
+				if (string.IsNullOrEmpty(stringKey)) return;
+				var connectionString = Utils.GetConnectionString(stringKey);
+				if (!string.IsNullOrEmpty(connectionString)) ConnectionString = connectionString;
+			}
+		}
+	}
+{% endhighlight %}
+
+In your configuration file you need to have and appSetting that look like this:
+
+{% highlight xml %}
+	<add key="Log4NetConnectionStringName" value="ConnectionString"/>
+{% endhighlight %}
+
+Them you will need to tell Log4Net to use this appender for logging so in your log4net.config file you should do something like this:
+
+{% highlight xml %}
+	<appender name="AdoNetAppender" type="ACME.Logging.CustomAdoAppender">
+{% endhighlight %}

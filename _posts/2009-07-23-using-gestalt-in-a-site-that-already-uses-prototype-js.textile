@@ -1,18 +1,28 @@
 ---
 layout: post
 title: Using Gestalt in a site that already uses prototype.js
-summary: Gestalt, the new js library release by the MIX Online labs, takes a dependency on jQuery. They use it to do some Dom manipulation (locate tags, modify the Dom).  But what happens if you already use prototype.js in your application? For example Ro...
+summary: Gestalt, the new js library release by the MIX Online labs, takes a dependency on jQuery. They use it to do some Dom manipulation (locate tags, modify the Dom).  But what happens if you already use prototype.js in your application?
 categories: [Gestalt, Programming]
----
-Gestalt, the new js library release by the MIX Online labs, takes a dependency on jQuery. They use it to do some Dom manipulation (locate tags, modify the Dom).
- But what happens if you already use prototype.js in your application? For example RoR apps use prototype as their javascript library by default. <br>Both jQuery and Prototype define the dollar sign function $(), in jQuery this is the short form of actually the jQuery() function, since the libraries define this function in the global namespace, the latest library included in order from top to bottom will have precedence. So if you already have some code based upon the prototype definition of $() you will need to add jQuery before prototype or your libraries will brake. 
- The problem here is that Gestalt.js internally uses the short form (the $()) of jQuery in some places. So lets say you have this lines on top of your html file
-<pre><pre style="background-color: #ffffff; margin: 0em; width: 100%; font-family: consolas,'Courier New',courier,monospace; font-size: 12px">&amp;lt;script language="<span style="color: #8b0000">javascript</span>" src="<span style="color: #8b0000">../Lib/js/jquery.js</span>" type="<span style="color: #8b0000">text/javascript</span>"&amp;gt;&amp;lt;/script&amp;gt; 
-</pre><pre style="background-color: #ffffff; margin: 0em; width: 100%; font-family: consolas,'Courier New',courier,monospace; font-size: 12px">&amp;lt;script language="<span style="color: #8b0000">javascript</span>" src="<span style="color: #8b0000">../Lib/js/gestalt.js</span>" type="<span style="color: #8b0000">text/javascript</span>"&amp;gt;&amp;lt;/script&amp;gt; 
-</pre><pre style="background-color: #ffffff; margin: 0em; width: 100%; font-family: consolas,'Courier New',courier,monospace; font-size: 12px">&amp;lt;script language="<span style="color: #8b0000">javascript</span>" src="<span style="color: #8b0000">../Lib/js/prototype.js</span>" type="<span style="color: #8b0000">text/javascript</span>"&amp;gt;&amp;lt;/script&amp;gt; 	
-</pre></pre>
-Once the page load you will see an error like this in your js console/debugger:
-<pre><pre style="background-color: #ffffff; margin: 0em; width: 100%; font-family: consolas,'Courier New',courier,monospace; font-size: 12px">$("<span style="color: #8b0000">.xaml</span>") is <span style="color: #0000ff">null</span></pre><pre style="background-color: #ffffff; margin: 0em; width: 100%; font-family: consolas,'Courier New',courier,monospace; font-size: 12px">http:<span style="color: #008000">//localhost/Gestalt/Lib/js/gestalt.js</span></pre><pre style="background-color: #ffffff; margin: 0em; width: 100%; font-family: consolas,'Courier New',courier,monospace; font-size: 12px">Line 319</pre></pre>
-Now, don’t panic the solution is very simple. You can open gestalt.js and replace all occurrences of $( with jQuery( or just get gestalt-proto.js from my <a href="http://gestaltkatas.codeplex.com/SourceControl/changeset/view/35135#510582" target="_blank">Gestalt katas in Codeplex</a>.
+---
 
-<div style="padding-bottom: 0px; margin: 0px; padding-left: 0px; padding-right: 0px; display: inline; float: none; padding-top: 0px" id="scid:0767317B-992E-4b12-91E0-4F059A8CECA8:d97fec92-07e5-4bf2-a74d-4580c4c84552" class="wlWriterEditableSmartContent">Technorati Tags: <a href="http://technorati.com/tags/Gestalt" rel="tag">Gestalt</a>,<a href="http://technorati.com/tags/Prototype" rel="tag">Prototype</a>,<a href="http://technorati.com/tags/jQuery" rel="tag">jQuery</a>,<a href="http://technorati.com/tags/Rails" rel="tag">Rails</a></div>
+Gestalt, the new js library release by the MIX Online labs, takes a dependency on jQuery. They use it to do some Dom manipulation (locate tags, modify the Dom).
+
+But what happens if you already use prototype.js in your application? For example RoR apps use prototype as their javascript library by default.
+Both jQuery and Prototype define the dollar sign function $(), in jQuery this is the short form of actually the jQuery() function, since the libraries define this function in the global namespace, the latest library included in order from top to bottom will have precedence. So if you already have some code based upon the prototype definition of $() you will need to add jQuery before prototype or your libraries will brake. 
+
+The problem here is that Gestalt.js internally uses the short form (the $()) of jQuery in some places. So lets say you have this lines on top of your html file
+
+{% highlight html %}
+	<script language="javascript" src="../Lib/js/jquery.js" type="text/javascript"></script> 
+	<script language="javascript" src="../Lib/js/gestalt.js" type="text/javascript"></script> 
+	<script language="javascript" src="../Lib/js/prototype.js" type="text/javascript"></script> 	
+{% endhighlight %}
+
+Once the page load you will see an error like this in your js console/debugger:
+
+{% highlight html %}
+	$(".xaml") is null
+	http://localhost/Gestalt/Lib/js/gestalt.jsLine 319
+{% endhighlight %}
+
+Now, don’t panic the solution is very simple. You can open gestalt.js and replace all occurrences of $( with jQuery( or just get gestalt-proto.js from my <a href="http://gestaltkatas.codeplex.com/SourceControl/changeset/view/35135#510582" target="_blank">Gestalt katas in Codeplex</a>.
