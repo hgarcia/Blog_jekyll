@@ -5,11 +5,18 @@ summary: Yesterday I listened to show 115 of Scott Hanselman podcast "Hanselminu
 categories: [Programming]
 ---
 
-Yesterday I listened to show 115 of <a href="http://www.hanselman.com/blog/" title="Scott Hanselman" target="_blank">Scott Hanselman</a> podcast <a href="http://www.hanselminutes.com/default.aspx?showID=133" title="Hanselminutes 115 - Finding Passion for Software" target="_blank">"Hanselminutes"</a>, the title was "Finding passion for Software". <br/>When I first got the link on my rss reader I wasn't sure If I even wanted to download it into my mp3 player, I have so much stuff that I listen in a weekly basics that sometimes I skip some episodes of podcast that I don't find relevant to my interests, but Scott Hanselman is that rare type of communicator that can make interesting very arid topics.
-<i>Side note: That actually means that there is not such thing as uninteresting "stuff", but is mostly the ability of the person that talks about it who can make it interesting or uninteresting</i>
+Yesterday I listened to show 115 of "Scott Hanselman(Scott Hanselman)":http://www.hanselman.com/blog/  podcast "Hanselminutes(Hanselminutes)":http://www.hanselminutes.com/default.aspx?showID=133, the title was *Finding passion for Software*.
+When I first got the link on my rss reader I wasn't sure If I even wanted to download it into my mp3 player, I have so much stuff that I listen in a weekly basics that sometimes I skip some episodes of podcast that I don't find relevant to my interests, but Scott Hanselman is that rare type of communicator that can make interesting very arid topics.
 
-Back to the topic of this post. <br/> In this episode Hanselman talks with <a href="http://www.intellectualhedonism.com/" title="Carl Franklin" target="_blank">Carl Franklin</a> about the joys of programming and getting back to basics. <br/>The chat moves around what and why development software is (or can be) fun. <br/>Both hosts talk about their mentors and the impact they have in their careers and why they love to do what they do. How this have an impact as well on their writing, talking and sharing their knowledge.
+_That actually means that there is not such thing as uninteresting "stuff", but is mostly the ability of the person that talks about it who can make it interesting or uninteresting_
 
-Carl makes a point about pretentious people that believes that they know it all, or that they know the "only" way to do something. Scott mentions that sometimes you can tell somebody how not to do something, but leave them find a good way to do it, there is a good chance they will come up with a different way to do it and maybe a more elegant solution that anything you may think about. <br/> He is talking about using the anti patterns as examples of bad coding.  
+Back to the topic of this post. In this episode Hanselman talks with "Carl Franklin(Carl Franklin)":http://www.intellectualhedonism.com/ about the joys of programming and getting back to basics.
+The chat moves around what and why development software is (or can be) fun.
+Both hosts talk about their mentors and the impact they have in their careers and why they love to do what they do. How this have an impact as well on their writing, talking and sharing their knowledge.
 
-The shows run for a little bit more than the usual 30 minutes and makes for a great listening.<br/> Go and <a href="http://www.hanselminutes.com/default.aspx?showID=133" title="Hanselminutes 115 - Finding Passion for Software" target="_blank">check it out</a>.
+Carl makes a point about pretentious people that believes that they know it all, or that they know the "only" way to do something. Scott mentions that sometimes you can tell somebody how not to do something, but leave them find a good way to do it, there is a good chance they will come up with a different way to do it and maybe a more elegant solution that anything you may think about.
+He is talking about using the anti patterns as examples of bad coding.  
+
+The shows run for a little bit more than the usual 30 minutes and makes for a great listening.
+
+Go and "check it out(Hanselminutes 115 - Finding Passion for Software)":http://www.hanselminutes.com/default.aspx?showID=133.
