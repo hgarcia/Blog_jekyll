@@ -1,6 +1,6 @@
 ---
 layout: post
-title: The Renaissance in development â€" Ted Neward at Oredev 2008
+title: The Renaissance in development; Ted Neward at Oredev 2008
 summary: You can get all the videos (110)
 categories: [General, Methodology, Programming, Tools]
 ---

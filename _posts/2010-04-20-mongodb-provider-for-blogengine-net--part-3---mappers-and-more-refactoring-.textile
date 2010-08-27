@@ -1,11 +1,11 @@
 ---
 layout: post
-title: MongoDb provider for BlogEngine.net, part 3 �" Mappers and more refactoring.
+title: MongoDb provider for BlogEngine.net, part 3 - Mappers and more refactoring.
 summary: In the previous post on this series we manage to get our Insert and a basic Select methods working. Today we need to implement the mapper class for Post.
 categories: [MongoDB, Programming]
 ---
 
-In the previous post on this series we manage to get our Insert and a basic Select methods working. Today we need to implement the mapper class for Post. But first let’s check what we have done so far and see if we can improve this a bit. We notice some duplication on the MongoDb class.
+In the previous post on this series we manage to get our Insert and a basic Select methods working. Today we need to implement the mapper class for Post. But first letâ€™s check what we have done so far and see if we can improve this a bit. We notice some duplication on the MongoDb class.
 
 This code is triplicate.
 
@@ -47,7 +47,7 @@ First we modify the semantics in the first routine to make it identical to the o
 	}
 {% endhighlight %}
 
-Now that our code is better, let’s create the first mapper.
+Now that our code is better, letâ€™s create the first mapper.
 
 {% highlight aspx-cs %}
 	public Post Map(Document document)
@@ -72,13 +72,13 @@ Now that our code is better, let’s create the first mapper.
 	}
 {% endhighlight %}
 
-That’s an ugly piece of code. And the worst thing is that we still have a lot of work ahead of us to finish this mapper. We haven’t dealt with any of the collections in the Post, for example the Comments, or the Tags. We didn’t write any error handling either, this will grow ugly fast. 
+Thatâ€™s an ugly piece of code. And the worst thing is that we still have a lot of work ahead of us to finish this mapper. We havenâ€™t dealt with any of the collections in the Post, for example the Comments, or the Tags. We didnâ€™t write any error handling either, this will grow ugly fast. 
 
 A better way to deal with it will be to start leveraging conventions and mappers to deal with it as automatically as possible.
 
 h3. Conclusion.
 
-As you can see using MongoDb in an existing application is possible. I purposely didn’t touch the code of the application what could have made some of this changes easier. 
+As you can see using MongoDb in an existing application is possible. I purposely didnâ€™t touch the code of the application what could have made some of this changes easier. 
 
 NoRM is looking very good and if you are starting from scratch I will use that driver that provides serialization and deserialization out of the box.
 

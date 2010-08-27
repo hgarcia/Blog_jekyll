@@ -1,6 +1,6 @@
 ---
 layout: post
-title: MongoDB provider for Blogengine.net, saving a Post â€" Part 2
+title: MongoDB provider for Blogengine.net, saving a Post - Part 2
 summary: Yesterday we created our first method in the MongoDbProvider, our implementation of BlogProvider. We created a few supporting classes, but we donâ€™t have test for those classes.
 categories: [MongoDB, Programming]
 ---
