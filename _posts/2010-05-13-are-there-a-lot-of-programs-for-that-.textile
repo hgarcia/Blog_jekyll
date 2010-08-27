@@ -11,29 +11,29 @@ Two weeks ago I brought a Kobo. It’s an e-reader device promoted by Indigo (a 
 
 Today while enjoying the second part of the RSpec book around 9:00 am in a half full subway car, the person standing besides me asks:
 
- <em>-Is it good?</em>
+_-Is it good?
 
 His chin pointing at the Kobo and an inquisitive look in his eyes. 
 
- <em>-Yes, it’s good.</em>
+ _-Yes, it’s good.
 
- <em>-So, it’s easy to read? </em>
+ _-So, it’s easy to read? 
 
- <em>-Yes, a bit slow turning pages but good.</em>
+ _-Yes, a bit slow turning pages but good.
 
- <em>-Are there a lot of programs?</em>
+ _-Are there a lot of programs?
 
 At that moment I started to explain. No, there is not software for it yet, but it’s an open platform, so maybe later on… By the look in his face I knew that I lost him; and more important I wasn’t answering his question, but I wasn’t sure why.
 
- <em>-But what are you reading them?</em>
+ _-But what are you reading them?
 
 And them it sunk on me, when he said software he meant books!!!
 
- <em>-Oh, the book, of course, sorry. Yes, you can use pdf’s or ePub, both open formats…</em> - I was losing him again – <em>Yes, there are lots of books you can read with it.</em>
+ _-Oh, the book, of course, sorry. Yes, you can use pdf’s or ePub, both open formats… - I was losing him again – Yes, there are lots of books you can read with it.
 
 He smiled, happy to get his question answered, and we continue our respective commutes without other word.
 
-<h3>What’s the point of telling you about my commute?</h3>
+h3. What’s the point of telling you about my commute?
 
 You may be wondering.
 This conversation was a casual one, with a normal person that for sure can be characterized as the user for some of the software that we write every day.

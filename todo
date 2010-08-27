@@ -1,5 +1,7 @@
-Search for Note: <i> and <em> and blockquote for notice and updates to fix using styles
+Search for <em> and blockquote 
 
-Make sure I add a style for blockquote or whatever is valid in html5 post for 2008-12-15 to use as demo
+Make sure I add a style for em, cite, blockquote for 2008-12-15 to use as demo
 
 Modify the templates to use css reset and HTML5 compatible markup.
+
+Remove the relate posts links.

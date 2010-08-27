@@ -61,7 +61,8 @@ Nice, isn’t it? Well, there is a problem. These routes won’t work with extra
 <script src="http://gist.github.com/468993.js?file=WebPageRouteHandler2.cs"></script>
 
 Notice that we need to set the Context as well or we will get a null Exception when calling the UrlData property. Yes, I used Reflector like crazy to figure some of this things out :-) 
-<em>Note to Microsoft: Why is UrlDataList internal??? that made my code way more complicate that it should have been, anyway.</em>
+
+_Note to Microsoft: Why is UrlDataList internal??? that made my code way more complicate that it should have been, anyway.
 
 And once again, please do not use this code as is in production, notice that the data should be escaped and validated since urls are user input.
 
