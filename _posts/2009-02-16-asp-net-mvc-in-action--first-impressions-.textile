@@ -15,4 +15,4 @@ The really good points for me is that they put some emphasis in working with an 
 
 Specially this last few days (week) with the controversy created about SOLID principles and Tests is nice to see that a book about a framework that should allow us to improve our coding of .net applications is paying special attention to this details.
 
-I will keep reading and waiting for updates on the book, I’m specially high on my expectations for <em>Chapter 13 - IronRuby, IronPython, and the DLR,</em> that is not available yet.
+I will keep reading and waiting for updates on the book, I’m specially high on my expectations for *Chapter 13 - IronRuby, IronPython, and the DLR,* that is not available yet.

@@ -9,17 +9,17 @@ The <a href="http://en.wikipedia.org/wiki/NoSQL" target="_blank">NoSql</a> movem
 
 A quick search point me to <a href="http://odetocode.com/blogs/scott/archive/2009/10/13/experimenting-with-mongodb-from-c.aspx" target="_blank">this odetocode post</a> that was a great starting point to have Mongo running in my dev machine using the defaults and the Driver for C#. So, go and read K. Scott Allen's post if you want to follow along with the code in the rest of this post.
 
-<h3>Detour (some background on NoSql and MongoDB):</h3> 
+h3. Detour (some background on NoSql and MongoDB): 
 
-<em>If you already know about this you can skip all this paragraph.</em>
+_If you already know about this you can skip all this paragraph._
 
-<em>The so called NoSql movement is based on the notion that using RDBMS may not be the right choice in some cases. They propose using alternative databases, like key-value pair storages and document databases. To perform operations on the data some make use of Map-Reduce, others like MongoDB use a query mechanism that resembles Sql. One of the most attractive features of this db's is the ability to easily run clusters and do </em><a href="http://www.codefutures.com/database-sharding/" target="_blank"><em>data sharding</em></a><em>. Most of them support both features without a lot of fuss, or that I heard.</em>
+The so called NoSql movement is based on the notion that using RDBMS may not be the right choice in some cases. They propose using alternative databases, like key-value pair storages and document databases. To perform operations on the data some make use of Map-Reduce, others like MongoDB use a query mechanism that resembles Sql. One of the most attractive features of this db's is the ability to easily run clusters and do <a href="http://www.codefutures.com/database-sharding/" target="_blank">data sharding</a>. Most of them support both features without a lot of fuss, or that I heard.
 
-<em>MongoDB is a document based db, that stores the information as Binary Json.</em>
+MongoDB is a document based db, that stores the information as Binary Json.
 
-<em>End of detour.</em>
+End of detour.
 
-<h3>What's a document?</h3> 
+h3. What's a document?
 
 A document is not the equivalent to a Row. A document can be seen as a key-value pair collection of objects. It's actually a complete object Graph, persisted as Json. Documents are organized into Collections.
 
@@ -44,7 +44,7 @@ But while trying to do so I got an error in the id of the document. Looking at t
 
 The problem is in the ObjectId function. But do not despair, there is an alternative.
 
-<h3>From a document to a fully usable object graph.</h3>
+h3. From a document to a fully usable object graph.
 
 The alternative is not pretty but works and is easy to implement. Just pass the document to the root of your object graph, an access the underlying collection via the objects properties. Let's see how this can look like.
 
