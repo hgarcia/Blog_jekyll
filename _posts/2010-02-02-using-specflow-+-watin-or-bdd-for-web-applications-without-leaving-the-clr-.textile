@@ -37,7 +37,7 @@ You will generate the specification from an item template.
 
 <a href="../../../images/posts/UsingSpecFlowWatiNorBDDforwebapplicatio_14C77/004_features.png"><img border="0" alt="004_features" src="../../../images/posts/UsingSpecFlowWatiNorBDDforwebapplicatio_14C77/004_features_thumb.png" width="508" height="149"></a> 
 
-<h3>Conclusion:</h3>
+h3. Conclusion:
 
 I think that this is a great tool, specially if you are using it to develop desktop apps or library code in c#. You can use tools like R# to generate your classes and methods from the step definition class directly.
 

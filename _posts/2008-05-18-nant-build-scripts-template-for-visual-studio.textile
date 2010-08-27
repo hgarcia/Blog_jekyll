@@ -15,7 +15,7 @@ Notice the new Nant build file item.
 
 <img src="../../../images/posts/sp32-20080517-175933.png" alt="" border="0">
 
-<h3>Adding intellisense to edit the file</h3>
+h3. Adding intellisense to edit the file
 
 There are a few other post out there to do this on VS 2005 on VS 2008 there are a few changes. The most important one is where to install the schemas.
 
@@ -28,11 +28,11 @@ If you type "<" you will see a list of options
 
 <img src="../../../images/posts/sp32-20080517-181043.png" alt="" border="0">
 
-<h3>Troubleshooting</h3>
+h3. Troubleshooting
 If it doesn't work for you it may be possible that you have a different version of schema files. On VS with the build file open click on Xml -> Schemas <br/>Locate the entry for the build file and check the target namespace, it should be the same as the xmlns attribute of your project tag 
 
 <img src="../../../images/posts/sp32-20080517-214607.png" alt="" border="0">
 If it's not change the attribute value with the value displayed in the schemas dialog.
 
-<h3>More to do</h3>
+h3. More to do
 You may want to customize the item template and add the most common options for your build files, like add the automatic execution of your unit test, Ncover, FxCop, package, etc. I notice that I usually end up with a similar script in most cases, you can them save the script as an item template using File->Export Template, when asked choose to import the template into VS.

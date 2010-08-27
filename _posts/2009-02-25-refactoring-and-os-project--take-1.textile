@@ -19,7 +19,7 @@ Notice that most of the classes have been moved into a class library and the con
 
 Also notice the UnitTests project.
 
-<h3>Extract method</h3>
+h3. Extract method
 
 My first refactoring was to remove as much code as possible from the Program.cs file, from this:
 
@@ -78,7 +78,7 @@ To this:
 
 I them move GetCodeCoverage into a new class called CoverageAnalyzer in the class library project. Now I want to get ride of all the parameters for GetCodeCoverage.
 
-<h3>Introduce Object Parameter</h3>
+h3. Introduce Object Parameter
 
 {% highlight aspx-cs %}
 	CoverageAnalyzer.GetCodeCoverage(new CodeCoverageParams(toInstrument, outputPathForInstrumentation, vsinstrLocation, unitTestRunnerExecutable, unitTestArguments, vstsCoverageOutputFile, symbolsPath, exePath, outputXml, coverageXslt, htmlOutputFile));

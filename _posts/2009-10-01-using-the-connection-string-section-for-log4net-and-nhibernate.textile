@@ -9,7 +9,7 @@ The other day at the office my boss took a look at our configuration files and h
 
 On top of that,, some of those are the same, so changing a username or a password means changing them all over. Of course he was right.
 
-<h3>NHibernate solution</h3>
+h3. NHibernate solution
 
 For NHibernate I just use the connection.connection_string_name property instead of the connection.connection_string. This points to a connection string defined in that section of the configuration file with the provided name.
 
@@ -26,7 +26,7 @@ For NHibernate I just use the connection.connection_string_name property instead
 	</hibernate-configuration>
 {% endhighlight %}
 
-<h3>Log4Net solution</h3>
+h3. Log4Net solution
 
 For Log4Net was not so easy. I found references to a patch that provides similar functionality to the one observed in NHibernate and references to that patch been applied to the latest release, but It doesn't seem to be there.
 

@@ -1,6 +1,3 @@
-Search for <h3> and repplace with h3. 
-Remove </h3>
-
 Make sure I add a style for em, cite, blockquote for 2008-12-15 to use as demo
 
 Modify the templates to use css reset and HTML5 compatible markup.

@@ -25,7 +25,7 @@ An do stuff like this:
 
 There are a lot of discussions about when to use extension methods and when not to. The problem is when you use extension methods instead of inheritance.
 
-<h3>Using extension methods to augment the framework or modify the language.</h3>
+h3. Using extension methods to augment the framework or modify the language.
 
 A clear choice for me is when you want to augment types, like the previous example of using PercentOf in an integer.Or what about this.
 
@@ -50,7 +50,7 @@ Or the other way around
 	// 18/10/2008
 {% endhighlight %}
 
-<h3>Encapsulate functionality that you always do.</h3>
+h3. Encapsulate functionality that you always do.
 
 I need to use Reflection quite a lot for one of my projects and I have a set of methods to do some very common operations, like get a value from a property, get a list of properties, etc. What if those methods where available for you in every object?
 

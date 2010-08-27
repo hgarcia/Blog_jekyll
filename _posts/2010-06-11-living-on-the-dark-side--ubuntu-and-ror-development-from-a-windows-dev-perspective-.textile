@@ -5,7 +5,7 @@ summary: Some background information. I'm not a complete newbie to Linux. 12 yea
 categories: [General, Programming]
 ---
 
-<h3>Some background information.</h3>
+h3. Some background information.
 
 I'm not a complete newbie to Linux. 12 years ago or so, while still doing lots of IT work I used to admin two Red Hat servers: FTP, file sharing, email, proxy and web servers. Those were the days of RedHat 5.0 and 5.2  
 
@@ -13,13 +13,13 @@ The next version I played with was Red Hat 7.0 that I installed and used for a l
 
 I have been running different versions of Ubuntu in my different laptops since them but always in virtual machines. I haven't been able to properly run on metal. Driver issues were always in the way (most of the time the wireless network and sometimes the video card).
 
-<h3>Enter Ubuntu 10.04.</h3>
+h3. Enter Ubuntu 10.04.
 
 I have been very impressed with how much the experienced improved in the last two or three years. Every new release looks more polished and installation simpler and faster. So with the release last month of Ubuntu 10.04, I decided to give it another try and install it in my old Dell Inspiron 6000. I have to say it, wow.  
 
 The installation process was fast and extremely easy. The system is responsive and comes loaded with great productivity tools. (Right now I'm writing this post in OpenOffice that comes pre-installed).  
 
-<h3>General impressions.</h3>
+h3. General impressions.
 
 The package manager: You can install lots of apps using either the synaptic package manager or the Ubuntu Software Centre but it's even faster going to the command line and just type:
 
@@ -54,7 +54,7 @@ Now, none of this is really a problem for me. I know what all this means and I d
 
 Granted, this editor was geared towards the developers, but even so, it seems a bit too much to ask.
 
-<h3>Final thoughts.</h3>
+h3. Final thoughts.
 
 I'm liking the experience so much that I also switch from win 7 to Ubuntu in my net-book. The primary use of it is to write, listen/watch to some baseball games and do some reading. If you haven't try it or if you had bad experiences in the past, I suggest you go ahead and give it a try, run it with the live cd or install it in a virtual machine with VirtualBox to start.
 

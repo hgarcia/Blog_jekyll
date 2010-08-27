@@ -44,7 +44,7 @@ InnerException:
 
 Why? The default of string is null.
 
-<h3>A possible solution.</h3>
+h3. A possible solution.
 
 Sometimes you need to filter a list of objects and access one of the properties of the object right away. For that we can use the <a href="http://en.wikipedia.org/wiki/Null_Object_pattern" target="_blank">Null Object pattern</a>, but how to tell Linq about it? 
 

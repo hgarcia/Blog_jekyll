@@ -1,6 +1,6 @@
 ---
 layout: post
-title: NHibernate in Action – First impressions
+title: NHibernate in Action �" First impressions
 summary: I got the book NHibernate in Action a few months ago via the MEAP program. Finally I was able to put my hands in the print version a few weeks ago. I have been reading it mostly in the subway during my commute. I’m very excited about it.
 categories: [Books]
 ---

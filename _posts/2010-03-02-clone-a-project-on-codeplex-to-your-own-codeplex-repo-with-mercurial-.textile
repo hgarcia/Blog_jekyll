@@ -12,9 +12,9 @@ If you use Github (Git) or Bitbucket (Mercurial) you are familiar with the abili
 <a href="../../../images/posts/Cloneaprojectoncodeplextoyourowncodeple_14BF6/bitbucket_fork.png"><img style="border-right-width: 0px; display: inline; border-top-width: 0px; border-bottom-width: 0px; border-left-width: 0px" title="bitbucket_fork" border="0" alt="bitbucket_fork" src="../../../images/posts/Cloneaprojectoncodeplextoyourowncodeple_14BF6/bitbucket_fork_thumb.png" width="513" height="174"></a>
 
 Once forked you can start working in your own repo and once you are ready to integrate you will send a pull request to the master repository.
-Codeplex recently started using Mercurial but it doesn’t have (or I couldn’t find) a way to clone a project directly from inside Codeplex.
+Codeplex recently started using Mercurial but it doesn't have (or I couldn't find) a way to clone a project directly from inside Codeplex.
 
-_UPDATED March 5: Yesterday Codeplex added support for forks, check <a href="http://blogs.msdn.com/codeplex/archive/2010/03/05/codeplex-mercurial-support-for-forks.aspx" target="_blank">this article here.__
+_UPDATED March 5: Yesterday Codeplex added support for forks, check <a href="http://blogs.msdn.com/codeplex/archive/2010/03/05/codeplex-mercurial-support-for-forks.aspx" target="_blank">this article here._
 
 h3. First, cloning to your local computer
 
@@ -30,7 +30,7 @@ Copy the clone url and open the TortoiseHg clone window.
 
 <a href="../../../images/posts/Cloneaprojectoncodeplextoyourowncodeple_14BF6/hg_clone.png"><img style="border-right-width: 0px; display: inline; border-top-width: 0px; border-bottom-width: 0px; border-left-width: 0px" title="hg_clone" border="0" alt="hg_clone" src="../../../images/posts/Cloneaprojectoncodeplextoyourowncodeple_14BF6/hg_clone_thumb.png" width="578" height="159"></a> 
 
-Enter the repository url as the source path and select a folder where to clone the repository. If you don’t have a folder already created for this repo, just add the name in the destination path text field and the folder will be create.
+Enter the repository url as the source path and select a folder where to clone the repository. If you don't have a folder already created for this repo, just add the name in the destination path text field and the folder will be create.
 
 <a href="../../../images/posts/Cloneaprojectoncodeplextoyourowncodeple_14BF6/clone_dialog.png"><img border="0" alt="clone_dialog" src="../../../images/posts/Cloneaprojectoncodeplextoyourowncodeple_14BF6/clone_dialog_thumb.png" width="552" height="196"></a> 
 
@@ -54,7 +54,7 @@ Notice that the default (an only) repository is the original one, we want to add
 <a href="../../../images/posts/Cloneaprojectoncodeplextoyourowncodeple_14BF6/add_remote_source.png"><img border="0" alt="add_remote_source" src="../../../images/posts/Cloneaprojectoncodeplextoyourowncodeple_14BF6/add_remote_source_thumb.png" width="516" height="232"></a> 
 
 If you are using https authentication make sure you add your username and password following this form: <a href="https://username:password@hg01.codeplex.com/repository">https://username:password@hg01.codeplex.com/repository</a>
-Add any Alias name but not “default”, not now. Click Ok.
+Add any Alias name but not "default", not now. Click Ok.
 
 Select the Remote repository marked as default and click the edit button, change the alias from default to "origin".
 

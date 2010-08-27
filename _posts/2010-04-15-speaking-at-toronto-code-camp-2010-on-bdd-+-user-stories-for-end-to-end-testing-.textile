@@ -9,7 +9,7 @@ I finally got the courage and sent a proposal for speaking at the Toronto code c
 
 This time around will be at Seneca college in front of another full house. 8 tracks of .Net goodness ranging from SharePoint development to JQuery, testing (Unit and BDD), Silverlight, OData, Win Phone 7, etc. Check all the details visiting the Code camp website: <a title="http://www.torontocodecamp.net/Agenda/tabid/56/Default.aspx" href="http://www.torontocodecamp.net/Agenda/tabid/56/Default.aspx">http://www.torontocodecamp.net/Agenda/tabid/56/Default.aspx</a>
 
-<h3> About my talk.</h3>
+h3.  About my talk.
 
 I will describe what BDD is and give a brief introduction to user stories. I will de demoing how to use them to generate executable code that exercise your system and tells the clients that your program is working as expected.
 

@@ -23,7 +23,7 @@ Here is some of the output using <a href="http://rake.rubyforge.org/" target="_b
 <a href="../../../images/posts/FubuMVCanotherMVCframeworkfor.Net_1CA/ScreenHunter_02%202009-01-08%2023.18.55_2.jpg"><img alt="ScreenHunter_02 2009-01-08 23.18.55" src="../../../images/posts/FubuMVCanotherMVCframeworkfor.Net_1CA/ScreenHunter_02%202009-01-08%2023.18.55_thumb.jpg" border="0" height="125" width="244"></a>
 <a href="../../../images/posts/FubuMVCanotherMVCframeworkfor.Net_1CA/ScreenHunter_03%202009-01-08%2023.19.32_2.jpg"><img alt="ScreenHunter_03 2009-01-08 23.19.32" src="../../../images/posts/FubuMVCanotherMVCframeworkfor.Net_1CA/ScreenHunter_03%202009-01-08%2023.19.32_thumb.jpg" border="0" height="86" width="244"></a> 
 
-<h3>Taking a look at the Project</h3>
+h3. Taking a look at the Project
 
 Open the FubuMVC solution file inside the src folder. Run the Test projects, everything should be green, you should see 3 ignored cases. -Since I’m using windows XP in this machine I wasn’t able to properly run the AltOxite project since It doesn’t seem to work properly with Cassini and or IIS 5.1.-  +UPDATE: This have been already fixed on the trunk, so update your code now.+
 

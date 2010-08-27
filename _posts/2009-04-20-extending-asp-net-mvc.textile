@@ -11,7 +11,7 @@ I had two main requirements: Composed views and dynamic layouts. This means that
 
 Besides that, I want my views to be pure html. That means writing my own engine. The good thing is that the framework allows you to plug any view engine that implements IViewEngine.
 
-<h3>How to deal with the composition of the view.</h3>  
+h3. How to deal with the composition of the view.  
 
 There are two questions here, how and where. 
 

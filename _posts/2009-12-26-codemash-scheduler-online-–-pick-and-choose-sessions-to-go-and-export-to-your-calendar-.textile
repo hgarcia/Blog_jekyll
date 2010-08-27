@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Codemash Scheduler online – pick and choose sessions to go and export to your calendar.
+title: Codemash Scheduler online �" pick and choose sessions to go and export to your calendar.
 summary: When the Codemash guys announced their API I decided to create an app using it. I wasn’t sure what to do at first but It was pretty obvious anyway. Some kind of scheduling tool.
 categories: [General]
 ---
@@ -11,7 +11,7 @@ It took me some time to have the time to start and them to finish it. I finally 
 
 You can visit the tool here: <a title="http://mysessioncalendar.com/" href="http://mysessioncalendar.com/">http://mysessioncalendar.com/</a>
 
-<h3>What it does?</h3>
+h3. What it does?
 
 The tool has three tabs one for each conference day and a third for the pre compiler. Each tab has columns (representing the rooms where the sessions take place, just noticed I don’t have the room on top) and them the sessions are displayed below ordered by time.
 
@@ -21,12 +21,12 @@ This time the sessions are ordered in three columns: One for each day and the se
 
 The page has the AddThis widget that allow you to twit, email, print, add to favourites, show them in facebook and more. Another cool option is to export them as iCal, this way you can add them to your google calendar and other tools supporting this format.
 
-<h3>How was done.</h3>
+h3. How was done.
 
 The site have been implemented using ASP.NET MVC, jquery for all the JavaScript and the UI design using JQueryUI. Data is saved as xml so no need to use databases. Originally I started using Castle.ActiveRecord since the data model is extremely simple, but is so simple that the use of a db was overkill. The total time to have the site done was maybe 24 man hours divided in several coding sessions of no more than 3 hours at a time. 
 
 The use a a widget like AddThis make implementing the sharing functionality a 15 minutes deal.
 
-<h3>Conclusion.</h3>
+h3. Conclusion.
 
 There are some things that can be better like font sizes (thanks Ahmed for the report). Originally I wanted to have a better interface with drag and drop or double click in a session to select, but decided to go with a simpler implementation and get this out of my computer and into the wild.

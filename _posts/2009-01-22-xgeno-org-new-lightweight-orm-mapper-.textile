@@ -7,13 +7,13 @@ categories: [Patterns, Programming, Tools, .Net]
 
 You can find this new ORM framework at <a href="http://code.msdn.microsoft.com/XGENOORM">http://code.msdn.microsoft.com/XGENOORM</a>. Starting with it is fairly easy. Just add a reference on your project to the very small (32K) dll (only one!) and you can start playing with it.
 
-<h3>First impressions.</h3>
+h3. First impressions.
 
 My observations come from reading the documentation and not from using it. What I like. It uses the <a href="http://martinfowler.com/eaaCatalog/activeRecord.html">ActiveRecord pattern</a> what I like personally prefer for simple applications.
 
 Since this claim to be a simple ORM this is acceptable. You should understand that this mean that your objects need to inherit from a base class that provides the CRUD operations. If you want to use just POCO’s without dependencies on your ORM this won’t be a good choice. This is an issue with the pattern though and not this particular ORM.
 
-<h3>Mapping is done using Attributes</h3>
+h3. Mapping is done using Attributes
 
 For Example if you create a new class Dog and you want to mapped into a table Animal you do this
 

@@ -11,7 +11,7 @@ Today I want to talk about Attributes that those libraries may define and that m
 
 If the library is an open source project there is a solution and is change the code of the library. If not you should decide if there is no other alternative and in the worst case scenario live with the dependency.
 
-<h3>"Fixing" the problem when using Open source libraries.</h3>
+h3. "Fixing" the problem when using Open source libraries.
 
 I had a situation while using <a href="http://james.newtonking.com/projects/json-net.aspx" target="_blank">Json.Net</a>. I had a class and I wanted to mark two methods to be ignored by the serializer, to do so in Json.Net you need to use the JsonIgnoreAttribute.
 

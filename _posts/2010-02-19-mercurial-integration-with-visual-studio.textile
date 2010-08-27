@@ -19,7 +19,7 @@ The installation is very simple, just select the version of VS you want to insta
 
 <a href="../../../images/posts/MercurialintegrationwithVisualStudio_1474C/select_vs_version.png"><img border="0" alt="select_vs_version" src="../../../images/posts/MercurialintegrationwithVisualStudio_1474C/select_vs_version_thumb.png" width="358" height="197"></a> 
 
-After installed go to Tools â€“&amp;gt; Options and make sure you select display all options (only in VS 2008).
+After installed go to Tools â€"&amp;gt; Options and make sure you select display all options (only in VS 2008).
 
 <a href="../../../images/posts/MercurialintegrationwithVisualStudio_1474C/select_show_all_options.png"><img border="0" alt="select_show_all_options" src="../../../images/posts/MercurialintegrationwithVisualStudio_1474C/select_show_all_options_thumb.png" width="236" height="404"></a>
 
@@ -73,6 +73,6 @@ And a few screen captures of the different options.
 
 <a href="../../../images/posts/MercurialintegrationwithVisualStudio_1474C/Update_window.png"><img border="0" alt="Update_window" src="../../../images/posts/MercurialintegrationwithVisualStudio_1474C/Update_window_thumb.png" width="525" height="282"></a> 
 
-<h3>Conclusion</h3>
+h3. Conclusion
 
 With the support from Codeplex and Google code to Mercurial and the tight integration that this plug in presents I see no reason why people will not use it as the DVCS of choice for .net open source projects hosted on those sites. 

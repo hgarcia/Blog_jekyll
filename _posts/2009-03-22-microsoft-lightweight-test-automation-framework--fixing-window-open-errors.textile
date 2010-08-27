@@ -11,7 +11,7 @@ I think that (in general) looks like a nice alternative to some of the other fra
 
 For more information on the framework, take a look at the <a href="http://forums.asp.net/1193.aspx" target="_blank">Forum</a>.
 
-<h3>What I like.</h3>
+h3. What I like.
 
 <ol>
 	<li>Open Source (you can download the source from Codeplex). </li>
@@ -23,7 +23,7 @@ For more information on the framework, take a look at the <a href="http://forums
 	<li>Cross browser, cross platform. </li>
 </ol>
 
-<h3>What I think needs improvement. </h3>
+h3. What I think needs improvement. 
 
 <ol>
 	<li>Documentation (*). </li>    <li>Some internal objects should be public, like the BrowserInfo. (*) </li>

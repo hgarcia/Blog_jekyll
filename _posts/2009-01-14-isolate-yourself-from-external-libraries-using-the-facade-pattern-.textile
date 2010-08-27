@@ -7,7 +7,7 @@ categories: [Patterns, Programming]
 
 Besides programming against Interfaces and using <a href="http://en.wikipedia.org/wiki/Dependency_injection" target="_blank">Dependency Injection</a> to reduce coupling, there is another practice that can/should be used when you consume an external library. That is, provide a wrapper around the library or in other words the use of the <a href="http://en.wikipedia.org/wiki/Facade_pattern" target="_blank">Facade pattern</a>.
 
-<h3>Why?</h3>
+h3. Why?
 
 Consider this example.
 

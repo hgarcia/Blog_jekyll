@@ -9,7 +9,7 @@ I started to use "Git(Git)":http://git-scm.com/ seriously 5 months ago when I si
 
 I decided to use Git from the command line to learn and understand the commands really well. I occasionally used the GUI to perform some tasks that seemed easier to do that way.
 
-<h3>Git within VS.</h3>
+h3. Git within VS.
 
 Even when I really enjoy working from the command line I know that some developers prefer to stay within the IDE and I understand that. Yesterday while installing VS 2010 RC in my newly paved laptop I decided to check out the <a href="http://sourceforge.net/projects/gitextensions/" target="_blank">Git Extensions</a>. 
 
@@ -42,6 +42,6 @@ You can also pull from remote, where you can select to merge, do a rebase or jus
 
 <a href="../../../images/posts/GitandMercurialintegrationwithVisualStud_EFE9/pull_dialog.png"><img border="0" alt="pull_dialog" src="../../../images/posts/GitandMercurialintegrationwithVisualStud_EFE9/pull_dialog_thumb.png" width="624" height="319"></a>
 
-<h3>Conclusion.</h3>
+h3. Conclusion.
 
 I don’t see myself moving away from the command line but I think is a good alternative.

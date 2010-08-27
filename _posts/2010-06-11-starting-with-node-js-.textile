@@ -5,7 +5,7 @@ summary: Installing node.js  First, you need a supported OS, like Linux, Mac or 
 categories: [General, Programming, node.js]
 ---
 
-<h3>Installing node.js</h3>
+h3. Installing node.js
 
 First, you need a supported OS, like Linux, Mac or Solaris. I will be doing the install on Ubuntu.
 Go to the <a href="http://nodejs.org/#download" target="_blank">node.js download page</a> download the Gzipped file and extract in a folder of your choice in your disk.
@@ -27,7 +27,7 @@ Now type "make" and once that is finished
 {% endhighlight %}
 
 To verify that everything has been installed correctly type "node" in the command, you should have the Repl. 
-<h3>Writing your first program.</h3>
+h3. Writing your first program.
 
 Once in the shell you can type .help to see a list of some of the commands available.
 

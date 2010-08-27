@@ -9,15 +9,15 @@ I remember the time when WebMatrix was this tiny little web editor done in .net 
 
 Today, Microsoft announced the release of WebMatrix Beta. This WebMatrix is a completely different beast while at the same time maintaining the spirit, little and simple to use. 
 
-<h3>A bit of nostalgia (just skip it).</h3> 
+h3. A bit of nostalgia (just skip it). 
 
 I never understood why they kill the original WebMatrix. Yes, Visual Studio is cool and allow you to do tons of heavy lifting and crazy good stuff, but a lot of time the only thing you need is a text editor and web matrix was a great text editor for asp.net pages. If you are as old as I am you may remember Microsoft presenting WebMatrix as an alternative IDE (go to the Language and IDE section of <a href="http://msdn.microsoft.com/en-us/library/aa478961.aspx" target="_blank">this post from 2003</a> to see what I’m talking about) There were even books written <a href="http://flylib.com/books.php?ln=en&amp;amp;n=3&amp;amp;p=257&amp;amp;c=4&amp;amp;p1=1&amp;amp;c1=1&amp;amp;c2=141&amp;amp;view=1" target="_blank">David Sussman’s Beginning Dynamic Websites with ASP.NET Web Matrix</a> and <a href="http://www.dotnetspider.com/resources/26006-Inside-ASP-NET-Web-Matrix.aspx" target="_blank">Inside ASP.NET Web Matrix</a>. But them newer versions of VS came up and the Express SKU and nobody remembered WebMatrix anymore.
 
-<h3>Getting on with this post.</h3> 
+h3. Getting on with this post. 
 
 So last night I installed and started playing with it. I was mostly interested in the WebPages concept (now, really who came with the name?). They are like classic asp pages or to be more accurate, like asp.net webforms with inline code, do you remember those days? ASP+ anybody? The reason I’m intrigue is because I think there is something really neat here if we can use it in a creative way. 
 
-<h3>Extension-less urls.</h3> 
+h3. Extension-less urls. 
 
 Razor files use the .cshtml or .vbhtml extension but you don’t need the extension in the url. For example given you create a page with the name some_crazy_handler.cshtml you can visit it with or without the extension, what is really cool and allow you to use some clean urls.
 
@@ -36,12 +36,12 @@ Ex: lets create a handler called images.cshtml and a folder with the same name.
 
 Both the image and the html page will be served correctly but the WebPage “Page.vbhtml” won’t. VBHtml uses visual basic with Razor syntax.
 
-<h3>Adding routing to the mix.</h3>
+h3. Adding routing to the mix.
 
 What if you don’t want to tie up the name of the page to the route? For example handle routes in different languages. Let’s put routing to the task. Now, there may be a better way to do this but this is what I put together.
 
 First we need to add a reference to System.Web.Routing, them add an APP_CODE folder to the solution and create a class in there that inherits from IRouteHandler.
-<strong><font color="#ff0000">ATENTION: this is a completely naive implementation and a lot of things can and will go wrong if you put this in production.</font></strong>
+_ATENTION: this is a completely naive implementation and a lot of things can and will go wrong if you put this in production._
 
 <script src="http://gist.github.com/468993.js?file=WebPageRouteHandler.cs"></script>
 
@@ -78,7 +78,7 @@ And now when we can use localized urls to visit the same page. Of course you sho
 
 <a href="../../../images/posts/WebMatrixredofirstimpressions_14D2D/spanish_2.png"><img border="0" alt="spanish" src="../../../images/posts/WebMatrixredofirstimpressions_14D2D/spanish_thumb.png" width="391" height="221"></a> 
 
-<h3>Conclusion</h3>
+h3. Conclusion
 
 I think that Razor, WebPages and the other technologies packaged under WebMatrix can be used to do some rapid web development without sacrifice quality. Yes, the professional developer may not be the public that WebMatrix is intended for, but I wouldn’t dismiss it as a toy. Yes, some of the demos are not showing code that I will consider Kosher and unit testing or TDD is not a feature in those demos (or even this article) either but I see the potential.
 I can see how some of this tools can serve as building blocks for some lightweight framework ala Sinatra or Padrino. Let’s see what we, the community, can do with this.

@@ -1,6 +1,6 @@
 ﻿---
 layout: post
-title: Creating a MongoDB provider for Blogengine.Net – Part 1
+title: Creating a MongoDB provider for Blogengine.Net �" Part 1
 summary:  The code in this post is of demo quality and should not be taken as production ready code. It’s a first take on the project and will evolve during a series of posts.  Blogengine.net is an open source blogging platform written in asp.net.
 categories: [MongoDB, Programming, .Net]
 ---

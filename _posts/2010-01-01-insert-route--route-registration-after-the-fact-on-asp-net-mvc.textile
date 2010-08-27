@@ -140,6 +140,6 @@ The problem with this is that you probably don’t know the index of the routes 
 	}
 {% endhighlight %}
 
-<h3>Warning!!!</h3>
+h3. Warning!!!
 
 If you decide to use this code make sure that you have tests in place since we are relying in things like the name of a internal field that can be changed without affecting the public API so this extensions are fragile from that point of view. Besides that, reflection is slow, but since route registration should happens only once per application I’m not worry about that part. 

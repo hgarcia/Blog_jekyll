@@ -1,6 +1,6 @@
 ---
 layout: post
-title: MongoDb provider for BlogEngine.net, part 3 – Mappers and more refactoring.
+title: MongoDb provider for BlogEngine.net, part 3 �" Mappers and more refactoring.
 summary: In the previous post on this series we manage to get our Insert and a basic Select methods working. Today we need to implement the mapper class for Post.
 categories: [MongoDB, Programming]
 ---
@@ -76,7 +76,7 @@ That’s an ugly piece of code. And the worst thing is that we still have a lot 
 
 A better way to deal with it will be to start leveraging conventions and mappers to deal with it as automatically as possible.
 
-<h3>Conclusion.</h3>
+h3. Conclusion.
 
 As you can see using MongoDb in an existing application is possible. I purposely didn’t touch the code of the application what could have made some of this changes easier. 
 

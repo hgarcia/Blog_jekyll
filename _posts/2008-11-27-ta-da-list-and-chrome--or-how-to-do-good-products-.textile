@@ -12,7 +12,7 @@ Some of them are too simple, others too complex. One that I still use is Task Co
 I usually use it when I start a new project on my own. It's a nice tool to just add requirements in a very easy and fast way.
 But for my everyday task I needed something different. I always went back to the pen and paper or the notepad document open on the desktop.
 
-<h3>Enter Ta-Da Lists</h3>
+h3. Enter Ta-Da Lists
 
 This is a product from <a target="_blank" title="37 signals" href="http://www.37signals.com/">37 signals</a>, the same guys that gave us rails. <a target="_blank" title="Ta-Da list home page" href="http://www.tadalist.com/">Ta-Da List </a>is easy to use.
 

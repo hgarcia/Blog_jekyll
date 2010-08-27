@@ -11,7 +11,7 @@ I have found some controversy in some post in the wild where I demostrate how to
 
 String has two very useful methods ToUpper() and ToLower(), but I found myself looking for a good ToCamel(), ToPascal(), Capitalize() and CapitalizeAll() methods one too many times.
 
-<h3>Let's write down what we want to acomplish.</h3>
+h3. Let's write down what we want to acomplish.
 
 <table style="width: 100%;" border="0" cellpadding="1" cellspacing="1">    
 	<tbody>
@@ -38,7 +38,7 @@ String has two very useful methods ToUpper() and ToLower(), but I found myself l
 	</tbody>
 </table>
 
-<h3>ToCamel()</h3>
+h3. ToCamel()
 
 The implementation is super simple.
 
@@ -101,7 +101,7 @@ The result:
 
 <img src="../../../images/posts/SP32-20080105-000550.png" alt="" class="" height="127" width="270">
 
-<h3>ToPascal()</h3>
+h3. ToPascal()
 
 {% highlight aspx-cs %}
 	public static string ToPascal(this string value)
@@ -150,7 +150,7 @@ The result:
 
 <img src="../../../images/posts/SP32-20080105-003049.png" alt="" class="" height="95" width="242">
 
-<h3>Capitalize()</h3>
+h3. Capitalize()
 
 The code
 
@@ -196,7 +196,7 @@ The result:
 
 <img src="../../../images/posts/SP32-20080105-004245.png" alt="" class="" height="139" width="445">
 
-<h3>CapitalizeAll()</h3>
+h3. CapitalizeAll()
 
 The code:
 

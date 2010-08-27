@@ -20,7 +20,7 @@ So here are some of the features I like on RubyMine some of them shared by NetBe
 
 _Note:I'm not giving out on NetBeans since it's free and has support for PHP._
 
-<h3>Easy code navigation.</h3>  
+h3. Easy code navigation.  
 
 From a view clicking in the A icon will open the proper controller and position the cursor in the right action.
 
@@ -40,7 +40,7 @@ Also some classes have a (dependencies?) icon beside its declaration that help y
 
 <a href="../../../images/posts/RubyMineanIDEforRubyRailsandsomuchmore_A03C/ScreenHunter_06%202009-03-08%2022.42.26_2.jpg"><img height="101" alt="ScreenHunter_06 2009-03-08 22.42.26" src="../../../images/posts/RubyMineanIDEforRubyRailsandsomuchmore_A03C/ScreenHunter_06%202009-03-08%2022.42.26_thumb.jpg" width="322" border="0" /></a>
 
-<h3>Code hints and code analysis</h3>
+h3. Code hints and code analysis
 
 The familiar (for ReSharper users) yellow light bulb, shows up in some cases giving you hints on how to improve your code. In this case I positioned the cursor on the ‘new' string and the id understands that I'm referring to the new action, so it suggest to use a symbol instead.
 
@@ -56,7 +56,7 @@ In this case makes the sensible suggestion of get rid off the B tag and replace 
 
 <a href="../../../images/posts/RubyMineanIDEforRubyRailsandsomuchmore_A03C/ScreenHunter_10%202009-03-08%2022.55.14_2.jpg"><img height="83" alt="ScreenHunter_10 2009-03-08 22.55.14" src="../../../images/posts/RubyMineanIDEforRubyRailsandsomuchmore_A03C/ScreenHunter_10%202009-03-08%2022.55.14_thumb.jpg" width="219" border="0" /></a> 
 
-<h3>Refactorings</h3>
+h3. Refactorings
 
 Of course you have some Refactorings available for you.
 
@@ -72,6 +72,6 @@ And find usages:
 
 <a href="../../../images/posts/RubyMineanIDEforRubyRailsandsomuchmore_A03C/ScreenHunter_14%202009-03-08%2022.58.03_2.jpg"><img height="314" alt="ScreenHunter_14 2009-03-08 22.58.03" src="../../../images/posts/RubyMineanIDEforRubyRailsandsomuchmore_A03C/ScreenHunter_14%202009-03-08%2022.58.03_thumb.jpg" width="448" border="0" /></a> 
 
-<h3>Conclusion</h3>
+h3. Conclusion
 
 This are just some of the features, for a complete list visit the JetBrains site, most of them also work in JavaScript files and html files, so you can use them in other projects not just Ruby ones.

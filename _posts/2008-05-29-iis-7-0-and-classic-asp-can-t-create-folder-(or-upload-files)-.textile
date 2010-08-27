@@ -15,6 +15,6 @@ Looking at the system users in the machine (Vista Premiun) I saw a user with the
 
 I haven't tried it with PHP but my guest is that it's going to work. (I stopped running PHP on IIS long time ago and I stick with Apache even in windows.)
 
-<h3>Note on security</h3> 
+h3. Note on security 
 
 If this was a production machine I would probably enable impersonate and create an ad hoc user to upload files and not give access to the IIS_WPG directly.

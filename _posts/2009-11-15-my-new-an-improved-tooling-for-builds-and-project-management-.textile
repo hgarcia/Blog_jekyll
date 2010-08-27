@@ -20,7 +20,7 @@ For bug tracking I used the bug tracker in Google code for my OSS projects integ
 
 _At work we use FogBugz and we are very happy with it._
 
-<h3>Subversion was the first to go.</h3>
+h3. Subversion was the first to go.
 
 Subversion is a great VCS but I usually have two problems with it. Speed and problems with complex merges. 
 
@@ -32,7 +32,7 @@ To manage Git I'm using a combination of command line and graphic interface usin
 
 I still have some projects hosted in google code and I'm using Subversion with them, I'm thinking on switch them over to GitHub once I start working on them again.
 
-<h3>Nant followed it. </h3>
+h3. Nant followed it. 
 
 I don't have a problem with XML so the fact that Nant is XML based does not bothers me, really. But I also like the power of a good scripting language to manage repetitive tasks. I decided to move away from Nant and try to adopt some of the newest build systems. 
 
@@ -42,7 +42,7 @@ My knowledge of Ruby is extremely rudimentary but I even with that handicap I wa
 
 The most useful resource on Derik's post was "Laribee's OMG Rake!(Laribee's OMG Rake!)":http://codebetter.com/blogs/david_laribee/archive/2008/08/25/omg-rake.aspx . Laribee's sample code and a few queries to Google was all I need. (No, I did not copy and paste ALL Laribee's code, just use it as a reference)
 
-<h3>Agile Zen or project management made easy.</h3>
+h3. Agile Zen or project management made easy.
 
 I got a free account on "Agile Zen(Agile Zen)":http://agilezen.com/ the first week after they went live. I remember creating the account, playing around on the Board and leaving the site. My thoughts at the moment were something like.
 
@@ -58,7 +58,7 @@ The site is very responsive and the only thing I miss is integration with a VCS 
 
 I will keep using it for another week or so before making a final decision but so far everything indicates that I will be upgrading the account to a paying one pretty soon. (The free account only allows for one project and one developers, what is more than fair.)
 
-<h3>Tying it up all together with CI.</h3>
+h3. Tying it up all together with CI.
 
 As I mentioned before my main experience have been using CruiseControl.Net and Hudson as the CI servers. I installed TeamCity a long time ago to give it a try but I never use it. My first choice was to look for some hosted solution. After searching I only found a few and non of them worked with .Net (at least not at the moment). 
 
@@ -74,7 +74,7 @@ I did have an issue but it was my fault when setting some relative path to the b
 
 From downloading the installer to having the project building successfully took me between 10 to 15 minutes.
 
-<h3>Conclusion.</h3>
+h3. Conclusion.
 
 This new setup makes me more productive since I have better tools that save me time in different areas like. Setting things up, working around their idiosyncrasies, configuration heavy or too verbose a language. 
 

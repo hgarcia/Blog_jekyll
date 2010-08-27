@@ -11,7 +11,7 @@ The Lightweight framework handle alert and confirms without any problem, both in
 
 So here is how I fix it so far (so far because I still need to deal with a nasty bug on Firefox).
 
-<h3>Window.open is not working (and a solution).</h3>
+h3. Window.open is not working (and a solution).
 
 After digging around and thanks to Firebug (and at a lesser degree, the new Developer tools for IE8) I found that the problem seems to be in two places. Wait until the end of the post to change anything on your files.
 

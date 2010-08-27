@@ -11,7 +11,7 @@ One of the things I noticed that was different. A lot of the presenters mentione
 
 This is a list of the sessions I attended and some comments on the high points or things I liked the most. 
 
-<h3>Day 1</h3>
+h3. Day 1
 
 Keynote: <a href="http://www.devteach.com/Keynote.aspx">A Lap Around Visual Studio 2010</a> Beth Massi
 
@@ -35,7 +35,7 @@ I particularly enjoyed this one. Scott presented different patterns and usages o
 
 I came to this session for the last 20 minutes and I really like it. Two members of my team saw it from the beginning and they love it.
 
-<h3>Day 2</h3>
+h3. Day 2
 
 <a href="http://www.devteach.com/">Convention-over-Configuration in a Web World</a> James Kovacs   
 
@@ -53,7 +53,7 @@ Wow! Richard is fantastic. This was an IT session. I haven’t really done any "
 
 <a href="http://www.devteach.com/">The Azure Whirlwind Tour</a> Colin Melia 
 
-<h3>Day 3</h3>
+h3. Day 3
 
 <a href="http://www.devteach.com/">Building Business Productivity Solutions</a> Beth Massi
 
@@ -71,6 +71,6 @@ As good as his previous talk.
 
 I think that even when both his talks were good, this was the better of the two.
 
-<h3>Conclusion</h3>
+h3. Conclusion
 
 I’m looking forward to the next one. I know that my team also enjoyed and we’ll be happy to attend again. I strongly encourage you to attend to the next one if you haven’t done so.

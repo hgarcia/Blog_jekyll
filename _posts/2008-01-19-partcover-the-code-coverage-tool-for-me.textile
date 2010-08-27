@@ -19,7 +19,7 @@ The commercial version was fine, fairly easy to set up (even without a lot of do
 
 You can argue that you shouldn't use static methods in such a liberal fashion and that make for a bad OO design (something that I agree) and makes your programming model look more and more like procedural and you will be right, only that in this cases there is no major implementation and besides a Network library and a serialization library that needs to be re-written the lions share resides in our Utils class.
 
-<h3>PartCover to the rescue.</h3>
+h3. PartCover to the rescue.
 
 I was upset with the compromise and took me almost no time (the second search on google) to stumble upon this free awesome tool. The interface is similar to NCover but more frugal.
 

@@ -13,7 +13,7 @@ As a developer I really liked to read it, no so much for the content but as a wa
 
 I confess that I did commit some (maybe all) the interaction sins that are mentioned in this book in more than one occasion. 
 
-Chapter 6, Handle errors wisely is, in my opinion, the best part of the book. There is a long discussion on how to use what he calls Poka–yoke devices. Poka-yoke is the Japanese term for "mistake-proofing".
+Chapter 6, Handle errors wisely is, in my opinion, the best part of the book. There is a long discussion on how to use what he calls Poka�"yoke devices. Poka-yoke is the Japanese term for "mistake-proofing".
 
 Once again as in the rest of the book, there is nothing "new" in this chapter, since Robert site examples from very well known sites as examples of good and bad error handling. It’s the way he explains the why are either good or bad what makes it good and help me to internalize these concepts.
 

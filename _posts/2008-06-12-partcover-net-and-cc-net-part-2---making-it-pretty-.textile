@@ -9,7 +9,7 @@ In my previous post I show how to integrate PartCover reports into CC.Net and pr
 
 Click <a href="../../../images/posts/partcoverccnetxsl.zip" title="Click here to download the stylesheets." target="_blank">partcoverccnetxsl.zip</a> to download the stylesheets. 
 
-<h3>The summary report</h3>
+h3. The summary report
 
 The for the summary I want to show a coverage percentage per each assembly in the project so I based my xsl in the assembly.report.xslt provided with PartCover.First I changed the table tag and the first row from this:
 
@@ -88,7 +88,7 @@ Here is the end result:
 
 <img src="../../../images/posts/sp32-20080612-224357.png" alt="PartCover coverage per assembly" border="0"/>
 
-<h3>Adding more details to the details report.</h3>
+h3. Adding more details to the details report.
 
 Again I started using the supplied stylesheet and I made the same changes (or very similar changes as in the previous file). I wanted to provide not just measures by class, but also have detailed measures by method and I wanted this to work the same way as the Nunit report does.
 You have an arrow besides the class name than when clicked displays the details for the class. To do so I copy some of the code from the unittest.xsl style from cc.net. First you need to declare the applicationPath parameter:
@@ -109,7 +109,7 @@ And here with details open
 
 <img src="../../../images/posts/sp32-20080612-234848.png" alt="PartCover coerage per method - showing details" border="0"/>
 
-<h3>Adding the statistics</h3>
+h3. Adding the statistics
 
 This actually went very well, open your ccnet.config file and add the following under the statistics tag of your project.
 

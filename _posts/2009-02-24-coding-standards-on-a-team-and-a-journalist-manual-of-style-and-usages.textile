@@ -11,7 +11,7 @@ I’m not talking about software design or things like the S.O.L.I.D principles,
 
 Let me talk a little bit about my other profession. Journalist. As a young journalist I was teach and trained on how to write (in my case mostly write for radio and print media). I was teach about theory.
 
-<h3>Style and usages in the media</h3>
+h3. Style and usages in the media
 
 I was taught on how long time ago the journalist wrote a news with a "square model"; telling a story usually starting from the beginning of it from a chronological point of view an moving forward.
 I was taught about the invert pyramid style or how you write (and read) news today. Start writing the most novel event and move back in time, give some context as the news develop.
@@ -26,7 +26,7 @@ Why should you follow this rules? You are a good journalist, you probed yourself
 
 There are exceptions and that’s what the opinion columns are for. But even those columnist are selected by the editor.
 
-<h3>Style and usages in software development</h3>
+h3. Style and usages in software development
 
 You can be a programmer without learning any of the design patterns or O.O. design concepts. You can a programmer without caring about the S.O.L.I.D principles. And of course you can be a programmer having complete disregard for any style on your code. Your code may work. Your code may even work well enough to do the trick, to solve the problem at hand.
 
