@@ -73,4 +73,4 @@ And what about some handy string methods
 
 Have fun!!! 
 
-NOTE: Some of the utilities methods like Squeeze are part of the Subsonic Utilities library that I modified and turned into extension methods.
+_Some of the utilities methods like Squeeze are part of the Subsonic Utilities library that I modified and turned into extension methods._

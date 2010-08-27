@@ -5,6 +5,6 @@ summary: A few days ago was announced the date for the Professional Developers C
 categories: [General]
 ---
 
-A few days ago was announced the date for the Professional Developers Conference 2009 or PDC. You can see the <a href="http://channel9.msdn.com/posts/PDCNews/Announcing-PDC2009/" target="_blank">announcement</a> or <a href="https://www.ustechsregister.com/pdc09mailinglist/main.aspx" target="_blank">subscribe</a> to the mailing list. The conference will be on November 17-20, 2009 in Los Angeles, California.
+A few days ago was announced the date for the Professional Developers Conference 2009 or PDC. You can see the "announcement(Announcing PDC2009)":http://channel9.msdn.com/posts/PDCNews/Announcing-PDC2009/ or "subscribe(PDC mailing list)":https://www.ustechsregister.com/pdc09mailinglist/main.aspx to the mailing list. The conference will be on November 17-20, 2009 in Los Angeles, California.
 
-<em>Note: The page for the mailing list has the PDC 2008 logo, but that’s ok.</em>
+_The page for the mailing list has the PDC 2008 logo, but that’s ok._

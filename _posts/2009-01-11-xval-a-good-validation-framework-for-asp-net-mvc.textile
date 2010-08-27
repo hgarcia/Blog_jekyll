@@ -7,20 +7,17 @@ categories: [Frameworks, Programming]
 
 I found this project on <a href="http://www.codeplex.com" target="_blank">CodePlex</a> called <a href="http://www.codeplex.com/xval" target="_blank">xVal</a>. It’s <a href="http://blog.codeville.net/" target="_blank">Steve Sanderson’s</a> take on validation for the ASP.NET MVC framework, more to the point on how to use validation across tiers (validate on the server side, present errors to the client, etc.)
 
-<blockquote>
-<em>xVal is a validation framework for ASP.NET MVC applications. It makes it easy to link up your choice of server-side validation mechanism with your choice of client-side validation library, neatly fitting both into ASP.NET MVC architecture and conventions.</em></blockquote>
+bq. xVal is a validation framework for ASP.NET MVC applications. It makes it easy to link up your choice of server-side validation mechanism with your choice of client-side validation library, neatly fitting both into ASP.NET MVC architecture and conventions.
 
 It’s extensible so you can use whatever validation framework you want in the server and client side. 
 
-<blockquote>
-	<ul>
-		<li><em><b>Define your validation rules using attributes</b> on model properties, e.g., </em></li>
-		<li><em><b>Designed to fit into ASP.NET MVC conventions</b> for handling form posts and storing and retrieving error information in ModelState </em></li>
-		<li><em><b>Use your choice of server-side validation framework</b>. Out of the box, xVal lets you use .NET 3.5's built-in </em><a href="http://msdn.microsoft.com/en-us/library/system.componentmodel.dataannotations.aspx"><em>DataAnnotations</em></a><em> classes or </em><a href="http://erichauser.net/2008/08/28/castle-validator-enhancements/"><em>Castle Validator</em></a><em> (or both). If you want to use something different, you can create your own provider just by implementing IRulesProvider. </em></li>
-		<li><em><b>Use your choice of client-side validation library</b>. Out of the box, xVal lets you use </em><a href="http://docs.jquery.com/Plugins/Validation"><em>jQuery Validation</em></a><em> or ASP.NET's native client-side validation library (a.k.a. WebUIValidation.js, as used by WebForms). Or, use any other client-side validation library by writing a plug-in to configure it using xVal's standard JSON rules description format. </em></li>
-		<li><em><b>Supports localized error messages</b> using resource files. Vary the language of your validation messages according to the current thread's culture. </em></li>
-		<li><em><b>Add custom validation logic</b> that runs both on the server and on the client, either by sub classing an existing rule or by referencing a custom JavaScript function</em> </li>
-</ul>
-</blockquote>
+bq..
+		* *Define your validation rules using attributes* on model properties, e.g., 
+		* *Designed to fit into ASP.NET MVC conventions* for handling form posts and storing and retrieving error information in ModelState 
+		* *Use your choice of server-side validation framework*. Out of the box, xVal lets you use .NET 3.5's built-in <a href="http://msdn.microsoft.com/en-us/library/system.componentmodel.dataannotations.aspx">DataAnnotations</a> classes or <a href="http://erichauser.net/2008/08/28/castle-validator-enhancements/">Castle Validator</a> (or both). If you want to use something different, you can create your own provider just by implementing IRulesProvider. 
+		* *Use your choice of client-side validation library*. Out of the box, xVal lets you use <a href="http://docs.jquery.com/Plugins/Validation">jQuery Validation</a> or ASP.NET's native client-side validation library (a.k.a. WebUIValidation.js, as used by WebForms). Or, use any other client-side validation library by writing a plug-in to configure it using xVal's standard JSON rules description format. 
+		* *Supports localized error messages* using resource files. Vary the language of your validation messages according to the current thread's culture. 
+		* *Add custom validation logic* that runs both on the server and on the client, either by sub classing an existing rule or by referencing a custom JavaScript function
 
-It just released version 0.5 and you can find a quick tutorial on <a href="http://blog.codeville.net/2009/01/10/xval-a-validation-framework-for-aspnet-mvc/" target="_blank">Steve’s blog</a>.
+
+p. It just released version 0.5 and you can find a quick tutorial on <a href="http://blog.codeville.net/2009/01/10/xval-a-validation-framework-for-aspnet-mvc/" target="_blank">Steve’s blog</a>.

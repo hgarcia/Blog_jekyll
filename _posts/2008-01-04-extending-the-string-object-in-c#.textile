@@ -1,13 +1,13 @@
 ---
 layout: post
 title: Extending the string object in c#
-summary: UPDATE- Thanks to Peter I modify where the string[] is declared and changed an obvious mistake instead of y team with that
+summary: I have found some controversy in some post in the wild where I demostrate how to extend the string object. Sometimes the controversy is around the examples presented. So I decided to make my own example with methods that I wish were included in the framework.
 categories: [Programming, .Net]
 ---
 
-<strong>UPDATE: Thanks to Peter I modify where the string[] is declared and changed an obvious mistake instead of string s = ""; I use the correct form of string s = string.Empty;, I can't believe I miss that one, I really annoy my team with that :-)</strong>
+_Thanks to Peter I modify where the string[] is declared and changed an obvious mistake instead of string s = ""; I use the correct form of string s = string.Empty;, I can't believe I miss that one, I really annoy my team with that :-)_
 
-I have found some controversy in post demostrating how to extend the string object. Sometimes the controversy is around the examples presented. So I decided to make my own example with methods that I wish were included in the framework.
+I have found some controversy in some post in the wild where I demostrate how to extend the string object. Sometimes the controversy is around the examples presented. So I decided to make my own example with methods that I wish were included in the framework.
 
 String has two very useful methods ToUpper() and ToLower(), but I found myself looking for a good ToCamel(), ToPascal(), Capitalize() and CapitalizeAll() methods one too many times.
 

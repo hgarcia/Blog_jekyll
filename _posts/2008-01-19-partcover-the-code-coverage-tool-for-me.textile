@@ -19,21 +19,29 @@ The commercial version was fine, fairly easy to set up (even without a lot of do
 
 You can argue that you shouldn't use static methods in such a liberal fashion and that make for a bad OO design (something that I agree) and makes your programming model look more and more like procedural and you will be right, only that in this cases there is no major implementation and besides a Network library and a serialization library that needs to be re-written the lions share resides in our Utils class.
 
-<h3>PartCover to the rescue.</h3>I was upset with the compromise and took me almost no time (the second search on google) to stumble upon this free awesome tool. The interface is similar to NCover but more frugal.
+<h3>PartCover to the rescue.</h3>
+
+I was upset with the compromise and took me almost no time (the second search on google) to stumble upon this free awesome tool. The interface is similar to NCover but more frugal.
 
 There is a File menu with four options:
 
-Run target (to generate the report)<br/>Open Report<br/>Save report as<br/>Exit
+Run target (to generate the report)
+Open Report
+Save report as
+Exit
 
-It can be more straightforward.<br/>To generate the report you will to enter the same data as in NCover.
+It can be more straightforward.
+To generate the report you will to enter the same data as in NCover.
 
-Executable file: should point to the console exe for your testing framework in my case nunit-console.exe<br/>Working Directory: This is the folder where the dll with your test fixture resides, for example C:\Project\Project1\UnitTesting\bin\Debug<br/>Working arguments: Depends but in the case of nunit is the dll where with the test fixtures (ex: UnitTesting.dll)
+Executable file: should point to the console exe for your testing framework in my case nunit-console.exeWorking Directory: This is the folder where the dll with your test fixture resides, for example C:\Project\Project1\UnitTesting\bin\Debug
+Working arguments: Depends but in the case of nunit is the dll where with the test fixtures (ex: UnitTesting.dll)
 
 The tricky part is the fourth text box (a text area really), where you enter "Rules", this rules tell PartCover witch assemblies/classes to look for coverage and what to left out.
 
 For example if you have to dll one called Mainframe.dll and another one called desktop.dll and you want to check both of them you will enter a Rule like this
 
-+[Mainframe]*<br/>+[Desktop]*
++[Mainframe]*
++[Desktop]*
 
 To exclude the mouse class from the desktop dll you add the following
 
@@ -41,4 +49,4 @@ To exclude the mouse class from the desktop dll you add the following
 
 Another nice feature is that the dll with the fixture is not included (another thing that bothered me from NCover). The tool has a command prompt option, so running from Nant is no problem, and the report is generated as xml, so integrate it with CC.net should not be an issue, the even provide two xslt files to display the report based on the assembly or based on the class very neat!!!.
 
-<strong>UPDATE: Two days after writing this post I found the <a href="http://www.icsharpcode.net/OpenSource/SD/">SharpDevelop </a>will be (is) using PartCover in SharpDevelop 3.0 and beyond.</strong>
+_Two days after writing this post I found the <a href="http://www.icsharpcode.net/OpenSource/SD/">SharpDevelop </a>will be (is) using PartCover in SharpDevelop 3.0 and beyond._

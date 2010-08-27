@@ -7,21 +7,21 @@ categories: [Programming, Tools, .Net]
 
 The <a href="http://en.wikipedia.org/wiki/NoSQL" target="_blank">NoSql</a> movement is gaining more and more inertia. A year or two ago I took a look at <a href="http://couchdb.apache.org/" target="_blank">CouchDb</a> but this time I wanted to try <a href="www.mongodb.org" target="_blank">MongoDB</a>. I have been hearing a lot of nice things about MongoDB, mostly about how simple is to query it and how fast is. So I decided that it was time to actually take it for a spin.
 
-A quick search point me to <a href="http://odetocode.com/blogs/scott/archive/2009/10/13/experimenting-with-mongodb-from-c.aspx" target="_blank">this odetocode post</a> that was a great starting point to have Mongo running in my dev machine using the defaults and the Driver for C#. So, go and read K. Scott Allen’s post if you want to follow along with the code in the rest of this post.
+A quick search point me to <a href="http://odetocode.com/blogs/scott/archive/2009/10/13/experimenting-with-mongodb-from-c.aspx" target="_blank">this odetocode post</a> that was a great starting point to have Mongo running in my dev machine using the defaults and the Driver for C#. So, go and read K. Scott Allen's post if you want to follow along with the code in the rest of this post.
 
 <h3>Detour (some background on NoSql and MongoDB):</h3> 
 
 <em>If you already know about this you can skip all this paragraph.</em>
 
-<em>The so called NoSql movement is based on the notion that using RDBMS may not be the right choice in some cases. They propose using alternative databases, like key-value pair storages and document databases. To perform operations on the data some make use of Map-Reduce, others like MongoDB use a query mechanism that resembles Sql. One of the most attractive features of this db’s is the ability to easily run clusters and do </em><a href="http://www.codefutures.com/database-sharding/" target="_blank"><em>data sharding</em></a><em>. Most of them support both features without a lot of fuss, or that I heard.</em>
+<em>The so called NoSql movement is based on the notion that using RDBMS may not be the right choice in some cases. They propose using alternative databases, like key-value pair storages and document databases. To perform operations on the data some make use of Map-Reduce, others like MongoDB use a query mechanism that resembles Sql. One of the most attractive features of this db's is the ability to easily run clusters and do </em><a href="http://www.codefutures.com/database-sharding/" target="_blank"><em>data sharding</em></a><em>. Most of them support both features without a lot of fuss, or that I heard.</em>
 
 <em>MongoDB is a document based db, that stores the information as Binary Json.</em>
 
 <em>End of detour.</em>
 
-<h3>What’s a document?</h3> 
+<h3>What's a document?</h3> 
 
-A document is not the equivalent to a Row. A document can be seen as a key-value pair collection of objects. It’s actually a complete object Graph, persisted as Json. Documents are organized into Collections.
+A document is not the equivalent to a Row. A document can be seen as a key-value pair collection of objects. It's actually a complete object Graph, persisted as Json. Documents are organized into Collections.
 
 Now, to be usable in C# we need to have some mapping from the Document object to our object graph. We could use the Document directly but will be like going back to use DataTables, not very pretty.
 
@@ -46,7 +46,9 @@ The problem is in the ObjectId function. But do not despair, there is an alterna
 
 <h3>From a document to a fully usable object graph.</h3>
 
-The alternative is not pretty but works and is easy to implement. Just pass the document to the root of your object graph, an access the underlying collection via the objects properties. Let’s see how this can look like. (Note: Yes there are some hardcoded strings in there that should be removed. I’m also never closing the connection to the Db, when I probably should).
+The alternative is not pretty but works and is easy to implement. Just pass the document to the root of your object graph, an access the underlying collection via the objects properties. Let's see how this can look like.
+
+_Yes there are some hardcoded strings in there that should be removed. I'm also never closing the connection to the Db, when I probably should._
 
 {% highlight aspx-cs %}
 	using System;
@@ -131,6 +133,6 @@ And our Movie Entity will look like:
 	}
 {% endhighlight %}
 
-Notice I’m using JsonConverter to return a complex type, we should probably encapsulate that functionality in some kind of base class, maybe convert IMongoEntity into an abstract class that provides some basic utilities.
+Notice I'm using JsonConverter to return a complex type, we should probably encapsulate that functionality in some kind of base class, maybe convert IMongoEntity into an abstract class that provides some basic utilities.
 
-I will try to dig deeper into MongoDB, seems to be really suited to a Domain first approach. I wasn’t able to have anything but the most simple queries working, so I will have to take a closer look at the syntax.
+I will try to dig deeper into MongoDB, seems to be really suited to a Domain first approach. I wasn't able to have anything but the most simple queries working, so I will have to take a closer look at the syntax.

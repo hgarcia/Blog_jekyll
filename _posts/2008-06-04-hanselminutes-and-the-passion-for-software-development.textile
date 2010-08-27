@@ -6,7 +6,7 @@ categories: [Programming]
 ---
 
 Yesterday I listened to show 115 of "Scott Hanselman(Scott Hanselman)":http://www.hanselman.com/blog/  podcast "Hanselminutes(Hanselminutes)":http://www.hanselminutes.com/default.aspx?showID=133, the title was *Finding passion for Software*.
-When I first got the link on my rss reader I wasn't sure If I even wanted to download it into my mp3 player, I have so much stuff that I listen in a weekly basics that sometimes I skip some episodes of podcast that I don't find relevant to my interests, but Scott Hanselman is that rare type of communicator that can make interesting very arid topics.
+When I first got the link on my rss reader I wasn't sure If I even wanted to download it into my mp3 player, I have so much stuff that I listen in a weekly basics that sometimes I skip some episodes of podcasts that I don't find relevant to my interests, but Scott Hanselman is that rare type of communicator that can make interesting very arid topics.
 
 _That actually means that there is not such thing as uninteresting "stuff", but is mostly the ability of the person that talks about it who can make it interesting or uninteresting_
 

@@ -31,7 +31,7 @@ To:
 	
 Then I modified the colours used to identify the different percentage of coverages and made the fonts bold.
 
-<i>Note: I made move all the styles into a stylesheet later on, for now some stuff is hardcoded in the xsl file, what I don't particulary like. When possible I used pre-defined classes already available in the existing cc.net css files</i>
+_I made move all the styles into a stylesheet later on, for now some stuff is hardcoded in the xsl file, what I don't particulary like. When possible I used pre-defined classes already available in the existing cc.net css files_
 
 {% highlight xslt %}
 <xsl:variable name="cov0style" select="'background:#ff0000;text-align:right;font-weight:bold;'"/>

@@ -5,7 +5,7 @@ summary: I started to use Git seriously 5 months ago when I sign up for my Githu
 categories: [Programming, Tools]
 ---
 
-I started to use <a href="http://git-scm.com/" target="_blank">Git</a> seriously 5 months ago when I sign up for my <a href="http://github.com/" target="_blank">Github</a> account on September 1st 2009. Before that I was a <strike>very</strike> happy subversion user. One of the things that I really like about Git is the speed. 
+I started to use "Git(Git)":http://git-scm.com/ seriously 5 months ago when I sign up for my <a href="http://github.com/" target="_blank">Github</a> account on September 1st 2009. Before that I was a -very- happy subversion user. One of the things that I really like about Git is the speed. 
 
 I decided to use Git from the command line to learn and understand the commands really well. I occasionally used the GUI to perform some tasks that seemed easier to do that way.
 
@@ -21,7 +21,7 @@ From this menu you have access to the most common commands for Git.
 
 <a href="../../../images/posts/GitandMercurialintegrationwithVisualStud_EFE9/menu_items.png"><img border="0" alt="menu_items" src="../../../images/posts/GitandMercurialintegrationwithVisualStud_EFE9/menu_items_thumb.png" width="233" height="470"></a> 
 
-For example you can commit after doing some work on your project (Note: It looks like you have to be in at the project level and not at the solution level in the solution explorer for the commands to work. Although they work in the whole solution as expected.)
+For example you can commit after doing some work on your project. It looks like you have to be at the project level and not at the solution level in the solution explorer for the commands to work. Although they work in the whole solution as expected.
 One thing to notice is that the dialog pick up changes to files modified or added outside the IDE as well.
 
 <a href="../../../images/posts/GitandMercurialintegrationwithVisualStud_EFE9/commit_screen.png"><img border="0" alt="commit_screen" src="../../../images/posts/GitandMercurialintegrationwithVisualStud_EFE9/commit_screen_thumb.png" width="678" height="512"></a> 

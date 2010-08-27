@@ -1,24 +1,24 @@
 ---
 layout: post
 title: RubyMine, an IDE for Ruby, Rails and so much more.
-summary: Ok, first let me be really clear, I’m not a JetBrains fan boy. Yes, I use ReSharper and yes, I also use TeamCity at home as my Continuous Integration server for some of my projects.
+summary: Ok, first let me be really clear, I'm not a JetBrains fan boy. Yes, I use ReSharper and yes, I also use TeamCity at home as my Continuous Integration server for some of my projects.
 categories: [Tools, Ruby]
 ---
 
-Ok, first let me be really clear, I’m not a <a href="http://www.jetbrains.com/index.html" target="_blank">JetBrains</a> fan boy.
+Ok, first let me be really clear, I'm not a <a href="http://www.jetbrains.com/index.html" target="_blank">JetBrains</a> fan boy.
 Yes, I use <a href="http://www.jetbrains.com/resharper/index.html" target="_blank">ReSharper</a> and yes, I also use <a href="http://www.jetbrains.com/teamcity/index.html" target="_blank">TeamCity</a> at home as my <a href="http://martinfowler.com/articles/continuousIntegration.html" target="_blank">Continuous Integration</a> server for some of my projects.
 
 I also use <a href="http://confluence.public.thoughtworks.org/display/CCNET/Welcome+to+CruiseControl.NET" target="_blank">Cruise Control.Net</a> and <a href="https://hudson.dev.java.net/" target="_blank">Hudson</a> in other projects (sometimes both in the same project, to do different things)
 
 But the guys from JetBrains do really good products, ex: TeamCity is ,IMHO, the most friendly CI server of the three to set up and ReSharper makes practicing TDD or BDD not just possible but highly enjoyable.
 
-So when I came across RubyMine a few months ago I decided to give it a try. I have been using <a href="2008/01/03/TheRubyAndRailsIDEThatIMiss.aspx" target="_blank">different IDE’s and Editors</a> on my adventures into the Ruby world but even when I found some of them really good I never really feel at home.
+So when I came across RubyMine a few months ago I decided to give it a try. I have been using <a href="2008/01/03/TheRubyAndRailsIDEThatIMiss.aspx" target="_blank">different IDE's and Editors</a> on my adventures into the Ruby world but even when I found some of them really good I never really feel at home.
 
-<a href="http://www.netbeans.org/features/ruby/index.html" target="_blank">NetBeans with Ruby support</a> was the one that provided the best IDE experience for me so far, and for text editors I mostly used <a href="http://www.scintilla.org/SciTE.html" target="_blank">Scite</a> that comes with Ruby. (I do all my programming on a PC so no <a href="http://macromates.com/" target="_blank">TextMate</a> for me and for whatever reason <a href="http://www.e-texteditor.com/" target="_blank">e</a> didn’t click with me. I also tried <a href="http://www.pspad.com/" target="_blank">PSPad</a>, my favorite text editor for everything else, but it didn’t work with ruby. I guess my very basic knowledge of the language didn’t help either.
+<a href="http://www.netbeans.org/features/ruby/index.html" target="_blank">NetBeans with Ruby support</a> was the one that provided the best IDE experience for me so far, and for text editors I mostly used <a href="http://www.scintilla.org/SciTE.html" target="_blank">Scite</a> that comes with Ruby. (I do all my programming on a PC so no <a href="http://macromates.com/" target="_blank">TextMate</a> for me and for whatever reason <a href="http://www.e-texteditor.com/" target="_blank">e</a> didn't click with me. I also tried <a href="http://www.pspad.com/" target="_blank">PSPad</a>, my favorite text editor for everything else, but it didn't work with ruby. I guess my very basic knowledge of the language didn't help either.
 
 So here are some of the features I like on RubyMine some of them shared by NetBeans. 
 
-<em>Note: I’m not giving out on NetBeans since it’s free and has support for PHP.</em>
+_Note:I'm not giving out on NetBeans since it's free and has support for PHP._
 
 <h3>Easy code navigation.</h3>  
 
@@ -42,7 +42,7 @@ Also some classes have a (dependencies?) icon beside its declaration that help y
 
 <h3>Code hints and code analysis</h3>
 
-The familiar (for ReSharper users) yellow light bulb, shows up in some cases giving you hints on how to improve your code. In this case I positioned the cursor on the ‘new’ string and the id understands that I’m referring to the new action, so it suggest to use a symbol instead.
+The familiar (for ReSharper users) yellow light bulb, shows up in some cases giving you hints on how to improve your code. In this case I positioned the cursor on the ‘new' string and the id understands that I'm referring to the new action, so it suggest to use a symbol instead.
 
 <a href="../../../images/posts/RubyMineanIDEforRubyRailsandsomuchmore_A03C/ScreenHunter_05%202009-03-08%2022.41.49_2.jpg"><img height="66" alt="ScreenHunter_05 2009-03-08 22.41.49" src="../../../images/posts/RubyMineanIDEforRubyRailsandsomuchmore_A03C/ScreenHunter_05%202009-03-08%2022.41.49_thumb.jpg" width="275" border="0" /></a> 
 

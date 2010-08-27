@@ -5,7 +5,7 @@ summary: This is a quick post. In the samples for the framework the test are wri
 categories: [Lightweight Testing Framework, Programming, Testing, Tools]
 ---
 
-<em>UPDATE: There is another way to do this. Check <a href="http://weblogs.asp.net/asptest/archive/2008/12/02/running-the-lightweight-test-automation-framework-for-asp-net-from-a-separate-application.aspx" target="_blank">this post from the QA team blog</a>.</em>
+_There is another way to do this. Check <a href="http://weblogs.asp.net/asptest/archive/2008/12/02/running-the-lightweight-test-automation-framework-for-asp-net-from-a-separate-application.aspx" target="_blank">this post from the QA team blog</a>.__
 
 This is a quick post. In the samples for the framework the test are written in the same system to test.
 
