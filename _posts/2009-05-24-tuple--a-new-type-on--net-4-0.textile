@@ -1,19 +1,19 @@
 ---
 layout: post
 title: Tuple, a new type on .Net 4.0
-summary: If you ever played with some language that have the Tuple type I bet you miss it in .Net. Well 4.0 adds it. What is a Tuple?  Let’s see what the ubiquitous Wikipedia have to say about it.
+summary: If you ever played with some language that have the Tuple type I bet you miss it in .Net. Well 4.0 adds it. What is a Tuple?  Let's see what the ubiquitous Wikipedia have to say about it.
 categories: [Programming, .Net]
 ---
 
 If you ever played with some language that have the Tuple type I bet you miss it in .Net. Well 4.0 adds it.
 
-<h3>What is a Tuple?</h3>
+h3. What is a Tuple?
 
-Let’s see what the ubiquitous <a href="http://en.wikipedia.org/wiki/Tuple" target="_blank">Wikipedia</a> have to say about it.
+Let's see what the ubiquitous <a href="http://en.wikipedia.org/wiki/Tuple" target="_blank">Wikipedia</a> have to say about it.
 
-<blockquote>In <a href="http://en.wikipedia.org/wiki/Mathematics">mathematics</a>, a <b>tuple</b> is a <a href="http://en.wikipedia.org/wiki/Sequence">sequence</a> (or ordered list) of <a href="http://en.wikipedia.org/wiki/Finite">finite</a> length. An <b>n-tuple</b> is a tuple with n elements. Tuples are usually written within parenthesis. For example, (2, 7, 4, 1, 7) is a 5-tuple.
+bq. In <a href="http://en.wikipedia.org/wiki/Mathematics">mathematics</a>, a <b>tuple</b> is a <a href="http://en.wikipedia.org/wiki/Sequence">sequence</a> (or ordered list) of <a href="http://en.wikipedia.org/wiki/Finite">finite</a> length. An <b>n-tuple</b> is a tuple with n elements. Tuples are usually written within parenthesis. For example, (2, 7, 4, 1, 7) is a 5-tuple.
 
-Tuples are often used to describe mathematical objects that consist of specified components. For example, a <a href="http://en.wikipedia.org/wiki/Graph">graph</a> is commonly defined as the 2-tuple (V, E) where V is the set of vertices and E is the set of edges. The edge set E is a subset of the <a href="http://en.wikipedia.org/wiki/Cartesian_product">cartesian product</a> V × V, hence a set of 2-tuples.</blockquote>
+Tuples are often used to describe mathematical objects that consist of specified components. For example, a <a href="http://en.wikipedia.org/wiki/Graph">graph</a> is commonly defined as the 2-tuple (V, E) where V is the set of vertices and E is the set of edges. The edge set E is a subset of the <a href="http://en.wikipedia.org/wiki/Cartesian_product">cartesian product</a> V × V, hence a set of 2-tuples.
 
 In programming languages you can use Tuples to define a small, finite list of objects, for example in Erlang DateTime is a Tuple with this form:
 
@@ -21,7 +21,7 @@ In programming languages you can use Tuples to define a small, finite list of ob
 Date = {Year, Month, Day}
 Time = {Hour, Minute, Second}
 
-<h3>When to use Tuple?</h3>
+h3. When to use Tuple?
 
 Tuples are commonly used on functional programming. 
 
@@ -58,9 +58,9 @@ And that is kind of odd since the Tuple object implements the ITuple interface a
 
 The problem is that the ITuple interface is internal.
 
-This causes a problem when using the “infinite” Tuple or the Tuple with eight parameters in the constructor. This Tuple expects that the last parameter implements ITuple, thus been a Tuple as well.
+This causes a problem when using the "infinite" Tuple or the Tuple with eight parameters in the constructor. This Tuple expects that the last parameter implements ITuple, thus been a Tuple as well.
 
-The problem is that this can’t be enforced on compilation time since ITuple is internal and may cause a runtime exception to be thrown. This code below compiles with no problems.
+The problem is that this can't be enforced on compilation time since ITuple is internal and may cause a runtime exception to be thrown. This code below compiles with no problems.
 
 {% highlight aspx-cs %}
 	static void Main(string[] args)
