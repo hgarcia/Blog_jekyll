@@ -5,14 +5,9 @@ javascript:
   - /javascripts/home.js
 ---
 
-<div id="home">
-  <h2>Posts</h2>
-  <ul class="posts">
-    {% for post in site.posts %}
-      <li>
-        <a href="{{site.url}}{{ post.url}}">{{ post.title }}</a>
-        <p>{{ post.summary }}</p>
-      </li>
-    {% endfor %}
-  </ul>
-</div>
+{% for post in site.posts %}
+	<article>
+		<a href="{{site.blog_url}}{{ post.url}}"><h2>{{ post.title }}</h2></a>		
+		<p>{{ post.summary }}</p>		
+	</article>
+{% endfor %}

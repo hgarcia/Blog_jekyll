@@ -1,28 +1,83 @@
 <!DOCTYPE html>
-<html>
-  <head>
-     <meta http-equiv="content-type" content="text/html; charset=utf-8" />
-     <title>
-       The Dynamic Programmer - Hernan Garcia 
-       {% if page.title %}
-         : {{ page.title }}
-       {% endif %}
-     </title>
-     <meta name="author" content="Hernan Garcia" />
-     {% if page.summary %}
-       <meta namne="description" content="{{ page.summary }}" />
-     {% endif %}
-     <link href="http://feeds.feedburner.com/TheDynamicProgrammer" rel="alternate" title="The Dynamic Programmer - Hernan Garcia" type="application/atom+xml" />
+<html lang="en" class="no-js">
+<head class="html5reset-kitchensink-clean">
 
-     <link rel="stylesheet" href="../../../stylesheets/syntax.css" type="text/css" />
-     <link rel="stylesheet" href="../../../stylesheets/default.css" type="text/css" />
+	<meta charset="utf-8" />
+	
+	<title>{{site.name}} - {{site.author}} 
+		{% if page.title %}
+		 : {{ page.title }}
+		{% endif %}
+   	</title>
+   	
+    {% if page.summary %}
+    <meta namne="description" content="{{ page.summary }}" />
+    {% endif %}
+    
+	<meta name="author" content="{{site.author}}" />
+	<meta name="Copyright" content="Copyright {{site.author}} 2010. All Rights Reserved." />
 
-  </head>
-  <body>
-      
-      <div id="content">
-        {{ content }}
-      </div>
+	<meta name="DC.title" content="{{site.name}}" />
+	<meta name="DC.subject" content="Computer programming, music, open source." />
+	<meta name="DC.creator" content="{{site.author}}." />
+	
+	<meta name="google-site-verification" content="" />
+	
+	<link rel="shortcut icon" href="assets/img/favicon.png"/>
+	<link rel="apple-touch-icon" href="assets/img/custom_icon.png"/>
+	
+	<link rel="stylesheet" href="assets/css/main.css" />
+	<link rel="stylesheet" href="assets/css/print/main.css" media="print" />
+		 
+	<!--[if IE]>
+	<link rel="stylesheet" href="assets/css/patches/win-ie-all.css" />
+	<![endif]-->
+	<!--[if IE 7]>
+	<link rel="stylesheet" href="assets/css/patches/win-ie7.css" />
+	<![endif]-->
+	<!--[if lt IE 7]>
+	<link rel="stylesheet" href="assets/css/patches/win-ie-old.css" />
+	<![endif]-->
+	<!--[if lt IE 8]>
+	<script src="http://ie7-js.googlecode.com/svn/version/2.0(beta3)/IE8.js"></script>
+	<![endif]-->
+	
+	<script src="assets/js/modernizr-1.5.min.js"></script>
+	
+	<!-- jQuery -->
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
+	<script src="assets/js/functions.js"></script>
+	
+	<link href="{{site.rss_url}}" rel="alternate" title="The Dynamic Programmer - Hernan Garcia" type="application/atom+xml" />
+
+</head>
+<body id="www-domain-com">
+
+	<header>
+		<h1><a href="/">{{site.name}}</a></h1>
+	</header>
+	<nav>
+		<ul>
+			<li><a href="{{site.url}}" title="There is no place like it">Home</a></li>
+			<li><a href="{{site.blog_url}}" title="Pretentious articles about software development">Blog</a></li>
+			<li><a href="{{site.projects_url}}" title="The product of endless night of coding">Projects</a></li>
+			<li><a href="{{site.music_url}}" title="When no programming, nights are also a good time to arrange some music bits together">Music</a></li>
+			<li><a href="{{site.rss_url}}" title="Sindication aka Rss feed">RSS</a></li>	
+		</ul>
+	</nav>
+	<div id="content">	 
+		{{ content }}
+		
+			
+		<aside>
+			<h2>Sidebar Content</h2>
+		</aside>
+		
+		<footer>
+			<p><small>&copy; Copyright {{site.author}} 2010. All Rights Reserved.</small></p>	
+		</footer>
+	</div>
+	
 	<script type="text/javascript">
 	var disqus_shortname = 'thedynamicprogrammer';
 	(function () {
@@ -41,6 +96,5 @@
 		pageTracker._trackPageview();
 		} catch(err) {}
 	</script>
-
   </body>
 </html>

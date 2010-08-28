@@ -2,26 +2,22 @@
 layout: default
 ---
 
-<div id="post">
-  <h2>{{ page.title }}</h2>
-  <div class="categories">|
+<article>
+	<header>
+		<h2>{{ page.title }}</h2>	
+	<header>
+  <footer>|
   	{% for category in page.categories %}
   		{{ category }} | 
   	{% endfor %}
-  </div>
+  </footer>
+  <section>
   {{ content }}
-</div>
-
-<div id="related">
-  <h3>Related Posts</h3>
-  <ul class="posts">
-    {% for post in site.related_posts limit:3 %}
-      <li><span>{{ post.date | date_to_string }}</span> &raquo; <a href="{{ post.url }}">{{ post.title }}</a></li>
-    {% endfor %}
-  </ul>
-</div>
+  <section>
+</article>
 
 <div id="disqus_thread"></div>
+
 <script type="text/javascript">
   /**
     * var disqus_identifier; [Optional but recommended: Define a unique identifier (e.g. post id or slug) for this thread] 

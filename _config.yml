@@ -1,2 +1,8 @@
 permalink: /:year/:month/:day/:title.html
 url: "http://hgarcia.github.com/DynamicProg"
+blog_url: "http://hgarcia.github.com/DynamicProg"
+projects_url: "http://hgarcia.github.com/DynamicProg"
+music_url: "http://hgarcia.github.com/DynamicProg"
+rss_url: "http://feeds.feedburner.com/TheDynamicProgrammer"
+author: "Hernan Garcia"
+name: "The Dynamic Programmer"
