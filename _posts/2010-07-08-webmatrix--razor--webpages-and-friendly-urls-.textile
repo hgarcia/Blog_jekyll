@@ -32,7 +32,9 @@ A nice thing is that if the item you are looking for is not there you won’t ge
 
 Ex: lets create a handler called images.cshtml and a folder with the same name.
 
+
 <a href="../../../images/posts/WebMatrixredofirstimpressions_14D2D/folder_handler_same_name.png"><img border="0" alt="folder_handler_same_name" src="../../../images/posts/WebMatrixredofirstimpressions_14D2D/folder_handler_same_name_thumb.png" width="212" height="244"></a> 
+
 
 Both the image and the html page will be served correctly but the WebPage “Page.vbhtml” won’t. VBHtml uses visual basic with Razor syntax.
 
@@ -43,7 +45,9 @@ What if you don’t want to tie up the name of the page to the route? For exampl
 First we need to add a reference to System.Web.Routing, them add an APP_CODE folder to the solution and create a class in there that inherits from IRouteHandler.
 _ATENTION: this is a completely naive implementation and a lot of things can and will go wrong if you put this in production._
 
+
 <script src="http://gist.github.com/468993.js?file=WebPageRouteHandler.cs"></script>
+
 
 Now add a global.asax page to the solution and the following at the top below the language directive.
 
@@ -54,11 +58,15 @@ Now add a global.asax page to the solution and the following at the top below th
 Next, create a new method to do the route registration and call it from Application_Start (nothing new here, if you did any MVC or WebForms routing before you already saw some variation of this).
 And modify the Application_Start method to call it:
 
+
 <script src="http://gist.github.com/468993.js?file=global.asax.cs"></script>
+
 
 Nice, isn’t it? Well, there is a problem. These routes won’t work with extra parameters defined this way. We need to figured out a way to pass those values (identified using placeholders in the route) into the UrlData collection. One solution is to use Reflection to set the UrlData to the WebPageRenderingBase, so we modify our WebPageRouteHandler as follow.
 
+
 <script src="http://gist.github.com/468993.js?file=WebPageRouteHandler2.cs"></script>
+
 
 Notice that we need to set the Context as well or we will get a null Exception when calling the UrlData property. Yes, I used Reflector like crazy to figure some of this things out :-) 
 
@@ -70,13 +78,18 @@ Another, more nicer approach, is to create your own WebBase class with a RouteDa
 
 With all this in place we can create the movie.cshtml page to display the data:
 
+
 <script src="http://gist.github.com/468993.js?file=movies.cshtml"></script>
+
 
 And now when we can use localized urls to visit the same page. Of course you shouldn’t have strings hardcoded in the view, since you want to localize them, but that is for another post that I may or not may write in the future.
 
+
 <a href="../../../images/posts/WebMatrixredofirstimpressions_14D2D/english.png"><img border="0" alt="english" src="../../../images/posts/WebMatrixredofirstimpressions_14D2D/english_thumb.png" width="388" height="215"></a> 
 
+
 <a href="../../../images/posts/WebMatrixredofirstimpressions_14D2D/spanish_2.png"><img border="0" alt="spanish" src="../../../images/posts/WebMatrixredofirstimpressions_14D2D/spanish_thumb.png" width="391" height="221"></a> 
+
 
 h3. Conclusion
 
