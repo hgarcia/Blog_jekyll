@@ -57,21 +57,20 @@
 	</header>
 	<nav class="mod">
 		<ul>
-			<li><a href="{{site.url}}" title="There is no place like it">Home</a></li>
-			<li><a href="{{site.blog_url}}" title="Pretentious articles about software development">Blog</a></li>
-			<li><a href="{{site.projects_url}}" title="The product of endless nights of coding">Projects</a></li>
-			<li><a href="{{site.music_url}}" title="Disarray of random musical bits">Music</a></li>
+			<li><a href="{{site.url}}" title="There is no place like it.">Home</a></li>
+			<li><a href="{{site.blog_url}}" title="Mumblings and ramblings on software development.">Blog</a></li>
+			<li><a href="{{site.projects_url}}" title="The results of endless nights of coding.">Code</a></li>
+			<li><a href="{{site.music_url}}" title="Disarray of random musical bits.">Music</a></li>
 			<li><a href="{{site.rss_url}}" title="Sindication a.k.a. RSS feed">RSS</a></li>	
 		</ul>
 	</nav>
-	<div id="content">	 
-		{{ content }}
-		
-			
-		<aside>
+	<div id="content">
+		<div class="main-content" role="main">
+		{{ content }}	
+		</div>
+		<aside role="complementary">
 			<h2>Sidebar Content</h2>
-		</aside>
-		
+		</aside>		
 		<footer>
 			<p><small>&copy; Copyright {{site.author}} 2010. All Rights Reserved.</small></p>	
 		</footer>

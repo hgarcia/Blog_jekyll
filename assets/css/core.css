@@ -107,12 +107,16 @@ div#content article header{
 	background-color: #fff;
 	height: 25px;
 }
-div#content article header h2 a{
+div#content article header h2 a, div#content article p a{
 	color: #034463;
 	letter-spacing: 0.02em;
 	text-decoration: none;
 }
-div#content article header h2 a:hover, a:hover{
+div#content article p a{
+	font-size:0.8em;
+	font-weight:bold;
+}
+div#content article header h2 a:hover, a:hover, div#content article p a:hover{
 	text-decoration: underline;
 }
 div#content article footer{
@@ -138,4 +142,22 @@ div#content article header h2{
 
 div#content article p{
 	padding-left: 5px;
+}
+footer{
+	text-align: center;
+	clear: both;
+}
+footer p small{
+	font-size: 0.7em;
+}
+.main-content{
+	border-right: 3px solid #B3E601;
+	float: left;
+	padding-right: 20px;
+	width: 65%;
+}
+div#content aside{
+	float: right;
+	text-indent: 15px;
+	width: 30%;
 }
