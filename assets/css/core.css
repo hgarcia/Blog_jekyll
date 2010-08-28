@@ -58,7 +58,7 @@ abbr {
 	cursor: help;
 }
 
-header{
+header.main{
 	background-color: #90AD2C;
 	height: 140px;
 }
