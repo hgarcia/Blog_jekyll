@@ -25,11 +25,13 @@
 	
 	<link rel="shortcut icon" href="assets/img/favicon.png"/>
 	<link rel="apple-touch-icon" href="assets/img/custom_icon.png"/>
+
+	<link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Josefin+Sans+Std+Light:regular">
 	
 	<link rel="stylesheet" href="assets/css/main.css" />
 	<link rel="stylesheet" href="assets/css/print/main.css" media="print" />
 	<link rel="stylesheet" href="assets/css/syntax.css"/>
-		 
+
 	<!--[if IE]>
 	<link rel="stylesheet" href="assets/css/patches/win-ie-all.css" />
 	<![endif]-->
@@ -45,19 +47,15 @@
 	
 	<script src="assets/js/modernizr-1.5.min.js"></script>
 	
-	<!-- jQuery -->
-	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
-	<script src="assets/js/functions.js"></script>
-	
 	<link href="{{site.rss_url}}" rel="alternate" title="The Dynamic Programmer - Hernan Garcia" type="application/atom+xml" />
 
 </head>
 <body id="www-domain-com">
 
 	<header>
-		<h1><a href="/">{{site.name}}</a></h1>
+		<h1 class="site-logo">{{site.name}}</h1>
 	</header>
-	<nav>
+	<nav class="mod">
 		<ul>
 			<li><a href="{{site.url}}" title="There is no place like it">Home</a></li>
 			<li><a href="{{site.blog_url}}" title="Pretentious articles about software development">Blog</a></li>
@@ -97,5 +95,8 @@
 		pageTracker._trackPageview();
 		} catch(err) {}
 	</script>
+<!-- jQuery -->
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
+	<script src="assets/js/functions.js"></script>	
   </body>
 </html>

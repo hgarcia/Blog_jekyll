@@ -6,14 +6,14 @@ layout: default
 	<header>
 		<h2>{{ page.title }}</h2>	
 	<header>
-  <footer>|
-  	{% for category in page.categories %}
-  		{{ category }} | 
-  	{% endfor %}
-  </footer>
-  <section>
-  {{ content }}
-  <section>
+	<footer>|
+		{% for category in page.categories %}
+			{{ category }} | 
+		{% endfor %}
+	</footer>
+	<section>
+	{{ content }}
+	<section>
 </article>
 
 <div id="disqus_thread"></div>
