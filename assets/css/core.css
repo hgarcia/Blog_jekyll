@@ -103,8 +103,8 @@ div#content article{
 	margin-bottom: 20px;
 }
 
-div#content article header{
-	background-color: #fff;
+div#main-content article header{
+	background-color: #ffffff;
 	height: 25px;
 }
 div#content article header h2 a, div#content article p a{
