@@ -26,7 +26,7 @@ You can even use urls like this: /some_crazy_handler/more-stuff/1256 and they st
 {% highlight aspx-cs %}
 	@UrlData[0] => more-stuff
 	@UrlData[1] => 1256
-{% endhighlight%}
+{% endhighlight %}
 
 A nice thing is that if the item you are looking for is not there you won’t get an IndexOutOfBoundException but an empty string. Be aware that if you have a folder with the same name of an existing WebPage any WebPage inside that folder won’t be found, other resources will be served normally.
 
