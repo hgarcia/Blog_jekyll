@@ -13,19 +13,19 @@ layout: default
 	</footer>
 	<section>
 	{{ content }}
+	<div id="disqus_thread"></div>
 	<section>
 </article>
-
-<div id="disqus_thread"></div>
 
 <script type="text/javascript">
   /**
     * var disqus_identifier; [Optional but recommended: Define a unique identifier (e.g. post id or slug) for this thread] 
     */
   (function() {
-   var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+   var dsq = document.createElement('script'); 
+   dsq.type = 'text/javascript'; 
+   dsq.async = true;
    dsq.src = 'http://thedynamicprogrammer.disqus.com/embed.js';
    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
   })();
 </script>
-<noscript><a href="http://disqus.com/?ref_noscript=thedynamicprogrammer">view comments @ Disqus.</a></noscript>
