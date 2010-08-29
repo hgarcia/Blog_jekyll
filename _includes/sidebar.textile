@@ -1,0 +1,14 @@
+<ul class="sideframeright">
+	<li>
+		<a href="http://www.scrumalliance.org/scrum_certification" target="_blank" title="Certified SCrum Master"><img src="{{site.url}}/images/logo_csm.png" alt="Certified Scrum Master" title="Certified Scrum Master" border="0" height="53" width="150" /></a>
+	</li>
+	
+	<li>
+		<h4>About the author</h4>	
+        <img src="http://www.gravatar.com/avatar/2dff952fa9be2fa3996bed7924924c52?s=120" style="padding: 4px;" alt="Hernan Garcia" align="left" border="0" width="120" />
+        I have been a software developer for the last 16 years or so.<br/> 
+        I was a journalist before and I still consider myself one.<br/>
+        Besides baseball, programming is my other big passion.<br/><br/>
+        Me on twitter. <a href="http://twitter.com/theprogrammer">@TheProgrammer</a>
+	</li>
+</ul>
