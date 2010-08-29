@@ -59,17 +59,19 @@ abbr {
 }
 
 header.main{
-	background-color: #90AD2C;
+	border-bottom: 2px solid #90AD2C;
+	color: #777777;
 	height: 140px;
 }
 
-header h1{
-	color: #112233;
-	font-size: 40px;
+header.main h1{
+	color: #034463;
+	font-size: 45px;
 	letter-spacing: 0.1em;
 	line-height: 1em;
-	padding-top: 70px;
 	padding-left: 16px;
+	padding-top: 70px;
+	word-spacing: -0.2em;
 }
 nav{
 	border-bottom: 7px solid #D5F36E;
