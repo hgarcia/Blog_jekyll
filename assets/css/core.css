@@ -133,7 +133,7 @@ div#content article section{
 }
 
 div#content article section h3{
-	color: #555555;
+	color: #034463;
 	letter-spacing: 0.1em;
 	margin-bottom: 30px;
 	margin-top: 25px;
@@ -146,6 +146,7 @@ div#content article section p{
 
 div#content article header h2{
 	color: #034463;
+	font-size: 1.5em;
 	letter-spacing: 0.02em;
 }
 
