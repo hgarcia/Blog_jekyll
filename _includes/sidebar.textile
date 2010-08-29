@@ -1,4 +1,4 @@
-<ul class="sideframeright">
+<ul>
 	<li>
 		<a href="http://www.scrumalliance.org/scrum_certification" target="_blank" title="Certified SCrum Master"><img src="{{site.url}}/images/logo_csm.png" alt="Certified Scrum Master" title="Certified Scrum Master" border="0" height="53" width="150" /></a>
 	</li>

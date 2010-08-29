@@ -170,7 +170,15 @@ footer p small{
 	width: 65%;
 }
 div#content aside{
-	float: right;
-	text-indent: 15px;
+	float: left;
+	padding-left: 20px;
 	width: 30%;
+}
+div#content aside li{
+	padding-bottom: 35px;
+}
+div#content aside li h4{
+	color: #034463;
+	font-size: 0.8em;
+	letter-spacing: 0.02em;
 }
