@@ -1,7 +1,7 @@
 permalink: /:year/:month/:day/:title.html
 url: "http://hgarcia.github.com/DynamicProg"
 blog_url: "http://hgarcia.github.com/DynamicProg"
-projects_url: "http://hgarcia.github.com/DynamicProg"
+projects_url: "http://github.com/hgarcia"
 music_url: "http://www.acidplanet.com/artist.asp?songs=292536&t=4858"
 rss_url: "http://feeds.feedburner.com/TheDynamicProgrammer"
 author: "Hernan Garcia"
