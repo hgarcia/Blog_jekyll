@@ -2,13 +2,19 @@
 	<li>
 		<a href="http://www.scrumalliance.org/scrum_certification" target="_blank" title="Certified SCrum Master"><img src="{{site.url}}/images/logo_csm.png" alt="Certified Scrum Master" title="Certified Scrum Master" border="0" height="53" width="150" /></a>
 	</li>
-	
 	<li>
-		<h4>About the author</h4>	
-        <img src="http://www.gravatar.com/avatar/2dff952fa9be2fa3996bed7924924c52?s=120" style="padding: 4px;" alt="Hernan Garcia" align="left" border="0" width="120" />
+		<script type="text/javascript" src="http://www.google.com/reader/ui/publisher-en.js"></script>
+<script type="text/javascript" src="http://www.google.com/reader/public/javascript/user/06910311213859683092/state/com.google/broadcast?n=10&callback=GRC_p(%7Bc%3A%22gray%22%2Ct%3A%22Other%20blogs%20articles%22%2Cs%3A%22true%22%2Cn%3A%22true%22%2Cb%3A%22false%22%7D)%3Bnew%20GRC"></script>
+	</li>
+	<li>
+		<h4>About me</h4>	
+        <img id="avatar" src="http://www.gravatar.com/avatar/2dff952fa9be2fa3996bed7924924c52?s=120" style="padding: 4px;" alt="Hernan Garcia" border="0" width="120" align="left"/>
         I have been a software developer for the last 16 years or so.<br/> 
         I was a journalist before and I still consider myself one.<br/>
         Besides baseball, programming is my other big passion.<br/><br/>
-        Me on twitter. <a href="http://twitter.com/theprogrammer">@TheProgrammer</a>
+	</li>
+	<li>
+		<h4>What I'm reading</h4>
+		<div id="ShelfariWidget79613"><a href='http://www.shelfari.com/'>Shelfari: Book reviews on your book blog</a><script src="http://www.shelfari.com/ws/79613/widget.js" type="text/javascript" language="javascript"></script></div>	
 	</li>
 </ul>

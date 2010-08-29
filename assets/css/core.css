@@ -73,6 +73,9 @@ header.main h1{
 	padding-top: 70px;
 	word-spacing: -0.2em;
 }
+aside ul{
+	list-style: none outside none;
+}
 nav{
 	border-bottom: 7px solid #D5F36E;
 	height: 50px;
@@ -133,7 +136,7 @@ div#content article section{
 }
 
 div#content article section h3{
-	color: #034463;
+	color: #034463list-style:none outside none;;
 	letter-spacing: 0.1em;
 	margin-bottom: 30px;
 	margin-top: 25px;
