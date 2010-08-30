@@ -109,7 +109,7 @@ div#content article{
 
 div#content article header, div.main-content article header{
 	background-color: #ffffff;
-	height: 25px;
+	margin-bottom: 10px;
 }
 
 div#content article header h2 a, div#content article p a{
@@ -148,11 +148,8 @@ div#content article section p{
 
 div#content article header h2{
 	color: #034463;
-	letter-spacing: 0.02em;
-}
-
-div.main-content article header h2{
 	font-size: 1.5em;
+	letter-spacing: 0.02em;
 }
 
 div#content article p{
