@@ -1,6 +1,8 @@
 
-Fix styles in homepage and category pages
+add the twitter feed
 
-Generate a tag cloud
+make it work on heroku with rack
+
+map permalinks to new url schema
 
 Create a dashboard (home page)
