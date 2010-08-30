@@ -6,3 +6,4 @@ music_url: "http://www.acidplanet.com/artist.asp?songs=292536&t=4858"
 rss_url: "http://feeds.feedburner.com/TheDynamicProgrammer"
 author: "Hernan Garcia"
 name: "The Dynamic Programmer"
+destination: ../heroku/_site/
