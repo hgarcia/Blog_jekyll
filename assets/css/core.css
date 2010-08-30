@@ -186,3 +186,15 @@ div#content aside li p{
 	font-size: 0.8em;
 	padding-bottom: 25px;
 }
+em{
+	background-color: #F87070;
+	border: 2px solid #B52E2E;	
+}
+cite{
+	background-color: #D5F36E;
+	border: 2px solid #90AD2C;		
+}
+blockquote{
+	background-color: #62A9CC;
+	border: 2px solid #215872;		
+}

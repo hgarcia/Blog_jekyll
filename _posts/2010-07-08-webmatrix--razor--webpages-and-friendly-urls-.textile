@@ -45,7 +45,7 @@ h3. Adding routing to the mix.
 What if you don’t want to tie up the name of the page to the route? For example handle routes in different languages. Let’s put routing to the task. Now, there may be a better way to do this but this is what I put together.
 
 First we need to add a reference to System.Web.Routing, them add an APP_CODE folder to the solution and create a class in there that inherits from IRouteHandler.
-_ATENTION: this is a completely naive implementation and a lot of things can and will go wrong if you put this in production._
+_ATTENTION: this is a completely naive implementation and a lot of things can and will go wrong if you put this in production._
 
 
 <script src="http://gist.github.com/468993.js?file=WebPageRouteHandler.cs"></script>
