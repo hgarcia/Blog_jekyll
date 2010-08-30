@@ -1,0 +1,16 @@
+---
+layout: default
+---
+
+{% for post in site.posts %}
+	{% for category in  post.categories %}
+	{% if category == 'Patterns' %}
+		<article>
+			<header>
+				<h2><a href="{{site.blog_url}}{{ post.url}}">{{ post.title }}</a></h2>
+			</header>
+			<p>{{ post.summary }}  <a href="{{site.blog_url}}{{ post.url}}" title="Read more on: {{post.title}}">[read more]</a></p>		
+		</article>
+	{% endif %}
+	{% endfor %}
+{% endfor %}

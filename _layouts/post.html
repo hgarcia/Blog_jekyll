@@ -8,7 +8,7 @@ layout: default
 	<header>
 	<footer>|
 		{% for category in page.categories %}
-			{{ category }} | 
+			<a href="{{ site.blog_url }}/categories/{{ category | downcase | replace:'.','-' | replace:' ','_' }}.html" title="Read other articles in {{ category }}">{{ category }}</a> | 
 		{% endfor %}
 	</footer>
 	<section>
