@@ -186,24 +186,26 @@ div#content aside li p{
 	font-size: 0.8em;
 	padding-bottom: 25px;
 }
+blockquote, em, cite{
+	display: block;
+	margin: 10px;
+	padding: 5px;	
+	border-radius:10px 10px 10px 10px;
+	-moz-border-radius :10px 10px 10px 10px;
+	-webkit-border-radius: 10px 10px 10px 10px;
+}
 em{
 	background-color: #F87070;
 	border: 2px solid #B52E2E;	
-	display: block;
-	margin: 10px;
-	padding: 5px;
 }
 cite{
 	background-color: #D5F36E;
-	border: 2px solid #90AD2C;	
-	display: block;
-	margin: 10px;
-	padding: 5px;		
+	border: 2px solid #90AD2C;		
 }
 blockquote{
 	background-color: #E0EAEF;
 	border: 2px solid #215872;
-	display: block;
 	margin: 5px;
 	padding: 20px;	
 }
+
