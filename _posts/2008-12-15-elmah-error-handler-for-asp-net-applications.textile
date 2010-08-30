@@ -7,7 +7,7 @@ categories: [General, Tools]
 
 This looks very interesting (from their site).
 
-bq..
+<blockquote>
 ELMAH (Error Logging Modules and Handlers) is an application-wide error logging facility that is completely pluggable. It can be dynamically added to a running <a href="http://www.asp.net/">ASP.NET</a> web application, or even all ASP.NET web applications on a machine, without any need for re-compilation or re-deployment. 
 
 Once ELMAH has been dropped into a running web application and configured appropriately, you get the following facilities without changing a single line of your code: 
@@ -19,6 +19,6 @@ Once ELMAH has been dropped into a running web application and configured approp
 * An e-mail notification of each error at the time it occurs. 
 * An RSS feed of the last 15 errors from the log. 
 * A number of backing storage implementations for the log, including in-memory, <a href="http://www.microsoft.com/sql/">Microsoft SQL Server</a> and several <a href="http://groups.google.com/group/elmah/files">contributed by the community</a>. 
-
+</blockquote>
 
 p. I haven’t use it yet, but it really sounds like something that I see myself incorporating into my tool box. You can download it from <a href="http://code.google.com/p/elmah/" target="_blank">Google code</a>.

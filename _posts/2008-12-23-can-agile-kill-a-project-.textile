@@ -25,13 +25,13 @@ p. This is only true in situations like the one he described. I will paraphrase 
 
 As a comment to the post mentions:
 
-bq..
+<blockquote>
 
 by Domingos on 12/23/2008 6:07:49 AM 
 That's why being agile is not only about engineering practices. In order to be Agile, a company needs to change the way it does business.
 At the end of the day, it is about what applies to your situation. No one should never adopt all practices blindly without consideration.
 I would have done exactly what you did: put everything in a balance and decide what practice to use in your specific case. And you were 'agile', but no Agile.
 And I think that it is the the former that really matters. <a href="http://www.codeinstructions.com" target="_blank">http://www.codeinstructions.com</a>
-
+</blockquote>
 
 p. Mohammad post reminded me how lucky I’m to be able to work in a company were not just Agile but even Lean principles are applied, and not only at the development level but by our clients.

@@ -189,12 +189,21 @@ div#content aside li p{
 em{
 	background-color: #F87070;
 	border: 2px solid #B52E2E;	
+	display: block;
+	margin: 10px;
+	padding: 5px;
 }
 cite{
 	background-color: #D5F36E;
-	border: 2px solid #90AD2C;		
+	border: 2px solid #90AD2C;	
+	display: block;
+	margin: 10px;
+	padding: 5px;		
 }
 blockquote{
-	background-color: #62A9CC;
-	border: 2px solid #215872;		
+	background-color: #E0EAEF;
+	border: 2px solid #215872;
+	display: block;
+	margin: 5px;
+	padding: 20px;	
 }

@@ -5,6 +5,5 @@ summary: Development teams have two processes- their development process, and th
 categories: [General]
 ---
 
-??Development teams have two processes: their development process, and the processes of improving their development process.??
-
-_"Scott Bellware(Scott Bellware)":http://blog.scottbellware.com/_
+??Development teams have two processes: their development process, and the processes of improving their development process.
+"Scott Bellware(Scott Bellware)":http://blog.scottbellware.com/??
