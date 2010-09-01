@@ -1,0 +1,137 @@
+---
+layout: post
+title: A REST API in 20 minutes - Part 2.
+summary: In this second part we look at the factory methods to handle the different request
+and the formatters classes.
+categories: [.Net, Programming]
+---
+
+In this second part we look at the factory methods to handle the different request
+and the formatters classes.
+
+h3 The Factory.
+
+The use of a factory allow us to easily extend this framework with minimun coding.
+
+{% hightlight cs %}
+using System;
+	using System.Web;
+	
+	namespace LaTrompa.Services
+	{
+		public class ServiceHandlerFactory 
+		{
+			public static IServiceable Create(UriProcessor up)
+			{
+				return (IServiceable)Activator.CreateInstance(Type.GetType("LaTrompa.Services." +
+				up.ReturnFormat + "ServiceHandler"));
+			}
+		}
+	}
+{% endhighlight %}
+
+h3 Some base classes.
+
+We need to encapsulate some code, so we apply the DRY principle, that code will reside
+in two base classes.
+
+The first class is used by our formatter classes, they need to format different type
+of objects so they need to call a class that knows how to process the call for that
+given object, get the object, modify it according to the parameters and commands and
+them returned to the formatter class that will format it and do the response.
+
+{% hightlight cs %}
+	using System;
+	using System.Web;
+	
+	namespace LaTrompa.Services
+	{
+		public class FormatServiceHandler
+		{
+			protected object GetRequestedObject(HttpContext context) 
+			{
+				UriProcessor up = new UriProcessor(context.Request.Url);
+				IServiceRequestHandler service = (IServiceRequestHandler)Activator.CreateInstance(Type.GetType("LaTrompa.Service."
+				+ up.ObjectType + "ServiceHandler"));
+				
+				return service.GetRequestedObject(up); 
+			}
+		}
+	}
+{% endhighlight %}
+
+The second object, is one of our objects handlers, some scheleton code at this moment.
+This objects implement IServiceRequestHandler.
+
+{% hightlight cs %}
+	using System;
+	using System.Collections.Specialized;
+	using System.Web;
+	using MyGeneration.dOOdads;
+	
+	namespace LaTrompa.Services
+	{
+		public class DataServiceHandler : IServiceRequestHandler
+		{
+			private BusinessEntity _dataObject;
+			protected void LoadDataObject(string objectName)
+			{
+				this._dataObject = (BusinessEntity)Activator.CreateInstance(Type.GetType("LaTrompa.DAL."
+				+ objectName, true, true));
+			}
+		
+			private object List(NameValueCollection qs) { return null; }		
+			private object Delete(NameValueCollection qs) { return null; }
+			private object Insert(NameValueCollection qs) { return null; }
+			private object Update(NameValueCollection qs) { return null; }
+
+			private object GetColumns() 
+			{
+				return null;
+			}
+		
+			public object GetRequestedObject(UriProcessor up)
+			{
+				this.LoadDataObject(up.ObjectName);
+				
+				switch (up.Command.ToUpper())
+				{
+				case "LIST":
+						this.List(up.Qs);
+						break;
+					case "DELETE":
+						this.Delete(up.Qs);
+						break;
+					case "UPDATE":
+						this.Update(up.Qs);
+						break;
+					case "INSERT":
+						this.Insert(up.Qs);
+						break;
+					case "GETCOLUMNS":
+						this.GetColumns();
+						break;
+				}
+				return null;
+			}
+		}
+	}
+{% endhighlight %}
+
+h3 The Formatter class
+
+{% hightlight cs %}
+	using System;
+	using System.Web;
+	
+	namespace LaTrompa.Services
+	{
+		public class JsonServiceHandler : FormatServiceHandler, IServiceable
+		{
+			public void Process(HttpContext context)
+			{
+				object requested = base.GetRequestedObject(context);
+			}
+		}
+	}
+{% endhighlight %}

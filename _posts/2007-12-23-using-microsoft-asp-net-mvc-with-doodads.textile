@@ -1,0 +1,152 @@
+---
+layout: post
+title: Using Microsoft ASP.NET MVC with DooDads
+summary: I have been using DooDads, a free, open source ORM architecture for a while now. I like that I can easily use it with any database structure, not matter how bad it is.
+categories: [.Net, Programming, Frameworks]
+---
+
+I have been using <a target="_blank" href="http://www.mygenerationsoftware.com/portal/dOOdads/Overview/tabid/63/Default.aspx">DooDads</a>,
+a free, open source ORM architecture for a while now. I like that I can easily use
+it with any database structure, not matter how bad it is.
+
+When I come across such designs DooDads is the tool that allows me to create a layer
+of abstraction pretty fast into the application, that will later on allow me to make
+changes and refactor the database with minimal impact in the upper layers.
+
+I'm also a sucker for the MVC pattern and I downloaded as soon as was avalable, I
+have been playing around with it and one of the things I wanted to do was test it's
+extensibility using my favorite ORM tool.
+
+h3 Setting things up.
+
+So I fired up VS and create a new MVC application.
+
+I create a db with one table and I call it Movies.
+
+I open <a target="_blank" href="http://www.mygenerationsoftware.com/portal/default.aspx">MyGeneration</a> and
+generate the code for the business entity for the table and the Stored Procedures
+that the object will use.
+
+<img src="../../../images/posts/SP32-20071223-015910%281%29.png" alt="" height="287" width="320"/>
+
+<img alt="DooDads Stored Procedures" src="../../../images/posts/SP32-20071223-015926.png" height="149" width="338"/>
+
+h3 The Model.
+
+Then I added the code into the Model folder in the solution opened in Visual Studio
+2008 and create the concrete class for the Movie object, Doodads generated code use
+abstract classes.
+
+<img alt="Model classes in the MVC project" src="../../../images/posts/SP32-20071223-020248.png" height="313" width="280"/>
+
+I like to separated the generated code from my implementation using two different
+folders but you don't need to do so if you don't want. I think that is easier to maintain
+this way.
+
+My next step was to modify the menu to create a Movies item, so I opened the master
+page and added the following line.
+
+{% highlight aspx-cs %}
+	<ul>
+		<li><a runat="server" href="~/">Home</a></li>
+		<li><%= Html.ActionLink("Movies", "List", "Movie") %></li>
+		<li><%= Html.ActionLink("About Us", "About", "Home") %></li>
+	</ul>
+{% endhighlight %}
+
+You will need to add the connection string as and appSetting in the web.config
+for Doodads to pick it up. The key should be dbConnection.
+
+{% highlight xml %}
+	<appsettings>
+		<add value="Data Source=SERVERNAME;Initial Catalog=DATABASE;Integrated Security=True"
+		key="dbConnection"></add>
+	</appsettings>
+{% endhighlight %}
+
+h3 The Controller.
+
+Them I added a reference to MyGeneration.Doodads.dll and them create a new Controller
+class named MovieController
+
+<img alt="" src="../../../images/posts/SP32-20071223-022349.png" height="341" width="252"/>
+
+The code for this class is very simple. I added the using statement for the namespace
+of my Model classes and I create a custom ViewData object using the new simpler properties.
+Declaring the type of the property will give me a strongly typed ViewData in the View.
+
+{% highlight cd %}
+	using System;
+	using System.Web;
+	using System.Web.Mvc;
+	using LaTrompa.Dal;
+	
+	namespace MvcApplication1.Controllers
+	{
+		public class MovieController : Controller
+		{
+			[ControllerAction]
+			public void List()
+			{
+				Movies movieSelection = new Movies();
+				movieSelection.LoadAll();
+				MoviesViewData customViewData = new MoviesViewData();
+				customViewData.MovieList = movieSelection;
+				
+				RenderView("Movie", <span class="Code">customViewData</span>);
+			}
+		}
+			
+		public class MoviesViewData
+		{
+			public Movies MovieList { get; set; }
+		}
+	}
+{% endhighlight %}
+
+
+h3 The View.
+
+I created a folder called Movie under View and inside a Movie page (I made this page
+of the MVC Content page type to use the same master page).
+
+<img src="../../../images/posts/SP32-20071223-023153.png" alt="" height="112" width="215"/>
+
+<img src="../../../images/posts/SP32-20071223-023202.png" alt="" height="91" width="218"/>
+
+I added a using for the controllers namespace and set the type of the ViewPage<T>
+object to my custom viewdata object.
+
+{% highlight cs %}
+	using System;
+	using System.Web;
+	using System.Web.Mvc;
+	using MvcApplication1.Controllers;
+	
+	namespace MvcApplication1.Views.Home
+	{
+		public partial class Movies : ViewPage<moviesviewdata>
+		{
+		}
+	}
+{% endhighlight %}
+
+I them opened the aspx page and added the following.
+
+{% hightlight aspx-cs %}
+	<%
+	while (!ViewData.MovieList.EOF)
+	{
+	%>
+		<h2><%= ViewData.MovieList.Title%></h2>
+		<%=ViewData.MovieList.Description%>
+		<%= Html.ActionLink(ViewData.MovieList.Category, "List", "Category")%>
+	<%
+		ViewData.MovieList.MoveNext();
+	}	
+	%>
+{% endhightlight %}
+
+And that is all you need.
+
+<img src="../../../images/posts/SP32-20071223-023852.png" alt="Final result" height="451" width="426" />

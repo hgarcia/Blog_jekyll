@@ -1,0 +1,127 @@
+---
+layout: post
+title: Implementing the Each method in C# collections.
+summary: The Javascript library Prototype make use of  "prototypes" to extend some internal JavaScript objects like the Array. One of the extension methods that I find myself using the most is the each method.
+categories: [JavaScript, Programming]
+---
+
+The Javascript library Prototype make use of  "prototypes" to extend some internal JavaScript objects like the Array. One of the extension methods that I find myself using the most is the each method.
+
+h3 Examples
+        
+{% hightlight js %}
+	['one', 'two','three'].each(function(s) {
+		alert(s);
+	});
+	
+	//or even better
+	['one','two','three'].each(doSomething);
+	
+	function doSomething(s){
+		if (s === 'one'){
+			alert('The first element').
+		}
+	}
+{% endhightlight %}
+        
+We also have the each method in Ruby.
+
+{% hightlight ruby%}
+stooges = ['Larry', 'Curly', 'Moe'] stooges.each { |stooge| print stooge + "\n" }
+{% endhightlight %}
+        
+Why not have this on C#? Now with the new extension methods we can extend our collections.
+       
+??UPDATE: According to Alex the second example is superfluos since the Select method does the same thing I'm doing here. Check Alex comments at the end of the post for an example. Thanks, Alex.??
+
+So I hack together a quick solution, I'm extending the IList interface that serves as the base for most collections with an Each method that will take a delegate as argument. Here is the code.
+
+{% hightlight cs %}
+	using System;
+	using System.Collections;
+	namespace LaTrompa
+	{
+		public static class CollectionExtensions
+		{
+			public delegate void GetObject(object o);
+			public delegate object ModifyObject(object o);
+			public static IList Each(this IList collection, GetObject function)
+			{
+				foreach (object item in collection)
+				{
+					function(item);
+				}
+				return collection;
+			}
+			public static IList Each(this IList collection, ModifyObject function)
+			{
+				IList col = (IList)Activator.CreateInstance(collection.GetType());
+				
+				foreach (object item in collection)
+				{
+					col.Add(function(item));
+				}
+				return col;
+			}
+		}
+	}
+{% endhightlight %}
+
+Using Alex suggestions I'm changing the delegates by Action<T> and Func<T,T> and using yield allow me to extend IEnumerable now. The code is way more elegant this way, thanks Alex.
+
+{% hightlight cs %}        
+	public static IEnumerable Each(this IEnumerable collection, Action<object> function)
+	{
+		foreach (object item in collection)
+		{
+			function(item);
+		}
+		return collection;
+	}
+	public static IE numerable Each(this IEnumerable collection, Func<object, object> function)
+	{
+		foreach (object 	item in collection)
+		{
+			yield return function(item);
+		}
+	}
+{% endhightlight %}
+        
+This example will output the ToString() mehod of each object into the string. You can also modify the content of the Collection using the overload method and the delegate that returns an object.
+
+{% hightlight cs %}
+	using System;
+	using System.Collections;
+	using LaTrompa;
+	
+	namespace TestApp
+	{
+		class Program
+		{	
+			static void Main(string[] args)
+			{
+				ArrayList al = new ArrayList();
+				al.Add("The first element.");
+				al.Add("The second element.");
+				al.Add("The third element.");
+				al.Each(new Func<object, object>(Modify)).Each(new Action<object>(Print));
+			}
+			
+			static public void Print(object o)
+			{
+				Console.Write(o.ToString());
+			}
+			
+			static public object Modify(object o)
+			{
+				return o.ToString() + " - Modified.\n";
+			}
+		}
+	}
+{% endhightlight %}
+        
+This is the output:
+
+<img alt="" src="../../../images/posts/SP32-20071230-220529.png" height="116" width="413" />
+          
+Pretty cool, isn't it? The power of using a delegate should not be overlooked since you could tie the delegate to multiple methods to further process each element of the collection.

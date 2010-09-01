@@ -1,8 +1,25 @@
-
-make it work on heroku with rack
-
-map permalinks to new url schema
-
+migrate code snippeds to gist
+migrate comments to disqus
+Make sure ad-sense code is in place
+Fix ' encoding problems.
 add the twitter feed
-
 Create a dashboard (home page)
+
+Architecture
+Books
+Continuous Integration
+.Net
+Frameworks
+General
+Gestalt
+JavaScript
+Lightweight Testing Framework
+Methodology
+MongoDB
+Node.js
+Patterns
+Programming
+Ruby
+Talks
+Testing
+Tools
