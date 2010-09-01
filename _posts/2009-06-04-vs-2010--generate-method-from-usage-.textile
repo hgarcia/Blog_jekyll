@@ -13,7 +13,7 @@ VS 2010 incorporate this functionality as well. In ReSharper you can write the i
         
 All this is good and works very similar to ReSharper, but not so powerful. If you are initializing the class with some parameters a constructor will be created for you. The name of the parameters will be inferred (if at all possible) from the name of the variable that you are using in your code. For example in this code the MyNewClass didn't exist before hand.
 
-{% hightlight cs%}
+{% highlight cs%}
 	public void CreateClassFromUsage() 
 	{
 		var obj = new MyNewCLass("someVariable"); 
@@ -22,11 +22,11 @@ All this is good and works very similar to ReSharper, but not so powerful. If yo
 		var stringsToAdd = new[]{"First line","Second line"}; 
 		string concatenatedString = obj.ConcatTwoStrings(originalString, stringsToAdd); 
 	}
-{% endhightlight %}
+{% endhighlight %}
         
 After writing the code I when Ctrl+dot and create the class (it was created in a new file by default, nice) and the methods. 
 
-{% hightlight cs%}        
+{% highlight cs%}        
 	using System; 
 	using System.Collections.Generic; 
 	using System.Linq; 
@@ -55,7 +55,7 @@ After writing the code I when Ctrl+dot and create the class (it was created in a
 			}
 		}
 	}
-{% endhightlight %}
+{% endhighlight %}
 
         
 Notice the name of the parameters, in those ones where I used variables the parameters

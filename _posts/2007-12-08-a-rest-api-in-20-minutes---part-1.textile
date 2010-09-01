@@ -62,7 +62,7 @@ h3 Architecture:
 
 h4 Interfaces.
 
-{% hightlight cs %}
+{% highlight cs %}
 	using System;
 	using System.Web;
 
@@ -75,7 +75,7 @@ h4 Interfaces.
 	}
 {% endhighlight %}
 
-{% hightlight cs %}
+{% highlight cs %}
 using System;
 
 	namespace LaTrompa.Services
@@ -93,7 +93,7 @@ h3 Utilities.
 I create this class to map a uri into an object for easy manipulation, the uri is
 what will tell us wich object to load and how to process it.
 
-{% hightlight cs %}
+{% highlight cs %}
 	using System;
 	using System.Collections.Specialized;
 	using System.Web;
@@ -181,7 +181,7 @@ h3 Custom Exceptions
 We want to throw custom exceptions, don't we?
 This is just in the works, only one class for now.
 
-{% hightlight cs %}
+{% highlight cs %}
 	using System;
 	
 	namespace LaTrompa.Services
@@ -199,7 +199,7 @@ h3 The HTTP Handler
 
 We will map the extentions that we won't to handle via the API to this Http Handler.
 
-{% hightlight cs %}
+{% highlight cs %}
 	using System;
 	using System.Web;
 	

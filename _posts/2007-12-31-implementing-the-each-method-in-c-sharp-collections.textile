@@ -9,7 +9,7 @@ The Javascript library Prototype make use of  "prototypes" to extend some intern
 
 h3 Examples
         
-{% hightlight js %}
+{% highlight js %}
 	['one', 'two','three'].each(function(s) {
 		alert(s);
 	});
@@ -22,13 +22,13 @@ h3 Examples
 			alert('The first element').
 		}
 	}
-{% endhightlight %}
+{% endhighlight %}
         
 We also have the each method in Ruby.
 
-{% hightlight ruby%}
+{% highlight ruby%}
 stooges = ['Larry', 'Curly', 'Moe'] stooges.each { |stooge| print stooge + "\n" }
-{% endhightlight %}
+{% endhighlight %}
         
 Why not have this on C#? Now with the new extension methods we can extend our collections.
        
@@ -36,7 +36,7 @@ Why not have this on C#? Now with the new extension methods we can extend our co
 
 So I hack together a quick solution, I'm extending the IList interface that serves as the base for most collections with an Each method that will take a delegate as argument. Here is the code.
 
-{% hightlight cs %}
+{% highlight cs %}
 	using System;
 	using System.Collections;
 	namespace LaTrompa
@@ -65,11 +65,11 @@ So I hack together a quick solution, I'm extending the IList interface that serv
 			}
 		}
 	}
-{% endhightlight %}
+{% endhighlight %}
 
 Using Alex suggestions I'm changing the delegates by Action<T> and Func<T,T> and using yield allow me to extend IEnumerable now. The code is way more elegant this way, thanks Alex.
 
-{% hightlight cs %}        
+{% highlight cs %}        
 	public static IEnumerable Each(this IEnumerable collection, Action<object> function)
 	{
 		foreach (object item in collection)
@@ -85,11 +85,11 @@ Using Alex suggestions I'm changing the delegates by Action<T> and Func<T,T> and
 			yield return function(item);
 		}
 	}
-{% endhightlight %}
+{% endhighlight %}
         
 This example will output the ToString() mehod of each object into the string. You can also modify the content of the Collection using the overload method and the delegate that returns an object.
 
-{% hightlight cs %}
+{% highlight cs %}
 	using System;
 	using System.Collections;
 	using LaTrompa;
@@ -118,7 +118,7 @@ This example will output the ToString() mehod of each object into the string. Yo
 			}
 		}
 	}
-{% endhightlight %}
+{% endhighlight %}
         
 This is the output:
 

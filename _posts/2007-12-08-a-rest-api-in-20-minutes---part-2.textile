@@ -12,7 +12,7 @@ h3 The Factory.
 
 The use of a factory allow us to easily extend this framework with minimun coding.
 
-{% hightlight cs %}
+{% highlight cs %}
 using System;
 	using System.Web;
 	
@@ -39,7 +39,7 @@ of objects so they need to call a class that knows how to process the call for t
 given object, get the object, modify it according to the parameters and commands and
 them returned to the formatter class that will format it and do the response.
 
-{% hightlight cs %}
+{% highlight cs %}
 	using System;
 	using System.Web;
 	
@@ -62,7 +62,7 @@ them returned to the formatter class that will format it and do the response.
 The second object, is one of our objects handlers, some scheleton code at this moment.
 This objects implement IServiceRequestHandler.
 
-{% hightlight cs %}
+{% highlight cs %}
 	using System;
 	using System.Collections.Specialized;
 	using System.Web;
@@ -119,7 +119,7 @@ This objects implement IServiceRequestHandler.
 
 h3 The Formatter class
 
-{% hightlight cs %}
+{% highlight cs %}
 	using System;
 	using System.Web;
 	

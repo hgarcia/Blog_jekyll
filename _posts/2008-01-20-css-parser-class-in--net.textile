@@ -12,7 +12,7 @@ It seems to work well enough, it's a very simple implementation, there is no val
 
 The algorithm is very naive, but I didn't find any major problems with it. The only issue that I see on this one is that the famous hack for IE (using the * selector) will be ignored and that style may be removed, but you shouldn't be hacking your css, should you? (irony there).
 
-{% hightlight cs %}
+{% highlight cs %}
 	using System; 
 	using System.IO; 
 	using System.Collections.Generic; 
@@ -123,7 +123,7 @@ The algorithm is very naive, but I didn't find any major problems with it. The o
 			}
 		} 
 	} 
-{% endhightlight %}
+{% endhighlight %}
         
 Some other solutions and articles related.
 

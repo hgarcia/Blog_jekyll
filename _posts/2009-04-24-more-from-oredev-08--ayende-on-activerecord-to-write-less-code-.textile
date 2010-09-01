@@ -1,8 +1,7 @@
 ---
 layout: post
 title: More from Oredev 08 – Ayende on ActiveRecord to write less code.
-summary: A very good presentation with lots of code to learn and appreciate some of the niceties
-of ActiveRecord.
+summary: A very good presentation with lots of code to learn and appreciate some of the niceties of ActiveRecord.
 categories: [Programming, .Net]
 ---
 

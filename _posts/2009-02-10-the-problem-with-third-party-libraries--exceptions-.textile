@@ -13,12 +13,12 @@ But what happens if the external library defines it's own exceptions? What if on
         
 Let's assume the 3rd party library is an html parser library that contains the following classes:
 
-{% hightlight cs %}
+{% highlight cs %}
 	ThirdParty.HtmlParser.HtmlElement
 	ThirdParty.HtmlParser.Parser
 	ThirdParty.HtmlParser.HtmlElements : IEnumerable<HtmlElement>
 	ThirdParty.HtmlParser.MalFormedHtmlException : Exception
-{% endhightlight %}
+{% endhighlight %}
 
 Notice the MalFormedHtmlException class, this is an exception that this library may throw. At this point just wrapping the library alone won't help you. What you need to do is catch the exception in the wrapper library and raise you own exceptions. 
 
@@ -26,7 +26,7 @@ This exceptions may have the same meaning but for sure the name will more closel
         
 Let's create a simple wrapper that returns all images url's in an HtmlDocument given an id:
 
-{% hightlight cs %}
+{% highlight cs %}
 	public class HtmlParser{
 		public HtmlParser(Uri url){
 			//...
@@ -36,11 +36,11 @@ Let's create a simple wrapper that returns all images url's in an HtmlDocument g
 			//...
 		}
 	}
-{% endhightlight %}
+{% endhighlight %}
         
 Now the problem is that GetImagesUrls needs to parse the document and at that moment the MalFormedHtmlException. Knowing this your client code will have to do something like this to protect the application from crashing.
 
-{% hightlight cs %}
+{% highlight cs %}
 	public class ParserUI
 	{
 	
@@ -57,11 +57,11 @@ Now the problem is that GetImagesUrls needs to parse the document and at that mo
 			}
 		}
 	}
-{% endhightlight %}
+{% endhighlight %}
         
 A this moment our UI holds a reference to the original library to brake that dependency. We need to modify the code for the wrapper and provide our own exception.
 
-{% hightlight cs %}
+{% highlight cs %}
 	public class HtmlParser
 	{    
 		public HtmlParser(Uri url)
@@ -84,11 +84,11 @@ A this moment our UI holds a reference to the original library to brake that dep
 	{
 		public HtmlMalFormedException() : base(@"The html for the document is not well formed html. Please use a tool like the w3c Validator to verify the document"){}
 	}
-{% endhightlight %}
+{% endhighlight %}
 
 Now the client can be change as well
 
-{% hightlight cs %}
+{% highlight cs %}
 	public class ParserUI
 	{
 		public void ShowImages()
@@ -104,7 +104,7 @@ Now the client can be change as well
 			}
 		}
 	}
-{% endhightlight %}
+{% endhighlight %}
         
 Notice how you just removed any dependency to the original library, but you can also use the message from the exception to display to the end user. Since you know your domain, the message can be tailored in a way that explain what just happened and even provide alternative solutions on how to fix the problem.
 

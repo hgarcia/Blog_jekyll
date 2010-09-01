@@ -133,7 +133,7 @@ object to my custom viewdata object.
 
 I them opened the aspx page and added the following.
 
-{% hightlight aspx-cs %}
+{% highlight aspx-cs %}
 	<%
 	while (!ViewData.MovieList.EOF)
 	{
@@ -145,7 +145,7 @@ I them opened the aspx page and added the following.
 		ViewData.MovieList.MoveNext();
 	}	
 	%>
-{% endhightlight %}
+{% endhighlight %}
 
 And that is all you need.
 
