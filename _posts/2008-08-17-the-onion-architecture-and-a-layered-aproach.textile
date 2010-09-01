@@ -2,7 +2,7 @@
 layout: post
 title: The Onion Architecture and a layered aproach.
 summary: A few weeks ago Jeffrey Palermo published his notion of an Onion Architecture. The first time I saw it was during his MVC presentation at DevTeach Toronto and I really like it.
-categories: [.Net, Programming]
+categories: [Programming, .Net]
 ---
 
 A few weeks ago Jeffrey Palermo published his notion of an <a href="http://jeffreypalermo.com/blog/the-onion-architecture-part-3/" title="Onion Architecture" target="_blank">Onion Architecture</a>. The first time I saw it was during his MVC presentation at DevTeach Toronto and I really like it. 

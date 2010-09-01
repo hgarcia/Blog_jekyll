@@ -1,9 +1,8 @@
 ---
 layout: post
 title: A REST API in 20 minutes - Part 2.
-summary: In this second part we look at the factory methods to handle the different request
-and the formatters classes.
-categories: [.Net, Programming]
+summary: In this second part we look at the factory methods to handle the different request and the formatters classes.
+categories: [Programming, .Net]
 ---
 
 In this second part we look at the factory methods to handle the different request

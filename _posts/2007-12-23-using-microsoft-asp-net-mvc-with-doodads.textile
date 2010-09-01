@@ -2,7 +2,7 @@
 layout: post
 title: Using Microsoft ASP.NET MVC with DooDads
 summary: I have been using DooDads, a free, open source ORM architecture for a while now. I like that I can easily use it with any database structure, not matter how bad it is.
-categories: [.Net, Programming, Frameworks]
+categories: [Programming, Frameworks, .Net]
 ---
 
 I have been using <a target="_blank" href="http://www.mygenerationsoftware.com/portal/dOOdads/Overview/tabid/63/Default.aspx">DooDads</a>,

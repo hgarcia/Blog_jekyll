@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Proper naming in generics and Lambda expressions.
-summary: Hopefully gone are the days were you considered ok the use of single letter names for your variables or your arguments and you are giving informative names to all the artifacts in your code.  But what about generics?
+summary: Hopefully gone are the days were you considered ok the use of single letter names for your variables or your arguments and you are giving informative names to all the artifacts in your code.
 categories: [Programming, .Net]
 ---
 

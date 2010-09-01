@@ -1,9 +1,8 @@
 ---
 layout: post
 title: Do you need to format the code for your blog?
-summary: C# format is an online tool to format your C#, VB, HTML, XML, T-SQL or MSH code into
-valid HTML 4.01 complaint code to put online.
-categories: [.Net, Tools, General]
+summary: C# format is an online tool to format your C#, VB, HTML, XML, T-SQL or MSH code into valid HTML 4.01 complaint code to put online.
+categories: [Tools, General, .Net]
 ---
 
 Browsing around I landed on <a href="http://www.opgenorth.net/Default.aspx" title="opgenorth.net" target="_blank">opgenorth.net blog</a> an drift into his <a href="http://www.opgenorth.net/softwaretools.aspx" title="opgenorth Software tools page" target="_blank">software tools page</a>. Most of the tools I either knew or actually use, but this one I didn't.<a href="http://www.manoli.net/csharpformat/" title="C# format" target="_blank"> C# format</a> is an online tool to format your C#, VB, HTML, XML, T-SQL or MSH code into

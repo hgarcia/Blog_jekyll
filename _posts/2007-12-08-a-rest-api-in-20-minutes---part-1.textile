@@ -1,9 +1,8 @@
 ---
 layout: post
 title: A REST API in 20 minutes - Part 1.
-summary: If you haven't look at it, take a look at the Subsonic project, is really cool and can generate a ORM infrastructure faster than any other framework I tried out there.
-It also provides a cool HTTPHandler to expose those objects.
-categories: [.Net, Programming]
+summary: If you haven't look at it, take a look at the Subsonic project, is really cool and can generate a ORM infrastructure faster than any other framework I tried out there. It also provides a cool HTTPHandler to expose those objects.
+categories: [Programming, .Net]
 ---
 
 If you haven't look at it, take a look at the <a href="http://subsonicproject.com/" target="_blank">Subsonic</a> project, is really cool and can generate a ORM infrastructure faster than any other framework I tried out there.

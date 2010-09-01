@@ -2,7 +2,7 @@
 layout: post
 title: Linqy batch of goodness - TVBUG meeting with Scott Hanselmann.
 summary: Notes on Beth Massi and Scott Hanselmann presentations at the TVBUG.
-categories: [.Net, Programming]
+categories: [Programming, .Net]
 ---
 
 <a href="http://www.hanselman.com/blog/">Scott Hanselmann</a> and <a href="http://blogs.msdn.com/bethmassi/">Beth

@@ -2,7 +2,7 @@
 layout: post
 title: Release of new versions of very cool software - NHibernate and Json.NET.
 summary: In the last few days two of my favorite pieces of software released new versions.
-categories: [.Net, Tools, Programming]
+categories: [Tools, Programming, .Net]
 ---
 
 In the last few days two of my favorite pieces of software released new versions. 

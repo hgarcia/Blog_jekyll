@@ -2,7 +2,7 @@
 layout: post
 title: Microsoft MVC framework available
 summary: The CTP release of the Microsoft MVC framework is available with the ASP.NET 3.5 extensions.
-categories: [.Net, Programming, Frameworks]
+categories: [Programming, Frameworks, .Net]
 ---
 
 The CTP release of the Microsoft MVC framework is available with the <a target="_blank" href="http://asp.net/downloads/3.5-extensions/">ASP.NET 3.5 extensions</a>.

@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Extending ASP.NET MVC
-summary: I want to be positive in this post. So I will just mention this once. The framework is very extensible but It’s more difficult that It should. I guess that the problem is not really with the framework, but me trying to make it do something that is not in the spirit of it.
+summary: I want to be positive in this post. So I will just mention this once. The framework is very extensible but It's more difficult that It should. I guess that the problem is not really with the framework, but me trying to make it do something that is not in the spirit of it.
 categories: [Programming, .Net]
 ---
 
