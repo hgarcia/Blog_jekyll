@@ -17,8 +17,10 @@ h3. Characteristics
 
 Most of the time you will write your application in one file that acts as a front controller. Actually is not a controller just a module,lets call it main. In the module you write methods to handle requests according to the HTTP VERB used. You map them to url's passing the pattern as the first parameter. For example.
 
-
-<script src='http://gist.github.com/561866.js?file=file0.js'></script>
+
+
+<script src='http://gist.github.com/561866.js?file=file0.js'></script>
+
 
 
 Will handle a request to the root of your application. In the same module (file) you can have all the handlers for your site (if you want) even when they represent very different resources. I prefer to separate them in some more logic organization for most but the simple apps.
@@ -26,22 +28,28 @@ For example I want to have the code that handles all calls to the route /admin/*
 
 Them at the top I just type.
 
-
-<script src='http://gist.github.com/561866.js?file=file1.js'></script>
+
+
+<script src='http://gist.github.com/561866.js?file=file1.js'></script>
+
 
 
 The unshifting of the paths is needed because we previously change it to the location of the express module you can also just type
 
-
-<script src='http://gist.github.com/561866.js?file=file2.js'></script>
+
+
+<script src='http://gist.github.com/561866.js?file=file2.js'></script>
+
 
 
 h3. Running the application and debugging.
 
 Once you have all your handlers done starting the app is as easy as type:
 
-
-<script src='http://gist.github.com/561866.js?file=file3.js'></script>
+
+
+<script src='http://gist.github.com/561866.js?file=file3.js'></script>
+
 
 
 If you have any mistakes in your code you will see an error in the command line:
@@ -61,21 +69,21 @@ Out of the box Express knows about Haml and Saas templates and will look for vie
 By default will try to get a layout by the name of "layout" for the same view engine you are using for the view, for example in our case that we are using haml, it will try to load a file by the name of layout.html.haml.
 You can disable layouts, setting layout: false in the hash passed to the render method of the request object.
 
-
-<script src='http://gist.github.com/561866.js?file=file4.js'></script>
+
+<script src='http://gist.github.com/561866.js?file=file4.js'></script>
 
 
 Or you can specify the name explicitly:
 
-
-<script src='http://gist.github.com/561866.js?file=file5.js'></script>
+
+<script src='http://gist.github.com/561866.js?file=file5.js'></script>
 
 
 h3. Plug-ins
 
 Express has a very simple plug-in architecture that make it very easy to extend. Express uses plug-ins to provide it's core services, so besides the 4 required core plug-ins you can add or remove services that you don't use.
 
-<h3 class="western">Conclusions
+h3. Conclusions
 
 Express is a cool little framework that should help you to write simple applications without a lot of hassle.
 In a future post I will take a look at Geddy another web framework, but this one inspired by Rails.
