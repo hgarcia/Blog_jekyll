@@ -9,68 +9,21 @@ In the previous post on this series we manage to get our Insert and a basic Sele
 
 This code is triplicate.
 
-{% highlight aspx-cs %}
-	public void Insert<TEntity>(TEntity entity)
-	{
-	    var document = _mongoMapperFactory.GetMapper<TEntity>().Map(entity);
-	    Db(db=> db.GetCollection(entity.GetType().Name+"Docs").Insert(document));
-	}
-	
-	public TEntity SelectOne<TEntity>(string id)
-	{
-	    Document document;
-	    using (var server = GetServer())
-	    {
-	        document = server.getDB(_dbName)
-	            .GetCollection(typeof (TEntity).Name + "Docs")
-	            .AsQueryable()
-	            .First(doc => doc["Id"].ToString().Contains(id));
-	        var mapper = _mongoMapperFactory.GetMapper<TEntity>();
-	        return mapper.Map(document);
-	    }
-	} 
-	
-	public IQueryable GetQueryableFOr<TEntity>()
-	{
-	    return GetServer().getDB(_dbName)
-	        .GetCollection(typeof (TEntity).Name + "Docs")
-	        .AsQueryable();
-	}
-{% endhighlight %}
+
+<script src='http://gist.github.com/561863.js?file=file0.aspx-cs'></script>
+
 
 First we modify the semantics in the first routine to make it identical to the other two. Them we do Extract method on it and replace all the instances with a call to this new method.
 
-{% highlight aspx-cs %}
-	public static string GetCollectionNameFor<TEntity>()
-	{
-	    return typeof (TEntity).Name + "Docs";
-	}
-{% endhighlight %}
+
+<script src='http://gist.github.com/561863.js?file=file1.aspx-cs'></script>
+
 
 Now that our code is better, letâ€™s create the first mapper.
 
-{% highlight aspx-cs %}
-	public Post Map(Document document)
-	{
-		var post = new Post
-		{
-			Id = new Guid(document["Id"].ToString()),
-			Author = document["Author"].ToString(),
-			Title = document["Title"].ToString(),
-			Description = document["Description"].ToString(),
-			Content = document["Content"].ToString(),
-			DateCreated = DateTime.Parse(document["Raters"].ToString(), CultureInfo.InvariantCulture),
-			DateModified =
-			DateTime.Parse(document["Raters"].ToString(), CultureInfo.InvariantCulture),
-			IsPublished = bool.Parse(document["Raters"].ToString()),
-			IsCommentsEnabled = bool.Parse(document["Raters"].ToString()),
-			Raters = int.Parse(document["Raters"].ToString(), CultureInfo.InvariantCulture),
-			Rating = float.Parse(document["Rating"].ToString(), CultureInfo.GetCultureInfo("en-gb")),
-			Slug = document["Slug"].ToString()
-		};
-		return post;
-	}
-{% endhighlight %}
+
+<script src='http://gist.github.com/561863.js?file=file2.aspx-cs'></script>
+
 
 Thatâ€™s an ugly piece of code. And the worst thing is that we still have a lot of work ahead of us to finish this mapper. We havenâ€™t dealt with any of the collections in the Post, for example the Comments, or the Tags. We didnâ€™t write any error handling either, this will grow ugly fast. 
 

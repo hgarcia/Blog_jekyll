@@ -9,32 +9,25 @@ Hopefully gone are the days were you considered ok the use of single letter name
 
 But what about generics? What about the <T> in them? Are you paying attention? More and more you will see that programmers are shying away from the single letter placeholder and are using more explanatory names. If you look at the code in FubuMvc you will see things like this.
 
-{% highlight aspx-cs %}
-	public TFlashModel Load<TFlashModel>() where TFlashModel : class, new()
-{% endhighlight %}
+
+<script src='http://gist.github.com/561854.js?file=file0.aspx-cs'></script>
+
 
 That is more informative than Load<T>.
 I used to do the single letter naming for generics in my code, but I’m trying to avoid it as much as possible today. The same way I won’t tolerate bad names for my functions anymore. I still have a problem with the T in there. I was also doing that, but lately I have dropped the T altogether as well. I see the use of the T as a kind of Hungarian notation. 
 
 In the Lambdas department the single letter variables are all over the place.
 
-{% highlight aspx-cs %}
-	var cities = citiesRepository.GetAll();
-	cities.Select(c => c.Name.Length > 10);
-{% endhighlight%}
+
+<script src='http://gist.github.com/561854.js?file=file1.aspx-cs'></script>
 
-Why "c"? Why not say?
-
-{% highlight aspx-cs %}
-	cities.Select(city => city.Name.Length > 10);
-{% endhighlight %}
 
 This is a simple example, where c may be sufficient since you are properly naming the collection (cities) but I still think there is something there, specially when you have longer expressions. And certainly don’t use x.
 Like in:
 
-{% highlight aspx-cs %}
-	cities.Select(x => x.Name.Length > 10);
-{% endhighlight %}
+
+<script src='http://gist.github.com/561854.js?file=file2.aspx-cs'></script>
+
 
 What’s x? What do you think?
 

@@ -21,84 +21,37 @@ We also need to know the widgets that will be in each area of the view layout. T
 
 So I decided to create an ILayoutLocator: The layout locator class has a method GetLayout that returns a layout class.
 
-{% highlight aspx-cs %}
-	public interface ILayoutLocator
-	{
-		IProngHornLayout GetLayout(IProngHornControllerContext context);
-	}
-{% endhighlight %}
+
+<script src='http://gist.github.com/561847.js?file=file0.aspx-cs'></script>
+
   
 The ProngHornLayout class is very simple:
 
-{% highlight aspx-cs %}
-	public class ProngHornLayout : IProngHornLayout
-	{
-		private IDictionary<string, IProngHornLayoutAreas> _areas = new Dictionary<string, IProngHornLayoutAreas>();
-	
-		public ProngHornLayout(string layoutPath)
-		{
-			LayoutPath = layoutPath;
-		}
-		
-		public string LayoutPath { get; set; }
-		
-		public IDictionary<string, IProngHornLayoutArea> Areas
-		{
-			get { return _areas; }
-			set { _areas = value; }
-		}
-	}
-{% endhighlight %}
+
+<script src='http://gist.github.com/561847.js?file=file1.aspx-cs'></script>
+
    
 And check the IProngHornLayoutArea.
 
-{% highlight aspx-cs %}
-	public interface IProngHornLayoutArea
-	{
-		IDictionary<string, IWidget> Widgets { get; set; }
-	}
-{% endhighlight %}
+
+<script src='http://gist.github.com/561847.js?file=file2.aspx-cs'></script>
+
  
 So the layout locator will use all relevant information in the controller context to find the layout. Layouts are configured in the database, so from there It gets, the layout path, the keys for the Areas and a list of Widgets for each area. The widgets are resolved using an IOC that is injected into the base controller by a custom controller factory.
 
 The widgets interface is simple:
 
-{% highlight aspx-cs %}
-	public interface IWidget
-	{
-		IProngHornControllerContext ControllerContext { get; }
-		IList<string> Scripts { get; set; }
-		IList<string> StyleSheets { get; set; }
-		string Title { get; set; }
-		string Rendered { get; }
-		IList<IWidget> Widgets { get; set; }
-		void Render(TextWriter writer);
-		void Render(StringBuilder builder);
-		string Render();
-	}
-{% endhighlight %}
+
+<script src='http://gist.github.com/561847.js?file=file3.aspx-cs'></script>
+
 
 I plan on leave only one or two Render methods but I haven’t decided yet on the right API. The Widgets will load the proper template (View) to render and coordinate with the necessary services to get the model they need. They will also use the caching service to reduce the number of calls to the database.
 
 The IProngHornLayout is them pass into a custom ViewDataDictionary the IProngHornViewDataDictionary.
 
-{% highlight aspx-cs %}
-	public class ProngHornViewDataDictionary : ViewDataDictionary, IProngHornViewDataDictionary
-	{
-		public ProngHornViewDataDictionary()
-		{
-			Containers = new Dictionary<string, IProngHornLayout>();
-			Scripts = new List<string>();
-			StyleSheets = new List<string>();
-			Title = string.Empty;
-		}
-		
-		public IList<string> Scripts { get; set; }
-		public IList<string> StyleSheets { get; set; }
-		public string Title { get; set; }
-		public IDictionary<string, IProngHornLayout> Areas { get; set; }
-	}
-{% endhighlight %}
+
+<script src='http://gist.github.com/561847.js?file=file4.aspx-cs'></script>
+
  
 Note the Scripts and StyleSheets properties, the Widgets can register in this properties their own dependencies and the ViewEngine should combine all them into one file to minimize load time.
 

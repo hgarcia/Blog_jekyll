@@ -9,38 +9,21 @@ In the context of this article every time I mention Linq I’m actually talking 
 
 Linq has a very handy method on FirstOrDefault<T>. When applying this method to a collection you will get in return the First object of the default of T. This works great with numeric values in the sense that the default is not null. So you can do stuff like this without anything blowing up.
 
-{% highlight aspx-cs %}
-  	var list = new List<int> { 0, 1, 2, 3, 4, 5, 6, 7, 8, 9 };
-	var valueAsString = list.FirstOrDefault(l => l == 10).ToString();
-	Console.WriteLine(valueAsString);
-{% endhighlight %}
+
+<script src='http://gist.github.com/561849.js?file=file0.aspx-cs'></script>
+
 
 The result will be "0". But what if you do this with a list of strings?
 
-{% highlight aspx-cs %} 
-	var listOfStrings = new List<string> { "h", "j", "k" };
-	var stringToUpper = listOfStrings.FirstOrDefault(l => l == "a").ToUpper();
-	Console.WriteLine(stringToUpper);
-{% endhighlight %}
+
+<script src='http://gist.github.com/561849.js?file=file1.aspx-cs'></script>
+
 
 You will get this:
 
-{% highlight console %}
-System.NullReferenceException was unhandled 
-Message=Object reference not set to an instance of an object. 
-Source=FirstOrNullObject 
+
+<script src='http://gist.github.com/561849.js?file=file2.console'></script>
 
-StackTrace: 
-at FirstOrNullObject.Program.Main(String[] args) in C:\Development\Code\DotNet\VS2010\DynamicProgrammer\FirstOrNullObject\FirstOrNullObject\Program.cs:line 21 
-at System.AppDomain._nExecuteAssembly(RuntimeAssembly assembly, String[] args) 
-at System.AppDomain.ExecuteAssembly(String assemblyFile, Evidence assemblySecurity, String[] args) 
-at Microsoft.VisualStudio.HostingProcess.HostProc.RunUsersAssembly() 
-at System.Threading.ThreadHelper.ThreadStart_Context(Object state) 
-at System.Threading.ExecutionContext.Run(ExecutionContext executionContext, ContextCallback callback, Object state, Boolean ignoreSyncCtx) 
-at System.Threading.ExecutionContext.Run(ExecutionContext executionContext, ContextCallback callback, Object state) 
-at System.Threading.ThreadHelper.ThreadStart() 
-InnerException: 
-{% endhighlight %}
 
 Why? The default of string is null.
 
@@ -50,53 +33,29 @@ Sometimes you need to filter a list of objects and access one of the properties 
 
 Linq is implemented as a set of extension methods on IEnumeration<T>, so let’s add another one!
 
-{% highlight aspx-cs %}        
-	public static T FirstOrNullObject<T>(this IEnumerable<T> enumerable, Func<T, bool> func, T nullObject)
-	{    
-		var val = enumerable.FirstOrDefault<T>(func);
-		if (val == null)
-		{
-	    	val = nullObject;
-		}
-		return val;                
-	}
-{% endhighlight %}
+
+<script src='http://gist.github.com/561849.js?file=file3.aspx-cs'></script>
+
 
 This is easy to understand, we apply the passed Func<T,bool> to FirstOrDefault if the result is null we return the passed nullObject. 
 For completion we also need to create on that can be used to get the first element of the collection without applying any filtering.
 
-{% highlight aspx-cs %}
-	public static T FirstOrNullObject<T>(this IEnumerable<T> enumerable, T nullObject)
-	{
-	    var val = enumerable.FirstOrDefault<T>();
-	    if (val == null)
-	    {
-	        val = nullObject;
-	    }
-	    return val;
-	}
-{% endhighlight %}
+
+<script src='http://gist.github.com/561849.js?file=file4.aspx-cs'></script>
+
 
 You get the most value of this methods when filtering collections of complex objects, like your domain objects. You have to be careful to use them when expecting a null object is ok, sometimes is not and a null value should be treated as an error or an exception, but in other cases is perfectly normal to get a null object as the default. You should understand that the null object is different from a default implementation of the object (like a new instance). Default objects may return some default values in their properties. For those scenarios I like to create another extension methods where you pass an instance of a new T.
 
-{% highlight aspx-cs %}
-	public static T FirstOrNew<T>(this IEnumerable<T> enumerable, Func<T, bool> func, T newObject)
-	{
-	    return enumerable.FirstOrNullObject<T>(func, newObject);
-	}
-	public static T FirstOrNew<T>(this IEnumerable<T> enumerable, T newObject)
-	{
-	    return enumerable.FirstOrNullObject<T>(newObject);
-	}
-{% endhighlight %}
+
+<script src='http://gist.github.com/561849.js?file=file5.aspx-cs'></script>
+
 
 You may notice that the implementation is calling the methods we created before, the only difference is in the name of the methods and the parameters. But it’s important to be clear on what the methods will do.
 
 Another approach is to use the same FirstOrDefault name for your new methods and you will end up with four methods, the two on Linq plus two implement by you with this signature.
 
-{% highlight aspx-cs %}
-	public static T FirstOrDefault<T>(this IEnumerable<T> enumerable, Func<T, bool> func, T defaultObject)
-	public static T FirstOrDefault<T>(this IEnumerable<T> enumerable, T defaultObject)
-{% endhighlight %}
+
+<script src='http://gist.github.com/561849.js?file=file6.aspx-cs'></script>
+
 
 And who knows, maybe that is the best approach. 

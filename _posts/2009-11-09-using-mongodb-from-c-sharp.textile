@@ -25,22 +25,21 @@ A document is not the equivalent to a Row. A document can be seen as a key-value
 
 Now, to be usable in C# we need to have some mapping from the Document object to our object graph. We could use the Document directly but will be like going back to use DataTables, not very pretty.
 
-{% highlight aspx-cs %}
-	var movieName = movie["Name"].ToString();
-	var actors = JsonConvert.DeserializeObject<Dictionary<int,string>>(movie["Actors"].ToString());
-{% endhighlight %}
+
+<script src='http://gist.github.com/561856.js?file=file0.aspx-cs'></script>
+
 
 The simple way to go from Json to an object should be to pass the load of a document to a JsonDeserializer like Json.Net and just get the object back, like this:
 
-{% highlight aspx-cs %}
-	var movie = JsonConvert.DeserializeObject<Movie>(document.ToString());
-{% endhighlight %}
+
+<script src='http://gist.github.com/561856.js?file=file1.aspx-cs'></script>
+
 
 But while trying to do so I got an error in the id of the document. Looking at the paymoad of the document the Id looks like this:
 
-{% highlight console %}
-	"_id": ObjectId("4eebf0006829c72c1d000000")
-{% endhighlight %}
+
+<script src='http://gist.github.com/561856.js?file=file2.console'></script>
+
 
 The problem is in the ObjectId function. But do not despair, there is an alternative.
 
@@ -50,88 +49,21 @@ The alternative is not pretty but works and is easy to implement. Just pass the 
 
 _Yes there are some hardcoded strings in there that should be removed. I'm also never closing the connection to the Db, when I probably should._
 
-{% highlight aspx-cs %}
-	using System;
-	using System.Collections.Generic;  3: using Newtonsoft.Json;
-	using MongoDB.Driver;
-	
-	public class Repository
-	{
-		private Database _db;
-		
-		public Database Db()
-		{
-			if(_db != null) return _db;
-			var server = new Mongo();
-			server.Connect();
-			_db = server.getDB("DynamicProgrammer");
-			return _db;
-		}
-		
-		public void Insert(Document document, string collectionName)
-		{
-			var collection = Db().GetCollection(collectionName);
-			collection.Insert(document);
-		}
-		
-		public IEnumerable<TDocument> getListOf<TDocument>(string whereClause, string fromCollection) e TDocument : IMongoEntity
-		{
-			var docs = Db().GetCollection(fromCollection)
-			.Find(whereClause).Documents;     
-			return docsToCollection<TDocument>(docs);
-		}
-		
-		private IEnumerable<TDocument> docsToCollection<TDocument>(IEnumerable<Document> documents) where ument : IMongoEntity
-		{
-			var list = new List<TDocument>();
-			var settings = new JsonSerializerSettings();
-			
-			foreach (var document in documents)
-			{
-				var docType = Activator.CreateInstance<TDocument>();
-				docType.InternalDocument = document;
-				list.Add(docType);
-			}
-			return list;
-		}	
-	}
-{% endhighlight %}
+
+<script src='http://gist.github.com/561856.js?file=file3.aspx-cs'></script>
+
 
 IMongoEntity is a simple interface to force our entities to expose the Doc property.
 
-{% highlight aspx-cs %}
-	public interface IMongoEntity
-	{
-		Document InternalDocument { get; set; }
-	}
-{% endhighlight %}
+
+<script src='http://gist.github.com/561856.js?file=file4.aspx-cs'></script>
+
 
 And our Movie Entity will look like:
 
-{% highlight aspx-cs %}
-	public class Movie : IMongoEntity
-	{
-		public string Name
-		{
-			get { return InternalDocument["Name"].ToString(); }
-			set { InternalDocument["Name"] = value; }
-		}
-		
-		public int ProductionYear
-		{
-			get { return (int)InternalDocument["Year"]; }
-			set { InternalDocument["Year"] = value; }
-		}
-		
-		public Dictionary<int, string> Actors
-		{
-			get { return JsonConvert.DeserializeObject<Dictionary<int, string>>(InternalDocument["Actors"].ToString()); }
-			set { InternalDocument["Actors"] = value; }
-		}
-	
-		public Document InternalDocument { get; set; }
-	}
-{% endhighlight %}
+
+<script src='http://gist.github.com/561856.js?file=file5.aspx-cs'></script>
+
 
 Notice I'm using JsonConverter to return a complex type, we should probably encapsulate that functionality in some kind of base class, maybe convert IMongoEntity into an abstract class that provides some basic utilities.
 

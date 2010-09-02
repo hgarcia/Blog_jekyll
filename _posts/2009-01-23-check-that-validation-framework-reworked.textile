@@ -9,43 +9,29 @@ I just finished a complete re write of my validation framework. This re write wa
 
 This allow to do multiple checks at once. Like this.
 
-{% highlight aspx-cs %}
-	var list = new Validator().CheckThat(() => _stringToTest)
-		.IsNotNullOrEmpty<ArgumentException>(null)
-		.LengthLessOrEqualTo<ArgumentException>(10, null)
-		.Match<ArgumentException>("/abc/", null)
-		.HasNoSpaces<ArgumentException>(null)
-		.List();
-{% endhighlight %}
+
+<script src='http://gist.github.com/561834.js?file=file0.aspx-cs'></script>
+
  
 In this case I call the execution method List() to return a list that contains all the exceptions found. Actually it returns an IDictionary<string,List<Exception>> where the key is the name of the variable we are checking. In this case I’m using the CheckCondition that returns a custom Exception per error, this are Generic methods that need an object[] for the constructor parameters to use in the custom exceptions and a Type that inherits from Exception.
 
 The framework also has a simple signature, where the CheckCondition will raise a pre defined Type of Exception, building the Exception message with enough detail in it, like variable name, actual value and expected value or value range.
 
-{% highlight aspx-cs %}
-	var list = new Validator().CheckThat(() => _stringToTest)
-    	.IsNullOrEmpty()
-    	.LengthLessOrEqualTo(10)
-    	.HasNoSpaces()
-    	.List();
-{% endhighlight %}  
+
+<script src='http://gist.github.com/561834.js?file=file1.aspx-cs'></script>
+  
  
 This will return the following exceptions with these messages:
 
-{% highlight aspx-cs %}
-	//Exception type: LaTrompa.Validation.NotNullOrEmptyStringException - Message: The string _stringToTest should be empty or null
-	//Exception type: LaTrompa.Validation.InvalidSizeException - Message: _stringToTest length is 17 but it should be less or equal to 10
-	//Exception type: LaTrompa.Validation.InvalidFormatException - Message: The string _stringToTest shouldn't have empty characters.
-{% endhighlight %}
+
+<script src='http://gist.github.com/561834.js?file=file2.aspx-cs'></script>
+
 
 The new validator also allows us to check multiple variables at the same time, like this.
 
-{% highlight aspx-cs %}
-	var validator = new Validator();
-	validator.CheckThat(() => _stringToTest).IsNotNullOrEmpty().IsEmail();
-	validator.CheckThat(() => datetime).IsAfter(new DateTime(2000, 10, 10));
-	validator.Throw();
-{% endhighlight %}  
+
+<script src='http://gist.github.com/561834.js?file=file3.aspx-cs'></script>
+  
 
 Throw will throw an exception of type ErrorsCollectionException, this class inherits from Exception but contains a property called ErrorsCollection that exposes the same IDictionary<string,List<Exception>> you can access using List().
 
@@ -53,26 +39,20 @@ This is useful in cases where you want to communicate all errors at once, for ex
 
 Sometimes you want to check only one thing and throw the specific exception for that given check and not the ErrorsCollectionException, this is very useful to program by contract, where each exception should be handled independently.
 
-{% highlight aspx-cs %}
-	new Validator().CheckThat(() => _stringToTest).IsUrl().ThrowFirst();
-{% endhighlight %}
+
+<script src='http://gist.github.com/561834.js?file=file4.aspx-cs'></script>
+
  
 What if you want to do multiple checks and throw only one custom exception? Well you do it like this:
 
-{% highlight aspx-cs %}
-	new Validator().CheckThat(()=>_stringToTest)
-		.HasNoSpaces().LengthLessThan(4)
-		.Throw<ArgumentNullException>(null);
-{% endhighlight %}
+
+<script src='http://gist.github.com/561834.js?file=file5.aspx-cs'></script>
+
 
 This also applies when checking more than one variable.
 
-{% highlight aspx-cs %}
-	var secondVariable = 45;
-	var validator = new Validator();
-	validator.CheckThat(() => _stringToTest).HasNoSpaces().LengthLessThan(4);
-	validator.CheckThat(() => secondVariable).IsBetween(56, 100);
-	validator.Throw<ArgumentException>(new []{"Please check the data entered and try again."})
-{% endhighlight %}
+
+<script src='http://gist.github.com/561834.js?file=file6.aspx-cs'></script>
+
 
 The code can be download as always from: <a href="http://code.google.com/p/latrompa/" target="_blank">http://code.google.com/p/latrompa/</a>

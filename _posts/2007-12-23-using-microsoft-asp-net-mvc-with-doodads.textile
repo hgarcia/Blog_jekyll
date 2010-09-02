@@ -46,23 +46,16 @@ this way.
 My next step was to modify the menu to create a Movies item, so I opened the master
 page and added the following line.
 
-{% highlight aspx-cs %}
-	<ul>
-		<li><a runat="server" href="~/">Home</a></li>
-		<li><%= Html.ActionLink("Movies", "List", "Movie") %></li>
-		<li><%= Html.ActionLink("About Us", "About", "Home") %></li>
-	</ul>
-{% endhighlight %}
+
+<script src='http://gist.github.com/561817.js?file=file0.aspx-cs'></script>
+
 
 You will need to add the connection string as and appSetting in the web.config
 for Doodads to pick it up. The key should be dbConnection.
 
-{% highlight xml %}
-	<appsettings>
-		<add value="Data Source=SERVERNAME;Initial Catalog=DATABASE;Integrated Security=True"
-		key="dbConnection"></add>
-	</appsettings>
-{% endhighlight %}
+
+<script src='http://gist.github.com/561817.js?file=file1.xml'></script>
+
 
 h3 The Controller.
 
@@ -75,34 +68,9 @@ The code for this class is very simple. I added the using statement for the name
 of my Model classes and I create a custom ViewData object using the new simpler properties.
 Declaring the type of the property will give me a strongly typed ViewData in the View.
 
-{% highlight cd %}
-	using System;
-	using System.Web;
-	using System.Web.Mvc;
-	using LaTrompa.Dal;
-	
-	namespace MvcApplication1.Controllers
-	{
-		public class MovieController : Controller
-		{
-			[ControllerAction]
-			public void List()
-			{
-				Movies movieSelection = new Movies();
-				movieSelection.LoadAll();
-				MoviesViewData customViewData = new MoviesViewData();
-				customViewData.MovieList = movieSelection;
-				
-				RenderView("Movie", <span class="Code">customViewData</span>);
-			}
-		}
-			
-		public class MoviesViewData
-		{
-			public Movies MovieList { get; set; }
-		}
-	}
-{% endhighlight %}
+
+<script src='http://gist.github.com/561817.js?file=file2.cd'></script>
+
 
 
 h3 The View.
@@ -117,35 +85,15 @@ of the MVC Content page type to use the same master page).
 I added a using for the controllers namespace and set the type of the ViewPage<T>
 object to my custom viewdata object.
 
-{% highlight cs %}
-	using System;
-	using System.Web;
-	using System.Web.Mvc;
-	using MvcApplication1.Controllers;
-	
-	namespace MvcApplication1.Views.Home
-	{
-		public partial class Movies : ViewPage<moviesviewdata>
-		{
-		}
-	}
-{% endhighlight %}
+
+<script src='http://gist.github.com/561817.js?file=file3.cs'></script>
+
 
 I them opened the aspx page and added the following.
 
-{% highlight aspx-cs %}
-	<%
-	while (!ViewData.MovieList.EOF)
-	{
-	%>
-		<h2><%= ViewData.MovieList.Title%></h2>
-		<%=ViewData.MovieList.Description%>
-		<%= Html.ActionLink(ViewData.MovieList.Category, "List", "Category")%>
-	<%
-		ViewData.MovieList.MoveNext();
-	}	
-	%>
-{% endhighlight %}
+
+<script src='http://gist.github.com/561817.js?file=file4.aspx-cs'></script>
+
 
 And that is all you need.
 

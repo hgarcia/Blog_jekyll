@@ -7,127 +7,19 @@ categories: [General, Programming]
 
 If you ever wonder what the compiler does to make the auto properties work let’s take a look at the code the way Reflector sees it. Let’s write some very useful code :-)
 
-{% highlight aspx-cs %}
-	public class AutoPropertiesDemo
-	{
-		public string MyString { get; set; }
-		public int MyInt { get; private set; }
-		public IEnumerator Enumeration { get; set; }
-	}
-{% endhighlight %}
+
+<script src='http://gist.github.com/561837.js?file=file0.aspx-cs'></script>
+
 
 Compiler this hitting F5 and them open the dll using Reflector. And this is what you will see.
 
-{% highlight aspx-cs %}	
-	public class AutoPropertiesDemo
-	{
-		// Fields
-		[CompilerGenerated]
-		private IEnumerator <Enumeration>k__BackingField;
-		
-		[CompilerGenerated]
-		private int <MyInt>k__BackingField;
-		
-		[CompilerGenerated]
-		private string <MyString>k__BackingField;
-		
-		// Properties
-		public IEnumerator Enumeration
-		{
-			[CompilerGenerated]
-			get
-			{
-				return this.<Enumeration>k__BackingField;
-			}
-			
-			[CompilerGenerated]
-			set
-			{
-				this.<Enumeration>k__BackingField = value;
-			}
-		}
-		
-		public int MyInt
-		{
-			[CompilerGenerated]
-			get
-			{
-				return this.<MyInt>k__BackingField;
-			}
-			
-			private [CompilerGenerated]
-			set
-			{
-				this.<MyInt>k__BackingField = value;
-			}
-		}
-		
-		
-		public string MyString
-		{
-			[CompilerGenerated]
-			get
-			{
-				return this.<MyString>k__BackingField;
-			}
-			
-			[CompilerGenerated]
-			set
-			{
-				this.<MyString>k__BackingField = value;
-			}
-		}
-	}
-{% endhighlight %}
+
+<script src='http://gist.github.com/561837.js?file=file1.aspx-cs'></script>
+
 
 Of course this is not exactly what the compiler does, since that will be IL. But is the way Reflector shows it as C# code. Interesting, isn’t it?
 
 If you are wondering changing the settings in Reflector to actually shows IL get this:
 
-{% highlight aspx-cs %}
-	.class public auto ansi beforefieldinit AutoPropertiesDemo
-	
-	extends [mscorlib]System.Object
-	{
-		.method public hidebysig specialname rtspecialname instance void .ctor() cil managed
-		{
-			.maxstack 8
-			L_0000: ldarg.0 
-			L_0001: call instance void [mscorlib]System.Object::.ctor()
-			L_0006: ret 
-		}
-	
-		.property instance class [mscorlib]System.Collections.IEnumerator Enumeration
-		{
-			.get instance class [mscorlib]System.Collections.IEnumerator Pronghorn.Core.AutoPropertiesDemo::get_Enumeration()
-			.set instance void Pronghorn.Core.AutoPropertiesDemo::set_Enumeration(class [mscorlib]System.Collections.IEnumerator)
-		}
-		
-		.property instance int32 MyInt
-		{
-			.get instance int32 Pronghorn.Core.AutoPropertiesDemo::get_MyInt()
-			.set instance void Pronghorn.Core.AutoPropertiesDemo::set_MyInt(int32)
-		}
-		
-		.property instance string MyString
-		{
-			.get instance string Pronghorn.Core.AutoPropertiesDemo::get_MyString()
-			.set instance void Pronghorn.Core.AutoPropertiesDemo::set_MyString(string)
-		}
-		
-		.field private class [mscorlib]System.Collections.IEnumerator <Enumeration>k__BackingField
-		{
-			.custom instance void [mscorlib]System.Runtime.CompilerServices.CompilerGeneratedAttribute::.ctor()
-		}
-	
-		.field private int32 <MyInt>k__BackingField
-		{
-			.custom instance void [mscorlib]System.Runtime.CompilerServices.CompilerGeneratedAttribute::.ctor()
-		}
-	
-		.field private string <MyString>k__BackingField
-		{
-			.custom instance void [mscorlib]System.Runtime.CompilerServices.CompilerGeneratedAttribute::.ctor()
-		}
-	}
-{% endhighlight %}
+
+<script src='http://gist.github.com/561837.js?file=file2.aspx-cs'></script>

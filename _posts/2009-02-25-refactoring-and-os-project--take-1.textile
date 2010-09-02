@@ -23,66 +23,23 @@ h3. Extract method
 
 My first refactoring was to remove as much code as possible from the Program.cs file, from this:
 
-{% highlight aspx-cs %}
-	static void Main(string[] args)
-	{
-		const string vsinstrLocation = @"C:\Program Files\Microsoft Visual Studio 9.0\Team Tools\Performance Tools";
-		const string outputPathForInstrumentation = @"E:\devtest\instrumentation";
-		List<string> toInstrument = new List<string>();
-		toInstrument.Add(@"E:\devtest\ClassLibrary1.dll");
-		
-		const string vstsCoverageOutputFile = @"E:\devtest\reports\test.coverage";
-		const string unitTestRunnerExecutable = @"E:\devtest\mbunit\mbunit.cons.exe";
-		string unitTestArguments = Path.Combine(outputPathForInstrumentation, "ClassLibrary1.dll");
-		const string symbolsPath = outputPathForInstrumentation;
-		const string exePath = outputPathForInstrumentation;
-		const string outputXml = @"E:\devtest\reports\mytestrun2.xml";
-		const string coverageXslt = @"E:\devtest\coverage.xslt";
-		const string htmlOutputFile = @"E:\devtest\reports\final.html";
-		
-		VisualStudioInstrumentation instrumentation = new VisualStudioInstrumentation(vsinstrLocation);
-		instrumentation.Instrument(outputPathForInstrumentation, toInstrument);
-		
-		UnitTestRunner testRunner = new UnitTestRunner(unitTestRunnerExecutable, unitTestArguments);
-		CoverageReportCreator reportCreator = new CoverageReportCreator(vstsCoverageOutputFile, symbolsPath, exePath, outputXml, coverageXslt, htmlOutputFile);
-		CoverageGenerator coverageGenerator = new CoverageGenerator(vstsCoverageOutputFile, testRunner, reportCreator);
-		
-		coverageGenerator.Execute();
-	}
-{% endhighlight %}
+
+<script src='http://gist.github.com/561838.js?file=file0.aspx-cs'></script>
+
 
 To this:
 
-{% highlight aspx-cs %}
-	static void Main(string[] args)
-	{
-		const string vsinstrLocation = @"C:\Program Files\Microsoft Visual Studio 9.0\Team Tools\Performance Tools";
-		const string outputPathForInstrumentation = @"E:\devtest\instrumentation";
-		
-		List<string> toInstrument = new List<string>();
-		toInstrument.Add(@"E:\devtest\ClassLibrary1.dll");
-		
-		const string vstsCoverageOutputFile = @"E:\devtest\reports\test.coverage";
-		const string unitTestRunnerExecutable = @"E:\devtest\mbunit\mbunit.cons.exe";
-		string unitTestArguments = Path.Combine(outputPathForInstrumentation, "ClassLibrary1.dll");
-		
-		const string symbolsPath = outputPathForInstrumentation;
-		const string exePath = outputPathForInstrumentation;
-		const string outputXml = @"E:\devtest\reports\mytestrun2.xml";
-		const string coverageXslt = @"E:\devtest\coverage.xslt";
-		const string htmlOutputFile = @"E:\devtest\reports\final.html";
-		
-		GetCodeCoverage(toInstrument, outputPathForInstrumentation, vsinstrLocation, unitTestRunnerExecutable, unitTestArguments, vstsCoverageOutputFile, symbolsPath, exePath, outputXml, coverageXslt, htmlOutputFile);
-	}
-{% endhighlight %}
+
+<script src='http://gist.github.com/561838.js?file=file1.aspx-cs'></script>
+
 
 I them move GetCodeCoverage into a new class called CoverageAnalyzer in the class library project. Now I want to get ride of all the parameters for GetCodeCoverage.
 
 h3. Introduce Object Parameter
 
-{% highlight aspx-cs %}
-	CoverageAnalyzer.GetCodeCoverage(new CodeCoverageParams(toInstrument, outputPathForInstrumentation, vsinstrLocation, unitTestRunnerExecutable, unitTestArguments, vstsCoverageOutputFile, symbolsPath, exePath, outputXml, coverageXslt, htmlOutputFile));
-{% endhighlight %}
+
+<script src='http://gist.github.com/561838.js?file=file2.aspx-cs'></script>
+
 
 I start looking at the constants and deciding what I actually need to pass and what can have default values. I will keep everything configurable but I think that I can assume a lot of defaults and everything will continue working.
 
@@ -90,43 +47,17 @@ So I write a bunch of test to validate my assumptions and test the CodeCoverageP
 
 The code in main looks like this now:
 
-{% highlight aspx-cs %}
-	static void Main(string[] args)
-	{
-		const string vsinstrLocation = @"C:\Program Files\Microsoft Visual Studio 9.0\Team Tools\Performance Tools";
-		const string pathToCodeToInstrument = @"C:\devtest";
-		var assembliesToInstrument = new List<string> {@"C:\devtest\UnitTest.dll"};
-		
-		const string vstsCoverageOutputFile = @"C:\devtest\test.coverage";
-		const string unitTestRunnerExecutable = @"C:\devtest\unittest\nunit-console.exe";
-		
-		string unitTestArguments = Path.Combine(pathToCodeToInstrument, "UnitTest.dll");
-		
-		const string symbolsPath = pathToCodeToInstrument;
-		const string exePath = pathToCodeToInstrument;
-		const string outputXml = @"C:\devtest\mytestrun2.xml";
-		const string coverageXslt = @"C:\devtest\coverage.xslt";
-		const string htmlOutputFile = @"C:\devtest\final.html";
-		
-		CoverageAnalyzer.GetCodeCoverage(new CodeCoverageParams(pathToCodeToInstrument, assembliesToInstrument, unitTestRunnerExecutable, unitTestArguments));
-	}
-{% endhighlight %}
+
+<script src='http://gist.github.com/561838.js?file=file3.aspx-cs'></script>
+
 
 You can’t tell on the code but R# is telling me that: vsinstrLocation, vstsCoverageOutputFile, symbolsPath, exePath, outputXml, coverageXslt and htmlOutputFile are not been used.
 
 So I can delete them and now the code on main looks even nicer:
 
-{% highlight aspx-cs %}
-	static void Main(string[] args)
-	{
-		const string pathToCodeToInstrument = @"C:\devtest";
-		var assembliesToInstrument = new List<string> {@"C:\devtest\UnitTest.dll"};
-		const string unitTestRunnerExecutable = @"C:\devtest\unittest\nunit-console.exe";
-		string unitTestArguments = Path.Combine(pathToCodeToInstrument, "UnitTest.dll");
-		
-		CoverageAnalyzer.GetCodeCoverage(new CodeCoverageParams(pathToCodeToInstrument, assembliesToInstrument, unitTestRunnerExecutable, unitTestArguments));
-	}
-{% endhighlight %}
+
+<script src='http://gist.github.com/561838.js?file=file4.aspx-cs'></script>
+
 
 Now my next task will be to parse the arguments passed on the command prompt and eliminate all the const and hardcoded strings for good. Some validation of the minimum set of parameters will be needed. This validation is already in place thanks to the Unit tests written for the CodeCoverageParams class.
 

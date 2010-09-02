@@ -9,136 +9,23 @@ Kazi Manzur Rashid has a post about registering Areas dynamically after the regi
 
 Ok, based on his post I decided to try to implement exactly what he is looking for. After poking around with reflector and brushing up my Reflection skills I came up with a first implementation that does the trick.
 
-{% highlight aspx-cs %}
-	public static class RoutCollectionExtension
-	{
-		public static RouteCollection AddArea(this RouteCollection routes, string routeName, Route newRoute)
-		{
-			var fieldInfo =  routes.GetType()
-				.GetField("_namedMap", BindingFlags.Public | BindingFlags.NonPublic | BindingFlags.Instance);
-			
-			var dict = fieldInfo.GetValue(routes);
-			dict.GetType()
-				.GetMethod("Add", BindingFlags.Public | BindingFlags.Instance)
-				.Invoke(dict,new object[]{routeName,newRoute});
-			
-			fieldInfo.SetValue(routes,dict);
-			
-			routes.GetType()
-				.GetMethod("InsertItem", BindingFlags.NonPublic | BindingFlags.Instance)
-				.Invoke(routes, new object[] { 0, newRoute });
-			
-			return routes;
-		}
-	}
-{% endhighlight %}
+
+<script src='http://gist.github.com/561857.js?file=file0.aspx-cs'></script>
+
 
 After posted this solution as a comment on Kazi’s post I decided to polish this a little more and to actually provide a similar API as the MapRoute extension from the MVC framework. The idea is to provide a set of InsertRoute and InsertRouteAfter. 
 
 So for the InsertRoute, this is the final code:
 
-{% highlight aspx-cs %}
-	public static class RoutCollectionExtension
-	{
-		public static void InsertRoute(this RouteCollection routes, int index, string routeName, Route newRoute)
-		{
-			var fieldInfo =  routes.GetType()
-				.GetField("_namedMap", BindingFlags.Public | BindingFlags.NonPublic | BindingFlags.Instance);
-			
-			var dict = fieldInfo.GetValue(routes);
-			dict.GetType()
-				.GetMethod("Add", BindingFlags.Public | BindingFlags.Instance)
-				.Invoke(dict,new object[]{routeName,newRoute});
-			
-			fieldInfo.SetValue(routes,dict);
-			
-			routes.GetType()
-				.GetMethod("InsertItem", BindingFlags.NonPublic | BindingFlags.Instance)
-				.Invoke(routes, new object[] { index, newRoute });
-		}
-	
-	
-		public static Route InsertRoute(this RouteCollection routes, int index, string name, string url)
-		{
-			return routes.InsertRoute(index, name, url, null, null);
-		}
-		
-		public static Route InsertRoute(this RouteCollection routes, int index, string name, string url, object defaults)
-		{
-			return routes.InsertRoute(index, name, url, defaults, null);
-		}
-		
-		public static Route InsertRoute(this RouteCollection routes, int index, string name, string url, string[] namespaces)
-		{
-			return routes.InsertRoute(index, name, url, null, null, namespaces);
-		}
-		
-		public static Route InsertRoute(this RouteCollection routes, int index,  string name, string url, object defaults, object constraints)
-		{
-			return routes.InsertRoute(index, name, url, defaults, constraints, null);
-		}
-	
-		public static Route InsertRoute(this RouteCollection routes, int index,  string name, string url, object defaults, string[] namespaces)
-		{
-			return routes.InsertRoute(index, name, url, defaults, null, namespaces);
-		}
-	
-		public static Route InsertRoute(this RouteCollection routes, int index, string name, string url, object defaults, object constraints, string[] namespaces)
-		{
-			if (routes == null)
-			{
-				throw new ArgumentNullException("routes");
-			}
-			if (url == null)
-			{
-				throw new ArgumentNullException("url");
-			}
-			var item = new Route(url, new MvcRouteHandler())
-			{
-				Defaults = new RouteValueDictionary(defaults),
-				Constraints = new RouteValueDictionary(constraints),
-				DataTokens = new RouteValueDictionary()
-			};
-			if ((namespaces != null) && (namespaces.Length > 0))
-			{
-				item.DataTokens["Namespaces"] = namespaces;
-			}
-			routes.InsertRoute(index, name, item);
-			return item;
-		}
-	}
-{% endhighlight %}
+
+<script src='http://gist.github.com/561857.js?file=file1.aspx-cs'></script>
+
 
 The problem with this is that you probably don’t know the index of the routes and those index will change with each route that get’s registered. So InsertRouteAfter is better since we can insert a route after another route by name. The code is very simple, I won’t display all the overloads just the actual implementation.
 
-{% highlight aspx-cs %}
-	public static void InsertRouteAfter(this RouteCollection routes, string nameOfExistingRoute, string nameOfRouteToInsert, Route newRoute)
-	{
-		var fieldInfo = routes.GetType()
-			.GetField("_namedMap", BindingFlags.Public | BindingFlags.NonPublic | BindingFlags.Instance);
-		
-		var dict = fieldInfo.GetValue(routes);
-		dict.GetType()
-			.GetMethod("Add", BindingFlags.Public | BindingFlags.Instance)
-			.Invoke(dict, new object[] { nameOfRouteToInsert, newRoute });
-		
-		var existingRoute = dict.GetType()
-			.GetProperty("Item")
-			.GetValue(dict, new[] {nameOfExistingRoute});
-		
-		fieldInfo.SetValue(routes, dict);
-		
-		var index = routes.GetType()
-			.GetMethod("IndexOf", BindingFlags.Public | BindingFlags.NonPublic | BindingFlags.Instance)
-			.Invoke(routes, new[] {existingRoute});
-		
-		index = (int) index + 1;
-		
-		routes.GetType()
-			.GetMethod("InsertItem", BindingFlags.NonPublic | BindingFlags.Instance)
-			.Invoke(routes, new[] { index, newRoute });
-	}
-{% endhighlight %}
+
+<script src='http://gist.github.com/561857.js?file=file2.aspx-cs'></script>
+
 
 h3. Warning!!!
 

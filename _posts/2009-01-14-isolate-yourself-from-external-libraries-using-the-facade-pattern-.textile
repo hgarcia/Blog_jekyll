@@ -11,169 +11,43 @@ h3. Why?
 
 Consider this example.
 
-{% highlight aspx-cs %}
-	using System;
-	using System.Collections.Generic;
-	using System.Text;
-	using log4net.Core;
-	
-	namespace HtmlHelpers
-	{
-		public class UnorderedList
-		{
-			private readonly ILogger _logger;
-			public UnorderedList(ILogger logger)
-			{
-				_logger = logger;
-			}
-			
-			public string Render(IEnumerable<string> collectionToPrint)
-			{
-				try
-				{
-					_logger.Log(collectionToPrint.GetType(),Level.Info,"Starting to render the list",null);
-					var list = new StringBuilder();
-					list.Append("<ul>");
-					foreach (var item in collectionToPrint)
-					{
-						list.AppendFormat("<li>{0}</li>", item);
-					}
-					list.Append("</ul>");
-					_logger.Log(collectionToPrint.GetType(), Level.Info, "Finishing to render the list", null);
-					return list.ToString();
-				}
-				catch (Exception e)
-				{
-					_logger.Log(collectionToPrint.GetType(),Level.Fatal,"Can't render the list",e);
-					throw;
-				}
-			}
-		}
-	}
-{% endhighlight %}
+
+<script src='http://gist.github.com/561832.js?file=file0.aspx-cs'></script>
+
 
 As you can see using the ILogger interface in the constructor give us the ability to pass any object that implements it, but take a look at the using statements.
 
-{% highlight aspx-cs %}
-	using System;
-	using System.Collections.Generic;
-	using System.Text;
-	using log4net.Core
-{% endhighlight %}
+
+<script src='http://gist.github.com/561832.js?file=file1.aspx-cs'></script>
+
 
 Yeah, Log4Net is there, so even when we are isolating ourselves from a dependency to the concrete implementation, we are still carrying a dependency to the assembly. Not only that but if we want to change our logging service we need to do it for some other logging service that implements the same interface. 
 
 As well you are having a dependency on the Level enumeration used in the signature of the Log method from the ILogger interface.
 
-{% highlight aspx-cs %}
-	_logger.Log(collectionToPrint.GetType(),Level.Fatal,"Can't render the list",e);
-{% endhighlight %}
+
+<script src='http://gist.github.com/561832.js?file=file2.aspx-cs'></script>
+
 
 While we are at this, take a look at that signature, you may want to do something simpler to use. So what will be the chance for another third party Logging library to implement this ILogger interface? Null of course. 
 
 The solution is the Facade pattern. We start defining our own interface for logging.
 
-{% highlight aspx-cs %}
-	using System;
-	
-	namespace FacadePattern
-	{
-		public interface ILogger
-		{
-			void LogException(Exception e);
-			void LogException(string message, Exception e);
-			void LogInfo(string message);
-		}
-	}
-{% endhighlight %}
+
+<script src='http://gist.github.com/561832.js?file=file3.aspx-cs'></script>
+
 
 Notice how we create specific method for the levels we want to use, you may need other methods later on, but you can always implement them when you actually need them.
 Now, we create a concrete implementation that uses Log4Net.
 
-{% highlight aspx-cs %}
-	using System;
-	using System.Diagnostics;
-	using System.IO;
-	using System.Reflection;
-	using log4net;
-	using log4net.Config;
-	
-	namespace FacadePattern
-	{
-		public class Logger : ILogger
-		{
-			private readonly ILog _logger;
-			
-			public Logger()
-			{
-				XmlConfigurator.ConfigureAndWatch(new FileInfo(Path.Combine(
-					AppDomain.CurrentDomain.SetupInformation.ApplicationBase,
-					"log4net.config")));
-				MethodBase m = new StackTrace().GetFrame(1).GetMethod();
-				_logger = LogManager.GetLogger(string.Format("{0}.{1}", m.DeclaringType, m.Name));
-			}
-			
-			public void LogException(Exception e)
-			{
-				_logger.Error(e.Message, e);
-			}
-			
-			public void LogException(string message, Exception e)
-			{
-				_logger.Error(message, e);
-			}
-			
-			public void LogInfo(string message)
-			{
-				_logger.Info(message);
-			}
-		}
-	}
-{% endhighlight %}
+
+<script src='http://gist.github.com/561832.js?file=file4.aspx-cs'></script>
+
 
 Now our objects that need Logging can consume our own implementation and any dependency on Log4Net is removed. At this point we can use Dependency Injection to provide our concrete implementation of the logging class and we are free to change the library that does the actual logging anytime we want.
 
-{% highlight aspx-cs %}
-	using System;
-	using System.Collections.Generic;
-	using System.Text;
-	using FacadePattern;
-	
-	namespace HtmlHelpers
-	{
-		public class UnorderedList
-		{
-			private readonly ILogger _logger;
-			
-			public UnorderedList(ILogger logger)
-			{
-				_logger = logger;
-			}
-			
-			public string Render(IEnumerable<string> collectionToPrint)
-			{
-				try
-				{
-					_logger.LogInfo("Starting to render the list");
-					var list = new StringBuilder();
-					list.Append("<ul>");
-					
-					foreach (var item in collectionToPrint)
-					{
-						list.AppendFormat("<li>{0}</li>", item);
-					}
-					list.Append("</ul>");
-					_logger.LogInfo("Finishing to render the list");
-					return list.ToString();
-				}
-				catch (Exception e)
-				{
-					_logger.LogException("Can't render the list",e);
-					throw;
-				}
-			}
-		}
-	}
-{% endhighlight %}
+
+<script src='http://gist.github.com/561832.js?file=file5.aspx-cs'></script>
+
 
 Also notice how much more clean and readable is the log code.

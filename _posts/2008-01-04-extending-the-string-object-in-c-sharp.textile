@@ -42,60 +42,15 @@ h3. ToCamel()
 
 The implementation is super simple.
 
-{% highlight aspx-cs %}
-	public static string ToCamel(this string value)
-	{
-		var s = value;
-		s = s.Trim().ToLower();
-		
-		if (s.Length == 0)
-		{
-			return value;
-		}
-		
-		string[] ar = null;
-		if (s.IndexOf('_') > -1)
-		{
-			ar = s.Split('_');
-		}
-		else if (s.IndexOf(' ') > -1)
-		{
-			ar = s.Split(' ');
-		}
-		
-		if (ar != null)
-		{
-			for (int i = 0; i < ar.Length; i++)
-			{
-				if (ar[i].Trim().Length > 0)
-				{
-					if (i == 0)
-					{
-						s = ar[i];
-					}
-					else
-					{
-						s += ar[i].Substring(0, 1).ToUpper() + ar[i].Substring(1);
-					}
-				}
-			}
-			return s;
-		}
-		return value;
-	}
-{% endhighlight %}
+
+<script src='http://gist.github.com/561822.js?file=file0.aspx-cs'></script>
+
 	
 An example of usage:
 
-{% highlight aspx-cs %}
-	static void Main(string[] args)
-	{
-		Console.WriteLine("this is going to be something".ToCamel());
-		Console.WriteLine("hernan_garcia".ToCamel());
-		Console.WriteLine("Hernan  Garcia".ToCamel());
-		Console.WriteLine("HernanGarcia".ToCamel());
-	}
-{% endhighlight %}
+
+<script src='http://gist.github.com/561822.js?file=file1.aspx-cs'></script>
+
 
 The result:
 
@@ -103,48 +58,15 @@ The result:
 
 h3. ToPascal()
 
-{% highlight aspx-cs %}
-	public static string ToPascal(this string value)
-	{
-		var s = value;
-		s = s.Trim().ToLower();
-		if (s.Length == 0)
-		{
-			return value;
-		}
-		string[] ar = null;
-		if (s.IndexOf('_') > -1)
-		{
-			ar = s.Split('_');
-		}
-		else if (s.IndexOf(' ') > -1)
-		{
-			ar = s.Split(' ');
-		}
-		s = string.Empty;
-		if (ar != null)
-		{
-			for (int i = 0; i < ar.Length; i++)
-			{
-				if (ar[i].Trim().Length > 0)
-				{
-					s += ar[i].Substring(0, 1).ToUpper() + ar[i].Substring(1);
-				}
-			}
-			return s;
-		}
-		return value;
-	}
-{% endhighlight %}
+
+<script src='http://gist.github.com/561822.js?file=file2.aspx-cs'></script>
+
 
 Example:
 
-{% highlight aspx-cs %}
-	Console.WriteLine("this is going to be something".ToPascal());
-	Console.WriteLine("hernan_garcia".ToPascal());
-	Console.WriteLine("Hernan  Garcia".ToPascal());
-	Console.WriteLine("HernanGarcia".ToPascal());
-{% endhighlight %}
+
+<script src='http://gist.github.com/561822.js?file=file3.aspx-cs'></script>
+
 
 The result:
 
@@ -154,43 +76,15 @@ h3. Capitalize()
 
 The code
 
-{% highlight aspx-cs %}
-	public static string Capitalize(this string value)
-	{
-		var s = value;
-		s = s.Trim().ToLower();
-		if (s.Length == 0)
-		{
-			return value;
-		}
-		string[] ar = s.Split('.');
-		s = string.Empty;
-		if (ar != null)
-		{
-			for (int i = 0; i < ar.Length; i++)
-			{
-				if (ar[i].Trim().Length > 0)
-				{
-					s += ar[i].Trim().Substring(0, 1).ToUpper() + ar[i].Trim().Substring(1) + ". ";
-				}
-			}
-			return s;
-		}
-		return value;
-	}
-{% endhighlight %}
+
+<script src='http://gist.github.com/561822.js?file=file4.aspx-cs'></script>
+
 
 Example:
 
-{% highlight aspx-cs %}
-	Console.WriteLine("this is going to be something".Capitalize());
-	Console.WriteLine("nothing To Look AT HERE.".Capitalize());
-	Console.WriteLine("this is going to be something. nothing To Look AT HERE.".Capitalize());
-	Console.WriteLine("hernan_garcia".Capitalize());
-	Console.WriteLine("Hernan Garcia".Capitalize());
-	Console.WriteLine("Hernan garcia".Capitalize());
-</pre>
-{% endhighlight %}
+
+<script src='http://gist.github.com/561822.js?file=file5.aspx-cs'></script>
+
 
 The result:
 
@@ -200,40 +94,15 @@ h3. CapitalizeAll()
 
 The code:
 
-{% highlight aspx-cs %}
-	public static string CapitalizeAll(this string value)
-	{
-		var s = value;
-		s = s.Trim().ToLower();
-		if (s.Length == 0)
-		{
-			return value;
-		}
-		string[] ar = s.Split(' ');
-		s = string.Empty;
-		if (ar != null)
-		{
-			for (int i = 0; i < ar.Length; i++)
-			{
-				if (ar[i].Trim().Length > 0)
-				{
-					s += ar[i].Trim().Substring(0, 1).ToUpper() + ar[i].Trim().Substring(1) + " ";
-				}
-			}
-			return s;
-		}
-		return value;
-	}
-{% endhighlight %}
+
+<script src='http://gist.github.com/561822.js?file=file6.aspx-cs'></script>
+
 
 Example:
 
-{% highlight aspx-cs %}
-	Console.WriteLine("this is going to be something".CapitalizeAll());
-	Console.WriteLine("hernan_garcia".CapitalizeAll());
-	Console.WriteLine("Hernan  Garcia".CapitalizeAll());
-	Console.WriteLine("Hernan garcia".CapitalizeAll());
-{% endhighlight %}
+
+<script src='http://gist.github.com/561822.js?file=file7.aspx-cs'></script>
+
 	
 The result:
 

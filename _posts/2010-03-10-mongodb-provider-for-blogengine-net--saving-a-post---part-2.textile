@@ -18,43 +18,21 @@ Let’s write a test to reproduce that bug at the unit level and see what else w
 Looking at it we discover a few dependencies that can be brake. First we create an IMongoMapperFactory interface and we make MongoMapperFactory to implement it.
 There is another dependency, the name of the database to use. We made both parameters for the constructor <a href="http://en.wikipedia.org/wiki/Dependency_inversion_principle" target="_blank">inverting the dependencies</a>.
 
-{% highlight aspx-cs %}
-	public MongoDb(IMongoMapperFactory mongoMapperFactory, string dbName)
-	{
-	    _mongoMapperFactory = mongoMapperFactory;
-	    _dbName = dbName;
-}
-{% endhighlight %}
+
+<script src='http://gist.github.com/561862.js?file=file0.aspx-cs'></script>
+
 
 We also changed the Insert method:
 
-{% highlight aspx-cs %}
-	public void Insert<TEntity>(TEntity entity)
-	{
-	    var document = _mongoMapperFactory.GetMapper<TEntity>().Map(entity);
-	    Db(db=> db.GetCollection(entity.GetType().Name+"Docs").Insert(document));
-	}
-{% endhighlight %}
+
+<script src='http://gist.github.com/561862.js?file=file1.aspx-cs'></script>
+
 
 Notice that the private Db method now takes an Action<Database>
 
-{% highlight aspx-cs %}
-	private void Db(Action<Database> action)
-	{
-	   using (var server = getServer())
-	   {
-	       var db = server.getDB(_dbName);
-	       action.Invoke(db);
-	   }
-	}
-	
-	private Mongo getServer()
-	{
-	   var server = new Mongo();
-	   server.Connect();
-	   return server;
-	}
-{% endhighlight %}
+
+<script src='http://gist.github.com/561862.js?file=file2.aspx-cs'></script>
+
 
 And the newly created getServer() helper method to clean up the code. We also made some changes on the query method but I will leave that for the next post.
 

@@ -25,15 +25,9 @@ Unzip the files downloaded into a folder of your choice. I’m using c:\MongoDB.
 Create a data and db folders under c, you should have something like c:\data\db
 Run mongod.exe from the mobogodb bin folder.
 
-{% highlight console %}
-	c:\MongoDB\bin>mongod.exe
-	mongod.exe --help for help and startup options
-	Fri Mar 05 23:09:29 Mongo DB : starting : pid = 0 port = 27017 dbpath = /data/db/ master = 0 slave = 0  64-bit
-	Fri Mar 05 23:09:29 db version v1.2.4, pdfile version 4.5
-	Fri Mar 05 23:09:29 git version: 5cf582d3d96b882c400c33e7670b811ccd47f477
-	Fri Mar 05 23:09:29 sys info: windows (6, 0, 6002, 2, 'Service Pack 2') BOOST_LIB_VERSION=1_39
-	Fri Mar 05 23:09:29 waiting for connections on port 27017
-{% endhighlight %}
+
+<script src='http://gist.github.com/561861.js?file=file0.console'></script>
+
 
 To stop the daemon just type Ctrl+c.
 
@@ -58,51 +52,15 @@ h3. Lets write the first test for our MongoDBProvider and generate the class, it
 Even when I have the source I’m treating BlogEngine.Net as a close system. This change a little bit the way I will develop such a provider. I have control of the code there are a bunch of stuff that I will probably refactor or move around. But in this case I can’t since I don’t want to fork the project.
 The first test will be to insert a new post. The code will look something like this.
 
-{% highlight aspx-cs %}
-	public override void InsertPost(Post post)
-	{
-	    using (var db = new MongoDB())
-	    {
-	        db.Insert(post);
-	    }
-	}
-{% endhighlight %}
+
+<script src='http://gist.github.com/561861.js?file=file1.aspx-cs'></script>
+
 
 Let’s take a look at the MongoDB class.
 
-{% highlight aspx-cs %}
-	public class MongoDB : IDisposable
-	{
-		private Mongo _server;
-		private Database _db;
-		
-		public MongoDB()
-		{
-			_server = new Mongo();
-		}
-		
-		private Database Db()
-		{
-			if (_db != null) return _db;
-			var server = new Mongo();
-			server.Connect();
-			_db = server.getDB(BlogSettings.Instance.Name.Replace(" ", "_"));
-			return _db;
-		}
-		
-		public void Insert<TEntity>(TEntity entity)
-		{
-			Document document = DocumentMapperFactory.GetMapper<TEntity>().Map(entity);
-			Db().GetCollection(entity.GetType().Name+"Docs").Insert(document);
-		}
-		
-		public void Dispose()
-		{
-			_server.Disconnect();
-			_server.Dispose();
-		}
-	}
-{% endhighlight %}
+
+<script src='http://gist.github.com/561861.js?file=file2.aspx-cs'></script>
+
 
 In line 27 I made sure we disconnect from the db. Note in line 21 that I’m getting a mapper from a factory. This is an obvious requirement since we need a mechanism to map from our objects to the documents and back.
 

@@ -12,22 +12,9 @@ h3 The Factory.
 
 The use of a factory allow us to easily extend this framework with minimun coding.
 
-{% highlight cs %}
-using System;
-	using System.Web;
-	
-	namespace LaTrompa.Services
-	{
-		public class ServiceHandlerFactory 
-		{
-			public static IServiceable Create(UriProcessor up)
-			{
-				return (IServiceable)Activator.CreateInstance(Type.GetType("LaTrompa.Services." +
-				up.ReturnFormat + "ServiceHandler"));
-			}
-		}
-	}
-{% endhighlight %}
+
+<script src='http://gist.github.com/561815.js?file=file0.cs'></script>
+
 
 h3 Some base classes.
 
@@ -39,98 +26,18 @@ of objects so they need to call a class that knows how to process the call for t
 given object, get the object, modify it according to the parameters and commands and
 them returned to the formatter class that will format it and do the response.
 
-{% highlight cs %}
-	using System;
-	using System.Web;
-	
-	namespace LaTrompa.Services
-	{
-		public class FormatServiceHandler
-		{
-			protected object GetRequestedObject(HttpContext context) 
-			{
-				UriProcessor up = new UriProcessor(context.Request.Url);
-				IServiceRequestHandler service = (IServiceRequestHandler)Activator.CreateInstance(Type.GetType("LaTrompa.Service."
-				+ up.ObjectType + "ServiceHandler"));
-				
-				return service.GetRequestedObject(up); 
-			}
-		}
-	}
-{% endhighlight %}
+
+<script src='http://gist.github.com/561815.js?file=file1.cs'></script>
+
 
 The second object, is one of our objects handlers, some scheleton code at this moment.
 This objects implement IServiceRequestHandler.
 
-{% highlight cs %}
-	using System;
-	using System.Collections.Specialized;
-	using System.Web;
-	using MyGeneration.dOOdads;
-	
-	namespace LaTrompa.Services
-	{
-		public class DataServiceHandler : IServiceRequestHandler
-		{
-			private BusinessEntity _dataObject;
-			protected void LoadDataObject(string objectName)
-			{
-				this._dataObject = (BusinessEntity)Activator.CreateInstance(Type.GetType("LaTrompa.DAL."
-				+ objectName, true, true));
-			}
-		
-			private object List(NameValueCollection qs) { return null; }		
-			private object Delete(NameValueCollection qs) { return null; }
-			private object Insert(NameValueCollection qs) { return null; }
-			private object Update(NameValueCollection qs) { return null; }
+
+<script src='http://gist.github.com/561815.js?file=file2.cs'></script>
 
-			private object GetColumns() 
-			{
-				return null;
-			}
-		
-			public object GetRequestedObject(UriProcessor up)
-			{
-				this.LoadDataObject(up.ObjectName);
-				
-				switch (up.Command.ToUpper())
-				{
-				case "LIST":
-						this.List(up.Qs);
-						break;
-					case "DELETE":
-						this.Delete(up.Qs);
-						break;
-					case "UPDATE":
-						this.Update(up.Qs);
-						break;
-					case "INSERT":
-						this.Insert(up.Qs);
-						break;
-					case "GETCOLUMNS":
-						this.GetColumns();
-						break;
-				}
-				return null;
-			}
-		}
-	}
-{% endhighlight %}
 
 h3 The Formatter class
 
-{% highlight cs %}
-	using System;
-	using System.Web;
-	
-	namespace LaTrompa.Services
-	{
-		public class JsonServiceHandler : FormatServiceHandler, IServiceable
-		{
-			public void Process(HttpContext context)
-			{
-				object requested = base.GetRequestedObject(context);
-			}
-		}
-	}
-{% endhighlight %}
+
+<script src='http://gist.github.com/561815.js?file=file3.cs'></script>

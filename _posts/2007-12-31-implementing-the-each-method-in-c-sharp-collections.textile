@@ -9,116 +9,27 @@ The Javascript library Prototype make use of  "prototypes" to extend some intern
 
 h3 Examples
         
-{% highlight js %}
-	['one', 'two','three'].each(function(s) {
-		alert(s);
-	});
-	
-	//or even better
-	['one','two','three'].each(doSomething);
-	
-	function doSomething(s){
-		if (s === 'one'){
-			alert('The first element').
-		}
-	}
-{% endhighlight %}
+
+<script src='http://gist.github.com/561821.js?file=file0.js'></script>
+
         
 We also have the each method in Ruby.
 
-{% highlight ruby%}
+::file1.ruby%}
 stooges = ['Larry', 'Curly', 'Moe'] stooges.each { |stooge| print stooge + "\n" }
-{% endhighlight %}
-        
-Why not have this on C#? Now with the new extension methods we can extend our collections.
-       
-??UPDATE: According to Alex the second example is superfluos since the Select method does the same thing I'm doing here. Check Alex comments at the end of the post for an example. Thanks, Alex.??
-
-So I hack together a quick solution, I'm extending the IList interface that serves as the base for most collections with an Each method that will take a delegate as argument. Here is the code.
-
-{% highlight cs %}
-	using System;
-	using System.Collections;
-	namespace LaTrompa
-	{
-		public static class CollectionExtensions
-		{
-			public delegate void GetObject(object o);
-			public delegate object ModifyObject(object o);
-			public static IList Each(this IList collection, GetObject function)
-			{
-				foreach (object item in collection)
-				{
-					function(item);
-				}
-				return collection;
-			}
-			public static IList Each(this IList collection, ModifyObject function)
-			{
-				IList col = (IList)Activator.CreateInstance(collection.GetType());
-				
-				foreach (object item in collection)
-				{
-					col.Add(function(item));
-				}
-				return col;
-			}
-		}
-	}
-{% endhighlight %}
+{% endhighlight::
 
 Using Alex suggestions I'm changing the delegates by Action<T> and Func<T,T> and using yield allow me to extend IEnumerable now. The code is way more elegant this way, thanks Alex.
 
-{% highlight cs %}        
-	public static IEnumerable Each(this IEnumerable collection, Action<object> function)
-	{
-		foreach (object item in collection)
-		{
-			function(item);
-		}
-		return collection;
-	}
-	public static IE numerable Each(this IEnumerable collection, Func<object, object> function)
-	{
-		foreach (object 	item in collection)
-		{
-			yield return function(item);
-		}
-	}
-{% endhighlight %}
+
+<script src='http://gist.github.com/561821.js?file=file2.cs'></script>
+
         
 This example will output the ToString() mehod of each object into the string. You can also modify the content of the Collection using the overload method and the delegate that returns an object.
 
-{% highlight cs %}
-	using System;
-	using System.Collections;
-	using LaTrompa;
-	
-	namespace TestApp
-	{
-		class Program
-		{	
-			static void Main(string[] args)
-			{
-				ArrayList al = new ArrayList();
-				al.Add("The first element.");
-				al.Add("The second element.");
-				al.Add("The third element.");
-				al.Each(new Func<object, object>(Modify)).Each(new Action<object>(Print));
-			}
-			
-			static public void Print(object o)
-			{
-				Console.Write(o.ToString());
-			}
-			
-			static public object Modify(object o)
-			{
-				return o.ToString() + " - Modified.\n";
-			}
-		}
-	}
-{% endhighlight %}
+
+<script src='http://gist.github.com/561821.js?file=file3.cs'></script>
+
         
 This is the output:
 

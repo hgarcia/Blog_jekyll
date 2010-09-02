@@ -16,71 +16,15 @@ The next thing we need to do is figure out how to send a BrowserCommand to this 
 
 So here is the code to click a button in a window that was open after calling window.open in the main window.
 
-{% highlight aspx-cs %}
-	[WebTestMethod]
-	public void OpenNewWindow()
-	{
-		var page = new HtmlPage("../SiteToTest/HTMLPage.htm");
-		page.Elements.Find("openWindow").Click(WaitFor.None);
-		
-		var handler = new BrowserCommandHandler
-		{
-			PopupAction = PopupAction.None,
-			RequiresElementFound = true,
-			ClientFunctionName = BrowserCommand.FunctionNames.ClickElement
-		};
-		
-		var target = new BrowserCommandTarget
-		{
-			WindowIndex = 1,
-			Id = "clickedOnTheSecondWindow"
-		};
-		
-		handler.SetArguments(false);
-		
-		var command = new BrowserCommand(BrowserCommand.FunctionNames.ClickElement)
-		{
-			Description = "Click",
-			Target = target,
-			Handler = handler
-		};
-		
-		var info = page.ExecuteCommand(command);
-	}
-{% endhighlight %}
+
+<script src='http://gist.github.com/561844.js?file=file0.aspx-cs'></script>
+
 
 Lines 4 and 5 is just the normal way you click in an element. In this case I look for an element with the Id of "openWindow" and do a Click. This is the html of the page we are testing.
 
-{% highlight html %}
-<html>
-	<head>
-		<title>My page</title>
-		<script>
-			function doConfirm() {
-				if (confirm("Do you confirm this?")) {
-					document.getElementById("mySpan").innerHTML = "OK";
-				} else {
-					document.getElementById("mySpan").innerHTML = "CANCEL";
-				}
-			}
+
+<script src='http://gist.github.com/561844.js?file=file1.html'></script>
 
-			function openNewWindow () {
-				window.open("HTMLPage.htm","_blank","toolbar=no",false);
-			}
-			function addsAMessage () {
-				document.getElementById("message").innerHTML = "This message should only appear on the second window."
-			}
-		</script>
-	</head>
-	<body>
-		<input type="button" name="myButtom" value="Do confirm" onclick="doConfirm();" />
-		<span id="mySpan"></span>
-		<input type="button" name="openWindow" value="Open new window" onclick="openNewWindow();" />
-		<input type="button" name="clickedOnTheSecondWindow" value="Clicked on the second window" onclick="addsAMessage();" />
-		<span id="message"></span>
-	</body>
-</html>
-{% endhighlight %}
 
 After this page opens I want to click the button with the name "clickedOnTheSecondWindow" in the newly opened window. For that I create a BrowserCommandHandler that knows how to handle the onclick event. A BrowserCommandTarget with the Id of the element to be checked and I pass the index (1) for the newly opened window, the original window already opened in the test frame is index 0.
 Then I create a BrowserCommand and assign the target and the handler to it.

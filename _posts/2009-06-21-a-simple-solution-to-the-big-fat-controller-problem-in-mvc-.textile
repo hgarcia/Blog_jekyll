@@ -36,24 +36,9 @@ Most web applications will only support two Get and Post. These will keep your c
 
 To enforce this on code you can create your own base controller overridden the ExecuteCore method with something like this:
 
-{% highlight aspx-cs %} 
-	protected override void ExecuteCore()
-	{
-		TempData.Load(base.ControllerContext, TempDataProvider);
-		try
-		{
-			string actionName = base.ControllerContext.HttpContext.Request.HttpMethod;
-			if (!ActionInvoker.InvokeAction(base.ControllerContext, actionName))
-			{
-				HandleUnknownAction(actionName);
-			}
-		}
-		finally
-		{
-			TempData.Save(base.ControllerContext, TempDataProvider);
-		}
-	}
-{% endhighlight %}
+
+<script src='http://gist.github.com/561852.js?file=file0.aspx-cs'></script>
+
 
 Please note that this is not REST, if you want or need to go REST make yourself a favor and take a look at "openrasta(OpenRasta REST framework for .Net)":http://www.ohloh.net/p/openrasta.
 

@@ -19,34 +19,9 @@ I just added a reference to the classes that I need to consume my model from.
 
 At this point all the controller classes will have access to my model.
 
-{% highlight aspx-cs %}
-	using System;
-	using System.Web;
-	using System.Web.Mvc;
-	using LaTrompa.Dal;
-	using MyGeneration.dOOdads;
-	
-	namespace MvcDemo2.Controllers
-	{
-		public class MovieController : Controller
-		{
-			[ControllerAction]
-			public void List()
-			{
-				Movies movieList = new Movies();
-				movieList.LoadAll();
-				MovieViewData customViewData = new MovieViewData();
-				customViewData.MovieList = movieList;
-				RenderView("List", customViewData);
-			}
-		}
-		
-		public class MovieViewData
-		{
-			public Movies MovieList { get; set; }
-		}
-	}
-{% endhighlight %}
+
+<script src='http://gist.github.com/561816.js?file=file0.aspx-cs'></script>
+
 
 I think that this is a really cool application for the MVC framework, imagine how fast you can implement a web front end leveraging existing Model and Business objects, maybe used by a desktop app.
 

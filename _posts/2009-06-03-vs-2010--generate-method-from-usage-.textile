@@ -13,48 +13,14 @@ VS 2010 incorporate this functionality as well. In ReSharper you can write the i
 
 All this is good and works very similar to ReSharper, but not so powerful. If you are initializing the class with some parameters a constructor will be created for you. The name of the parameters will be inferred (if at all possible) from the name of the variable that you are using in your code. For example in this code the MyNewClass didn’t exist before hand.
 
-{% highlight aspx-cs %} 
-	public void CreateClassFromusage()
-	{
-		var obj = new MyNewCLass("someVariable");
-		obj.GetSumOfTwoNumbers(3, 5);
-		var originalString = "This is the title.";
-		var stringsToAdd = new[]{"First line","Second line"};
-		string concatenatedString = obj.ConcatTwoStrings(originalString, stringsToAdd);
-	}
-{% endhighlight %}
+
+<script src='http://gist.github.com/561850.js?file=file0.aspx-cs'></script>
+
 
 After writing the code I when Ctrl+dot and create the class (it was created in a new file by default, nice) and the methods. 
 
-{% highlight aspx-cs %} 
-	using System;
-	using System.Collections.Generic;
-	using System.Linq;
-	using System.Text;
-	
-	namespace dynamicDemo
-	{
-	    public class MyNewCLass
-	    {
-	        private string p;
-	
-	        public MyNewCLass(string p)
-	        {
-	            // TODO: Complete member initialization
-	            this.p = p;
-	        }
-	
-	        public int GetSumOfTwoNumbers(int p, int p_2)
-	        {
-	            return p+p_2;
-	        }
-	
-	        public string ConcatTwoStrings(string originalString, string[] stringsToAdd)
-	        {
-	            throw new NotImplementedException();
-	        }
-	    }
-	}
-{% endhighlight %}
+
+<script src='http://gist.github.com/561850.js?file=file1.aspx-cs'></script>
+
 
 Notice the name of the parameters, in those ones where I used variables the parameters have proper names, the other parameters names are kind of ugly and I hope they fix that (p, p_2?). My suggestion will be to use the type plus some contextual information or at least the type plus the word parameter and them a number if you need it. In the case of strings the whole string or the first word if it’s a phrase. All in all it’s a nice feature to come with the IDE.

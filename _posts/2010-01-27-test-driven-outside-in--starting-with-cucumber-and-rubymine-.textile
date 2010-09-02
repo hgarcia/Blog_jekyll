@@ -17,13 +17,9 @@ I’m sure I could have figure it out (some confidence I have on my abilities :-
 
 Installing all the gems is easy just 
 
-{% highlight console %}
-	gem install cucumber	
-	gem install webrat		
-	gem install mechanizer	
-	gem install watir		
-	gem install rspec
-{% endhighlight %}
+
+<script src='http://gist.github.com/561860.js?file=file0.console'></script>
+
 
 and you are done (at least in my case). Of course you need to have ruby installed in your system. I have 1.8.6
 

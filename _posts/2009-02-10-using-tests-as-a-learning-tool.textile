@@ -17,83 +17,26 @@ Today I had the perfect example: we needed to convert a string into a DateTime o
 
 Our first implementation looked something like this:
 
-{% highlight aspx-cs %}
-	//The unit test
-	[Test]
-	public void Check_that_when_converting_a_string_time_we_have_the_right_date()
-	{
-		var controlDate = new DateTime(2009,01,07,23,15,09);
-		var date = GetDateFromString("2009-01-07-23-15-09");
-		Assert.That(controlDate, Is.EqualTo(date));
-	}
-	//And the implementation
-	
-	public DateTime GetDateFromString(string date)
-	{
-		var date = "2009-01-07-23-15-09".Split('-');
-		return new DateTime(Convert.ToInt(dateParts[0]),
-			Convert.ToInt(dateParts[1]),
-			Convert.ToInt(dateParts[2]),
-			Convert.ToInt(dateParts[3]),
-			Convert.ToInt(dateParts[4]),
-			Convert.ToInt(dateParts[5]));
-	}
-{% endhighlight %}
+
+<script src='http://gist.github.com/561836.js?file=file0.aspx-cs'></script>
+
 
 This worked but was messy, and besides adding some more test will make it fail easily. For example passing a malformed string. In those cases we wanted to have an exception raised that was meaningful. We imagine that we should be able to use DateTime.ParseExact() but we didn’t really know how it worked. So we changed our test like this.
 
-{% highlight aspx-cs %}
-	//The unit test
-	[Test]
-	public void Check_that_when_converting_a_string_time_we_have_the_right_date()
-	{
-		//Some code to get the cultureinfo
-		var controlDate = new DateTime(2009,01,07,23,15,09);
-		var date = DateTime.ParseExact("2009-01-07-23-15-09","yyyy-MM-dd-hh-mm-ss",culture);
-		Assert.That(controlDate, Is.EqualTo(date));
-	}
-{% endhighlight %}
+
+<script src='http://gist.github.com/561836.js?file=file1.aspx-cs'></script>
+
 
 And the test to check for the exception
 
-{% highlight aspx-cs %}
-	//The unit test
-	[Test]
-	[ExpectedException(typeof(exceptionType)]
-	public void Check_that_when_converting_a_string_time_we_have_the_right_date()
-	{
-		//Some code to get the cultureinfo
-		var date = DateTime.ParseExact("29-01-07-23-15-09","yyyy-MM-dd-hh-mm-ss",culture);
-	}
-{% endhighlight %}
+
+<script src='http://gist.github.com/561836.js?file=file2.aspx-cs'></script>
+
 
 We run the test and we see it pass, so them we just copy and paste the code into the implementation of the client function and we change the test back.
 
-{% highlight aspx-cs %}
-	//The unit test
-	[Test]
-	public void Check_that_when_converting_a_string_time_we_have_the_right_date()
-	{
-		var controlDate = new DateTime(2009,01,07,23,15,09);
-		var date = GetDateFromString("2009-01-07-23-15-09");
-		Assert.That(controlDate, Is.EqualTo(date));
-	}
-	
-	//And the test for the Exception
-	//The unit test
-	[Test]
-	[ExpectedException(typeof(exceptionType)]
-	public void Check_that_when_converting_a_string_time_we_have_the_right_date()
-	{
-		var date = GetDateFromString("29-01-07-23-15-09");
-	}
-	
-	//And the implementation
-	public DateTime GetDateFromString(string date)
-	{
-		//Some code to get the cultureinfo
-		return DateTime.ParseExact("2009-01-07-23-15-09","yyyy-MM-dd-hh-mm-ss",culture);
-	}
-{% endhighlight %}
+
+<script src='http://gist.github.com/561836.js?file=file3.aspx-cs'></script>
+
 	
 This is a trivial example and you may think that we probably should change the code in the implementation right away, and that may be ok in this case, but using this practice all the time make it natural later on when you have to deal with a more complex API, like using some third party component.

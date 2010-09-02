@@ -44,12 +44,9 @@ That is a problem with most template systems out there. They all include code so
 
 The solution was to create a simple html based view engine. I considered using <a href="http://sparkviewengine.com/" target="_blank">Sparks</a>, that is the closest thing I found to what I was looking for, but It has stuff like this: 
 
-{% highlight html %}
-<viewdata products="IEnumerable[[Product]]"/>
-<ul if="products.Any()">
-  <li each="var p in products">${p.Name}</li>
-</ul>
-{% endhighlight %}
+
+<script src='http://gist.github.com/561846.js?file=file0.html'></script>
+
 
 Sparks is awesome, and I will use it in my next project for another site that I’m doing but It won’t fit the bill for this one.
 

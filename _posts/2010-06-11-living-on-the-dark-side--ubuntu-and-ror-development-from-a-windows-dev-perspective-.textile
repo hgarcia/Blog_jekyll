@@ -23,9 +23,9 @@ h3. General impressions.
 
 The package manager: You can install lots of apps using either the synaptic package manager or the Ubuntu Software Centre but it's even faster going to the command line and just type:
 
-{% highlight console %}
-	sudo apt-get install [packages-names]
-{% endhighlight %}
+
+<script src='http://gist.github.com/561864.js?file=file0.console'></script>
+
 
 I think that as developers, not having a good package manager in windows is killing our productivity.  
 

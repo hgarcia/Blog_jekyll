@@ -27,30 +27,17 @@ Tuples are commonly used on functional programming.
 
 A common example is to use them when a method needs to return more than one value, for example a method that returns a point in a grid can return this point as a set of x,y coordinates in a Tuple.
 
-{% highlight aspx-cs %}
-	public class Point
-	{
-		public Tuple<double</font>, double</font>> CalculatePosition()
-		{
-			double positionOnX;
-			double positionOnY;
-			//Some crazy algorythm to calculate the position of Point.
-			return new Tuple<double, double>(positionOnX, positionOnY);
-		}
-	}
-{% endhighlight %}
+
+<script src='http://gist.github.com/561848.js?file=file0.aspx-cs'></script>
+
 
 Of course if the Position or Location is an important object in your domain you should create a type for that. But bare with me on this simple example.
 
 So, how you access the values in the Tuple? Very simple.
 
-{% highlight aspx-cs %}
-	public void DisplayPositionInConsole(Point point)
-	{
-		var position = point.CalculatePosition();
-		Console.WriteLine(string.Format("The point is located at x equal {0} and y equal {1}",position.Item1, position.Item2));
-	}
-{% endhighlight %}
+
+<script src='http://gist.github.com/561848.js?file=file1.aspx-cs'></script>
+
 
 The tuple has a bunch of Item(s) properties each named Item1,2,etc. depending on how many Items the Tuple has. If you are asking yourself if there is a way to determine the number of Item properties programmatically (without using Reflection), the answer, as far as I know, is no.
 
@@ -62,92 +49,32 @@ This causes a problem when using the "infinite" Tuple or the Tuple with eight pa
 
 The problem is that this can't be enforced on compilation time since ITuple is internal and may cause a runtime exception to be thrown. This code below compiles with no problems.
 
-{% highlight aspx-cs %}
-	static void Main(string[] args)
-	{
-		var myInfiniteTuple = new Tuple<int, int, int, int, int, int, int, int>(0, 1, 2, 3, 4, 5, 6, 7);
-		Console.WriteLine(myInfiniteTuple.Item1);
-		Console.Read();
-	}
-{% endhighlight %}
+
+<script src='http://gist.github.com/561848.js?file=file2.aspx-cs'></script>
+
 
 But upon running, this is the Exception thrown.
 
-{% highlight console %}
-	System.ArgumentException was unhandled 
-	Message=The last element of an eight element tuple must be a Tuple. 
-	Source=mscorlib 
-	StackTrace: 
-	at System.Tuple`8..ctor(T1 item1, T2 item2, T3 item3, T4 item4, T5 item5, T6 item6, T7 item7, TRest rest) 
-	at TupleDemo.Program.Main(String[] args) in C:\Development\Code\DotNet\VS2010\DynamicProgrammer\TupleDemo\TupleDemo\Program.cs:line 12 
-	
-	at System.AppDomain._nExecuteAssembly(RuntimeAssembly assembly, String[] args) 
-	at System.AppDomain.ExecuteAssembly(String assemblyFile, Evidence assemblySecurity, String[] args) 
-	at Microsoft.VisualStudio.HostingProcess.HostProc.RunUsersAssembly() 
-	at System.Threading.ThreadHelper.ThreadStart_Context(Object state) 
-	at System.Threading.ExecutionContext.Run(ExecutionContext executionContext, ContextCallback callback, Object state, Boolean ignoreSyncCtx) 
-	at System.Threading.ExecutionContext.Run(ExecutionContext executionContext, ContextCallback callback, Object state) 
-	at System.Threading.ThreadHelper.ThreadStart() 
-	InnerException: 
-{% endhighlight %}
+
+<script src='http://gist.github.com/561848.js?file=file3.console'></script>
+
 
 The problem is in the way this check is performed. Using reflector we can see this in the constructor.
 
-{% highlight aspx-cs %}
-	public Tuple(T1 item1, T2 item2, T3 item3, T4 item4, T5 item5, T6 item6, T7 item7, TRest rest)
-	{
-		if (!(rest is ITuple))
-		{
-			throw new ArgumentException(Environment.GetResourceString("ArgumentException_TupleLastArgumentNotATuple"));
-		}
-		this.m_Item1 = item1;
-		this.m_Item2 = item2;
-		this.m_Item3 = item3;
-		this.m_Item4 = item4;
-		this.m_Item5 = item5;
-		this.m_Item6 = item6;
-		this.m_Item7 = item7;
-		this.m_Rest = rest;
-		}
-{% endhighlight %}
+
+<script src='http://gist.github.com/561848.js?file=file4.aspx-cs'></script>
+
 
 Notice the check in line 3. If ITuple were public the constructor (and class definition) could be written like this:
 
-{% highlight aspx-cs %}
-	public class MyTuple<T1, T2, T3, T4, T5, T6, T7, T8> : IMytuple
-	{
-		public MyTuple(T1 item1, T2 item2, T3 item3, T4 item4, T5 item5, T6 item6, T7 item7, IMytuple itemTuple)
-		{
-			Item1 = item1;
-			Item2 = item2;
-			Item3 = item3;
-			Item4 = item4;
-			Item5 = item5;
-			Item6 = item6;
-			Item7 = item7;
-			ItemTuple = itemTuple;
-		}
-			
-		public T1 Item1{get;private set;}
-		public T2 Item2{get;private set;}
-		public T3 Item3{get;private set;}
-		public T4 Item4{get;private set;}
-		public T5 Item5{get;private set;}
-		public T6 Item6{get;private set;}
-		public T7 Item7{get;private set;}
-		public IMytuple ItemTuple{get;private set;}
-		
-		public int Size
-		{
-			get { return 8; }
-		}       
-	}
-{% endhighlight %}
+
+<script src='http://gist.github.com/561848.js?file=file5.aspx-cs'></script>
+
 
 IMyTuple is the same as ITuple but public. This will help to avoid the possible runtime error shown before since the compiler will refuse to compile anything that is not an implementation of ITuple.
 
-{% highlight console %}
-Error 1 The best overloaded method match for 'TupleDemo.MyTuple<int,int,int,int,int,int,int,TupleDemo.IMytuple>.MyTuple(int, int, int, int, int, int, int, TupleDemo.IMytuple)' has some invalid arguments C:\Development\Code\DotNet\VS2010\DynamicProgrammer\TupleDemo\TupleDemo\Program.cs 13 35 TupleDemo.
-{% endhighlight %}
+
+<script src='http://gist.github.com/561848.js?file=file6.console'></script>
+
 
 If ITuple is made public thought users may implement the interface in classes that are not Tuple, for example mutable classes, what can be even worse that the runtime error.

@@ -13,132 +13,22 @@ But what happened on the background? How are those types interpreted by the runt
 
 Let’s take the following code. 
 
-{% highlight aspx-cs %}
-	public class NullableEnum
-	{
-		private int? nullableInt;
-		private double? nullableDouble;
-		private decimal? nullableDecimal;
-		private DateTime? nullableDatetime;	
-	}
-{% endhighlight %}
+
+<script src='http://gist.github.com/561840.js?file=file0.aspx-cs'></script>
+
 
 Compile it and use Reflector to take a look at the result:
 
 Opening the resulting assembly with reflector shows no changes if we see the code as C# but take a look at the IL code:
 
-{% highlight aspx-cs %}
-	.class public auto ansi beforefieldinit NullableEnum
+
+<script src='http://gist.github.com/561840.js?file=file1.aspx-cs'></script>
 
-	extends [mscorlib]System.Object
-	{
-		.method public hidebysig specialname rtspecialname instance void .ctor() cil managed
-	{
-		.maxstack 8
-		L_0000: ldarg.0 
-		L_0001: call instance void [mscorlib]System.Object::.ctor()
-		L_0006: ret 
-	}
-	
-	.field private valuetype [mscorlib]System.Nullable`1<valuetype [mscorlib]System.DateTime> nullableDatetime
-	.field private valuetype [mscorlib]System.Nullable`1<valuetype [mscorlib]System.Decimal> nullableDecimal
-	.field private valuetype [mscorlib]System.Nullable`1<float64> nullableDouble
-	.field private valuetype [mscorlib]System.Nullable`1<int32> nullableInt
-	}
-{% endhighlight %}
 
 Look at the type of the fields they are all of System.Nullable<T>. This type is defined in mscorlib as follow.
 
-{% highlight aspx-cs %}
-	[Serializable, StructLayout(LayoutKind.Sequential), TypeDependency("System.Collections.Generic.NullableComparer`1"), TypeDependency("System.Collections.Generic.NullableEqualityComparer`1")]
+
+<script src='http://gist.github.com/561840.js?file=file2.aspx-cs'></script>
 
-	public struct Nullable<T> where T: struct
-	{
-	
-		private bool hasValue;
-		internal T value;
-		
-		public Nullable(T value)
-		{
-			this.value = value;
-			this.hasValue = true;
-		}
-		
-		public bool HasValue
-		{
-			get
-			{
-				return this.hasValue;
-			}
-		}
-		
-		public T Value
-		{
-			get
-			{
-				if (!this.HasValue)
-				{
-					ThrowHelper.ThrowInvalidOperationException(ExceptionResource.InvalidOperation_NoValue);
-				}
-				return this.value;
-			}
-		}
-		
-		public T GetValueOrDefault()
-		{
-			return this.value;
-		}
-		
-		public T GetValueOrDefault(T defaultValue)
-		{
-			if (!this.HasValue)
-			{
-				return defaultValue;
-			}
-			return this.value;
-		}
-		
-		public override bool Equals(object other)
-		{
-			if (!this.HasValue)
-			{
-				return (other == null);
-			}
-			if (other == null)
-			{
-				return false;
-			}
-			return this.value.Equals(other);
-		}
-		
-		public override int GetHashCode()
-		{
-			if (!this.HasValue)
-			{
-				return 0;
-			}
-			return this.value.GetHashCode();
-		}
-		
-		public override string ToString()
-		{
-			if (!this.HasValue)
-			{
-				return string.Empty;
-			}
-			return this.value.ToString();
-		}
-		
-		public static implicit operator T?(T value)
-		{
-			return new T?(value);
-		}
-		
-		public static explicit operator T(T? value)
-		{
-			return value.Value;
-		}
-	}
-{% endhighlight %}
 
 Interesting, isn’t it?

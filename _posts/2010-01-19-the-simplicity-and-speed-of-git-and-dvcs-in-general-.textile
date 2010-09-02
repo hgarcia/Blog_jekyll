@@ -21,25 +21,9 @@ I wasn’t planning on writing this post today but I just happen to grab the cod
 
 Open <a href="http://git-scm.com/" target="_blank">Console2</a> and launch the Git bash. Type the following sequence of commands.
 
-{% highlight bash %}
-Welcome to Git (version 1.6.4-preview20090730)Run 'git help git' to display the help index.Run 'git help command' to display help for specific commands.
+
+<script src='http://gist.github.com/561858.js?file=file0.bash'></script>
 
-Hernan@HERNAN-STUDIO /c/Development$ cd Code/Ruby/Koans_unresolved/
-Hernan@HERNAN-STUDIO /c/Development/Code/Ruby/Koans_unresolved$ git pull git://github.com/edgecase/ruby_koans.git
-fatal: Not a git repository (or any of the parent directories): .git
-Hernan@HERNAN-STUDIO /c/Development/Code/Ruby/Koans_unresolved$ git initInitialized empty Git repository in c:/Development/Code/Ruby/Koans_unresolved/.git/
-Hernan@HERNAN-STUDIO /c/Development/Code/Ruby/Koans_unresolved (master)$ git help
-Hernan@HERNAN-STUDIO /c/Development/Code/Ruby/Koans_unresolved (master)$ git pull git://github.com/edgecase/ruby_koans.gitremote: 
-Counting objects: 294, done.
-remote: Compressing objects: 100% (286/286), done.
-remote: Total 294 (delta 184), reused 0 (delta 0)
-Receiving objects:  44% (130/29)
-Receiving objects:  45% (133/294)
-Receiving objects: 100% (294/294), 51.84 KiB, done.
-Resolving deltas: 100% (184/184), done.
-From git://github.com/edgecase/ruby_koans * branch            HEAD       - FETCH_HEAD
-Hernan@HERNAN-STUDIO /c/Development/Code/Ruby/Koans_unresolved (master)$
-{% endhighlight %}
 
 Notice that I had to type help because I didn’t remember if I had to add a remote or I was able to do a pull right away (I removed the help output from the console output fro brevity).
 

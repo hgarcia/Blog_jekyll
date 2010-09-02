@@ -11,17 +11,9 @@ Pickle creates some step definitions for you to make things easy, what it's much
 
 The problem I got was that I wrote the following Cucumber scenario:
 
-{% highlight cucumber %}
-	@wipScenario: Assign roles Given the following roles exist 
-		| name      | 
-		| admin     | 
-		| reader    | 
-		| publisher | 
-		When I am on the roles page 
-		Then I should see "admin" 
-		And I should see "reader" 
-		And I should see "publisher"
-{% endhighlight %}
+
+<script src="http://gist.github.com/561767.js?file=gistfile1.feature"></script>
+
 
 And when running cucumber I got a message that indicates that I have an undefined step for the Given step and this bit of code:
 
@@ -29,11 +21,9 @@ And when running cucumber I got a message that indicates that I have an undefine
 
 Now that was a bit disconcerting since the Given step match this pickle steps:
 
-{% highlight ruby %}
-	# create models from a table
-	Given(/^the following #{capture_plural_factory} exists?:?$/) do |plural_factory, create_models_from_table(plural_factory, table) |
-	end
-{% endhighlight %}
+
+<script src="http://gist.github.com/561767.js?file=steps.rb"></script>
+
 
 Or so I though. The problem was that I didn't have the model or the db table yet. That was a bit disconcerting, I could expect the error message to tell me something more in the line of: Ups, we couldn't find a model for the User or something like.  
 

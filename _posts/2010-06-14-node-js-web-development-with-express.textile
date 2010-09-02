@@ -17,32 +17,32 @@ h3. Characteristics
 
 Most of the time you will write your application in one file that acts as a front controller. Actually is not a controller just a module,lets call it main. In the module you write methods to handle requests according to the HTTP VERB used. You map them to url's passing the pattern as the first parameter. For example.
 
-{% highlight js %}
-	get('/',function(){ this.redirect('/home');})
-{% endhighlight %}
+
+<script src='http://gist.github.com/561866.js?file=file0.js'></script>
+
 
 Will handle a request to the root of your application. In the same module (file) you can have all the handlers for your site (if you want) even when they represent very different resources. I prefer to separate them in some more logic organization for most but the simple apps.
 For example I want to have the code that handles all calls to the route /admin/* in an admin module, so I create a new file called admin.js and place this file in the same folder as my app.js file
 
 Them at the top I just type.
 
-{% highlight js %}
-	require.paths.unshift('.')require('admin')
-{% endhighlight %}
+
+<script src='http://gist.github.com/561866.js?file=file1.js'></script>
+
 
 The unshifting of the paths is needed because we previously change it to the location of the express module you can also just type
 
-{% highlight js %}
-	require('./admin')
-{% endhighlight %}
+
+<script src='http://gist.github.com/561866.js?file=file2.js'></script>
+
 
 h3. Running the application and debugging.
 
 Once you have all your handlers done starting the app is as easy as type:
 
-{% highlight js %}
-	node app.js
-{% endhighlight %}
+
+<script src='http://gist.github.com/561866.js?file=file3.js'></script>
+
 
 If you have any mistakes in your code you will see an error in the command line:
 
@@ -61,24 +61,15 @@ Out of the box Express knows about Haml and Saas templates and will look for vie
 By default will try to get a layout by the name of "layout" for the same view engine you are using for the view, for example in our case that we are using haml, it will try to load a file by the name of layout.html.haml.
 You can disable layouts, setting layout: false in the hash passed to the render method of the request object.
 
-{% highlight js %}
-	get('/home', function(){
-			//return 'Hello you are at the home of the new Express site';
-			this.render('home.html.haml',
-				{layout: false, 
-				 locals: { 
-				 			title: 'Express demo site', 
-				 			message: 'This welcome message is brought to you thank to Haml' 
-				 		 }
-				 })
-			 })
-{% endhighlight %}
+
+<script src='http://gist.github.com/561866.js?file=file4.js'></script>
+
 
 Or you can specify the name explicitly:
 
-{% highlight js %}
-	layout: 'general.html.haml',
-{% endhighlight %}
+
+<script src='http://gist.github.com/561866.js?file=file5.js'></script>
+
 
 h3. Plug-ins
 

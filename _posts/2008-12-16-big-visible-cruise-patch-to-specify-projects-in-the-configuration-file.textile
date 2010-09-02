@@ -9,16 +9,9 @@ Ok, the patch can be downloaded from the <a href="http://code.google.com/p/bigvi
 
 This support the following notation in the app.config.
 
-{% highlight xml %}
-<setting name="IncludedProjects" serializeAs="Xml">
-	<value>
-		<ArrayOfString xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
-			<string>CCNet</string>
-			<string>Ivy.NET</string>
-		</ArrayOfString>
-	</value>
-</setting>
-{% endhighlight %}
+
+<script src='http://gist.github.com/561829.js?file=file0.xml'></script>
+
 
 Where each <string> is the name of a project. The project names are case sensitive. If you set a RegEx to filter the projects, the expression will be evaluated first.
 

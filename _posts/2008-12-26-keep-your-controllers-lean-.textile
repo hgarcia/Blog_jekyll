@@ -9,29 +9,14 @@ I was going to write a post about this but my thoughts are exactly the same as <
 
 For example, one thing that creeps me out is seen think like this in the Controller.
 
-{% highlight aspx-cs %}
-	public ActionResult Index()
-	{
-		var repository = IocContainer.GetClassInstance<IRepository>();
-		var members = repository.GetAll<Member>();
-		ViewData["members"] = members;
-		return View();
-	}
-{% endhighlight %} 
+
+<script src='http://gist.github.com/561831.js?file=file0.aspx-cs'></script>
+ 
  
 Or even worse:
 
-{% highlight aspx-cs %}
-	public ActionResult CreateMember()
-	{
-		var member = new Member();
-		member.Hydrate(Request.Form);
-		if (member.Email == null)
-		{
-			ViewData.ModelState.AddModelError("Email", "Email can't be empty");
-		}
-		//More code here
-	}
-{% endhighlight %}
+
+<script src='http://gist.github.com/561831.js?file=file1.aspx-cs'></script>
+
  
 I don’t think that the controller should ever touch the repository and of course it shouldn’t do any type of validation besides data entry from the view.

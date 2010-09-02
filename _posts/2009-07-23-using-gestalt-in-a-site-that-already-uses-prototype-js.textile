@@ -12,17 +12,14 @@ Both jQuery and Prototype define the dollar sign function $(), in jQuery this is
 
 The problem here is that Gestalt.js internally uses the short form (the $()) of jQuery in some places. So lets say you have this lines on top of your html file
 
-{% highlight html %}
-	<script language="javascript" src="../Lib/js/jquery.js" type="text/javascript"></script> 
-	<script language="javascript" src="../Lib/js/gestalt.js" type="text/javascript"></script> 
-	<script language="javascript" src="../Lib/js/prototype.js" type="text/javascript"></script> 	
-{% endhighlight %}
+
+<script src='http://gist.github.com/561853.js?file=file0.html'></script>
+
 
 Once the page load you will see an error like this in your js console/debugger:
 
-{% highlight html %}
-	$(".xaml") is null
-	http://localhost/Gestalt/Lib/js/gestalt.jsLine 319
-{% endhighlight %}
+
+<script src='http://gist.github.com/561853.js?file=file1.html'></script>
+
 
 Now, don’t panic the solution is very simple. You can open gestalt.js and replace all occurrences of $( with jQuery( or just get gestalt-proto.js from my <a href="http://gestaltkatas.codeplex.com/SourceControl/changeset/view/35135#510582" target="_blank">Gestalt katas in Codeplex</a>.

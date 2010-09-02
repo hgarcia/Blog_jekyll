@@ -21,66 +21,23 @@ The examples in the NunitAsp are great but they all assume that you are using we
 
 So let's see the differences in the code. Let's say that you have a page with this html markup...
 
-{% highlight aspx-cs %}
-	<%@ Page Language="C#" AutoEventWireup="true" CodeFile="ala_latrompa.aspx.cs" Inherits="ala_latrompa" %>
-	<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-	<html xmlns="http://www.w3.org/1999/xhtml" >
-	<head runat="server">
-		<title>Untitled Page</title>
-		<script type="text/javascript">
-			function SendForm(){
-				document.getElementById("SureAction").value = "ChangeDiv";
-				document.getElementById("form1").submit();
-			}
-		</script>
-	</head>
-	<body>
-		<form id="form1" runat="server">
-			<input type="hidden" id="SureAction" name="SureAction" value="" runat="server" />
-			<div>
-				<div id="myDiv" runat="server">Before anything happens here...</div>
-				<input type="button" id="btnSend" value="Send" runat="server" onclick="SendForm();"/>
-			</div>
-		</form>
-	</body>
-	</html>
-{% endhighlight %}
+
+<script src='http://gist.github.com/561825.js?file=file0.aspx-cs'></script>
+
 
 ...and this code behind:
 
-{% highlight aspx-cs %}
-	using System;
-	using System.Data;
-	using System.Configuration;
-	using System.Collections;
-	using System.Web;
-	using System.Web.Security;
-	using System.Web.UI;
-	using System.Web.UI.WebControls;
-	using System.Web.UI.WebControls.WebParts;
-	using System.Web.UI.HtmlControls;
-	
-	public partial class ala_trompa : System.Web.UI.Page
-	{
-		protected void Page_Load(object sender, EventArgs e)
-		{
-			if (SureAction.Value == "ChangeDiv")
-			{
-				myDiv.InnerHtml = "After submittting the form.";
-			}	
-		}
-	}
-{% endhighlight %}
+
+<script src='http://gist.github.com/561825.js?file=file1.aspx-cs'></script>
+
 
 So your first attemp may be to call the onclick method of the button using the standard, but doing so won't call the javascript method since NunitAsp does not understand JavaScript, the page won't be submitted.
 
 So what do you do? The solution is simple, you create a TextBoxTester that will represent your hidden input field (I guess that TextBox works with any input field), change the value of the field modifying the Text property of the object and them use the static Submit method on the CurrentWebForm object.
 
-{% highlight aspx-cs %}
-	TextBoxTester hid = new TextBoxTester("SureAction");
-	hid.Text = "ChangeDiv";
-	CurrentWebForm.Submit();
-{% endhighlight %}
+
+<script src='http://gist.github.com/561825.js?file=file2.aspx-cs'></script>
+
 
 And that's all is to it, now you can start testing your web control free asp.net pages.
 

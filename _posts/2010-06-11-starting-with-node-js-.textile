@@ -16,15 +16,15 @@ Type ./configure, if you don't have a c++ compiler you will see an error.
 
 I choose to go with the g++ one, so I typed:
 
-{% highlight console %}
-	sudo apt-get install g++
-{% endhighlight %}
+
+<script src='http://gist.github.com/561865.js?file=file0.console'></script>
+
 
 Running ./configure once again and everything should go with no problems.
 Now type "make" and once that is finished 
-{% highlight console %}
-	sudo make install
-{% endhighlight %}
+
+<script src='http://gist.github.com/561865.js?file=file1.console'></script>
+
 
 To verify that everything has been installed correctly type "node" in the command, you should have the Repl. 
 h3. Writing your first program.

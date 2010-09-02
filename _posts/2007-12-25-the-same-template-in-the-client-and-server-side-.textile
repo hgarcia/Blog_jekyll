@@ -11,38 +11,21 @@ When you create an <a href="http://en.wikipedia.org/wiki/Ajax_%28programming%29"
 
 For example you may want to present the data in some particular format, lets say you get a list of movies and want to present then in some appealing form using a div with a title and image for the dvd cover and some description; Prototype makes this fairly easy. From the <a href="http://www.prototypejs.org/api/template">Prototype API Docs.</a>
 
-{% highlight js %}
-	var templateString = "<div class=\"movieContainer\">\n<h4 class=\"movieTitle\">#{title}</h4>\n"; 
-	templateString += "<img src=\"#{dvdCover}\" class=\"movieCover\" alt=\"#{title}\" />\n";
-	templateString += "<p>#{description}</p>\n</div>\n";
-	
-	// the template (our formatting expression)
-	var myTemplate = new Template(templateString);
-	
-	// our data to be formatted by the template
-	var show = {title: 'The Simpsons', description: 'Create by Matt Groening', dvdCover: 'images/simpsons.jpg' };
-	
-	// let's format our data
-	myTemplate.evaluate(show);
-{% endhighlight %}
+
+<script src='http://gist.github.com/561819.js?file=file0.js'></script>
+
 
 Now you have this template in the client inside your page, witch is no good, so we better move that from there into an add hoc object, you may want to separate your templates based on witch part of the site are they going to be used on. You may also want to put them all together and take advantage of the browser caching them on the first load, etc. I like to create a javascript object that holds my client side templates on properties. (Please ignore the ugly string concatenation it just there for readability).
 
-{% highlight js %}
+
+<script src='http://gist.github.com/561819.js?file=file1.js'></script>
 
-	var LaTrompa = {};
-	LaTrompa.Templates = {};
-	LaTrompa.Templates.movieDisplay = "<div class=\"movieContainer\">\n<h4 class=\"movieTitle\">#{title}</h4>\n";  
-	LaTrompa.Templates.movieDisplay += "<img src=\"#{dvdCover}\" class=\"movieCover\" alt=\"#{title}\" />\n";
-	LaTrompa.Templates.movieDisplay += "<p>#{description}</p>\n</div>\n";
-	
-{% endhighlight %}
 
 But in most applications I also want to use the same template in the server side and I don't want to write the code twice, so I create this <a href="../../../images/posts/latrompalibraries.zip">very simple template engine</a>.<br/>The code that do the templating resides on LaTrompa.Templating.dll, this is a simple usage, once again please don't mind the concatenation.
 
-{% highlight aspx-cs %}
-<pre lang="csharp"> string txt = "<div class=\"movieContainer\">n<h4 class=\"movieTitle\">#{title}</h4>\n";<br/>  txt += "<img src=\"#{dvdCover}\" class=\"movieCover\" alt=\"#{title}\" />\n";<br/>  txt += "<p>#{description}</p>\n</div>\n";<br/> <br/>  Template t = new Template(txt);<br/>  string processed = t.Process(new { title = "The title", description = "The description", dvdCover="cover.jpg"}, true, true);<br/>  Console.Write(processed);<br/> </pre>
-{% endhighlight %}
+
+<script src='http://gist.github.com/561819.js?file=file2.aspx-cs'></script>
+
 
 The result will look like:
 
