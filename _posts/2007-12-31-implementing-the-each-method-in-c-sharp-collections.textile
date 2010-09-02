@@ -9,26 +9,30 @@ The Javascript library Prototype make use of  "prototypes" to extend some intern
 
 h3 Examples
         
-
-<script src='http://gist.github.com/561821.js?file=file0.js'></script>
 
-        
+<script src='http://gist.github.com/561821.js?file=file0.js'></script>
+
+    
 We also have the each method in Ruby.
 
-::file1.ruby%}
-stooges = ['Larry', 'Curly', 'Moe'] stooges.each { |stooge| print stooge + "\n" }
-{% endhighlight::
+
+<script src='http://gist.github.com/561821.js?file=file1.rb'></script>
+
 
 Using Alex suggestions I'm changing the delegates by Action<T> and Func<T,T> and using yield allow me to extend IEnumerable now. The code is way more elegant this way, thanks Alex.
 
-
-<script src='http://gist.github.com/561821.js?file=file2.cs'></script>
+
+
+<script src='http://gist.github.com/561821.js?file=file2.cs'></script>
+
 
         
 This example will output the ToString() mehod of each object into the string. You can also modify the content of the Collection using the overload method and the delegate that returns an object.
 
-
-<script src='http://gist.github.com/561821.js?file=file3.cs'></script>
+
+
+<script src='http://gist.github.com/561821.js?file=file3.cs'></script>
+
 
         
 This is the output:
