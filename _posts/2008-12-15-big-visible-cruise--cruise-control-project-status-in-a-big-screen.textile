@@ -13,8 +13,8 @@ What about using a big flat panel TV? Cruise Control provides information via xm
 
 This is a WCF application, you just put it in a computer connected to a TV. Double click in the exe file, provide the URL for your dashboard and there you go.
 
-It has a property in the configuration file to provide a Regular Expression to indicate witch projects to include in the screen. I prefer to just specify the projects explicitly, so I made a small change in the code to load a list of projects from a txt file and filter the projects using this list. I’m not super happy with the quality of the code, so I will work a little bit more on it before sending a path in case somebody find it useful. I want to use the configuration file to set the projects instead of a text file and probably filter the projects in a different way.
+It has a property in the configuration file to provide a Regular Expression to indicate witch projects to include in the screen. I prefer to just specify the projects explicitly, so I made a small change in the code to load a list of projects from a txt file and filter the projects using this list. I'm not super happy with the quality of the code, so I will work a little bit more on it before sending a path in case somebody find it useful. I want to use the configuration file to set the projects instead of a text file and probably filter the projects in a different way.
 
-We put the TV near the development team but visible by all the company. We haven’t make a public announcement yet, but I saw some of the guys on the marketing team to looking at it when they walked by and one of them asked me about it. This is exactly what you want great visibility, hopefully will help us to improve communication with the other divisions.
+We put the TV near the development team but visible by all the company. We haven't make a public announcement yet, but I saw some of the guys on the marketing team to looking at it when they walked by and one of them asked me about it. This is exactly what you want great visibility, hopefully will help us to improve communication with the other divisions.
 
 And besides all that, It looks really great.

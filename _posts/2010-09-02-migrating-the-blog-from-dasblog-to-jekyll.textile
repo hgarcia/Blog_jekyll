@@ -1,0 +1,7 @@
+---
+layout: post
+title: Migrating the blog from dasblog to jekyll.
+summary: I remember the time when WebMatrix was this tiny little web editor done in .net that the crazy guys like me used to edit their first asp.net pages (without code behind and moving away from classic asp).
+categories: [General]
+---
+
