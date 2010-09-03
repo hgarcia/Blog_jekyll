@@ -1,6 +1,4 @@
 migrate comments to disqus
-Point domain to heroku.
-Make sure ad-sense code is in place
 Fix ' encoding problems.
 add the twitter feed
 v2: Create a dashboard (home page)
