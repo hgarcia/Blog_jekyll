@@ -172,7 +172,7 @@ div#content aside{
 	padding-left: 20px;
 	width: 30%;
 }
-div#content aside li{
+li.sidebar{
 	padding-bottom: 35px;
 }
 div#content aside li h4{
@@ -206,4 +206,71 @@ blockquote{
 	border: 2px solid #215872;
 	margin: 5px;
 	padding: 20px;	
+}
+div#twitter_div{
+	background: none repeat scroll 0 0 #FFFFFF;
+	border: 1px solid #CCCCCC;
+	font-family: arial,sans-serif;
+	font-size: 10pt;
+	font-weight: normal;
+	margin: 0.5em;
+	padding: 0;
+	text-align: left;
+	text-decoration: none;
+	text-indent: 0;
+}
+h2.sidebar-title{
+	background: none repeat scroll 0 0 #EEEEEE;
+	border-color: -moz-use-text-color -moz-use-text-color #CCCCCC;
+	border-style: none none solid;
+	border-width: medium medium 1px;
+	color: #666666;
+	font-weight: normal;
+	margin: 0;
+	padding: 0.2em 0.5em;
+	text-align: left;
+	text-decoration: none;
+	text-indent: 0;
+}
+ul#twitter_update_list{
+	background:none repeat scroll 0 0 transparent;
+	border: medium none;
+	font-weight: normal;
+	margin: 0 0.5em;
+	overflow: hidden;
+	padding: 0.2em;
+	text-align: left;
+	text-decoration: none;
+	text-indent: 0;
+}
+a#twitter-link{
+	background: none repeat scroll 0 0 #EEEEEE;
+	border-color: #CCCCCC -moz-use-text-color -moz-use-text-color;
+	border-style: solid none none;
+	border-width: 1px medium medium;
+	font-size: small;
+	font-weight: normal;
+	margin: 0;
+	overflow: hidden;
+	padding: 0.2em 8px;
+	text-align: right;
+	text-decoration: underline;
+	text-indent: 0;
+	white-space: nowrap;
+	color: #AAAAAA;		
+}
+ul#twitter_update_list li{
+	background: none repeat scroll 0 0 transparent;
+	border: medium none;
+	font-weight: normal;
+	list-style-type: none;
+	margin: 0;
+	padding: 0.4em 0;
+	text-align: left;
+	text-decoration: none;
+	text-indent: 0;
+	color: #999999;
+}
+ul#twitter_update_list li a{
+	color: #999999;
 }
