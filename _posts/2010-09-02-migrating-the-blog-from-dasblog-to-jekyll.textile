@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Migrating the blog from dasblog to jekyll.
-summary: Dasblog worked ok, but I wanted more control on the html and something that was more than a blogging platform. Since I have been playing a lot with ruby lately I also wanted my new solution to be based on ruby..
+summary: Dasblog worked ok, but I wanted more control on the html and something that was more than a blogging platform. Since I have been playing a lot with ruby lately I also wanted my new solution to be based on ruby.
 categories: [General]
 ---
 

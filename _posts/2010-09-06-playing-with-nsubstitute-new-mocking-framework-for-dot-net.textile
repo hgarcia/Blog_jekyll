@@ -1,0 +1,13 @@
+---
+layout: post
+title: Playing with NSubstitute, the new mocking framework for .Net
+summary:
+categories: [Programming, Testing, Tools, .Net] 
+published: False
+---
+
+(how I hear about it)
+
+h3. Syntax differences
+
+
