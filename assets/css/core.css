@@ -274,3 +274,20 @@ ul#twitter_update_list li{
 ul#twitter_update_list li a{
 	color: #999999;
 }
+
+p.tweet-link{
+	display: block;
+	margin: 5px;
+	padding: 10px;	
+	border-radius:10px 10px 10px 10px;
+	-moz-border-radius :10px 10px 10px 10px;
+	-webkit-border-radius: 10px 10px 10px 10px;
+	background-color: #D5F36E;
+	border: 2px solid #90AD2C;		
+}
+span.by-link{
+	
+}
+span.comment-link{
+	
+}
