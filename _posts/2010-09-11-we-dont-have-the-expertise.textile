@@ -3,6 +3,7 @@ layout: post
 title: We don't have the expertise.
 summary: It's funny that we all use that excuse to avoid doing and/or learning something that chanllenge our comfort zone
 categories: [General, Programming]
+published: False
 ---
 
 A few months back I was talking with another developer at a user group meeting and I was asking him if they were doing any type of unit testing. The asnwer was, no, we don't have the expertise.

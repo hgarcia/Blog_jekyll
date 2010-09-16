@@ -10,9 +10,9 @@ I'm almost half way through it and so far is exactly as Davy describes it in his
 
 This post is not really about the book but about a new syntax on lambda called stabby lambda. The book just makes a mention to the new syntax but doesn't goes in depth about why the new syntax have been introduced. Of course that picked my curiosity so I decided to do some research on the subject.
 
-??note the book has a Typo stubby lambda when it should be stabby lambda. Check the "erratas for the book":http://pragprog.com/titles/ppmetr/errata .??
+??Note the book has a Typo stubby lambda when it should be stabby lambda. Check the "erratas for the book":http://pragprog.com/titles/ppmetr/errata .??
 
-__Warning, warning, take everything in this post with a <strike>grain</strike> pound of salt. I'm not expert in ruby, this are just my findings in a very quick research of the subject.__
+<em>Warning, warning, take everything in this post with a <strike>grain</strike> pound of salt. I'm not expert in ruby, this are just my findings in a very quick research of the subject.</em>
 
 My first stop was at "Rails Spikes":http://railspikes.com/2008/9/8/lambda-in-ruby-1-9 and it was a good one since it pretty much covers the why of this new syntax. The first reason for the new syntax seems to be support of default values for parameters:
 
