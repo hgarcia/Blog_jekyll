@@ -10,18 +10,18 @@ p(tweet-link). "Mastering the Art of APIs – Part 1":http://bit.ly/9uSxLo
 
 p(tweet-link). "A Big Forking Problem":http://bit.ly/ctZM77
 <span class="by-link">Adrian Sutton</span>
-span(comment-link). On git, github and building communities</span>
+<span class="comment-link">On git, github and building communities</span>
 
 p(tweet-link). "Slaying dragons with git, bash, and ruby":http://bit.ly/cJzCiv
 <span class="by-link">Ruby Pond</span>
-span(comment-link). Really cool article on taking advantage of those git hooks</span>
+<span class="comment-link">Really cool article on taking advantage of those git hooks</span>
 
 p(tweet-link). "Simplicity is Not Overrated, Just Misunderstood":http://bit.ly/adSzJY
 <span class="by-link">UXMovement.com</span>
 
 p(tweet-link). "Limiting Concurrency in Node.js":http://bit.ly/96VSLj
 <span class="by-link">Paul's Journal</span> 
-span(comment-link). Sounds counter intuitive but it has a point in there</span>
+<span class="comment-link">Sounds counter intuitive but it has a point in there</span>
 
 p(tweet-link). "Steak: because Cucumber is for vegetarians!":http://bit.ly/9pznhH
 <span class="by-link">Jeff Kreeftmeijer</span>

@@ -282,12 +282,14 @@ p.tweet-link{
 	border-radius:10px 10px 10px 10px;
 	-moz-border-radius :10px 10px 10px 10px;
 	-webkit-border-radius: 10px 10px 10px 10px;
-	background-color: #D5F36E;
-	border: 2px solid #90AD2C;		
+	background-color: #EEEEEE;
+	border: 2px solid #999999;		
 }
 span.by-link{
-	
+	font-size: 0.9em;
+	font-style: italic;
 }
 span.comment-link{
-	
+	font-size: 0.9em;
+	color: #555555;
 }
