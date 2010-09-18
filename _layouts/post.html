@@ -5,7 +5,7 @@ layout: default
 <article>
 	<header>
 		<h2>{{ page.title }}</h2>	
-	<header>
+	</header>
 	<footer>|
 		{% for category in page.categories %}
 			<a href="{{ site.blog_url }}/categories/{{ category | downcase | replace:'.','-' | replace:' ','_' }}.html" title="Read other articles in {{ category }}">{{ category }}</a> | 
