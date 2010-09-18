@@ -15,7 +15,7 @@ Since I wasn't under pressure I took the time to read the specs and the differen
 
 The usage of the aside tag has evolved and in most cases today is used for auxiliar navigation or extra content (in this page is used for the right side navigation bar).
 
-h3 A header is a header is a header.
+h3. A header is a header is a header.
 
 The header tag is not only relegate to be used at the page context level, but can be used to identify the header of any section. For example the header of an article (inside an article tag) or a section (inside a section).
 
