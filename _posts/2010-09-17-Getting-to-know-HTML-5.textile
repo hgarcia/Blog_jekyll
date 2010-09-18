@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Getting to know HTML 5.
-summary: 
+summary: HTML 5 is way more than the highly tooted video tag or the use of canvas, it provides new tags for a more semantic representation of documents.
 categories: [General, Html 5]
 ---
 
