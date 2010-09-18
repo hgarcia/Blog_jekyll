@@ -293,3 +293,10 @@ span.comment-link{
 	font-size: 0.9em;
 	color: #555555;
 }
+img { 
+	border: 0;
+}
+img#avatar {
+	padding: 4px;
+	float: left;
+}
