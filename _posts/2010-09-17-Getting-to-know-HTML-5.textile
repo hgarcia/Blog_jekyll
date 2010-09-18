@@ -9,9 +9,9 @@ I recently moved my blog from "DasBlog to Jekyll":http://blog.dynamicprogrammer.
 
 HTML 5 is way more than the highly tooted video tag or the use of canvas, it provides new tags for a more semantic representation of documents. 
 
-For the blog the ones I used the most are &lt;article&gt;, &lt;section&gt;, &lt;header&gt;, &lt;footer> and &lt;aside&gt;.
+For the blog the ones I used the most are &lt;article&gt;, &lt;section&gt;, &lt;header&gt;, &lt;footer&gt; and &lt;aside&gt;.
 
-Since I wasn't under pressure I took the time to read the specs and the different interpretations. For example the <aside> tag. A first suggestion was to use the aside tag for data related to the main content of the container, for example if you have an article tag that contains this post the aside tag could be used to display information of related articles or resources like the w3c site.
+Since I wasn't under pressure I took the time to read the specs and the different interpretations. For example the &lt;aside&gt; tag. A first suggestion was to use the aside tag for data related to the main content of the container, for example if you have an article tag that contains this post the aside tag could be used to display information of related articles or resources like the w3c site.
 
 The usage of the aside tag has evolved and in most cases today is used for auxiliar navigation or extra content (in this page is used for the right side navigation bar).
 
