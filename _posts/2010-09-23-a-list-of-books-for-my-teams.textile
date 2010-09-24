@@ -15,7 +15,7 @@ I'm leaving some very process oriented books out of the list. I'm trying to keep
 
 <em>There are two .net specific books since thats the platform we use. At the same time I consider CSS, HTML and JavaScript universal technologies. They are the foundation of the modern web, aren't they?</em>
 
-I'm pretty sure that I'm missing some good ones from the list, but I think this is a good start. 
+I'm pretty sure that I'm missing some good ones from the list, but I think this is a good start (see below some suggestions from you, my dear readers). 
 
 
 h3. List of books that should be read.
@@ -82,3 +82,20 @@ Jeffrey Zeldman, Ethan Marcotte
 
 "Handcrafted CSS: More Bulletproof Web Design":http://www.amazon.ca/Handcrafted-CSS-More-Bulletproof-Design/dp/0321643380/ref=pd_bxgy_b_text_b
 Dan Cederholm, Ethan Marcotte
+
+
+h3. The missing books
+
+Suggested by "Jack Carlton":http://twitter.com/JakCharlton
+
+"Code Complete 2: A Practical Handbook of Software Construction":http://www.amazon.com/Code-Complete-Practical-Handbook-Construction/dp/0735619670/ref=sr_1_1?s=gateway&ie=UTF8&qid=1285299653&sr=8-1
+Steve McConnell
+
+"Ship it! A Practical Guide to Successful Software Projects":http://www.amazon.com/Practical-Guide-Successful-Software-Projects/dp/0974514047/ref=sr_1_1?s=books&ie=UTF8&qid=1285299830&sr=1-1
+Jared Richardson 
+
+"Release It!: Design and Deploy Production-Ready Software":http://www.amazon.com/Release-Production-Ready-Software-Pragmatic-Programmers/dp/0978739213/ref=pd_bxgy_b_text_b
+Michael T. Nygard
+
+"The Mythical Man-Month: Essays on Software Engineering":http://www.amazon.com/Mythical-Man-Month-Software-Engineering-Anniversary/dp/0201835959/ref=pd_bxgy_b_text_b
+Frederick P. Brooks
