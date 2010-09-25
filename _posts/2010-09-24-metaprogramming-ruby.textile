@@ -1,13 +1,13 @@
 ---
 layout: post
 title: Metaprogramming ruby, book review.
-summary:
+summary: This is one of the best books I read this year. What can be a fairly complicate subject, explained in such a way that make for a good and very entertainned reading.
 categories: [Ruby, Books]
 ---
 
 Two weeks ago "Davy Brion wrote this great review of Metaprogramming Ruby":http://davybrion.com/blog/2010/09/highly-recommended-book-metaprogramming-ruby/. The review is so good that, since I had the book in my queue list, I decided to jump on it right away.
 
-I wasn't dissapointed. The book is really that good. 
+I wasn't disappointed. The book is really that good. 
 
 h3. Structure.
 
@@ -40,4 +40,3 @@ Common idioms (appendix A) will really help you (and me) to write ruby code that
 h3. Conclusion.
 
 This is one of the best books on programming that I read so far this year. If you are into Ruby I highly recommend it.
-
