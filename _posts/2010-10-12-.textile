@@ -1,0 +1,13 @@
+---
+layout: post
+title: Why NuStack should be a reason to celebrate.
+summary: This morning I woke up to a confilcted Tweeter universe. Tweets were coming in raving about NuStack and just another fail by Microsoft on recognizing and embracing OSS efforts.
+categories: []
+published: False
+---
+
+This morning I woke up to a confilcted Tweeter universe. Tweets were coming in raving about NuStack and just another fail by Microsoft on recognizing and embracing OSS efforts.
+
+Tweeter and it's 140 characters limit, is not the best to convey complex analysis or even provide very detailed information about any topic in particular. So I decided to actually 
+
+
