@@ -1,0 +1,8 @@
+---
+layout: post
+title: Luca, writting a simple application.
+summary:
+categories: [Luca, Programming, .Net, JavaScript]
+published: False
+---
+
