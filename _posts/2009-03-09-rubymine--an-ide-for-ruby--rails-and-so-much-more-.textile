@@ -42,7 +42,7 @@ Also some classes have a (dependencies?) icon beside its declaration that help y
 
 h3. Code hints and code analysis
 
-The familiar (for ReSharper users) yellow light bulb, shows up in some cases giving you hints on how to improve your code. In this case I positioned the cursor on the ‘new' string and the id understands that I'm referring to the new action, so it suggest to use a symbol instead.
+The familiar (for ReSharper users) yellow light bulb, shows up in some cases giving you hints on how to improve your code. In this case I positioned the cursor on the 'new' string and the id understands that I'm referring to the new action, so it suggest to use a symbol instead.
 
 <a href="../../../images/posts/RubyMineanIDEforRubyRailsandsomuchmore_A03C/ScreenHunter_05%202009-03-08%2022.41.49_2.jpg"><img height="66" alt="ScreenHunter_05 2009-03-08 22.41.49" src="../../../images/posts/RubyMineanIDEforRubyRailsandsomuchmore_A03C/ScreenHunter_05%202009-03-08%2022.41.49_thumb.jpg" width="275" border="0" /></a> 
 

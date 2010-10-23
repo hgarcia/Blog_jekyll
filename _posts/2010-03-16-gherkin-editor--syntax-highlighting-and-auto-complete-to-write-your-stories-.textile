@@ -9,7 +9,7 @@ Last Friday I was showing some of the guys at the office how to write user stori
 
 They were receptive but they have a problem. Notepad. They wanted to use Word and have a template, and some spell checking support….
 
-At first I got a little frustrated but I actually thought about it and try to put myself on their shoes. Here I’m, a developer, asking to the business to write specs in a very specific format. It’s not that they were negative about it, but they were expressing they concerns and they needs.
+At first I got a little frustrated but I actually thought about it and try to put myself on their shoes. Here I'm, a developer, asking to the business to write specs in a very specific format. It's not that they were negative about it, but they were expressing they concerns and they needs.
 
 h3. Enter Gherkin editor.
 

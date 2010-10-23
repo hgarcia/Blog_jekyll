@@ -1,6 +1,6 @@
 ---
 layout: post
-title: What is ProngHorn and why I’m doing it?
+title: What is ProngHorn and why I'm doing it?
 summary: Pronghorn is still a work in progress and the architecture+design is changing very fast. At this moment the main focus is on the ViewEngine because...
 categories: [Frameworks, Programming, Tools]
 ---
@@ -26,4 +26,4 @@ Composition is achieved via some Injection mechanism using DI.
 
 Widgets "publish" to the page, called skin in Pronghorn witch css, js files will need. These resources should be minified and combined to reduce network traffic and # of http calls from the browsers to improve performance and load time.
 
-To keep up with the project you can subscribe to the <a href="http://pronghorn.codeplex.com/Project/ProjectRss.aspx?ProjectRSSFeed=codeplex%3a%2f%2fwiki%2fProngHorn">project’s wiki RSS</a>. Where you can get all the updates, a bit chatty but may be useful or visit the <a href="http://pronghorn.codeplex.com">project’s home page</a> periodically.
+To keep up with the project you can subscribe to the <a href="http://pronghorn.codeplex.com/Project/ProjectRss.aspx?ProjectRSSFeed=codeplex%3a%2f%2fwiki%2fProngHorn">project's wiki RSS</a>. Where you can get all the updates, a bit chatty but may be useful or visit the <a href="http://pronghorn.codeplex.com">project's home page</a> periodically.

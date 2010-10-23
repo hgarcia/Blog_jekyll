@@ -13,17 +13,19 @@ You write a second scenario and you start again. If everything works as supposed
 
 Since the application will be written in c# I look around for some tool to write the Scenarios in the same language. There are some options but none of them was as elegant as using Cucumber. So I tried cuke4nuke but I have no luck with it. I kept getting an error about server not running or something. It looks like a permission problems with win 7. 
 
-I’m sure I could have figure it out (some confidence I have on my abilities :-)) but after giving it a second though I decided to go with Cucumber and RSpec for those test. Drive the browser with Watir and hit the web services end points with webrat, sometimes even script the UI with webrat when the browser is not really need it.
+I'm sure I could have figure it out (some confidence I have on my abilities :-)) but after giving it a second though I decided to go with Cucumber and RSpec for those test. Drive the browser with Watir and hit the web services end points with webrat, sometimes even script the UI with webrat when the browser is not really need it.
 
 Installing all the gems is easy just 
 
-
-<script src='http://gist.github.com/561860.js?file=file0.console'></script>
+
+
+<script src='http://gist.github.com/561860.js?file=file0.console'></script>
+
 
 
 and you are done (at least in my case). Of course you need to have ruby installed in your system. I have 1.8.6
 
-Since I haven’t really used Cucumber before and my Ruby is still very flaky, I decided to use RubyMine as my IDE to write the specs, specially because you can generate the step definitions from the features in a similar way as how you generate code with R# in VS.
+Since I haven't really used Cucumber before and my Ruby is still very flaky, I decided to use RubyMine as my IDE to write the specs, specially because you can generate the step definitions from the features in a similar way as how you generate code with R# in VS.
 
 You start writing an Spec with one scenario like this:
 
@@ -33,7 +35,7 @@ Then you run it via the console and have this result.
 
 <a href="../../../images/posts/Testdrivenoutsidein_14256/ScreenShot008_2.png"><img border="0" alt="ScreenShot008" src="../../../images/posts/Testdrivenoutsidein_14256/ScreenShot008_thumb.png" width="459" height="395"></a> 
 
-Note the yellow squiggly lines on the step definitions for the scenario? If you move the mouse over them a prompt will indicate that the step haven’t been created yet:
+Note the yellow squiggly lines on the step definitions for the scenario? If you move the mouse over them a prompt will indicate that the step haven't been created yet:
 
 <a href="../../../images/posts/Testdrivenoutsidein_14256/ScreenShot002_2.png"><img border="0" alt="ScreenShot002" src="../../../images/posts/Testdrivenoutsidein_14256/ScreenShot002_thumb.png" width="382" height="190"></a> 
 
@@ -41,7 +43,7 @@ Hit Alt+Enter to see a suggested solution:
 
 <a href="../../../images/posts/Testdrivenoutsidein_14256/ScreenShot003_2.png"><img border="0" alt="ScreenShot003" src="../../../images/posts/Testdrivenoutsidein_14256/ScreenShot003_thumb.png" width="377" height="138"></a> 
 
-Click enter and you have some options, to use an existing step definition file or create a new. If you hit create a new one and you don’t have an step_definitions folder RubyMine will create it for you.
+Click enter and you have some options, to use an existing step definition file or create a new. If you hit create a new one and you don't have an step_definitions folder RubyMine will create it for you.
 
 <a href="../../../images/posts/Testdrivenoutsidein_14256/ScreenShot004_2.png"><img border="0" alt="ScreenShot004" src="../../../images/posts/Testdrivenoutsidein_14256/ScreenShot004_thumb.png" width="315" height="202"></a> 
 
