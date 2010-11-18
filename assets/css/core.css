@@ -300,3 +300,7 @@ img#avatar {
 	padding: 4px;
 	float: left;
 }
+table{
+  width: 80%
+  border: 2px solid #999999;
+}

@@ -21,6 +21,7 @@ h3. Collections.
 |server|ServerVariables|
 |headers|Headers|
 
+
 The ASP.NET collections are transformed into object literals, so to access an id parameter passed in the QueryString you can access it in two different ways.
 
 
