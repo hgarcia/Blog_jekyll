@@ -1,11 +1,11 @@
 ---
 layout: post
 title: Notes and personal retrospective from my first Codemash.
-summary: In case you don’t know what it is. Codemash is a conference put together by volunteers. It has been running for four years now.
+summary: In case you don't know what it is. Codemash is a conference put together by volunteers. It has been running for four years now.
 categories: [General]
 ---
 
-In case you don’t know what it is. <a href="http://codemash.org/" target="_blank">Codemash</a> is a conference <a href="http://frazzleddad.blogspot.com/2010/01/i-am-not-codemash.html" target="_blank">put together by volunteers</a>. It has been running for four years now. The conference happens at the <a href="http://www.kalahariresorts.com/oh/" target="_blank">Kalahari Resorts and Convention Center</a> that has reportedly the biggest indoor water park in North America. That is in Sandusky, Ohio.
+In case you don't know what it is. <a href="http://codemash.org/" target="_blank">Codemash</a> is a conference <a href="http://frazzleddad.blogspot.com/2010/01/i-am-not-codemash.html" target="_blank">put together by volunteers</a>. It has been running for four years now. The conference happens at the <a href="http://www.kalahariresorts.com/oh/" target="_blank">Kalahari Resorts and Convention Center</a> that has reportedly the biggest indoor water park in North America. That is in Sandusky, Ohio.
 
 h3. Organization
 
@@ -13,7 +13,7 @@ I only have one world for it, spectacular. You come in and once you register you
 
 h3. Content
 
-Multiple technologies and practices are been represented at Codemash. Ruby, Java and JVM languages, .NET and CLR/DLR languages, Python, Iron*, C. Functional and OO. SOLID, BDD, TDD, Lean, Leadership, Coaching, Patterns. Iphone, Rails, WebForms, Silverlight, WPF, Tapestry and more development platforms, etc. And if you can’t find what you want, you still have the open spaces, so go ahead and create your own conference. I bet people will join you.
+Multiple technologies and practices are been represented at Codemash. Ruby, Java and JVM languages, .NET and CLR/DLR languages, Python, Iron*, C. Functional and OO. SOLID, BDD, TDD, Lean, Leadership, Coaching, Patterns. Iphone, Rails, WebForms, Silverlight, WPF, Tapestry and more development platforms, etc. And if you can't find what you want, you still have the open spaces, so go ahead and create your own conference. I bet people will join you.
 
 There is content at the Beginner, Intermediate and Advanced levels. I could like to see a few more 400 level talks but if you think that the idea of the conference is to try to get you out of your comfort zone that may not be very wise. Let me explain.
 
@@ -21,9 +21,9 @@ The idea is to try to go to talks that are not about the same technologies that 
 
 h3. Sessions and open spaces I enjoyed.
 
-The keynotes by Mary Poppendieck’s The Five Habits of Succesful Lean Development and Andy Hunt’s The Mother of all Bugs
+The keynotes by Mary Poppendieck's The Five Habits of Succesful Lean Development and Andy Hunt's The Mother of all Bugs
 
-Some of the sessions/Open spaces: Presentation Patterns. What makes ruby different. Open space about FubuMVC. NoSQL: Death to relational DB’s. Introduction to Cucumber. Testing ASP.NET applications using Ruby. Being and evil genius with F#. 0-60 with Fluent NHibernate. Building webapps with Compojure. IronPython with ASP.NET. 
+Some of the sessions/Open spaces: Presentation Patterns. What makes ruby different. Open space about FubuMVC. NoSQL: Death to relational DB's. Introduction to Cucumber. Testing ASP.NET applications using Ruby. Being and evil genius with F#. 0-60 with Fluent NHibernate. Building webapps with Compojure. IronPython with ASP.NET. 
 
 h3. The venue
 
@@ -33,7 +33,7 @@ The staff at the hotel is great, friendly and professional and all interaction (
 
 h3. The food
 
-Ok. This is something I’m really surprised. You pay $175 for the 2 days of conference + $150 for the extra Precompiler day. That’s a grand total of $325 for a 3 day conference. So, you may expect to have some scarcity on the food supply, specially when you consider that you have breakfast and lunch all of three days and dinner on one of the days.
+Ok. This is something I'm really surprised. You pay $175 for the 2 days of conference + $150 for the extra Precompiler day. That's a grand total of $325 for a 3 day conference. So, you may expect to have some scarcity on the food supply, specially when you consider that you have breakfast and lunch all of three days and dinner on one of the days.
 
 Well, let me tell you something. There was not such thing. The food was good and plentiful. Actually It was fantastic. I went to conferences where I paid $2000 for the same number of days and all I got was a wrap or a sandwich that was prepared 12 hours before. 
 
@@ -51,4 +51,4 @@ Try to study the list of sessions in advance but relax and make sure you scan th
 
 And like in most conferences take a power cord (a long one if possible) with you.
 
-I’m already impatiently waiting for next year Codemash. I can only say a big thank you to all the people that works to make such a great experienced for all of us.
+I'm already impatiently waiting for next year Codemash. I can only say a big thank you to all the people that works to make such a great experienced for all of us.

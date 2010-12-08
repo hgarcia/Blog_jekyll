@@ -62,7 +62,7 @@ You get the most value of this methods when filtering collections of complex obj
 
 
 
-You may notice that the implementation is calling the methods we created before, the only difference is in the name of the methods and the parameters. But it’s important to be clear on what the methods will do.
+You may notice that the implementation is calling the methods we created before, the only difference is in the name of the methods and the parameters. But it's important to be clear on what the methods will do.
 
 Another approach is to use the same FirstOrDefault name for your new methods and you will end up with four methods, the two on Linq plus two implement by you with this signature.
 

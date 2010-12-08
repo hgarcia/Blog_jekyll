@@ -9,7 +9,7 @@ I have been silent lately because I have been working on a project based on ASP.
 
 The main obstacles I saw with the framework “out of the box” is how to create composite views. 
 
-This project is driven by a real need in the company I’m working right now. Let’s explore together the design and development process that we follow. Please note that I’m not saying the all the decisions taken so far are final or even the right decisions. I have changed my mind several times and there are still some things that I know I need to change to make it better.
+This project is driven by a real need in the company I'm working right now. Let's explore together the design and development process that we follow. Please note that I'm not saying the all the decisions taken so far are final or even the right decisions. I have changed my mind several times and there are still some things that I know I need to change to make it better.
 
 Here are the basic requirements:
 
@@ -25,7 +25,7 @@ h3. 1. Separation of concerns
 
 The code needs to be easy to maintain and extend. <a href="http://www.lostechies.com/blogs/jason_meridth/archive/2008/03/26/ptom-single-responsibility-principle.aspx" target="_blank">Separation of concerns</a> and the rest of the <a href="http://butunclebob.com/ArticleS.UncleBob.PrinciplesOfOod" target="_blank">S.O.L.I.D.</a> principles helps to achieve this.
 
-The first way to achieve this is to use some of the well know presentation patterns. I’m partial to MVC but I decide to take another look at MVP. I have to admit that both of them were suitable for this project, but at the end of the day, I choose MVC just because I like it better and I have more experience with other frameworks that implement it (<a href="http://struts.apache.org/" target="_blank">Struts</a>, <a href="http://cakephp.org/" target="_blank">CakePHP</a>, <a href="http://rubyonrails.org/" target="_blank">RoR</a>, <a href="http://www.symfony-project.org/" target="_blank">Symphony</a>). 
+The first way to achieve this is to use some of the well know presentation patterns. I'm partial to MVC but I decide to take another look at MVP. I have to admit that both of them were suitable for this project, but at the end of the day, I choose MVC just because I like it better and I have more experience with other frameworks that implement it (<a href="http://struts.apache.org/" target="_blank">Struts</a>, <a href="http://cakephp.org/" target="_blank">CakePHP</a>, <a href="http://rubyonrails.org/" target="_blank">RoR</a>, <a href="http://www.symfony-project.org/" target="_blank">Symphony</a>). 
 
 h3. Why ASP.NET MVC?
 
@@ -36,19 +36,21 @@ I decided to go with ASP.NET MVC (note that Sharp Architecture is based on it an
 
 h3. 2. Views should be valid html.
 
-Ok, I know that this is controversial. I consider myself a pragmatism. I’m a proponent of semantic html and Css based layouts instead of tables.
+Ok, I know that this is controversial. I consider myself a pragmatism. I'm a proponent of semantic html and Css based layouts instead of tables.
 
-At the same time I’m not totally against using tables in some situations. But I despise written invalid html. I’m not talking about XHTML strict (although there is not a big deal to do so), I’m just talking about valid HTML 4.0. 
+At the same time I'm not totally against using tables in some situations. But I despise written invalid html. I'm not talking about XHTML strict (although there is not a big deal to do so), I'm just talking about valid HTML 4.0. 
 
 That is a problem with most template systems out there. They all include code somehow inside the html, making the html invalid. One of the works around is to write the html, validate it and them moved into the template system of your choice, with the risk of breaking it. 
 
 The solution was to create a simple html based view engine. I considered using <a href="http://sparkviewengine.com/" target="_blank">Sparks</a>, that is the closest thing I found to what I was looking for, but It has stuff like this: 
 
-
-<script src='http://gist.github.com/561846.js?file=file0.html'></script>
 
 
-Sparks is awesome, and I will use it in my next project for another site that I’m doing but It won’t fit the bill for this one.
+<script src='http://gist.github.com/561846.js?file=file0.html'></script>
+
+
+
+Sparks is awesome, and I will use it in my next project for another site that I'm doing but It won't fit the bill for this one.
 
 h3. 3. Support different sites with one installation.
 

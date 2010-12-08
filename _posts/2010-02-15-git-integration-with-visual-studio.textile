@@ -44,4 +44,4 @@ You can also pull from remote, where you can select to merge, do a rebase or jus
 
 h3. Conclusion.
 
-I don’t see myself moving away from the command line but I think is a good alternative.
+I don't see myself moving away from the command line but I think is a good alternative.

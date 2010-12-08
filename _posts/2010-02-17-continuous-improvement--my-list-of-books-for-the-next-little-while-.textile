@@ -5,7 +5,7 @@ summary: Yesterday I received another box of books from Amazon.ca with 6 more bo
 categories: [Books]
 ---
 
-Yesterday I received another box of books from Amazon.ca with 6 more books in it. After taking them out and putting them down into my already filled shelves I sat down and look at the pile of books. 17 computer books in all that I haven’t started or haven’t finished.
+Yesterday I received another box of books from Amazon.ca with 6 more books in it. After taking them out and putting them down into my already filled shelves I sat down and look at the pile of books. 17 computer books in all that I haven't started or haven't finished.
 
 I decided that it was time to make a list and put some kind of priority/order on the reading ahead.
 So here it goes, this is the list (in order for now) of books that I plan to read in the next 6-9 months.
@@ -19,13 +19,13 @@ h3. Computer programming and methodology)
 <a href="http://www.wrox.com/WileyCDA/WroxTitle/Testing-ASP-NET-Web-Applications.productCd-0470496649.html" target="_blank">Testing ASP.NET Web applications</a>.
 <a href="http://www.pragprog.com/titles/pbdp/debug-it" target="_blank">Debug it!</a>
 <a href="http://www.pragprog.com/titles/prj/ship-it" target="_blank">Ship it!</a>
-<a href="http://www.ironpythoninaction.com/" target="_blank">IronPython in Action</a> (finish this one. It’s a great book. I’m just busy)
+<a href="http://www.ironpythoninaction.com/" target="_blank">IronPython in Action</a> (finish this one. It's a great book. I'm just busy)
 <a href="http://apress.com/book/view/9781430219897" target="_blank">Beginning Scala</a>.
 
 [The order after this one is just tentative]
 
 <a href="http://www.amazon.com/Designing-Obvious-Common-Approach-Application/dp/032145345X" target="_blank">Designing the obvious</a>.
-<a href="http://www.amazon.com/Code-Language-Computer-Hardware-Software/dp/0735611319" target="_blank">C.O.D.E The hidden language of computer software and hardware</a> (in progress �" fantastic book, geeky, deep and incredible well written)
+<a href="http://www.amazon.com/Code-Language-Computer-Hardware-Software/dp/0735611319" target="_blank">C.O.D.E The hidden language of computer software and hardware</a> (in progress â€" fantastic book, geeky, deep and incredible well written)
 <a href="http://www.amazon.com/Designing-Moment-Interface-Design-Concepts/dp/0321535081/ref=pd_sim_b_2" target="_blank">Designing the moment</a>.
 <a href="http://apress.com/book/view/1590598504" target="_blank">Expert F#</a>.
 <a href="http://www.pragprog.com/titles/mnee/release-it" target="_blank">Release it!</a>

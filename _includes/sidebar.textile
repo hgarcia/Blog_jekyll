@@ -26,6 +26,12 @@
 <script type="text/javascript" src="http://www.google.com/reader/public/javascript/user/06910311213859683092/state/com.google/broadcast?n=10&amp;callback=GRC_p(%7Bc%3A%22gray%22%2Ct%3A%22Other%20blogs%20articles%22%2Cs%3A%22true%22%2Cn%3A%22true%22%2Cb%3A%22false%22%7D)%3Bnew%20GRC"></script>
 	</li>
 	<li class="sidebar">
+		<a href="http://www.codemash.org/" title="CodeMash. It's that time of year again."><img title="CodeMash. It's that time of year again." alt="CodeMash. It's that time of year again." src="{{site.url}}/images/codemash-waterpark.png" border="0"></a>
+	</li>
+	<li class="sidebar">
+		<a href='https://developer.mozilla.org/en/JavaScript/Reference/Global_Objects/Array' title='JS Array .splice'><img src='http://static.jsconf.us/promotejsh.gif' height='150' width='180' alt='JS Array .splice'/></a>
+	</li>
+	<li class="sidebar">
 		<p>	
         <img id="avatar" src="http://www.gravatar.com/avatar/2dff952fa9be2fa3996bed7924924c52?s=120" alt="Hernan Garcia" width="120"/>
         I have been a software developer for the last 16 years or so.<br/> 

@@ -13,10 +13,10 @@ Friday morning was miserable in the weather department, so going to the conferen
 
 After entering the auditorium Joel Spolsky addressed the audience with a key note about designing software products. He talk about how to make good products, the constant struggle between simplicity and features and how to achieve a balance. It was a vey interesting keynote. 
 
-The first session was on Asp.Net MVC, Joe DeVilla and Barry Gervin give us a good overview. Nothing knew to learn for me, but the presentation was good, and a lot of the developers in the audience weren’t .net developers.
+The first session was on Asp.Net MVC, Joe DeVilla and Barry Gervin give us a good overview. Nothing knew to learn for me, but the presentation was good, and a lot of the developers in the audience weren't .net developers.
 
 After each brake, the conference resumed with some video from FogCreek, short but good, presenting some aspects of FogCreek or software development in general.
 
 The other session I enjoyed and the one that justified the ticket price was the one by <a href="http://www.cs.toronto.edu/~gvwilson/" target="_blank">Greg Wilson</a>. He is not just an excellent presenter but he also has something to say. He talked about doing scientific analysis of development methodologies and use real data to make decisions on what practices are really beneficial to our profession. 
 
-As a summary: one of five sessions + the keynote were relevant for me. For $99 it’s not bad value and I probably will go again next year if they decide to come back to T.O. Just hoping they rise the level of the sessions, maybe 2 at the 100 level, 2 at the 200 level and 1 at the 300 level.
+As a summary: one of five sessions + the keynote were relevant for me. For $99 it's not bad value and I probably will go again next year if they decide to come back to T.O. Just hoping they rise the level of the sessions, maybe 2 at the 100 level, 2 at the 200 level and 1 at the 300 level.
