@@ -48,7 +48,8 @@ img::-moz-selection {background: transparent;}
 
 body {
 	color: #222222;
-	font: normal 1.05em Helvetica, Arial, Verdana, sans-serif;
+	font: normal 1.05em , "gesta-1","gesta-2", Helvetica, Arial, Verdana, sans-serif;
+	font-family: "gesta-1","gesta-2";
 	margin: 0;
 	padding: 0;
 }
@@ -149,6 +150,9 @@ div#content article header h2{
 	color: #034463;
 	font-size: 1.5em;
 	letter-spacing: 0.02em;
+	font-family: "le-havre-1","le-havre-2" ;
+	font-style: italic;
+	font-weight: 300;
 }
 
 div#content article p{
