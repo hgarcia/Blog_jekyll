@@ -13,7 +13,7 @@ require 'rubygems'
 require 'git'
 
 
-task :default => 'build:github'
+task :default => 'build:deploy'
 
 
 namespace :build do
@@ -24,9 +24,27 @@ namespace :build do
 	end
 	
 	desc 'Add changes commit and push to github'
-	task :github => [:merge_and_minimize_css]do
+	task :github => [:merge_and_minimize_css] do
 		sh 'git add -A'
 		sh 'git commit -m"Build"'
 		sh 'git push'		
 	end
+	
+	desc 'Generates the static files'
+	task :jekyll => [:github] do
+		sh 'jekyll'		
+	end
+	
+	desc 'Moves to the heroku folder'
+	task :move => [:jekyll] do
+		sh 'cd ../heroku'		
+	end
+	
+	desc 'Moves to the heroku folder'
+	task :deploy => [:move] do
+		sh 'git add -A'
+		sh 'git commit -m"Deploying the last build"'
+		sh 'git push heroku master'			
+	end
+	
 end
