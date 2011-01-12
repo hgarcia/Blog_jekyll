@@ -1,14 +1,14 @@
 ---
 layout: post
 title: Codemash Precompiler, Web automation with Selenium
-summary:
-categories: [Programming]
+summary: Adam Goucher gave a good presentation on the use of Selenium for web automation. These are my notes taken during the session.
+categories: [Programming, Codemash]
 ---
 
-<em>This post is mostly a set of notes that I took live during the session.</em>
+__This post is mostly a set of notes that I took live during the session.__
 
 Presenter: "Adam Goucher":http://adam.goucher.ca/ 
-"Twitter":http://twitter.com/#!/adamgoucher
+"@adamgoucher":http://twitter.com/#!/adamgoucher
 
 h3. General notes.
 
