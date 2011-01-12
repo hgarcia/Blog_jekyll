@@ -37,7 +37,7 @@ namespace :build do
 	
 	desc 'Moves to the heroku folder'
 	task :move => [:jekyll] do
-		sh 'cd ../heroku'
+		chdir 'cd ../heroku'
 		sh 'dir'		
 	end
 	
