@@ -5,6 +5,8 @@ summary:
 categories: [Programming]
 ---
 
+<em>T</em>
+
 Presenter: Adam Goucher
 
 h3. Take aways.
@@ -43,17 +45,32 @@ Never put sleeps in your code for Ajax synchronization.
 Web 2.0 makes writing these checks very difficult. We need to check for elements presents and availables. Now we even have Comet. We create a latch. So, when the loading is actually done the event handler or the callback changes an attribute in the DOM that Selenium can check to continue with the testing.
 
 
-h4. Security.
-
-Turn off HTTPS in any environment that is not production. AutoWin3 to handle external windows.
-
-
-h4. Not to automate.
-
-Verification emails.
-Out of browser processes. 
-
-
 h4. Site specific plugins.
 
 Encapsulate specific needs for your site. Formatters, etc. Handles updates using the same mechanism of any other Firefox extension.
+
+
+h4. Patterns.
+
+xUnit: Use an xUnit framework to run/write your tests.
+
+Page object: Create objects that represent the pages of your site, each page contains properties and methods that represents the interactions and attributes of that page. Page objects are not necessarily pages but can also be just parts of a page, like a login widget. Encapsulate locator information inside the object.
+
+Tags: For organizing tests. Based on the language, xUnit framework you use to run your tests.
+
+CI: Always run your Selenium scripts from your CI server. Chain your jobs to run in the proper environment and at the proper time.
+
+Randomness: Use it for eveything. User names don't have to be real names, just follow some rules. Click random links, move around automatically.
+
+Login: Make sure you log what you are doing and what values you were using to be able to debug failing scripts later.
+
+
+h4. Code smells.
+
+No locators inside your scripts.
+Do not automate everything with Selenium if you don't need it. (Verification emails, out of browser processes, etc.) 
+Turn off HTTPS in any environment that is not production.
+Don't trust anything the server is saying.
+Make your scripts as small as possible.
+Do not test more than one thing at a a time.
+Don't use anything platform specific.
