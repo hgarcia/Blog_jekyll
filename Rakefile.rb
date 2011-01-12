@@ -13,7 +13,7 @@ require 'rubygems'
 require 'git'
 
 
-task :default => 'build:deploy'
+task :default => 'build:move'
 
 
 namespace :build do
@@ -37,7 +37,8 @@ namespace :build do
 	
 	desc 'Moves to the heroku folder'
 	task :move => [:jekyll] do
-		sh 'cd ../heroku'		
+		sh 'cd ../heroku'
+		sh 'dir'		
 	end
 	
 	desc 'Moves to the heroku folder'
