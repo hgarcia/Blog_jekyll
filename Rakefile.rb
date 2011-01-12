@@ -13,7 +13,7 @@ require 'rubygems'
 require 'git'
 
 
-task :default => 'build:move'
+task :default => 'build:deploy'
 
 
 namespace :build do
@@ -36,13 +36,8 @@ namespace :build do
 	end
 	
 	desc 'Moves to the heroku folder'
-	task :move => [:jekyll] do
-		chdir 'cd ../heroku'
-		sh 'dir'		
-	end
-	
-	desc 'Moves to the heroku folder'
-	task :deploy => [:move] do
+	task :deploy => [:jekyll] do
+		chdir '../heroku'	
 		sh 'git add -A'
 		sh 'git commit -m"Deploying the last build"'
 		sh 'git push heroku master'			
