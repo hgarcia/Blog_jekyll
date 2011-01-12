@@ -1,0 +1,59 @@
+---
+layout: post
+title: Codemash Precompiler, Web automation with Selenium
+summary:
+categories: [Programming]
+---
+
+Presenter: Adam Goucher
+
+h3. Take aways.
+
+You write checks no tests.
+Do not hardcode stuff, reach into the database programmatically for stuff stored there. Credentials, authentication tokens.
+Use Selenium IDE to write quick prototypes, if you spend a lot of time in IDE you are doing something wrong. At some point you need to drop into code, so export scripts to a language you feel comfortable with.
+Leverage the best language to write your test. You don't necessary need to stay in your applications language. Ruby and Python are really good languages for writing automatic testing.
+Do so using Export not Save in Selenium IDE.
+
+Use user extensions to define variables that need to be used in your scripts. XPath locators are good candidates to do so. Variables are define in a hash named storedVars. Reference them using $["keyname"]
+Abstracts values provided to the script as much as you can't to avoid changing the script later.
+Ex: use a csv file to load values for the script or the db.
+
+Use 2.0b1, each server is a node on a grid. No Grid.
+Develop scripts using the old style (Selenium), not the WebDriver API's.
+
+h4. Finding stuff.
+
+* Put id's to everything you need to interact with.
+* If you can't have id's use Xpath and force to use short paths.
+* If Xpath is slow use css selectors.
+* Link locator link=profile (doesn't work with multilingual sites)
+
+
+h4. Checking.
+
+Only one hard assert per script (similar to proper unit testing), but may have more than one verify.
+Having several verification per page allows us to get more of the problems with that page/workflow at once.
+
+
+h4. Timing.
+
+Never put sleeps in your code for Ajax synchronization.
+
+Web 2.0 makes writing these checks very difficult. We need to check for elements presents and availables. Now we even have Comet. We create a latch. So, when the loading is actually done the event handler or the callback changes an attribute in the DOM that Selenium can check to continue with the testing.
+
+
+h4. Security.
+
+Turn off HTTPS in any environment that is not production. AutoWin3 to handle external windows.
+
+
+h4. Not to automate.
+
+Verification emails.
+Out of browser processes. 
+
+
+h4. Site specific plugins.
+
+Encapsulate specific needs for your site. Formatters, etc. Handles updates using the same mechanism of any other Firefox extension.

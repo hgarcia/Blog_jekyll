@@ -1,6 +1,6 @@
 ---
 layout: post
-title: My first "real wordl" application with Sinatra, Heroku and Ruby 1.9.
+title: My first "real world" application with Sinatra, Heroku and Ruby 1.9.
 summary: 
 categories: []
 published: False

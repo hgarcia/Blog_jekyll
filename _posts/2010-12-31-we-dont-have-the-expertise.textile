@@ -1,7 +1,7 @@
 ---
 layout: post
 title: We don't have the expertise.
-summary: It's funny that we all use that excuse to avoid doing and/or learning something that chanllenge our comfort zone
+summary: It's funny that we all use that excuse to avoid doing and/or learning something that chanllenge our comfort zone.
 categories: [General, Programming]
 published: False
 ---
@@ -12,3 +12,6 @@ I may have give him one of my looks, because he kept going on how difficult test
 
 It's <strike>tragic</strike> funny that we all use that excuse to avoid doing and/or learning something that chanllenge our comfort zone.
 
+h3. Just start doing it.
+
+Once we are comfortable
