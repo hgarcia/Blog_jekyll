@@ -1,0 +1,85 @@
+---
+layout: post
+title: Git more done
+summary: 
+categories: [Programming, Codemash]
+published: false
+---
+
+Presenter: "Keith Dhalby":http://www.lostechies.com/members/dahlbyk/default.aspx 
+"Presentation materials":https://github.com/dahlbyk/Presentations/tree/master/GitMoreDone
+"@dahlbyk":http://twitter.com/dahlbyk
+
+
+h3. Git config.
+
+Settings at four different values. Repository, User with --global switch, System --system or file. You probably don't want to set stuff at the system level.
+
+Config has the concept of sections and subsections.
+
+Some valuable settings:
+
+core.editor
+diff.renames = false by default (options, true, copies)
+help.autocorrect = o (default)
+log.date; relative, local, default, iso, rfc, short
+merge.log = false (no merge log), true = 20, N (add up to N merge commits to log)
+
+[difftool]
+	prompt =false
+[mergetool]
+	prompt =false
+	keepBackup = false
+[diff]
+	tool (set this up)
+	[diff "tool"]
+		cmd="\c:\program files....\"
+[merge]
+	tools (set this up as well)
+
+Aliases:	
+
+	Wrap git command + arguments
+	
+	ex: git config aliases.ds "diff --stat"
+	git ds
+	
+	Wrap sell commands (use a bang)
+	
+	http://bit.ly/git-lg
+	
+Naming commands:
+	
+	SHA2name
+	Symbolic references
+	
+	HEAD = what's current check out.
+	(Usually reference to a branch) or a detached HEAD, arbitrary commit, not on branch.
+	
+	Suffixes:
+		^ first parent; ^n nth parent
+		~n nth generation grandparent (~1=^; ~3=^^^)
+		
+		@{n} nth prior value for that ref.
+		HEAD@{1}
+		@{date} value at past point in time
+		master@{1 week ago}
+		
+		git help rev-parse to get all the information
+		
+Local workflow
+
+	Git knows developers. 
+	
+	Create branch stay where you are
+	git branch <name> <commit>
+	
+	Switch to new branch
+	git checkout <commit> -b <name>
+		
+	Branches to clean up
+	git branch --merged (history of merged branche)
+	
+	git stash (Stash away work in progress, preserves working directory and index)
+	
+	

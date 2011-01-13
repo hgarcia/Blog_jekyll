@@ -1,0 +1,27 @@
+---
+layout: post
+title: IronRuby and .Net a match made in heaven.
+summary: A high level introduction to Ruby (IronRuby) and how to use it to enhance your projects in .net.
+categories: [Codemash, Programming]
+published: false
+---
+
+Presenter:  "Amir Barylko":http://orthocoders.com/
+"@abarylko":http://twitter.com/#!/abarylko
+
+
+h3. Why bother with Ruby?
+
+
+* Make your toolbox grow!
+* The right tool for the job.
+* Not a replacement.
+* Combine strengths.
+* Problem solving.
+
+
+Brief introduction to Ruby.
+
+h3. Demos:
+
+Using RSpec to test a C# class.

@@ -5,7 +5,7 @@ summary: Adam Goucher gave a good presentation on the use of Selenium for web au
 categories: [Programming, Codemash]
 ---
 
-__This post is mostly a set of notes that I took live during the session.__
+<blockquote>This post is mostly a set of notes that I took live during the session.</blockquote>
 
 Presenter: "Adam Goucher":http://adam.goucher.ca/ 
 "@adamgoucher":http://twitter.com/#!/adamgoucher
@@ -26,14 +26,18 @@ Use Selenium 2.0b1, has lots of bug fixes.
 Develop scripts using the old style (Selenium), not the WebDriver API's.
 In V2 Selenium Grid is included in server each server instance is a node on a grid. .
 
+
 h4. Finding stuff.
+
 
 * Put id's to everything you need to interact with.
 * If you can't have id's use Xpath and force yourself to use short paths.
 * If Xpath is slow use css selectors.
 * Link locator link=profile (doesn't work with multilingual sites)
 
+
 h4. Patterns.
+
 
 xUnit: Use an xUnit framework to run/write your tests.
 
@@ -52,6 +56,7 @@ Checking: Only one hard assert per script (similar to proper unit testing), but 
 
 h4. Code smells.
 
+
 No locators inside your scripts.
 Do not automate everything with Selenium if you don't need it. (Verification emails, out of browser processes, etc.) 
 Turn off HTTPS in any environment that is not production.
@@ -64,9 +69,11 @@ Never put sleeps in your code for Ajax synchronization.
 
 h4. Timing.
 
+
 Web 2.0 makes writing these checks very difficult. We need to check for elements presents and available. Now we even have Comet. We create a latch. So, when the loading is actually done the event handler or the callback changes an attribute in the DOM that Selenium can check to continue with the testing.
 
 
 h4. Make good use of the extension on IDE.
+
 
 Encapsulate specific needs for your site or company, writing plugins that encapsulate some. Formatters, etc. Handles updates using the same mechanism of any other Firefox extension.

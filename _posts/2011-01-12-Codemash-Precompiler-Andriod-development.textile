@@ -1,9 +1,0 @@
----
-layout: post
-title: Codemash Precompiler, Android development.
-summary:
-categories: [Programing, Android, Codemash]
-published: false
----
-
-<em>These are a series
