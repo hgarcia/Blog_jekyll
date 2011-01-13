@@ -27,8 +27,7 @@ Develop scripts using the old style (Selenium), not the WebDriver API's.
 In V2 Selenium Grid is included in server each server instance is a node on a grid. .
 
 
-h4. Finding stuff.
-
+h3. Finding stuff.
 
 * Put id's to everything you need to interact with.
 * If you can't have id's use Xpath and force yourself to use short paths.
@@ -36,8 +35,7 @@ h4. Finding stuff.
 * Link locator link=profile (doesn't work with multilingual sites)
 
 
-h4. Patterns.
-
+h3. Patterns.
 
 xUnit: Use an xUnit framework to run/write your tests.
 
@@ -54,8 +52,7 @@ Login: Make sure you log what you are doing and what values you were using to be
 Checking: Only one hard assert per script (similar to proper unit testing), but may have more than one verify. Having several verification per page allows us to get more of the problems with that page/workflow at once.
 
 
-h4. Code smells.
-
+h3. Code smells.
 
 No locators inside your scripts.
 Do not automate everything with Selenium if you don't need it. (Verification emails, out of browser processes, etc.) 
@@ -67,13 +64,11 @@ Don't use anything platform specific.
 Never put sleeps in your code for Ajax synchronization.
 
 
-h4. Timing.
-
+h3. Timing.
 
 Web 2.0 makes writing these checks very difficult. We need to check for elements presents and available. Now we even have Comet. We create a latch. So, when the loading is actually done the event handler or the callback changes an attribute in the DOM that Selenium can check to continue with the testing.
 
 
-h4. Make good use of the extension on IDE.
-
+h3. Make good use of the extension on IDE.
 
 Encapsulate specific needs for your site or company, writing plugins that encapsulate some. Formatters, etc. Handles updates using the same mechanism of any other Firefox extension.

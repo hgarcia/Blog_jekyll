@@ -24,4 +24,4 @@ Brief introduction to Ruby.
 
 h3. Demos:
 
-Using RSpec to test a C# class.
+Using RSpec to test a C# class. 
