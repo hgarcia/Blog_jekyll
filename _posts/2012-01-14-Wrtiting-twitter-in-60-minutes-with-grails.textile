@@ -1,9 +1,0 @@
----
-layout: post
-title: Building a Twitter like application in 60 minutes with Grails.
-summary: 
-categories: [Programming, Codemash]
-published: false
----
-
-Presenter: "Jeff Brown":http://www.springsource.com/people/jbrown

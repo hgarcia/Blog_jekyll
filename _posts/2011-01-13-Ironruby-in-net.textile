@@ -1,6 +1,6 @@
 ---
 layout: post
-title: IronRuby and .Net a match made in heaven.
+title: Codemash, IronRuby and .Net a match made in heaven.
 summary: A high level introduction to Ruby (IronRuby) and how to use it to enhance your projects in .net.
 categories: [Codemash, Programming]
 ---
