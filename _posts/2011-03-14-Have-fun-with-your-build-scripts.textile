@@ -12,7 +12,7 @@ One of those reasons is the flexibility that a proper programming language and a
 
 On Saturday around 1:00 AM I was testing a new step to automate the retrieval of dependencies via NuGet on the build.
 
-**As a side note, on Sunday the next day "Amir Barylko posted a detailed article":http://is.gd/DgEHoH on how to doing exactly that.**
+??As a side note, on Sunday the next day "Amir Barylko posted a detailed article":http://is.gd/DgEHoH on how to doing exactly that.??
 
 I was trying to come up with a proper name for the step when I got an idea.
 
