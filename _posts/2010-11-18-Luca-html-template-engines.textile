@@ -8,8 +8,6 @@ published: false
 
 Luca does "content encoding"http://TODO-WIKIPEDIA and does so passing an object (a model) into an Encoder. Encoders in Luca respond to the IEncoder interface.
 
-
 TODO: add gist with the IEncoder interface code
 
-
-They are resolved by the encoder factory based in the Accept header. 
+They are resolved by the encoder factory based in the Accept header. The output from the encoders is just a string that gets added to the Response.

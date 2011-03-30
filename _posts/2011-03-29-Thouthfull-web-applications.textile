@@ -1,0 +1,12 @@
+---
+title: Thoughtful web applications (talks at TechTalksTO)
+summary:
+categories:
+published: false
+---
+
+By Ben Cherry @bcherry
+
+Front end engineer at Twitter involved in the #newtwitter.
+
+
