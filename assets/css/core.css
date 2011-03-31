@@ -54,6 +54,9 @@ body {
 	font-style: normal;
 	margin: 0;
 	padding: 0;
+	background-image: url("../../images/gotas.jpg");
+    background-position: 160px -300px;
+    background-repeat: no-repeat;	
 }
 
 abbr {
