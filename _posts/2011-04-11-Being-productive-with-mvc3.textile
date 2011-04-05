@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Being productive with MVC 3.
-summary: On how using MVC 3, NuGet, MvcScaffold, EF code first, Git and AppHarbor make me have fun again in the Microsoft stack.
+summary: On how using MVC 3, NuGet, MvcScaffold, EF code first, Git and AppHarbor make me have fun again using the Microsoft stack.
 categories: [Programming, .Net, Tools]
 ---
 
