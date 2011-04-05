@@ -82,11 +82,12 @@ aside ul{
 	list-style: none outside none;
 }
 nav{
-	border-bottom: 7px solid #D5F36E;
-	height: 50px;
+	border-bottom: 1px solid #034463;
+	height: 30px;
 	margin-bottom: 25px;
 	margin-top: 20px;
 	padding-left: 20px;
+	width: 770px;
 }
 
 nav li {
@@ -171,14 +172,12 @@ footer p small{
 	font-size: 0.7em;
 }
 .main-content{
-	border-right: 3px solid #B3E601;
 	float: left;
-	padding-right: 20px;
-	width: 65%;
+	padding-right: 50px;
+	width: 60%;
 }
 div#content aside{
-	float: left;
-	padding-left: 20px;
+	float: left;	
 	width: 30%;
 }
 li.sidebar{
