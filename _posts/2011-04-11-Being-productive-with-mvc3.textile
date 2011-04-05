@@ -64,7 +64,7 @@ I think using Razor as the view engine also contributes to the speedy developmen
 
 If on top of that you use Git (or Hg) to make frequent commits, you will feel like you are on fire.
 
-h4. So you get done really fast, so how about going live?
+h3. So you get done really fast, so how about going live?
 
 Appharbor to the rescue. 
 
