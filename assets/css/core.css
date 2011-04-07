@@ -217,7 +217,7 @@ blockquote{
 }
 div#twitter_div{
 	background: none repeat scroll 0 0 #FFFFFF;
-	border: 1px solid #CCCCCC;
+	border-top: 1px solid #CCCCCC;
 	font-family: arial,sans-serif;
 	font-size: 10pt;
 	font-weight: normal;
@@ -226,19 +226,18 @@ div#twitter_div{
 	text-align: left;
 	text-decoration: none;
 	text-indent: 0;
+	-moz-border-radius: 4px 4px 4px 4px;
 }
 h2.sidebar-title{
 	background: none repeat scroll 0 0 #EEEEEE;
-	border-color: -moz-use-text-color -moz-use-text-color #CCCCCC;
-	border-style: none none solid;
-	border-width: medium medium 1px;
-	color: #666666;
-	font-weight: normal;
-	margin: 0;
-	padding: 0.2em 0.5em;
-	text-align: left;
-	text-decoration: none;
-	text-indent: 0;
+    color: #666666;
+    font-size: 1.1em;
+    font-weight: normal;
+    margin: 0;
+    padding: 0.5em;
+    text-align: left;
+    text-decoration: none;
+    text-indent: 0;
 }
 ul#twitter_update_list{
 	background:none repeat scroll 0 0 transparent;
