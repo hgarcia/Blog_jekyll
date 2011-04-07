@@ -79,6 +79,7 @@ header.main h1{
 }
 aside ul{
 	list-style: none outside none;
+	 padding-top: 20px;
 }
 nav{
 	border-bottom: 1px solid #034463;
@@ -314,6 +315,24 @@ table {
 td {
   border: 1px solid #999999;
 }
+td.gsc-input, td.gsc-search-button{
+	border: none !important;
+}
+td.gsc-clear-button{
+	display: none !important;
+}
 article section ul{
 	padding-left: 20px;	
+}
+input.gsc-input{
+	-moz-border-radius: 4px 4px 4px 4px;
+    border: 1px solid #777777 !important;
+    height: 20px;
+}
+.gsc-cursor-current-page {
+    color: #FFFFFF !important;
+}
+.gs-title {
+	overflow: none !important;
+	height: inherit !important;
 }
