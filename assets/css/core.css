@@ -333,6 +333,9 @@ input.gsc-input{
     color: #FFFFFF !important;
 }
 .gs-title {
-	overflow: none !important;
+	overflow: visible !important;
 	height: inherit !important;
+}
+.gsc-resultsHeader{
+	display: none !important;
 }
