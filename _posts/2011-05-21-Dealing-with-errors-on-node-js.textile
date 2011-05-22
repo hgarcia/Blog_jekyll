@@ -7,14 +7,9 @@ categories: [Programming, JavaScript, node.js, Frameworks]
 
 You may be use to handle exceptions/errors in javascript using the try catch construct.
 
-<code>
-try{
-    //some tricky code here
-}catch(e){
-    //recuperate from the error of do something like logging it
-    console.log(e);
-}
-</code>
+
+<script src="https://gist.github.com/985180.js?file=try-catch.js"></script>
+
 
 In node.js (since is javascript), you have this construct available and works, most of the time, as expected.
 
@@ -25,23 +20,15 @@ The default action of an 'error' event is to print the stack and exit the progra
 
 In that case even if you surround the offending code on a try catch block your program will exit while complaining very loudly of whatever happened to brake it.
 
-Ex:
-<code>
-      //Trying to open a non existing file will output the error to stdout and stop the program execution.
-      try{
-        this.stream = fs.createWriteStream("non-exiting-file", options.options || { flags: 'a' });
-      }catch(e){
-        console.log(e);
-      }
-</code>
+
+<script src="https://gist.github.com/985180.js?file=non-efective-try-catch.js"></script>
+
 
 I bet that, that's probably not what you will like so, "always" provide a handler for the error event and handle the error accordingly in that handler.
 
-<code>
-       //This code will call the handler and output the err to the console without ending program execution.
-       this.stream = fs.createWriteStream("non-existing-file", options.options || { flags: 'a' })
-      .on('error',function(err){console.log(err);});
-</code>
+
+<script src="https://gist.github.com/985180.js?file=proper-error-event.js"></script>
+
 
 Once you know about it is obvious, it can be tricky sometimes not knowing all the api's of the different modules.
 
