@@ -31,4 +31,3 @@ I bet that, that's probably not what you will like so, "always" provide a handle
 
 
 Once you know about it is obvious, it can be tricky sometimes not knowing all the api's of the different modules.
-
