@@ -1,0 +1,8 @@
+---
+layout: post
+title: Simplifying your Backbone.js application.
+summary: Backbone.js is one of those awesome new frameworks that can make your life so much easy but at the same time introduce another technology paradigm to learn. Here are some ideas to simplify it's usage.
+categories: [Programming, JavaScript, Frameworks]
+published: false
+---
+
