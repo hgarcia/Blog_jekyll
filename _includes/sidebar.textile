@@ -19,6 +19,25 @@
 		</div>
 	</li>
 	<li class="sidebar">
+		<h2 class="sidebar-title">Coderwall</h2>
+		<script type="text/javascript">
+		
+		var coderwall = {"username":"hgarcia","badges":[{"name":"Cub","badge":"http://coderwall.com/images/badges/cub.png","description":"Have at least one jquery, prototype, or node.js repo with commits"},{"name":"Walrus","badge":"http://coderwall.com/images/badges/walrus.png","description":"The walrus is no stranger to variety. Use at least 4 different languages throughout all your repos"},{"name":"Forked","badge":"http://coderwall.com/images/badges/forked.png","description":"Have a project valued enough to be forked by someone else"},{"name":"Charity","badge":"http://coderwall.com/images/badges/charity.png","description":"Fork and commit to someone's open source project in need"}]};
+		
+		document.write('<ul class="badges">');
+		var badges = coderwall.badges;
+		for (var i =0; i < badges.length; i++){
+			document.write('<li class="badge">');
+document.write('<h4>'+ badges[i].name +'</h4>');
+document.write('<div class="image"><img src="' + badges[i].badge + '" alt="' + badges[i].name + '"></div>');
+document.write('<p>' + badges[i].description + '</p>');
+document.write('</li>');
+		}
+		document.write('</ul>');
+		
+		</script>
+	</li>
+	<li class="sidebar">
 		<script type="text/javascript" src="http://www.google.com/reader/ui/publisher-en.js"></script>
 <script type="text/javascript" src="http://www.google.com/reader/public/javascript/user/06910311213859683092/state/com.google/broadcast?n=10&amp;callback=GRC_p(%7Bc%3A%22gray%22%2Ct%3A%22Blogroll%22%2Cs%3A%22true%22%2Cn%3A%22true%22%2Cb%3A%22false%22%7D)%3Bnew%20GRC"></script>
 	</li>

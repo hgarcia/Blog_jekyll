@@ -338,3 +338,33 @@ input.gsc-input{
 .gsc-resultsHeader{
 	display: none !important;
 }
+ul.badges li {
+    background: -moz-linear-gradient(-90deg, #EFEFEF, #DFE1E2) repeat scroll 0 0 transparent;
+    border-bottom: 1px solid #EDEDED;
+    box-shadow: 0 2px 3px #AAAAAA;
+    display: inline;
+    float: left;
+    height: 240px;
+    margin-bottom: 25px;
+    margin-right: 25px;
+    padding: 12px;
+    width: 154px;
+}
+ul.badges .badge .image {
+    background-color: white;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.5) inset;
+    padding: 8px 0 5px;
+}
+ul.badges .badge img {
+    height: 125px;
+    margin-left: 15px;
+    width: 125px;
+}
+ul.badges .badge h4 {
+    margin: 0 0 8px;
+    padding: 0;
+}
+ul.badges .badge p {
+    margin: 8px 0 0;
+    padding: 0;
+}
