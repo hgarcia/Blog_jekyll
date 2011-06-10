@@ -182,6 +182,7 @@ div#content aside{
 }
 li.sidebar{
 	padding-bottom: 35px;
+	display: inline-block;
 }
 div#content aside li h4{
 	color: #034463;

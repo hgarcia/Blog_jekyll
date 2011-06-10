@@ -36,6 +36,7 @@ document.write('</li>');
 		document.write('</ul>');
 		
 		</script>
+				<a href="http://coderwall.com/hgarcia" style="display:block;text-align:right;">check my coder wall</a>
 	</li>
 	<li class="sidebar">
 		<script type="text/javascript" src="http://www.google.com/reader/ui/publisher-en.js"></script>
