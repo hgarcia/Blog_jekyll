@@ -1,0 +1,22 @@
+---
+layout: post
+title: Introducing Time Traveller, date library for node.js (and javascript).
+summary: Dates are a pain. So I started to put together time traveller to try to alleviate that paint while working on node.js.
+categories: [Programming, JavaScript]
+published: false
+---
+
+Javascript has the Date object that exposes a series of methods to create new dates, modify them and get the different "parts" of a date. It's not bad but is certainly fairly limited.
+
+I wanted to create a simpler, easier way to work with dates.
+
+h3. Introducing Time Traveller
+
+You can get time traveller using npm:
+
+<code>
+    npm install timeTraveller
+</code>
+
+Or you can get the code from "the github repo":https://github.com/hgarcia/TimeTraveller
+
