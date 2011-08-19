@@ -2,7 +2,7 @@
 layout: post
 title: Introducing Time Traveller, date library for node.js (and javascript).
 summary: Dates are a pain. So I started to put together time traveller to try to alleviate that paint while working on node.js.
-categories: [Programming, JavaScript]
+categories: [Programming, JavaScript, node.js]
 published: false
 ---
 
