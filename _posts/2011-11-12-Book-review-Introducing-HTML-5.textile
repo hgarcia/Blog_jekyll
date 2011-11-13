@@ -3,7 +3,7 @@
 layout: post
 
 
-title: Book review: Introducing HTML 5.
+title: Book review - Introducing HTML 5.
 
 
 summary: Introducing HTML 5 by Bruce Lawson and Remy Sharp is one of those books that I would recommend to any web developer out there.
