@@ -5,7 +5,7 @@ summary: I recently posted about how to integrate Git with Visual Studio. Of cou
 categories: [Programming, Tools]
 ---
 
-I recently posted about how to <a href="2010/02/15/GitIntegrationWithVisualStudio.aspx" target="_blank">integrate Git with Visual Studio</a>. Of course Git is not the only DVCS out there. 
+I recently posted about how to <a href="2010/02/15/GitIntegrationWithVisualStudio.aspx" target="_blank">integrate Git with Visual Studio</a>. Of course Git is not the only DVCS out there.
 
 Mercurial is another source control system similar to Git that is having more and more relevance. Google code have been supporting it for quite a while and <a href="http://blogs.msdn.com/codeplex/archive/2010/01/22/codeplex-now-supporting-native-mercurial.aspx" target="_blank">recently Microsoft announced that Codeplex is adding it as an option for new projects</a>. (Codeplex already supported TFS and Subversion).
 
@@ -17,9 +17,9 @@ A few day ago I found <a href="http://www.newsupaplex.pp.ru/hgscc_news_eng.html"
 
 The installation is very simple, just select the version of VS you want to install against (version 1.0.7 released today integrates without problems with both VS 2008 and 2010 RC).
 
-<a href="../../../images/posts/MercurialintegrationwithVisualStudio_1474C/select_vs_version.png"><img border="0" alt="select_vs_version" src="../../../images/posts/MercurialintegrationwithVisualStudio_1474C/select_vs_version_thumb.png" width="358" height="197"></a> 
+<a href="../../../images/posts/MercurialintegrationwithVisualStudio_1474C/select_vs_version.png"><img border="0" alt="select_vs_version" src="../../../images/posts/MercurialintegrationwithVisualStudio_1474C/select_vs_version_thumb.png" width="358" height="197"></a>
 
-After installed go to Tools â€"&amp;gt; Options and make sure you select display all options (only in VS 2008).
+After installed go to Tools ??"&amp;gt; Options and make sure you select display all options (only in VS 2008).
 
 <a href="../../../images/posts/MercurialintegrationwithVisualStudio_1474C/select_show_all_options.png"><img border="0" alt="select_show_all_options" src="../../../images/posts/MercurialintegrationwithVisualStudio_1474C/select_show_all_options_thumb.png" width="236" height="404"></a>
 
@@ -29,15 +29,15 @@ Select the Source Control option and in the Plug-in Selection option change it t
 
 After open a project (even one that is already under source control) you will need to select the Add to source control option from the contextual menu inside the Solution explorer.
 
-<a href="../../../images/posts/MercurialintegrationwithVisualStudio_1474C/add_to_sc.png"><img border="0" alt="add_to_sc" src="../../../images/posts/MercurialintegrationwithVisualStudio_1474C/add_to_sc_thumb.png" width="293" height="256"></a> 
+<a href="../../../images/posts/MercurialintegrationwithVisualStudio_1474C/add_to_sc.png"><img border="0" alt="add_to_sc" src="../../../images/posts/MercurialintegrationwithVisualStudio_1474C/add_to_sc_thumb.png" width="293" height="256"></a>
 
 After added you will se a tilde besides each project.
 
-<a href="../../../images/posts/MercurialintegrationwithVisualStudio_1474C/solution_added.png"><img border="0" alt="solution_added" src="../../../images/posts/MercurialintegrationwithVisualStudio_1474C/solution_added_thumb.png" width="306" height="147"></a> 
+<a href="../../../images/posts/MercurialintegrationwithVisualStudio_1474C/solution_added.png"><img border="0" alt="solution_added" src="../../../images/posts/MercurialintegrationwithVisualStudio_1474C/solution_added_thumb.png" width="306" height="147"></a>
 
 This are the options available from the contextual menu.
 
-<a href="../../../images/posts/MercurialintegrationwithVisualStudio_1474C/hg_menu_options.png"><img border="0" alt="hg_menu_options" src="../../../images/posts/MercurialintegrationwithVisualStudio_1474C/hg_menu_options_thumb.png" width="330" height="280"></a> 
+<a href="../../../images/posts/MercurialintegrationwithVisualStudio_1474C/hg_menu_options.png"><img border="0" alt="hg_menu_options" src="../../../images/posts/MercurialintegrationwithVisualStudio_1474C/hg_menu_options_thumb.png" width="330" height="280"></a>
 
 And a few screen captures of the different options.
 
@@ -71,8 +71,8 @@ And a few screen captures of the different options.
 
 <h4>Update</h4>
 
-<a href="../../../images/posts/MercurialintegrationwithVisualStudio_1474C/Update_window.png"><img border="0" alt="Update_window" src="../../../images/posts/MercurialintegrationwithVisualStudio_1474C/Update_window_thumb.png" width="525" height="282"></a> 
+<a href="../../../images/posts/MercurialintegrationwithVisualStudio_1474C/Update_window.png"><img border="0" alt="Update_window" src="../../../images/posts/MercurialintegrationwithVisualStudio_1474C/Update_window_thumb.png" width="525" height="282"></a>
 
 h3. Conclusion
 
-With the support from Codeplex and Google code to Mercurial and the tight integration that this plug in presents I see no reason why people will not use it as the DVCS of choice for .net open source projects hosted on those sites. 
+With the support from Codeplex and Google code to Mercurial and the tight integration that this plug in presents I see no reason why people will not use it as the DVCS of choice for .net open source projects hosted on those sites.

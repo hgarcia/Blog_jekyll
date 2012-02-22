@@ -6,7 +6,7 @@ categories: [Programming, Books]
 ---
 
 I got this book several months back but I only got around to read it a few weeks ago.
-I have to confess that my expectations were low, not because of the authors but because of the topic. 
+I have to confess that my expectations were low, not because of the authors but because of the topic.
 I have been using some of the new markup elements for more than a year and a half now, and I have been following HTML 5 and keeping myself informed for a long time.
 
 h3. Oh boy, was I wrong.
@@ -34,7 +34,7 @@ Forms occupy a full chapter and is probably the one chapter that I read with the
 The validation API is covered in some extend and some work arounds are shown for browsers that don't support or patially support some of the features.
 
 Chapter 4 is the inevitable video and audio chapter, nice simple code examples and some useful tricks are explained.
-Chapter 5 is dedicated to the Canvas API. 
+Chapter 5 is dedicated to the Canvas API.
 
 This is another good chapter to follow with a code editor at hand to practice and type some of the examples. The chapter is intended as an introduction to what is maybe the biggest new api.
 

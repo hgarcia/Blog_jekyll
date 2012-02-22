@@ -9,6 +9,6 @@ At least two really good post today about the future RC1 for the ASP.NET MVC fra
 
 Scaffolding, views without code behind (yeah!), new HtmlHelper<TModel> and AjaxHelper<TModel> types to build strongly typed HTML and AJAX helpers (this should remove the need for magic string.
 
-The feature that got most exited was the changes to the Views, no code behind is, IMHO the way the Views should be. 
+The feature that got most exited was the changes to the Views, no code behind is, IMHO the way the Views should be.
 
-I can’t wait to put my hands in this release.
+I can?t wait to put my hands in this release.
