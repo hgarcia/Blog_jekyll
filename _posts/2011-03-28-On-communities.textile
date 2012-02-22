@@ -1,8 +1,0 @@
----
-title: On communities
-summary: 
-published: false
----
-
-In the last month or so I started to attend some events in the Ruby community here in Toronto.
-These are some of my thoughts and observations so far in this community and I will compare it to the Java and .Net community, but I don't intent this to be controversial or
