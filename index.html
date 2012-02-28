@@ -7,15 +7,15 @@ layout: default
       <header>
         <h2><a href="{{site.blog_url}}{{ post.url}}">{{ post.title }}</a></h2>
       </header>
-      <div>{{ post.content }}</div>
+      <section>{{ post.content }}</section>
     </article>
 
   {% else %}
-  	<article>
+  	<section class="extra">
   		<header>
   			<h2><a href="{{site.blog_url}}{{ post.url}}">{{ post.title }}</a></h2>
   		</header>
   		<p>{{ post.summary }}  <a href="{{site.blog_url}}{{ post.url}}" title="Read more on: {{post.title}}">[read more]</a></p>
-  	</article>
+  	</section>
   {% endif %}
 {% endfor %}
