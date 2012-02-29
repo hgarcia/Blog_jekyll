@@ -4,17 +4,17 @@ layout: default
 
 <article>
 	<header>
-		<h2>{{ page.title }}</h2>	
+		<h2>{{ page.title }}</h2>
 	</header>
-	<footer>|
-		{% for category in page.categories %}
-			<a href="{{ site.blog_url }}/categories/{{ category | downcase | replace:'.','-' | replace:' ','_' }}.html" title="Read other articles in {{ category }}">{{ category }}</a> | 
-		{% endfor %}
-	</footer>
-	<section>
-	{{ content }}
-	<p id="disqus_thread"></p>
+  <section>
+  {{ content }}
 	</section>
+  <footer>
+    {% for category in page.categories %}
+      <a href="{{ site.blog_url }}/categories/{{ category | downcase | replace:'.','-' | replace:' ','_' }}.html" title="Read other articles in {{ category }}">{{ category }}</a>&nbsp;&nbsp;
+    {% endfor %}
+  </footer>
+  <p id="disqus_thread"></p>
 </article>
   <script type="text/javascript"><!--
     google_ad_client = "pub-1824250182552668";
@@ -27,11 +27,11 @@ layout: default
   <script type="text/javascript" src="http://pagead2.googlesyndication.com/pagead/show_ads.js"></script>
 <script type="text/javascript">
   /**
-    * var disqus_identifier; [Optional but recommended: Define a unique identifier (e.g. post id or slug) for this thread] 
+    * var disqus_identifier; [Optional but recommended: Define a unique identifier (e.g. post id or slug) for this thread]
     */
   (function() {
-   var dsq = document.createElement('script'); 
-   dsq.type = 'text/javascript'; 
+   var dsq = document.createElement('script');
+   dsq.type = 'text/javascript';
    dsq.async = true;
    dsq.src = 'http://thedynamicprogrammer.disqus.com/embed.js';
    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);

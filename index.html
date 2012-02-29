@@ -1,20 +1,26 @@
 ---
 layout: default
 ---
-{% for post in site.posts limit:5 %}
+{% for post in site.posts limit:9 %}
   {% if forloop.first %}
     <article>
       <header>
         <h2><a href="{{site.blog_url}}{{ post.url}}">{{ post.title }}</a></h2>
       </header>
       <section>{{ post.content }}</section>
+        <footer>
+        {% for category in post.categories %}
+          <a href="{{ site.blog_url }}/categories/{{ category | downcase | replace:'.','-' | replace:' ','_' }}.html" title="Read other articles in {{ category }}">{{ category }}</a>&nbsp;&nbsp;
+        {% endfor %}
+      </footer>
     </article>
 
+
   {% else %}
-  	<section class="extra">
-			<h5><a href="{{site.blog_url}}{{ post.url}}">{{ post.title }}</a></h2>
+
+  	<section>
+			<h3><a href="{{site.blog_url}}{{ post.url}}">{{ post.title }}</a></h3>
   		<p>{{ post.summary }}</p>
-      <p><a href="{{site.blog_url}}{{ post.url}}" title="Read more on: {{post.title}}">[read more]</a></p>
   	</section>
   {% endif %}
 {% endfor %}
