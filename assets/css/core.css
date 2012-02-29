@@ -13,6 +13,28 @@ object,
 embed {max-width: 100%;}
 
 
+@font-face {
+    font-family: 'League';
+    src: url('../fonts/league/League_Gothic-webfont.eot');
+    src: url('../fonts/league/League_Gothic-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/league/League_Gothic-webfont.woff') format('woff'),
+         url('../fonts/league/League_Gothic-webfont.ttf') format('truetype'),
+         url('../fonts/league/League_Gothic-webfont.svg#League') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Raleway';
+    src: url('../fonts/raleway/raleway_thin-webfont.eot');
+    src: url('../fonts/raleway/raleway_thin-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/raleway/raleway_thin-webfont.woff') format('woff'),
+         url('../fonts/raleway/raleway_thin-webfont.ttf') format('truetype'),
+         url('../fonts/raleway/raleway_thin-webfont.svg#Raleway') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
 /*- optional vanity styles ----------*/
 @media only screen and (max-device-width: 480px) {
   html {-webkit-text-size-adjust: none}
@@ -28,7 +50,7 @@ body {
 }
 
 .main-content {
-  max-width: 950px;
+  max-width: 740px;
   margin: 0 auto;
 }
 
@@ -37,20 +59,17 @@ abbr {
 }
 
 header.main h1{
+  font-family: League;
+  text-transform: uppercase;
+  font-weight: normal;
   color: #777777;
-  font-size: 2.8em;
-  letter-spacing: 0.1em;
-  word-spacing: -0.2em;
+  font-size: 6em;
   margin: 0 auto;
-  width: 70%;
 }
 
 nav{
-  border-bottom: 1px solid #034463;
-  height: 30px;
   margin-bottom: 25px;
-  margin-top: 20px;
-  padding-left: 20px;
+  padding-left: 0.6em;
 }
 
 nav li {
@@ -69,24 +88,42 @@ nav a{
   font-style: normal;
 }
 
+article header {
+  line-height: 4em;
+}
+
 article a, section a {
   color: #777777;
-  font-style: italic;
+}
+
+article section {
+  padding-left: 1em;
 }
 
 header h2 a {
   text-decoration: none;
+  font-family: Raleway;
 }
 
 p {
   font-family: Times New Roman;
   font-size: 1.1em;
   padding-bottom: 10px;
+  padding-left: 1em;
 }
 
 h3, h4, h5, h6 {
-  padding-top: 0.8em;
-  padding-bottom: 0.5em;
+    font-family: League;
+    font-weight: normal;
+    letter-spacing: 0.1em;
+    padding-bottom: 0.5em;
+    padding-top: 0.8em;
+    text-transform: uppercase;
+}
+
+h4{
+  color: #777;
+  font-weight: bold;
 }
 
 .extra {

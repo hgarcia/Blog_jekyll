@@ -12,10 +12,9 @@ layout: default
 
   {% else %}
   	<section class="extra">
-  		<header>
-  			<h2><a href="{{site.blog_url}}{{ post.url}}">{{ post.title }}</a></h2>
-  		</header>
-  		<p>{{ post.summary }}  <a href="{{site.blog_url}}{{ post.url}}" title="Read more on: {{post.title}}">[read more]</a></p>
+			<h5><a href="{{site.blog_url}}{{ post.url}}">{{ post.title }}</a></h2>
+  		<p>{{ post.summary }}</p>
+      <p><a href="{{site.blog_url}}{{ post.url}}" title="Read more on: {{post.title}}">[read more]</a></p>
   	</section>
   {% endif %}
 {% endfor %}

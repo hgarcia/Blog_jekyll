@@ -17,7 +17,7 @@ Bruce Lawson starts explaining the new structural elements with clear examples o
 
 Once on chapter 2, the book started to get really interesting, presenting some not so common elements like the <time> tag and started to work with HTML 5 outlines.
 
-__By the way, the time element in the last 10 days of so was removed from the draft and re-added a few days later. :-) __
+__By the way, the time element in the last 10 days of so was removed from the draft and re-added a few days later. :-)__
 
 The book also takes in consideration accessibility and how to coding our markup for it. The proper usage of headings, hierarchy, usage of hgroup, differences between section and article, etc.
 
