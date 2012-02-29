@@ -1,17 +1,17 @@
 ---
 layout: post
-title: Nullable types, what's going on when you do int?
+title: Nullable types, whats going on when you do int?
 summary: As you know some types are not nullable like int, decimal, double or DateTime. So if for some reason we need a null int we need to use the nullable types.   To define a nullable type we use the question mark notation like this int?, decimal?...
 categories: [Programming]
 ---
 
 As you know some types are not nullable like: int, decimal, double or DateTime. So if for some reason we need a null int we need to use the nullable types.
 
-To define a nullable type we use the question mark notation like this: int?, decimal?, double? or DateTime?. 
+To define a nullable type we use the question mark notation like this: int?, decimal?, double? or DateTime?.
 
 But what happened on the background? How are those types interpreted by the runtime?
 
-Let's take the following code. 
+Let's take the following code.
 
 
 
