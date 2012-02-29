@@ -133,7 +133,7 @@ abbr {
 }
 
 header.main h1{
-  font-family: League League_blog;
+  font-family: League, League_blog;
   text-transform: uppercase;
   font-weight: normal;
   color: #777777;
@@ -182,18 +182,18 @@ article footer {
 
 header h2 a {
   text-decoration: none;
-  font-family: Raleway Raleway_blog;
+  font-family: Raleway, Raleway_blog;
 }
 
 p {
-  font-family: Times New Roman;
+  font-family: "Times New Roman";
   font-size: 1.1em;
   padding-bottom: 10px;
   padding-left: 1em;
 }
 
 h3, h4, h5, h6 {
-    font-family: League League_blog;
+    font-family: League, League_blog;
     font-weight: normal;
     letter-spacing: 0.1em;
     padding-bottom: 0.5em;
