@@ -14,8 +14,7 @@ layout: default
       <a href="{{ site.blog_url }}/categories/{{ category | downcase | replace:'.','-' | replace:' ','_' }}.html" title="Read other articles in {{ category }}">{{ category }}</a>&nbsp;&nbsp;
     {% endfor %}
   </footer>
-  <p id="disqus_thread"></p>
-</article>
+
   <script type="text/javascript"><!--
     google_ad_client = "pub-1824250182552668";
     /* 728x90, created 2/15/09 */
@@ -25,6 +24,9 @@ layout: default
     //-->
   </script>
   <script type="text/javascript" src="http://pagead2.googlesyndication.com/pagead/show_ads.js"></script>
+
+  <p id="disqus_thread"></p>
+</article>
 <script type="text/javascript">
   /**
     * var disqus_identifier; [Optional but recommended: Define a unique identifier (e.g. post id or slug) for this thread]

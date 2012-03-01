@@ -200,10 +200,10 @@ article, section.extra {
 }
 
 article header {
-  line-height: 4em;
+  margin-bottom: 2em;
 }
 
-article a, section a {
+article a, section a, article header h2 {
   color: #777777;
 }
 
