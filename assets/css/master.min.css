@@ -183,6 +183,7 @@ ul.auxiliary-nav li ul li {
   font-size: 0.7em;
   padding-left: 0.5em;
   float: none;
+  width: 100%;
 }
 
 ul.auxiliary-nav li ul li a {
@@ -283,7 +284,7 @@ article p i, article p blockquote, article p em, article p cite, article i, arti
 }
 
 article p i, article p blockquote, article p em, article p cite {
-  margin: 0.3em 0 0 -38%;
+  margin: 0 0 0 -38%;
 }
 
 blockquote p, i p, em p, cite p {
@@ -293,7 +294,7 @@ blockquote p, i p, em p, cite p {
 blockquote{
   background-color: #E0EFEF;
   padding: 0.5em;
-  width: 34% !important;
+  width: 32% !important;
 }
 
 span.by-link{
