@@ -2,13 +2,13 @@
 layout: post
 title: Super simple Silverlight video player in 20 minutes with a text editor and Gestalt.
 summary: A few hours ago I saw a Tweet by @shanselman about having Ruby and Python scripts tags in your html pages.
-categories: [Frameworks, Gestalt, Programming]
+categories: [Frameworks, Programming]
 ---
 
 A few hours ago I saw a Tweet by <a href="http://twitter.com/shanselman" target="_blank">@shanselman</a> about having Ruby and Python scripts tags in your html pages. Clicking in the URL took me to <a title="http://visitmix.com/labs/gestalt/" href="http://visitmix.com/labs/gestalt/" target="_blank">http://visitmix.com/labs/gestalt/</a>. I didn't have to read much to understand the potential.
-I'm myself an old web guy that still love to craft my JavaScript, Html and PHP code using a text editor. (My old time favourite was <a href="http://www.pspad.com/" target="_blank">PSPad</a> but lately I have been using <a href="http://www.e-texteditor.com/" target="_blank">e</a>, a "clone" of <a href="http://macromates.com/" target="_blank">TextMate</a> for windows. 
+I'm myself an old web guy that still love to craft my JavaScript, Html and PHP code using a text editor. (My old time favourite was <a href="http://www.pspad.com/" target="_blank">PSPad</a> but lately I have been using <a href="http://www.e-texteditor.com/" target="_blank">e</a>, a "clone" of <a href="http://macromates.com/" target="_blank">TextMate</a> for windows.
 
-My team make fun of me since sometimes I even fire up e to fix some bug in C# files. 
+My team make fun of me since sometimes I even fire up e to fix some bug in C# files.
 
 Don't get me wrong, I love a good IDE and there is no way I can be as productive as I am writing C# without Visual Studio and add ins like R# or CodeRush. This post is not about IDE's vs. Text editors anyway.
 
@@ -43,7 +43,7 @@ Save the file inside a Xaml subfolder.
 11:35 PM  Create a link to the Xaml file in the html file (needed to consult the documentation, sample files).
 Create three input elements, give them names and id's (Id's is the way you will access them from your code later on).
 
-11:40 PM  Create a new Python file inside a python subfolder. 
+11:40 PM  Create a new Python file inside a python subfolder.
 Create three methods (ClickPlay, ClickPause, ClickStop), to handle the onclick event on the input elements. (have to consult the documentation for the method signature).
 Attach the this method to the proper event for each of the input elements, the code is very similar to the way that both prototype and JQuery do this.
 
@@ -63,4 +63,4 @@ In no more than 21 minutes I was able to create a Silverlight player that is con
 
 It took me longer to write this post that write the simple video player. So, what are you saying, we don't need blend and VS to write Silverlight applications? No, I'm not saying that. I'm pretty sure that there may be scenarios where writing you code in c# a deploy a XAP file are the way to go. But I see a lot of other scenarios where Gestalt is the way to go.
 
-I may be do some more on top of it or something else, maybe investigate how difficult will be to implement drag and drop. 
+I may be do some more on top of it or something else, maybe investigate how difficult will be to implement drag and drop.

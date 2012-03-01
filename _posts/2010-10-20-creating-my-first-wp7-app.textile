@@ -2,7 +2,7 @@
 layout: post
 title: Creating my first WP7 application.
 summary: I decided that my first Windows Phone 7 application should be a Pomodoro timer. It's a fairly simple thing to do and useful at the same time.
-categories: [Programming, WP7]
+categories: [Programming]
 ---
 
 A few weeks ago I decided to go ahead and try to create my first WP7 application. Not sure why I wait so long, but I think that the official launch had something to do with my newly found entusiasm.
@@ -48,7 +48,7 @@ Microsoft came up with the "Metro" UI/theme for the phone and they have done a g
 
 After reading the guidelines I changed a lot of things even in my simple app. For once, I'm not changing the colour of the buttons anymore and using the provided styles to maintain consistency.
 
-I think that having this guidelines in place is what can help to make this phone and their apps a success. We need to remember that sadly most developers, myself included, have a hard time designing nice looking user interfaces. Even when we can recognize one, we still have a hard time coming up with it. 
+I think that having this guidelines in place is what can help to make this phone and their apps a success. We need to remember that sadly most developers, myself included, have a hard time designing nice looking user interfaces. Even when we can recognize one, we still have a hard time coming up with it.
 
 h3. Manual testing and debugging
 

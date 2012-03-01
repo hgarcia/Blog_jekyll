@@ -1,7 +1,7 @@
 ---
 layout: default
 ---
-{% for post in site.posts limit:9 %}
+{% for post in site.posts limit:7 %}
   {% if forloop.first %}
     <article>
       <header>
@@ -14,11 +14,11 @@ layout: default
         {% endfor %}
       </footer>
     </article>
-
+    <hr/>
 
   {% else %}
 
-  	<section>
+  	<section class="extra">
 			<h3><a href="{{site.blog_url}}{{ post.url}}">{{ post.title }}</a></h3>
   		<p>{{ post.summary }}</p>
   	</section>

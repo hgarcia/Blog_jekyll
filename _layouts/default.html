@@ -79,7 +79,7 @@
 <body>
   <div class="main-content">
     <header class="main">
-      <h1>{{site.name}}</h1>
+      <h1>The d<span style="color:#E00875">y</span>namic programmer</h1>
     </header>
     <nav class="mod">
       <ul>
@@ -90,14 +90,43 @@
         <li><a href="http://twitter.com/theprogrammer" title="@TheProgrammer on Twitter">Twitter</a></li>
       </ul>
     </nav>
-    <div role="main">
+    <div class="main">
     {{ content }}
     </div>
+  </div>
+  <div class="main-footer">
+    <ul class="auxiliary-nav">
+      <li>Categories
+        <ul>
+          <li><a href="{{site.blog_url}}/categories/android.html">android</a></li>
+          <li><a href="{{site.blog_url}}/categories/architecture.html">architecture</a></li>
+          <li><a href="{{site.blog_url}}/categories/books.html">books</a></li>
+          <li><a href="{{site.blog_url}}/categories/codemash.html">codemash</a></li>
+          <li><a href="{{site.blog_url}}/categories/continuous_integration.html">c.i.</a></li>
+          <li><a href="{{site.blog_url}}/categories/dotnet.html">.net</a></li>
+          <li><a href="{{site.blog_url}}/categories/frameworks.html">frameworks</a></li>
+          <li><a href="{{site.blog_url}}/categories/general.html">general</a></li>
+          <li><a href="{{site.blog_url}}/categories/javascript.html">javascript</a></li>
+          <li><a href="{{site.blog_url}}/categories/links.html">links</a></li>
+          <li><a href="{{site.blog_url}}/categories/luca.html">luca</a></li>
+          <li><a href="{{site.blog_url}}/categories/methodology.html">methodology</a></li>
+          <li><a href="{{site.blog_url}}/categories/node-js.html">node.js</a></li>
+          <li><a href="{{site.blog_url}}/categories/patterns.html">patterns</a></li>
+          <li><a href="{{site.blog_url}}/categories/programming.html">programming</a></li>
+          <li><a href="{{site.blog_url}}/categories/ruby.html">ruby</a></li>
+          <li><a href="{{site.blog_url}}/categories/talks.html">talks</a></li>
+          <li><a href="{{site.blog_url}}/categories/testing.html">testing</a></li>
+          <li><a href="{{site.blog_url}}/categories/tools.html">tools</a></li>
+        </ul>
+      </li>
+      <li>Archives</li>
+      <li>Projects</li>
+      <li>About</li>
+    </ul>
     <footer>
       <p><small>&copy; Copyright {{site.author}} 2007 - 2012. All Rights Reserved.</small></p>
     </footer>
   </div>
-
   <script type="text/javascript">
   var disqus_shortname = 'thedynamicprogrammer';
   (function () {
