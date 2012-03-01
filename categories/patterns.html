@@ -5,12 +5,12 @@ layout: default
 {% for post in site.posts %}
 	{% for category in  post.categories %}
 	{% if category == 'Patterns' %}
-		<article>
+		<section class="extra">
 			<header>
-				<h2><a href="{{site.blog_url}}{{ post.url}}">{{ post.title }}</a></h2>
+				<h3><a href="{{site.blog_url}}{{ post.url}}">{{ post.title }}</a></h3>
 			</header>
-			<p>{{ post.summary }}  <a href="{{site.blog_url}}{{ post.url}}" title="Read more on: {{post.title}}">[read more]</a></p>		
-		</article>
+			<p>{{ post.summary }}</p>
+		</section>
 	{% endif %}
 	{% endfor %}
 {% endfor %}
