@@ -106,10 +106,6 @@ img,
 object,
 embed {max-width: 100%;}
 
-/*- optional vanity styles ----------*/
-@media only screen and (max-device-width: 480px) {
-}
-
 /*- LET'S GET STARTED!
 ----------------------------------------------------------------------*/
 
@@ -122,14 +118,14 @@ body {
 .main-content {
     background-color: #FAFAFA;
     margin: 0 auto;
-    max-width: 740px;
+    max-width: 60%; /*740px;*/
     padding: 3em;
     box-shadow: 0 2px 3px rgba(78, 68, 60, 0.3);
 }
 
 .main-footer {
   margin: 0 auto;
-  max-width: 740px;
+  max-width: 60%; /* 740px; */
   padding: 1em 3em 3em;
   background-color: #445566;
   color: #FAFAFA;
@@ -321,6 +317,75 @@ td {
 }
 article section ul{
   padding-left: 20px;
+}
+
+/*- optional vanity styles ----------*/
+@media only screen and (min-width: 1200px) {
+  .main-content, .main-footer {
+    max-width: 60%;
+  }
+}
+
+@media only screen and (max-width: 1024px) {
+  .main-content, .main-footer {
+    max-width: 80%;
+  }
+}
+
+@media only screen and (max-width: 960px) {
+  header.main h1{
+    font-size: 6em;
+  }
+  article {
+    padding: 0 0 0 2%;
+  }
+  article p i, article p blockquote, article p em, article p cite, article i, article blockquote, article em, article cite{
+    border-left: 2px solid #CDCDCD;
+    margin: 1em 0 0 -5%;
+    /*margin-top: 1em;*/
+    padding-bottom: 1em;
+    padding-left: 1em;
+    width: inherit;
+  }
+  ul.auxiliary-nav li {
+    float: none;
+    width: inherit;
+    margin-bottom: 3em;
+  }
+  ul.auxiliary-nav li ul li {
+    display: block;
+    float: left;
+    margin-bottom: 0;
+    width: inherit;
+  }
+}
+
+@media only screen and (max-width: 950px) {
+  header.main h1{
+    font-size: 4.8em;
+  }
+}
+@media only screen and (max-width: 764px) {
+  header.main h1{
+    font-size: 4em;
+  }
+}
+@media only screen and (max-width: 640px) {
+  .main-content, .main-footer {
+    max-width: 90%;
+    padding: 1.5em;
+  }
+  article section, p {
+    padding-left: 0;
+  }
+}
+@media only screen and (max-width: 565px) {
+  header.main h1{
+    font-size: 2.2em;
+  }
+  nav li {
+    margin: 0;
+  }
 }
 
 
