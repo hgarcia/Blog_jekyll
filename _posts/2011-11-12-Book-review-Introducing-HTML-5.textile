@@ -5,7 +5,7 @@ summary: Introducing HTML 5 by Bruce Lawson and Remy Sharp is one of those books
 categories: [Programming, Books]
 ---
 
-<a href="http://www.amazon.com/Introducing-HTML5-Voices-Matter-ebook/dp/B003WJRW2U/ref=sr_1_4?ie=UTF8&qid=1331255319&sr=8-4" target="_blank"><img src="../../../images/posts/intro-html5.jpg" border="0" alt="Book cover image Introducing HTML 5" style="width: 75%"/></a>I got this book, Introducing HTML 5 by "Bruce Lawson":http://www.brucelawson.co.uk/ and "Remy Sharp":http://remysharp.com/ , several months back but I only got around to read it a few weeks ago.
+<a class="img-float-right" href="http://www.amazon.com/Introducing-HTML5-Voices-Matter-ebook/dp/B003WJRW2U/ref=sr_1_4?ie=UTF8&qid=1331255319&sr=8-4" target="_blank"><img src="../../../images/posts/intro-html5.jpg" border="0" alt="Book cover image Introducing HTML 5" style="width: 75%"/></a>I got this book, Introducing HTML 5 by "Bruce Lawson":http://www.brucelawson.co.uk/ and "Remy Sharp":http://remysharp.com/ , several months back but I only got around to read it a few weeks ago.
 I have to confess that my expectations were low, not because of the authors but because of the topic.
 I have been using some of the new markup elements for more than a year and a half now, and I have been following HTML 5 and keeping myself informed for a long time.
 
