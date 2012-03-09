@@ -1,0 +1,11 @@
+---
+layout: post
+title: Windows 8 - first impressions.
+summary: During the weekend I decided to go ahead and get the Windows 8 consumers preview release installed on my side laptop, together with VS 2011. So far, so good.
+categories: [Programming, General]
+published: false
+---
+
+
+
+h3. Oh boy, was I wrong.
