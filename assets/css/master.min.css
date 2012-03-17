@@ -393,6 +393,12 @@ article section ul{
     padding-left: 1em;
     width: inherit;
   }
+  aside.resources {
+    margin: 1em 0 0 -5%;
+    padding-bottom: 1em;
+    padding-left: 1em;
+    width: inherit;
+  }
   ul.auxiliary-nav li {
     float: none;
     width: inherit;
