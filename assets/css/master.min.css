@@ -192,6 +192,21 @@ article {
   position: relative;
 }
 
+aside.resources {
+  margin: 0 0 0 -34%;
+  float: left;
+}
+
+aside.resources h4 {
+  font-style: italic;
+  text-decoration: underline;
+  font-size: 0.8em;
+}
+
+aside.resources ul li a {
+  font-size: 0.7em;
+}
+
 article, section.extra {
   margin-bottom: 2em;
 }
@@ -328,6 +343,8 @@ td {
   border: 1px solid #999999;
 }
 article section ul{
+  display: block;
+  list-style: circle inside none;
   padding-left: 20px;
 }
 
