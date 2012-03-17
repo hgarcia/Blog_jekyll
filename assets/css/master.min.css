@@ -115,6 +115,10 @@ body {
   background-color: #DEDEDE;
 }
 
+a {
+  color: #555555;
+}
+
 .main-content {
     background-color: #FAFAFA;
     margin: 0 auto;
@@ -346,6 +350,19 @@ article section ul{
   display: block;
   list-style: circle inside none;
   padding-left: 20px;
+}
+
+#disqus_thread {
+  font-family: inherit;
+}
+#dsq-content h3 {
+  font-size: 0.8em;
+}
+#dsq-pagination {
+  display: none;
+}
+.dsq-trackback-url {
+  font-size: 0.8em;
 }
 
 /*- optional vanity styles ----------*/
