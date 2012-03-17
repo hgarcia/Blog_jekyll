@@ -264,7 +264,7 @@ article section ul{
 #dsq-content h3 {
   font-size: 0.8em;
 }
-#dsq-pagination {
+#dsq-sort-by, #dsq-pagination {
   display: none;
 }
 .dsq-trackback-url {
