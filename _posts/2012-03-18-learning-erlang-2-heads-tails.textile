@@ -7,7 +7,7 @@ categories: [Programming, Erlang]
 
 __Note of caution. These are the notes I'm taking while learning the language. You are welcome to follow along and use them as a guide. Please make sure to double check everything and use more authoritative sources like the "Erlang language":http://www.erlang.org site__
 
-We have a list with some elements and we want to get the first one. As "we saw before":http://blog.dynamicprogrammer.com/2012/03/16/learning-erlang.html, assigment is done via pattern matching. So to get the first element on a list we can match it to a variable. Let's see how we can do this and what works and what doesn't.
+We have a list with some elements and we want to get the first one. As "we saw before":http://blog.dynamicprogrammer.com/2012/03/16/learning-erlang.html, assignment is done via pattern matching. So to get the first element on a list we can match it to a variable. Let's see how we can do this and what works and what doesn't.
 
 <script src="https://gist.github.com/2054805.js?file=matching_lists.erl"></script>
 
@@ -19,14 +19,14 @@ Remember that we are trying to pattern match here and the lists have not the sam
 
 We could write a list on the left side with the exact number of arguments of the list on the right side, but that's obviously not a proper way to go about it.
 
-So we can use the '_' char to "ignore" elements on the list. The underscore is a wildcard variable. Here, I'm using the pipe operator to differentiate between the head and tail of the list.
+So we can use the '_' char to "ignore" elements on the list. The underscore is a wild card variable. Here, I'm using the pipe operator to differentiate between the head and tail of the list.
 Notice that '_' doesn't get bound to the tail of the list.
 We can still use the pipe to bound both the head and the tail to two different variables.
 The pipe operator is also known as "cons" or "constructor" operator since it can be used to create lists or add elements to the head of a list.
 
 <script src="https://gist.github.com/2054805.js?file=cons_operator.erl"></script>
 
-The last element (after the cons operator) has to be a list to build a proper list. If you don't do so you will create what is knows as an unproper list. On an unproper list the tail will be treated as an atom and not a list. You can see the example below, the first time we build an unproper list and we get the tail several times (this is very common in Erlang when processing a list using recursion, here I'm doing it manually just to show the problem).
+The last element (after the cons operator) has to be a list to build a proper list. If you don't do so you will create what is knows as a non proper list. On these types of list, the tail will be treated as an atom and not a list. You can see the example below, the first time we build a non proper list and we get the tail several times (this is very common in Erlang when processing a list using recursion, here I'm doing it manually just to show the problem).
 
 <script src="https://gist.github.com/2054805.js?file=unproper_proper_lists.erl"></script>
 
