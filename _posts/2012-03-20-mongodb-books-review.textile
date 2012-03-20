@@ -1,0 +1,8 @@
+---
+layout: post
+title: MongoDb and Scaling MongoDb, two book reviews in one.
+summary: If you do anything with mongo db this two books are a must have in your library.
+categories: [Programming, Books]
+published: false
+---
+
