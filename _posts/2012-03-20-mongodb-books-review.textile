@@ -6,3 +6,15 @@ categories: [Programming, Books]
 published: false
 ---
 
+I got both books last year at the MongoDB NYC conference. Somehow I forgot to write a review. Time to fix that.
+
+The books written by 10 gen's employee "Kristina Chodorow":http://www.snailinaturtleneck.com/blog/ are a must have for anybody working with MongoDb.
+
+The books refer to older versions of MongoDb but most of the information is still fairly relevant, so your money will be well spend. The definitive guide teachs you everything you will need to know to get up and running with MongoDb. Installing it, querying and interacting with the database.
+
+The second book deals with how to scale Mongo using sharding and replica sets. It's a small book that doesn't waste your time and goes directly to the point.
+
+h3. MongoDb, The definitive guide.
+
+
+h3. Scaling MongoDb
