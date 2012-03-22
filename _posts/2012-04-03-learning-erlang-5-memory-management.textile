@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Modules and functions, building block of a program.
+title: Memory managements, understanding the garbage collector.
 summary: Erlang code is divided in modules. Each module contains attributes and functions.
 categories: [Programming, Erlang]
 published: false
