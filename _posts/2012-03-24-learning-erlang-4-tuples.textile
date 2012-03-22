@@ -1,0 +1,10 @@
+---
+layout: post
+title: Modules and functions, building block of a program.
+summary: Erlang code is divided in modules. Each module contains attributes and functions.
+categories: [Programming, Erlang]
+published: false
+---
+
+__Note of caution. These are the notes I'm taking while learning the language. You are welcome to follow along and use them as a guide. Please make sure to double check everything and use more authoritative sources like the "Erlang language":http://www.erlang.org site__
+

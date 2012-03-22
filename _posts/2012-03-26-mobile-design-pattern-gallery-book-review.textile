@@ -1,0 +1,10 @@
+---
+layout: post
+title: Mobile design pattern gallery, book review
+summary: UI patterns for iOs, Android and other mobile devices by Theresa Neil.
+categories: [Programming, Design, Books]
+published: false
+---
+
+__Disclaimer: I got this book after signing in for the bloggers review program at O'Reilly. This have not affected my opinions and this review is impartial.__
+
