@@ -31,7 +31,7 @@ If you have a problem with languages that use semicolons, Erlang may not be for 
 
 h3. The name of the game is pattern matching.
 
-Variables are bound to values or data structures, not assigned. Once a variable is bound can't be bound to a different value. Bounding variables is done matching a pattern. Unbound variables match any value, so to bound a variable to a value we match the new variable to the value using the equal sign.
+Variables are bound to values or data structures, not assigned. Once a variable is bound can't be bound to a different value. Binding variables is done matching a pattern. Unbound variables match any value, so to bound a variable to a value we match the new variable to the value using the equal sign.
 
 <script src="https://gist.github.com/2054805.js?file=variables.erl"></script>
 
@@ -48,5 +48,5 @@ Both list and tuples can contain any item; Atoms, variables, Numbers, even Tuple
 
 You can use both this types to create complex data structures.
 
-There are also "Records.":http://www.erlang.org/doc/reference_manual/records.html Records are similat to Tuples but the elements can be accesed by the key (Atom).
+There are also "Records.":http://www.erlang.org/doc/reference_manual/records.html Records are similar to Tuples but the elements can be accesed by the key (Atom).
 The name of the Record and the name of the elements should be Atoms, you define records and they structure before hand. You can assign a default value to the fields. The Records need to be define before usage on the code.
