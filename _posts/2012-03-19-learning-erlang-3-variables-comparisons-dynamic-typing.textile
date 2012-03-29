@@ -5,7 +5,7 @@ summary: Variables are immutables. Comparison can be performed between any type.
 categories: [Programming, Erlang]
 ---
 
-__Note of caution. These are the notes I'm taking while learning the language. You are welcome to follow along and use them as a guide. Please make sure to double check everything and use more authoritative sources like the "Erlang language":http://www.erlang.org site__
+__Note of caution. These are my notes while learning Erlang. You are welcome to follow along and use them as a guide. Please make sure to check the "Erlang language":http://www.erlang.org site__
 
 Variables can only be bound once per scope. There is no such thing as global variables. (Great!)
 You don't need to declare variables before hand, you just create and assign at the same time.
