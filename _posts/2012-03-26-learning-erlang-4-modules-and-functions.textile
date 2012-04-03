@@ -36,11 +36,11 @@ Modules are text files where we logically group functions together.
 
 __You may be familiar with other similar module systems, like commonjs used in node.js__
 
-We name the module using the "module" directive, this has to be the first directive on a module. The name of the module have to be the same as the name of the file without the extension (erl) and we use an atom not a string.
+We name the module using the "module" attribute, this has to be the first attribute on a module. The name of the module have to be the same as the name of the file without the extension (erl) and we use an atom not a string.
 
-A Module provide encapsulation, by default all functions defined inside a module are private to it; to expose functions outside the module you need to export them using the export directive.
+A Module provide encapsulation, by default all functions defined inside a module are private to it; to expose functions outside the module you need to export them using the export attribute.
 
-The export directive takes a list containing the function name and the arity. (name/arity)
+The export attribute takes a list containing the function name and the arity. (name/arity)
 
 Since we need to consume the anchor function we create a file with the name htmltags.erl where we copy the function and export it.
 
@@ -64,4 +64,4 @@ The module will be automatically imported into the current shell as well, allowi
 
 h3. Next time.
 
-There are more ways to compile modules and a myriad of directives that can be used both by the compiler and in code. I will cover them up in a future post.
+There are more ways to compile modules and a myriad of attributes that can be used both by the compiler and in code. I will cover them up in a future post.

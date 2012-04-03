@@ -302,6 +302,12 @@ code {
   padding: 0.15em;
 }
 
+span.code {
+  font-family: Courier;
+  display: inline;
+  font-size: 0.9em;
+}
+
 article p i, article p blockquote, article p em, article p cite, article i, article blockquote, article em, article cite{
     color: #555555;
     float: left;

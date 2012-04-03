@@ -1,6 +1,6 @@
 ---
 layout: post
-title: A walk throught the redesign process of this block.
+title: A walk throught the redesign process of this site.
 summary: What it took me (a programmer), to redesing the site and incorporate some responsive elements.
 categories: [Programming, Design]
 published: false

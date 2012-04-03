@@ -1,9 +1,0 @@
----
-layout: post
-title: Module directives and different ways of compile our code.
-summary: Erlang code is divided in modules. Each module contains attributes and functions.
-categories: [Programming, Erlang]
-published: false
----
-
-__Note of caution. These are my notes while learning Erlang. You are welcome to follow along and use them as a guide. Please make sure to check the "Erlang language":http://www.erlang.org site__
