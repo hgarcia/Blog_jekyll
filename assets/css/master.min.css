@@ -287,7 +287,11 @@ footer{
   margin-right: 1em;
   margin-bottom: 1em;
 }
-
+.side-bar-img {
+  margin-right: 1em;
+  display: block;
+  width: 125px;
+}
 article footer a{
   font-size: 0.8em;
 }
@@ -394,7 +398,6 @@ article section ul{
   article p i, article p blockquote, article p em, article p cite, article i, article blockquote, article em, article cite{
     border-left: 2px solid #CDCDCD;
     margin: 1em 0 0 -5%;
-    /*margin-top: 1em;*/
     padding-bottom: 1em;
     padding-left: 1em;
     width: inherit;
@@ -437,11 +440,18 @@ article section ul{
   }
 }
 @media only screen and (max-width: 565px) {
+  article p i{
+    display: block;
+    float: none;
+  }
   header.main h1{
     font-size: 2.2em;
   }
   nav li {
     margin: 0;
+  }
+  .side-bar-img {
+    margin: 0 auto;
   }
 }
 

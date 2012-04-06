@@ -28,9 +28,9 @@ The content is clearly organized, each chapter covering one specific aspect.
 
 The last chapter covers some common anti-patterns.
 
-At the beginning of each chapter there is a quick list of the different patterns with a sketch of each one. This give you a nice overview up front and can be really helpful on subsequent uses to quickly find a particular design.
+__<a href="http://oreilly.com/bloggers/" class="side-bar-img"><img alt="I review for the O'Reilly Blogger Review Program" src="http://cdn.oreilly.com/bloggers/blogger-review-badge-125.png" border="0" width="125" height="125"></a>__
 
-__<a href="http://oreilly.com/bloggers/"><img alt="I review for the O'Reilly Blogger Review Program" src="http://cdn.oreilly.com/bloggers/blogger-review-badge-125.png" border="0" width="125" height="125" style="margin-right: 1em;"></a>__
+At the beginning of each chapter there is a quick list of the different patterns with a sketch of each one. This give you a nice overview up front and can be really helpful on subsequent uses to quickly find a particular design.
 
 The appendix list all the patterns once more, this time using a bigger version of the sketch, the name and a few description lines. I find myself using the appendix as a quick reference in the e-book version to find a given pattern quickly I only need to skim over a few pages.
 
