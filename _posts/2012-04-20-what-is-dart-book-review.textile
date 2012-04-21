@@ -2,7 +2,7 @@
 layout: post
 title: What is Dart? by Kathy Walrath and Seth Ladd.
 summary: Published by O'Reilly this very short book attempt to explain what is Dart and why you may want to use it.
-categories: [Programming, Design]
+categories: [Programming, Books]
 ---
 
 __Disclaimer: I got this book as part of the bloggers review program at O'Reilly.__
