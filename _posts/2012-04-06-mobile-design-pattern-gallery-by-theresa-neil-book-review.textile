@@ -7,7 +7,7 @@ categories: [Programming, Design, Books]
 
 __Disclaimer: I got this book as part of the bloggers review program at O'Reilly.__
 
-<a href="http://oreillynet.com/pub/reviewproduct/651" target="_blank"><img class="img-float-right"  src="../../../images/posts/mobile_design_patterns.gif" border="0" alt="Responsive Web Design - book cover"/></a>This book by "Theresa Neil":http://www.theresaneil.com/ covers pretty much any common need you will have while creating a mobile application. It covers a large variety of platforms, clearly illustrating the differences of each one and how to implement a given pattern efficiently and properly due to those differences.
+<a href="http://oreillynet.com/pub/reviewproduct/651" target="_blank"><img class="img-float-right"  src="../../../images/posts/mobile_design_patterns.gif" border="0" alt="RMobile design patterns - book cover"/></a>This book by "Theresa Neil":http://www.theresaneil.com/ covers pretty much any common need you will have while creating a mobile application. It covers a large variety of platforms, clearly illustrating the differences of each one and how to implement a given pattern efficiently and properly due to those differences.
 
 There are at least two (and often more), screen captures from real live application to illustrate how those patterns have been implemented.
 In some cases, there are screens illustrating how not to implement a given pattern as well.
