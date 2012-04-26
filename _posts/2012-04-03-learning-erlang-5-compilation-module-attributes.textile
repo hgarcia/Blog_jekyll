@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Module attributes provide information to the compiler and metadata about the module.
+title: Module attributes and compilation (Learning Erlang 5).
 summary: There are a myriad of directives you can use in your Erlang modules, even define your owns.
 categories: [Programming, Erlang]
 ---

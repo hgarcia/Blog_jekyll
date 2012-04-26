@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Modules and functions, Erlang building blocks.
+title: Modules and functions, Erlang building blocks (Learning Erlang 4).
 summary: Erlang code is divided in modules. Each module contains attributes and functions. Modules (and functions) are the building blocks of any program in Erlang.
 categories: [Programming, Erlang]
 ---
