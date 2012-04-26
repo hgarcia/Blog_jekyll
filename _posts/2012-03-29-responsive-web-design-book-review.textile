@@ -2,7 +2,7 @@
 layout: post
 title: Responsive web design, book review.
 summary: Responsive Web Design is more than a buzzword, is almost a necessity for any site that wants to reach the mobile and tablet market.
-categories: [Programming, Books]
+categories: [Design, Books, Programming]
 ---
 
 <a href="../../../images/posts/marcotte-responsive-web-design.jpg" target="_blank"><img class="img-float-right"  src="../../../images/posts/marcotte-responsive-web-design.jpg" border="0" alt="Responsive Web Design - book cover" style="width: 26%"/></a>I remember reading "Ethan Marcote's":http://ethanmarcotte.com/ article about "Responsive web design":http://www.alistapart.com/articles/responsive-web-design/ on "A list apart":http://www.alistapart.com back in the day, and getting really excited about it.
