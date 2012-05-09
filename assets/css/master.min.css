@@ -293,6 +293,19 @@ footer{
   display: block;
   width: 125px;
 }
+
+.tech-sheet {
+
+}
+
+.palette {
+  border: 0.01em solid #CECECE;
+  display: inline-block;
+  height: 20px;
+  margin: 2px;
+  width: 30px;
+}
+
 article footer a{
   font-size: 0.8em;
 }
