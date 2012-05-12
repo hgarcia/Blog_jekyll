@@ -2,7 +2,7 @@
 layout: post
 title: 20 recipes for programming Phone Gap by Jamie Munro.
 summary: A good book to get you up and running with Phone Gap and JQuery mobile.
-categories: [Programming, JavaScript]
+categories: [Programming, JavaScript, Books]
 ---
 
 __Disclaimer: I got this book as part of the bloggers review program at O'Reilly.__

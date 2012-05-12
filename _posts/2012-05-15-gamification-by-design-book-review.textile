@@ -1,0 +1,17 @@
+---
+layout: post
+title: Gamification by design by Gabe Zichermann and Christopher Cunningham.
+summary: A good book to get you up and running with Phone Gap and JQuery mobile.
+categories: [Books]
+---
+
+__Disclaimer: I got this book as part of the bloggers review program at O'Reilly.__
+
+<a href="http://shop.oreilly.com/product/0636920014614.do" target="_blank"><img class="img-float-right"  src="../../../images/posts/gamification-by-design.gif" border="0" alt="Gamification by design - book cover"/></a>
+
+"Gabe Zichermann":http://www.oreillynet.com/pub/au/4682
+
+"Christopher Cunningham":http://www.oreillynet.com/pub/au/4794
+
+__<a href="http://oreilly.com/bloggers/" class="side-bar-img"><img alt="I review for the O'Reilly Blogger Review Program" src="http://cdn.oreilly.com/bloggers/blogger-review-badge-125.png" border="0" width="125" height="125"></a>__
+
