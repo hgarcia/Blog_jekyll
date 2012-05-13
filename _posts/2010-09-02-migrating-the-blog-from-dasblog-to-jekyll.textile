@@ -14,12 +14,9 @@ Since I had been playing a lot with ruby lately I also wanted my new solution to
 
 h3. Let me introduce you to Github pages.
 
-I heared about Github pages some time ago and I first used them 3 months back for one of my project's site. 
-It sounded like a good starting point for my new site. 
+"Github pages":http://pages.github.com/ is a git based platform to serve just simple static html pages or, if you need more power, a site powered by "Jekyll":http://github.com/mojombo/jekyll/. This sounded like a good place to start.
 
-"Github pages":http://pages.github.com/ are a git based platform to serve just simple static html pages or, if you need more power, a site powered by "Jekyll":http://github.com/mojombo/jekyll/. This sounded like a good point to start. 
-
-_Before we move forward, let me explain what Jekyll is. Jekyll is a ruby engine that generates static sites from content written in textile or markup and a simple templating engine._ 
+_Before we move forward, let me explain what Jekyll is. Jekyll is a ruby engine that generates static sites from content written in textile or markup and a simple templating engine._
 
 h3. Migrating the posts.
 
@@ -46,7 +43,7 @@ Since Jekyll is an static engine, there isn't a comment platform in it, I though
 
 h3. Creating the categories pages.
 
-Once again been Jekyll an static pages engine I have to pregenerate the categories pages that list all posts in a given category. To do so I wrote another Ruby script to extract all the categories from all the post and them It generates a bunch of templates for all the categories. 
+Once again been Jekyll an static pages engine I have to pregenerate the categories pages that list all posts in a given category. To do so I wrote another Ruby script to extract all the categories from all the post and them It generates a bunch of templates for all the categories.
 Those templates are run each time the site is generated using the Jekyll command.
 
 h3. From GitHub to Heroku with Rack.
@@ -63,10 +60,10 @@ The next step was to create redirects for my existing links out there to the new
 
 h3. Preserving existing links.
 
-The solution is not elegant (actually is quite ugly) but works well. I got the complete RSS feed from dasblog and saved the xml file to disk. 
-I wrote another Ruby script to parse the links and permalinks and generate a bunch of ruby statements that ended up in try_next method of the Rack middleware class.
+The solution is not elegant (actually is quite ugly) but works well. I got the complete RSS feed from dasblog and saved the xml file to disk.
+I wrote another Ruby script to parse the links and permalinks and generate a bunch of ruby statements that ended up in the try_next method of the Rack middleware class.
 
-I will probably refactor this some later on to have some better looking code in here, but does the work.
+I will probably refactor this one later, to have some better looking code in here, but does the work.
 
 h3. Html 5 complaint (or quasi) markup and new design.
 
@@ -80,7 +77,7 @@ I tried to keep the design very clean. I used "Color Scheme Designer 3":http://c
 
 h3. Search capabilities.
 
-One of the things I lose with an static site if the search capabilities. Or not. I went with Google embedded search. It has several options, and one of them is to just search in a given set of domains. Customizing the look and feel was extremely easy as well. I got the CSS file from google, I modified it, and I'm serving it from my domain.
+One of the things I lose with an static site is the search capabilities. Or not. I went with Google embedded search. It has several options, and one of them is to just search in a given set of domains. Customizing the look and feel was extremely easy as well. I got the CSS file from google, I modified it, and I'm serving it from my domain.
 
 h3. Todo's
 
