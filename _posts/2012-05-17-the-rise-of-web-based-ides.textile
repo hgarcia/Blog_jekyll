@@ -1,9 +1,15 @@
 ---
 layout: post
-title: Eclipse Orion is a browser based IDE.
+title: The rise of web (in the browser) based IDE.
 summary: Run it in you computer or hosted, integrate with Git and extend it with plugins as needed.
 categories: [Tools]
 published: false
 ---
 
+h3. Cloud 9 IDE
 
+h3. Eclipse Orion
+
+h3. Mozilla...
+
+h3. More.
