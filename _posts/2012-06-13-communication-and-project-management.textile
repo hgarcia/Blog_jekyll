@@ -1,0 +1,8 @@
+---
+layout: post
+title: The challenge of communicating project status.
+summary: .
+categories: [Process]
+published: false
+---
+
