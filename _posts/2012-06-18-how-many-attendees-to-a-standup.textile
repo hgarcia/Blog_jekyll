@@ -3,17 +3,16 @@ layout: post
 title: Maximum number of attendees for an effective stand-up meeting.
 summary: This post have been inspired by a tweet I saw today, asking that question.
 categories: [Process]
-published: false
 ---
 
-Today on tweeter I saw the question about what was the maximum number of attendees for an effective stand-up meeting. 
+Today on tweeter I saw the question about what was the maximum number of attendees for an effective stand-up meeting.
 A few answers suggested that number was 7. It's not the wrong answer, but I think there is more to it.
 
-I though on posting back on tweeter but it was obvious that 140 characters weren't enought.
+I though on posting back on tweeter but it was obvious that 140 characters weren't enough.
 
 h3. Seven, the magic number and Scrum.
 
-In Scrum we say that the optimum number of team members is 7 plus, minus two. The team is the people doing the work. In some literature the Scrum master and the Product Owner as regarded as members of the team. In other, they are roles that may or may not be part of the team. 
+In Scrum we say that the optimum number of team members is 7 plus, minus two. The team is the people doing the work. In some literature the Scrum master and the Product Owner as regarded as members of the team. In other, they are roles that may or may not be part of the team.
 
 I personally consider the Product Owner to be outside of the team, specially when defining the team as those normally referred as "Pigs" in Scrum. (see "The classic story of the pig and the chicken":http://www.implementingscrum.com/2006/09/11/the-classic-story-of-the-pig-and-chicken/)
 
@@ -36,4 +35,4 @@ As far as they don't try to use these meetings as status reports, having non tea
 
 h3. Can we answer the question already?
 
-So the number of attendees doesn't have a minimun. The team size is the important thing here, and making sure this size is kept inside the boundaries of the formula of 7 members plus, minus 2.
+So the number of attendees doesn't have a minimum. The team size is the important thing here, and making sure this size is kept inside the boundaries of the formula of 7 members plus, minus 2.
