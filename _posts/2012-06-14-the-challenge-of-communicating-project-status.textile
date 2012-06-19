@@ -1,0 +1,62 @@
+---
+layout: post
+title: Managing and communicating project status.
+summary: .
+categories: [Process]
+published: false
+---
+
+Communication of a project status at any given time is, probably, one of the most difficult things to do consistently.
+
+There are multiple tools that help with this, but I found that most of them work at one or two levels at the most.
+
+h3. Tools, we have.
+
+We certainly have tools that we can use at different levels of the organization and at different points during the development process.
+We have multiple versions of these tools, from simple Excel sheets, to complex on-line systems or just physical boards and papers.
+
+* We use Source Control to track versions and changes on our software.
+
+* We have test automation tools at the unit and user acceptance levels that can report progress and regressions on the existing code.
+
+* We can use User Stories to describe features and we can (should) automate acceptance criteria using the existing tools.
+
+* We have manual testing management tools that can report on the progress of our testing efforts.
+
+* We use Kanban boards to track work in progress, and iteration status.
+
+* We measure team velocity to help with planning of future iterations and to learn from the past.
+
+* We use backlogs to prioritize our work and record future needs.
+
+* We have bug tracking tools to log defects on our projects.
+
+* We have infrastructure automation tools to provision and deploy hardware.
+
+* We use (in some cases) standup meetings to communicate between the team members.
+
+h3. Visibility.
+
+We can use some of those tools to get visibility on the project status. I found standups and physical Kanban boards work the best for collocated teams.
+
+For distibute teams, Skype can be used for standups and there are multiple electronic Kanban boards.
+
+At a macro level, the backlog should be used.
+
+h3. Combining efforts.
+
+We can integrate some of these tools together to leverage their feedback and reduce friction. Continuous Integration help with this. The most aggressive efforts conduce to Continuous Delivery.
+
+CI servers have come a long way and some tools (like JetBrains TeamCity) are extremelly easy to use.
+
+I can't say the same from some of the other tools mentioned above.
+
+h3. It's not a tools problem, but a people problem.
+
+We have the tools to track status and we can even implement some automation to communicate such status. The issue remains how to communicate it effectively to different people in the organization.
+
+An upper manager may be happy with a dashboard where he can sign up and see the current milestone status as long as he understand what that means.
+
+Middle management may need to know with higer details about bugs and features in a current iteration.
+
+Crafting the communication for the different needs is where some of the tools come short and a good Product Owner or Project Manager makes a world of a difference.
