@@ -17,6 +17,8 @@ The case studies are based on Nike Plus, Yahoo answers, Quora and Health month. 
 
 In the last two chapters, they dig deeper into implementation details. Coding some basic game mechanics, points, rules, levels and badges. Very interesting if you are in charge of implementing it. They also explore the use of a third party platform to gamify your system.
 
+Depending on your technical knowledge these two chapters may be the weaker ones for you.
+
 h3. Conclusion
 
 After reading it I bet you will start finding places where you can implement some of these techniques to make your application more enjoyable and engaging.
