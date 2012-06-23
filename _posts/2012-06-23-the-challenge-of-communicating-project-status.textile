@@ -1,9 +1,8 @@
 ---
 layout: post
-title: Managing and communicating project status.
+title: The challenge of communicating project status.
 summary: .
 categories: [Process]
-published: false
 ---
 
 Communication of a project status at any given time is, probably, one of the most difficult things to do consistently.
@@ -35,15 +34,13 @@ We have multiple versions of these tools, from simple Excel sheets, to complex o
 
 * We use (in some cases) standup meetings to communicate between the team members.
 
-h3. Visibility.
+h3. Combining efforts.
 
 We can use some of those tools to get visibility on the project status. I found standups and physical Kanban boards work the best for collocated teams.
 
-For distibute teams, Skype can be used for standups and there are multiple electronic Kanban boards.
+For distibute teams, video conference can be used for standups and there are multiple electronic Kanban boards. 
 
-At a macro level, the backlog should be used.
-
-h3. Combining efforts.
+__Yesterday we used Google hang-outs for a regular project meeting and I was surprised how well it worked.__
 
 We can integrate some of these tools together to leverage their feedback and reduce friction. Continuous Integration help with this. The most aggressive efforts conduce to Continuous Delivery.
 
@@ -55,8 +52,9 @@ h3. It's not a tools problem, but a people problem.
 
 We have the tools to track status and we can even implement some automation to communicate such status. The issue remains how to communicate it effectively to different people in the organization.
 
-An upper manager may be happy with a dashboard where he can sign up and see the current milestone status as long as he understand what that means.
+An upper manager may be happy with some type of electronic dashboard where he can see the current milestone status as long as he understand what that means.
 
-Middle management may need to know with higer details about bugs and features in a current iteration.
+Middle management may need to know with higer details about bugs and features in a current iteration. A white board or electronic Kanban can help with that.
 
 Crafting the communication for the different needs is where some of the tools come short and a good Product Owner or Project Manager makes a world of a difference.
+
