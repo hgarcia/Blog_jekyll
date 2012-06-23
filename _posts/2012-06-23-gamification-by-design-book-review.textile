@@ -26,4 +26,3 @@ After reading it I bet you will start finding places where you can implement som
 This book is very well written and very enjoyable, but is not a light read. You need to sit and be ready to absorb the concepts on the book. I will keep it on my iPad as a reference while implement some of this concepts in some of my side projects.
 
 __<a href="http://oreilly.com/bloggers/" class="side-bar-img"><img alt="I review for the O'Reilly Blogger Review Program" src="http://cdn.oreilly.com/bloggers/blogger-review-badge-125.png" border="0" width="125" height="125"></a>__
-
