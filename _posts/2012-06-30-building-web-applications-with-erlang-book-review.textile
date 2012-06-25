@@ -1,0 +1,18 @@
+---
+layout: post
+title: Building web applications with Erland by Zachary Kessin.
+summary:
+categories: [Books]
+published: false
+---
+
+__Disclaimer: I got this book as part of the bloggers review program at O'Reilly.__
+
+<a href="http://shop.oreilly.com/product/0636920021452.do" target="_blank"><img class="img-float-right"  src="../../../images/posts/building-web-applications-with-erlang.gif" border="0" alt="Building web applications with Erlang - book cover"/></a>
+
+"Zachary Kessin":https://twitter.com/zkessin
+
+h3. Conclusion
+
+
+__<a href="http://oreilly.com/bloggers/" class="side-bar-img"><img alt="I review for the O'Reilly Blogger Review Program" src="http://cdn.oreilly.com/bloggers/blogger-review-badge-125.png" border="0" width="125" height="125"></a>__
