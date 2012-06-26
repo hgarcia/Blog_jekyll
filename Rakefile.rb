@@ -31,7 +31,8 @@ namespace :build do
 	desc 'Add changes commit and push to github'
 	task :github => [:merge_and_minimize_css] do
 		sh 'git add -A'
-		sh 'git commit -m"Build"'
+		sh 'git commit -m"Build"' do |ok, res| 
+		end
 		sh 'git push'		
 	end
 	
