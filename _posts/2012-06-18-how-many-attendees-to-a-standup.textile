@@ -2,7 +2,7 @@
 layout: post
 title: Maximum number of attendees for an effective stand-up meeting.
 summary: This post have been inspired by a tweet I saw today, asking that question.
-categories: [Process]
+categories: [General]
 ---
 
 Today on tweeter I saw the question about what was the maximum number of attendees for an effective stand-up meeting.
