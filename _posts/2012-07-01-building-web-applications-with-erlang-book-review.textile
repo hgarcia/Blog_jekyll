@@ -7,7 +7,7 @@ categories: [Books]
 
 __Disclaimer: I got this book as part of the bloggers review program at O'Reilly.__
 
-<a href="http://shop.oreilly.com/product/0636920021452.do" target="_blank"><img class="img-float-right"  src="../../../images/posts/building-web-applications-with-erlang.gif" border="0" alt="Building web applications with Erlang - book cover"/></a>This book will show you how to leverage the yaws web server to write web applications using the Erlang language. The author "Zachary Kessin":https://twitter.com/zkessin will show how to build RESTful web services on top of yaws and how to use WebSockets with it. Upon reading this book you should be able to start working on your own solutions since the book touch pretty much all major aspects of web development.
+<a href="http://shop.oreilly.com/product/0636920021452.do" target="_blank"><img class="img-float-right"  src="../../../images/posts/building-web-applications-with-Erlang.gif" border="0" alt="Building web applications with Erlang - book cover"/></a>This book will show you how to leverage the yaws web server to write web applications using the Erlang language. The author "Zachary Kessin":https://twitter.com/zkessin will show how to build RESTful web services on top of yaws and how to use WebSockets with it. Upon reading this book you should be able to start working on your own solutions since the book touch pretty much all major aspects of web development.
 
 You won't need to be an Erlang expert to follow along with the book, just having an understanding of the syntax and the basics behind Erlang will be enough.
 
