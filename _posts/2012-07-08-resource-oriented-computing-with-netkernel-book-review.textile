@@ -1,0 +1,17 @@
+---
+layout: post
+title: Resource Oriented Computing with NetKernel by Tom Geudens.
+summary:
+categories: [Books]
+published: false
+---
+
+__Disclaimer: I got this book as part of the bloggers review program at O'Reilly.__
+
+<a href="http://shop.oreilly.com/product/0636920024460.do" target="_blank"><img class="img-float-right"  src="../../../images/posts/resource-oriented-computing-with-netkernel.gif" border="0" alt="Resource Oriented Computing wiht NetKernal - book cover"/></a>
+The author "Tom Geudens":http://practical-netkernel.blogspot.ca/
+
+h3. Conclusion
+
+
+__<a href="http://oreilly.com/bloggers/" class="side-bar-img"><img alt="I review for the O'Reilly Blogger Review Program" src="http://cdn.oreilly.com/bloggers/blogger-review-badge-125.png" border="0" width="125" height="125"></a>__

@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Building web applications with Erland by Zachary Kessin.
+title: Building web applications with Erlang by Zachary Kessin.
 summary: As the subtitle says, this book will show you how to use the Yaws web server to build web application in Erlang.
 categories: [Books]
 ---
