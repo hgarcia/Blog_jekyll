@@ -1,8 +1,0 @@
----
-layout: post
-title: Don't kill the messenger.
-summary: The unnecesary hostility between QA and Development and how to fix it.
-categories: [Programming]
-published: false
----
-
