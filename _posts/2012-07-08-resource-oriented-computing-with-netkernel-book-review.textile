@@ -3,7 +3,6 @@ layout: post
 title: Resource Oriented Computing with NetKernel by Tom Geudens.
 summary: An entertainment book in a very different approach to programming.
 categories: [Books]
-published: false
 ---
 
 __Disclaimer: I got this book as part of the bloggers review program at O'Reilly.__
