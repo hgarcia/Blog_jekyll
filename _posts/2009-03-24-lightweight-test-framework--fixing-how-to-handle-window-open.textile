@@ -2,7 +2,7 @@
 layout: post
 title: Lightweight Test Framework, fixing how to handle window.open
 summary: As I mentioned in a previous post I have been playing with the Microsoft Lightweight Test Automation Framework. The Lightweight framework handle alert and confirms without any problem, both in IE and Firefox out of the box.
-categories: [Lightweight Testing Framework, Programming, Testing, Tools]
+categories: [Programming, Testing, Tools]
 ---
 
 As I mentioned in a previous post I have been playing with the <a href="http://aspnet.codeplex.com/Release/ProjectReleases.aspx?ReleaseId=22739" target="_blank">Microsoft Lightweight Test Automation Framework</a>.
@@ -59,7 +59,7 @@ with the following code:
 
 The temp variables are there just to help when debugging. Notice that we are calling _originalOpen on activeFrame and not activeFrame.get_jsFrame()
 
-Now this will make window.open functions work in IE but not in Firefox where I get an "Illegal operation on WrappedNative prototype object" exception, this seems to be a known regression on Firefox since at least version 1.07. 
+Now this will make window.open functions work in IE but not in Firefox where I get an "Illegal operation on WrappedNative prototype object" exception, this seems to be a known regression on Firefox since at least version 1.07.
 
 Upon thinking about this I notice that we should be able to actual use window.open directly inside openWindowAndRegister.
 

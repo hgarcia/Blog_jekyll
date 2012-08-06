@@ -2,7 +2,7 @@
 layout: post
 title: Lightweight Test Framework, attaching to a new window after window.open
 summary: In a previous post I mention about a fix to been able to open a new window both in IE and Firefox using the Lightweight Test Framework.
-categories: [Lightweight Testing Framework, Programming, Testing, Tools]
+categories: [Programming, Testing, Tools]
 ---
 
 In <a href="2009/03/25/LightweightTestFrameworkFixingHowToHandleWindowopen.aspx" target="_blank">a previous post</a> I mention about a fix to been able to open a new window both in IE and Firefox using the <a href="http://aspnet.codeplex.com/Release/ProjectReleases.aspx?ReleaseId=22739" target="_blank">Lightweight Test Framework</a>.
