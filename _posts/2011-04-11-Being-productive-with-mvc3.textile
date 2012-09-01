@@ -23,11 +23,11 @@ It was at the point, and when I was ready to fire up my Ubuntu box to do the pro
 
 So, I fire up VS, create a new MVC 3 project and I add the MvcScaffold package. It brought along the EF Code First and the T4Scaffold packages. No problem.
 
-Next, I wrote my first model (a simple MenuItem) using the DataAnnotations attributes to enforce validation. 
+Next, I wrote my first model (a simple MenuItem) using the DataAnnotations attributes to enforce validation.
 
-<code>
+<pre><code>
 	Scaffold controller MenuItem
-</code>
+</code></pre>
 
 This connected to my local SQLExpress instance, generated a DbContext, a controller for the Model and all the views for the CRUD operations.
 
@@ -39,10 +39,10 @@ I decided to edit the default .gitignore provided and add the /packages folder t
 
 I them launched the Git bash (again from the contextual menu inside VS) and run the following commands to add and commit the work done.
 
-<code>
+<pre><code>
 	git add -A
 	git commit -m"Witty but valuable comment"
-</code>
+</code></pre>
 
 h3. Moving away from SQL Express.
 
@@ -66,16 +66,16 @@ If on top of that you use Git (or Hg) to make frequent commits, you will feel li
 
 h3. So you get done really fast, so how about going live?
 
-Appharbor to the rescue. 
+Appharbor to the rescue.
 
-You probably already know about Appharbor. If you haven't you should go and check it out. 
+You probably already know about Appharbor. If you haven't you should go and check it out.
 
 I created the app and a database, added the remote repository to the solution, changed the web.config to pick up the new connection string and did a simple push.
 
-<code>
+<pre><code>
 	git push appharbor master
-</code>
+</code></pre>
 
 Voila! Appharbor will run your test and if everything is ok (all projects builds and all test pass) will deploy automatically.
 
-It was a fun week-end project and I really enjoyed the workflow. 
+It was a fun week-end project and I really enjoyed the workflow.

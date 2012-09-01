@@ -24,15 +24,15 @@ So I decided to give my namespace a persons' name and use verbs for all my tasks
 
 That way to run the build instead of typing something boring like:
 
-<code>
+<pre><code>
 	rake setup:build
-</code>
+</code></pre>
 
 I can do:
 
-<code>
+<pre><code>
 	rake girkard:builds
-</code>
+</code></pre>
 
 It may also have a positive impact in the team (I will report on that later, or maybe not).
 Let's imagine talking to somebody and say, Giskard is telling my that the integration fails.
@@ -41,7 +41,7 @@ Of course, this is nothing new and the guys from Jenkins had the idea long befor
 
 This can be taken to dangerous extremes, but I guess that if keep between reasonable boundaries there is no damage.
 
-At the end of the day we are already putting Cucumber in our test. 
+At the end of the day we are already putting Cucumber in our test.
 We use a Capybara to drive the browser (although sometimes is a webrat), and we pickler the stories from Pivotal.
 
 <blockquote>

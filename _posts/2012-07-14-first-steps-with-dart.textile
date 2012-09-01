@@ -57,23 +57,23 @@ You can pass a function as a parameter to another function, assign to a variable
 
 Declaring a function is so easy that hurts.
 
-<code>
+<pre><code>
     String asMoney(int amount, String symbol) {
       return "$symbol $amount";
     }
-</code>
+</code></pre>
 
 Or the short form:
 
-<code>
+<pre><code>
     String asMoney(int amount, String symbol) => "$symbol $amount";
-</code>
+</code></pre>
 
 Remove the types:
 
-<code>
+<pre><code>
     asMoney(amount, symbol) => "$symbol $amount";
-</code>
+</code></pre>
 
 Functions can also be closures and close over the scope.
 
@@ -81,20 +81,20 @@ h4. Named and optional parameters.
 
 You define an optional parameter using brackets around it.
 
-<code>
+<pre><code>
     String asMoney(int amount, [String symbol]) {
       if (symbol == null) {
         return "\$ $amount";
       }
       return "$symbol $amount";
     }
-</code>
+</code></pre>
 
 You can provide a default value to an optional parameter so is not null:
 
-<code>
+<pre><code>
     String asMoney(int amount, [String symbol = "$"])
-</code>
+</code></pre>
 
 If the function is called without the optional parameter the value assigned will be the default value. If you pass a value (even null) for the optional parameter, that value override the default.
 
@@ -102,20 +102,20 @@ h4. Constructor member variable initialization.
 
 You can avoid the initialization of fields in constructors using the this notation.
 
-<code>
+<pre><code>
     Constructor(this.name, [this.description = '']);
-</code>
+</code></pre>
 
 Instead of:
 
-<code>
+<pre><code>
     var name, description;
 
     Constructor(name, [description = '']) {
       this.name = name;
       this.description = description;
     }
-</code>
+</code></pre>
 
 h4. Named constructors.
 

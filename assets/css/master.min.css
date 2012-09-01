@@ -312,8 +312,11 @@ footer p small{
 }
 
 code {
+  display: block;
   background-color: #454545;
-  color: #CDCDCD;
+  color: #EEE;
+  font-family: "Courier New", Courier, sans-serif;
+  font-size: 1.2em;
   padding: 0.15em;
 }
 
