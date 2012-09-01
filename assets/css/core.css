@@ -222,8 +222,9 @@ code {
   background-color: #454545;
   color: #EEE;
   font-family: "Courier New", Courier, sans-serif;
-  font-size: 1.2em;
-  padding: 0.15em;
+  font-size: 1.1em;
+  overflow: auto;
+  padding: 0.15em 0.15em 1em;
 }
 
 span.code {
