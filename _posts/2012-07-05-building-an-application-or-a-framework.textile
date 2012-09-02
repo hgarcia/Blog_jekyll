@@ -16,9 +16,11 @@ You can go one way or another. You can build just an application(s) or an applic
 __I'm not talking about ivory tower architecture type of framework here, or RoR, ASP.NET MVC.__
 
 The differences can be very subtle.
+
 In the case of building an application, you just start solving the problem at hand and delivering a solution for it.
 
 In the case of building a framework, you build little pieces of code that support the business and reduce the amount of code to write as the project progress.
+
 They are those little helper classes and routines that made your code more expressive and your life as a developer much better.
 
 You encapsulate some common patterns specific to your application.
@@ -30,6 +32,7 @@ The list goes on.
 h3. Sounds awesome, doesn't it?
 
 Of course it does!
+
 Building a framework is more technical and way more fun than dealing with the usual invoice, details boring tasks.
 
 h3. But....
@@ -55,14 +58,19 @@ __I'm using DSL very loosely here, I should probably refer to it as a set of hel
 Keep your code clean at all times and refactor mercilessly to extract those common constructs and build your "DSL" around them.
 
 If you find yourself doing the same task for a third time, automate it. (see the rule of three again :-)).
+
 In some cases you can automate from the start, like data base migrations, since you know for a fact that you will be doing that all the time.
 
 Specially try to automate code generation.
+
 I'm not talking about drag and drop or wizard type of automations.
+
 Micro code generation. For loops, function and / or class declarations. UI scaffolding (specially data entry forms).
+
 Leverage the tools provided by your code editor or IDE for this. Or write your own console scripts.
 
 Automation will help you to save brain cycles to solve the real complex problems.
 
 After a while this sets of tools, scripts and libraries will be the core of the development for the application.
+
 They should simplify your code and keep it consistent.

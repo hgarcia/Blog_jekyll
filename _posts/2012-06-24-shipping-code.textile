@@ -6,6 +6,7 @@ categories: [Programming]
 ---
 
 I was recently thinking on the different projects I worked so far in my career.
+
 I was trying to weight the success rate of those projects.
 
 The motivation behind the exercise was to understand my personal evolution as a software developer while trying to find any relation between the development practices I have been using and adopting during the last 14 years and the outcome of those projects.
@@ -36,6 +37,7 @@ I can easily identify a common problem with the failed projects. Over engineerin
 h4. Over engineering.
 
 I think that over engineering was probably the worst problem in those failed projects. It's even more dangerous than excessive planning.
+
 We expended so much time worrying about engineering problems and having a nice, clean, elegant architecture, that we forgot that delivery working code was the goal.
 
 h4. Over planning.
@@ -49,9 +51,11 @@ More often than not most of these features were not what the users need. So, the
 h4. Under delivering.
 
 I could blame under delivering to the previous two problems, and is surely related.
+
 But some times we under deliver because we don't manage expectations and we don't communicate properly.
 
 It's usually pretty obvious when something is not going to get done.
+
 Sometimes we work overtime and try to pull a few all nighters in what turns to be a death march.
 
 We foul ourselves and think that we will get it done, and sometimes we do.
@@ -63,9 +67,11 @@ h3. Deliver on time and succeed.
 The (obvious) conclusion is that delivering working software on time will increase your changes for success.
 
 Sure, CI and Testing and TDD help you to not only deliver but to deliver what you intended.
+
 All the practices that a lot of us like to rave about and talk for hours at a time are "very" important but they are never as important as deliver software.
 
 __Today I won't even dream on writing code without some type of Integration server (or script) and I feel dirty when I don't use some type of Test first approach to design my application.__
 
 We need to understand that the product (the software) is what we are getting paid for and not the practices we utilize.
+
 I'm not proposing to "just" write code and disregard technical debt, security or any good practice, but making sure that we make conscious and balanced decisions and always favored to "get it done".

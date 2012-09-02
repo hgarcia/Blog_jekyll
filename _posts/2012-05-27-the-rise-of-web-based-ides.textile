@@ -10,6 +10,7 @@ As developers we have been involved for the last 15 years in the rapid shift fro
 Ironically, the tools we use to accomplish that are mostly desktop bound.
 
 Little by little some of them have been migrated to the web. We can all enjoy the freedom and easy of use of Github, Codeplex or Bitbucket for source control.
+
 Travis or CloudBees for CI and a myriad of project management and bug tracking options.
 
 These are good tools that allow us to get new projects up and running in less time and more efficiently,  but we are still lacking good hosted solutions to create content (code).

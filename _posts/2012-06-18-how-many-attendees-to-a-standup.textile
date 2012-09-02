@@ -6,6 +6,7 @@ categories: [General]
 ---
 
 Today on tweeter I saw the question about what was the maximum number of attendees for an effective stand-up meeting.
+
 A few answers suggested that number was 7. It's not the wrong answer, but I think there is more to it.
 
 I though on posting back on tweeter but it was obvious that 140 characters weren't enough.
@@ -25,6 +26,7 @@ Every day the team meet and, in no more than 15 minutes, answer the 3 questions.
 * Do I have any blocks?
 
 It's very important that every member of the team be present at the stand-up. We use this meetings to keep the team in sync and to encourage communication.
+
 We make sure that the time limit is respected and that the three questions get answered. We avoid rambling on discussing specifics.
 
 h3. So the number was seven!
