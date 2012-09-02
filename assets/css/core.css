@@ -17,7 +17,7 @@ embed {max-width: 100%;}
 
 body {
   color: #222222;
-  font-family: Helvetica, Verdana, Arial, sans-serif;
+  font-family: Quattrocento, "Times New Roman", serif;
   background-color: #DEDEDE;
 }
 
@@ -46,11 +46,8 @@ abbr {
 }
 
 header.main h1{
-  font-family: League, League_blog;
-  text-transform: uppercase;
-  font-weight: normal;
+  font-family: "Sorts Mill Goudy", Georgia, serif;
   color: #777777;
-  font-size: 6em;
   margin: 0 auto;
 }
 
@@ -76,46 +73,42 @@ nav a{
 }
 
 ul.auxiliary-nav li {
-  display: block;
-  float: left;
-  width: 25%;
-  font-family: League, League_blog, Helvetica, sans-serif;
+  display: inline-block;
+  font-family: "Sorts Mill Goudy", Georgia, serif;
   font-size: 1.5em;
 }
-
-
-ul.auxiliary-nav li ul li {
-  font-family: Helvetica, sans-serif;
-  font-size: 0.7em;
-  padding-left: 0.5em;
-  float: none;
-  width: 100%;
+ul.auxiliary-nav li ul {
+  margin-bottom: 1em;
 }
-
+ul.auxiliary-nav li ul li {
+  font-size: 0.7em;
+  font-family: Quattrocento, "Times New Roman", serif
+}
 ul.auxiliary-nav li ul li a {
   text-decoration: none;
   color: inherit;
 }
-
-article {
-  padding: 0 0 0 20%;
-  position: relative;
+.accent-font {
+  color:#E00875;
 }
-
 aside.resources {
-  margin: 0 0 0 -34%;
-  float: left;
-  width: 32%;
+  background-color: #fff;
+  padding: 1em;
+  border-left: 3px solid #E00875;
 }
-
 aside.resources h4 {
   font-style: italic;
   text-decoration: underline;
-  font-size: 0.8em;
+  left: 0;
+  padding-top: 0;
 }
-
+aside.resources ul li {
+  line-height: 1.4em;
+}
 aside.resources ul li a {
-  font-size: 0.7em;
+  font-size: 0.9em;
+  text-decoration: none;
+  font-style: italic;
 }
 
 article, section.extra {
@@ -147,27 +140,30 @@ hr {
 
 article header h2, article header h2 a {
   text-decoration: none;
-  font-family: Raleway, Raleway_blog;
+  font-family: "Sorts Mill Goudy", Georgia, serif;
+}
+.gist {
+  margin-bottom: 3em;
 }
 
 p {
-  font-family: "Times New Roman";
   font-size: 1.1em;
   padding-bottom: 10px;
-  padding-left: 1em;
 }
 
 h3, h4, h5, h6 {
-  font-weight: normal;
+  color: #777777;
+  font-family: "Sorts Mill Goudy",Georgia,serif;
+  font-weight: bold;
+  left: -1em;
   padding-bottom: 0.5em;
-  padding-top: 0.8em;
-  text-transform: uppercase;
-  color: #555;
+  padding-top: 1.5em;
+  position: relative;
 }
 
 section h3 a {
   text-decoration: none;
-  font-size: 0.8em;
+  font-size: 1.2em;
 }
 
 .extra p {
@@ -224,35 +220,31 @@ code {
   font-family: "Courier New", Courier, sans-serif;
   font-size: 1.1em;
   overflow: auto;
-  padding: 0.15em 0.15em 1em;
+  padding-bottom: 1em;
+  margin-bottom: 1em;
 }
 
 span.code {
-  font-family: Courier;
+  font-family: "Courier New", Courier, sans-serif;
   display: inline;
   font-size: 0.9em;
 }
 
-article p i, article p blockquote, article p em, article p cite, article i, article blockquote, article em, article cite{
-    color: #555555;
-    float: left;
-    font-size: 0.8em;
-    margin: 0.3em 0 0 -35%;
-    width: 35%;
+article p i, article p blockquote, article p em, article p cite,
+article blockquote, article em, article cite, article i {
+  color: #555555;
+  background-color: #FFFFFF;
+  padding: 1.5em;
+  display: block;
 }
 
-article p i, article p blockquote, article p em, article p cite {
-  margin: 0 0 0 -38%;
+blockquote, cite {
+  font-style: italic;;
 }
 
-blockquote p, i p, em p, cite p {
-  padding: 0px;
-}
-
-blockquote{
-  background-color: #E0EFEF;
-  padding: 0.5em;
-  width: 32% !important;
+em {
+  font-weight: bold;
+  font-style: normal;
 }
 
 span.by-link{
@@ -279,8 +271,8 @@ td {
 }
 article section ul{
   display: block;
-  list-style: circle inside none;
-  padding-left: 20px;
+  list-style: none inside none;
+  padding-left: 1em;
 }
 
 #disqus_thread {
@@ -310,18 +302,13 @@ article section ul{
 }
 
 @media only screen and (max-width: 960px) {
-  header.main h1{
-    font-size: 6em;
-  }
   article {
     padding: 0 0 0 2%;
   }
   article p i, article p blockquote, article p em, article p cite, article i, article blockquote, article em, article cite{
-    border-left: 2px solid #CDCDCD;
     margin: 1em 0 0 -5%;
     padding-bottom: 1em;
     padding-left: 1em;
-    width: inherit;
   }
   aside.resources {
     margin: 0;
@@ -329,49 +316,28 @@ article section ul{
     float: none;
     width: 100%;
   }
-  ul.auxiliary-nav li {
-    float: none;
-    width: inherit;
-    margin-bottom: 3em;
-  }
-  ul.auxiliary-nav li ul li {
-    display: block;
-    float: left;
-    margin-bottom: 0;
-    width: inherit;
-  }
 }
 
 @media only screen and (max-width: 950px) {
-  header.main h1{
-    font-size: 4.8em;
-  }
   #google_ads_frame1 {
     display: none;
   }
 }
-@media only screen and (max-width: 764px) {
-  header.main h1{
-    font-size: 4em;
-  }
-}
 @media only screen and (max-width: 640px) {
   .main-content, .main-footer {
+    box-shadow: none;
     max-width: 90%;
-    padding: 1.5em;
+    padding: 1em 3em 1em 1em;
+  }
+  ul.auxiliary-nav li ul {
+    margin-bottom: 0.5em;
   }
   article section, p {
     padding-left: 0;
   }
 }
 @media only screen and (max-width: 565px) {
-  article p i{
-    display: block;
-    float: none;
-  }
-  header.main h1{
-    font-size: 2.2em;
-  }
+
   nav li {
     margin: 0;
   }
