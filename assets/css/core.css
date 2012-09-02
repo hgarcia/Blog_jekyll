@@ -118,15 +118,15 @@ article, section.extra {
 article header {
   margin-bottom: 2em;
 }
-
+article header h2 {
+  font-size: 200%;
+}
 article a, section a, article header h2 {
   color: #777777;
 }
-
 article section {
   padding-left: 1em;
 }
-
 article footer {
   text-align: right;
   line-height: 4em;
