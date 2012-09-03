@@ -13,7 +13,7 @@ You can also get a list or a single repository for the logged in user.
 
 The Api is in flux and you should expect changes coming in the future.
 
-Almost complete docs in the "https://bitbucket.org/hgarcia/node-bitbucket-api":README.md
+Almost complete docs in the "README file":https://bitbucket.org/hgarcia/node-bitbucket-api"
 
 h3. Plans
 
