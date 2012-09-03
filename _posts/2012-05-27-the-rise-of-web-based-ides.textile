@@ -24,7 +24,7 @@ It's extremely easy to "sign up":http://c9.io/ for Cloud 9 or just use your Gith
 
 They offer most of the features you would expect on an IDE and support up to 24 languages at the moment. (Sadly not Erlang in the list at the moment)
 
-__I haven't tried Bitbucket integration, so not sure how good it is.__
+_I haven't tried Bitbucket integration, so not sure how good it is._
 
 The integration with Github is fantastic.
 They support not only public repository, but also private ones now. It's free for Open Source projects.
@@ -35,7 +35,7 @@ It has great support for keyboard shortcuts, code completion, spell checking and
 
 You can even provision and deploy your code directly from the IDE into Joyent, Heroku, CloudFoundry or Azure.
 
-__Deploying directly from the IDE may not be a great idea but it's certainly very handy on some cases__
+_Deploying directly from the IDE may not be a great idea but it's certainly very handy on some cases_
 
 They "open sourced the editor":https://github.com/ajaxorg/cloud9 , so you can download an run locally if you wish, or write plug-ins to customize it's behaviour or appearance.
 

@@ -328,6 +328,7 @@ article p i, article p blockquote, article p em, article p cite,
 article blockquote, article em, article cite, article i {
   color: #555555;
   background-color: #FFFFFF;
+  line-height: 1.4em;
   padding: 1.5em;
   display: block;
 }

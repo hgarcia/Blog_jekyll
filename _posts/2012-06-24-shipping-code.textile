@@ -11,7 +11,7 @@ I was trying to weight the success rate of those projects.
 
 The motivation behind the exercise was to understand my personal evolution as a software developer while trying to find any relation between the development practices I have been using and adopting during the last 14 years and the outcome of those projects.
 
-__I consider a project successful if the code gets into production on a reasonable amount of time, people start using it to solve the problem it was designed to solve and it actually solves it.__
+_I consider a project successful if the code gets into production on a reasonable amount of time, people start using it to solve the problem it was designed to solve and it actually solves it._
 
 The first thing I discovered is that I have been very lucky. Most projects I was involved with can be considered to be successful. I was surprised by it, specially due to the industry metrics.
 
@@ -70,7 +70,7 @@ Sure, CI and Testing and TDD help you to not only deliver but to deliver what yo
 
 All the practices that a lot of us like to rave about and talk for hours at a time are "very" important but they are never as important as deliver software.
 
-__Today I won't even dream on writing code without some type of Integration server (or script) and I feel dirty when I don't use some type of Test first approach to design my application.__
+_Today I won't even dream on writing code without some type of Integration server (or script) and I feel dirty when I don't use some type of Test first approach to design my application._
 
 We need to understand that the product (the software) is what we are getting paid for and not the practices we utilize.
 

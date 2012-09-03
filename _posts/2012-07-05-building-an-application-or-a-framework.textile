@@ -53,7 +53,7 @@ Apply "the rule of three":http://en.wikipedia.org/wiki/Rule_of_three_%28computer
 
 Wait until you can identify patterns and start building you framework and tooling around those patterns.
 
-__I'm using DSL very loosely here, I should probably refer to it as a set of helper libraries.__
+_I'm using DSL very loosely here, I should probably refer to it as a set of helper libraries._
 
 Keep your code clean at all times and refactor mercilessly to extract those common constructs and build your "DSL" around them.
 

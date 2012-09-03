@@ -78,7 +78,7 @@ I establish my main content area width to just 60% (equiv to 740 px on my screen
 
 It took me some time to get a font set that I was happy with, without going too exotic.
 
-I decided to use League for the header and menus, article headers use Raleway and Raleway_blog, the rest of the site uses Helvetica with fall backs to Verdana, Arial and sans-serif.
+I decided to use League for the header and menus, article headers use Raleway, the rest of the site uses Helvetica with fall backs to Verdana, Arial and sans-serif.
 
 I establish the proper dimensions for the headers, paragraphs and other elements after getting the proper fonts.
 

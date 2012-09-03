@@ -17,7 +17,7 @@ There is a lot of math in the book and you should be comfortable reading it or a
 
 I found myself skipping some paragraphs and sometime whole pages here and there when the author went a bit to deep for me to follow along.
 
-__This is a math heavy book on a math heavy subject.__
+_This is a math heavy book on a math heavy subject._
 
 The problem on doing so is that the math will help you to understand what the code is doing, so you will have to go back and read the parts you skipped if you really want to understand what's going on.
 

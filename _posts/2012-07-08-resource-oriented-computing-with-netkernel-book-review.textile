@@ -19,7 +19,7 @@ Chapter four show you how to interact with a db (MongoDb) and how to build somet
 
 The second part of the book digs deeper in the languages and tools included with NetKernel, like the nCoDe editor or the DPML and XRL languages.
 
-__Be ready to read lots of XML in the book.__
+_Be ready to read lots of XML in the book._
 
 A big plus, at least for me, is that every chapter has a section on testing.
 
