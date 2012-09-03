@@ -112,7 +112,7 @@ embed {max-width: 100%;}
 body {
   color: #222222;
   font-family: Quattrocento, "Times New Roman", serif;
-  background-color: #DEDEDE;
+  /*background-color: #DEDEDE;*/
 }
 
 a {
@@ -140,9 +140,10 @@ abbr {
 }
 
 header.main h1{
-  font-family: "Sorts Mill Goudy", Georgia, serif;
+  font-family: "Gentium Book Basic", Georgia, serif;
   color: #777777;
   margin: 0 auto;
+  font-size: 400%;
 }
 
 nav{
@@ -168,7 +169,7 @@ nav a{
 
 ul.auxiliary-nav li {
   display: inline-block;
-  font-family: "Sorts Mill Goudy", Georgia, serif;
+  font-family: "Gentium Book Basic", Georgia, serif;
   font-size: 1.5em;
 }
 ul.auxiliary-nav li ul {
@@ -234,7 +235,7 @@ hr {
 
 article header h2, article header h2 a {
   text-decoration: none;
-  font-family: "Sorts Mill Goudy", Georgia, serif;
+  font-family: "Gentium Book Basic", Georgia, serif;
 }
 .gist {
   margin-bottom: 3em;
@@ -247,8 +248,8 @@ p {
 
 h3, h4, h5, h6 {
   color: #777777;
-  font-family: "Sorts Mill Goudy",Georgia,serif;
-  font-weight: bold;
+  font-family: "Gentium Book Basic",Georgia,serif;
+  /*font-weight: bold;*/
   left: -1em;
   padding-bottom: 0.5em;
   padding-top: 1.5em;
@@ -338,8 +339,9 @@ blockquote, cite {
 }
 
 em {
-  font-weight: bold;
+  /*font-weight: bold;*/
   font-style: normal;
+  font-family: "Gentium Book Basic", Georgia, serif;
 }
 
 span.by-link{
@@ -449,12 +451,16 @@ article section ul{
   }
 }
 @media only screen and (max-width: 565px) {
-
   nav li {
     margin: 0;
   }
   .side-bar-img {
     margin: 0 auto;
+  }
+}
+@media only screen and (max-width: 350px) {
+  header h1 {
+    font-size: 100%;
   }
 }
 
