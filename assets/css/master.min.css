@@ -429,11 +429,6 @@ article section ul{
     margin: 0 auto;
   }
 }
-@media only screen and (max-width: 350px) {
-  header h1 {
-    font-size: 100%;
-  }
-}
 
 
 
