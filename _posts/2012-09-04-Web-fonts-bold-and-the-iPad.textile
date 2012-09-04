@@ -2,7 +2,7 @@
 layout: post
 title: On web fonts, bold and the iPad
 summary: When using web fonts make sure to choose the right weight or be ready to see double on the iPad.
-categories: [node.js, Programming]
+categories: [Design]
 ---
 
 This past weekend I took some time to change the look and feel of the site.
