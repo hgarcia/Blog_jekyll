@@ -13,10 +13,6 @@ h3. Choosing fonts
 
 I started playing with "TypeCast":http://typecastapp.com to try to find a font combination that I liked.
 
-After a while I switched over to Google fonts to find fonts that matched what I was able to put together with TypeCast.
-
-__For some reason the selection from Google fonts in TypeCast is very limited.__
-
 My first attempt was to use the beautifully crafted "Quattrocento":http://www.google.com/webfonts/specimen/Quattrocento by "Pablo Impallari":http://www.impallari.com for all the text and "Sorts Mill Goudy":http://www.google.com/webfonts/specimen/Sorts+Mill+Goudy by "Barry Schwartz":https://plus.google.com/117431922163742703251/posts for the headings.
 
 After setting the styles and publishing the site with the changes I started to test in different browsers and devices.
