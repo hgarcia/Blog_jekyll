@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Detecting IE less than 8 with JS
+title: Using JS to detect IE less than 8
 summary: Sometimes we really need to check for a given version of IE, this snipped will work to detect anything less than IE8.
 categories: [Programming]
 ---
@@ -17,7 +17,7 @@ The script is fairly simple, but some of the scripts on-line fail in either IE9 
 
 First, detecting IE is as easy as checking for <span class="code">document.all</span>
 
-The tricky was to detect IE 8 and up. My first attempt was to use <span class="code">!document.querySelector</span> but IE9 was given a false positive.
+The tricky part was to detect anythin less than IE 8. My first attempt was to use <span class="code">!document.querySelector</span> but IE9 was given a false positive.
 
 The solution was to check for <span class="code">(document.documentMode === undefined)</span> this works fine in IE8, 9 and 10.
 
