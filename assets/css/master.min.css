@@ -405,12 +405,6 @@ article section ul{
     width: 100%;
   }
 }
-
-@media only screen and (max-width: 950px) {
-  #google_ads_frame1 {
-    display: none;
-  }
-}
 @media only screen and (max-width: 640px) {
   .main-content {
     box-shadow: none;

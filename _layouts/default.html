@@ -18,8 +18,15 @@
   <meta name="DC.title" content="{{site.name}}" />
   <meta name="DC.subject" content="Computer programming, music, open source." />
   <meta name="DC.creator" content="{{site.author}}." />
-  <link rel="shortcut icon" href="{{site.url}}/assets/img/favicon.png"/>
-  <link rel="apple-touch-icon" href="{{site.url}}/assets/img/custom_icon.png"/>
+  <!-- For third-generation iPad with high-resolution Retina display: -->
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="{{site.url}}/assets/img/apple-touch-icon-144x144-precomposed.png">
+  <!-- For iPhone with high-resolution Retina display: -->
+  <link rel="apple-touch-icon-precomposed" sizes="114x114" href="{{site.url}}/assets/img/apple-touch-icon-114x114-precomposed.png">
+  <!-- For first- and second-generation iPad: -->
+  <link rel="apple-touch-icon-precomposed" sizes="72x72" href="{{site.url}}/assets/img/apple-touch-icon-72x72-precomposed.png">
+  <!-- For non-Retina iPhone, iPod Touch, and Android 2.1+ devices: -->
+  <link rel="apple-touch-icon-precomposed" href="{{site.url}}/assets/img/apple-touch-icon-precomposed.png">
+
   <link href='http://fonts.googleapis.com/css?family=Gentium+Book+Basic:700|Quattrocento' rel='stylesheet' type='text/css'>
   <link rel="stylesheet" href="{{site.url}}/assets/css/master.min.css" />
   <!--[if IE]>
@@ -107,12 +114,6 @@
     s.src = 'http://disqus.com/forums/thedynamicprogrammer/count.js';
     (document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
   }());
-    var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
-    document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
-    try {
-    var pageTracker = _gat._getTracker("UA-7490131-1");
-    pageTracker._trackPageview();
-    } catch(err) {}
   </script>
 </body>
 </html>
