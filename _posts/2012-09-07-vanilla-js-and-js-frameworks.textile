@@ -1,0 +1,11 @@
+---
+layout: post
+title: On Vanilla.js and js libraries
+summary: Why libraries are here to stay and, at the same time, is good to remember the power of pure JS.
+categories: [Programming]
+published: false
+---
+
+I recently came across the "Vanilla.js":http://vanilla-js.com/ site and I couldn't avoid but to smile.
+
+I have no idea who the authors are or what are their intensions, but I think it actually drive a few points very well 
