@@ -11,7 +11,7 @@ Most screens will deal with a few concerns, specially if our application wants t
 
 Angular have a nice directive to help you to separate your UI in discreet components in the way of include files.
 
-__This example is very contrive but will serve to illustrate the point.__
+__This example is very contrive but should suffice to illustrate the point.__
 
 Let's take the following code for example:
 
@@ -33,6 +33,7 @@ Let's take the following code for example:
 We want to move the list of repositories into it's own file and the same for the list of issues. We will create to partial files, <span class="code">repository-list.html</span> and <span code="code">issues.html</span> and we move the relevant code in there.
 
 For example, the repository-list.html file now looks like this:
+
 <pre><code>
     <ul data-ng-controller="RepositoriesCtrl">
         <li data-ng-repeat="repository in repositories">{{repository.name}}</li>
