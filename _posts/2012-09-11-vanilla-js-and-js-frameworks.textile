@@ -8,4 +8,7 @@ published: false
 
 I recently came across the "Vanilla.js":http://vanilla-js.com/ site and I couldn't avoid but to smile.
 
-I have no idea who the authors are or what are their intensions, but I think it actually drive a few points very well 
+I have no idea who the authors are or what are their intensions, but I think it's a good reminder of the power of JavaScript for programmers coming to the language in these times of plentiful frameworks.
+
+h3. Blame the browser vendors.
+
