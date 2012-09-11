@@ -1,8 +1,8 @@
 ---
 layout: post
 title: On Vanilla.js and js libraries
-summary: Why libraries are here to stay and, at the same time, is good to remember the power of pure JS.
-categories: [Programming]
+summary: On why libraries are here to stay and, at the same time, is good to remember the power of pure JS.
+categories: [Programming, JavaScript, Methodology]
 published: false
 ---
 
@@ -12,21 +12,25 @@ I have no idea who the authors are or what are their intensions, but I think it'
 
 h3. Blame the browser vendors.
 
-The main reason for the proliferation of these libraries in the fisrt place are the inconsistent implementation of the DOM and other briwser API's by the browser vendors.
+The main reason for the proliferation of these libraries in the first place is the inconsistent implementation of the DOM and other browser specific API's by the browser vendors.
 
-If you remember the early days of Ajax or even before that, trying to do DHTML, you will have in mind the number of hours we spend creating our own libraries to deal with the different browser and encapsulate 30 or 40 lines of feature checking before calling that remote end point or inserting a new element int the document.
+The secondary reason, but significant less important, is the different verions of JavaScript or ECMAScript. 
 
-Some of this work started to get documented and share in different sites and some of the first libraries started to pop out.
+__This changed in the last few years with both Firefox and Chrome frecuently releasing new versions.__
 
-Prototype was one of the most popular thanks in great part to be baked into Rails. 
+If you remember the early days of Ajax (or even before that trying to do DHTML) you will have in mind the number of hours we spent creating our own libraries to encapsulate 30 or 40 lines of feature checking before calling that remote end point or inserting a new element into the document.
 
-Even Microsoft tried to get into the js libraries for some time with the originally named Atlas and later rebranded as Microsoft Ajax something or the other.
+Some of this work started to get documented and shared in different sites and some of the first libraries started to pop out.
 
-JQuery was a bit like the horse that starts the race in the midle of the pack and starts to pick up ground little by little until sudenly is the leader of the pack and everybody is trying to catch up to him.
+Prototype was one of the most popular thanks in great part to be bundled with Rails. 
+
+Even Microsoft tried to get into the js libraries for some time with Atlas, later rebranded as Microsoft Ajax something or the other.
+
+JQuery was a bit like the horse that starts the race in the midle of the pack and starts to pick up ground little by little until sudenly is the leader and everybody is trying to catch up to him.
 
 h3. So, we should use libraries or no?
 
-I think that you sold be asking that question to yourself with every project.
+I think that you should be asking that question with every project.
 
 I see how most of us now starts each project with a minimun set of libraries without taking a moment to consider if we will even need it.
 
