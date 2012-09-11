@@ -50,13 +50,13 @@ __This may prove to be more difficult than it sounds.__
 
 Or see if there is an alternative that provide that option. 
 
-On top of custom builded libraries/frameworks; the community is working in different solutions for packaging and modularization of code. 
+On top of custom builded libraries/frameworks; the community is working in different solutions for packaging and the modularization of code. 
 
 I think that at some point we may have one or two implementations to choose from.
 
 The increasing popularity of assets pipelines and the already stalished practice of minifying and concatenation of code, in combination to the other tools already mentioned are indication of exiting times ahead.
 
-
+Libraries are here to stay and that's a good thing. Good libraries allow you to concentrate in the problem at hand. As with any language, you have to make sure to chose wiselly.
 
 
 
