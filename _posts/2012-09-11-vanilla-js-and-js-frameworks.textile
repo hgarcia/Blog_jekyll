@@ -12,3 +12,9 @@ I have no idea who the authors are or what are their intensions, but I think it'
 
 h3. Blame the browser vendors.
 
+The main reason for the proliferation of these libraries in the fisrt place are the inconsistent implementation of the DOM and other briwser API's by the browser vendors.
+
+If you remember the early days of Ajax or even before that, trying to do DHTML, you will have in mind the number of hours we spend creating our own libraries to deal with the different browser and encapsulate 30 or 40 lines of feature checking before calling that remote end point or inserting a new element int the document.
+
+Some of this work started to get documented and share in sites like the 
+
