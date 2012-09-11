@@ -16,5 +16,45 @@ The main reason for the proliferation of these libraries in the fisrt place are 
 
 If you remember the early days of Ajax or even before that, trying to do DHTML, you will have in mind the number of hours we spend creating our own libraries to deal with the different browser and encapsulate 30 or 40 lines of feature checking before calling that remote end point or inserting a new element int the document.
 
-Some of this work started to get documented and share in sites like the 
+Some of this work started to get documented and share in different sites and some of the first libraries started to pop out.
+
+Prototype was one of the most popular thanks in great part to be baked into Rails. 
+
+Even Microsoft tried to get into the js libraries for some time with the originally named Atlas and later rebranded as Microsoft Ajax something or the other.
+
+JQuery was a bit like the horse that starts the race in the midle of the pack and starts to pick up ground little by little until sudenly is the leader of the pack and everybody is trying to catch up to him.
+
+h3. So, we should use libraries or no?
+
+I think that you sold be asking that question to yourself with every project.
+
+I see how most of us now starts each project with a minimun set of libraries without taking a moment to consider if we will even need it.
+
+I still think that for doing any non trivial UI js programing that needs to support a wide range of browser, you should try to use a well known library and save the time you would spend debugging the app to make it better.
+
+But I think that at the same time we should try to make sure that we considered what are we going to do and bring the smaller library possible. 
+
+h3. The future of libraries and client side js.
+
+We are already seing a tendency to custom build our libraries, pick and chose the pieces tha we need; gones are the days of big, bloated, feature reach monolitic files.
+
+Even stablished libraries are starting to provide custom build systems or moving towards that.
+
+If your library of choice doesn't had the feature, take it upon yourself to trim it down to only what you need. 
+
+__This may prove to be more difficult than it sounds.__
+
+Or see if there is an alternative that provide that option. 
+
+On top of custom builded libraries/frameworks; the community is working in different solutions for packaging and modularization of code. 
+
+I think that at some point we may have one or two implementations to choose from.
+
+The increasing popularity of assets pipelines and the already stalished practice of minifying and concatenation of code, in combination to the other tools already mentioned are indication of exiting times ahead.
+
+
+
+
+
+
 
