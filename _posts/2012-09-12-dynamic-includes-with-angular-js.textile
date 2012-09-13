@@ -1,0 +1,12 @@
+---
+layout: post
+title: Dynamic includes with Anngular.js
+summary: Take advantage of expression evaluations to dynamically change the includes in your views.
+categories: [Programming, JavaScript]
+published: false
+---
+
+In "a previous post":http://blog.dyamicprogramm.com/ I show j
+how to use includes to parttition our views. 
+
+I was using static includes
