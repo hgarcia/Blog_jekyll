@@ -6,8 +6,7 @@ categories: [Programming, JavaScript]
 published: false
 ---
 
-In "a previous post":http://blog.dyamicprogramm.com/ I show j
-how to use includes to parttition our views. 
+In "a previous post":http://blog.dyamicprogramm.com/ I show how to use includes to partition views. 
 
 I was using static includes in that example; static includes provide only limited flexibility.
 
