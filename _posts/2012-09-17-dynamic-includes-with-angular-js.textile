@@ -53,10 +53,10 @@ function IssueCtrl ($scope) {
 </code></pre>
 
 <pre><code>
-    <div data-ng-include data-ng-src="'partials/issueStatus' + issue.status + '.html'"></div>
+    <div data-ng-include data-ng-src="'partials/' + issue.status + '.html'"></div>
 </code></pre>
 
-In the code above angular will look for a partial named <span class="code">issueStatusopen.html</span> in the <span class="code">partials</span> folder.
+In the code above angular will look for a partial named <span class="code">open.html</span> in the <span class="code">partials</span> folder.
 
 h3. Leveraging directives
 
