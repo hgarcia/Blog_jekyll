@@ -57,13 +57,3 @@ function IssueCtrl ($scope) {
 </code></pre>
 
 In the code above angular will look for a partial named <span class="code">open.html</span> in the <span class="code">partials</span> folder.
-
-h3. Leveraging directives
-
-Another possibility is to use a custom directive to make the decision for you.
-
-This is probably the most flexible approach, and we can think of the directive as a factory of sorts.
-
-<pre><code>
-
-</code></pre>
