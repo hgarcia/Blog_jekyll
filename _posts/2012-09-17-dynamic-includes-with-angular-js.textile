@@ -6,9 +6,9 @@ categories: [Programming, JavaScript]
 published: false
 ---
 
-In "a previous post":http://blog.dyamicprogramm.com/ I show how to use includes to partition views. 
+In "a previous post":http://blog.dynamicprogrammer.com/2012/09/10/using-includes-with-angular-js.html I show how to use includes to partition views. 
 
-I was using static includes in that example; static includes provide only limited flexibility.
+In that example, I was using static includes that provide limited flexibility.
 
 What if you want to display different information on the same area of the template based on some condition?
 
@@ -16,17 +16,47 @@ You could use a conditional statement inside the include and render different co
 
 h3. One solution.
 
-You can use expression evaluation to decide what include to show. In other words, you will be making the decision sooner and keeping you includes small and focused.
+You can use expression evaluation to decide what include to show. In other words, you will be making the decision sooner and keeping your includes small and focused.
 
-<pre><code></code></pre>
+The following code declare a function in the controller that return the name of a partial. You can easily make different decissions in here.
+
+<pre><code>
+function AppCtrl ($scope) {
+    $scope.getPartial = function () {
+        return 'partials/issues.html';
+    }
+}
+</code></pre>
+
+In the view you use the expression as the src for the include instead of a string.
+
+<pre><code>
+    <div data-ng-include data-ng-src="getPartial()"></div>
+</code></pre>
+
+This approach works ok but make the controller responsible on deciding what view to show, what is not a very good thing.
 
 h3. Conventions
 
-Another approach is to use some convention to name your includes. Let's say that based in the status of a model you decide what inlude to shw.
+Another approach is to use some convention to name your includes. Let's say that based in the status of a model you decide what inlude to show.
 
 You could name you includes in a way that the status is part of the name.
 
 This approach can be used to decide between multiple views easily.
+
+<pre><code>
+function IssueCtrl ($scope) {
+    $scope.issue = {
+        status: 'open'
+    };
+}
+</code></pre>
+
+<pre><code>
+    <div data-ng-include data-ng-src="'partials/issueStatus' + issue.status + '.html'"></div>
+</code></pre>
+
+In the code above angular will look for a partial named <span class="code">issueStatusopen.html</span> in the <span class="code">partials</span> folder.
 
 h3. Leveraging directives
 
@@ -34,10 +64,6 @@ Another possibility is to use a custom directive to make the decision for you.
 
 This is probably the most flexible approach, and we can think of the directive as a factory of sorts.
 
+<pre><code>
 
-
-
-
-
-
-
+</code></pre>
