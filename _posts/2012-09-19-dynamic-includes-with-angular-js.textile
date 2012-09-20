@@ -20,11 +20,11 @@ You can use expression evaluation to decide what include to show. In other words
 The following code declare a function in the controller that return the name of a partial. You can easily make different decisions in here.
 
 <pre><code>
-function AppCtrl ($scope) {
-    $scope.getPartial = function () {
-        return 'partials/issues.html';
-    }
-}
+  function AppCtrl ($scope) {
+      $scope.getPartial = function () {
+          return 'partials/issues.html';
+      }
+  }
 </code></pre>
 
 In the view you use the expression as the source for the include instead of a string.
@@ -44,11 +44,11 @@ You could name you includes in a way that the status is part of the name.
 This approach can be used to decide between multiple views easily.
 
 <pre><code>
-function IssueCtrl ($scope) {
-    $scope.issue = {
-        status: 'open'
-    };
-}
+  function IssueCtrl ($scope) {
+      $scope.issue = {
+          status: 'open'
+      };
+  }
 </code></pre>
 
 <pre><code>
