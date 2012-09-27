@@ -13,7 +13,7 @@ I like to think about this book as 3 books in one. The first 8 chapters are dedi
 
 The design patterns exploration start on chapter 9 while dedicating chapter 10 exclusively to the different flavors of Model View patterns.
 
-If the book was only that I will be very happy, but (like in a Sunday morning infomercial, there is more!)
+_If the book was only that I will be very happy, but (like in a Sunday morning infomercial, there is more!)_
 
 Chapter 11 is an in depth discussion of the different modules systems in use today, with an special emphasis on "AMD":https://github.com/amdjs/amdjs-api/wiki/AMD
 
@@ -21,7 +21,7 @@ It depends on your knowledge of module systems, but even if you use them you may
 
 Finally, the next two chapters are dedicated to design patterns in jQuery itself and exploring some of the patterns used for jQuery plug-in design.
 
-You may find this last two chapters redundant but I think that the inclusion in the book is very wiser, specially with how ubiquitous jQuery is today.
+You may find this last two chapters redundant but I think that the inclusion in the book is very wise, specially with how ubiquitous jQuery is today.
 
 h3. Conclusion
 
