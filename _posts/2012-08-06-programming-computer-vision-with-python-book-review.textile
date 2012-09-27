@@ -11,7 +11,7 @@ __Disclaimer: I got this book as part of the bloggers review program at O'Reilly
 
 If you ever wondered how to analyze and image to recognize shapes and objects, how to search on them or how to build a panoramic view from a series of pictures (among other things) this is the book for you.
 
-"Jan Erik Solem":http://practical-netkernel.blogspot.ca/ takes the challenge and with the help of a bunch of Python modules show you how to solve those and other problems.
+"Jan Erik Solem":http://www.janeriksolem.net/ takes the challenge and with the help of a bunch of Python modules show you how to solve those and other problems.
 
 There is a lot of math in the book and you should be comfortable reading it or at least understanding it at a high level.
 
