@@ -1,0 +1,47 @@
+---
+layout: post
+title: Using the iPad as a development tool.
+summary: Although the iPad is far from the perfect content creation tool, with a few chosen apps you can turn it into a more than decent development tool.
+categories: [Tools]
+published: false
+---
+
+Ever since I got the iPad I have been trying to find the way to incorporate it to my work. 
+
+I tried multiple apps and the following list are the ones that survived and remain installed as of today.
+
+h3. Apps that I use on a daily basics.
+
+h4. "Splashtop 2":http://www.splashtop.com/splashtop2
+
+I tried multiple remote desktop applications to share screens with my Windows PC and so far this have been the only one that worked really well for me. I haven't try it using an internet connection, only in the same network but is extremelly smooth.
+
+h4. "Textastic":http://www.textasticapp.com/
+
+
+
+h4. "Worqshop":
+
+h4. "Vimmy":
+
+h4. "Dropbox":
+
+h4. "iZip":
+
+h4. "Edge Inspect":
+
+h4. "Blueprint":
+
+h4. "Sketchy":
+
+h3. Less frequently used apps.
+
+h4. "JSON Desginer":
+
+h4. "Grafio":
+
+h3. Honorable mentions
+
+h4. "Design Pattern Reference":
+
+h4. "Cheat Docs":
