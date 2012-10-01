@@ -1,0 +1,26 @@
+---
+layout: post
+title: Erlang IO and playing with files. (Learning Erlang 7)
+summary: After some time playing with Dart is time to come back to Erlang. This time I will explore the io and file modules.
+categories: [Programming, Erlang]
+published: false
+---
+
+At one point or another, while writing code, is inevitable to interact with files or interacting with io devices. 
+
+Erlang comes with a few modules for these tasks, I will explore the <span class="code">io</span> and <span class="code">file</span> modules in this post.
+
+h3. File
+
+This module contains most of the functions you are used to in other languages for reading, writing, opening, creating and deleting files.
+
+The main surprise for me was to find a number of functions used to evaluate or execute Erlang code dynamically from the files.
+
+I would expect this functions to be in another module, maybe even implemented as BIF, but not they are here.
+
+_Keep in mind that maybe there are other ways to eval code in Erlang that I'm not aware yet._
+
+Let's explore this functions first.
+
+<pre><code>
+</code></pre>
