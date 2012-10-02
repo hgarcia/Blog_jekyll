@@ -1,9 +1,8 @@
 ---
 layout: post
 title: Playing with the file module (part 1). (Learning Erlang 7)
-summary: After some time playing with Dart is time to come back to Erlang. This time I will explore the file module.
+summary: After some time playing with Dart is time to come back to Erlang. This time I will explore the functions in the file module that allow to dynamically execute code from files.
 categories: [Programming, Erlang]
-published: false
 ---
 
 At one point or another, while writing code, is inevitable to interact with the file system.
@@ -12,9 +11,9 @@ The <span class="code">file</span> module in Erlang contains most of the functio
 
 The main surprise for me was to find a number of functions used to evaluate or execute Erlang code contained on files.
 
-I would expect this functions (eval and such) to be in another module, maybe even implemented as BIF. It feels a bit odd and out of place to have code executing functions in a module that deals with files.
+I would expect this functions (<span class="code">eval</span> and such) to be in another module, maybe even implemented as BIF. It feels a bit odd and out of place to have code executing functions in a module that deals with files.
 
-_Keep in mind that maybe there are other ways to eval code in Erlang that I'm not aware yet._
+_Keep in mind that maybe there are other ways to evaluate code in Erlang that I'm not aware yet._
 
 Let's explore these functions first.
 
@@ -104,4 +103,19 @@ This is the result.
   {ok,2}
 </code></pre>
 
-h3. "file:path_script/2"
+h3. The path functions
+
+The <span class="code">consult/1</span>, <span class="code">eval/1</span> and <span class="code">script/2</span> functions have corresponding path functions.
+
+<pre><code>
+  file:path_consult(["/bin", "/lib", "/configs"], "filename.txt").
+  file:path_eval(["/bin", "/lib", "/configs"], "filename.txt").
+  file:path_script(["/bin", "/lib", "/configs"], "filename.txt").
+  file:path_script(["/bin", "/lib", "/configs"], "filename.txt", Bindings).
+</code></pre>
+
+They are equivalent to the non path_ functions but they will search for the file in the the list of given paths until it find it.
+
+h3. Next time.
+
+We will continue exploring the <span class="code">file</span> module, looking at the functions that allow us to work with files in a more traditional way.
