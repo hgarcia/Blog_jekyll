@@ -34,7 +34,7 @@ For example, let's assume we have a file with the name <span class="code">sci-fi
 When reading it we should get a tuple with the following result.
 
 <pre><code>
-1> file:consult("sci-fi-shows.txt").
+  1> file:consult("sci-fi-shows.txt").
   {ok,[{show,"Alphas","sci-fi"},
        {show,"Dr. Who","sci-fi"},
        {show,"Life on Mars","sci-fi"},
@@ -45,8 +45,8 @@ When reading it we should get a tuple with the following result.
 We can assign the result to a tuple as well.
 
 <pre><code>
-1> {ok, SciFiShows} = file:consult("sci-fi-shows.txt").
-2> SciFiShows.
+  1> {ok, SciFiShows} = file:consult("sci-fi-shows.txt").
+  2> SciFiShows.
   [{show,"Alphas","sci-fi"},
    {show,"Dr. Who","sci-fi"},
    {show,"Life on Mars","sci-fi"},
@@ -57,14 +57,14 @@ We can assign the result to a tuple as well.
 If we pass the wrong name we will get an error Tuple.
 
 <pre><code>
-1> file:consult("this-is-not-a-file").
+  1> file:consult("this-is-not-a-file").
   {error,enoent}
 </code></pre>
 
 It will also return an error if the file has the wrong content, in this case the error usually contains the line number, the error type and some details.
 
 <pre><code>
-1> file:consult("wrong-content.txt").
+  1> file:consult("wrong-content.txt").
   {error, {1, erl_parse, ["syntax error before: ","is"]}}
 </code></pre>
 
@@ -80,7 +80,7 @@ You can use it to dynamically run code, given a file with this code.
 
 We can run it and we will see this.
 <pre><code>
-1> file:eval("eval-1.txt").
+  1> file:eval("eval-1.txt").
   hellook
 </code></pre>
 
@@ -99,7 +99,7 @@ Given a file with this code.
 This is the result.
 
 <pre><code>
-1> file:script("script-1.txt").
+  1> file:script("script-1.txt").
   {ok,2}
 </code></pre>
 
