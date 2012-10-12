@@ -1,0 +1,25 @@
+---
+layout: post
+title: First web app with Chicago boss,
+summary: Chicago Boss is a Rails like web framework on top of Erlang/OTP with really good documentation.
+categories: [Programming, Erlang]
+published: false
+---
+
+A few months ago I was
+
+Since the app will be a web application (mostly an api and a few pages with heavy use of ajax), I did a quick check on Erlang based web frameworks out there.
+
+I decided to use "Chicago Boss":http://www.chicagoboss.org/. It has decent documentation to get you started and the installation was very simple.
+
+__I have no other real experience installing other Erlang frameworks yet. So maybe they are all this easier to install.__
+
+Just download the tar file, uncompress, run make and you are up and running.
+
+I had some issues with the name of the application I was trying to create and also with the location of the framework with relation to where I wanted to create my app.
+
+I had to create the app in a folder at the same level of the framework and use lower case for the name of the application. In other words, follow the instructions :-)
+
+I'm not sure if it's me that I'm doing something wrong but this was the only way to get it running.
+
+I usually like to have framework or library code in a different location as where I have my projects. Maybe I can figure something out later.
