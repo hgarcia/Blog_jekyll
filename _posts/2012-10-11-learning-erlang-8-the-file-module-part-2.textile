@@ -1,7 +1,7 @@
 ---
 layout: post
 title: The file module (part 2). (Learning Erlang 8)
-summary: The last time we explored the functions of this modules that can be used to dynamically executed Erlang code. This time we will look at more common file operations; like opening, reading or writing.
+summary: The last time we explored the functions of this modules that can be used to dynamically executed Erlang code. This time we will look at more common file operations like opening, reading or writing.
 categories: [Programming, Erlang]
 ---
 
