@@ -3,7 +3,6 @@ layout: post
 title: The file module (part 2). (Learning Erlang 8)
 summary: The last time we explored the functions of this modules that can be used to dynamically executed Erlang code. This time we will look at more common file operations; like opening, reading or writing.
 categories: [Programming, Erlang]
-published: false
 ---
 
 h3. Let's start by creating a file.
@@ -110,4 +109,23 @@ The second argument is the number of bytes/characters to read.
 If you try to read passing the end of the file you get an <span class="code">eof</span> error.
 
 Also notice that if you read 0 characters you get an empty list as a result.
-If you remember strings are nothing more than lists of characters in Erlang.
+
+__Remember, strings are nothing more than lists of characters in Erlang.__
+
+h3. Getting info about a file.
+
+You can use <span class="code">read_file_info/1</span> calling with a file name or <span class="code">read_file_info/2</span> calling it with the file name and some <span class="code">file_info_options</span>.
+
+<pre><code>
+  1> file:read_file_info("/tmp/4").
+  {ok,{file_info,37,regular,read_write,
+               {{2012,10,12},{0,25,17}},
+               {{2012,10,12},{0,18,44}},
+               {{2012,10,12},{0,18,44}},
+               33204,1,2049,0,3167603,1000,1000}}
+</pre></code>
+
+
+h3. There is more.
+
+The file module has a lot more to offer. You can copy files, create links, create and delete directories, change date and time file information for the file, change ownership and more.
