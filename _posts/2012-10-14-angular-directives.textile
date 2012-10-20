@@ -1,7 +1,0 @@
----
-layout: post
-title: Writing an Angular.js directive.
-summary: summary
-categories: [Programming, JavaScript]
-published: false
----
