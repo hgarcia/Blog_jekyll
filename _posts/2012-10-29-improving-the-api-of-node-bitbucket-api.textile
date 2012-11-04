@@ -1,7 +1,0 @@
----
-layout: post
-title: Improving the API of node BitBucket.
-summary: Moving errors into the proper place and refactoring the code to prepare for multiple possible transports.
-categories: [node.js, Programming, JavaScript]
-published: false
----
