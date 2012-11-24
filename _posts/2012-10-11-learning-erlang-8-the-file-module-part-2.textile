@@ -129,3 +129,5 @@ You can use <span class="code">read_file_info/1</span> calling with a file name 
 h3. There is more.
 
 The file module has a lot more to offer. You can copy files, create links, create and delete directories, change date and time file information for the file, change ownership and more.
+
+__Note of caution. These are my notes while learning Erlang. You are welcome to follow along and use them as a guide. Please make sure to check the "Erlang language":http://www.erlang.org site__

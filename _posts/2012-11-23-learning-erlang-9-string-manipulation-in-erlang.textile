@@ -13,6 +13,8 @@ After coming back home I decided to open the Erlang docs and sure enough, there 
 
 Let's take a look.
 
+__Note of caution. These are my notes while learning Erlang. You are welcome to follow along and use them as a guide. Please make sure to check the "Erlang language":http://www.erlang.org site__
+
 h3. Some basic operations.
 
 <pre><code>

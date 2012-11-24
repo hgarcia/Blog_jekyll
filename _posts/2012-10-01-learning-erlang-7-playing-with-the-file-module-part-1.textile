@@ -11,6 +11,8 @@ The <span class="code">file</span> module in Erlang contains most of the functio
 
 The main surprise for me was to find a number of functions used to evaluate or execute Erlang code contained on files.
 
+__Note of caution. These are my notes while learning Erlang. You are welcome to follow along and use them as a guide. Please make sure to check the "Erlang language":http://www.erlang.org site__
+
 I would expect this functions (<span class="code">eval</span> and such) to be in another module, maybe even implemented as BIF. It feels a bit odd and out of place to have code executing functions in a module that deals with files.
 
 _Keep in mind that maybe there are other ways to evaluate code in Erlang that I'm not aware yet._
