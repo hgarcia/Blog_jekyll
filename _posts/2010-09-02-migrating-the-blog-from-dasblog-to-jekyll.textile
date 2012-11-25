@@ -69,7 +69,7 @@ h3. Html 5 complaint (or quasi) markup and new design.
 
 I didn't validate it yet, so I'm not sure if I'm 100% html 5 complaint, but if not I'm pretty sure I'm close enough.
 
-I wrote the templates on top of the excellent "html 5 kitchen sink reset":http://html5reset.org/. I tried to keep the markup as semantic as possible. I really like how the new "article":http://html5doctor.com/the-article-element/, "header":http://html5doctor.com/the-header-element/, "footer":http://html5doctor.com/the-footer-element-update/ and "aside":http://html5doctor.com/aside-revisited/ tags allow for some meaningful markup.
+I wrote the templates on top of the excellent "html 5 kitchen sink reset":http://html5reset.org/. I tried to keep the markup as semantic as possible. I really like how "the new article":http://html5doctor.com/the-article-element/, "header":http://html5doctor.com/the-header-element/, "footer":http://html5doctor.com/the-footer-element-update/ and "aside":http://html5doctor.com/aside-revisited/ tags allow for some meaningful markup.
 
 By the way I love rounded corners in css3, if you are seen this post in IE I'm very sorry for you :-)
 

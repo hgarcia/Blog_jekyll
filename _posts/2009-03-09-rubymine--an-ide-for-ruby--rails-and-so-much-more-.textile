@@ -12,7 +12,7 @@ I also use <a href="http://confluence.public.thoughtworks.org/display/CCNET/Welc
 
 But the guys from JetBrains do really good products, ex: TeamCity is ,IMHO, the most friendly CI server of the three to set up and ReSharper makes practicing TDD or BDD not just possible but highly enjoyable.
 
-So when I came across RubyMine a few months ago I decided to give it a try. I have been using <a href="/2008/01/02/the-ruby-(and-rails)-ide-that-i-miss.html" target="_blank">different IDE's and Editors</a> on my adventures into the Ruby world but even when I found some of them really good I never really feel at home.
+So when I came across RubyMine a few months ago I decided to give it a try. I have been using <a href="/2008/01/02/the-ruby-%28and-rails%29-ide-that-i-miss.html" target="_blank">different IDE's and Editors</a> on my adventures into the Ruby world but even when I found some of them really good I never really feel at home.
 
 <a href="http://www.netbeans.org/features/ruby/index.html" target="_blank">NetBeans with Ruby support</a> was the one that provided the best IDE experience for me so far, and for text editors I mostly used <a href="http://www.scintilla.org/SciTE.html" target="_blank">Scite</a> that comes with Ruby. (I do all my programming on a PC so no <a href="http://macromates.com/" target="_blank">TextMate</a> for me and for whatever reason <a href="http://www.e-texteditor.com/" target="_blank">e</a> didn't click with me. I also tried <a href="http://www.pspad.com/" target="_blank">PSPad</a>, my favorite text editor for everything else, but it didn't work with ruby. I guess my very basic knowledge of the language didn't help either.
 

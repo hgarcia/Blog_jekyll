@@ -5,7 +5,7 @@ summary: In a previous post I mention about a fix to been able to open a new win
 categories: [Programming, Testing, Tools]
 ---
 
-In <a href="2009/03/24/lightweight-test-framework--fixing-how-to-handle-window-open.html" target="_blank">a previous post</a> I mention about a fix to been able to open a new window both in IE and Firefox using the <a href="http://aspnet.codeplex.com/Release/ProjectReleases.aspx?ReleaseId=22739" target="_blank">Lightweight Test Framework</a>.
+In <a href="/2009/03/24/lightweight-test-framework--fixing-how-to-handle-window-open.html" target="_blank">a previous post</a> I mention about a fix to been able to open a new window both in IE and Firefox using the <a href="http://aspnet.codeplex.com/Release/ProjectReleases.aspx?ReleaseId=22739" target="_blank">Lightweight Test Framework</a>.
 
 Today I want to talk about how to hook into the newly opened window or any other window opened by the testing framework.
 Let me said this, it's not very difficult but is kind of convoluted, I won't be surprised if there is a better way to do this, but I can't seem to find it.

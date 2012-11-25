@@ -5,7 +5,7 @@ summary: I recently posted about how to integrate Git with Visual Studio. Of cou
 categories: [Programming, Tools]
 ---
 
-I recently posted about how to <a href="2010/02/15/GitIntegrationWithVisualStudio.aspx" target="_blank">integrate Git with Visual Studio</a>. Of course Git is not the only DVCS out there.
+I recently posted about how to <a href="/2010/02/15/git-integration-with-visual-studio.html" target="_blank">integrate Git with Visual Studio</a>. Of course Git is not the only DVCS out there.
 
 Mercurial is another source control system similar to Git that is having more and more relevance. Google code have been supporting it for quite a while and <a href="http://blogs.msdn.com/codeplex/archive/2010/01/22/codeplex-now-supporting-native-mercurial.aspx" target="_blank">recently Microsoft announced that Codeplex is adding it as an option for new projects</a>. (Codeplex already supported TFS and Subversion).
 
