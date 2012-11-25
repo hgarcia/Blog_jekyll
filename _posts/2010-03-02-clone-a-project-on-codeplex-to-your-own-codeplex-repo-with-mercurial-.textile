@@ -53,7 +53,8 @@ Notice that the default (an only) repository is the original one, we want to add
 
 <img border="0" alt="add_remote_source" src="../../../images/posts/Cloneaprojectoncodeplextoyourowncodeple_14BF6/add_remote_source_thumb.png" width="516" height="232">
 
-If you are using https authentication make sure you add your username and password following this form: <a href="https://username:password@hg01.codeplex.com/repository">https://username:password@hg01.codeplex.com/repository</a>
+If you are using https authentication make sure you add your username and password following this form: <span class="code">https://username:password@hg01.codeplex.com/repository</span>
+
 Add any Alias name but not "default", not now. Click Ok.
 
 Select the Remote repository marked as default and click the edit button, change the alias from default to "origin".

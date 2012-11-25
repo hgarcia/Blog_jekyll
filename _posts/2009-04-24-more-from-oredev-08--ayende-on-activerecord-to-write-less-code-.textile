@@ -6,7 +6,7 @@ categories: [Programming, .Net]
 ---
 
 A very good presentation with lots of code to learn and appreciate some of the niceties
-of <a href="http://www.castleproject.org/activerecord/index.html" target="_blank">ActiveRecord</a>.
+of <a href="http://www.castleproject.org/projects/activerecord" target="_blank">ActiveRecord</a>.
 
 	<object classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000" width="437" height="314" id="viddler">
 		<param name="movie" value="http://www.viddler.com/player/9be85770/" />

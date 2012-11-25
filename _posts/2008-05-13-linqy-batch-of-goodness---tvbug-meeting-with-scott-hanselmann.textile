@@ -6,7 +6,7 @@ categories: [Programming, .Net]
 ---
 
 <a href="http://www.hanselman.com/blog/">Scott Hanselmann</a> and <a href="http://blogs.msdn.com/bethmassi/">Beth
-Massi</a> both gave a presentation today at the <a href="http://www.tvbug.com/">Toronto Visual Basic User Group</a> about <a href="http://msdn.microsoft.com/en-us/netframework/aa904594.aspx">LINQ </a>in general.
+Massi</a> both gave a presentation today at the <a href="http://www.tvbug.com/">Toronto Visual Basic User Group</a> about <a href="http://msdn.microsoft.com/en-us/library/vstudio/bb397926.aspx">LINQ </a>in general.
 
 Beth created a windows form app using VB.NET, <a href="http://msdn.microsoft.com/en-us/library/bb308960.aspx">LINQ to XML</a> to and <a href="http://msdn.microsoft.com/en-us/library/bb425822.aspx">LINQ to SQL</a> to read data from three different feeds and populate a simple database.
 

@@ -31,7 +31,7 @@ One of the problems I found from my liked is the querying capabilities, no the l
 
 
 
-Not only is using strings for the Column name but also for the operand of the condition. I would prefer a different notation, something like this: 
+Not only is using strings for the Column name but also for the operand of the condition. I would prefer a different notation, something like this:
 
 
 
@@ -43,6 +43,6 @@ At this point relationships are not supported they are promising this for the ne
 
 A nice feature is the Audit Attributes, this Attributes are used to mark some properties of your object to save data as modification dates, creation dates and user that changed the objects. All this is done automatically for you, what it's a very nice idea.
 
-In conclusion if you need something extremely simple and you don't care about the relationships you may be able to use it. If you need something more mature using the same pattern I will stick with <a href="http://www.castleproject.org/activerecord/index.html">Castle ActiveRecord</a> at this moment.
+In conclusion if you need something extremely simple and you don't care about the relationships you may be able to use it. If you need something more mature using the same pattern I will stick with <a href="http://www.castleproject.org/projects/activerecord">Castle ActiveRecord</a> at this moment.
 
 As a side note this doesn't seem to be open source, so there may not be any support from the community, an strength of the Castle project

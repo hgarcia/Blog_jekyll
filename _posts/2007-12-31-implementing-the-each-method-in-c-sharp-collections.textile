@@ -7,7 +7,7 @@ categories: [JavaScript, Programming]
 
 The Javascript library Prototype make use of  "prototypes" to extend some internal JavaScript objects like the Array. One of the extension methods that I find myself using the most is the each method.
 
-h3 Examples
+h3. Examples
 
 
 <script src='http://gist.github.com/561821.js?file=file0.js'></script>

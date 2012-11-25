@@ -5,7 +5,7 @@ summary: Jeffrey Palermo gave a great presentation about the ASP.NET MVC framewo
 categories: [Architecture, Frameworks, Patterns]
 ---
 
-<a href="http://codebetter.com/blogs/jeffrey.palermo/default.aspx" title="Jeffrey Palermo">Jeffrey Palermo</a> gave a great presentation about the ASP.NET MVC framework.
+"Jeffrey Palermo":http://jeffreypalermo.com/ gave a great presentation about the ASP.NET MVC framework.
 
 If you read my blog you know that MVC is kind of an obsession with me.<br/> The presentation used the codecampserver project that use the last drop of the code for ASP.NET MVC and the last version of Palermo's MvcContrib as well.
 

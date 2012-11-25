@@ -5,7 +5,7 @@ summary: Following to yesterday presentation at the TVBUG, Scott Hanselman gave 
 categories: [General]
 ---
 
-Following to yesterday presentation at the TVBUG, Scott Hanselman gave the keynote on <a href="http://astoria.mslivelabs.com/">Data Services</a> and <a href="http://blogs.msdn.com/davidebb/default.aspx">Dynamic Data</a>.
+Following to yesterday presentation at the TVBUG, Scott Hanselman gave the keynote on <a href="http://msdn.microsoft.com/en-us/library/bb906063.aspx">Data Services</a> and <a href="http://blogs.msdn.com/davidebb/default.aspx">Dynamic Data</a>.
 
 Both of this two (products?, projects?, solutions?) are focus on different ways to provide access to your data.
 

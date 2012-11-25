@@ -32,7 +32,7 @@ the object and a change in the url should make the object available.
 properties (columns) on a object)
 * Being able to expose not just databases objects but other type of objects in the future.
 
-h3 URL Format and how to read them.
+h3. URL Format and how to read them.
 
 I wanted very easy to read urls, so I came with this scheme.
 
@@ -56,44 +56,54 @@ http://blog.latrompa.com/Services/Data/Article/list.json?created_more=10/01/2007
 Notice the parameter created is the name of a field in the Article table and the
 _more indicates what operand to use in the where clause.
 
-It took this idea from the <a target="_blank" href="http://subsonicproject.com/view/rest-linq-and-you.aspx">HttpHandler implementation on Subsonic</a>
+It took this idea from the HttpHandler implementation on Subsonic.
 
-h3 Architecture:
+h3. Architecture:
 
-h4 Interfaces.
-
-
-<script src='http://gist.github.com/561814.js?file=file0.cs'></script>
+h4. Interfaces.
 
 
-
-<script src='http://gist.github.com/561814.js?file=file1.cs'></script>
+
+<script src='http://gist.github.com/561814.js?file=file0.cs'></script>
 
 
-h3 Utilities.
+
+
+
+<script src='http://gist.github.com/561814.js?file=file1.cs'></script>
+
+
+
+h3. Utilities.
 
 I create this class to map a uri into an object for easy manipulation, the uri is
 what will tell us wich object to load and how to process it.
 
-
-<script src='http://gist.github.com/561814.js?file=file2.cs'></script>
 
 
-h3 Custom Exceptions
+<script src='http://gist.github.com/561814.js?file=file2.cs'></script>
+
+
+
+h3. Custom Exceptions
 
 We want to throw custom exceptions, don't we?
 This is just in the works, only one class for now.
 
-
-<script src='http://gist.github.com/561814.js?file=file3.cs'></script>
 
 
-h3 The HTTP Handler
+<script src='http://gist.github.com/561814.js?file=file3.cs'></script>
+
+
+
+h3. The HTTP Handler
 
 We will map the extentions that we won't to handle via the API to this Http Handler.
 
-
-<script src='http://gist.github.com/561814.js?file=file4.cs'></script>
+
+
+<script src='http://gist.github.com/561814.js?file=file4.cs'></script>
+
 
 
 You may notice that the HttpHandler doesn't handler the call but it use a Factory

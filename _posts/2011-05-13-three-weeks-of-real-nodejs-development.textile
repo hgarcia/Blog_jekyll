@@ -52,7 +52,7 @@ You have several alternatives. You could build your own EC2 instance (they have 
 
 Utilize some of the cloud offerings available (most of them are on Beta are you will need to request an invitation).
 
-"Nodester":http://nodester.com/, "Joyent SmartMachine":https://no.de/, "Dotcloud":http://www.dotcloud.com/, "nodejitsu":http://www.nodejitsu.com/#/home and "DuoStack":https://www.duostack.com/ are some of the offerings out there (If I'm missing somebody just ping me).
+"Nodester":http://nodester.com/, "Joyent":http://www.joyent.com/products/joyent-cloud , "Dotcloud":http://www.dotcloud.com/ and "nodejitsu":http://www.nodejitsu.com/#/home are some of the offerings out there (If I'm missing somebody just ping me).
 
 I so far tried "DotCloud":http://www.dotcloud.com/ and they have been very good and responsive whenever I found a problem. I really like the way their api work and how I can use different stacks in the same sytem. I as well use the EC2 alternative with Ubuntu for some custom installs.
 
@@ -64,7 +64,7 @@ I will admit it. I wrote code like that. But that was a long time ago. Today the
 
 A good testing strategy is good but not enought. Code may work but still can be bad code. I recommend getting a copy of "Javascript: the good parts":http://oreilly.com/catalog/9780596517748 and also watch the "videos by Douglas Crockford":http://www.youtube.com/watch?v=hQVTIJBZook on the subject.
 
-The use of "JSlint":https://github.com/as-jpolo/node-lint can also help you to find common problems in your code before is too late. I recommend running jslint as part of your "build" process.
+The use of "JSlint":https://github.com/reid/node-jslint can also help you to find common problems in your code before is too late. I recommend running jslint as part of your "build" process.
 
 h3. Your code may be clean but it's so difficult to read.
 
