@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Sharp Architecture approaching version 1.0.
-summary: Pronounced "Sharp Architecture," this is a solid architectural foundation for rapidly building maintainable web applications leveraging the ASP.NET MVC framework with NHibernate.
+summary: Pronounced Sharp Architecture, this is a solid architectural foundation for rapidly building maintainable web applications leveraging the ASP.NET MVC framework with NHibernate.
 categories: [Programming, Frameworks, .Net]
 ---
 

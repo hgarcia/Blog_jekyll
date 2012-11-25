@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Hanselminutes and the passion for software development
-summary: Yesterday I listened to show 115 of Scott Hanselman podcast "Hanselminutes", the title was "Finding passion for Software".
+summary: Yesterday I listened to show 115 of Scott Hanselman podcast Hanselminutes, the title was Finding passion for Software.
 categories: [Programming]
 ---
 
@@ -15,7 +15,7 @@ The chat moves around what and why development software is (or can be) fun.
 Both hosts talk about their mentors and the impact they have in their careers and why they love to do what they do. How this have an impact as well on their writing, talking and sharing their knowledge.
 
 Carl makes a point about pretentious people that believes that they know it all, or that they know the "only" way to do something. Scott mentions that sometimes you can tell somebody how not to do something, but leave them find a good way to do it, there is a good chance they will come up with a different way to do it and maybe a more elegant solution that anything you may think about.
-He is talking about using the anti patterns as examples of bad coding.  
+He is talking about using the anti patterns as examples of bad coding.
 
 The shows run for a little bit more than the usual 30 minutes and makes for a great listening.
 

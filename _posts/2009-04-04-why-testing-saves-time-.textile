@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Why testing saves time.
-summary: Some of the detractors of TDD or testing in general is that you waste time writing test instead of writing "useful" code. Well, writing test just save me a few hours of debugging.
+summary: Exploring why the detractors of TDD that seen it as a waste of time are just plain wrong.
 categories: [Programming, Testing]
 ---
 
@@ -23,7 +23,7 @@ Did you see it? Good for you! I didn't but since I have my test and when I run i
 
 
 
-<a href="../../../images/posts/Whytestingsavestime_932/ScreenHunter_01%202009-04-05%2000.31.28_2.jpg"><img border="0" alt="ScreenHunter_01 2009-04-05 00.31.28" src="../../../images/posts/Whytestingsavestime_932/ScreenHunter_01%202009-04-05%2000.31.28_thumb.jpg" width="760" height="51" /></a>   
+<a href="../../../images/posts/Whytestingsavestime_932/ScreenHunter_01%202009-04-05%2000.31.28_2.jpg"><img border="0" alt="ScreenHunter_01 2009-04-05 00.31.28" src="../../../images/posts/Whytestingsavestime_932/ScreenHunter_01%202009-04-05%2000.31.28_thumb.jpg" width="760" height="51" /></a>
 
 Notice that the error mention that widget.Template.Rendered was null, but I'm mocking the ICache implementation and returning the template string when Get is called with the right key.
 
