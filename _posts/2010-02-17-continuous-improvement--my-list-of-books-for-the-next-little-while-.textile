@@ -12,8 +12,8 @@ So here it goes, this is the list (in order for now) of books that I plan to rea
 
 h3. Computer programming and methodology)
 
-<a href="http://www.pragprog.com/titles/dlret/agile-retrospectives" target="_blank">Agile Retrospectives: Making good teams great</a> (<strike>in progress</strike> 
-<a href="2010/02/19/BookReviewAgileRetrospectivesMakingGoodTeamsGreat.aspx">Finished</a>) (BTW: I just found <a href="http://www.youtube.com/watch?v=qqtPZYigfNI" target="_blank">this presentation</a> from the authors at Google)
+<a href="http://www.pragprog.com/titles/dlret/agile-retrospectives" target="_blank">Agile Retrospectives: Making good teams great</a> (<strike>in progress</strike>
+<a href="/2010/02/18/book-review--agile-retrospectives---making-good-teams-great-.html">Finished</a>) (BTW: I just found <a href="http://www.youtube.com/watch?v=qqtPZYigfNI" target="_blank">this presentation</a> from the authors at Google)
 <a href="http://www.growing-object-oriented-software.com/" target="_blank">Growing object-oriented software guided by test</a> (in progress)
 <a href="http://www.amazon.com/User-Stories-Applied-Software-Development/dp/0321205685" target="_blank">User stories applied</a>.
 <a href="http://www.wrox.com/WileyCDA/WroxTitle/Testing-ASP-NET-Web-Applications.productCd-0470496649.html" target="_blank">Testing ASP.NET Web applications</a>.
@@ -33,7 +33,7 @@ h3. Computer programming and methodology)
 <a href="http://www.amazon.com/Web-Application-Hackers-Handbook-Discovering/dp/0470170778" target="_blank">Web application hackers handbook</a>. (probably need to read this sooner)
 <a href="http://www.amazon.com/Agile-Principles-Patterns-Practices-C/dp/0131857258" target="_blank">Agile principles, patterns and practices in c#.</a>
 <a href="http://www.amazon.ca/ASP-NET-Framework-Unleashed-Stephen-Walther/dp/0672329980" target="_blank">ASP.NET MVC framework unleashed</a>.
-<a href="http://www.amazon.com/Foundation-Expression-Blend-Silverlight-Foundations/dp/1430219505" target="_blank">Foundation Expression Blend 3 with Silverlight</a>. (Need to finish this one, but since Silverlight 4 is coming I may just wait). 
+<a href="http://www.amazon.com/Foundation-Expression-Blend-Silverlight-Foundations/dp/1430219505" target="_blank">Foundation Expression Blend 3 with Silverlight</a>. (Need to finish this one, but since Silverlight 4 is coming I may just wait).
 
 h3. General reading.
 

@@ -2,12 +2,12 @@
 layout: post
 title: Getting to know HTML 5.
 summary: HTML 5 is way more than the highly tooted video tag or the use of canvas, it provides new tags for a more semantic representation of documents.
-categories: [General, Html 5]
+categories: [General, Programming]
 ---
 
 I recently moved my blog from "DasBlog to Jekyll":http://blog.dynamicprogrammer.com/2010/09/02/migrating-the-blog-from-dasblog-to-jekyll.html in the process I decided to write my templates using HTML 5 idioms.
 
-HTML 5 is way more than the highly tooted video tag or the use of canvas, it provides new tags for a more semantic representation of documents. 
+HTML 5 is way more than the highly tooted video tag or the use of canvas, it provides new tags for a more semantic representation of documents.
 
 For the blog the ones I used the most are &lt;article&gt;, &lt;section&gt;, &lt;header&gt;, &lt;footer&gt; and &lt;aside&gt;.
 

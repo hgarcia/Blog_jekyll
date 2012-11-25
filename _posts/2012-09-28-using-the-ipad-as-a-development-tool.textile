@@ -21,7 +21,7 @@ Probably the best general purpose and programming text editor in the iPad. Conne
 
 h4. "Worqshop":http://worqshop.com/
 
-I use this one a lot for working on my Github projects because, yes, it connects with Github (and Heroku). The most amazing about Worqshop is that is done by a sole developer "Donny Kurniawan":twitter.com/donny_k_
+I use this one a lot for working on my Github projects because, yes, it connects with Github (and Heroku). The most amazing about Worqshop is that is done by a sole developer "Donny Kurniawan":https://twitter.com/donny_k_
 
 At the moment, is only suited for single developers projects, since once a project is clone into the iPad you can only <span class="code">add</span>, <span class="code">commit</span> and <span class="code">push</span> changes.
 

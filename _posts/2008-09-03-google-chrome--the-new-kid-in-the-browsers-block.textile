@@ -5,16 +5,16 @@ summary: As you may already know by now, Google released Google Chrome a new web
 categories: [General]
 ---
 
-As you may already know by now, Google released <a href="http://www.google.com/chrome" title="Google chrome" target="_blank">Google Chrome</a> a new web browser. The launch was announce on monday and today everybody I know was going crazy trying to get it. 
+As you may already know by now, Google released <a href="http://www.google.com/chrome" title="Google chrome" target="_blank">Google Chrome</a> a new web browser. The launch was announce on monday and today everybody I know was going crazy trying to get it.
 
 I was able to download and install it around 2 Pm Eastern time. In the meantime I read <a href="http://www.google.com/googlebooks/chrome/" title="Comic book about Chrome" target="_blank">the comic used by Google</a> to explain the rationale behind the browser. This got me very exited, this comic book talks a lot about the technology used in this browser.
 
 One of the things that really got me interested was the <a href="http://code.google.com/p/v8/" title="V8 Javascript Virtual Machine" target="_blank">JavaScript Virtual Machine, called V8</a>. This is extremely important, since this means that the JavaScript loaded in a page will be "compiled" and them run as a compiled language and not an interpreted language. This should provide more stability and performance.
 
-We still need to evaluate compatibility.Talking about V8 is something for a whole new post, since it should be able to run stand alone and is supported in Windows (XP/Vista), Mac OS X 10.5 (Leopard) and Linux systems. This may bring JavaScript to a whole new level. 
+We still need to evaluate compatibility.Talking about V8 is something for a whole new post, since it should be able to run stand alone and is supported in Windows (XP/Vista), Mac OS X 10.5 (Leopard) and Linux systems. This may bring JavaScript to a whole new level.
 
 Installing Chrome can't be any simpler. You download a loader that weights less than 455K, you run it and it downloads the rest of the application for you and start installing it. By default will import settings from your default browser (Firefox in my case) but won't over write any of your configurations, like for example setting
-itself as the default. 
+itself as the default.
 
 <img src="../../../images/posts/sp32-20080902-231021.png" title="Installing Chrome dialog" border="0" />
 
@@ -26,11 +26,11 @@ As you can see by default Google chrome won't force itself as the default, what 
 
 <img src="../../../images/posts/sp32-20080902-231119.png" title="Error when trying to import Firefox settings." border="0" />
 
-Closing Firefox and hitting continue fix the problem and Chrome installs and launches. Notice the help dialog that indicates witch is your default Search engine (this configuration is imported from Firefox) and <a href="../../../images/posts/another-new-player-in-the-browser-wars-google-s-chrome-browser-released.aspx" title="Dan Wahlin's post about Chrome." target="_blank">Dan Wahlin's posted</a> that respects whatever you have there even if it's not Google.com.
+Closing Firefox and hitting continue fix the problem and Chrome installs and launches. Notice the help dialog that indicates witch is your default Search engine (this configuration is imported from Firefox) and <a href="http://weblogs.asp.net/dwahlin/archive/2008/09/02/another-new-player-in-the-browser-wars-google-s-chrome-browser-released.aspx" title="Dan Wahlin's post about Chrome." target="_blank">Dan Wahlin's posted</a> that respects whatever you have there even if it's not Google.com.
 
 <img src="../../../images/posts/sp32-20080902-231152.png" title="Chrome home page" border="0" />
 
-The home page is nice and you will notice right away a quick set of link to your Bookmarks and the recently closed tabs. 
+The home page is nice and you will notice right away a quick set of link to your Bookmarks and the recently closed tabs.
 
 <img src="../../../images/posts/sp32-20080902-231444.png" title="Chrome home page" border="0" />
 

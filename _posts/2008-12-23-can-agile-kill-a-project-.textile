@@ -5,9 +5,9 @@ summary: Mohammad Azam has a post entitled When Being Agile Kills the Project. H
 categories: [Methodology]
 ---
 
-<a href="http://www.azamsharp.com/Default.aspx" target="_blank">Mohammad Azam</a> has a post entitled <a href="http://www.azamsharp.com/Posts/145_When_Being_Agile_Kills_the_Project.aspx" target="_blank">When Being Agile Kills the Project</a>. He mentions a project were the client gave a one month deadline not negotiable and so, he had to go and start cutting corners to make the deadline since, he -wanted- +needed+ to keep his job (totally reasonable, keeping the job I mean).
+<a href="http://www.azamsharp.com/" target="_blank">Mohammad Azam</a> has a post entitled "When Being Agile Kills the Project" (the post have been removed). He mentions a project were the client gave a one month deadline not negotiable and so, he had to go and start cutting corners to make the deadline since, he -wanted- +needed+ to keep his job (totally reasonable, keeping the job I mean).
 
-bq. Unfortunately, in this case the owner was fixed with the deadline and was not willing to move it further. The other option was to leave the project and search for a different one. This option was not reasonable for me as I was on a worker visa and finding another company to sponsor a new worker visa is like finding a needle in a hay stack. 
+bq. Unfortunately, in this case the owner was fixed with the deadline and was not willing to move it further. The other option was to leave the project and search for a different one. This option was not reasonable for me as I was on a worker visa and finding another company to sponsor a new worker visa is like finding a needle in a hay stack.
 
 p. There is no discussion on this, but this post got me thinking. First the things that they have to sacrifice.
 
@@ -27,7 +27,7 @@ As a comment to the post mentions:
 
 <blockquote>
 
-by Domingos on 12/23/2008 6:07:49 AM 
+by Domingos on 12/23/2008 6:07:49 AM
 That's why being agile is not only about engineering practices. In order to be Agile, a company needs to change the way it does business.
 At the end of the day, it is about what applies to your situation. No one should never adopt all practices blindly without consideration.
 I would have done exactly what you did: put everything in a balance and decide what practice to use in your specific case. And you were 'agile', but no Agile.
