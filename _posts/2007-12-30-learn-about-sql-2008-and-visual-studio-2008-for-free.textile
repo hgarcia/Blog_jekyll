@@ -7,8 +7,8 @@ categories: [Programming]
 
 Microsoft have a set of videos available to learn about the new features on SQL server 2008.
 
-You can find links to those videos <a href="http://blogs.msdn.com/publicsector/archive/2007/12/27/free-e-learning-what-s-new-in-microsoft-sql-server-2008.aspx">here</a>.
+You can find links to those videos <a href="http://blogs.msdn.com/publicsector/archive/2007/12/27/free-e-learning-what-s-new-in-microsoft-sql-server-2008.aspx">in this SQL server 2008 msdn page.</a>.
 
 Another set of videos give helpful information on the new features of VS 2008.
 
-The links to those video can be found <a href="http://blogs.msdn.com/publicsector/archive/2007/10/20/how-to-videos-get-up-to-speed-on-visual-studio-2008.aspx">here</a>.
+The links to those video can be found <a href="http://blogs.msdn.com/publicsector/archive/2007/10/20/how-to-videos-get-up-to-speed-on-visual-studio-2008.aspx">in this VS 2008 msdn page.</a>.

@@ -50,7 +50,7 @@ h3. From GitHub to Heroku with Rack.
 
 At this point I needed to worry about existing links in the wild that where going to be broken after the migration. One solution was to provide some kind of redirect, but GitHub pages only serve static content.
 
-After a little bit of searching I found "this article":http://gmarik.info/blog/2010/05/10/blogging-with-jekyll-and-heroku-for-free on how to host Jekyll on Heroku and how to create a simple "Rack":http://rack.rubyforge.org/ midleware to add the extension to a URL.
+After a little bit of searching I found this article "on how to host Jekyll on Heroku":http://gmarik.info/blog/2010/05/10/blogging-with-jekyll-and-heroku-for-free and how to create a simple "Rack":http://rack.rubyforge.org/ midleware to add the extension to a URL.
 
 So, I installed rack, changed the configuration, created a free account on "Heroku":http://heroku.com/ and push the blog into it.
 

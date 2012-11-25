@@ -54,11 +54,11 @@ Once you have all your handlers done starting the app is as easy as type:
 
 If you have any mistakes in your code you will see an error in the command line:
 
-<img src="../../../images/posts/console_error.png" border="0"/>
+<img src="../../../images/posts/console_error.png" border="0" alt="Express errors in the console."/>
 
 If the error is found during run time, by default, Express provides a friendly 500 error page.
 
-<img src="../../../images/posts/500_error.png" border="0"/>
+<img src="../../../images/posts/500_error.png" border="0" alt="Express 500 error page."/>
 
 In this case the error is a view file missing.
 

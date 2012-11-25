@@ -1,7 +1,7 @@
 ---
 layout: post
 title: The Herding code podcast about FubuMVC.
-summary: Herding code on FubuMVC
+summary: Herding code interview with Chad Myers and Jeremy Miller on FubuMVC
 categories: [Programming, .Net]
 ---
 
