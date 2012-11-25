@@ -29,9 +29,11 @@ At this point we return a tuple with the original amount and the calculated fees
 
 <aside class="resources">
   <h4>Links</h4>
+
   * "Efficiency guide":http://www.erlang.org/doc/efficiency_guide/introduction.html
   * "A Deeper look at Tail recursion in Erlang":http://prog21.dadgum.com/1.html
   * "Introduction to Erlang":http://trigonakis.com/blog/2011/03/30/introduction-to-erlang-recursion-12/
+
 </aside>
 
 h3. No case to match.

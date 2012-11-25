@@ -19,4 +19,4 @@ It's the perfect place for my non-technical content.
 
 __I reserve the right to cross-post now and them if I think it makes sense__
 
-Go ahead and "visit it now":http://theprogrammer.jux.com if you wish.
+Go ahead and "visit it now":https://theprogrammer.jux.com if you wish.

@@ -34,10 +34,12 @@ The second time we build a proper list and thus we can process the list without 
 
 <aside class="resources">
   <h4>Books</h4>
+
   * "Programming Erlang":http://pragprog.com/book/jaerlang/programming-erlang
   * "Erlang and OTP in action":http://www.manning.com/logan/
   * "Erlang programming":http://shop.oreilly.com/product/9780596518189.do
   * "Building web applications<br/>with Erlang":http://shop.oreilly.com/product/0636920021452.do
+
 </aside>
 
 h3. String those characters together.

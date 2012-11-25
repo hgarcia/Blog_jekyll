@@ -31,7 +31,7 @@ h3. Usage.
   repo.sources('/').raw(function (err, result) {
     //gets the content (as a string) of the root folder.
   });
-</pre></code>
+</code></pre>
 
 h3. Instance methods
 
@@ -50,7 +50,7 @@ __This only works for text files, binary files will return a 500 status code.__
 <pre><code>
   obj.data //Contains a string with the file raw content
   obj.lines //Contains an array with the string split by '\n' characters.
-</pre></code>
+</code></pre>
 
 In case of an error parsing the data at the moment we return a result with this form.
 
@@ -59,6 +59,6 @@ In case of an error parsing the data at the moment we return a result with this 
     success: false,
     status: 500     //Or other HTTP status code
   }
-</pre></code>
+</code></pre>
 
 _This API will change in the next release and the module will use the err object to return any and all errors._

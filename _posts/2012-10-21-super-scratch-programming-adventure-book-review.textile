@@ -21,4 +21,4 @@ h3. Conclusion
 
 I will certainly recommend this book for any parent that want to introduce their kids to the subject. If you are not a programmer don't worry, the book is easy to follow along and very well written.
 
-__<a href="http://oreilly.com/bloggers/" class="side-bar-img"><img alt="I review for the O'Reilly Blogger Review Program" src="http://cdn.oreilly.com/bloggers/blogger-review-badge-125.png" border="0" width="125" height="125">__
+__<a href="http://oreilly.com/bloggers/" class="side-bar-img"><img alt="I review for the O'Reilly Blogger Review Program" src="http://cdn.oreilly.com/bloggers/blogger-review-badge-125.png" border="0" width="125" height="125"></a>__

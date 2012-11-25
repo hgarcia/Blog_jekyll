@@ -24,7 +24,7 @@ h3. Some basic operations.
   16
   3> length(Str).
   16
-</pre></code>
+</code></pre>
 
 We can easily check for the string length using the <span class="code">len/1</span> function.
 
@@ -37,7 +37,7 @@ We can also check for the number of words using <span class="code">words/1</span
   4
   2> string:words("this is a string", $a).
   2
-</pre></code>
+</code></pre>
 
 h3. Building strings.
 
@@ -48,35 +48,35 @@ We can create new strings using a number of functions.
 <pre><code>
   1> string:join(["this", "is", "a", "string"], " ").
   "this is a string"
-</pre></code>
+</code></pre>
 
 <span class="code">concat/2</span> join two strings together.
 
 <pre><code>
   1> string:concat("this is a string", ", and now is longer.").
   "this is a string, and now is longer"
-</pre></code>
+</code></pre>
 
 We can copy a string a given number of times with <span class="code">copies/2</span>.
 
 <pre><code>
   1> string:concat("de",string:copies("do", 3)).
   "dedododo"
-</pre></code>
+</code></pre>
 
 We can use <span class="code">chars/3</span> to build a string using the same character multiple times.
 
 <pre><code>
   1> string:concat("this is g", string:chars($r, 10, "eat")).
   "this is grrrrrrrrrreat"
-</pre></code>
+</code></pre>
 
 There is another variation without the tail.
 
 <pre><code>
   1> string:chars($+, 20).
   "++++++++++++++++++++"
-</pre></code>
+</code></pre>
 
 You can use a number of functions to pad a string with either spaces or some character.
 
@@ -92,7 +92,7 @@ You can use a number of functions to pad a string with either spaces or some cha
   "..To be continued.."
   6> string:right(Msg, string:len(Msg)+3, $.).
   "...To be continued"
-</pre></code>
+</code></pre>
 
 h3. Splitting and slicing.
 
@@ -121,7 +121,7 @@ You can get parts of a string using the familiar <span class="code">substr</span
   "efghijklm"
   4> string:sub_string("abcdefghijklm", 5, 8).
   "efgh"
-</pre></code>
+</code></pre>
 
 Both <span class="code">substr/2</span> and <span class="code">sub_string/2</span> are equivalent but <span class="code">substr/3</span> takes the start and length while <span class="code">sub_string/3</span> takes the start and ending index instead.
 
@@ -130,14 +130,14 @@ You can find a given word in a string by index with <span class="code">sub_word/
 <pre><code>
   1> string:sub_string("this is a string of characters", 4).
   "string"
-</pre></code>
+</code></pre>
 
 Sometimes a string is not a human language and we want to use a different character as the word separator using <span class="code">sub_word/3</span>.
 
 <pre><code>
   1> string:sub_word("this is a string of characters", 4, $i).
   "ng of characters"
-</pre></code>
+</code></pre>
 
 h3. Finding and comparing strings.
 
@@ -150,7 +150,7 @@ String equality is easy, just call <span class="code">equal/2</span>.
   3> B = "equality".
   4> string:equal(A, B).
   true
-</pre></code>
+</code></pre>
 
 In most cases you may want to normalize the strings before comparing them.
 
@@ -165,7 +165,7 @@ You can use <span class="code">to_lower</span> or <span class="code">to_upper</s
   true
   5> string:equal(string:to_upper(A), string:to_upper(B)).
   true
-</pre></code>
+</code></pre>
 
 Using the <span class="code">strip</span> functions you can remove spaces or filled characters from the string.
 
@@ -184,7 +184,7 @@ Using the <span class="code">strip</span> functions you can remove spaces or fil
   "no plus signs++++++"
   7> string:strip("+++++++no plus signs++++++", right, $+).
   "+++++++no plus signs"
-</pre></code>
+</code></pre>
 
 We can check for inclusion of a character or a string in another string using the <span class="code">chr/2</span> and <span class="code">str/2</span> functions and their reverse versions.
 
@@ -248,6 +248,6 @@ The <span class="code">to_float/1</span> function has a similar behaviour.
   {error,no_float}
   6> string:to_float("-10.0").
   {-10.0,[]}
-</pre></code>
+</code></pre>
 
 This covers the string module that give us most of the tools we are used to have in some other languages.

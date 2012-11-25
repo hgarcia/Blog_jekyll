@@ -17,9 +17,11 @@ I also plan to complete a small web project on Erlang. I learn the best while do
 
 <aside class="resources">
   <h4>Resources</h4>
+
   * "Erlang language":http://www.erlang.org
   * "Documentation":http://www.erlang.org/doc/reference_manual/introduction.html
   * "Course":http://www.erlang.org/course/course.html
+
 </aside>
 
 h3. Of dots, colons, semi colons and commas...

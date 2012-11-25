@@ -35,7 +35,7 @@ Start to download the<a href="http://channel9.msdn.com/shows/The+Knowledge+Chamb
 11:30 PM  Launch e, create a new HTML (Gestalt) file. Check the menu to try to get a grasp on the bundles shortcuts. Type skelg+Tab and a basic html skeleton get's generated for me.
 Remove the link to the CSS file since I want be using any in this test.
 
-11:32 PM  Open the "<a href="http://visitmix.com/labs/gestalt/downloads/xaml.playground.html" target="_blank">Designer</a>" that the Gestalt team offers online, select a MediaElement and change the size, type something in the source and change AutoPlay to False.
+11:32 PM  Open the <a href="http://visitmix.com/labs/gestalt/downloads/xaml.playground.html" target="_blank">"Designer"</a> that the Gestalt team offers online, select a MediaElement and change the size, type something in the source and change AutoPlay to False.
 Check the XAML, copy and paste inside e in a new Xaml file. (Syntax highlighter works as expected.)
 Change the source to the absolute location of the video previously downloaded.
 Save the file inside a Xaml subfolder.
