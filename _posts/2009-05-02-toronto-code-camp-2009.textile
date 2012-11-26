@@ -12,6 +12,6 @@ I was impressed by how well organized the event was. The sessions I was able to 
 
 The interaction with fellow developers and the involvement in the community have a lot of value as well. There was a high sense of camaraderie during the event and the after party. On a personal note I was able to "infest" another volunteer with the MVC virus.
 
-If you haven’t attend a code camp near you city or town make sure to check for them and don’t miss it. They are a lot of fun. As a developer I want to thanks <a href="http://gtaeast.torontoug.net/">Chris Dufour</a> for putting the time to organize such an event.
+If you haven’t attend a code camp near you city or town make sure to check for them and don’t miss it. They are a lot of fun. As a developer I want to thanks "Chris Dufour":http://ca.linkedin.com/in/cdufour for putting the time to organize such an event.
 
 P.S.: I got a cool Polo shirt sponsored by <a href="http://www.objectsharp.com/Pages/default.aspx" target="_blank">ObjectSharp</a>.

@@ -20,11 +20,13 @@ The overall goal of this is to allow developers to worry less about application 
 * Loosely Coupled
 * Preconfigured Infrastructure
 * Open Ended Presentation
+
 </blockquote>
 
 There is of course a strong focus on TDD as well. New on this version (from the change log)
 
 <blockquote>
+
 * A Visual Studio 2008 template project has been added under /TemplatesAndCodeGen
 to get your own S#arp Architecture project up and running quickly
 * Replaced Ninject with Castle Windsor
@@ -33,16 +35,19 @@ to get your own S#arp Architecture project up and running quickly
 along with providing an integration verification mechanism to check mappings against
 a live database
 * This will likely be the last interim release before version 1.0
+
 </blockquote>
 
 I think that the project templates and wizards are a big plus on this package. In the roadmap for version one this is what we can look for:
 
 <blockquote>
+
 * WCF integration
 * Hone CRUD capabilities
 * Support for multiple databases
 * Example of using a Unit of Work to encapsulate non-trivial controller logic
 * Scaffolding generators!
+
 </blockquote>
 
 There is a discussion group on <a href="http://groups.google.com/group/sharp-architecture?hl=en" target="_blank">Google groups</a> to provide support and ask for help.

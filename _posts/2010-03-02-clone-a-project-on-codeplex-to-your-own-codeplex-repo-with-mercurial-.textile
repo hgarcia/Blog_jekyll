@@ -14,11 +14,11 @@ If you use Github (Git) or Bitbucket (Mercurial) you are familiar with the abili
 Once forked you can start working in your own repo and once you are ready to integrate you will send a pull request to the master repository.
 Codeplex recently started using Mercurial but it doesn't have (or I couldn't find) a way to clone a project directly from inside Codeplex.
 
-_UPDATED March 5: Yesterday Codeplex added support for forks, check <a href="http://blogs.msdn.com/codeplex/archive/2010/03/05/codeplex-mercurial-support-for-forks.aspx" target="_blank">this article here._
+_UPDATED March 5: Yesterday "Codeplex added support for forks":http://blogs.msdn.com/codeplex/archive/2010/03/05/codeplex-mercurial-support-for-forks.aspx when using mercurial._
 
 h3. First, cloning to your local computer
 
-_You need to have <a href="http://bitbucket.org/tortoisehg/stable/wiki/download" target="_blank">TortoiseHg</a> installed on your computer before going forward with this tutorial._
+_You need to have "TortoiseHg":http://bitbucket.org/tortoisehg/stable/wiki/download installed on your computer before going forward with this tutorial._
 
 First you need to check out the project you want to fork using the clone url:
 

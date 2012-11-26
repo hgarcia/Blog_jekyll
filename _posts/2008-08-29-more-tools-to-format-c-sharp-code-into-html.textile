@@ -15,6 +15,6 @@ The tool have some pretty good options and they are presented to you after click
 
 <img alt="" src="../../../images/posts/sp32-20080828-235306.png" title="Options for Copy Source as HTML" border="0"/>
 
-You should be able to get the tool from here: <a href="http://www.jtleigh.com/people/colin/software/CopySourceAsHtml/" target="_blank">http://www.jtleigh.com/people/colin/software/CopySourceAsHtml/</a> but it doesn't seem to be up at this moment. 
+You should be able to get the tool from here: "codeplex":http://copysourceashtml.codeplex.com/ but it doesn't seem to be up at this moment.
 
 There is a link to a zip file in this blog post as well: <a href="http://blogs.microsoft.co.il/blogs/bursteg/archive/2007/11/21/copy-source-as-html-copysourceashtml-for-visual-studio-2008-rtm.aspx" target="_blank">Guy Burstein's Blog</a>.

@@ -10,6 +10,7 @@ We all know that <a href="http://www.visualsvn.com/" target="_blank">VisualSVN</
 Now there is another choice and is a set of configuration options to access TortoiseSVN from inside Visual Studio. The set of configurations provide a tools menus, context menu, and menu bar.
 
 <blockquote>
+
 The following Subversion/TortoiseSVN features are covered in the integration:
 
 * Commit - Commit the files to the repository
@@ -26,6 +27,7 @@ The following Subversion/TortoiseSVN features are covered in the integration:
 * Add Solution - Add the solution being edited to source control
 * Branch/Tag - Perform a branch or tag on the current working copy
 * Settings - Set up TortoiseSVN
+
 
 </blockquote>
 

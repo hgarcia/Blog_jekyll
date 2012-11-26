@@ -5,6 +5,6 @@ summary: InfoQ has a video recorded at JAOO on witch Robert Martin talks about c
 categories: [General, Methodology]
 ---
 
-<a href="http://www.infoq.com/presentations/craftmanship-ethics" target="_blank">InfoQ</a> has a video recorded at <a href="http://jaoo.dk/" target="_blank">JAOO</a> on witch <a href="http://blog.objectmentor.com/articles/category/uncle-bobs-blatherings" target="_blank">Robert Martin</a> talks about craftsmanship and ethics on software development.
+"InfoQ":http://www.infoq.com/presentations/craftmanship-ethics has a video recorded at "JAOO":http://jaoo.dk/ on witch "Robert Martin":http://www.objectmentor.com/omTeam/martin_r.html talks about craftsmanship and ethics on software development.
 
 Martin is a very good presenter and the video captures his energy on stage.
