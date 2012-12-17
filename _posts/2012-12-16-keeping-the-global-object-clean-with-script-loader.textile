@@ -10,7 +10,7 @@ My latest side project requires that I put together a script to be consumed by t
 The most important thing when working in these types of scripts
  is to keep the global space clean.
 
- h3. The problem
+h3. The problem
 
 I wanted to use a script loader that allow for asynchronous loading of my dependencies.
 
