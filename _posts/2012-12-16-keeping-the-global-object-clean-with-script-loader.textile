@@ -14,7 +14,7 @@ h3. The problem
 
 I wanted to use a script loader that allow for asynchronous loading of my dependencies.
 
-After looking around in the web to some of the usual suspects I decided to try  <span class="code">$script</span> this time but I wanted to internalize it into my own code.
+After looking around in the web to some of the usual suspects I decided to try "$script":https://github.com/ded/script.js this time but I wanted to internalize it into my own code.
 
 The script creates a <span class="code">$script</span> global function that you use to import the scripts, check for ready status and a few more things.
 
