@@ -9,9 +9,16 @@ h3. A bit of history
 
 I wrote this library for the first time 6 or 7 years ago.
 
-During all this time I kept improving it and enhancing it, sometimes even duplicating the effort on some code base. For a few years have been sitting on my combo GitHub repository with a bunch of other small projects.
+During all this time I keep improving it and enhancing it, sometimes even duplicating the effort on a different code base. For a few years now it has been sitting on my personal GitHub repository with a bunch of other small projects.
 
 During the holidays, while working on a new side project, I was ready to add the library to the project the old fashion way, copy the dll into a libs folder and add a reference.
+
+It's evident that this is not the way of doing things in .Net anymore and since we (.Net developers) finally have a package manager it was time to move this library into NuGet.
+
+After a few hours of fidling around with the code, cleaning up a few things and moving it into it's own repositoy I published and now is available for everybody via NuGet.
+
+You can install via "NuGet":http://nuget.org/packages/DynProg.Validation or inside VS using the Nuget Package Manager.
+
 
 h3. Why another validation library?
 
@@ -97,6 +104,5 @@ Finally <span class="code">List</span> will return the <span class="code">Errors
 
 h3. Installing and getting the code
 
-You can install via "NuGet":http://nuget.org/packages/DynProg.Validation inside VS using the Nuget Package Manager.
 
 You can also "download the code from Github":https://github.com/hgarcia/DynProg.Validation/archive/master.zip and build in your machine. 
