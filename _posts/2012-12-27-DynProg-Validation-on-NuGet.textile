@@ -11,13 +11,13 @@ I wrote this library for the first time 6 or 7 years ago.
 
 During all this time I keep improving it and enhancing it, sometimes even duplicating the effort on a different code base. For a few years now it has been sitting on my personal GitHub repository with a bunch of other small projects.
 
-During the holidays, while working on a new side project, I was ready to add the library to the project the old fashion way, copy the dll into a libs folder and add a reference.
+During the holidays, while working on a new side project, I was ready to add the library to the project the old fashion way, copy the DLL into a libs folder and add a reference.
 
 It's evident that this is not the way of doing things in .Net anymore and since we (.Net developers) finally have a package manager it was time to move this library into NuGet.
 
-After a few hours of fidling around with the code, cleaning up a few things and moving it into it's own repositoy I published and now is available for everybody via NuGet.
+After a few hours of fiddling around with the code, cleaning up a few things and moving it into it's own repository I published and now is available for everybody via NuGet.
 
-You can install via "NuGet":http://nuget.org/packages/DynProg.Validation or inside VS using the Nuget Package Manager.
+You can install via "NuGet":http://nuget.org/packages/DynProg.Validation or inside VS using the NuGet Package Manager.
 
 
 h3. Why another validation library?
@@ -69,7 +69,7 @@ We create a validator instance per method and you call the <span class="code">Ch
 
 This is a little weird but the reason is that we use this to internally get the name of the parameter that in turn we use to generate the Exception message. This save you of passing a string with the parameter name that can get out of sync at the first refactoring of your code.
 
-The <span class="code">CheckThat</span> method returns one of many <span class="code">CheckConditions</span> based on the type of the parameter. 
+The <span class="code">CheckThat</span> method returns one of many <span class="code">CheckConditions</span> based on the type of the parameter.
 
 These <span class="code">CheckConditions</span> expose a series of method suitable to check multiple aspects of the parameter.
 
@@ -77,7 +77,7 @@ You can chain multiple conditions together to check several attributes of the pa
 
 h3. Specific Exception per check
 
-All methods of the <span class="code">CheckConditions</span> have a "typeless" interface that will generate a generic Exception based on what condition is checking, parameter type and name. 
+All methods of the <span class="code">CheckConditions</span> have a "typeless" interface that will generate a generic Exception based on what condition is checking, parameter type and name.
 
 They also have a "Generic" interface that take an Exception type. This interface takes the same parameters of the "typeless" one plus an array of object as the arguments that Exception type is expecting.
 
@@ -92,7 +92,7 @@ Although (at the moment) the validation is run on runtime no Exceptions will be 
 
 These methods can be called on an instance of the <span class="code">Validator</span> object or in any of the <span class="code">CheckConditions</span>.
 
-The <span class="code">ThrowFirst</span> method will throw the first exception in case one or more exceptions where found. 
+The <span class="code">ThrowFirst</span> method will throw the first exception in case one or more exceptions where found.
 
 The <span class="code">Throw</span> method will throw an <span class="code">ErrorsCollectionException</span> if at least one error was found.
 
@@ -102,7 +102,8 @@ The <span class="code">Throw&lt;T&gt;</span> method will throw an <span class="c
 
 Finally <span class="code">List</span> will return the <span class="code">ErrorsCollectionException</span> even if empty.
 
-h3. Installing and getting the code
+h3. API documentation
 
+I put together "a quick site":http://hgarcia.github.com/DynProg.Validation/ using gh-pages with the complete API.
 
-You can also "download the code from Github":https://github.com/hgarcia/DynProg.Validation/archive/master.zip and build in your machine. 
+More code examples coming soon, or just check the tests.
