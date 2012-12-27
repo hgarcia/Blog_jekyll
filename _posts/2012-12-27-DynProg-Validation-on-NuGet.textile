@@ -2,6 +2,7 @@
 layout: post
 title: DynProg.Validation now available on NuGet
 summary: My own validation library for .Net that introduce a simple DSL to make validation of arguments and method calls easier and less annoying.
+categories: [.Net, Programming]
 ---
 
 h3. A bit of history
