@@ -9,6 +9,10 @@ h3. A bit of history
 
 I wrote this library for the first time 6 or 7 years ago.
 
+During all this time I kept improving it and enhancing it, sometimes even duplicating the effort on some code base. For a few years have been sitting on my combo GitHub repository with a bunch of other small projects.
+
+During the holidays, while working on a new side project, I was ready to add the library to the project the old fashion way, copy the dll into a libs folder and add a reference.
+
 h3. Why another validation library?
 
 <span class="code">DynProg.Validation</span> is intended to replace the countless checks for null argument and argument formatting and provide a simple and easy to use interface.
