@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Get started with Arduino: A hands-on introductory workshop - video review.
+title: Get started with Arduino, A hands-on introductory workshop - video review.
 summary: A very well written book that will instill the need to write some F# code.
 categories: [General]
 ---
