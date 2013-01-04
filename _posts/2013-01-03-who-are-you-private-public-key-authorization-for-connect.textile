@@ -7,6 +7,13 @@ categories: [JavaScript, node.js, Programming]
 
 Who-are-you, reads a series of http headers and authorize (or not) the caller to access the API.
 
+<aside class="resources">
+  <h4>UPDATE</h4>
+
+  You should also check Joyent's "node-http-signature":https://github.com/joyent/node-http-signature that provides HMAC authentication in a more complete and mature module.
+  If you are using "Restify":http://mcavage.github.com/node-restify/#Bundled-Plugins  you can use the Joyent module right away since it comes already included.
+</aside>
+
 h3. Usage
 
 * Provide the client with a private and public key.
