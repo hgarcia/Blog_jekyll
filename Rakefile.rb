@@ -45,7 +45,7 @@ namespace :build do
 	task :deploy => [:jekyll] do
 		sh 'cp config.ru ../heroku'
 		chdir '../heroku'
-		sh 'git pull' do |ok, res|
+		sh 'git pull heroku master' do |ok, res|
 		end
 		sh 'git add -A'
 		sh 'git commit -m"Deploying the last build"'
