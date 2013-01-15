@@ -2,7 +2,7 @@
 layout: post
 title: Codemash 2.0.1.3 precompilers.
 summary: PhoneGap in the morning, build you own application in the evening.
-categories: [JavaScript, Programming, Codemash]
+categories: [Programming, Codemash]
 ---
 
 We are half way through Codemash 2.0.1.3 since this year we got two days of precompilers.
