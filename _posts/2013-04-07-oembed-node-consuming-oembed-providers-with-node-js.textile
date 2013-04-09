@@ -13,7 +13,7 @@ The result is this simple but extensible node.js module to easily consume oEmbed
 
 At the moment it <del>only</del> supports YouTube and Vimeo but you can easily extend it to work with others via custom providers.
 
-__ UPDATE: Version 0.2.0 adds support for "Revision3":http://revision3.com, "Justin.tv":http://justin.tv and "yFrog":http://twitter.yFrog.com. It also fix a bug when processing YouTube urls that contain multiple parameters in the querystring.__
+__UPDATE: Version 0.2.0 adds support for "Revision3":http://revision3.com, "Justin.tv":http://justin.tv and "yFrog":http://twitter.yFrog.com. It also fix a bug when processing YouTube urls that contain multiple parameters in the querystring.__
 
 h3. Usage
 
