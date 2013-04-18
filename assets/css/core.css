@@ -184,6 +184,11 @@ footer{
   margin-right: 1em;
   margin-bottom: 1em;
 }
+.anchor-float-center {
+  display: inline-block;
+  text-align: center;
+  width: 100%;
+}
 
 .side-bar-img {
   margin-right: 1em;
