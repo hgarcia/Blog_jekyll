@@ -34,7 +34,7 @@ h3. La porteña
 
 A very delicate script with hints of fileteado. "La porteña":http://www.sudtipos.com/fonts/43
 
-<a class="anchor-float-center" href="http://www.sudtipos.com/fonts/43" target="_blank"><img src="../../../images/posts/la-potenia.png" border="0" alt="The Porteña font"/></a>
+<a class="anchor-float-center" href="http://www.sudtipos.com/fonts/43" target="_blank"><img src="../../../images/posts/la-portenia.png" border="0" alt="The Porteña font"/></a>
 
 
 h3. Tanguera
