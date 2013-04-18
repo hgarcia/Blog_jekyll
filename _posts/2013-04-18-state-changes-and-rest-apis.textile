@@ -1,9 +1,0 @@
----
-layout: post
-title: State changes, rest apis and end points based permissions.
-summary: When we try to manage all our permissions based on the end points and HTTP verbs available for the different operations.
-categories: [Programming, Architecture]
-published: false
----
-
-Code state (or status) as objects.
