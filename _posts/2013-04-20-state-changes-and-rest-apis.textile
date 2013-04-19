@@ -3,7 +3,6 @@ layout: post
 title: State changes, rest APIs and end points based permissions.
 summary: I often get asked how to model HTTP APIs to change status on objects when we try to manage all our permissions based on the end points and HTTP verbs available.
 categories: [Programming, Architecture]
-published: false
 ---
 
 You are ready to write your new HTTP API (notice I'm not saying REST) and everything goes well until you get the following requirement.
@@ -14,11 +13,12 @@ So far no problem.
 
 __Editing customers is available to all back-end roles, but status changes is only available to some roles.__
 
-This scenario is the one that can be problematic if you want to model your permissions at the end point level.
+This scenario is the one that most new comers find problematic. Specially if you want to model your permissions at the end point. For example using some kind of middleware.
+
 
 h3. Customers end points.
 
-You will have the following end-points for the Customer object.
+You may have the following end-points for the Customer object.
 
 <pre><code>
 
@@ -32,11 +32,13 @@ You will have the following end-points for the Customer object.
 
 
 A few things to notice here. The PUT and POST route may or may not have the id at the end.
-The implementation of the DELETE operation can be a logical delete while preserving the data in your data store.
+The implementation of the DELETE operation can be a logical delete while preserving the data in your data store, but that is not really relevant
 
-In this scenario any update to customers is done via PUT, but while we want to grant access to update to multiple roles. We only want a subset of those roles to be able to change the status of the customer.
+In this scenario any update to customers is done via PUT.
+We want to grant access to this operation to multiple roles, but we only want a <strong>subset</strong> of those roles to be able to change the status of the customer.
 
-So we can't really use this end point to change status without changing where we implement security.
+So we can't really use this end point to change status without changing how we implement security.
+
 
 h3. Model Status on it's own.
 
@@ -53,6 +55,7 @@ I follow this with the creation of just one end point.
   PUT     https://server.com/customers/:id/status (updates the status for the customer with the payload)
 
 </code></pre>
+
 
 h3. Conclusion and home work.
 
