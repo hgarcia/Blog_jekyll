@@ -3,7 +3,6 @@ layout: post
 title: Beautiful new typography, the work of Pablo Impallari.
 summary: A list of some beautifully designed (new) fonts created by Pablo Impallari.
 categories: [General]
-published: false
 ---
 
 I really enjoy nice typography and this interest make me explore some of the several font providers out there. Sometimes for inspiration and other times is just like visiting an art gallery.
