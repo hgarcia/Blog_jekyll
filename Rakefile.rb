@@ -25,7 +25,7 @@ namespace :build do
 
 	desc 'Minimizing and combining css files'
 	task :merge_and_minimize_css do
-		#sh 'juicer merge assets/css/master.css --force'
+		sh 'juicer merge assets/css/master.css --force'
 	end
 
 	desc 'Add changes commit and push to github'
