@@ -20,7 +20,7 @@ namespace :build do
 
   desc 'Pre building the site for local testing'
 	task :pre => [:merge_and_minimize_css] do
-		sh 'jekyll'
+		sh 'jekyll build'
 	end
 
 	desc 'Minimizing and combining css files'

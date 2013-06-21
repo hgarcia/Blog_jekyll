@@ -126,12 +126,32 @@ a {
     box-shadow: 0 2px 3px rgba(78, 68, 60, 0.3);
 }
 
+.main-content.main-loop {
+  max-width: 100%;
+  padding: 1em;
+  background-color: rgb(49, 45, 45);
+}
+
+.main-content.main-loop nav a {
+  color: #FAFAFA;
+}
+
+
 .main-footer {
-  /*margin: 0 auto;*/
   max-width: 100%; /* 740px; */
   padding-top: 3em;
   background-color: #445566;
   color: #FAFAFA;
+}
+
+.main-footer.main-loop {
+  background-color: #777;
+  color: #fafafa;
+}
+
+.auxiliary-nav.main-loop {
+  max-width: 100%;
+  padding: 1em;
 }
 
 abbr {
