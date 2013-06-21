@@ -1,0 +1,8 @@
+---
+layout: post
+title: Why I think UX is one of the most important aspects of an application.
+summary: In a comment on a recent post I was asked how and when I started to be interested in UX and design. I started to think about it and I decided that the best way to answer was to write a short post.
+category: [General]
+published: false
+---
+
