@@ -4,5 +4,4 @@ title: Organic
 home: 7206593516
 home_size: small
 display_size: medium
-
 ---

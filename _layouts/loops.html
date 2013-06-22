@@ -42,11 +42,16 @@
   <script src="{{site.url}}/assets/js/modernizr-1.5.min.js"></script>
   <style>
     body {
-      background-color: #234;
+      background-color: #2e2d2d;
       font-family: 'Comfortaa', cursive, Georgia, serif;
       font-weight: 400;
       color: #ddd;
     }
+  {{ if page.body_style }}
+    body {
+      {{page.body_style}}
+    }
+  {{ endif }}
     header.main {
       margin-bottom: 1em;
       margin-top: 0.2em;
@@ -59,12 +64,15 @@
       width: 50%;
       display: inline-block;
       vertical-align: bottom;
+      padding-left: 0.1em;
     }
     header ul {
-      width: 45%;
-      display: inline-block;
+      width: 10%;
       vertical-align: bottom;
       list-style: none outside none;
+      text-align: right;
+      float:right;
+      padding-right: 0.3em;
     }
     a {
       color: #ddd;
@@ -74,22 +82,28 @@
       font-size: 56px;
       font-weight: 300;
       line-height: 65px;
+      display: inline;
     }
+  {{ if page.title_style }}
+    h1.title {
+      {{page.title_style}}
+    }
+  {{ endif }}
     #photos .item {
       margin: 4px;
     }
     #photos .item h4 {
       font-family: 'Comfortaa';
       font-weight: 400;
-      color: #BBB;
-      background-color: rgba(255, 255, 255, 0.8);
+      color: #111;
+      background-color: rgba(255, 255, 255, 0.3);
       padding: 0 0 0 0.5em;
       color: inherit;
       left: 0;
     }
     .main-content {
       margin: 0;
-      max-width: 98%;
+      max-width: 100%;
       padding: 0;
       background-color: inherit;
       box-shadow: inherit;
@@ -108,6 +122,9 @@
       position: absolute;
       right: 0;
       top: 50%;
+    }
+    footer {
+      font-size: small;
     }
   </style>
 </head>
@@ -131,9 +148,14 @@
     }
 
     function resizeMainImage() {
+      var containerHeight = $(window).height() - 90;
       var wrapper = $('#image-wrapper');
       if (wrapper) {
-        wrapper.height($(window).height() - 90);
+        wrapper.height();
+      }
+      var img = $('#single-image img');
+      if (img && img.height() >) {
+        img.attr('height')
       }
     }
     resizeMainImage();
