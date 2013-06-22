@@ -1,27 +1,127 @@
----
-layout: default_loop
----
-<article>
-	<header>
-		<h2>{{ page.title }}</h2>
-	</header>
-  <section>
-  {{ content }}
-	</section>
-  <footer>
-    {% for category in page.categories %}
-      <a href="{{ site.blog_url }}/categories/{{ category | downcase | replace:'.net','dotnet' | replace:'.','-' | replace:' ','_' }}.html" title="Read other articles in {{ category }}">{{ category }}</a>&nbsp;&nbsp;
-    {% endfor %}
-  </footer>
-</article>
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+<head class="html5reset-kitchensink-clean">
+  <meta charset="utf-8" />
+  <meta name="google-site-verification" content="LirEfdzOpsT5fsjl0Di05wXm_agX47gPOVc8kZzsO8s" />
+  <title>{{site.name}} - {{site.author}}
+    {% if page.title %}
+     : {{ page.title }}
+    {% endif %}
+  </title>
+  <script type="text/javascript">  var disqus_developer = 0; </script>
+  {% if page.summary %}
+  <meta name="description" content="{{ page.summary }}" />
+  {% endif %}
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="author" content="{{site.author}}" />
+  <meta name="Copyright" content="Copyright {{site.author}} 2010 - 2012. All Rights Reserved." />
+  <meta name="DC.title" content="{{site.name}}" />
+  <meta name="DC.subject" content="Computer programming, music, open source." />
+  <meta name="DC.creator" content="{{site.author}}." />
+  <link href="/favicon.png" type="image/png" rel="icon">
+  <!-- For third-generation iPad with high-resolution Retina display: -->
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="{{site.url}}/assets/img/apple-touch-icon-144x144-precomposed.png">
+  <!-- For iPhone with high-resolution Retina display: -->
+  <link rel="apple-touch-icon-precomposed" sizes="114x114" href="{{site.url}}/assets/img/apple-touch-icon-114x114-precomposed.png">
+  <!-- For first- and second-generation iPad: -->
+  <link rel="apple-touch-icon-precomposed" sizes="72x72" href="{{site.url}}/assets/img/apple-touch-icon-72x72-precomposed.png">
+  <!-- For non-Retina iPhone, iPod Touch, and Android 2.1+ devices: -->
+  <link rel="apple-touch-icon-precomposed" href="{{site.url}}/assets/img/apple-touch-icon-precomposed.png">
 
-<p id="disqus_thread"></p>
-<script type="text/javascript">
-  (function() {
-   var dsq = document.createElement('script');
-   dsq.type = 'text/javascript';
-   dsq.async = true;
-   dsq.src = 'http://thedynamicprogrammer.disqus.com/embed.js';
-   (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
-  })();
-</script>
+  <link href='http://fonts.googleapis.com/css?family=Comfortaa:400' rel='stylesheet' type='text/css'>
+  <link rel="stylesheet" href="{{site.url}}/assets/css/master.min.css" />
+  <!--[if IE]>
+  <link rel="stylesheet" href="{{site.url}}/assets/css/patches/win-ie-all.css" />
+  <![endif]-->
+  <!--[if IE 7]>
+  <link rel="stylesheet" href="{{site.url}}/assets/css/patches/win-ie7.css" />
+  <![endif]-->
+  <!--[if lt IE 8]>
+  <script src="http://ie7-js.googlecode.com/svn/version/2.0(beta3)/IE8.js"></script>
+  <![endif]-->
+  <script src="{{site.url}}/assets/js/modernizr-1.5.min.js"></script>
+  <style>
+    body {
+      background-color: #234;
+      font-family: 'Comfortaa', cursive, Georgia, serif;
+      font-weight: 400;
+    }
+    header.main h1 {
+      color: #BBB;
+      font-family: "Comfortaa", Georgia, serif;
+      font-size: 300%;
+      font-weight: 400;
+      margin-bottom: 0.2em;
+    }
+    #photos .item {
+      margin: 4px;
+    }
+    #photos .item h4 {
+      font-family: 'Comfortaa';
+      font-weight: 400;
+      color: #BBB;
+      background-color: rgba(255, 255, 255, 0.8);
+      padding: 0 0 0 0.5em;
+      color: inherit;
+      left: 0;
+    }
+    nav a {
+      color: #fff;
+    }
+    .main-content {
+      margin: 0;
+      max-width: 98%;
+      padding: 1em;
+      background-color: inherit;
+      box-shadow: inherit;
+    }
+    .main-footer {
+      background-color: #001;
+      padding-top: 1em;
+      position: absolute;
+      bottom: 0;
+      width: 100%;
+    }
+    .main-footer nav {
+      margin-bottom: 0;
+    }
+    .main-footer footer {
+      padding-top: 0;
+    }
+  </style>
+</head>
+<body>
+  <div class="main-content">
+    <header class="main">
+      <h1>The d<span class="accent-font">y</span>namic programmer</h1>
+    </header>
+    <div class="main">
+    {{ content }}
+    </div>
+  </div>
+  <div class="main-footer">
+    <nav>
+      <ul>
+        <li><a href="{{site.blog_url}}/" title="Mumblings and ramblings on software development.">Blog</a></li>
+        <li><a href="{{site.blog_url}}/categories/loops.html" title="Pictures and other non-technical content.">Loops</a></li>
+        <li><a href="{{site.projects_url}}/" title="The results of endless nights of coding.">Projects</a></li>
+        <li><a href="{{site.music_url}}/" title="Disarray of random musical bits.">Music</a></li>
+        <li><a href="{{site.rss_url}}" title="Sindication a.k.a. RSS feed">RSS</a></li>
+        <li><a href="http://twitter.com/theprogrammer" title="@TheProgrammer on Twitter">Twitter</a></li>
+        <li><small>&copy; Copyright Hernan Garcia 2007 - 2013. All Rights Reserved.</small></li>
+      </ul>
+    </nav>
+  </div>
+  <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+  <script src="{{site.url}}/assets/js/masonry.js"></script>
+  <script type="text/javascript">
+  var disqus_shortname = 'thedynamicprogrammer';
+  (function () {
+    var s = document.createElement('script');
+    s.async = true;
+    s.src = 'http://disqus.com/forums/thedynamicprogrammer/count.js';
+    (document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
+  }());
+  </script>
+</body>
+</html>

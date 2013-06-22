@@ -1,0 +1,15 @@
+---
+layout: loops
+summary: My picture stream
+---
+
+<section id="container" class="extra js-masonry" data-masonry-options='{ "columnWidth": 200, "itemSelector": ".item" }'>
+{% for post in site.posts %}
+	{% if post.home != null %}
+			  <div class="item">
+			  	<a href="{{site.blog_url}}{{ post.url}}">{{ post.home | flickr_small }}</a>
+			  	<h4>{{post.title}}</h4>
+			  </div>
+	{% endif %}
+{% endfor %}
+</section>

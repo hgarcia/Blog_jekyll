@@ -1,0 +1,28 @@
+---
+layout: loops
+---
+<article>
+	<header>
+		<h2>{{ page.title }}</h2>
+	</header>
+  <section>
+  {% for flickr_url in page.flickr %}
+    <a href="{{ flickr_url }}">{{ flickr_url | flickr_large }}</a>
+  {% endfor %}
+  {{content}}
+	</section>
+  <footer>
+    {{ page.date || date:"%Y-%m-%d" }}
+  </footer>
+</article>
+
+<!--p id="disqus_thread"></p>
+<script type="text/javascript">
+  (function() {
+   var dsq = document.createElement('script');
+   dsq.type = 'text/javascript';
+   dsq.async = true;
+   dsq.src = 'http://thedynamicprogrammer.disqus.com/embed.js';
+   (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+  })();
+</script-->
