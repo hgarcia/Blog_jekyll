@@ -45,13 +45,35 @@
       background-color: #234;
       font-family: 'Comfortaa', cursive, Georgia, serif;
       font-weight: 400;
+      color: #ddd;
+    }
+    header.main {
+      margin-bottom: 1em;
+      margin-top: 0.2em;
     }
     header.main h1 {
       color: #BBB;
       font-family: "Comfortaa", Georgia, serif;
       font-size: 300%;
       font-weight: 400;
-      margin-bottom: 0.2em;
+      width: 50%;
+      display: inline-block;
+      vertical-align: bottom;
+    }
+    header ul {
+      width: 45%;
+      display: inline-block;
+      vertical-align: bottom;
+      list-style: none outside none;
+    }
+    a {
+      color: #ddd;
+      text-decoration: none;
+    }
+    h1 {
+      font-size: 56px;
+      font-weight: 300;
+      line-height: 65px;
     }
     #photos .item {
       margin: 4px;
@@ -65,28 +87,27 @@
       color: inherit;
       left: 0;
     }
-    nav a {
-      color: #fff;
-    }
     .main-content {
       margin: 0;
       max-width: 98%;
-      padding: 1em;
+      padding: 0;
       background-color: inherit;
       box-shadow: inherit;
     }
-    .main-footer {
-      background-color: #001;
-      padding-top: 1em;
-      position: absolute;
-      bottom: 0;
+    .single-image-wrapper {
+      overflow: hidden;
+      position: relative;
+      vertical-align: middle;
       width: 100%;
     }
-    .main-footer nav {
-      margin-bottom: 0;
+    .single-image-container {
+      float: left;
+      max-width: 70%;
     }
-    .main-footer footer {
-      padding-top: 0;
+    .single-image-side {
+      position: absolute;
+      right: 0;
+      top: 50%;
     }
   </style>
 </head>
@@ -94,34 +115,35 @@
   <div class="main-content">
     <header class="main">
       <h1>The d<span class="accent-font">y</span>namic programmer</h1>
-    </header>
-    <div class="main">
-    {{ content }}
-    </div>
-  </div>
-  <div class="main-footer">
-    <nav>
       <ul>
-        <li><a href="{{site.blog_url}}/" title="Mumblings and ramblings on software development.">Blog</a></li>
-        <li><a href="{{site.blog_url}}/categories/loops.html" title="Pictures and other non-technical content.">Loops</a></li>
-        <li><a href="{{site.projects_url}}/" title="The results of endless nights of coding.">Projects</a></li>
-        <li><a href="{{site.music_url}}/" title="Disarray of random musical bits.">Music</a></li>
-        <li><a href="{{site.rss_url}}" title="Sindication a.k.a. RSS feed">RSS</a></li>
-        <li><a href="http://twitter.com/theprogrammer" title="@TheProgrammer on Twitter">Twitter</a></li>
-        <li><small>&copy; Copyright Hernan Garcia 2007 - 2013. All Rights Reserved.</small></li>
+        <li><a href="#">Blog</a></li>
+        <li><a href="#">Loops</a></li>
+        <li><a href="#">Music</a></li>
       </ul>
-    </nav>
+    </header>
+    {{ content }}
   </div>
   <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
   <script src="{{site.url}}/assets/js/masonry.js"></script>
   <script type="text/javascript">
-  var disqus_shortname = 'thedynamicprogrammer';
-  (function () {
-    var s = document.createElement('script');
-    s.async = true;
-    s.src = 'http://disqus.com/forums/thedynamicprogrammer/count.js';
-    (document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
-  }());
+    if ($('#photos') && $('#photos').masonry) {
+      $('#photos').masonry({"itemSelector": ".item" });
+    }
+
+    function resizeMainImage() {
+      var wrapper = $('#image-wrapper');
+      if (wrapper) {
+        wrapper.height($(window).height() - 90);
+      }
+    }
+    resizeMainImage();
+    var disqus_shortname = 'thedynamicprogrammer';
+    (function () {
+      var s = document.createElement('script');
+      s.async = true;
+      s.src = 'http://disqus.com/forums/thedynamicprogrammer/count.js';
+      (document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
+    }());
   </script>
 </body>
 </html>

@@ -1,0 +1,21 @@
+---
+layout: loops
+---
+<style>
+  .main-footer {
+    display: none;
+  }
+  article section
+</style>
+<div id="image-wrapper" class="single-image-wrapper">
+  <div class="single-image-container single-image-{{page.display_size}}">
+    <a href="{{page.home | flickr_url}}" target="_flick">{{ page.home | flickr_img : page.display_size }}</a>
+  </div>
+  <div class="single-image-side">
+    <h1>{{ page.title }}</h1>
+    <p>{{content}}</p>
+    <footer>
+      {{ page.date || date:"%Y-%m-%d" }}
+    </footer>
+  </div>
+</div>
