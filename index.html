@@ -4,7 +4,7 @@ summary: The dynamic programmer is the website written by Hernan Garcia on compu
 ---
 {% assign first = true %}
 {% for post in site.posts limit:9 %}
-  {% if post.layout != "photos" %}
+  {% if post.home == null %}
     {% if first %}
       {% assign first = false %}
 
