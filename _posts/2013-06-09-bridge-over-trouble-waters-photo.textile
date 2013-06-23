@@ -2,6 +2,6 @@
 layout: single
 title: bridge over trouble waters
 home: 8998461902
-home_size: medium
+home_size: small
 display_size: large
 ---
