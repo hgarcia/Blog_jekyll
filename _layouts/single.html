@@ -2,10 +2,10 @@
 layout: loops
 ---
 <div id="image-wrapper" class="single-image-wrapper">
-  <div style="text-align: center;">
+  <div style="float:left;">
     <a id="single-image" href="{{page.home | flickr_url}}" target="_flick">{{ page.home | flickr_img : page.display_size }}</a>
   </div>
-  <div style="text-align: center;">
+  <div id="single-image-text">
     <h1 class="title">{{ page.title }}</h1>
     <p>{{content}}</p>
     <footer>

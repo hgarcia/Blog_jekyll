@@ -47,11 +47,11 @@
       font-weight: 400;
       color: #ddd;
     }
-  {{ if page.body_style }}
+  {% if page.body_style %}
     body {
       {{page.body_style}}
     }
-  {{ endif }}
+  {% endif %}
     header.main {
       margin-bottom: 1em;
       margin-top: 0.2em;
@@ -84,11 +84,11 @@
       line-height: 65px;
       display: inline;
     }
-  {{ if page.title_style }}
+  {% if page.title_style %}
     h1.title {
       {{page.title_style}}
     }
-  {{ endif }}
+  {% endif %}
     #photos .item {
       margin: 4px;
     }
@@ -114,18 +114,62 @@
       vertical-align: middle;
       width: 100%;
     }
-    .single-image-container {
-      float: left;
-      max-width: 70%;
+    .center-image {
+      text-align: center;
     }
-    .single-image-side {
-      position: absolute;
-      right: 0;
-      top: 50%;
+    #single-image {
+      margin-left: 0.2em;
+    }
+    #single-image-text {
+      float: right;
+      padding-right: 0.2em;
+      top: 65%;
+      position: relative;
     }
     footer {
       font-size: small;
     }
+    .center-text h1.title {
+      float: left;
+      font-size: 42px;
+      line-height: 50px;
+    }
+    .center-text small {
+      float: right;
+    }
+    #slideshow {
+      position:relative;
+    }
+    #slideshow img {
+      position:absolute;
+      top:0;
+      left:0;
+      z-index:8;
+      opacity:0.0;
+    }
+    #slideshow img.active {
+      z-index:10;
+      opacity:1.0;
+    }
+    #slideshow img.last-active {
+      z-index:9;
+    }
+    #slideshow-img-container {
+      margin: 0 0 0 28%;
+      position: relative;
+    }
+    #slideshow-text {
+      position: absolute;
+      z-index: 20;
+    }
+    #slideshow-text footer {
+      text-align: left;
+    }
+    {% if page.title_style %}
+    #slideshow-text {
+      {{ page.title_style }}
+    }
+    {% endif %}
   </style>
 </head>
 <body>
@@ -133,32 +177,70 @@
     <header class="main">
       <h1>The d<span class="accent-font">y</span>namic programmer</h1>
       <ul>
-        <li><a href="#">Blog</a></li>
-        <li><a href="#">Loops</a></li>
-        <li><a href="#">Music</a></li>
+        <li><a href="{{site.blog_url}}">Blog</a></li>
+        <li><a href="{{site.url}}/categories/photos.html">Loops</a></li>
+        <li><a href="{{site.music_url}}/">Music</a></li>
       </ul>
     </header>
-    {{ content }}
+    <div id="photos-container" style="display: none;">
+      {{ content }}
+    </div>
   </div>
   <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
   <script src="{{site.url}}/assets/js/masonry.js"></script>
   <script type="text/javascript">
-    if ($('#photos') && $('#photos').masonry) {
-      $('#photos').masonry({"itemSelector": ".item" });
-    }
+    $(document).ready(function () {
 
-    function resizeMainImage() {
-      var containerHeight = $(window).height() - 90;
-      var wrapper = $('#image-wrapper');
-      if (wrapper) {
-        wrapper.height();
+      if ($('#photos') && $('#photos').masonry) {
+        $('#photos-container').show();
+        $('#photos').masonry({"itemSelector": ".item", "columnWidth": 5 });
+      } else {
+        $('#photos-container').show();
       }
-      var img = $('#single-image img');
-      if (img && img.height() >) {
-        img.attr('height')
+
+      function resizeMainImage() {
+        var containerHeight = $(window).height() - 90;
+        var imageHeight = containerHeight;
+        var img = $('#single-image img');
+        if ($('#center-text-container')) {
+          imageHeight = containerHeight - 60;
+        }
+        if (img && img.height() > imageHeight) {
+          img.attr('height', imageHeight);
+        }
+        var wrapper = $('#image-wrapper') || $('#slideshow');
+        if (wrapper) {
+          wrapper.height(containerHeight);
+        }
       }
-    }
-    resizeMainImage();
+      resizeMainImage();
+      /***
+          Based on the Simple jQuery Slideshow Script
+          Released by Jon Raasch (jonraasch.com) under FreeBSD license: free to use or modify, not responsible for anything, etc.  Please link out to me if you like it :)
+      ***/
+      if ($('#slideshow')) {
+        window.slideSwitch = function () {
+            var $active = $('#slideshow IMG.active');
+            if ($active.length === 0 ) {
+              $active = $('#slideshow IMG:first');
+              show($active);
+            } else {
+              hide($active)
+              var $next =  $active.next().length ? $active.next()
+                : $('#slideshow IMG:first');
+              show($next);
+            }
+            function hide(ele) {
+              ele.animate({opacity: 0.0}, 1000).removeClass('active');
+            }
+            function show(ele) {
+              ele.animate({opacity: 1.0}, 1000).addClass('active');
+            }
+        };
+        window.slideSwitch();
+        setInterval(window.slideSwitch, 5000);
+      }
+    });
     var disqus_shortname = 'thedynamicprogrammer';
     (function () {
       var s = document.createElement('script');
