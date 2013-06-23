@@ -202,15 +202,24 @@
         var containerHeight = $(window).height() - 90;
         var imageHeight = containerHeight;
         var img = $('#single-image img');
-        if ($('#center-text-container')) {
+        if ($('#center-text-container') && $('#center-text-container').length > 0) {
           imageHeight = containerHeight - 60;
         }
         if (img && img.height() > imageHeight) {
           img.attr('height', imageHeight);
         }
-        var wrapper = $('#image-wrapper') || $('#slideshow');
-        if (wrapper) {
+        var wrapper = $('#image-wrapper');
+        if (wrapper && wrapper.length === 0) {
+          wrapper = $('#slideshow');
+        }
+        if (wrapper && wrapper.length > 0) {
           wrapper.height(containerHeight);
+        }
+        var sliders = $('#slideshow-img-container img');
+        if (sliders && sliders.length){
+          for (var i = 0; i < sliders.length; i++) {
+            $(sliders[i]).height(containerHeight);
+          }
         }
       }
       resizeMainImage();
