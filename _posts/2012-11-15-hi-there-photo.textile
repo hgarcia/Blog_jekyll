@@ -1,0 +1,7 @@
+---
+layout: single
+title: hi there
+home: 8178904708
+home_size: medium
+display_size: large
+---

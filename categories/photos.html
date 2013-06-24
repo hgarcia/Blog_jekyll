@@ -1,0 +1,13 @@
+---
+layout: loops
+---
+<section id="photos">
+{% for post in site.posts %}
+	{% if post.home != null %}
+			  <div class="item">
+			  	<h4>{{post.title}}</h4>
+			  	<a href="{{site.blog_url}}{{ post.url}}">{{ post.home | flickr_img : post.home_size}}</a>
+			  </div>
+	{% endif %}
+{% endfor %}
+</section>

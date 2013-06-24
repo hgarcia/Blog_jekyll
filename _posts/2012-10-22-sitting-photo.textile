@@ -1,0 +1,7 @@
+---
+layout: single
+title: sitting
+home: 8123904364
+home_size: medium
+display_size: large
+---

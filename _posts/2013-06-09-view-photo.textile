@@ -1,0 +1,7 @@
+---
+layout: center
+title: view
+home: 8998394638
+home_size: medium
+display_size: large1600
+---
