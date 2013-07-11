@@ -1,0 +1,51 @@
+---
+layout: post
+title: Building a Flickr based image showcase.
+summary: Upon de demise of Jux I have to find out where and how to put my pictures. I decided that the best I could do was to build a simple multi layout site myself.
+category: [node.js, javascript]
+published: false
+---
+
+The idea was to try to replace Jux and integrate the image showcase into my blog. The blog is a static site generated using Jekyll. I wanted to host the images on Flick to reduce not only bandwitch but also the size of the slug when pushing to Heroku.
+
+After a bit of browsing around I found a Jekyll plugin to insert images from Flickr.
+The plugin worked well but I wanted to have a bit more control on the sizes of the images that I inserted in each individual post without having to change the template.
+
+After a bit of work I came up with this:
+
+<pre><code>
+</code></pre>
+
+The new plugin only exposes one public method `flick_img` that takes three parameters.
+
+The image id (from Flickr) a string for the image size and an optional hash with attributes for the img tag.
+
+This gives you complete control on how to insert your images on your Jekyll blog.
+
+h3. Post definitions
+
+I decided to define all the variables in the header of the post. I'm still not sure about some of the names for the attributes but so far this is what I have.
+
+<pre><code>
+---
+layout: single
+---
+</code></pre>
+
+h3. Layouts
+
+I'm using multiple layouts for some different types of posts.
+I decided to keep it simple and I was able to only create 3 different layouts.
+
+A single layout that align the image to the right of the screen.
+A center layout that try to go full screen on the image and center it in the window.
+A slider layout that creates a simple automatic slider when I want to group multiple images together.
+
+The slider is based on "this code":  but I made a few changes to accomodate for images of multiple sizes in my set among other things.
+
+h3. Mosaic and the home page
+
+
+
+h3. Responsive?
+
