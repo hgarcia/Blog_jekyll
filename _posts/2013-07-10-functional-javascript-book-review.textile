@@ -21,7 +21,7 @@ There are lots of code examples that illustrate each and every point in the book
 
 If you are new to JavaScript the first two to three chapters are going to serve as a good introduction to the language in the context of functional programming.
 
-Even if you are familiar with JavaScript I would recommend to at least skim over those initial chapters to make sure you don't miss anything important.
+Regarding your JavaScript level I would recommend to at least skim over those initial chapters to make sure you don't miss anything important.
 
 The book is a good and deep read without being dry or boring. "Michael Fogus":http://twitter.com/fogus manages to keep the interest while increasing the difficulty level across the book.
 
