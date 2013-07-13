@@ -5,7 +5,7 @@ summary: Fixing code completion and syntax highlight for files.
 category: [Tools]
 ---
 
-One of my oldest OOS project, the Gherkin editor have been having some attention latelly with a few downloads comments and issues been open.
+One of my oldest OOS projects, the Gherkin editor have been having some attention lately with a few downloads, comments and issues been open.
 
 I decided to take a few hours and at least fix what seems to be the main issue for users.
 
