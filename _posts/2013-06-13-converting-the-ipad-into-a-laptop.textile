@@ -2,7 +2,7 @@
 layout: post
 title: Converting my iPad into a portable office.
 summary: I recently got the Logitech keyboard folio for my trusty iPad 2; couldn't be happier.
-category: [General]
+categories: [General, Tools]
 ---
 
 I have been using the iPad to do a lot of my peripheral work as a developer and some writing (ex: some of the posts in this blog) and while I have been very happy with it I still have to feel comfortable writing with the screen keyboard.

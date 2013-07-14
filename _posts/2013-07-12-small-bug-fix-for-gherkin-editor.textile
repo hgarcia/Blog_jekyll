@@ -2,7 +2,7 @@
 layout: post
 title: Gherkin editor, small bug fix
 summary: Fixing code completion and syntax highlight for files.
-category: [Tools]
+categories: [Tools]
 ---
 
 One of my oldest OOS projects, the Gherkin editor have been having some attention lately with a few downloads, comments and issues been open.
