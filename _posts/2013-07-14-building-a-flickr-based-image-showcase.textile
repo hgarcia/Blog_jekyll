@@ -2,7 +2,7 @@
 layout: post
 title: Building a Flickr based photos showcase.
 summary: Upon the demise of Jux I had to find out where and how to put my pictures. I decided that the best I could do was to build a simple multi layout site myself. (Silly of me)
-category: [node.js, JavaScript]
+categories: [JavaScript, node.js]
 ---
 
 Upon the demise of Jux I had to find out where and how to put my pictures.
