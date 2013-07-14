@@ -14,9 +14,9 @@ module Flickr
     "http://www.flickr.com/photos/theprogrammer/#{image_id}"
   end
 
-  def flickr_img(image_id, size = nil)
+  def flickr_img(image_id, size = :medium, attrs = {})
     img = image_object(image_id, get_size_segment(size.downcase.to_sym))
-    image_tag(img[:title], img[:url])
+    image_tag(img[:title], img[:url], attrs)
   end
 
   private
@@ -36,8 +36,14 @@ module Flickr
     end
   end
 
-  def image_tag(title, url)
-    "<img alt='#{title}' src='#{url}'>"
+  def image_tag(title, url, attrs)
+    "<img alt='#{title}' src='#{url}' #{image_attrs(attrs)}>"
+  end
+
+  def image_attrs(attrs)
+    string_of_attributes = ""
+    attrs.each {|k, v| string_of_attributes += "#{k}=\"#{v}\""}
+    string_of_attributes
   end
 end
 
