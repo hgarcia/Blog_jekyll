@@ -6,7 +6,7 @@ Fleakr.shared_secret = "f8b4bfef2df015b9"
 
 CACHED_IMAGES = {}
 SIZES = {:square => "Square", :large_square => "Large Square", :thumbnail => "Thumbnail", :small =>
-"Small", :small320 => "Small 320", :medium => "Medium", :medium640 => "Medium 640", :medium800 => "Medium 800", :large => "Large", :large1600 => "Large 1600", :large2048 => "Large 2048", :original => "Original"}
+"Small", :small320 => "Small 320", :medium => "Medium", :medium640 => "Medium 640", :medium800 => "Medium 800", :large => "Large", :large1600 => "Large 1600", :large2048 => "Large 2048", :original => "Original", :panoramic => "Medium 800"}
 
 module Flickr
   @printed = false
@@ -16,6 +16,7 @@ module Flickr
 
   def flickr_img(image_id, size = :medium, attrs = {})
     img = image_object(image_id, get_size_segment(size.downcase.to_sym))
+    attrs[:style] = "height: 175px;" if (size == "panoramic")
     image_tag(img[:title], img[:url], attrs)
   end
 

@@ -2,6 +2,6 @@
 layout: single
 title: Watching you
 home: 7210781964
-home_size: small
+home_size: medium
 display_size: medium800
 ---

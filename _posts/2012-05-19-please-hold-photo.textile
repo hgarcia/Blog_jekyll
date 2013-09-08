@@ -2,6 +2,6 @@
 layout: single
 title: Please hold
 home: 7206605636
-home_size: small320
+home_size: medium
 display_size: large
 ---

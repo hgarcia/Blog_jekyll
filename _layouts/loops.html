@@ -90,16 +90,21 @@
     }
   {% endif %}
     #photos .item {
-      margin: 4px;
+      margin: 1px;
+      display: inline-block;
+      float: left;
+      height: 175px;
+      overflow: hidden;
+      width: 310px;
+      border-bottom-right-radius: 30px;
     }
     #photos .item h4 {
+      background-color: rgba(0, 0, 0, 0.5);
+      color: inherit;
       font-family: 'Comfortaa';
       font-weight: 400;
-      color: #111;
-      background-color: rgba(255, 255, 255, 0.3);
-      padding: 0 0 0 0.5em;
-      color: inherit;
-      left: 0;
+      padding: 0 0 0 25px;
+      top: 150px;
     }
     .main-content {
       margin: 0;
@@ -170,6 +175,41 @@
       {{ page.title_style }}
     }
     {% endif %}
+
+  .main-content {
+    max-width: 1266px;
+    margin: 0 auto;
+  }
+  @media only screen and (max-width: 1265px) {
+    .main-content {
+      max-width: 952px;
+    }
+  }
+  @media only screen and (max-width: 953px) {
+    .main-content {
+      max-width: 642px;
+    }
+  }
+  @media only screen and (max-width: 643px) {
+    .main-content {
+      max-width: 310px;
+    }
+    header.main h1 {
+      font-size: 151%;
+      line-height: 35px;
+      width:100%;
+      margin-bottom: 10px;
+      padding-left: 0px;
+    }
+    header ul {
+      width: 100%;
+      float: left;
+    }
+    header ul li {
+      float: left;
+      margin-right: 20px;
+    }
+  }
   </style>
 </head>
 <body>
@@ -182,21 +222,13 @@
         <li><a href="{{site.music_url}}/">Music</a></li>
       </ul>
     </header>
-    <div id="photos-container" style="display: none;">
+    <div id="photos-container">
       {{ content }}
     </div>
   </div>
   <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
-  <script src="{{site.url}}/assets/js/masonry.js"></script>
   <script type="text/javascript">
     $(document).ready(function () {
-
-      if ($('#photos') && $('#photos').masonry) {
-        $('#photos-container').show();
-        $('#photos').masonry({"itemSelector": ".item", "columnWidth": 5 });
-      } else {
-        $('#photos-container').show();
-      }
 
       function resizeMainImage() {
         var containerHeight = $(window).height() - 90;

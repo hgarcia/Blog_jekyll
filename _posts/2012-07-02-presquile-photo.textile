@@ -2,6 +2,6 @@
 layout: center
 title: presqu'ile
 home: 9112445542
-home_size: medium
+home_size: panoramic
 display_size: large1600
 ---

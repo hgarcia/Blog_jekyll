@@ -2,6 +2,6 @@
 layout: single
 title: eerie
 home: 8739953954
-home_size: small
+home_size: medium
 display_size: large
 ---

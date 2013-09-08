@@ -2,6 +2,6 @@
 layout: single
 title: far away
 home: 8236516620
-home_size: small
+home_size: medium
 display_size: large
 ---
