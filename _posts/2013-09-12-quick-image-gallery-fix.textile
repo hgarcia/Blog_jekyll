@@ -15,7 +15,7 @@ h3. Oversizing and overflowing.
 
 The main problem with this type of gallery is that the thumbnails for the images are of different sizes and proportions; some images are landscapes, some are portraits and some others are just square images.
 
-I decided to change the size of the front page image thumbnails to a "medium" size image from Flikr. This results in an image close to 500 pixels wide.
+I decided to change the size of the front page image thumbnails to a "small320" or a "medium" size image from Flikr. This results in an images of 320 and 500 pixels wide.
 
 I wrapped the image on a container DIV and I set it's width to 310px. The IMG tag has the max-width set to 100% to fake a "responsive" image.
 
