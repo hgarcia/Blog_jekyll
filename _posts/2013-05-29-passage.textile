@@ -2,6 +2,6 @@
 layout: center
 title: passage
 home: 8905264031
-home_size: medium
+home_size: small320
 display_size: large1600
 ---

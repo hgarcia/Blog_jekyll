@@ -2,7 +2,7 @@
 layout: post
 title: Building a Flickr based photos showcase.
 summary: Upon the demise of Jux I had to find out where and how to put my pictures. I decided that the best I could do was to build a simple multi layout site myself. (Silly of me)
-categories: [JavaScript, node.js]
+categories: [JavaScript]
 ---
 
 Upon the demise of Jux I had to find out where and how to put my pictures.
@@ -87,7 +87,7 @@ I decided to define all the variables in the header of the post. I'm still not s
   layout: single
   title: up the mountain
   home: 8998363978
-  home_size: medium
+  home_size: small320
   display_size: large
   ---
 </code></pre>
