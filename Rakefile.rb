@@ -11,6 +11,8 @@
 
 require 'rubygems'
 require 'git'
+require 'twitter'
+require File.dirname(__FILE__) + '/tweet_config.rb'
 
 
 task :default => 'build:deploy'
@@ -50,6 +52,17 @@ namespace :build do
 		sh 'git add -A'
 		sh 'git commit -m"Deploying the last build"'
 		sh 'git push heroku master'
+	end
+
+	desc 'Generates a post with links for the past week'
+	task :twitter do
+		get_tweets
+	end
+
+	def get_tweets
+		client = Twitter::Client.new TweetConfig.config
+		tweets = client.search "from:theprogrammer", :since_id => "379569867219017727"
+		tweets.statuses.each {|t| puts t.text}
 	end
 
 end

@@ -1,3 +1,4 @@
 .DS_Store
 _site/S
 *.sublime-project
+tweet_config.rb
