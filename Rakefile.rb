@@ -1,22 +1,9 @@
-#git add -A
-#git commit -m"Build"
-#git push
-
-#jekyll
-
-#cd ../heroku
-#git add -A
-#git commit -m"Deploying the last build"
-#git push heroku master
-
 require 'rubygems'
 require 'git'
 require 'twitter'
 require File.dirname(__FILE__) + '/tweet_config.rb'
 
-
 task :default => 'build:deploy'
-
 
 namespace :build do
 
@@ -54,9 +41,29 @@ namespace :build do
 		sh 'git push heroku master'
 	end
 
+end
+
+namespace :generate do
+
 	desc 'Generates a post with links for the past week'
 	task :twitter do
 		get_tweets
+	end
+
+	def last_tweet_printed
+		#TODO: Load last printed tweet from file
+	end
+
+	def save_last_tweet_printed(tweet_id)
+		#TODO: Update file with latest tweet id
+	end
+
+	def url_details(url)
+		#TODO: Load the description from the url in the tweet
+	end
+
+	def generate_post(links)
+		#TODO: Generate a post with the links
 	end
 
 	def get_tweets
@@ -64,5 +71,4 @@ namespace :build do
 		tweets = client.search "from:theprogrammer", :since_id => "379569867219017727"
 		tweets.statuses.each {|t| puts t.text}
 	end
-
 end
