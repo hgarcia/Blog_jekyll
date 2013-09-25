@@ -1,6 +1,7 @@
 require 'rubygems'
 require 'git'
 require 'twitter'
+require 'erb'
 require File.dirname(__FILE__) + '/tweet_config.rb'
 
 task :default => 'build:deploy'
@@ -47,28 +48,51 @@ namespace :generate do
 
 	desc 'Generates a post with links for the past week'
 	task :twitter do
-		get_tweets
+		add_post_with_tweets
 	end
 
 	def last_tweet_printed
-		#TODO: Load last printed tweet from file
+		tweet_id = "379569867219017727"
+		if File.exists? "./last_tweet_printed.ini"
+			File.open("./last_tweet_printed.ini",  "r") do |file|
+				tweet_id = file.read
+			end
+		end
+		tweet_id
 	end
 
-	def save_last_tweet_printed(tweet_id)
-		#TODO: Update file with latest tweet id
+	def save_last_tweet_printed(tweets)
+		tweet_id = tweets.first.id
+		File.open("./last_tweet_printed.ini",  "w+") do |file|
+			file.write(tweet_id)
+		end
 	end
 
-	def url_details(url)
-		#TODO: Load the description from the url in the tweet
+	def fix_links(tweets)
+		tweets.map do |t|
+			t.text.sub(/(http:\/\/[\.\/a-z0-9A-Z\-\_]*)/, '<a href="\1">\1</a>')
+		end
+
 	end
 
-	def generate_post(links)
-		#TODO: Generate a post with the links
+	def generate_post(tweets)
+		@year = Time.now.year
+		@month = Time.now.strftime "%B"
+		@day = Time.now.day
+		@items = fix_links(tweets)
+		file_label = Time.now.strftime '%F'
+		renderer = ERB.new(IO.readlines("./tweets_tpl.erb").join())
+		output = renderer.result()
+		File.open("./_posts/#{file_label}-links.textile",  "w+") do |file|
+			file.write(output)
+		end
 	end
 
-	def get_tweets
+	def add_post_with_tweets
+		tweet_id = last_tweet_printed
 		client = Twitter::Client.new TweetConfig.config
-		tweets = client.search "from:theprogrammer", :since_id => "379569867219017727"
-		tweets.statuses.each {|t| puts t.text}
+		tweets = client.search "from:theprogrammer", :since_id => tweet_id
+		generate_post tweets.statuses
+		save_last_tweet_printed tweets.statuses
 	end
 end
