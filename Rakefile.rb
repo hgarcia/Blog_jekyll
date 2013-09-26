@@ -1,6 +1,8 @@
 require 'rubygems'
 require 'git'
 require 'twitter'
+require 'nokogiri'
+require 'open-uri'
 require 'erb'
 require File.dirname(__FILE__) + '/tweet_config.rb'
 
@@ -51,6 +53,14 @@ namespace :generate do
 		add_post_with_tweets
 	end
 
+	class Item
+		attr_reader :text, :description
+		def initialize(args={})
+			@text = args[:txt]
+			@description = args[:description]
+		end
+	end
+
 	def last_tweet_printed
 		tweet_id = "379569867219017727"
 		if File.exists? "./last_tweet_printed.ini"
@@ -68,11 +78,22 @@ namespace :generate do
 		end
 	end
 
-	def fix_links(tweets)
-		tweets.map do |t|
-			t.text.sub(/(http:\/\/[\.\/a-z0-9A-Z\-\_]*)/, '<a href="\1">\1</a>')
+	def page_description(url)
+		begin
+			page = Nokogiri::HTML(open(url.to_s))
+			page.css("meta[name=description]")[0].attributes["content"].value
+		rescue
+			nil
 		end
+	end
 
+	def fix_links(tweets)
+		url_pattern = /(http:\/\/[\.\/a-z0-9A-Z\-\_]*)/
+		tweets.map do |t|
+			description = page_description(t.text.match(url_pattern))
+			t.text.sub(url_pattern, '<a href="\1">\1</a>')
+			Item.new({:txt => t.text, :description => description})
+		end
 	end
 
 	def generate_post(tweets)

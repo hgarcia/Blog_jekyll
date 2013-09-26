@@ -1,12 +1,13 @@
 ---
 layout: post
-title: List of links for the week of <%=@month%> <%=day%>, <%=@year%>.
+title: List of links for the week of <%=@month%> <%=@day%>, <%=@year%>.
 summary:
 categories: [Links]
 ---
 
-<ul>
+<dl>
 <% for @item in @items %>
-    <li><%= @item %></li>
+  <dt><%= @item.text %></dt>
+  <dd/><%= @item.description %></dd>
 <% end %>
-</ul>
+</dl>
