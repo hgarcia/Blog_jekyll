@@ -13,7 +13,7 @@ As part of the package I included a message factory as well to try to formalize 
 
 h3. Install
 
-Simple do `npm install distro`
+Simple do <span class="code">npm install distro</span>
 
 h3. Creating a server
 
@@ -52,7 +52,7 @@ h3. A server is nothing without a client
 		.send(obj);
 </code></pre>
 
-The send method takes a distro `Message` that you can easily create using the library.
+The send method takes a distro <span class="code">Message</span> that you can easily create using the library.
 
 h3. The Messages
 
@@ -71,7 +71,7 @@ If you want to receive confirmation once the message is received you can add the
 	var distro = require("distro");
 	var header = {
 		uri: "/object/main",
-		address: "localhost", 
+		address: "localhost",
 		port: 42234
 	};
 	var msg = distro.create().message(headers, payload);
@@ -86,18 +86,18 @@ h3. Working with "verbs"
 
 This is not supported by users datagrams but have been added to standardize interfaces with a future project that I have in mind.
 
-The headers object can have a `verb` property that maps to some of the http verbs. At the moment the supported verbs are `HEAD, GET, POST, PUT, DELETE` and `PATCH`.
+The headers object can have a <span class="code">verb</span> property that maps to some of the http verbs. At the moment the supported verbs are <span class="code">HEAD, GET, POST, PUT, DELETE</span> and <span class="code">PATCH</span>.
 
 What do I mean with supported verbs, you may ask?
 
-The server object can register different handlers for each of those verbs. Instead of registering handlers with the `receive` method you can use specific verbs methods.
+The server object can register different handlers for each of those verbs. Instead of registering handlers with the <span class="code">receive</span> method you can use specific verbs methods.
 
 <pre><code>
 	var distro = require("distro");
 
 	var server = distro.create()
 		.udp4Server({port: 41234})
-	
+
 	server.head(handleHeadVerb);
 	server.get(handleGetVerb);
 	server.post(handlePostVerb);
@@ -106,6 +106,6 @@ The server object can register different handlers for each of those verbs. Inste
 	server.patch(handlePathVerb);
 </code></pre>
 
-You don't need to specify the `get` verb for messages. If you registered handlers with the `get` method and your messages don't have a verb, this handler(s) will be used.
+You don't need to specify the <span class="code">get</span> verb for messages. If you registered handlers with the <span class="code">get</span> method and your messages don't have a verb, this handler(s) will be used.
 
-You can still add handlers to `receive` that will be called no matter the verb of the messages, this can be helpful for audit, logging or error handlers purposes.
+You can still add handlers to <span class="code">receive</span> that will be called no matter the verb of the messages, this can be helpful for audit, logging or error handlers purposes.

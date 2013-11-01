@@ -9,7 +9,7 @@ h3. The trace
 
 Today I was trying to install the newest node.js version to update one of my apps running on Heroku.
 
-I have been using nvm to easily run different versions of node for as long as I can remember and it always go very smoothly, so this time I was caught by surprise  when after doing `nvm install v0.10.21` and the normal download status finished I got the following stack trace culminating on an error.
+I have been using nvm to easily run different versions of node for as long as I can remember and it always go very smoothly, so this time I was caught by surprise  when after doing <span class="code">nvm install v0.10.21</span> and the normal download status finished I got the following stack trace culminating on an error.
 
 <pre><code>
     { 'target_defaults': { 'cflags': [],

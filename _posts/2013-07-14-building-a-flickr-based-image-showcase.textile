@@ -72,7 +72,7 @@ The plug-in depends on the "fleakr":https://github.com/reagent/fleakr gem, so I 
 
 </code></pre>
 
-The new plug-in only exposes one public method `flick_img` that takes three parameters.
+The new plug-in only exposes one public method <span class="code">flick_img</span> that takes three parameters.
 
 The image id (from Flickr) a string for the image size and an optional hash with attributes for the IMG tag.
 
