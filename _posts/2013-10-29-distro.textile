@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Distro, helper module to create UPD client and servers.
+title: Distro, helper module to create UPD clients and servers.
 summary: This one is a simple module that makes working with UDP even easier.
 categories: [node.js]
 ---
