@@ -32,7 +32,7 @@ Replace tokens in code given values as an object literal (or hash) where the tok
 
 <pre><code>
 
-  untokenize.render("The fox jumped over the {{barrier}}", {barrier: "fence"});
+  untokenize.render("The fox jumped over the {{site.lcb}}barrier{{site.rcb}}", {barrier: "fence"});
   //The fox jumped over the fence.
 
 </code></pre>
@@ -41,7 +41,7 @@ You can also use positional tokens and use an array to pass the values.
 
 <pre><code>
 
-  untokenize.render("The {{1}} jumped over the {{0}}", ["fence", "fox"]);
+  untokenize.render("The {{site.lcb}}1{{site.rcb}} jumped over the {{site.lcb}}0{{site.rcb}}", ["fence", "fox"]);
   //The fox jumped over the fence.
 
 </code></pre>
