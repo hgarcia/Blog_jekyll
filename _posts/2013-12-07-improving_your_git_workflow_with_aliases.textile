@@ -1,12 +1,84 @@
 ---
 layout: post
-title: Improving your Git workflow with aliases.
+title: Improving your Git work-flow with aliases.
 summary: The art of reducing strokes, combining commands and improving your life as a developer.
 categories: [General, Programming]
-published: false
 ---
 
-A few years ago a coworker convinced me of using a series of aliases to work with Git. I was somehow resistant to the idea, feeling a bit uncomfortable for not good reason to the idea of adding "non-standard commands".
+It may not feel like much but if you use git (or any command line tool) all day long, you are typing lots and lots of extra keywords in a given day.
 
-Boy was I ever wrong!
+If you commit regularly you will find yourself typing this every fifteen minutes or less.
 
+<pre>
+  <code>
+    git status
+    git add -A
+    git commit -m "Message...."
+  </code>
+</pre>
+
+That adds up to 36 keys plus the length of the message. Even if you commit every 15 minutes thats 144 keywords an hour, times 8 adds to more than 1000 keywords a day.
+
+Let's assume you are also pushing at least once an hour.
+
+<pre><code>
+    git pull --rebase
+    npm test
+    git push
+</code></pre>
+
+That's another 256 keys by the end of the day.
+You can replace the test line for anything you like, rake test:all or similar.
+
+I actually push more than 8 times a day. In a good day I may be pushing after every commit or two so let's double that.
+I'm at 1664 keys pressed during the day just to make my tools do what I want.
+
+h3. Aliases to the rescue.
+
+If you are in a *nix system you can take advantage of command aliases and functions. I use bash and some of my dot files can be found in my repo on Github:https://github.com/hgarcia/DynamicProg/tree/master/dot_files
+
+Let's see what a commit looks like in my case
+
+<pre><code>
+    gst
+    gAc "Message"
+</code></pre>
+
+I reduce the fixed number of keys from 36 to 6 or 24 keys an hour, or 192 keys a day.
+
+My push scenario is a bit less efficient.
+
+<pre><code>
+    gpr
+    npm test
+    gpush
+</code></pre>
+
+It still reduced the keys 50% to just 128 kyes pressed by the end of the day.
+
+In some cases I map a shortcut to perform all the operations at once. `gprtpu`
+
+The reason gpush is so long is to give me some time to thing while typing before pushing.
+
+h3. Some other savings
+
+Even when those are the commands I use all day long, all the time. I also created aliases for a few other.
+
+`gm` for `git merge`
+`gl` for `git log`
+`gco [branch-name]` for `git checkout [branch-name]`
+`gb` for `git branch`
+
+I rarely use the next anymore, my current team gets really mad at me if I don't rebase
+
+  `gp` for `git pull`
+
+This one will open the editor to modify the commit message.
+
+  `gca` for `git commit --amed`
+
+I use the next one all the time when I forget to add a file or made a few additional changes that should be added to the same commit
+
+  `gcan` for `git commit --amend --no-edit`
+
+It may not look like much but once you start counting each key and adding things up they do make a bit difference. Also fewer keystrokes make you faster and more productive.
