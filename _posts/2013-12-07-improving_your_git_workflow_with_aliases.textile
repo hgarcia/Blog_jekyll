@@ -1,0 +1,12 @@
+---
+layout: post
+title: Improving your Git workflow with aliases.
+summary: The art of reducing strokes, combining commands and improving your life as a developer.
+categories: [General, Programming]
+published: false
+---
+
+A few years ago a coworker convinced me of using a series of aliases to work with Git. I was somehow resistant to the idea, feeling a bit uncomfortable for not good reason to the idea of adding "non-standard commands".
+
+Boy was I ever wrong!
+
