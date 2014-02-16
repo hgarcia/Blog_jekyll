@@ -2,7 +2,7 @@
 layout: post
 title: Using MongoDB from C#
 summary: The NoSql movement is gaining more and more inertia. A year or two ago I took a look at CouchDb but this time I wanted to try MongoDB.
-categories: [Programming, Tools, .Net]
+categories: [Programming, Tools, .Net, MongoDB]
 ---
 
 The <a href="http://en.wikipedia.org/wiki/NoSQL" target="_blank">NoSql</a> movement is gaining more and more inertia. A year or two ago I took a look at <a href="http://couchdb.apache.org/" target="_blank">CouchDb</a> but this time I wanted to try <a href="http://www.mongodb.org" target="_blank">MongoDB</a>. I have been hearing a lot of nice things about MongoDB, mostly about how simple is to query it and how fast is. So I decided that it was time to actually take it for a spin.
@@ -39,7 +39,7 @@ The simple way to go from Json to an object should be to pass the load of a docu
 
 
 
-But while trying to do so I got an error in the id of the document. Looking at the paymoad of the document the Id looks like this:
+But while trying to do so I got an error in the id of the document. Looking at the payload of the document the Id looks like this:
 
 
 
@@ -53,7 +53,7 @@ h3. From a document to a fully usable object graph.
 
 The alternative is not pretty but works and is easy to implement. Just pass the document to the root of your object graph, an access the underlying collection via the objects properties. Let's see how this can look like.
 
-_Yes there are some hardcoded strings in there that should be removed. I'm also never closing the connection to the Db, when I probably should._
+_Yes there are some hard-coded strings in there that should be removed. I'm also never closing the connection to the Db, when I probably should._
 
 
 
