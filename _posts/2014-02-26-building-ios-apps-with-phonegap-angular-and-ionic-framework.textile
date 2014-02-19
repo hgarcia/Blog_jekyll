@@ -1,0 +1,52 @@
+---
+layout: post
+title: Building an iOS app with PhoneGap, Angular.js and the ionic framework (Part 1).
+summary: You will be able to work on your first iOS application with this book alone.
+categories: [General, node.js, JavaScript, Mobile]
+published: false
+---
+
+__This is part 1 of a series of articles that document my efforts on building a mobile application for iOS using web technologies.__
+
+In this series I plan to build a mobile application using primarily web technologies (HTML5, js and css). I will be targeting iOS since those are the devices I have access to at the moment, but the application should be deployable to a number of platforms without major changes due to the technologies I will be using.
+
+
+h3. Overview of the application
+
+I decided to create yet another activity tracking App. On a first iteration I will try to focus the app on tracking ski sessions. Future iterations will add tracking tailored to other outdoor activities.
+
+The main reason to build this type of App is that it will give me a good excuse to use most of the available API's like Geo-location, accelerometer, camera, media, file, notification, storage, etc.
+
+
+h3. Framework selection
+
+I decided to use PhoneGap as the mobile framework that will enable our application to access all those API's in the devices.
+I will pair PhoneGap with Angular. I think that single page application re perfectly suited to build mobile applications like this.
+
+It took me some time to decide what UI library I wanted to use for the visual elements. It was tempting to just use Bootstrap (tried and true) once more but I wanted something focused on mobile applications.
+
+My main target device(s) are phone(s), so I only need some limited responsiveness.
+
+__I doubt anybody is going down the hill with the tablet on their pockets to track their speed.__
+
+I used jQuery mobile in the pass but I wanted something different, something that feels more modern. I took a look at several frameworks after deciding to give "ionic":http://ionicframework.com/ a try.
+
+It looks very clean, having most of the components I feel I will need and they have integration with angular out of the door. Ionic is not just a css framework but a js library of components as well.
+
+With the set of frameworks selected, is time to...
+
+h3. Getting started
+
+I will assume that you already have "node.js":http://nodejs.org/ installed in your system. If you don't you may need to "install it now":http://blog.dynamicprogrammer.com/2014/02/18/installing-node-js-on-mac-osx.html
+
+
+
+h3. Setting up the project for testing
+
+
+h3. Hooking up Travis CI
+
+
+h3. Next steps
+
+We will start working with the File and Geo-location API's to track our activity and save that activity on files to upload to a server.

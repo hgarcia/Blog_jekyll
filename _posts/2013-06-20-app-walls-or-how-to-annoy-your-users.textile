@@ -2,7 +2,7 @@
 layout: post
 title: App walls or how to annoy your mobile users.
 summary: The ridiculous push of native apps for content sites is ruining the mobile experience for a lot of users.
-categories: [General]
+categories: [General, Mobile]
 ---
 
 I usually complain about the sites that are using pay walls as ways to monetize their content and how frustrating some of these implementations can be.

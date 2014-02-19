@@ -2,7 +2,7 @@
 layout: post
 title: iOS 7 Programming Cookbook
 summary: You will be able to work on your first iOS application with this book alone.
-categories: [Books]
+categories: [Books, Mobile]
 ---
 
 __Disclaimer: I got this book as part of the bloggers review program at O'Reilly.__
@@ -10,7 +10,7 @@ __Disclaimer: I got this book as part of the bloggers review program at O'Reilly
 h3. Overview.
 
 
-"Vandad Nahavandipoor":https://twitter.com/VandadNP whote a very well thought out book that will guide the new comer to iOS on creating a first application.
+"Vandad Nahavandipoor":https://twitter.com/VandadNP wrote a very well thought out book that will guide the new comer to iOS on creating a first application.
 
 The book covers pretty much everything you will need to get your first App in the app-store.
 

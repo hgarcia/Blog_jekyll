@@ -1,0 +1,23 @@
+---
+layout: post
+title: MongoDB applied design patterns book review.
+summary: You will be able to work on your first iOS application with this book alone.
+categories: [Books, MongoDB]
+published: false
+---
+
+__Disclaimer: I got this book as part of the bloggers review program at O'Reilly.__
+
+h3. Overview.
+
+
+"Rick Copeland":https://twitter.com/rick446
+
+
+
+<a href="http://shop.oreilly.com/product/0636920027041.do" target="_blank"><img class="img-float-right" src="../../../images/posts/mongodb-applied-design-patterns.gif" border="0" alt="MongoDB applied design patterns - book cover"></a>
+
+
+
+h3. Conclusion
+

@@ -2,7 +2,7 @@
 layout: post
 title: Functional JavaScript book review
 summary: A great book to get into functional programming, JavaScript or both.
-categories: [Books]
+categories: [Books, JavaScript]
 ---
 
 __Disclaimer: I got this book as part of the bloggers review program at O'Reilly.__
