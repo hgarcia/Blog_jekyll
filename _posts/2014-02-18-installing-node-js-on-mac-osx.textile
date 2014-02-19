@@ -13,7 +13,11 @@ h3. What's nvm
 
 You can easily install nvm running a one liner from the command line.
 
+<pre><code>
+
     curl https://raw.github.com/creationix/nvm/master/install.sh | sh
+
+</code></pre>
 
 Check out the documentation on the "nvm":https://github.com/creationix/nvm site
 
