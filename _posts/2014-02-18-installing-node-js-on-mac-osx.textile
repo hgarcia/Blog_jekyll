@@ -27,30 +27,43 @@ h3. Quick reference
 
 To install a new version you can simple run the install command followed by the version number you want to install
 
+<pre><code>
+
     nvm install v0.10.26
+
+</code></pre>
 
 __Notice that the version number starts with a lower case v__
 
-To list all installed versions in the system use the list command
+To list all installed versions in the system use the list command.
+In my system this is what you can see at the moment.
+
+<pre><code>
 
     nvm ls
-
-In my system this is what you can see at the moment
 
     v0.10.21 v0.8.7
     current:  v0.10.21
     current -> 0.10 (-> v0.10.21)
     default -> 0.10.21 (-> v0.10.21)
 
+</code></pre>
+
 To switch the version active in that terminal window run the use command
+
+<pre><code>
 
     nvm use 0.8.7
 
     Now using node v0.8.7
 
+</code></pre>
+
 __You may have noticed that to switch version the version number is missing the lower case v__
 
 Of course, the most helpful of all commands is the help command
+
+<pre><code>
 
     nvm --help
 
@@ -76,6 +89,9 @@ Of course, the most helpful of all commands is the help command
         nvm run 0.4.12 myApp.js     Run myApp.js using node v0.4.12
         nvm alias default 0.4       Auto use the latest installed v0.4.x version
 
+</code></pre>
+
+
 h3. Alternatives to nvm.
 
-"n"https://github.com/visionmedia/n is an alternative to nvm in case you want to try it. I personally find nvm easy to use and straightforward.
+"n":https://github.com/visionmedia/n is an alternative to nvm in case you want to try it. I personally find nvm easy to use and straightforward.
