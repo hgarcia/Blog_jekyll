@@ -1,0 +1,25 @@
+---
+layout: post
+title: Building the basic iOS UI and some geolocation work (Part 2).
+summary: We start building the first page of the APP, capturing geolocation information and saving to files for future use.
+categories: [PhoneGap, JavaScript, Mobile]
+published: false
+---
+
+__This is part 2 of a series of articles that document my efforts on building a mobile application for iOS using web technologies.__
+
+* "Part 1":http://blog.dynamicprogrammer.com/2014/02/26/building-ios-apps-with-phonegap-angular-and-ionic-framework.html
+
+h3. Create the home page and some basic navigation
+
+
+h3. Installing the proper plugins for interact with ionic.
+
+
+h3. Working with the geolocation API.
+
+
+h3. Saving geolocation data into a file.
+
+
+h3. Next steps

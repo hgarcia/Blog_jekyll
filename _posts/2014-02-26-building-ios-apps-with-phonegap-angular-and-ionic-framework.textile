@@ -1,12 +1,14 @@
 ---
 layout: post
 title: Building an iOS app with PhoneGap, Angular.js and the ionic framework (Part 1).
-summary: You will be able to work on your first iOS application with this book alone.
-categories: [General, node.js, JavaScript, Mobile]
+summary: We will build an iOS app with web technologies to track outdoor activities.
+categories: [PhoneGap, JavaScript, Mobile]
 published: false
 ---
 
 __This is part 1 of a series of articles that document my efforts on building a mobile application for iOS using web technologies.__
+
+* "Part 2":http://blog.dynamicprogrammer.com/2014/02/28/building-the-basic-UI-and-some-geolocation-work-part-2.html
 
 In this series I plan to build a mobile application using primarily web technologies (HTML5, js and css). I will be targeting iOS since those are the devices I have access to at the moment, but the application should be deployable to a number of platforms without major changes due to the technologies I will be using.
 
