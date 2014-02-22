@@ -10,14 +10,41 @@ __This is part 2 of a series of articles that document my efforts on building a 
 
 * "Part 1":http://blog.dynamicprogrammer.com/2014/02/26/building-ios-apps-with-phonegap-angular-and-ionic-framework.html
 
-h3. Create the home page and some basic navigation
-
-
 h3. Installing the proper plugins for interact with ionic.
 
+h3. Building and launching the application for the first time.
+
+Phonegap has two commands that we can use to build the application.
+The build and the install command, they both take the platform that you want to build you application for.
+
+The build command will only build the code, for example in ios it will create an Xcode project inside the <span class="code">platforms/ios</span> folder and also build the project under a <span class="code">build</span> folder inside the <span class="code">platforms/ios</span>.
+
+The install command will try to install the application into a simulator or a device (if available) after building it.
+
+I will create a script command on the <span class="code">package.json</span> file to save a few keystrokes to run the install command since we will be running it quit often.
+
+Open the <span class="code">package.json</span> file and modify the scripts section to look like this.
+
+<pre><code>
+
+    "scripts": {
+      "test": "node_modules/karma/bin/karma start tests/karma.config.js",
+      "ios": "phonegap install ios"
+    }
+
+</code></pre>
+
+Now we can run the command simply typing.
+
+<pre><code>
+
+    npm run ios
+
+</code></pre>
+
+h3. Create the home page and some basic navigation
 
 h3. Working with the geolocation API.
-
 
 h3. Saving geolocation data into a file.
 
