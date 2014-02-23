@@ -61,10 +61,10 @@ Now we can run the command simply typing.
 
 </code></pre>
 
-h3. Create the home page and some basic navigation
+h3. Creating the home page and some basic navigation.
 
 h3. Working with the geolocation API.
 
 h3. Saving geolocation data into a file.
 
-h3. Next steps
+h3. Next steps.

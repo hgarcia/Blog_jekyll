@@ -60,7 +60,7 @@ In some cases I map a shortcut to perform all the operations at once. <span clas
 
 The reason <span class="code">gpush</span> is so long is to give me some time to thing while typing before pushing.
 
-h3. Some other savings
+h3. Some other savings.
 
 Even when those are the commands I use all day long, all the time. I also created aliases for a few other.
 
