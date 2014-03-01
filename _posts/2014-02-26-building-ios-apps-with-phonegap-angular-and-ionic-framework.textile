@@ -7,8 +7,6 @@ categories: [PhoneGap, JavaScript, Mobile]
 
 __This is part 1 of a series of articles that document my efforts on building a mobile application for iOS using web technologies.__
 
-* "Part 2 - Building a basic UI":http://blog.dynamicprogrammer.com/2014/02/28/building-a-basic-UI-angular-ionic-part-2.html
-
 In this series I plan to build a mobile application using primarily web technologies (HTML5, js and css). I will be targeting iOS since those are the devices I have access to at the moment, but the application should be deployable to a number of platforms without major changes due to the technologies I will be using.
 
 
@@ -36,6 +34,7 @@ It looks very clean, having most of the components I feel I will need and they h
 
 With the set of frameworks selected, is time to...
 
+
 h3. Getting started
 
 I will assume that you already have "node.js":http://nodejs.org/ installed in your system. If you don't you may need to "install it now":http://blog.dynamicprogrammer.com/2014/02/18/installing-node-js-on-mac-osx.html
@@ -52,6 +51,7 @@ Install PhoneGap, bower and ios-sim via npm.
 </code></pre>
 
 We will use Bower to manage our client dependencies and ios-sim is needed to launch the iOS emulator.
+
 
 h3. Setting up the project.
 
@@ -72,6 +72,7 @@ We will create a bower.json file with the init command and install the ionic lib
     bower install ionic -S
 
 </code></pre>
+
 
 h3. Setting up karma and phantom.js.
 
@@ -220,11 +221,14 @@ After everything is set you should have a structure similar to this
 
 </code></pre>
 
+
 h3. Hooking up Travis CI.
 
 You should sign up into "Travis":http://travis-ci.com and follow "the instructions":http://docs.travis-ci.com/user/getting-started/ to setup your project.
 
 
 h3. Next steps.
+
+"Part 2 - Building a basic UI":http://blog.dynamicprogrammer.com/2014/02/28/building-a-basic-UI-angular-ionic-part-2.html
 
 We will create a basic hello world application and deploy into the emulator.

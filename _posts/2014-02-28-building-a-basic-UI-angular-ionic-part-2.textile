@@ -7,9 +7,11 @@ categories: [PhoneGap, JavaScript, Mobile]
 
 __This is part 2 of a series of articles that document my efforts on building a mobile application for iOS using web technologies.__
 
-* "Part 1 - Building iOS apps with PhoneGap Angular and Ionic":http://blog.dynamicprogrammer.com/2014/02/26/building-ios-apps-with-phonegap-angular-and-ionic-framework.html
+"Part 1 - Building iOS apps with PhoneGap Angular and Ionic":http://blog.dynamicprogrammer.com/2014/02/26/building-ios-apps-with-phonegap-angular-and-ionic-framework.html
+
 
 We will install a few more things that we will need to start building our application and create a basic hello world that we will deploy to our emulator.
+
 
 h3. Installing some plugins for PhoneGap.
 
@@ -31,6 +33,7 @@ We will also install a pair of plugins; the device plugin is used by ionic to ch
     phonegap plugin add org.apache.cordova.console
 
 </code></pre>
+
 
 h3. Building and launching the application for the first time.
 
@@ -63,6 +66,7 @@ Now we can run the command by typing.
 </code></pre>
 
 It doesn't look like much but since we will be running it again and again it will save us time.
+
 
 h3. Creating the home page and some basic navigation.
 
@@ -170,6 +174,7 @@ Finally we will create a <span class="code">home.html</span> file inside the <sp
 We can check it out using the ios emulator. We will run the npm command we set up before <span class="code">npm run ios</span>
 
 <img class="img-center" src="../../../images/posts/hello-world-phonegap-ionic-ng.png" alt="Hello world application running on the iPhone emulator" border="0"/>
+
 
 h3. Next steps.
 
