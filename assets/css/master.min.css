@@ -299,6 +299,11 @@ footer{
   margin-bottom: 1em;
 }
 
+.img-center {
+  display: inherit;
+  margin: 0 auto;
+}
+
 .anchor-float-center {
   display: inline-block;
   text-align: center;
