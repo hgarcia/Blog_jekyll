@@ -7,7 +7,7 @@ categories: [PhoneGap, JavaScript, Mobile]
 
 __This is part 2 of a series of articles that document my efforts on building a mobile application for iOS using web technologies.__
 
-* "Part 1":http://blog.dynamicprogrammer.com/2014/02/26/building-ios-apps-with-phonegap-angular-and-ionic-framework.html
+* "Part 1 - Building iOS apps with PhoneGap Angular and Ionic":http://blog.dynamicprogrammer.com/2014/02/26/building-ios-apps-with-phonegap-angular-and-ionic-framework.html
 
 We will install a few more things that we will need to start building our application and create a basic hello world that we will deploy to our emulator.
 
