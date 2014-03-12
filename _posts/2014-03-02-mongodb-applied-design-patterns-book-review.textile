@@ -11,7 +11,7 @@ h3. Overview.
 
 There is a common mistake newcomers to mongoDB made and is treat it as a relational database when designing the schema and operating against it.
 
-This book by "Rick Copeland":https://twitter.com/rick446 should be mandatory deals with common design patterns of document stores specifically tailored for MongoDB.
+This book by "Rick Copeland":https://twitter.com/rick446 deals with common design patterns of document stores specifically tailored for MongoDB.
 
 The book is divided in two major parts.
 
