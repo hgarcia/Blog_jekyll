@@ -1,0 +1,64 @@
+---
+layout: post
+title: Recording Geo location data with PhoneGap and Angular (Part 3).
+summary: We will be writing our Angular services that encapsulate some of PhoneGap API's.
+categories: [PhoneGap, JavaScript, Mobile]
+published: false
+---
+
+__This is part 3 of a series of articles that document my efforts on building a mobile application for iOS using web technologies.__
+
+"Part 2 - Building a basic UI":http://blog.dynamicprogrammer.com/2014/02/28/building-a-basic-UI-angular-ionic-part-2.html
+
+
+We will create an angular service that encapsulates PhoneGap's Geo location api and we will save the data on a file.
+
+
+h3. Our location service.
+
+We want to record the current position of the device and keep recording changes until we tell otherwise. We will start writing some specs.
+
+
+h3. Our file service.
+
+Right now we only need to save data into a file. We will append each event as a new line in the file. We can create a method on our service called <span class="code">writeLine</span>. As usual we start with a single test.
+
+
+h3. The controller.
+
+We want to start recording data from the home page, so we will create a HomeController that will consume location service.
+The controller needs a function to start recording and another one to stop.
+
+Here is the code for the tests.
+
+<pre><code>
+
+
+</code></pre>
+
+And the implementation.
+
+<pre><code>
+
+
+</code></pre>
+
+
+h3. Adding the UI elements.
+
+We think that this is the primary action of the application so a big button right on the home page sounds like a good idea. We can label it 'START' for now.
+
+Let's open <span class="code">home.html</span> and add the following snipped
+
+<pre><code>
+
+
+
+</code></pre>
+
+Notice that we are using the <span class="code">ng-click</span> directive to call the <span class="code">startRecording</span> function in the <span class="code">HomeController</span>
+
+
+h3. Next steps.
+
+We want to send the information we recorded to a server for saving and processing, but we can only do that while connected to a network. We will also want to give the user the option to only upload files when the device is using a Wi-Fi connection.
