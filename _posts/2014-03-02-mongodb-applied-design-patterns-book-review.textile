@@ -1,7 +1,7 @@
 ---
 layout: post
 title: MongoDB applied design patterns book review.
-summary: You will be able to work on your first iOS application with this book alone.
+summary: The books should be mandatory read for any developer that's planning to use MongoDB and is coming from a more traditional background.
 categories: [Books, MongoDB]
 ---
 
