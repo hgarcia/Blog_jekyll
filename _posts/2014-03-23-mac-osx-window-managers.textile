@@ -42,3 +42,7 @@ You can also take snapshots of some windows arrangement and activate it to go ba
 I think that Slate has the potential to be my tool of choice from now on.
 
 While BetterSnapTool is nice to have around, the ability to quickly change between arrangements is very compelling.
+
+I was able to quickly create both arrangements as layouts on Slate and bind them to Ctrl:Shift:1 and Ctrl:Shift:2
+
+I still have to read a bit more on some of the more powerful options but so far I'm very happy with it.
