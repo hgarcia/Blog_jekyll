@@ -1,0 +1,8 @@
+---
+layout: post
+title: AngularJs template must have exactly one root element.
+summary: How to work around this particular error.
+categories: [Angular, JavaScript, Programming]
+published: false
+---
+
