@@ -3,7 +3,6 @@ layout: post
 title: Rake task arguments are not hashes.
 summary: Hope this may save some time to somebody out there.
 categories: [Ruby, Programming]
-published: false
 ---
 
 I was creating a rake task today that take some arguments from the command line and I wanted to use those arguments to create an object.
