@@ -30,7 +30,7 @@ The revisited code looks like this.
 
 <pre><code>
     task :create, [:first_name, :last_name, :email] => :environment do |t, args|
-        opts = args.to_hash.merge!({seed: generate_password})
+        opts = args.to_hash.merge({seed: generate_password})
         user = User.create(opts)
         p user
     end
