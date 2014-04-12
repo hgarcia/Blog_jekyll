@@ -1,5 +1,5 @@
 ---
-layout: single
+layout: center
 title: between the trees
 home: 13788019865
 home_size: small320
