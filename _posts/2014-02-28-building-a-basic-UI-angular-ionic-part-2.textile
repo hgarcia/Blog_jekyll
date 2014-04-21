@@ -2,7 +2,7 @@
 layout: post
 title: Building a basic iOS UI using Angular and Ionic (Part 2).
 summary: We will start getting comfortable with the Ionic framework.
-categories: [PhoneGap, JavaScript, Mobile]
+categories: [PhoneGap, JavaScript, Mobile, Angular]
 ---
 
 __This is part 2 of a series of articles that document my efforts on building a mobile application for iOS using web technologies.__

@@ -2,7 +2,7 @@
 layout: post
 title: Using includes with Angular.js to organize your UI modules.
 summary: Complex web applications will rarely need only one view per screen. Using includes help to separate concerns in your Angular.js apps.
-categories: [Programming, JavaScript]
+categories: [Programming, JavaScript, Angular]
 ---
 
 If you are writing any non trivial web application you will surely notice that using a single view for your main page doesn't allow for a good separation of concerns.

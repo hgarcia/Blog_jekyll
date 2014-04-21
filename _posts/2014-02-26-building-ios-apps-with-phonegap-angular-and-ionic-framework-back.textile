@@ -2,12 +2,10 @@
 layout: post
 title: Building an iOS app with PhoneGap, Angular.js and the ionic framework (Part 1).
 summary: We will build an iOS app with web technologies to track outdoor activities.
-categories: [PhoneGap, JavaScript, Mobile, Angular]
+categories: [back]
 ---
 
 __This is part 1 of a series of articles that document my efforts on building a mobile application for iOS using web technologies.__
-
-__<strong>UPDATE</strong>: I updated this article to align with Ionic 1.0.0-beta1 that makes starting with Ionic much simpler. The previous version of the article can still be found "here":http://blog.dynamicprogrammer.com/2014/02/26/building-ios-apps-with-phonegap-angular-and-ionic-framework-back.html__
 
 In this series I plan to build a mobile application using primarily web technologies (HTML5, js and css). I will be targeting iOS since those are the devices I have access to at the moment, but the application should be deployable to a number of platforms without major changes due to the technologies I will be using.
 
@@ -42,56 +40,67 @@ h3. Getting started
 I will assume that you already have "node.js":http://nodejs.org/ installed in your system. If you don't you may need to "install it now":http://blog.dynamicprogrammer.com/2014/02/18/installing-node-js-on-mac-osx.html
 We will also need Xcode installed
 
-You can easily install everything you need with one command
+Install PhoneGap, bower and ios-sim via npm.
 
 <pre><code>
 
-    npm npm install -g cordova ionic ios-sim
+    npm install phonegap -g
+    npm install bower -g
+    npm install ios-sim -g
 
 </code></pre>
 
-If you are not planning to run the application is the ios-emulator you can ignore the ios-sim module.
+We will use Bower to manage our client dependencies and ios-sim is needed to launch the iOS emulator.
 
 
 h3. Setting up the project.
 
-We will create the project using the ionic CLI with the blank template.
+We will create the project and install the client side dependencies.
 
 <pre><code>
 
-    ionic start dynamic-sports blank
+    phonegap create dynamic-sports
+
+</code></pre>
+
+We will create a bower.json file with the init command and install the ionic library with the -S flag to save the dependency in the bower file.
+
+<pre><code>
+
+    cd dynamic-sports/www
+    bower init
+    bower install ionic -S
 
 </code></pre>
 
 
 h3. Setting up karma and phantom.js.
 
-We will open the package.json file and add the following key and code.
+Moving to the root of the project we will create a package.json file
 
 <pre><code>
-  
-  "devDependencies": {
-    "karma": "~0.12.9",
-    "karma-phantomjs-launcher": "~0.1.4",
-    "karma-jasmine": "~0.1.5",
-    "karma-ng-scenario": "~0.1.0",
-    "karma-junit-reporter": "~0.2.2",
-    "karma-coverage": "~0.2.1"
-  }
+
+    npm init
 
 </code></pre>
 
-While we are editing the package.json file we can change the name, version and description for the project.
-We will also add a test script to make our life easier.
+When asking about the test command enter: <span class="code">node_modules/karma/bin/karma start tests/karma.config.js</span>
+
+Once the command finish we need to install karma and the next packages we will use to run the tests.
 
 <pre><code>
-  "scripts": {
-    "test": "node_modules/karma/bin/karma start tests/karma.config.js"
-  },
+
+    npm install karma-phantomjs-launcher -D
+    npm install karma-jasmine -D
+    npm install karma-ng-scenario -D
+    npm install karma-junit-reporter -D
+    npm install karma -D
+    npm install karma-coverage -D
+    npm install phantomjs -D
 
 </code></pre>
 
-And we will create the folder for the tests and the configuration file for karma
+We will create the folder for the tests and the configuration file for karma
 
 <pre><code>
 
@@ -186,30 +195,28 @@ After everything is set you should have a structure similar to this
 <pre><code>
 
     -dynamic-sports
+      LICENSE
       README.md
-      gulpfile.js
-      config.xml
-      ionic.project
       package.json
+      |-merges
       |-node_modules
       |-platforms
       |-plugins
-      |-scss
-      |-hooks
-      |-merges
       |-tests
       | |
       | karma.config.js
+      |
       |-www
         |
+        |-bower_components
         |-css
         |-img
         |-js
-        |-lib
-        |-templates
+        |-res
         |
-        README.md
+        bower.json
         config.xml
+        icon.png
         index.html
 
 </code></pre>
