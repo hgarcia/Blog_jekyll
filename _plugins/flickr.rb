@@ -32,7 +32,7 @@ module Flickr
     if (resource)
       image = resource.images.find do |img| img.size == size end
       begin
-        {:title => resource.title, :url => image.url}
+        return {:title => resource.title, :url => image.url}
       rescue => e
         pp e
         pp size
