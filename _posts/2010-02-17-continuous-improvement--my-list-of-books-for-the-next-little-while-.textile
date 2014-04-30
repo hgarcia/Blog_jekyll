@@ -10,7 +10,7 @@ Yesterday I received another box of books from Amazon.ca with 6 more books in it
 I decided that it was time to make a list and put some kind of priority/order on the reading ahead.
 So here it goes, this is the list (in order for now) of books that I plan to read in the next 6-9 months.
 
-h3. Computer programming and methodology)
+h3. Computer programming and methodology
 
 <a href="http://www.pragprog.com/titles/dlret/agile-retrospectives" target="_blank">Agile Retrospectives: Making good teams great</a> (<strike>in progress</strike>
 <a href="/2010/02/18/book-review--agile-retrospectives---making-good-teams-great-.html">Finished</a>) (BTW: I just found <a href="http://www.youtube.com/watch?v=qqtPZYigfNI" target="_blank">this presentation</a> from the authors at Google)

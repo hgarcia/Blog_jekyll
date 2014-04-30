@@ -19,7 +19,7 @@ The first thing to do is to install the platform we want to run our code on.
 
 <pre><code>
 
-    phonegap platform add ios
+    ionic platform add ios
 
 </code></pre>
 
@@ -29,22 +29,23 @@ We will also install a pair of plugins; the device plugin is used by ionic to ch
 
 <pre><code>
 
-    phonegap plugin add org.apache.cordova.device
-    phonegap plugin add org.apache.cordova.console
+    cordova plugin add org.apache.cordova.device
+    cordova plugin add org.apache.cordova.console
 
 </code></pre>
 
 
 h3. Building and launching the application for the first time.
 
-Phonegap has two commands that we can use to build the application.
-The build and the install command, they both take the platform that you want to build you application for.
+Ionic has three commands that we can use to build the application.
+The build, the emulate and the run command, they both take the platform that you want to build you application for.
 
 The build command will only build the code, for example in ios it will create an Xcode project inside the <span class="code">platforms/ios</span> folder and also build the project under a <span class="code">build</span> folder inside the <span class="code">platforms/ios</span>.
 
-The install command will try to install the application into a simulator or a device (if available) after building it.
+The emulate command will try to run application into a simulator after building it.
+The run command will try to run the project on a connected devie.
 
-We will create a script command on the <span class="code">package.json</span> file to save a few keystrokes to run the install command since we will be running it quit often.
+We will create a script command on the <span class="code">package.json</span> file to save a few keystrokes to run the emulate command since we will be running it quit often.
 
 Open the <span class="code">package.json</span> file and modify the scripts section to look like this.
 
@@ -52,7 +53,7 @@ Open the <span class="code">package.json</span> file and modify the scripts sect
 
     "scripts": {
       "test": "node_modules/karma/bin/karma start tests/karma.config.js",
-      "ios": "phonegap install ios"
+      "ios": "ionic emulate ios"
     }
 
 </code></pre>
@@ -70,7 +71,7 @@ It doesn't look like much but since we will be running it again and again it wil
 
 h3. Creating the home page and some basic navigation.
 
-We will start with a super basic hello world page. We won't be deviant much from the ionic documentation to begin with.
+We will start with a super basic hello world page, pretty much the same as in the ionic documentation for now.
 In the index.html page at the root of the <span class="code">www</span> folder we will add the following markup.
 
 <pre><code>
@@ -81,34 +82,36 @@ In the index.html page at the root of the <span class="code">www</span> folder w
       <meta charset="utf-8">
       <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
       <title>Dynamic Sports</title>
-      <link href="bower_components/ionic/release/css/ionic.css" rel="stylesheet">
-      <link href="css/app.css" rel="stylesheet">
-    </head>
 
-    <body ng-app="dynamic-sports">
+      <!-- IF using Sass (run gulp sass first), then uncomment below and remove the CSS includes above -->
+      <link href="css/ionic.app.css" rel="stylesheet">
 
-      <ion-nav-bar
-        type="bar-positive"
-        back-button-type="button-icon"
-        back-button-icon="ion-arrow-left-c"></ion-nav-bar>
+      <!-- ionic/angularjs js -->
+      <script src="lib/ionic/js/ionic.bundle.js"></script>
 
-      <ion-nav-view></ion-nav-view>
+      <!-- cordova script (this will be a 404 during development) -->
+      <script src="cordova.js"></script>
 
-      <!-- angularjs+ionic scripts -->
-      <script src="bower_components/ionic/release/js/ionic.js"></script>
-      <script src="bower_components/angular/angular.js"></script>
-      <script src="bower_components/angular-animate/angular-animate.js"></script>
-      <script src="bower_components/angular-sanitize/angular-sanitize.js"></script>
-      <script src="bower_components/angular-ui-router/release/angular-ui-router.js"></script>
-      <script src="bower_components/ionic/release/js/ionic-angular.js"></script>
-
-      <!-- cordova script -->
-      <script src="phonegap.js"></script>
-
-      <!-- app's script -->
+      <!-- your app's js -->
       <script src="js/app.js"></script>
-      <script src="js/services.js"></script>
       <script src="js/controllers.js"></script>
+      <script src="js/services.js"></script>
+    </head>
+    <body ng-app="dynamic-sports" animation="slide-left-right-ios7">
+      <!-- 
+        The nav bar that will be updated as we navigate between views.
+      -->
+      <ion-nav-bar class="bar-stable nav-title-slide-ios7">
+        <ion-nav-back-button class="button-icon icon ion-chevron-left">
+          Back
+        </ion-nav-back-button>
+      </ion-nav-bar>
+      <!-- 
+        The views will be rendered in the <ion-nav-view> directive below
+        Templates are in the /templates folder (but you could also
+        have templates inline in this html file if you'd like).
+      -->
+      <ion-nav-view></ion-nav-view>
     </body>
   </html>
 
@@ -121,6 +124,14 @@ The <span class="code">ion-nav-bar</span> directive is highly configurable and w
 
 Both directives can take an animation attribute that accepts multiple values, we will be using the default values for now.
 
+We are using sass, so we will need to run gulp before every build (or set it up to watch). Since we are running an npm command to launch the application in the emulator we can modify that command to add the gulp build step.
+
+<pre><code>
+  
+  "ios": "gulp sass && ionic emulate ios"
+
+</code></pre>
+
 We need to setup the navigation states, a controller and a template for the home page.
 
 We will create two files inside the <span class="code">www/js</span> folder. <span class="code">app.js</span> and <span class="code">controllers.js</span>.
@@ -132,6 +143,14 @@ Open the <span class="code">app.js</span> file and enter this code.
   /* globals angular */
   angular
     .module('dynamic-sports', ['ionic', 'dynamic-sports.services', 'dynamic-sports.controllers'])
+    .run(function($ionicPlatform) {
+      $ionicPlatform.ready(function() {
+        if(window.StatusBar) {
+          // org.apache.cordova.statusbar required
+          StatusBar.styleDefault();
+        }
+      });
+    })
     .config(['$stateProvider', '$urlRouterProvider', function ($stateProvider, $urlRouterProvider) {
       'use strict';
       $stateProvider
@@ -175,6 +194,7 @@ We can check it out using the ios emulator. We will run the npm command we set u
 
 <img class="img-center" src="../../../images/posts/hello-world-phonegap-ionic-ng.png" alt="Hello world application running on the iPhone emulator" border="0"/>
 
+__If you are not seeing the app or the styles look weird, make sure that the Angular module, and the ng-app in the index have exactly the same name.__
 
 h3. Next steps.
 
