@@ -30,7 +30,7 @@ namespace :build do
 
 	desc 'Generates the static files'
 	task :jekyll => [:github] do
-		sh 'jekyll'
+		sh 'jekyll build'
 	end
 
 	desc 'Moves to the heroku folder'
