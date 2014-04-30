@@ -31,7 +31,13 @@ module Flickr
     resource = CACHED_IMAGES[url] ||= Fleakr.resource_from_url(url)
     if (resource)
       image = resource.images.find do |img| img.size == size end
-      {:title => resource.title, :url => image.url}
+      begin
+        {:title => resource.title, :url => image.url}
+      rescue => e
+        pp e
+        pp size
+        pp image
+      end
     else
       {:title => "not found", :url => "#"}
     end
