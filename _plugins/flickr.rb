@@ -34,9 +34,7 @@ module Flickr
       begin
         return {:title => resource.title, :url => image.url}
       rescue => e
-        pp e
-        pp "id: #{image_id} - size: #{size}"
-        pp image
+        p "IMAGE NOT FOUND: id: #{image_id} - size: #{size} - url: #{url}"
         {:title => "not found", :url => "#"}
       end
     else
