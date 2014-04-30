@@ -10,13 +10,12 @@ __This is part 3 of a series of articles that document my efforts on building a 
 
 "Part 2 - Building a basic UI":http://blog.dynamicprogrammer.com/2014/02/28/building-a-basic-UI-angular-ionic-part-2.html
 
-
-We will create an angular service that encapsulates PhoneGap's Geo location api and we will save the data on a file.
+We will create an angular service that encapsulates PhoneGap's Geo location api and we will save the data to a file.
 
 
 h3. Our location service.
 
-We want to record the current position of the device and keep recording changes until we tell otherwise. We will start writing some specs.
+We want to record the current position of the device and keep recording changes until we tell otherwise.
 
 
 h3. Our file service.
