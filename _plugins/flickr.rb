@@ -37,6 +37,7 @@ module Flickr
         pp e
         pp size
         pp image
+        {:title => "not found", :url => "#"}
       end
     else
       {:title => "not found", :url => "#"}
