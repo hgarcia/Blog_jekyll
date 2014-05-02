@@ -1,0 +1,175 @@
+---
+layout: post
+title: Recording Geo location data with PhoneGap and Angular (Part 3).
+summary: We will be writing our Angular services that encapsulate some of PhoneGap API's.
+categories: [PhoneGap, JavaScript, Mobile]
+published: false
+---
+
+__This is part 3 of a series of articles that document my efforts on building a mobile application for iOS using web technologies.__
+
+*	"Part 1 - Building iOS apps with PhoneGap Angular and Ionic":http://blog.dynamicprogrammer.com/2014/02/26/building-ios-apps-with-phonegap-angular-and-ionic-framework.html
+*	"Part 2 - Building a basic UI":http://blog.dynamicprogrammer.com/2014/02/28/building-a-basic-UI-angular-ionic-part-2.html
+
+The main activity of our app will be to start and stop recording data when we perform our activities. 
+
+h3. The simplest UI
+
+During development I like to try to do most of the styling using Firefox (or Chrome) since is faster that deploying to the emulator after each change and I can also use the development tools of the browser.
+
+Ionic comes with a web server for this purpose.
+
+In the command line go to the root of the web application (inside the www folder of the solution) and run the following command
+
+<pre><code>
+
+	python -m SimpleHTTPServer 8000
+	
+</code></pre>
+
+If you are using port 8000 for something else you can change that.
+We will be using sass so we need to re-compile the sass files after each changes, so we can open another command window and run the gulp watch command.
+
+<pre><code>
+	
+	gulp watch sass
+
+</code></pre>
+
+We are not ready to start working on the UI. 
+We will start with a simple button that should change between Start and Stop when clicked. We can modify the <span class="code">/templates/home.html</span> to have a new button in the center of the screen.
+
+<pre><code>
+
+	<ion-view title="New session">
+	  <ion-content class="center-child" has-header="true" padding="true">
+	    <button class="button button-block button-positive button-outline icon ion-play start-stop"></button>
+	  </ion-content>
+	</ion-view>
+
+</code></pre>
+
+We need to add the styling for the button. We will create a new <span class="code">_home.scss</span> file under the <span class="code">scss/app/</span> folder.
+
+<pre><code>
+
+	.center-child {
+	  .scroll {
+	    left: 50%;
+	    margin-left: -55px;
+	    margin-top: -110px;
+	    position: fixed;
+	    top: 50%; 
+	    .button {
+	      &.start-stop {
+	        border-radius: 50px;
+	        height: 100px;
+	        margin: 0 auto;
+	        position: relative;
+	        width: 100px;
+	      }
+	      &.icon {
+	        &:before {
+	          font-size: 48px;
+	          padding-left: 10px;
+	        }
+	      }
+	    }
+	  }
+	}
+
+</code></pre>
+
+Notice the style applied to the scroll class. That's the trick we use to center the button vertically on the screen no matter what device we are using. For a detailed explanation on how and why this works check "this article on the css tricks website":http://css-tricks.com/quick-css-trick-how-to-center-an-object-exactly-in-the-center/
+
+The difference with respect to the article is that we need to use a bigger margin-top to account for the status bar on top of the device.
+
+h4. iPhone 5 view
+
+<img class="img-center" src="../../../images/posts/iphone5_button.png" alt="Adding the button vertically centered on the emulator (iphone 5)" border="0"/>
+
+h4. iPhone 4 view
+
+<img class="img-center" src="../../../images/posts/iphone4_button.png" alt="Adding the button vertically centered on the emulator (iphone 4)" border="0"/>
+
+h3. A directive.
+
+So far we have a play button, but we need to switch the button and convert it into a stop button after clicked.
+
+There are a few approachs to that. 
+We can put that logic into the <span class="code">HomeController</span> and modify the styles of the button (please don't). 
+We could add a second button and use the <span class="code">ng-show</span> and <span class="code">ng-hide</span> directives to show the right one (not that bad). 
+Or we can encapsulate the behaviour in a directive. This will be a very simple directive for this specific case. We can create a toggle state button directive that could be more generic, but at this point I will be creating one specific for this use case.
+
+h3. Setting the project up for testing (redux).
+
+In "the first article of the series":http://blog.dynamicprogrammer.com/2014/02/26/building-ios-apps-with-phonegap-angular-and-ionic-framework.html we setup karma for testing, but we did miss something.
+
+Angular provides a set of mock methods and helper function to use on your tests. Those elements are distributed in the angular-mocks.js file. Ionic doesn't include that file (at least in the version I'm using at the moment). So we will need to download the proper angular-mocks from the "angular site":https://code.angularjs.org/ .
+
+The version of Ionic I'm using depends on angular 1.2.12 so we download the <span class="code">angular-mocks.js</span> fie for that version of Angular. 
+
+__You can check the version of angular you are using opening the <span class="code">angular.js</span> file inside the <span class="code">www/lib/ionic/js/angular</span> folder of your project__
+
+I will save the file inside the <span class="code">www/lib/ionic/js/angular</span> folder and I will modify the <span class="code">karma.config.js</span> file to include the new file.
+
+<pre><code>
+	
+	 // list of files / patterns to load in the browser
+    files: [
+      'lib/ionic/js/ionic.bundle.js',
+      'lib/ionic/js/angular/angular-mocks.js',
+      'js/*.js',
+      '../tests/**/*_spec.js'
+    ],
+
+</code></pre>
+
+__Notice that the order of the files in the files array is important!__
+
+h3. Writing our directive.
+
+
+
+h3. The controller.
+
+
+<pre><code>
+
+
+</code></pre>
+
+And the implementation.
+
+<pre><code>
+
+
+</code></pre>
+
+h3. Our location service.
+
+We want to record the current position of the device and keep recording changes until we stopped. Our 
+
+h3. Our file service.
+
+Right now we only need to save data into a file. We will append each event as a new line in the file. We can create a method on our service called <span class="code">writeLine</span>. As usual we start with a single test.
+
+
+h3. Adding the UI elements.
+
+We think that this is the primary action of the application so a big button right on the home page sounds like a good idea. We can label it 'START' for now.
+
+Let's open <span class="code">home.html</span> and add the following snipped
+
+<pre><code>
+
+
+
+</code></pre>
+
+Notice that we are using the <span class="code">ng-click</span> directive to call the <span class="code">startRecording</span> function in the <span class="code">HomeController</span>
+
+
+h3. Next steps.
+
+We will do a quick refactoring of the js code.
