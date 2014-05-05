@@ -7,6 +7,11 @@ categories: [back]
 
 __This is part 1 of a series of articles that document my efforts on building a mobile application for iOS using web technologies.__
 
+* "Part 1 - Building iOS apps with PhoneGap Angular and Ionic":http://blog.dynamicprogrammer.com/2014/02/26/building-ios-apps-with-phonegap-angular-and-ionic-framework.html
+* "Part 2 - Building a basic UI":http://blog.dynamicprogrammer.com/2014/02/28/building-a-basic-UI-angular-ionic-part-2.html
+* "Part 3- Recording Geo location data with PhoneGap and Angular":http://blog.dynamicprogrammer.com/2014/05/05/recording-geolocation-data-PhoneGap-part-3.html
+
+
 In this series I plan to build a mobile application using primarily web technologies (HTML5, js and css). I will be targeting iOS since those are the devices I have access to at the moment, but the application should be deployable to a number of platforms without major changes due to the technologies I will be using.
 
 

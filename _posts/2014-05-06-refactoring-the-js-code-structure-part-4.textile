@@ -10,7 +10,7 @@ __This is part 4 of a series of articles that document my efforts on building a 
 
 *	"Part 1 - Building iOS apps with PhoneGap Angular and Ionic":http://blog.dynamicprogrammer.com/2014/02/26/building-ios-apps-with-phonegap-angular-and-ionic-framework.html
 *	"Part 2 - Building a basic UI":http://blog.dynamicprogrammer.com/2014/02/28/building-a-basic-UI-angular-ionic-part-2.html
-*	"Part 3- Recording Geo location data with PhoneGap and Angular":http://blog.dynamicprogrammer.com/2014/05/02/recording-geolocation-data-PhoneGap-part-3.html
+*	"Part 3- Recording Geo location data with PhoneGap and Angular":http://blog.dynamicprogrammer.com/2014/05/05/recording-geolocation-data-PhoneGap-part-3.html
 
 The last time we created our first services, controllers and directives. We can see that if we keep adding controllers to the <span class="code">controller.js</span> file things are going to get out of control soon.
 
