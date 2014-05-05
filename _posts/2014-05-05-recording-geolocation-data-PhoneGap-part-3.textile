@@ -3,7 +3,6 @@ layout: post
 title: Recording Geo location data with PhoneGap and Angular (Part 3).
 summary: We will be writing our Angular services that encapsulate some of PhoneGap API's.
 categories: [PhoneGap, JavaScript, Mobile]
-published: false
 ---
 
 __This is part 3 of a series of articles that document my efforts on building a mobile application for iOS using web technologies.__
@@ -20,7 +19,7 @@ During development I like to try to do most of the styling using Firefox (or Chr
 
 Ionic comes with a web server for this purpose.
 
-In the command line go to the root of the web application (inside the www folder of the solution) and run the following command
+In the command line go to the root of the web application (inside the <span class="code">WWW</span> folder of the solution) and run the following command
 
 <pre><code>
 
@@ -97,7 +96,7 @@ h3. A directive.
 
 So far we have a play button, but we need to switch the button and convert it into a stop button after clicked.
 
-There are a few approachs to that. 
+There are a few approaches to that. 
 We can put that logic into the <span class="code">HomeController</span> and modify the styles of the button (please don't). 
 We could add a second button and use the <span class="code">ng-show</span> and <span class="code">ng-hide</span> directives to show the right one (not that bad). 
 Or we can encapsulate the behaviour in a directive. This will be a very simple directive for this specific case. We can create a toggle state button directive that could be more generic, but at this point I will be creating one specific for this use case.
@@ -132,7 +131,7 @@ h3. Writing our directive.
 
 We know that we need a method to handle the click event and that method will indicate if the button is on or off and also delegate to a handler given to him.
 
-We write our tests fisrt.
+We write our tests first.
 
 <pre><code>
 
@@ -232,7 +231,7 @@ Our template is very simple.
 
 </code></pre>
 
-We will have to adjust our css for the pause button as follow.
+We will have to adjust our CSS for the pause button as follow.
 
 <per><code>	
 
@@ -321,7 +320,7 @@ The implementation is super simple at the moment, notice the geoLocationService 
 
 h3. Geo location service.
 
-Time to implement the geo location service that does the actual work! We could probably consume this from inside the controller but please don't do that or your controllers are going to end up big and bloated.
+Time to implement the geolocation service that does the actual work! We could probably consume this from inside the controller but please don't do that or your controllers are going to end up big and bloated.
 
 We need to install the "cordova geolocation plugin":https://cordova.apache.org/docs/en/3.0.0/cordova_geolocation_geolocation.md.html
 
@@ -333,7 +332,7 @@ We need to install the "cordova geolocation plugin":https://cordova.apache.org/d
 
 </code></pre>
 
-Our service needs to expose two methos. <span class="code">start</span> and <span class="code">Stop</span>.
+Our service needs to expose two methods. <span class="code">start</span> and <span class="code">Stop</span>.
 
 The <span class="code">start</span> method will take two callbacks. We start writing some tests.
 
@@ -406,7 +405,7 @@ The implementation is super simple for now.
 
 h3. Our file service.
 
-Right now we only need to save data into a file. We install the file service plugin. 
+Right now we only need to save data into a file. We install the file service plug-in. 
 
 <pre><code>
 	
@@ -573,7 +572,7 @@ Resulting in the following implementation.
 
 </code></pre>
 
-We are introducing a <span class="code">cordova_mocks.js</span> file in the test folder that's mocking all the cordova services (and plugins) for us to be able to easily test our service. 
+We are introducing a <span class="code">cordova_mocks.js</span> file in the test folder that's mocking all the Cordova services (and plug-ins) for us to be able to easily test our service. 
 
 We added the file to the file section of the karma.config.js file.
 
