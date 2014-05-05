@@ -39,7 +39,7 @@ We open the <span class="code">gulpfile.js</span> file and we add a new task.
 <pre><code>
 	
 	gulp.task('scripts', function() {
-	  gulp.src('./js/*.js')
+	  gulp.src(['./js/*.js', './js/**/*.js'])
 	    .pipe(concat('all.js'))
 	    .pipe(gulp.dest('./www/js/'));
 	});
