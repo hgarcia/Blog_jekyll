@@ -304,6 +304,10 @@ footer{
   margin: 0 auto;
 }
 
+.half-width-img {
+  width: 50%;
+}
+
 .anchor-float-center {
   display: inline-block;
   text-align: center;
