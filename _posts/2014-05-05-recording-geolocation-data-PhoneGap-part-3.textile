@@ -11,7 +11,7 @@ __This is part 3 of a series of articles that document my efforts on building a 
 *	"Part 2 - Building a basic UI":http://blog.dynamicprogrammer.com/2014/02/28/building-a-basic-UI-angular-ionic-part-2.html
 *	"Part 3- Recording Geo location data with PhoneGap and Angular":http://blog.dynamicprogrammer.com/2014/05/05/recording-geolocation-data-PhoneGap-part-3.html
 
-The main activity of our app will be to start and stop recording data when we perform our activities. 
+The main activity of our app will be to start and stop recording data when we perform our activities.
 
 h3. The simplest UI
 
@@ -24,19 +24,19 @@ In the command line go to the root of the web application (inside the <span clas
 <pre><code>
 
 	python -m SimpleHTTPServer 8000
-	
+
 </code></pre>
 
 If you are using port 8000 for something else you can change that.
 We will be using sass so we need to re-compile the sass files after each changes, so we can open another command window and run the gulp watch command.
 
 <pre><code>
-	
+
 	gulp watch sass
 
 </code></pre>
 
-We are not ready to start working on the UI. 
+We are not ready to start working on the UI.
 We will start with a simple button that should change between Start and Stop when clicked. We can modify the <span class="code">/templates/home.html</span> to have a new button in the center of the screen.
 
 <pre><code>
@@ -59,7 +59,7 @@ We need to add the styling for the button. We will create a new <span class="cod
 	    margin-left: -55px;
 	    margin-top: -110px;
 	    position: fixed;
-	    top: 50%; 
+	    top: 50%;
 	    .button {
 	      &.start-stop {
 	        border-radius: 50px;
@@ -86,19 +86,15 @@ The difference with respect to the article is that we need to use a bigger margi
 
 h4. iPhone 5 view
 
-<img class="img-center" src="../../../images/posts/iphone5_button.png" alt="Adding the button vertically centered on the emulator (iphone 5)" border="0"/>
-
-h4. iPhone 4 view
-
-<img class="img-center" src="../../../images/posts/iphone4_button.png" alt="Adding the button vertically centered on the emulator (iphone 4)" border="0"/>
+<img class="img-center" src="../../../images/posts/iphone5_button.png" alt="Adding the button vertically centered on the emulator (iphone 5)" border="0" class="half-width-img img-center"/>
 
 h3. A directive.
 
 So far we have a play button, but we need to switch the button and convert it into a stop button after clicked.
 
-There are a few approaches to that. 
-We can put that logic into the <span class="code">HomeController</span> and modify the styles of the button (please don't). 
-We could add a second button and use the <span class="code">ng-show</span> and <span class="code">ng-hide</span> directives to show the right one (not that bad). 
+There are a few approaches to that.
+We can put that logic into the <span class="code">HomeController</span> and modify the styles of the button (please don't).
+We could add a second button and use the <span class="code">ng-show</span> and <span class="code">ng-hide</span> directives to show the right one (not that bad).
 Or we can encapsulate the behaviour in a directive. This will be a very simple directive for this specific case. We can create a toggle state button directive that could be more generic, but at this point I will be creating one specific for this use case.
 
 h3. Setting the project up for testing (redux).
@@ -107,14 +103,14 @@ In "the first article of the series":http://blog.dynamicprogrammer.com/2014/02/2
 
 Angular provides a set of mock methods and helper function to use on your tests. Those elements are distributed in the angular-mocks.js file. Ionic doesn't include that file (at least in the version I'm using at the moment). So we will need to download the proper angular-mocks from the "angular site":https://code.angularjs.org/ .
 
-The version of Ionic I'm using depends on angular 1.2.12 so we download the <span class="code">angular-mocks.js</span> fie for that version of Angular. 
+The version of Ionic I'm using depends on angular 1.2.12 so we download the <span class="code">angular-mocks.js</span> fie for that version of Angular.
 
 __You can check the version of angular you are using opening the <span class="code">angular.js</span> file inside the <span class="code">www/lib/ionic/js/angular</span> folder of your project__
 
 I will save the file inside the <span class="code">www/lib/ionic/js/angular</span> folder and I will modify the <span class="code">karma.config.js</span> file to include the new file.
 
 <pre><code>
-	
+
 	 // list of files / patterns to load in the browser
     files: [
       'lib/ionic/js/ionic.bundle.js',
@@ -150,7 +146,7 @@ We write our tests first.
 	  }));
 
 	  describe("directive creation", function () {
-	    
+
 	    it("should use the PlayStopButtonController controller", function () {
 	      expect(directive.controller).toEqual("PlayStopButtonController");
 	    });
@@ -196,7 +192,7 @@ We write our tests first.
 And we go ahead and get on with the implementation
 
 <pre><code>
-	
+
 	angular.module('dynamic-sports.directives')
 	  .controller('PlayStopButtonController', ['$scope', function ($scope) {
 	    'use strict';
@@ -226,14 +222,14 @@ I'm restricting the directive to be an element directive and I'm setting replace
 Our template is very simple.
 
 <pre><code>
-	
+
 	<button class="button button-block icon start-stop" ng-class="{'false': 'button-positive button-outline ion-play', 'true': 'button-assertive ion-pause'}[isOn]" ng-click="click()"></button>
 
 </code></pre>
 
 We will have to adjust our CSS for the pause button as follow.
 
-<per><code>	
+<pre><code>
 
 	&.icon {
 		&:before {
@@ -251,17 +247,17 @@ We will have to adjust our CSS for the pause button as follow.
 		}
 	}
 
-</code></per>
+</code></pre>
 
 
 h3. The controller.
 
-Now that we have the button in place we should hook it up to start recording the location data. We will do that via the HomeController. 
+Now that we have the button in place we should hook it up to start recording the location data. We will do that via the HomeController.
 
 We start with the following tests.
 
 <pre><code>
-	
+
 	/*global describe: true, beforeEach: true, it: true, expect: true, module: true, inject: true, spyOn */
 	describe("HomeCtrl", function () {
 	  "use strict";
@@ -299,7 +295,7 @@ We start with the following tests.
 The implementation is super simple at the moment, notice the geoLocationService that we are injecting in the controller. At the moment is just an empty shell that we are spying on in the tests.
 
 <pre><code>
-	
+
 	/* globals angular, console */
 	angular.module('dynamic-sports.controllers')
   	  .controller('HomeCtrl', ['$scope', 'geoLocationService',
@@ -325,7 +321,7 @@ Time to implement the geolocation service that does the actual work! We could pr
 We need to install the "cordova geolocation plugin":https://cordova.apache.org/docs/en/3.0.0/cordova_geolocation_geolocation.md.html
 
 <pre><code>
-	
+
 	cordova plugin add https://git-wip-us.apache.org/repos/asf/cordova-plugin-geolocation.git
 	// or
 	cordova plugin add org.apache.cordova.geolocation
@@ -337,7 +333,7 @@ Our service needs to expose two methods. <span class="code">start</span> and <sp
 The <span class="code">start</span> method will take two callbacks. We start writing some tests.
 
 <pre><code>
-	
+
 	/* global describe, beforeEach, it, module, inject, navigator: true */
 	describe("Geo Location services", function () {
 	  "use strict";
@@ -378,12 +374,12 @@ The <span class="code">start</span> method will take two callbacks. We start wri
 
 </code></pre>
 
-We are creating a bunch of spies to mock out the geolocation Cordova/PhoneGap API's. 
+We are creating a bunch of spies to mock out the geolocation Cordova/PhoneGap API's.
 
 The implementation is super simple for now.
 
 <pre><code>
-	
+
 	/* globals angular */
 	angular.module('dynamic-sports.services')
 	.factory('geoLocationService', function () {
@@ -405,10 +401,10 @@ The implementation is super simple for now.
 
 h3. Our file service.
 
-Right now we only need to save data into a file. We install the file service plug-in. 
+Right now we only need to save data into a file. We install the file service plug-in.
 
 <pre><code>
-	
+
 	cordova plugin add https://git-wip-us.apache.org/repos/asf/cordova-plugin-file.git
 	// or
 	cordovae plugin add org.apache.cordova.file
@@ -420,7 +416,7 @@ We are going to create a simple API for the service with two methods <span class
 We will drive our code with the following tests.
 
 <pre><code>
-	
+
 /* global describe, beforeEach, it, module, inject, navigator */
 	describe("File services", function () {
 	  "use strict";
@@ -508,7 +504,7 @@ We will drive our code with the following tests.
 Resulting in the following implementation.
 
 <pre><code>
-	
+
 	/* globals angular */
 	angular.module('dynamic-sports.services')
 	  .factory('fileService', function () {
@@ -572,12 +568,12 @@ Resulting in the following implementation.
 
 </code></pre>
 
-We are introducing a <span class="code">cordova_mocks.js</span> file in the test folder that's mocking all the Cordova services (and plug-ins) for us to be able to easily test our service. 
+We are introducing a <span class="code">cordova_mocks.js</span> file in the test folder that's mocking all the Cordova services (and plug-ins) for us to be able to easily test our service.
 
 We added the file to the file section of the karma.config.js file.
 
 <pre><code>
-	
+
 	// list of files / patterns to load in the browser
     files: [
       'lib/ionic/js/ionic.bundle.js',
@@ -593,7 +589,7 @@ We added the file to the file section of the karma.config.js file.
 This mock file will evolve with the application.
 
 <pre><code>
-	
+
 	//Geo location
 
 	navigator = {geolocation: {watchPosition: jasmine.createSpy().andReturn("12345"), clearWatch: jasmine.createSpy()}};
@@ -633,7 +629,7 @@ This mock file will evolve with the application.
 	  this.readAsText = function (file) {
 	    if (this.onloadend) {
 	      this.onloadend({target: {result: file}});
-	    } 
+	    }
 	  };
 	}
 
@@ -688,7 +684,7 @@ h3. Hooking everything up.
 We need to add a new method in the <span class="code">HomeCtrl</span> to hook up the click event for the main button and these two new services. You may noticed that for now we are just using an alert to display the data and some errors up to the user. We will be changing that later on.
 
 <pre><code>
-	
+
 	/* globals angular, console */
 	angular.module('dynamic-sports.controllers')
 	  .controller('HomeCtrl', ['$scope', 'geoLocationService', 'fileService',
@@ -714,7 +710,7 @@ We need to add a new method in the <span class="code">HomeCtrl</span> to hook up
 	        fileService.open(fileName, function (result) { alert(result); }, function (error) {alert("Err:" + error); });
 	      }
 	    };
-	    
+
 	  }]);
 
 </code></pre>
@@ -722,7 +718,7 @@ We need to add a new method in the <span class="code">HomeCtrl</span> to hook up
 We drove the implementation with the following test.
 
 <pre><code>
-	
+
 	/*global describe: true, beforeEach: true, it: true, expect: true, module: true, inject: true, spyOn */
 	describe("HomeCtrl", function () {
 	  "use strict";
