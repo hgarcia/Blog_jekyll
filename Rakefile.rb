@@ -35,7 +35,7 @@ namespace :build do
 		chdir '../heroku'
 		sh 'git pull heroku master' do |ok, res|
 		end
-		chdir '../DynamicProg'
+		chdir '../Blog'
 		sh 'jekyll'
 	end
 
