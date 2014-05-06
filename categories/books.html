@@ -3,15 +3,17 @@ layout: default
 summary: The list of book reviews in the site.
 ---
 
-{% for post in site.posts %}
-	{% for category in  post.categories %}
-	{% if category == 'Books' %}
-		<section>
-			<header>
-				<h3><a href="{{site.blog_url}}{{ post.url}}">{{ post.title }}</a></h3>
-			</header>
-			<p>{{ post.summary }}</p>
-		</section>
-	{% endif %}
+{% strip %}
+	{% for post in site.posts %}
+		{% for category in  post.categories %}
+		{% if category == 'Books' %}
+			<section>
+				<header>
+					<h3><a href="{{site.blog_url}}{{ post.url}}">{{ post.title }}</a></h3>
+				</header>
+				<p>{{ post.summary }}</p>
+			</section>
+		{% endif %}
+		{% endfor %}
 	{% endfor %}
-{% endfor %}
+{% endstrip %}

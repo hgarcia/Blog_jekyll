@@ -6,6 +6,19 @@ layout: default
 		<h2>{{ page.title }}</h2>
 	</header>
   <section>
+  {% strip %}
+    {% if page.collection %}
+      <ul>
+      {% for post in site.posts %}
+        {% if post.collection == page.collection %}
+          <li><a href="{{site.blog_url}}{{ post.url}}">{{ post.title }}</a></li>
+        {% endif %}
+      {% endfor %}
+      </ul>
+    {% endif %}
+  {% endstrip %}
+  </section>
+  <section>
   {{ content }}
 	</section>
   <footer>

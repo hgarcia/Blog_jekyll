@@ -3,31 +3,33 @@ layout: default
 summary: The dynamic programmer is the website written by Hernan Garcia on computer programming and technology in general.
 ---
 {% assign first = true %}
-{% for post in site.posts limit:9 %}
-  {% if post.home == null %}
-    {% if first %}
-      {% assign first = false %}
+{% strip %}
+  {% for post in site.posts limit:9 %}
+    {% if post.home == null %}
+      {% if first %}
+        {% assign first = false %}
 
-      <article>
-        <header>
-          <h2><a href="{{site.blog_url}}{{ post.url}}">{{ post.title }}</a></h2>
-        </header>
-        <section>{{ post.content }}</section>
-          <footer>
-          {% for category in post.categories %}
-            <a href="{{ site.blog_url }}/categories/{{ category | downcase | replace:'.net','dotnet' | replace:'.','-' | replace:' ','_' }}.html" title="Read other articles in {{ category }}">{{ category }}</a>&nbsp;&nbsp;
-          {% endfor %}
-        </footer>
-      </article>
-      <hr/>
+        <article>
+          <header>
+            <h2><a href="{{site.blog_url}}{{ post.url}}">{{ post.title }}</a></h2>
+          </header>
+          <section>{{ post.content }}</section>
+            <footer>
+            {% for category in post.categories %}
+              <a href="{{ site.blog_url }}/categories/{{ category | downcase | replace:'.net','dotnet' | replace:'.','-' | replace:' ','_' }}.html" title="Read other articles in {{ category }}">{{ category }}</a>&nbsp;&nbsp;
+            {% endfor %}
+          </footer>
+        </article>
+        <hr/>
 
-    {% else %}
+      {% else %}
 
-    	<section class="extra">
-  			<h3><a href="{{site.blog_url}}{{ post.url}}">{{ post.title }}</a></h3>
-    		<p>{{ post.summary }}</p>
-    	</section>
+      	<section class="extra">
+    			<h3><a href="{{site.blog_url}}{{ post.url}}">{{ post.title }}</a></h3>
+      		<p>{{ post.summary }}</p>
+      	</section>
 
+      {% endif %}
     {% endif %}
-  {% endif %}
-{% endfor %}
+  {% endfor %}
+{% endstrip %}

@@ -3,15 +3,17 @@ layout: default
 summary: A list of post on the Dot Net category for the Dynamic Programmer site.
 ---
 
-{% for post in site.posts %}
-	{% for category in  post.categories %}
-	{% if category == '.Net' %}
-		<section class="extra">
-			<header>
-				<h3><a href="{{site.blog_url}}{{ post.url}}">{{ post.title }}</a></h3>
-			</header>
-			<p>{{ post.summary }}</p>
-		</section>
-	{% endif %}
+{% strip %}
+	{% for post in site.posts %}
+		{% for category in  post.categories %}
+		{% if category == '.Net' %}
+			<section class="extra">
+				<header>
+					<h3><a href="{{site.blog_url}}{{ post.url}}">{{ post.title }}</a></h3>
+				</header>
+				<p>{{ post.summary }}</p>
+			</section>
+		{% endif %}
+		{% endfor %}
 	{% endfor %}
-{% endfor %}
+{% endstrip %}
