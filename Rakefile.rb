@@ -25,7 +25,8 @@ namespace :build do
 		sh 'git add -A'
 		sh 'git commit -m"Build"' do |ok, res|
 		end
-		sh 'git pull'
+		sh 'git pull --rebase' do |ok, res|
+		end
 		sh 'git push'
 	end
 
