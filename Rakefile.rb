@@ -30,6 +30,10 @@ namespace :build do
 
 	desc 'Generates the static files'
 	task :jekyll => [:github] do
+		chdir '../heroku'
+		sh 'git pull heroku master' do |ok, res|
+		end
+		chdir '../DynamicProg'
 		sh 'jekyll'
 	end
 

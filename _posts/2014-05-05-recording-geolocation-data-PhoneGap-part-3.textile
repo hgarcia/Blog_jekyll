@@ -229,7 +229,7 @@ Our template is very simple.
 
 We will have to adjust our CSS for the pause button as follow.
 
-<per><code>
+<pre><code>
 
 	&.icon {
 		&:before {
@@ -247,7 +247,7 @@ We will have to adjust our CSS for the pause button as follow.
 		}
 	}
 
-</code></per>
+</code></pre>
 
 
 h3. The controller.
