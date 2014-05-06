@@ -8,10 +8,6 @@ collection: Ionic
 
 __This is part 3 of a series of articles that document my efforts on building a mobile application for iOS using web technologies.__
 
-*	"Part 1 - Building iOS apps with PhoneGap Angular and Ionic":http://blog.dynamicprogrammer.com/2014/02/26/building-ios-apps-with-phonegap-angular-and-ionic-framework.html
-*	"Part 2 - Building a basic UI":http://blog.dynamicprogrammer.com/2014/02/28/building-a-basic-UI-angular-ionic-part-2.html
-*	"Part 3 - Recording Geo location data with PhoneGap and Angular":http://blog.dynamicprogrammer.com/2014/05/05/recording-geolocation-data-PhoneGap-part-3.html
-*	"Part 4 - Refactoring the js code structure":http://blog.dynamicprogrammer.com/2014/05/06/refactoring-the-js-code-structurre-part-4.html
 
 The main activity of our app will be to start and stop recording data when we perform our activities.
 
