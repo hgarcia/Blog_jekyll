@@ -3,6 +3,7 @@ layout: post
 title: Module attributes and compilation (Learning Erlang 5).
 summary: There are a myriad of directives you can use in your Erlang modules, even define your owns.
 categories: [Programming, Erlang]
+collection: Learning Erlang
 ---
 
 __Note of caution. These are my notes while learning Erlang. You are welcome to follow along and use them as a guide. Please make sure to check the "Erlang language":http://www.erlang.org site__

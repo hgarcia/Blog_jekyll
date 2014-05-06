@@ -3,6 +3,7 @@ layout: post
 title: Heads and tails, working with lists. (Learning Erlang 2)
 summary: In almost any language working with lists or data is a fundamental part of programming. Let's see how lists work in Erlang and some of the tools we have to work with them.
 categories: [Programming, Erlang]
+collection: Learning Erlang
 ---
 
 __Note of caution. These are my notes while learning Erlang. You are welcome to follow along and use them as a guide. Please make sure to check the "Erlang language":http://www.erlang.org site__

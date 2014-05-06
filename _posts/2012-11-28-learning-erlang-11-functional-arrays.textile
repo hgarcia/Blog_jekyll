@@ -3,6 +3,7 @@ layout: post
 title: Functional arrays. (Learning Erlang 11)
 summary: The array module is part of the Erlang STLIB. They work a bit differently that you would expect.
 categories: [Programming, Erlang]
+collection: Learning Erlang
 ---
 
 The array module allow us to create and manipulate arrays in a functional manner. We can create both fixed and variable size arrays in a few different ways.

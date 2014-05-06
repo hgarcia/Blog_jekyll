@@ -3,6 +3,7 @@ layout: post
 title: Playing with the file module (part 1). (Learning Erlang 7)
 summary: After some time playing with Dart is time to come back to Erlang. This time I will explore the functions in the file module that allow to dynamically execute code from files.
 categories: [Programming, Erlang]
+collection: Learning Erlang
 ---
 
 At one point or another, while writing code, is inevitable to interact with the file system.

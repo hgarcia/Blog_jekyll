@@ -3,6 +3,7 @@ layout: post
 title: Variables, comparisons and dynamic typing. (Learning Erlang 3)
 summary: Variables are immutables. Comparison can be performed between any type. Typing is dynamic and some data conversion is performed.
 categories: [Programming, Erlang]
+collection: Learning Erlang
 ---
 
 __Note of caution. These are my notes while learning Erlang. You are welcome to follow along and use them as a guide. Please make sure to check the "Erlang language":http://www.erlang.org site__

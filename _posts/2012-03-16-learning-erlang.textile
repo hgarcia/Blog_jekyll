@@ -3,6 +3,7 @@ layout: post
 title: Learning Erlang.
 summary: 5 or 6 years ago I started to learn Erlang for the first time. I read a book, follow an online tutorial and them I move on with other projects. It's fair to say that I didn't learn much at all.
 categories: [Programming, Erlang]
+collection: Learning Erlang
 ---
 
 __Note of caution. These are my notes while learning Erlang. You are welcome to follow along and use them as a guide. Please make sure to check the "Erlang language":http://www.erlang.org site__

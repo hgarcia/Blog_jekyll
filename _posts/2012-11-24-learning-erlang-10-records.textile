@@ -3,6 +3,7 @@ layout: post
 title: Records. (Learning Erlang 10)
 summary: We already saw Tuples and lists in Erlang, time to check on records and how we can use them to structure the data in our programs.
 categories: [Programming, Erlang]
+collection: Learning Erlang
 ---
 
 You can certainly use Tuples to create complex types and use an atom as the first item to identify the type of the Tuple.

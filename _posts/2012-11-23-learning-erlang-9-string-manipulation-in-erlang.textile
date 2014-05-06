@@ -3,6 +3,7 @@ layout: post
 title: String manipulation in Erlang. (Learning Erlang 9)
 summary: Strings in Erlang are represented as a list of characters, but don't despair the String module is here to help you with all your string manipulation needs.
 categories: [Programming, Erlang]
+collection: Learning Erlang
 ---
 
 Yesterday I was asked how you do string manipulation in Erlang, since they are treated internally as a list of numbers that represent characters.

@@ -3,6 +3,7 @@ layout: post
 title: Playing with recursion, (Learning Erlang 6).
 summary: Tail and body recursive functions are at the heart of every Erlang program.
 categories: [Programming, Erlang]
+collection: Learning Erlang
 ---
 
 __Note of caution. These are my notes while learning Erlang. You are welcome to follow along and use them as a guide. Please make sure to check the "Erlang language":http://www.erlang.org site__
