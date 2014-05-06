@@ -305,6 +305,22 @@ article section ul{
   padding-left: 1em;
 }
 
+.collection-list {
+  background-color: #FFFFFF;
+  border-left: 5px solid #454545;
+  margin-bottom: 24px;
+  padding-bottom: 12px;
+  padding-top: 12px;
+}
+
+.collection-list li a {
+  line-height: 24px;
+}
+
+.collection-list li a {
+  color: #555555;
+}
+
 #disqus_thread {
   font-family: inherit;
 }
