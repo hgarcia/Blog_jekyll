@@ -1,0 +1,9 @@
+---
+layout: post
+title: PhoneGap Mock.
+summary: A drop in replace for mocking PhoneGap API's on your unit tests.
+categories: [JavaScript]
+published: false
+---
+
+h3. Overview.
