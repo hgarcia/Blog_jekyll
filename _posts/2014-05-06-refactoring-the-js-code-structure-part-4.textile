@@ -76,13 +76,13 @@ We will also need to modify the <span class="code">package.json</span> file to c
 Modify our <span class="code">karma.config.js</span> file for our test to load the new files.
 
 <pre><code>
-	
+
 	files: [
-      'lib/ionic/js/ionic.bundle.js',
-      'lib/ionic/js/angular/angular-mocks.js',
-      '../js/*.js',
-      '../js/**/*.js',
-      '../tests/**/*_spec.js'
+    	'lib/ionic/js/ionic.bundle.js',
+      	'lib/ionic/js/angular/angular-mocks.js',
+      	'../js/*.js',
+      	'../js/**/*.js',
+      	'../tests/**/*_spec.js'
     ],
 
 </code></pre>

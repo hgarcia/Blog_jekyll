@@ -24,17 +24,17 @@ We will add a list method to our <span class="code">fileService</span>
 We expose a public <span class="code">list</span> function and we move the implementation into a private function.
 
 <pre><code>
-	
-	function list(successCb, errorCb) {
+    
+    function list(successCb, errorCb) {
       return function (fileSystem) {
         var reader = fileSystem.root.createReader();
         reader.readEntries(successCb, errorCb);
       };
     }
 
-	... 
+    ... 
 
-	list: function (successCb, errorCb) {
+    list: function (successCb, errorCb) {
         window.requestFileSystem(LocalFileSystem.PERSISTENT, 0, list(successCb, errorCb), errorCb);
     },
 
@@ -52,8 +52,8 @@ h3. And the server service
 We start by installing the cordova <span class="code">file-transfer</span> plug-in.
 
 <pre><code>
-	
-	cordova plugin add org.apache.cordova.file-transfer
+    
+    cordova plugin add org.apache.cordova.file-transfer
 
 </code></pre>
 
@@ -62,28 +62,28 @@ Once the plug-in is installed we can write our upload method. We want to pass an
 We also want to report back success or error for each entry individually what makes our implementation very simple. 
 
 <pre><code>
-		
-	/* globals angular */
-	angular.module('dynamic-sports.services')
-	  .factory('serverService', function () {
-	    'use strict';
 
-	    function getFileUploadOptions(fileURI) {
-	      var options = new FileUploadOptions();
-	      options.fileName = fileURI.substr(fileURI.lastIndexOf('/')+1);
-	      options.mimeType = "text/plain";
-	      return options;
-	    }
-	    return {
-	      upload: function (files, onSuccess, onError) {
-	        var ft =  new FileTransfer();
-	        for (var i = 0; i < files.length; i++) {
-	          var file = files[i];
-	          ft.upload(file.toURL(), encodeURI("http://app.herokuapp.com/uploads"), onSuccess, onError, getFileUploadOptions(file.fullPath));
-	        }
-	      }
-	    };
-	  });
+    /* globals angular */
+    angular.module('dynamic-sports.services')
+      .factory('serverService', function () {
+        'use strict';
+
+        function getFileUploadOptions(fileURI) {
+          var options = new FileUploadOptions();
+          options.fileName = fileURI.substr(fileURI.lastIndexOf('/')+1);
+          options.mimeType = "text/plain";
+          return options;
+        }
+        return {
+          upload: function (files, onSuccess, onError) {
+            var ft =  new FileTransfer();
+            for (var i = 0; i < files.length; i++) {
+              var file = files[i];
+              ft.upload(file.toURL(), encodeURI("http://app.herokuapp.com/uploads"), onSuccess, onError, getFileUploadOptions(file.fullPath));
+            }
+          }
+        };
+      });
 
 </code></pre>
 
@@ -91,12 +91,12 @@ We hook everything together on the <span class="code">HomeCtrl</span> after inje
 
 <pre><code>
 
-	.controller('HomeCtrl', ['$scope', 'geoLocationService', 'fileService', 'serverService',
-	  function ($scope, geoLocationService, fileService, serverService) {
+    .controller('HomeCtrl', ['$scope', 'geoLocationService', 'fileService', 'serverService',
+      function ($scope, geoLocationService, fileService, serverService) {
 
     ....
 
-	function filesSaved() {
+    function filesSaved() {
       alert("Saved");
     }
 
@@ -107,13 +107,13 @@ We hook everything together on the <span class="code">HomeCtrl</span> after inje
     $scope.upload = function () {
       fileService.list(uploadFiles, errHandler);
     };
-	
+    
 </code></pre>
 
 And we add a button to the home page that calls the <span class="code">upload()</span> function.
 
 <pre><code>
-	
+    
     <button class="button button-block" ng-click="upload()">Upload</button>
 
 </code></pre>
