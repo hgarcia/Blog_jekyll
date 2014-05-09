@@ -1,0 +1,30 @@
+---
+layout: post
+title: A few different ways to improve user feedback in our PhoneGap application (Part 6).
+summary: Showing uplod progress, adding a nav bar button and improving the user experience.
+categories: [PhoneGap, JavaScript, Mobile]
+collection: Ionic
+published: false
+---
+
+__This is part 6 of a series of articles that document my efforts on building a mobile application for iOS using web technologies.__
+
+h3. Showing upload progress.
+
+We continue building the application from our last post.
+
+We want to report the progress of uploaded files with a simple message and a counter indicating how many have been uploaded. In the case there is an error with a file we want to show all errors at the end of the process.
+
+Since the name of the file is not important (the user have no control on the file and there is not much he can do about the files itself), we will just indicate the number of files that errored uploading.
+
+If the process goes well we want to show a small tip from the top that indicates that everything went well.
+
+We can start with a very simple UI element in the home page to display the number of files uploaded.
+
+<pre><code>
+	
+	<div class="info-message" ng-show="uploading">Uploading {{uploadedCount}} of {{totalFiles}}</div>
+
+</code></pre>
+
+And we need to do a few changes to the <span class="code">HomeCtrl</span> as well to keep track of success and failures.
