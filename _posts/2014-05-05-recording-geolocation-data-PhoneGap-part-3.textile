@@ -2,7 +2,7 @@
 layout: post
 title: Recording Geo location data with PhoneGap and Angular (Part 3).
 summary: We will be writing our Angular services that encapsulate some of PhoneGap API's.
-categories: [PhoneGap, JavaScript, Mobile]
+categories: [PhoneGap, JavaScript, Mobile, Angular, Ionic]
 collection: Ionic
 ---
 

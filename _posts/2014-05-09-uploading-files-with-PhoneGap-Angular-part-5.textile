@@ -2,7 +2,7 @@
 layout: post
 title: Uploading files with PhoneGap and Angular (Part 5).
 summary: We will upload the information we recorded in Part 3 into a service.
-categories: [PhoneGap, JavaScript, Mobile]
+categories: [PhoneGap, JavaScript, Mobile, Angular, Ionic]
 collection: Ionic
 ---
 

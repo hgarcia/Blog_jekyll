@@ -8,13 +8,7 @@ layout: default
   <section>
   {% strip %}
     {% if page.collection %}
-      <ul class="collection-list">
-      {% for post in site.posts %}
-        {% if post.collection == page.collection %}
-          <li><a href="{{site.blog_url}}{{ post.url}}">{{ post.title }}</a></li>
-        {% endif %}
-      {% endfor %}
-      </ul>
+      {{ site.posts | collection_index : page.collection, site.blog_url }}
     {% endif %}
   {% endstrip %}
   </section>

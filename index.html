@@ -16,13 +16,7 @@ summary: The dynamic programmer is the website written by Hernan Garcia on compu
           <section>
           {% strip %}
             {% if post.collection %}
-              <ul class="collection-list">
-              {% for other in site.posts %}
-                {% if other.collection == post.collection %}
-                  <li><a href="{{site.blog_url}}{{ other.url}}">{{ other.title }}</a></li>
-                {% endif %}
-              {% endfor %}
-              </ul>
+              {{ site.posts | collection_index : post.collection, site.blog_url }}
             {% endif %}
           {% endstrip %}
           </section>

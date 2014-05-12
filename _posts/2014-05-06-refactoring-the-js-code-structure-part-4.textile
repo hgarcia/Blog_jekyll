@@ -2,7 +2,7 @@
 layout: post
 title: Refactoring the js code structure PhoneGap and Angular (Part 4).
 summary: We are refactoring the code to make sure the services, controllers and directives are well facored.
-categories: [PhoneGap, JavaScript, Mobile]
+categories: [PhoneGap, JavaScript, Mobile, Angular, Ionic]
 collection: Ionic
 ---
 

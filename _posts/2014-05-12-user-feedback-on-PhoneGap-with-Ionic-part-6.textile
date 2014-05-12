@@ -2,7 +2,7 @@
 layout: post
 title: A few different ways to improve user feedback in our Ionic application (Part 6).
 summary: Showing uplod progress, adding a nav bar button and improving the user experience.
-categories: [PhoneGap, JavaScript, Mobile]
+categories: [PhoneGap, JavaScript, Mobile, Angular, Ionic]
 collection: Ionic
 published: false
 ---

@@ -2,7 +2,7 @@
 layout: post
 title: Building an iOS app with PhoneGap, Angular.js and the ionic framework (Part 1).
 summary: We will build an iOS app with web technologies to track outdoor activities.
-categories: [PhoneGap, JavaScript, Mobile, Angular]
+categories: [PhoneGap, JavaScript, Mobile, Angular, Ionic]
 collection: Ionic
 ---
 
