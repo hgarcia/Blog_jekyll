@@ -5,7 +5,7 @@ summary: The first version only supported UDP time to add TCP.
 categories: [JavaScript]
 ---
 
-I took a bit of time to add TCP support to "distro":http:// 
+I took a bit of time to add TCP support to "distro":https://www.npmjs.org/package/distro
 
 Now you can create a network of client servers with TCP, UDP4 and UDP6.
 
