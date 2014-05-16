@@ -1,10 +1,9 @@
 ---
 layout: post
 title: A few different ways to improve user feedback in our Ionic application (Part 6).
-summary: Showing uplod progress, adding a nav bar button and improving the user experience.
+summary: Showing upload progress, adding a navigation bar button and improving the user experience.
 categories: [PhoneGap, JavaScript, Mobile, Angular, Ionic]
 collection: Ionic
-published: false
 ---
 
 __This is part 6 of a series of articles that document my efforts on building a mobile application for iOS using web technologies.__
@@ -13,9 +12,13 @@ h3. Showing upload progress.
 
 We want to report the progress of uploaded files with a simple message and a counter indicating how many have been uploaded. In the case there is an error with a file we want to show all errors at the end of the process.
 
-Since the name of the file is not important (the user have no control on the file and there is not much he can do about the files itself), we will just indicate the number of files that errored uploading.
+Since the name of the file is not important (the user have no control on the file and there is not much he can do about the files itself), we will just indicate the number of files that erred uploading.
 
 Once the process finishes we want to show a message that slides down from the top that indicates the result.
+
+<iframe width="420" height="315" src="//www.youtube.com/embed/mwn__C6zitM?rel=0" frameborder="0" allowfullscreen></iframe>
+
+h3. The code
 
 We can start with a very simple UI element in the home page to indicate that the upload process started.
 
@@ -153,7 +156,7 @@ It now looks like this.
 
 </code></pre>
 
-We also need to add a method to delete the files once upload finishes succesfully.
+We also need to add a method to delete the files once upload finishes successfully.
 
 The new method looks like this.
 
@@ -169,17 +172,57 @@ We will call it from the <span class="code">HomeCtrl</span> inside the success c
 </code></pre>
 
 
-h3. Tooltip
+h3. Tool-tip
 
-Adding the tooltip is easy. We only need a few lines of html and this css.
+Adding the tool-tip is easy. We only need a few lines of html and this css.
+In the <span class="code">home.html</span> file we add the div that will be our sliding tool-tip.
 
 <pre><code>
-	
+
+	<div class="status slide" ng-class='{"status-success-visible": uploadSucceded, "status-error-visible": uploadErrored}'>{{uploadMessage}}</div>
 
 </code></pre>
 
+We will use CSS transitions to slide it down and up again. We are using two different classes for success and error to show the tool-tip in different colours.
+
 <pre><code>
 	
+	.slide {
+	  color: #fff;
+	  height: 22px;
+	  position: absolute;
+	  width: 100%;
+	  text-align: center;
+	  top: 0;
+	  z-index: -1;
+	  -webkit-transition: all 1s;
+	  -moz-transition: all 1s;
+	}
+	.status-success-visible {
+	  background-color: $balanced;
+	  top: 64px;
+	}
+	.status-error-visible {
+	  background-color: $energized;
+	  top: 64px;
+	}
 
 </code></pre>
 
+We need to set the message and change those scope variables to true or false in the controller. We add a new private function that we will call when we check for upload completion.
+
+<pre><code>	
+
+	function toolTip() {
+	  if (!$scope.uploading) {
+	    $scope.uploadErrored = $scope.erroredCount > 0;
+	    $scope.uploadSucceded = $scope.erroredCount === 0;
+	    $scope.uploadMessage = ($scope.uploadSucceded) ? "Upload completed" : "Failed to upload " + $scope.erroredCount + " files";
+	    $timeout(function () {
+	      $scope.uploadErrored = false;
+	      $scope.uploadSucceded = false;
+	    }, 3000);
+	  }
+	}
+
+</code></pre>
