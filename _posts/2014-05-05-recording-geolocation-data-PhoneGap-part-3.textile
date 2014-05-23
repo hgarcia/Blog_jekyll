@@ -6,7 +6,7 @@ categories: [PhoneGap, JavaScript, Mobile, Angular, Ionic]
 collection: Ionic
 ---
 
-__This is part 3 of a series of articles that document my efforts on building a mobile application for iOS using web technologies.__
+__Code for this series is available on "Github":https://github.com/hgarcia/dynamic-sports__
 
 
 The main activity of our app will be to start and stop recording data when we perform our activities.

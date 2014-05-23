@@ -4,7 +4,7 @@ module CollectionIndex
  
   
   def collection_index(posts, collection, blog_url)
-    "<ul class=\"collection-list\">#{build_list_items(posts, collection, blog_url)}</ul>" 
+    "<h3>More articles in the #{collection} series.</h3><br/><ul class=\"collection-list\">#{build_list_items(posts, collection, blog_url)}</ul>" 
   end
 
   private

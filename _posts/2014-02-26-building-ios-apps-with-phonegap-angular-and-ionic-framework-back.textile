@@ -5,8 +5,6 @@ summary: We will build an iOS app with web technologies to track outdoor activit
 categories: [back]
 ---
 
-__This is part 1 of a series of articles that document my efforts on building a mobile application for iOS using web technologies.__
-
 In this series I plan to build a mobile application using primarily web technologies (HTML5, js and css). I will be targeting iOS since those are the devices I have access to at the moment, but the application should be deployable to a number of platforms without major changes due to the technologies I will be using.
 
 

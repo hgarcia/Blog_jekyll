@@ -6,7 +6,7 @@ categories: [PhoneGap, JavaScript, Mobile, Angular, Ionic]
 collection: Ionic
 ---
 
-__This is part 4 of a series of articles that document my efforts on building a mobile application for iOS using web technologies.__
+__Code for this series is available on "Github":https://github.com/hgarcia/dynamic-sports__
 
 
 The last time we created our first services, controllers and directives. We can see that if we keep adding controllers to the <span class="code">controller.js</span> file things are going to get out of control soon.
