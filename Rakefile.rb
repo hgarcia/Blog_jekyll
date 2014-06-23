@@ -42,6 +42,7 @@ namespace :build do
 	desc 'Moves to the heroku folder'
 	task :deploy => [:jekyll] do
 		sh 'cp config.ru ../heroku'
+		sh 'cp Procfile ../heroku'
 		chdir '../heroku'
 		sh 'git pull heroku master' do |ok, res|
 		end
