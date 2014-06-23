@@ -47,6 +47,7 @@ namespace :build do
 		chdir '../heroku'
 		sh 'git pull heroku master' do |ok, res|
 		end
+		sh 'bundle install'
 		sh 'git add -A'
 		sh 'git commit -m"Deploying the last build"'
 		sh 'git push heroku master'
