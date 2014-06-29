@@ -36,7 +36,7 @@ namespace :build do
 		sh 'git pull heroku master' do |ok, res|
 		end
 		chdir '../Blog'
-		sh 'jekyll'
+		sh 'jekyll build'
 	end
 
 	desc 'Moves to the heroku folder'
