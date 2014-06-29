@@ -27,6 +27,7 @@ module FlickrM
         puts img
         return {:title => img.title, :url => img.size_url(size)}
       rescue => e
+        p e
         p "IMAGE NOT FOUND: id: #{image_id} - size: #{size}"
         {:title => "not found", :url => "#"}
       end
