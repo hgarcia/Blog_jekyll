@@ -8,12 +8,10 @@ SIZES = {:square => "Square", :large_square => "Large Square", :thumbnail => "Th
 
 module FlickrM
   @printed = false
-  # def flickr_url(image_id)
-    # "http://www.flickr.com/photos/theprogrammer/#{image_id}"
-  # end
 
   def flickr_img(image_id, size = :medium, attrs = {})
     img = image_object(image_id, get_size_segment(size.downcase.to_sym))
+    p img
     attrs[:style] = "height: 175px;" if (size == "panoramic")
     image_tag(img[:title], img[:url], attrs)
   end
