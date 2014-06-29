@@ -24,7 +24,7 @@ module FlickrM
   def image_object(image_id, size)
       begin
         img = CACHED_IMAGES[image_id] ||= Flickr::Photo.new(image_id, API_KEY)
-        return {:title => img.title, :url => img.size_url(size)}
+        return {:title => img.title, :url => img.source(size)}
       rescue => e
         p "IMAGE NOT FOUND: id: #{image_id} - size: #{size}: #{e}"
         {:title => "not found", :url => "#"}
