@@ -11,7 +11,7 @@ module FlickrM
 
   def flickr_img(image_id, size = :medium, attrs = {})
     img = image_object(image_id, get_size_segment(size.downcase.to_sym))
-    p img
+    puts img
     attrs[:style] = "height: 175px;" if (size == "panoramic")
     image_tag(img[:title], img[:url], attrs)
   end
