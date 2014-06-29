@@ -10,37 +10,36 @@ module FlickrM
   @printed = false
 
   def flickr_img(image_id, size = :medium, attrs = {})
-    # img = image_object(image_id, get_size_segment(size.downcase.to_sym))
-    # puts img
-    # attrs[:style] = "height: 175px;" if (size == "panoramic")
-    # image_tag(img[:title], img[:url], attrs)
+    img = image_object(image_id, get_size_segment(size.downcase.to_sym))
+    attrs[:style] = "height: 175px;" if (size == "panoramic")
+    image_tag(img[:title], img[:url], attrs)
   end
 
-  # private
+  private
 
-  # def get_size_segment(symbol)
-  #   SIZES[symbol]
-  # end
+  def get_size_segment(symbol)
+    SIZES[symbol]
+  end
 
-  # def image_object(image_id, size)
-  #     begin
-  #       img = CACHED_IMAGES[image_id] ||= Photo.new(image_id, API_KEY)
-  #       return {:title => img.title, :url => img.size_url(size)}
-  #     rescue => e
-  #       p "IMAGE NOT FOUND: id: #{image_id} - size: #{size} - url: #{url}"
-  #       {:title => "not found", :url => "#"}
-  #     end
-  # end
+  def image_object(image_id, size)
+      begin
+        img = CACHED_IMAGES[image_id] ||= Photo.new(image_id, API_KEY)
+        return {:title => img.title, :url => img.size_url(size)}
+      rescue => e
+        p "IMAGE NOT FOUND: id: #{image_id} - size: #{size}"
+        {:title => "not found", :url => "#"}
+      end
+  end
 
-  # def image_tag(title, url, attrs)
-  #   "<img alt='#{title}' src='#{url}' #{image_attrs(attrs)}>"
-  # end
+  def image_tag(title, url, attrs)
+    "<img alt='#{title}' src='#{url}' #{image_attrs(attrs)}>"
+  end
 
-  # def image_attrs(attrs)
-  #   string_of_attributes = ""
-  #   attrs.each {|k, v| string_of_attributes += "#{k}=\"#{v}\""}
-  #   string_of_attributes
-  # end
+  def image_attrs(attrs)
+    string_of_attributes = ""
+    attrs.each {|k, v| string_of_attributes += "#{k}=\"#{v}\""}
+    string_of_attributes
+  end
 end
 
 Liquid::Template.register_filter(FlickrM)
