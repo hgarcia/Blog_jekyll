@@ -1,10 +1,10 @@
 require 'liquid'
 require 'flickr'
 
-# API_KEY = 'fef6644edfac9a21a909f8152719aaa3'
-# CACHED_IMAGES = {}
-# SIZES = {:square => "Square", :large_square => "Large Square", :thumbnail => "Thumbnail", :small =>
-# "Small", :small320 => "Small 320", :medium => "Medium", :medium640 => "Medium 640", :medium800 => "Medium 640", :large => "Large", :large1600 => "Large", :large2048 => "Large", :original => "Large", :panoramic => "Large"}
+API_KEY = 'fef6644edfac9a21a909f8152719aaa3'
+CACHED_IMAGES = {}
+SIZES = {:square => "Square", :large_square => "Large Square", :thumbnail => "Thumbnail", :small =>
+"Small", :small320 => "Small 320", :medium => "Medium", :medium640 => "Medium 640", :medium800 => "Medium 640", :large => "Large", :large1600 => "Large", :large2048 => "Large", :original => "Large", :panoramic => "Large"}
 
 module FlickrM
   @printed = false
