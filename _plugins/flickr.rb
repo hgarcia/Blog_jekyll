@@ -23,7 +23,7 @@ module FlickrM
 
   def image_object(image_id, size)
       begin
-        img = CACHED_IMAGES[image_id] ||= Flick::Photo.new(image_id, API_KEY)
+        img = CACHED_IMAGES[image_id] ||= Flickr::Photo.new(image_id, API_KEY)
         puts img
         return {:title => img.title, :url => img.size_url(size)}
       rescue => e
