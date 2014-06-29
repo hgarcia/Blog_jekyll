@@ -25,20 +25,13 @@ module FlickrM
   end
 
   def image_object(image_id, size)
-    # url = flickr_url(image_id)
-    # resource = CACHED_IMAGES[url] ||= Fleakr.resource_from_url(url)
-    # if (resource)
-      # image = resource.images.find do |img| img.size == size end
       begin
-        resource = CACHED_IMAGES[url] ||= Photo.new(image_id, API_KEY).size_url(size)
-        return {:title => resource.title, :url => image.url}
+        img = CACHED_IMAGES[image_id] ||= Photo.new(image_id, API_KEY)
+        return {:title => img.title, :url => img.size_url(size)}
       rescue => e
         p "IMAGE NOT FOUND: id: #{image_id} - size: #{size} - url: #{url}"
         {:title => "not found", :url => "#"}
       end
-    # else
-      # {:title => "not found", :url => "#"}
-    # end
   end
 
   def image_tag(title, url, attrs)
