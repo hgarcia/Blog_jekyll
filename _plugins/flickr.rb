@@ -1,17 +1,12 @@
 require 'liquid'
 require 'flickr'
-#require 'fleakr'
 
-# Fleakr.api_key       = "fef6644edfac9a21a909f8152719aaa3"
-# Fleakr.shared_secret = "f8b4bfef2df015b9"
-
-# flickr = Flickr.new("fef6644edfac9a21a909f8152719aaa3")
 API_KEY = 'fef6644edfac9a21a909f8152719aaa3'
 CACHED_IMAGES = {}
 SIZES = {:square => "Square", :large_square => "Large Square", :thumbnail => "Thumbnail", :small =>
 "Small", :small320 => "Small 320", :medium => "Medium", :medium640 => "Medium 640", :medium800 => "Medium 640", :large => "Large", :large1600 => "Large", :large2048 => "Large", :original => "Large", :panoramic => "Large"}
 
-module Flickr
+module FlickrM
   @printed = false
   # def flickr_url(image_id)
     # "http://www.flickr.com/photos/theprogrammer/#{image_id}"
@@ -57,4 +52,4 @@ module Flickr
   end
 end
 
-Liquid::Template.register_filter(Flickr)
+Liquid::Template.register_filter(FlickrM)
