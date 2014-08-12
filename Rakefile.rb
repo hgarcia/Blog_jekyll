@@ -44,6 +44,7 @@ namespace :build do
 		sh 'cp config.ru ../heroku'
 		sh 'cp Procfile ../heroku'
 		sh 'cp Gemfile ../heroku'
+    sh 'cp robots.txt. ../heroku'
 		chdir '../heroku'
 		sh 'git pull heroku master' do |ok, res|
 		end
