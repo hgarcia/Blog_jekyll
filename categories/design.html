@@ -6,7 +6,7 @@ summary: A list of post on the Design category for the Dynamic Programmer site.
 {% strip %}
 	{% for post in site.posts %}
 		{% for category in  post.categories %}
-		{% if category == 'Design' %}
+		{% if category == 'design' %}
 			<section class="extra">
 				<header>
 					<h3><a href="{{site.blog_url}}{{ post.url}}">{{ post.title }}</a></h3>

@@ -6,7 +6,7 @@ summary: A list of post on the CI category for the Dynamic Programmer site.
 {% strip %}
 	{% for post in site.posts %}
 		{% for category in  post.categories %}
-		{% if category == 'Continuous Integration' %}
+		{% if category == 'continuous integration' %}
 			<section>
 				<header>
 					<h3><a href="{{site.blog_url}}{{ post.url}}">{{ post.title }}</a></h3>

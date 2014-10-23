@@ -6,7 +6,7 @@ summary: Mobile development.
 {% strip %}
 	{% for post in site.posts %}
 		{% for category in  post.categories %}
-		{% if category == 'Mobile' %}
+		{% if category == 'mobile' %}
 			<section class="extra">
 				<header>
 					<h3><a href="{{site.blog_url}}{{ post.url}}">{{ post.title }}</a></h3>

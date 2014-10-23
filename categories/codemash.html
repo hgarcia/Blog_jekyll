@@ -6,7 +6,7 @@ summary: Post inspired by events at Codemash or review of sessions of my favorit
 {% strip %}
 	{% for post in site.posts %}
 		{% for category in  post.categories %}
-		{% if category == 'Codemash' %}
+		{% if category == 'codemash' %}
 			<section class="extra">
 				<header>
 					<h3><a href="{{site.blog_url}}{{ post.url}}">{{ post.title }}</a></h3>

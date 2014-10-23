@@ -5,7 +5,7 @@ summary: Angular, building reach applications with web technology.
 {% strip %}
 	{% for post in site.posts %}
 		{% for category in  post.categories %}
-		{% if category == 'Angular' %}
+    {% if category == 'angular' %}
 			<section class="extra">
 				<header>
 					<h3><a href="{{site.blog_url}}{{ post.url}}">{{ post.title }}</a></h3>

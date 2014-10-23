@@ -14,7 +14,7 @@
   {% endif %}
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="author" content="{{site.author}}" />
-  <meta name="Copyright" content="Copyright {{site.author}} 2010 - 2012. All Rights Reserved." />
+  <meta name="Copyright" content="Copyright {{site.author}} 2010 - 2014. All Rights Reserved." />
   <meta name="DC.title" content="{{site.name}}" />
   <meta name="DC.subject" content="Computer programming, music, open source." />
   <meta name="DC.creator" content="{{site.author}}." />
@@ -50,11 +50,12 @@
     <nav class="mod">
       <ul>
         <li><a href="{{site.blog_url}}/" title="Mumblings and ramblings on software development.">Blog</a></li>
-        <li><a href="{{site.blog_url}}/categories/photos.html" title="Pictures and other non-technical content.">Loops</a></li>
+        <li><a href="{{site.outdoors_url}}" title="Outings, skiing, hiking and week-ends adventures.">Outdoors</a></li>
+        <li><a href="{{site.photos_url}}" title="Pictures and other non-technical content.">Loops</a></li>
         <li><a href="{{site.projects_url}}/" title="The results of endless nights of coding.">Projects</a></li>
         <li><a href="{{site.music_url}}/" title="Disarray of random musical bits.">Music</a></li>
         <li><a href="{{site.rss_url}}" title="Sindication a.k.a. RSS feed">RSS</a></li>
-        <li><a href="https://twitter.com/theprogrammer" title="@TheProgrammer on Twitter">Twitter</a></li>
+        <li><a href="{{site.twitter_url}}" title="@TheProgrammer on Twitter">Twitter</a></li>
       </ul>
     </nav>
     <div class="main">
@@ -93,12 +94,16 @@
       </li>
       <li>Projects
         <ul>
+          <li><a href="https://www.npmjs.org/package/distro" target="projects">distro - </a></li>
+          <li><a href="https://www.npmjs.org/package/distro-redis" target="projects">distro redis - </a></li>
           <li><a href="http://hgarcia.github.com/DynProg.Validation/" target="projects">DynProg.Validation [.net] - </a></li>
           <li><a href="http://gherkineditor.codeplex.com/" target="projects">gherkin editor - </a></li>
-          <li><a href="https://npmjs.org/package/curling" target="projects">curling [node] - </a></li>
-          <li><a href="https://npmjs.org/package/node-resources" target="projects">node-resources [node] - </a></li>
-          <li><a href="https://npmjs.org/package/bitbucket-api" target="projects">bitbucket-api [node] - </a></li>
-          <li><a href="https://npmjs.org/package/timeTraveller" target="projects">timeTraveller [node]</a></li>
+          <li><a href="https://www.npmjs.org/package/curling" target="projects">curling [node] - </a></li>
+          <li><a href="https://www.npmjs.org/package/node-resources" target="projects">node-resources [node] - </a></li>
+          <li><a href="https://www.npmjs.org/package/untokenize" target="projects">untokenize - </a></li>
+          <li><a href="https://www.npmjs.org/package/bitbucket-api" target="projects">bitbucket-api [node] - </a></li>
+          <li><a href="https://www.npmjs.org/package/who-are-you" target="projects">who are you - </a></li>
+          <li><a href="https://www.npmjs.org/package/timeTraveller" target="projects">timeTraveller [node]</a></li>
         </ul>
       </li>
       <li>Presentations
@@ -111,7 +116,7 @@
       </li>
     </ul>
     <footer>
-      <p><small>&copy; Copyright {{site.author}} 2007 - 2013. All Rights Reserved.</small></p>
+      <p><small>&copy; Copyright {{site.author}} 2007 - 2014. All Rights Reserved.</small></p>
     </footer>
   </div>
   <script type="text/javascript">

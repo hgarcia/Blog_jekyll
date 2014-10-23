@@ -6,7 +6,7 @@ summary: The list of book reviews in the site.
 {% strip %}
 	{% for post in site.posts %}
 		{% for category in  post.categories %}
-		{% if category == 'Books' %}
+		{% if category == 'books' %}
 			<section>
 				<header>
 					<h3><a href="{{site.blog_url}}{{ post.url}}">{{ post.title }}</a></h3>

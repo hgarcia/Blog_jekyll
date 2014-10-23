@@ -6,7 +6,7 @@ summary: Because we always need to improve.
 {% strip %}
 	{% for post in site.posts %}
 		{% for category in  post.categories %}
-		{% if category == 'Methodology' %}
+		{% if category == 'methodology' %}
 			<section class="extra">
 				<header>
 					<h3><a href="{{site.blog_url}}{{ post.url}}">{{ post.title }}</a></h3>

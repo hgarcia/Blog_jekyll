@@ -1,10 +1,10 @@
 require 'liquid'
-require 'flickr'
+require 'flickr.rb'
 
 API_KEY = 'fef6644edfac9a21a909f8152719aaa3'
-CACHED_IMAGES = {}
 SIZES = {:square => "Square", :large_square => "Large Square", :thumbnail => "Thumbnail", :small =>
-"Small", :small320 => "Small 320", :medium => "Medium", :medium640 => "Medium 640", :medium800 => "Medium 640", :large => "Large", :large1600 => "Large", :large2048 => "Large", :original => "Large", :panoramic => "Large"}
+"Small", :small320 => "Small 320", :medium => "Medium", :medium640 => "Medium 640", :medium800 => "Medium 640", 
+:large => "Large", :large1600 => "Large", :large2048 => "Large", :original => "Large", :panoramic => "Large"}
 
 module FlickrM
   @printed = false
@@ -23,9 +23,10 @@ module FlickrM
 
   def image_object(image_id, size)
       begin
-        img = CACHED_IMAGES[image_id] ||= Flickr::Photo.new(image_id, API_KEY)
+        img = Flickr::Photo.new(image_id, API_KEY)
         return {:title => img.title, :url => img.source(size)}
       rescue => e
+        p e.backtrace
         p "IMAGE NOT FOUND: id: #{image_id} - size: #{size}: #{e}"
         {:title => "not found", :url => "#"}
       end
