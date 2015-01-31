@@ -2,7 +2,7 @@ permalink: /:year/:month/:day/:title.html
 url: "http://dynamicprogrammer.com"
 blog_url: "http://blog.dynamicprogrammer.com"
 photos_url: "http://blog.dynamicprogrammer.com/categories/photos.html"
-outdoors_url: "https://outdoors.dynamicprogrammer.com"
+outdoors_url: "http://outdoors.dynamicprogrammer.com"
 twitter_url: "https://twitter.com/theprogrammer"
 projects_url: "http://github.com/hgarcia"
 music_url: "http://www.acidplanet.com/artist.asp?songs=292536&amp;t=4858"
