@@ -1,11 +1,11 @@
 ---
 layout: post
 title: Using MongoDB from C#
-summary: The NoSql movement is gaining more and more inertia. A year or two ago I took a look at CouchDb but this time I wanted to try MongoDB.
+summary: The NoSql movement is gaining more and more momentum. A year or two ago I took a look at CouchDb but this time I wanted to try MongoDB.
 categories: [Programming, Tools, .Net, MongoDB]
 ---
 
-The <a href="http://en.wikipedia.org/wiki/NoSQL" target="_blank">NoSql</a> movement is gaining more and more inertia. A year or two ago I took a look at <a href="http://couchdb.apache.org/" target="_blank">CouchDb</a> but this time I wanted to try <a href="http://www.mongodb.org" target="_blank">MongoDB</a>. I have been hearing a lot of nice things about MongoDB, mostly about how simple is to query it and how fast is. So I decided that it was time to actually take it for a spin.
+The <a href="http://en.wikipedia.org/wiki/NoSQL" target="_blank">NoSql</a> movement is gaining more and more momentum. A year or two ago I took a look at <a href="http://couchdb.apache.org/" target="_blank">CouchDb</a> but this time I wanted to try <a href="http://www.mongodb.org" target="_blank">MongoDB</a>. I have been hearing a lot of nice things about MongoDB, mostly about how simple is to query it and how fast is. So I decided that it was time to actually take it for a spin.
 
 A quick search point me to <a href="http://odetocode.com/blogs/scott/archive/2009/10/13/experimenting-with-mongodb-from-c.aspx" target="_blank">this odetocode post</a> that was a great starting point to have Mongo running in my dev machine using the defaults and the Driver for C#. So, go and read K. Scott Allen's post if you want to follow along with the code in the rest of this post.
 
