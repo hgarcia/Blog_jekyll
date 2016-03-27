@@ -2,3 +2,5 @@
 _site/S
 *.sublime-project
 tweet_config.rb
+
+node_modules/
