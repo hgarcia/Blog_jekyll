@@ -4,13 +4,13 @@
   <meta charset="utf-8" />
   <meta name="google-site-verification" content="LirEfdzOpsT5fsjl0Di05wXm_agX47gPOVc8kZzsO8s" />
   <title>{{site.name}} - {{site.author}}
-    {% if page.title %}
-     : {{ page.title }}
+    {% if title %}
+     : {{ title }}
     {% endif %}
   </title>
   <script type="text/javascript">  var disqus_developer = 0; </script>
-  {% if page.summary %}
-  <meta name="description" content="{{ page.summary }}" />
+  {% if summary %}
+  <meta name="description" content="{{ summary }}" />
   {% endif %}
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="author" content="{{site.author}}" />
@@ -47,9 +47,9 @@
       font-weight: 400;
       color: #ddd;
     }
-  {% if page.body_style %}
+  {% if body_style %}
     body {
-      {{page.body_style}}
+      {{body_style}}
     }
   {% endif %}
     header.main {
@@ -84,9 +84,9 @@
       line-height: 65px;
       display: inline;
     }
-  {% if page.title_style %}
+  {% if title_style %}
     h1.title {
-      {{page.title_style}}
+      {{title_style}}
     }
   {% endif %}
     #photos .item {
@@ -173,9 +173,9 @@
     #slideshow-text footer {
       text-align: left;
     }
-    {% if page.title_style %}
+    {% if title_style %}
     #slideshow-text {
-      {{ page.title_style }}
+      {{ title_style }}
     }
     {% endif %}
 

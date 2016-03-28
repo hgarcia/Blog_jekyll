@@ -1,6 +1,4 @@
----
-layout: default
----
+{% include "./_partials/default_header.html" %}
 <article>
 	<header>
 		<h2>{{ title }}</h2>
@@ -28,3 +26,4 @@ layout: default
    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
   })();
 </script>
+{% include "./_partials/default_footer.html" %}
