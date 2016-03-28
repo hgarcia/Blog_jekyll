@@ -1,6 +1,4 @@
----
-layout: loops
----
+{% include "./_partials/loops_header.html" %}
 <div id="image-wrapper" class="single-image-wrapper">
   <div style="float:left;">
     <a id="single-image" href="{{page.home | flickr_url}}" target="_flick">{{ page.home | flickr_img : page.display_size }}</a>
@@ -13,3 +11,4 @@ layout: loops
     </footer>
   </div>
 </div>
+{% include "./_partials/loops_footer.html" %}

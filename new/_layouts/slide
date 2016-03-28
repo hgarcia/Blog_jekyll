@@ -1,9 +1,4 @@
----
-layout: loops
----
-<style type="text/css">
-
-</style>
+{% include "./_partials/loops_header.html" %}
 <div id="slideshow">
   <div id="slideshow-img-container" style="{{page.image_style}}">
     {% for img in page.slide %}
@@ -17,3 +12,4 @@ layout: loops
     </footer>
   </div>
 </div>
+{% include "./_partials/loops_footer.html" %}
