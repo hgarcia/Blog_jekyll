@@ -3,9 +3,12 @@
 let Metalsmith = require("metalsmith"),
   layouts = require("metalsmith-layouts"),
   metadata = require("metalsmith-filemetadata"),
-  textile = require("./lib/metalsmith-textile");
+  textile = require("./lib/metalsmith-textile"),
+  archive = require("metalsmith-archive"),
+  dateInFilename = require("metalsmith-date-in-filename");
 
 Metalsmith(__dirname)
+  .use(dateInFilename(true))
   .use(metadata([
     {
       pattern: "_posts/*",
@@ -24,6 +27,7 @@ Metalsmith(__dirname)
       }
     }
   ]))
+  .use(archive({collections: "_posts"}))
   .use(textile())
   .use(layouts({
       "engine": "liquid",
