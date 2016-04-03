@@ -4,10 +4,17 @@ let Metalsmith = require("metalsmith"),
   layouts = require("metalsmith-layouts"),
   metadata = require("metalsmith-filemetadata"),
   textile = require("./lib/metalsmith-textile"),
+  datePermalink = require("./lib/metalsmith-date-permalink"),
   archive = require("metalsmith-archive"),
+  browserSync = require("metalsmith-browser-sync"),
+  permalinks = require("metalsmith-permalinks"),
   dateInFilename = require("metalsmith-date-in-filename");
 
 Metalsmith(__dirname)
+  .use(browserSync({
+    server: "build",
+    files: ["src/**/*.md", "src/**/*.textile", "src/*.md", "src/*.textile", "_layouts/**/*.*"]
+  }))
   .use(dateInFilename(true))
   .use(metadata([
     {
@@ -27,8 +34,14 @@ Metalsmith(__dirname)
       }
     }
   ]))
+  .use(datePermalink())
   .use(archive({collections: "_posts"}))
   .use(textile())
+  .use(permalinks({
+    collection: "_posts",
+    pattern: ":date/:title",
+    relative: false
+  }))
   .use(layouts({
       "engine": "liquid",
       "directory": "_layouts"
