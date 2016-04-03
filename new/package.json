@@ -11,6 +11,7 @@
   "license": "ISC",
   "devDependencies": {
     "highlight": "^0.2.4",
+    "lodash": "^4.7.0",
     "metalsmith": "^2.1.0",
     "metalsmith-archive": "^0.1.1",
     "metalsmith-assets": "^0.1.0",

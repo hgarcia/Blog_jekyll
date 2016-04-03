@@ -1,7 +1,6 @@
 {% include "./_partials/default_header.html" %}
 {% assign first = true %}
-  {% for post in files limit:9 %}
-    {% if post.home == null %}
+  {% for post in posts limit:9 %}
       {% if first %}
         {% assign first = false %}
         <article>
@@ -11,7 +10,7 @@
           <section>
 
           </section>
-          <section>{{ post.content }}</section>
+          <section>{{ post.contents }}</section>
             <footer>
             {% for category in post.categories %}
               <a href="{{ site.blog_url }}/categories/{{ category | downcase | replace:'.net','dotnet' | replace:'.','-' | replace:' ','_' }}.html" title="Read other articles in {{ category }}">{{ category }}</a>&nbsp;&nbsp;
@@ -28,6 +27,5 @@
       	</section>
 
       {% endif %}
-    {% endif %}
   {% endfor %}
 {% include "./_partials/default_footer.html" %}

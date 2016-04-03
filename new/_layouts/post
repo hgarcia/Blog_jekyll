@@ -3,14 +3,22 @@
 	<header>
 		<h2>{{ title }}</h2>
 	</header>
+  {% for coll in collection %}
   <section>
-
+    <h3>This article is part of the {{coll}} series.</h3>
+    {% if previous %}
+    Previous article:<br/><a href="{{previous.permaLinkUrl}}">{{previous.title}}</a><br/>
+    {% endif %}
+    {% if next %}
+    Next article:<br/><a href="{{next.permaLinkUrl}}">{{next.title}}</a></br>
+    {% endif %}
   </section>
+  {% endfor %}
   <section>
   {{ contents }}
 	</section>
   <footer>
-    {% for category in page.categories %}
+    {% for category in categories %}
       <a href="{{ site.blog_url }}/categories/{{ category | downcase | replace:'.net','dotnet' | replace:'.','-' | replace:' ','_' }}.html" title="Read other articles in {{ category }}">{{ category }}</a>&nbsp;&nbsp;
     {% endfor %}
   </footer>
