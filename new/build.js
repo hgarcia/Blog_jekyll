@@ -10,13 +10,10 @@ let Metalsmith = require("metalsmith"),
   browserSync = require("metalsmith-browser-sync"),
   permalinks = require("metalsmith-permalinks"),
   collections = require("metalsmith-collections"),
+  assets = require("metalsmith-assets"),
   dateInFilename = require("metalsmith-date-in-filename");
 
 Metalsmith(__dirname)
-  .use(browserSync({
-    server: "build",
-    files: ["src/**/*.md", "src/**/*.textile", "src/*.md", "src/*.textile", "_layouts/**/*.*", "_layouts/**/*"]
-  }))
   .use(dateInFilename(true))
   .use(metadata([
     {
@@ -50,6 +47,18 @@ Metalsmith(__dirname)
       "engine": "liquid",
       "directory": "_layouts"
     }))
+  .use(assets({
+    source: "./assets", // relative to the working directory
+    destination: "./assets" // relative to the build directory
+  }))
+  .use(assets({
+    source: "./images", // relative to the working directory
+    destination: "./images" // relative to the build directory
+  }))
+  .use(browserSync({
+    server: "build",
+    files: ["src/**/*.md", "src/**/*.textile", "src/*.md", "src/*.textile", "_layouts/**/*.*", "_layouts/**/*"]
+  }))
   .build(function(err) {
     if (err) {
       throw err;

@@ -19,7 +19,7 @@
 	</section>
   <footer>
     {% for category in categories %}
-      <a href="{{ site.blog_url }}/categories/{{ category | downcase | replace:'.net','dotnet' | replace:'.','-' | replace:' ','_' }}.html" title="Read other articles in {{ category }}">{{ category }}</a>&nbsp;&nbsp;
+      <a href="/categories/{{ category | downcase | replace:'.net','dotnet' | replace:'.','-' | replace:' ','_' }}/index.html" title="Read other articles in {{ category }}">{{ category }}</a>&nbsp;&nbsp;
     {% endfor %}
   </footer>
 </article>
