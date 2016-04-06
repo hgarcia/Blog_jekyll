@@ -7,7 +7,7 @@ categories: [Books]
 
 __Disclaimer: I got this book as part of the bloggers review program at O'Reilly.__
 
-<a href="http://shop.oreilly.com/product/0636920022923.do" target="_blank"><img class="img-float-right"  src="../../../images/posts/programming-computer-vision-with-python.gif" border="0" alt="Programming Computing Vision with Python - book cover"/></a>
+<a href="http://shop.oreilly.com/product/0636920022923.do" target="_blank"><img class="img-float-right"  src="/images/posts/programming-computer-vision-with-python.gif" border="0" alt="Programming Computing Vision with Python - book cover"/></a>
 
 If you ever wondered how to analyze and image to recognize shapes and objects, how to search on them or how to build a panoramic view from a series of pictures (among other things) this is the book for you.
 

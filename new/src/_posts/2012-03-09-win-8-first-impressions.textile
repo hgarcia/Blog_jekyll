@@ -9,7 +9,7 @@ A few months ago, I tried to install the Windows 8 developers preview. At the ti
 
 h3. Windows 8 consumer preview
 
-<a href="../../../images/posts/win8/fish.png" target="_blank"><img class="img-float-right"  src="../../../images/posts/win8/fish.png" border="0" alt="Windows 8 fish" style="width: 30%"/></a>So when this came up and every body was talking about it, I decided to give it a try.
+<a href="../../../images/posts/win8/fish.png" target="_blank"><img class="img-float-right"  src="/images/posts/win8/fish.png" border="0" alt="Windows 8 fish" style="width: 30%"/></a>So when this came up and every body was talking about it, I decided to give it a try.
 This time I didn't make the same mistake and I used "Scott Hanselman instructions":http://www.hanselman.com/blog/HowToGuideToInstallingAndBootingWindows8ConsumerPreviewOffAVHDVirtualHardDisk.aspx to install it right off the bat on a bootable vhd.
 I was surprised how straight forward the whole process was. The new installer is even simpler than Windows 7's, making the installation process completely painless.
 
@@ -25,18 +25,18 @@ h3. Going Metro.
 
 Upon start you will be presented with the new lock screen. It reminds me a bit to Bing due to the use of a full screen picture with just a timer on the left corner. Once you hit enter you will be presented with a simple login screen.
 
-<a href="../../../images/posts/win8/start.png" target="_blank"><img class="img-float-left" src="../../../images/posts/win8/start.png" border="0" alt="Windows 8 start screen" style="width: 45%"/></a>The start screen follows the now ubiquitous Metro style. In the screen capture you can see the icons created by default after installing Visual Studio 2011.
+<a href="../../../images/posts/win8/start.png" target="_blank"><img class="img-float-left" src="/images/posts/win8/start.png" border="0" alt="Windows 8 start screen" style="width: 45%"/></a>The start screen follows the now ubiquitous Metro style. In the screen capture you can see the icons created by default after installing Visual Studio 2011.
 I don't have a touch screen in this laptop, and I was expecting to find the Metro experience a bit daunting with the mouse. That's not really the case. I actually found it perfectly usable and for the most part very intuitive.
 
 __Keep in mind that a lot of paradigms have been broken. This is not your old PC. I think that the complete change on UI makes for an easier transition than a gradual shift.__
 
 You know right away that this is a different game, so you don't start messing around, trying to find the start menu. You just start exploring this new landscape.
 
-<a href="../../../images/posts/win8/desktop.png" target="_blank"><img class="img-float-right" src="../../../images/posts/win8/desktop.png" border="0" alt="Windows 8 desktop" style="width: 45%"/></a>Of course you can always drop to the desktop if you want or need to. I found myself doing so to use IE, not sure why since you can use IE as a Metro app as well.
+<a href="../../../images/posts/win8/desktop.png" target="_blank"><img class="img-float-right" src="/images/posts/win8/desktop.png" border="0" alt="Windows 8 desktop" style="width: 45%"/></a>Of course you can always drop to the desktop if you want or need to. I found myself doing so to use IE, not sure why since you can use IE as a Metro app as well.
 You can see in the image that the start menu is gone.
 The closer thing you have is hidden beside the tray bar, clicking those little arrows now open a "menu" with access to some programs, common utilities and folder shortcuts.
 
-<img src="../../../images/posts/win8/desktop_programs.png" border="0" alt="Programs contextual menu on windows 8"/>
+<img src="/images/posts/win8/desktop_programs.png" border="0" alt="Programs contextual menu on windows 8"/>
 
 If you want to go back to the Start screen move the mouse to the lower left corner and a little pop up will show you the Start screen, click in it and you are back.
 

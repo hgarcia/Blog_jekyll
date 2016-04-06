@@ -5,7 +5,7 @@ summary: Responsive Web Design is more than a buzzword, is almost a necessity fo
 categories: [Design, Books, Programming]
 ---
 
-<a href="../../../images/posts/marcotte-responsive-web-design.jpg" target="_blank"><img class="img-float-right"  src="../../../images/posts/marcotte-responsive-web-design.jpg" border="0" alt="Responsive Web Design - book cover" style="width: 26%"/></a>I remember reading "Ethan Marcote's":http://ethanmarcotte.com/ article about "Responsive web design":http://www.alistapart.com/articles/responsive-web-design/ on "A list apart":http://www.alistapart.com back in the day, and getting really excited about it.
+<a href="../../../images/posts/marcotte-responsive-web-design.jpg" target="_blank"><img class="img-float-right"  src="/images/posts/marcotte-responsive-web-design.jpg" border="0" alt="Responsive Web Design - book cover" style="width: 26%"/></a>I remember reading "Ethan Marcote's":http://ethanmarcotte.com/ article about "Responsive web design":http://www.alistapart.com/articles/responsive-web-design/ on "A list apart":http://www.alistapart.com back in the day, and getting really excited about it.
 
 Finally, last year, when "the book":http://www.abookapart.com/products/responsive-web-design came out, I got a copy, downloaded to my iPad a Friday evening and couldn't put it down until I finished.
 

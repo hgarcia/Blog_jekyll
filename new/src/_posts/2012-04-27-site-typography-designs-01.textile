@@ -26,4 +26,4 @@ h6. Images
 
 Monochromatic images for navigation. Some colour in the different article illustrations.
 
-<a href="../../../images/posts/waywardirregular-com.png" target="_blank"><img src="../../../images/posts/waywardirregular-com-thumb.png" border="0" alt="Wayward irregular front page thumbnail"/></a>
+<a href="../../../images/posts/waywardirregular-com.png" target="_blank"><img src="/images/posts/waywardirregular-com-thumb.png" border="0" alt="Wayward irregular front page thumbnail"/></a>

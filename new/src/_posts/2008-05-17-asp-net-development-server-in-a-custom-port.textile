@@ -10,4 +10,4 @@ It always annoyed me that every time I click run in a web application using VS i
 So if you want to make sure that the project starts always at the same port, all you need to do is right click on the solution and select properties. 
 In the property sheet for the solution click on the Web tab and then change the default Auto-assign Port to Specific port and type a port of your liking.
 
-<img src="../../../images/posts/sp32-20080517-140354.png" alt="" border="0"/>
+<img src="/images/posts/sp32-20080517-140354.png" alt="" border="0"/>

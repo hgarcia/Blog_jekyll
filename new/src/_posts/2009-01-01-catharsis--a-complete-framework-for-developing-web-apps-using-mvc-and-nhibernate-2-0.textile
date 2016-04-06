@@ -19,7 +19,7 @@ What is Catharsis? You may ask. It's a complete application framework that uses 
 
 But it's more than that. It's also a set of tools that integrate with Visual Studio and provide several Wizards to do most task in a very simple way. The solution created is quite complicate but very well organized.
 
-<img height="571" alt="ScreenHunter_02 2009-01-01 23.13.49" src="../../../images/posts/Catharsisacompleteframeworkfordevelopi.0_14C6D/ScreenHunter_02%202009-01-01%2023.13.49_thumb.jpg" width="261" border="0" />
+<img height="571" alt="ScreenHunter_02 2009-01-01 23.13.49" src="/images/posts/Catharsisacompleteframeworkfordevelopi.0_14C6D/ScreenHunter_02%202009-01-01%2023.13.49_thumb.jpg" width="261" border="0" />
 
 h3. Installing Catharsis
 
@@ -29,11 +29,11 @@ h3. Creating your first project.
 
 It's very simple open the Create new project dialog and you will see a new Catharsis type of project
 
-<img height="425" alt="ScreenHunter_03 2009-01-01 23.19.58" src="../../../images/posts/Catharsisacompleteframeworkfordevelopi.0_14C6D/ScreenHunter_03%202009-01-01%2023.19.58_thumb.jpg" width="582" border="0" />
+<img height="425" alt="ScreenHunter_03 2009-01-01 23.19.58" src="/images/posts/Catharsisacompleteframeworkfordevelopi.0_14C6D/ScreenHunter_03%202009-01-01%2023.19.58_thumb.jpg" width="582" border="0" />
 
 Enter the Name and click Ok, another window shows
 
-<img height="297" alt="ScreenHunter_04 2009-01-01 23.20.26" src="../../../images/posts/Catharsisacompleteframeworkfordevelopi.0_14C6D/ScreenHunter_04%202009-01-01%2023.20.26_thumb.jpg" width="696" border="0" />
+<img height="297" alt="ScreenHunter_04 2009-01-01 23.20.26" src="/images/posts/Catharsisacompleteframeworkfordevelopi.0_14C6D/ScreenHunter_04%202009-01-01%2023.20.26_thumb.jpg" width="696" border="0" />
 
 Click Finish, sit and wait.
 

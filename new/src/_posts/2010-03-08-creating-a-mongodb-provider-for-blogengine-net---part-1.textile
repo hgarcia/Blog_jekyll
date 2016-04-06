@@ -41,11 +41,11 @@ What I did was to create a new folder \lib under the solution root (of the BlogE
 
 You should have something like this right now.
 
-<a href="../../../images/posts/CreatingaMongoDBproviderforBlogengin.Net_14694/initial_solution_set_up.png"><img border="0" alt="initial_solution_set_up" src="../../../images/posts/CreatingaMongoDBproviderforBlogengin.Net_14694/initial_solution_set_up_thumb.png" width="244" height="168"></a> 
+<a href="../../../images/posts/CreatingaMongoDBproviderforBlogengin.Net_14694/initial_solution_set_up.png"><img border="0" alt="initial_solution_set_up" src="/images/posts/CreatingaMongoDBproviderforBlogengin.Net_14694/initial_solution_set_up_thumb.png" width="244" height="168"></a> 
 
 And the following directory structure.
 
-<a href="../../../images/posts/CreatingaMongoDBproviderforBlogengin.Net_14694/initial_dir_structure.png"><img border="0" alt="initial_dir_structure" src="../../../images/posts/CreatingaMongoDBproviderforBlogengin.Net_14694/initial_dir_structure_thumb.png" width="288" height="275"></a>
+<a href="../../../images/posts/CreatingaMongoDBproviderforBlogengin.Net_14694/initial_dir_structure.png"><img border="0" alt="initial_dir_structure" src="/images/posts/CreatingaMongoDBproviderforBlogengin.Net_14694/initial_dir_structure_thumb.png" width="288" height="275"></a>
 
 You may not have the Resharper files and folders, that depends if you have Resharper installed or not.
 

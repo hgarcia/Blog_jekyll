@@ -14,7 +14,7 @@ h3. Overview.
 
 All the examples in the book are written on top of the Akka framework (as is obvious in the title of the book), but the patterns can be easily extrapolate to other frameworks and languages.
 
-<a href="http://shop.oreilly.com/product/0636920028789.do" target="_blank"><img class="img-float-right" src="../../../images/posts/akka.gif" border="0" alt="Effective Akka - book cover"></a>
+<a href="http://shop.oreilly.com/product/0636920028789.do" target="_blank"><img class="img-float-right" src="/images/posts/akka.gif" border="0" alt="Effective Akka - book cover"></a>
 
 It was a great read, even for a person like me, not very familiar with Akka. I really appreciate how each problem is clearly expressed and the different solutions are explored with ample samples and detailed analysis of the pros and cons of each approach.
 

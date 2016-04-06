@@ -17,7 +17,7 @@ Metalsmith(__dirname)
   .use(dateInFilename(true))
   .use(metadata([
     {
-      pattern: "_posts/*",
+      pattern: "**/*",
       metadata: {
         "site": {
           "url": "http://dynamicprogrammer.com",

@@ -17,7 +17,7 @@ I was able to reuse the same web services that returned information to my Ajax U
 
 The end result was a cleaner, nicer and (the most important for me) faster interface. I was also able to use the Flash mp3 player capabilities and integrate the player in the same interface.
 
-I could improve the Ajax UI performance modifying the WS to return JSON instead of XML, but even loading the box covers (100 x 100 pixels thumb) is faster in Flex, I don't have to worry about cross browser javascript, css or even html and I'm sure that my app will render consistently across browsers and platforms as far as you have Flash 9.0 installed (Adobe claim that 98% of the computers have it).
+I could improve the Ajax UI performance modifying the WS to return JSON instead of XML, but even loading the box covers (100 x 100 pixels thumb) is faster in Flex, I don't have to worry about cross browser javascript, css or even HTML and I'm sure that my app will render consistently across browsers and platforms as far as you have Flash 9.0 installed (Adobe claim that 98% of the computers have it).
 
 I'm not advocating to replace Ajax with Flex, but I think that you should give it a look if you are doing an app with a lot of Ajax calls where you change the presentation dynamically.
 

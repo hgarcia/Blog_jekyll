@@ -9,11 +9,11 @@ First thing first. This is not bad code. This is a drop that is there and the de
 
 I mentioned on Sunday about how I reorganized the code inside the solution and the refactoring I did, let's take a look. Upon downloading this is how the solution looked like:
 
-<a href="../../../images/posts/RefactoringandOSprojecttake1_101/ScreenHunter_01%202009-02-23%2000.00.10_2.jpg"><img height="220" alt="ScreenHunter_01 2009-02-23 00.00.10" src="../../../images/posts/RefactoringandOSprojecttake1_101/ScreenHunter_01%202009-02-23%2000.00.10_thumb.jpg" width="242" border="0" /></a>
+<a href="../../../images/posts/RefactoringandOSprojecttake1_101/ScreenHunter_01%202009-02-23%2000.00.10_2.jpg"><img height="220" alt="ScreenHunter_01 2009-02-23 00.00.10" src="/images/posts/RefactoringandOSprojecttake1_101/ScreenHunter_01%202009-02-23%2000.00.10_thumb.jpg" width="242" border="0" /></a>
 
 After my changes this is what I have:
 
-<a href="../../../images/posts/RefactoringandOSprojecttake1_101/ScreenHunter_02%202009-02-23%2000.00.44_2.jpg"><img height="396" alt="ScreenHunter_02 2009-02-23 00.00.44" src="../../../images/posts/RefactoringandOSprojecttake1_101/ScreenHunter_02%202009-02-23%2000.00.44_thumb.jpg" width="241" border="0" /></a>
+<a href="../../../images/posts/RefactoringandOSprojecttake1_101/ScreenHunter_02%202009-02-23%2000.00.44_2.jpg"><img height="396" alt="ScreenHunter_02 2009-02-23 00.00.44" src="/images/posts/RefactoringandOSprojecttake1_101/ScreenHunter_02%202009-02-23%2000.00.44_thumb.jpg" width="241" border="0" /></a>
 
 Notice that most of the classes have been moved into a class library and the console just has the entry point. This reorganization have in mind the reuse of the common library code with a GUI.
 

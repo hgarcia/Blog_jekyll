@@ -5,7 +5,7 @@ summary: We are changing our template system at work and my boss ask me to look 
 categories: [Programming, .Net]
 ---
 
-We are changing our template system at work and my boss ask me to look around for a css parser class. The class needed to load a bunch of css files and parse them to be able to get a value from an attribute of a given key. The class needs to be "inteligent" enough to apply some precedence rules so the latest css file will override or augment the previous ones. After doing a quick search in google I couldn't find something that could help us, we needed something simpler with little overheat, so it was time to write my own.
+We are changing our template system at work and my boss ask me to look around for a css parser class. The class needed to load a bunch of css files and parse them to be able to get a value from an attribute of a given key. The class needs to be "intelligent" enough to apply some precedence rules so the latest css file will override or augment the previous ones. After doing a quick search in google I couldn't find something that could help us, we needed something simpler with little overheat, so it was time to write my own.
 
 So I went to the task and came up with this:
 It seems to work well enough, it's a very simple implementation, there is no validation for valid formatting and is quite permissive with the quality of your css, so it should parse well your file even if the formatting is not 100% correct.

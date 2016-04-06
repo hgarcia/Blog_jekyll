@@ -7,7 +7,7 @@ categories: [Books]
 
 __Disclaimer: I got this book as part of the bloggers review program at O'Reilly.__
 
-<a href="http://shop.oreilly.com/product/0636920024460.do" target="_blank"><img class="img-float-right"  src="../../../images/posts/resource-oriented-computing-with-netkernel.gif" border="0" alt="Resource Oriented Computing with NetKernel - book cover"/></a>
+<a href="http://shop.oreilly.com/product/0636920024460.do" target="_blank"><img class="img-float-right"  src="/images/posts/resource-oriented-computing-with-netkernel.gif" border="0" alt="Resource Oriented Computing with NetKernel - book cover"/></a>
 
 This book was my first exposure to Resource Oriented Computing and NetKernel.
 

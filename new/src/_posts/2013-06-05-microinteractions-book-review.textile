@@ -6,7 +6,7 @@ categories: [Books, Mobile, Programming]
 ---
 __Disclaimer: I got this book as part of the bloggers review program at O'Reilly.__
 
-<a href="http://shop.oreilly.com/product/0636920027676.do" target="_blank"><img class="img-float-right" src="../../../images/posts/microinteractions.gif" border="0" alt="Microinteractions - book cover"></a>
+<a href="http://shop.oreilly.com/product/0636920027676.do" target="_blank"><img class="img-float-right" src="/images/posts/microinteractions.gif" border="0" alt="Microinteractions - book cover"></a>
 
 h3. Overview.
 

@@ -9,11 +9,11 @@ After I wrote my last post I remembered that some time ago I did intall an Add-I
 
 The usage is dead simple, you just highlight what you want to publish and doing right click on it you are presented with an option in the contextual menu to Copy Source As HTML.
 
-<img alt="" src="../../../images/posts/sp32-20080828-235218.png" title="Contextual menu for Copy Source as HTML" border="0"/>
+<img alt="" src="/images/posts/sp32-20080828-235218.png" title="Contextual menu for Copy Source as HTML" border="0"/>
 
 The tool have some pretty good options and they are presented to you after clicking in the menu item:
 
-<img alt="" src="../../../images/posts/sp32-20080828-235306.png" title="Options for Copy Source as HTML" border="0"/>
+<img alt="" src="/images/posts/sp32-20080828-235306.png" title="Options for Copy Source as HTML" border="0"/>
 
 You should be able to get the tool from here: "codeplex":http://copysourceashtml.codeplex.com/ but it doesn't seem to be up at this moment.
 

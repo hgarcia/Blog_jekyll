@@ -11,11 +11,11 @@ Most examples keep using LINQ TO SQL to generate the model from scratch and that
 
 Notice that the only difference between this and my last post is that the project doesn't have any files under the model folder, I'm actually using those files to create the dll for the DAL.
 
-<img alt="" src="../../../images/posts/SP32-20071223-144417.png" height="206" width="179">
+<img alt="" src="/images/posts/SP32-20071223-144417.png" height="206" width="179">
 
 I just added a reference to the classes that I need to consume my model from.
 
-<img alt="" src="../../../images/posts/SP32-20071223-144518.png" height="82" width="222">
+<img alt="" src="/images/posts/SP32-20071223-144518.png" height="82" width="222">
 
 At this point all the controller classes will have access to my model.
 

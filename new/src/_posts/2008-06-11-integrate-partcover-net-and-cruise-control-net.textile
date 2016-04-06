@@ -71,11 +71,11 @@ This will add a link on the right navigation bar to see the details of the repor
 
 You will see a menu item to the PartCover report on the side.
 
-<img src="../../../images/posts/sp32-20080611-233002.png" alt="PartCover report menu item" border="0"/>
+<img src="/images/posts/sp32-20080611-233002.png" alt="PartCover report menu item" border="0"/>
 
 Clicking on the link you will see a simple report like this:
 
-<img src="../../../images/posts/sp32-20080611-233104.png" alt="PartCover class report" border="0"/>
+<img src="/images/posts/sp32-20080611-233104.png" alt="PartCover class report" border="0"/>
 
 (I had to hide the name of the company) but you will see the qualified name for the class.
 

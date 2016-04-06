@@ -7,7 +7,7 @@ categories: [Books]
 
 __Disclaimer: I got this book as part of the bloggers review program at O'Reilly.__
 
-<a href="http://shop.oreilly.com/product/0636920026532.do" target="_blank"><img class="img-float-right"  src="../../../images/posts/async-in-csharp-5.gif" border="0" alt="Async in c# 5.0 - book cover"/></a>
+<a href="http://shop.oreilly.com/product/0636920026532.do" target="_blank"><img class="img-float-right"  src="/images/posts/async-in-csharp-5.gif" border="0" alt="Async in c# 5.0 - book cover"/></a>
 
 This short book (139 pages in the ePub version) serves as a good introduction and quick reference on how to utilize the new <span class="code">async</span> and <span class="code">await</span> features in C# 5.0
 

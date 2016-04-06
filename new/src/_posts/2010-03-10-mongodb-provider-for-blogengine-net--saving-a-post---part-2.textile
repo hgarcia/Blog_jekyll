@@ -9,7 +9,7 @@ Yesterday we created our first method in the MongoDbProvider, our implementation
 
 So let's fix that. First we need to see our first test passing. We run it expecting to fail to save and load the post but we have a different Exception thrown.
 
-<a href="../../../images/posts/MongoDBproviderforBl.netsavingaPostPart2_8480/server_null_failing_test.png"><img border="0" alt="server_null_failing_test" src="../../../images/posts/MongoDBproviderforBl.netsavingaPostPart2_8480/server_null_failing_test_thumb.png" width="545" height="182"></a> 
+<a href="../../../images/posts/MongoDBproviderforBl.netsavingaPostPart2_8480/server_null_failing_test.png"><img border="0" alt="server_null_failing_test" src="/images/posts/MongoDBproviderforBl.netsavingaPostPart2_8480/server_null_failing_test_thumb.png" width="545" height="182"></a> 
 
 If we look at the code we notice that we made a big mistake in the Mongo class. We declared a _server private field but we are initializing a local server variable.
 So when calling Disconnect on _server inside the Dispose method we get the NullReferenceException.
@@ -44,6 +44,6 @@ And the newly created getServer() helper method to clean up the code. We also ma
 
 Our passing test result indicates some success.
 
-<a href="../../../images/posts/MongoDBproviderforBl.netsavingaPostPart2_8480/passing_test.png"><img border="0" alt="passing_test" src="../../../images/posts/MongoDBproviderforBl.netsavingaPostPart2_8480/passing_test_thumb.png" width="576" height="108"></a>
+<a href="../../../images/posts/MongoDBproviderforBl.netsavingaPostPart2_8480/passing_test.png"><img border="0" alt="passing_test" src="/images/posts/MongoDBproviderforBl.netsavingaPostPart2_8480/passing_test_thumb.png" width="576" height="108"></a>
 
 Next: Mapping from Document to Entity and back.

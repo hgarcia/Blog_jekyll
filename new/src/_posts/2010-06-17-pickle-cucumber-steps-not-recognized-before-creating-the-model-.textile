@@ -17,7 +17,7 @@ The problem I got was that I wrote the following Cucumber scenario:
 
 And when running cucumber I got a message that indicates that I have an undefined step for the Given step and this bit of code:
 
-<img src="../../../images/posts/missing_step.png" border="0" alt="Missing steps."/>
+<img src="/images/posts/missing_step.png" border="0" alt="Missing steps."/>
 
 Now that was a bit disconcerting since the Given step match this pickle steps:
 

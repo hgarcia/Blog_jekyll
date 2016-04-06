@@ -84,7 +84,7 @@ The difference with respect to the article is that we need to use a bigger margi
 
 h4. iPhone 5 view
 
-<img class="img-center" src="../../../images/posts/iphone5_button.png" alt="Adding the button vertically centered on the emulator (iphone 5)" border="0" class="half-width-img img-center"/>
+<img class="img-center" src="/images/posts/iphone5_button.png" alt="Adding the button vertically centered on the emulator (iphone 5)" border="0" class="half-width-img img-center"/>
 
 h3. A directive.
 

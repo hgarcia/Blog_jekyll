@@ -27,7 +27,7 @@ Using Alex suggestions I'm changing the delegates by Action<T> and Func<T,T> and
 
 
 
-This example will output the ToString() mehod of each object into the string. You can also modify the content of the Collection using the overload method and the delegate that returns an object.
+This example will output the ToString() method of each object into the string. You can also modify the content of the Collection using the overload method and the delegate that returns an object.
 
 
 
@@ -37,6 +37,6 @@ This example will output the ToString() mehod of each object into the string. Yo
 
 This is the output:
 
-<img alt="" src="../../../images/posts/SP32-20071230-220529.png" height="116" width="413" />
+<img alt="" src="/images/posts/SP32-20071230-220529.png" height="116" width="413" />
 
 Pretty cool, isn't it? The power of using a delegate should not be overlooked since you could tie the delegate to multiple methods to further process each element of the collection.

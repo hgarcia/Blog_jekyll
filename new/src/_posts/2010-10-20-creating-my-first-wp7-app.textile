@@ -14,14 +14,14 @@ I recently posted about using Pomodoro to track my time so I decided that my fir
 So (after downloading and installing the SDK) I fired up VS 2010 and from the Silverlight templates I selected the Silverlight phone application template.
 
 
-<img border="0" alt="Application templates for WP 7" src="../../../images/posts/wp7-first-app/silverlight-app-template.PNG" width="640" height="473" />
+<img border="0" alt="Application templates for WP 7" src="/images/posts/wp7-first-app/silverlight-app-template.PNG" width="640" height="473" />
 
 
 The default view gives you a vertical split pane with the xaml and designer view.
 Looks odd for a second until you realize that is genious. The vertical split allows you to see the whole phone screen.
 
 
-<img border="0" alt="Xaml editing view on VS 2010" src="../../../images/posts/wp7-first-app/split-view.PNG" width="640" height="406" />
+<img border="0" alt="Xaml editing view on VS 2010" src="/images/posts/wp7-first-app/split-view.PNG" width="640" height="406" />
 
 
 From that point on, you just start cranking code.
@@ -31,7 +31,7 @@ From that point on, you just start cranking code.
 After less than 2 hours I pretty much had a simple version working. Most of those 2 hours were expend on Google or pocking around the different namespaces related to the phone.
 
 
-<img border="0" alt="Tomatito running on the emulator" src="../../../images/posts/wp7-first-app/tomatito.PNG" width="294" height="542" />
+<img border="0" alt="Tomatito running on the emulator" src="/images/posts/wp7-first-app/tomatito.PNG" width="294" height="542" />
 
 
 My experience with Silverlight is tangensial. Let me elaborate. I did some programming in the last year and a half, but mostly was library code. My Xaml FU is nowhere near where it needs to be. That was clear while I tried to change the background colour of a button programatically.
@@ -57,7 +57,7 @@ The first time you click F5 the emulator will launch and do a complete OS boot u
 To interact with the phone you use your mouse or the controllers in the top right corner.
 
 
-<img border="0" alt="Emulator menu" src="../../../images/posts/wp7-first-app/emulator-menu.PNG" width="372" height="547" />
+<img border="0" alt="Emulator menu" src="/images/posts/wp7-first-app/emulator-menu.PNG" width="372" height="547" />
 
 
 This controllers allow you to turn the phone to one side or the other to check how your application look in those orientations. There is an API to detect the orientation of the screen but I haven't play with it.

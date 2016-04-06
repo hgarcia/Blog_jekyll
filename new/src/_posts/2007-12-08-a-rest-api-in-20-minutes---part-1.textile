@@ -8,18 +8,11 @@ categories: [Programming, .Net]
 If you haven't look at it, take a look at the <a href="http://subsonicproject.com/" target="_blank">Subsonic</a> project, is really cool and can generate a ORM infrastructure faster than any other framework I tried out there.
 It also provides a cool HTTPHandler to expose those objects.
 
-The only problem is that your database have to follow some minor conventions and sometimes
-you need to work with legacy databases where those conventions where not follow.
+The only problem is that your database have to follow some minor conventions and sometimes you need to work with legacy databases where those conventions where not follow.
 
-A solution is to use the <a href="http://www.mygenerationsoftware.com/portal/dOOdads/dOOdadsOverview/tabid/63/Default.aspx" target="_blank">DooDads </a>architecture
-and <a href="http://www.mygenerationsoftware.com/portal/Home/tabid/36/Default.aspx" target="_blank">My
-Generation</a> as the code generating tool. Doodads was always open source and now
-My Generation is open source as well. I even modify the BussinessEntity class on the
-architecture to fit my needs in some projects and work around some unorthodox database
-architectural decisions I found.
+A solution is to use the <a href="http://www.mygenerationsoftware.com/portal/dOOdads/dOOdadsOverview/tabid/63/Default.aspx" target="_blank">DooDads </a>architecture and <a href="http://www.mygenerationsoftware.com/portal/Home/tabid/36/Default.aspx" target="_blank">My Generation</a> as the code generating tool. Doodads was always open source and now My Generation is open source as well. I even modify the BussinessEntity class on the architecture to fit my needs in some projects and work around some unorthodox database architectural decisions I found.
 
-Once you have your doodads objects for all the tables and views that you want to expose
-you need to create the HttpHandlers to expose those objects.
+Once you have your doodads objects for all the tables and views that you want to expose you need to create the HttpHandlers to expose those objects.
 
 This are some of the things I needed:
 

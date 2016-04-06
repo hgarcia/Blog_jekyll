@@ -7,7 +7,7 @@ categories: [General]
 
 __Disclaimer: I got this video as part of the bloggers review program at O'Reilly.__
 
-<a href="http://shop.oreilly.com/product/0636920027973.do" target="_blank"><img class="img-float-right"  src="../../../images/posts/get-started-with-arduino-video.gif" border="0" alt="Get Started with Arduino: A Hands-On Introductory Workshop - video"/></a>
+<a href="http://shop.oreilly.com/product/0636920027973.do" target="_blank"><img class="img-float-right"  src="/images/posts/get-started-with-arduino-video.gif" border="0" alt="Get Started with Arduino: A Hands-On Introductory Workshop - video"/></a>
 
 In less than 3 hours "Philip Lindsay":https://twitter.com/rancidbacon will get show you the basics on working and programming Arduino.
 

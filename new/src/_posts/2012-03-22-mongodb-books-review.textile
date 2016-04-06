@@ -19,7 +19,7 @@ h3. MongoDb, The definitive guide
 
 This book was written in collaboration with "Michael Dirolf":https://github.com/mdirolf
 
-<a href="../../../images/posts/mongodb-the-definitive-guide.jpg" target="_blank"><img class="img-float-right"  src="../../../images/posts/mongodb-the-definitive-guide.jpg" border="0" alt="MongoDb The Definitive Guide - book cover" style="width: 30%"/></a>If you know what MongoDb is and why is awesome, you can skip the first chapter. If you have no idea about it go ahead and read it. It's a short one anyway.
+<a href="../../../images/posts/mongodb-the-definitive-guide.jpg" target="_blank"><img class="img-float-right"  src="/images/posts/mongodb-the-definitive-guide.jpg" border="0" alt="MongoDb The Definitive Guide - book cover" style="width: 30%"/></a>If you know what MongoDb is and why is awesome, you can skip the first chapter. If you have no idea about it go ahead and read it. It's a short one anyway.
 
 The "good stuff" really starts on the second chapter with a good overview of documents, collections, dbs, the mongo shell and data types.
 
@@ -42,7 +42,7 @@ The book ends with four example applications written in Java, PHP, Ruby and Pyth
 
 h3. Scaling MongoDb
 
-<a href="../../../images/posts/scaling-mongodb.jpg" target="_blank"><img class="img-float-right"  src="../../../images/posts/scaling-mongodb.jpg" border="0" alt="MongoDb The Definitive Guide - book cover" style="width: 30%"/></a>It's a very small book at just 49 pages, but packed with information.
+<a href="../../../images/posts/scaling-mongodb.jpg" target="_blank"><img class="img-float-right"  src="/images/posts/scaling-mongodb.jpg" border="0" alt="MongoDb The Definitive Guide - book cover" style="width: 30%"/></a>It's a very small book at just 49 pages, but packed with information.
 Starts with a quick explanation of sharding and quickly move on unto how to split the data and balance load.
 
 Chapter 3 is probably the highly of the book giving you different strategies on choosing the all important shard key, sharding collections, adding and removing capacity.

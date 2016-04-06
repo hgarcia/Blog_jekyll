@@ -30,7 +30,7 @@ A nice thing is that if the item you are looking for is not there you won't get 
 Ex: lets create a handler called images.cshtml and a folder with the same name.
 
 
-<a href="../../../images/posts/WebMatrixredofirstimpressions_14D2D/folder_handler_same_name.png"><img border="0" alt="folder_handler_same_name" src="../../../images/posts/WebMatrixredofirstimpressions_14D2D/folder_handler_same_name_thumb.png" width="212" height="244"></a>
+<a href="../../../images/posts/WebMatrixredofirstimpressions_14D2D/folder_handler_same_name.png"><img border="0" alt="folder_handler_same_name" src="/images/posts/WebMatrixredofirstimpressions_14D2D/folder_handler_same_name_thumb.png" width="212" height="244"></a>
 
 
 Both the image and the html page will be served correctly but the WebPage “Page.vbhtml” won't.
@@ -85,10 +85,10 @@ With all this in place we can create the movie.cshtml page to display the data:
 And now when we can use localized urls to visit the same page. Of course you shouldn't have strings hardcoded in the view, since you want to localize them, but that is for another post that I may or not may write in the future.
 
 
-<a href="../../../images/posts/WebMatrixredofirstimpressions_14D2D/english.png"><img border="0" alt="english" src="../../../images/posts/WebMatrixredofirstimpressions_14D2D/english_thumb.png" width="388" height="215"></a>
+<a href="../../../images/posts/WebMatrixredofirstimpressions_14D2D/english.png"><img border="0" alt="english" src="/images/posts/WebMatrixredofirstimpressions_14D2D/english_thumb.png" width="388" height="215"></a>
 
 
-<a href="../../../images/posts/WebMatrixredofirstimpressions_14D2D/spanish_2.png"><img border="0" alt="spanish" src="../../../images/posts/WebMatrixredofirstimpressions_14D2D/spanish_thumb.png" width="391" height="221"></a>
+<a href="../../../images/posts/WebMatrixredofirstimpressions_14D2D/spanish_2.png"><img border="0" alt="spanish" src="/images/posts/WebMatrixredofirstimpressions_14D2D/spanish_thumb.png" width="391" height="221"></a>
 
 
 h3. Conclusion

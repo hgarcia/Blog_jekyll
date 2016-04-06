@@ -39,7 +39,7 @@ I was playing with ruby a lot at the time and getting really into HTML5. I alway
 
 The design was nice (in general), specially after changing the default fonts with web fonts.
 
-<a href="../../../images/posts/blog_old_desgin_small.png" target="_blank"><img src="../../../images/posts/blog_old_desgin_small.png" border="0" alt="Previous design"/></a>
+<a href="../../../images/posts/blog_old_desgin_small.png" target="_blank"><img src="/images/posts/blog_old_desgin_small.png" border="0" alt="Previous design"/></a>
 
 h3. Clutter, screen sizes and really boring.
 

@@ -7,7 +7,7 @@ categories: [Books]
 
 __Disclaimer: I got this book as part of the bloggers review program at O'Reilly.__
 
-<a href="http://shop.oreilly.com/product/0636920025139.do" target="_blank"><img class="img-float-right"  src="../../../images/posts/clojurescript-up-and-running.gif" border="0" alt="ClojureScript up and running - book cover"/></a>
+<a href="http://shop.oreilly.com/product/0636920025139.do" target="_blank"><img class="img-float-right"  src="/images/posts/clojurescript-up-and-running.gif" border="0" alt="ClojureScript up and running - book cover"/></a>
 
 I really like the up and running series from O'Reilly and this book is not the exception.
 

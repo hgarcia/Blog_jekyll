@@ -7,7 +7,7 @@ categories: [Books]
 
 __Disclaimer: I got this book as part of the bloggers review program at O'Reilly.__
 
-<a href="http://shop.oreilly.com/product/9781593274092.do" target="_blank"><img class="img-float-right"  src="../../../images/posts/super-scratch-programming-adventure.gif" border="0" alt="Super Scratch programming adventure - book cover"/></a>
+<a href="http://shop.oreilly.com/product/9781593274092.do" target="_blank"><img class="img-float-right"  src="/images/posts/super-scratch-programming-adventure.gif" border="0" alt="Super Scratch programming adventure - book cover"/></a>
 
 I started to show Scratch to my son a few months ago. He is just 5 and even when he can't really read he had a lot of fun moving the blocks around and doing some of the exercises in the Scratch website.
 

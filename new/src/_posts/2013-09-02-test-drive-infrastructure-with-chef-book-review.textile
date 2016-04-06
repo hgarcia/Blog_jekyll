@@ -15,7 +15,7 @@ The author "Stephen Nelson-Smith":https://twitter.com/LordCope proposes a very h
 
 I wasn't sure about this approach but I found it very refreshing and well suited for the subject, so a big plus there.
 
-<a href="http://shop.oreilly.com/product/0636920030973.do" target="_blank"><img class="img-float-right" src="../../../images/posts/test_driven_infrastructure_with_chef.gif" border="0" alt="Test Driven Infrastructure with Chef - book cover"></a>
+<a href="http://shop.oreilly.com/product/0636920030973.do" target="_blank"><img class="img-float-right" src="/images/posts/test_driven_infrastructure_with_chef.gif" border="0" alt="Test Driven Infrastructure with Chef - book cover"></a>
 
 __The version I read was an Early Release so things may change on the final one, so I expect to be even better.__
 

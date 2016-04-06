@@ -7,7 +7,7 @@ categories: [Books]
 
 __Disclaimer: I got this book as part of the bloggers review program at O'Reilly.__
 
-<a href="http://shop.oreilly.com/product/0636920025436.do" target="_blank"><img class="img-float-right" src="../../../images/posts/opa_up_and_running.gif" border="0" alt="Opa up and running - book cover"></a>
+<a href="http://shop.oreilly.com/product/0636920025436.do" target="_blank"><img class="img-float-right" src="/images/posts/opa_up_and_running.gif" border="0" alt="Opa up and running - book cover"></a>
 
 h3. Overview.
 

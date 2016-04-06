@@ -7,7 +7,7 @@ categories: [Books]
 
 __Disclaimer: I got this book as part of the bloggers review program at O'Reilly.__
 
-<a href="http://shop.oreilly.com/product/0636920025832.do" target="_blank"><img class="img-float-right"  src="../../../images/posts/learning-javascript-design-patterns.gif" border="0" alt="Learning JavaScript Design Patterns - book cover"/></a>
+<a href="http://shop.oreilly.com/product/0636920025832.do" target="_blank"><img class="img-float-right"  src="/images/posts/learning-javascript-design-patterns.gif" border="0" alt="Learning JavaScript Design Patterns - book cover"/></a>
 
 I like to think about this book as 3 books in one. The first 8 chapters are dedicated to explore and explain patterns, their creation process. their utility and an insight into the pattern community.
 

@@ -15,7 +15,7 @@ This book by "Rick Copeland":https://twitter.com/rick446 deals with common desig
 
 The book is divided in two major parts.
 
-<a href="http://shop.oreilly.com/product/0636920027041.do" target="_blank"><img class="img-float-right" src="../../../
+<a href="http://shop.oreilly.com/product/0636920027041.do" target="_blank"><img class="img-float-right" src="/
 images/posts/mongodb-applied-design-patterns.gif" border="0" alt="MongoDB applied design patterns - book cover"></a>
 
 The first part will deal with the specific patterns and follow the normal structure of any other pattern book.

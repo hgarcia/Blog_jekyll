@@ -7,7 +7,7 @@ categories: [Programming, JavaScript, Books]
 
 __Disclaimer: I got this book as part of the bloggers review program at O'Reilly.__
 
-<a href="http://shop.oreilly.com/product/0636920023708.do" target="_blank"><img class="img-float-right"  src="../../../images/posts/20_recipes_for_programming_phonegap.gif" border="0" alt="20 recipes for programming phonegap - book cover"/></a>The book doesn't waste any time and after a brief introduction and some setup instructions, it gets right into it.
+<a href="http://shop.oreilly.com/product/0636920023708.do" target="_blank"><img class="img-float-right"  src="/images/posts/20_recipes_for_programming_phonegap.gif" border="0" alt="20 recipes for programming phonegap - book cover"/></a>The book doesn't waste any time and after a brief introduction and some setup instructions, it gets right into it.
 
 "Jamie Munro":http://www.endyourif.com/ not only uses Phone Gap but JQuery mobile to build the UI. So, the book serves as a good beginner reference for that library as well.
 

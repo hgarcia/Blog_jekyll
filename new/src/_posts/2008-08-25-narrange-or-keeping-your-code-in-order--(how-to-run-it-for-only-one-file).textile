@@ -13,8 +13,8 @@ I only found one problem using it and is that if I have the file open whem runni
 
 I also made a configuration to run it for only one page and the only changes are that in the arguments you need to use ItemPath and in the initial directory ItemDir:
 
-<img alt="NArrange configuration for a single file" title="NArrange configuration for a single file" src="../../../images/posts/sp32-20080825-231710.png" border="0"/>
+<img alt="NArrange configuration for a single file" title="NArrange configuration for a single file" src="/images/posts/sp32-20080825-231710.png" border="0"/>
 
 The only problem is that when running it for a single file the using statements are moved inside the namespace and I dont like that:
 
-<img alt="Using statement inside the namespace" title="Using statement inside the namespace" src="../../../images/posts/sp32-20080825-232338.png" border="0"/>
+<img alt="Using statement inside the namespace" title="Using statement inside the namespace" src="/images/posts/sp32-20080825-232338.png" border="0"/>

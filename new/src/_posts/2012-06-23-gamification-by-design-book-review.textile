@@ -7,7 +7,7 @@ categories: [Books]
 
 __Disclaimer: I got this book as part of the bloggers review program at O'Reilly.__
 
-<a href="http://shop.oreilly.com/product/0636920014614.do" target="_blank"><img class="img-float-right"  src="../../../images/posts/gamification-by-design.gif" border="0" alt="Gamification by design - book cover"/></a>A very meaty book. Lots of content packed in 336 pages (e-book version for iPad). I have been intrigue by the subject for the last two years, so when I saw this book I jump into it with renovated interest.
+<a href="http://shop.oreilly.com/product/0636920014614.do" target="_blank"><img class="img-float-right"  src="/images/posts/gamification-by-design.gif" border="0" alt="Gamification by design - book cover"/></a>A very meaty book. Lots of content packed in 336 pages (e-book version for iPad). I have been intrigue by the subject for the last two years, so when I saw this book I jump into it with renovated interest.
 
 The first six chapters of the book cover multiple aspects of how and why to design a game experience as part of your application in increasing details.
 

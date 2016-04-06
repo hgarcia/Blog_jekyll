@@ -75,7 +75,7 @@ Notice that now I'm checking for $coverage greater than 0 and I deal with $cover
 
 Here is the end result:
 
-<img src="../../../images/posts/sp32-20080612-224357.png" alt="PartCover coverage per assembly" border="0"/>
+<img src="/images/posts/sp32-20080612-224357.png" alt="PartCover coverage per assembly" border="0"/>
 
 h3. Adding more details to the details report.
 
@@ -94,11 +94,11 @@ I decided to mark anything less than 100% as red. It's not because I think that 
 
 Here is an image of the result with no details showing.
 
-<img src="../../../images/posts/sp32-20080612-234824.png" alt="PartCover coerage per method - hidding details" border="0" />
+<img src="/images/posts/sp32-20080612-234824.png" alt="PartCover coerage per method - hidding details" border="0" />
 
 And here with details open
 
-<img src="../../../images/posts/sp32-20080612-234848.png" alt="PartCover coerage per method - showing details" border="0"/>
+<img src="/images/posts/sp32-20080612-234848.png" alt="PartCover coerage per method - showing details" border="0"/>
 
 h3. Adding the statistics
 

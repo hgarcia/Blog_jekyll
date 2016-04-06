@@ -7,7 +7,7 @@ categories: [Books]
 
 __Disclaimer: I got this book as part of the bloggers review program at O'Reilly.__
 
-<a href="http://shop.oreilly.com/product/0636920024132.do" target="_blank"><img class="img-float-right"  src="../../../images/posts/windows-powershell-cookbook.gif" border="0" alt="Windows PowerShell Cookbook - book cover"/></a>
+<a href="http://shop.oreilly.com/product/0636920024132.do" target="_blank"><img class="img-float-right"  src="/images/posts/windows-powershell-cookbook.gif" border="0" alt="Windows PowerShell Cookbook - book cover"/></a>
 
 "Lee Holmes":http://www.leeholmes.com/blog/ takes the cookbook approach to help us discover the incredible power at our fingertips with PowerShell.
 

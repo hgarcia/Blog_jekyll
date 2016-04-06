@@ -191,7 +191,7 @@ Finally we will create a <span class="code">home.html</span> file inside the <sp
 
 We can check it out using the ios emulator. We will run the npm command we set up before <span class="code">npm run ios</span>
 
-<img class="img-center" src="../../../images/posts/hello-world-phonegap-ionic-ng.png" alt="Hello world application running on the iPhone emulator" border="0"/>
+<img class="img-center" src="/images/posts/hello-world-phonegap-ionic-ng.png" alt="Hello world application running on the iPhone emulator" border="0"/>
 
 __If you are not seeing the app or the styles look weird, make sure that the Angular module, and the ng-app in the index have exactly the same name.__
 

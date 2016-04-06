@@ -41,9 +41,9 @@ When we call the function handler we will pass the request object as the only pa
 In this case, we are registering a function to handle a call to a route that match "/talk". The function will try to read a query string parameter with the key "greet" and output a greeting to the screen.
 
 
-<img border="0" alt="Greeting without parameter" src="../../../images/posts/luca-ws/greet01.png" width="276" height="140" />
+<img border="0" alt="Greeting without parameter" src="/images/posts/luca-ws/greet01.png" width="276" height="140" />
 
-<img border="0" alt="Saying hello world" src="../../../images/posts/luca-ws/greet02.png" width="295" height="141" />
+<img border="0" alt="Saying hello world" src="/images/posts/luca-ws/greet02.png" width="295" height="141" />
 
 
 h3. Content negotiation.

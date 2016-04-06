@@ -29,7 +29,7 @@ Let's compile this and see what Reflector have to tell us about it. Let's look a
 
 That looks very similar to the original code, the lambda notation have been replaced by an anonymous delegate but the rest of the code looks the same. But wait take a look at the object tree for this class.
 
-<a href="../../../images/posts/HowLinqworkslamdbasanonymousdelegatesan_88A/ScreenHunter_16%202009-03-09%2000.11.23_2.jpg"><img height="185" alt="ScreenHunter_16 2009-03-09 00.11.23" src="../../../images/posts/HowLinqworkslamdbasanonymousdelegatesan_88A/ScreenHunter_16%202009-03-09%2000.11.23_thumb.jpg" width="395" border="0" /></a>
+<a href="../../../images/posts/HowLinqworkslamdbasanonymousdelegatesan_88A/ScreenHunter_16%202009-03-09%2000.11.23_2.jpg"><img height="185" alt="ScreenHunter_16 2009-03-09 00.11.23" src="/images/posts/HowLinqworkslamdbasanonymousdelegatesan_88A/ScreenHunter_16%202009-03-09%2000.11.23_thumb.jpg" width="395" border="0" /></a>
 
 Do you see that <>c_DisplayClass1 private sealed subclass inside our original class?
 

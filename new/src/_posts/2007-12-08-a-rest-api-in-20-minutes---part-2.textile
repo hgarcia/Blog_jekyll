@@ -29,7 +29,7 @@ The first class is used by our formatter classes, they need to format different 
 
 
 
-The second object, is one of our objects handlers, some scheleton code at this moment.
+The second object, is one of our objects handlers, some skeleton code at this moment.
 This objects implement IServiceRequestHandler.
 
 

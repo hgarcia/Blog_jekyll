@@ -9,7 +9,7 @@ Lava lamps, Orbs, led displays, they all have been used and are still being used
 
 What about using a big flat panel TV? Cruise Control provides information via xml as a service and leveraging that information is fairly easy, so why not to present not just the status but also the name of the project in the screen? Well, that is exactly what <a href="http://code.google.com/p/bigvisiblecruise/" target="_blank">Big Visible Cruise</a> does.
 
-<a href="../../../images/posts/BigVisibleCruiseCruisecontrolprojectstat_14B95/image_2.png"><img height="284" alt="Big visible cruise" src="../../../images/posts/BigVisibleCruiseCruisecontrolprojectstat_14B95/image_thumb.png" width="393" border="0" /></a>
+<a href="../../../images/posts/BigVisibleCruiseCruisecontrolprojectstat_14B95/image_2.png"><img height="284" alt="Big visible cruise" src="/images/posts/BigVisibleCruiseCruisecontrolprojectstat_14B95/image_thumb.png" width="393" border="0" /></a>
 
 This is a WCF application, you just put it in a computer connected to a TV. Double click in the exe file, provide the URL for your dashboard and there you go.
 

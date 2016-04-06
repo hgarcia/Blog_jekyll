@@ -29,7 +29,7 @@ But in most applications I also want to use the same template in the server side
 
 The result will look like:
 
-<img src="../../../images/posts/SP32-20071226-002326.png" alt="" height="84" width="550">
+<img src="/images/posts/SP32-20071226-002326.png" alt="" height="84" width="550">
 
 In real live the object containing the data will come from the database or your business layer, this object may contain a collection of objects, if you pass an object that implements IEnumerable the template system will iterate through all of the objects and concatenate the results (very useful for table representations). The Process method has three parameters (overloaded), the first one is either a single object and a collection that implement IEnumerable, the second and third parameters are booleans an indicate what to lock in the objects, you can look at public Properties and/or Public Fields.
 

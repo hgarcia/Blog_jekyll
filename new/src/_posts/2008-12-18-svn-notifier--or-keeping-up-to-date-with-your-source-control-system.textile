@@ -11,14 +11,14 @@ You will need to have <a href="http://tortoisesvn.tigris.org/" target="_blank">T
 
 Once installed you configure witch folders you want the tool to monitor. The icon on your system tray will be Green or Orange to indicate if your projects are up to date or not.
 
-<a href="../../../images/posts/SVNNotifierorkeepinguptodatewithyoursour_126FD/ScreenHunter_01%202008-12-17%2021.06.51_2.jpg"><img height="105" alt="ScreenHunter_01 2008-12-17 21.06.51" src="../../../images/posts/SVNNotifierorkeepinguptodatewithyoursour_126FD/ScreenHunter_01%202008-12-17%2021.06.51_thumb.jpg" width="167" border="0" /></a> 
+<a href="../../../images/posts/SVNNotifierorkeepinguptodatewithyoursour_126FD/ScreenHunter_01%202008-12-17%2021.06.51_2.jpg"><img height="105" alt="ScreenHunter_01 2008-12-17 21.06.51" src="/images/posts/SVNNotifierorkeepinguptodatewithyoursour_126FD/ScreenHunter_01%202008-12-17%2021.06.51_thumb.jpg" width="167" border="0" /></a> 
 
 Right click on it and you can Update all or open the status window (double click on it also opens the status window).
 
-<a href="../../../images/posts/SVNNotifierorkeepinguptodatewithyoursour_126FD/ScreenHunter_03%202008-12-17%2021.07.20_2.jpg"><img height="277" alt="ScreenHunter_03 2008-12-17 21.07.20" src="../../../images/posts/SVNNotifierorkeepinguptodatewithyoursour_126FD/ScreenHunter_03%202008-12-17%2021.07.20_thumb.jpg" width="611" border="0" /></a> 
+<a href="../../../images/posts/SVNNotifierorkeepinguptodatewithyoursour_126FD/ScreenHunter_03%202008-12-17%2021.07.20_2.jpg"><img height="277" alt="ScreenHunter_03 2008-12-17 21.07.20" src="/images/posts/SVNNotifierorkeepinguptodatewithyoursour_126FD/ScreenHunter_03%202008-12-17%2021.07.20_thumb.jpg" width="611" border="0" /></a> 
 
 You can also use this tool to do commits for each project. This is really nice, sometimes I work using just a simple text editor and I don't want to navigate to the folders to do the commits, with this tool I just click in the System Tray icon, right click in the project I want to commit and that's it, the TortoiseSVN dialog will open and you go from there like you usually do.
 
 The other thing is nice is that before updating you can check all the logs right clicking in the project and selecting Change log.
 
-<a href="../../../images/posts/SVNNotifierorkeepinguptodatewithyoursour_126FD/ScreenHunter_04%202008-12-17%2021.09.24_2.jpg"><img alt="ScreenHunter_04 2008-12-17 21.09.24" src="../../../images/posts/SVNNotifierorkeepinguptodatewithyoursour_126FD/ScreenHunter_04%202008-12-17%2021.09.24_thumb.jpg" width="609" border="0" /></a>
+<a href="../../../images/posts/SVNNotifierorkeepinguptodatewithyoursour_126FD/ScreenHunter_04%202008-12-17%2021.09.24_2.jpg"><img alt="ScreenHunter_04 2008-12-17 21.09.24" src="/images/posts/SVNNotifierorkeepinguptodatewithyoursour_126FD/ScreenHunter_04%202008-12-17%2021.09.24_thumb.jpg" width="609" border="0" /></a>
