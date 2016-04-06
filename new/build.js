@@ -11,6 +11,7 @@ let Metalsmith = require("metalsmith"),
   permalinks = require("metalsmith-permalinks"),
   collections = require("metalsmith-collections"),
   assets = require("metalsmith-assets"),
+  feed = require("metalsmith-feed"),
   dateInFilename = require("metalsmith-date-in-filename");
 
 Metalsmith(__dirname)
