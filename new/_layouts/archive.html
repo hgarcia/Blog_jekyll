@@ -1,11 +1,11 @@
 {% include "./_partials/default_header.html" %}
-<ul>
+<ul class="archive">
 {% for entry in archive %}
   <li>{{entry.year}}
-    <ul>
+    <ul class="archive">
     {% for month in entry.months %}
       <li>{{month.name}}
-        <ul>
+        <ul class="archive">
         {% for post in month.data %}
           <li><a href="{{post.permaLinkUrl}}">{{ post.title }}</a></li>
         {% endfor %}

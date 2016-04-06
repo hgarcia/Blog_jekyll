@@ -398,6 +398,9 @@ article section ul{
   list-style: none inside none;
   padding-left: 1em;
 }
+ul.archive li {
+  margin-left: 20px;
+}
 
 .collection-list {
   background-color: #FFFFFF;
