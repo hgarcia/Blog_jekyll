@@ -12,6 +12,7 @@ let Metalsmith = require("metalsmith"),
   collections = require("metalsmith-collections"),
   assets = require("metalsmith-assets"),
   feed = require("metalsmith-feed"),
+  drafts = require("metalsmith-drafts"),
   dateInFilename = require("metalsmith-date-in-filename");
 
 Metalsmith(__dirname)
@@ -35,6 +36,7 @@ Metalsmith(__dirname)
     }
   ]))
   .use(datePermalink())
+  .use(drafts())
   .use(archive({collections: "_posts"}))
   .use(collections())
   .use(textile())
