@@ -44,6 +44,11 @@ Metalsmith(__dirname)
     relative: false
   }))
   .use(home())
+  .use(feed({
+    collection: "posts",
+    "site_url": "http://blog.dynamicprogrammer.com/",
+    "title": "The Dynamic Programmer"
+  }))
   .use(layouts({
       "engine": "liquid",
       "directory": "_layouts"
